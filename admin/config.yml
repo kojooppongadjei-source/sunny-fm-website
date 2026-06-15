@@ -1,0 +1,107 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded images go
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: https://sunnygh.com
+display_url: https://sunnygh.com
+
+# Editorial workflow = drafts go through "Draft / In Review / Ready" before publishing
+publish_mode: editorial_workflow
+
+collections:
+
+  # ───────────────────────────────
+  # NEWS
+  # ───────────────────────────────
+  - name: "news"
+    label: "News"
+    label_singular: "News Article"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Summary (shown on News list page)", name: "summary", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Tags"
+        name: "tags"
+        widget: "select"
+        multiple: true
+        required: false
+        options: ["Community", "Church", "Events", "Announcements", "National", "Ministry"]
+
+  # ───────────────────────────────
+  # LIFESTYLE
+  # ───────────────────────────────
+  - name: "lifestyle"
+    label: "Lifestyle"
+    label_singular: "Lifestyle Article"
+    folder: "content/lifestyle"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Summary (shown on Lifestyle list page)", name: "summary", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Faith & Family", "Health & Wellness", "Relationships", "Parenting", "Personal Growth", "Work & Career"]
+        default: "Faith & Family"
+
+  # ───────────────────────────────
+  # PRAYER & TESTIMONIES
+  # ───────────────────────────────
+  - name: "prayer_testimonies"
+    label: "Prayer & Testimonies"
+    label_singular: "Prayer or Testimony"
+    folder: "content/prayer-testimonies"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Submitted By (optional — leave blank to keep anonymous)", name: "submitted_by", widget: "string", required: false }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Type"
+        name: "entry_type"
+        widget: "select"
+        options: ["Testimony", "Prayer Request", "Answered Prayer"]
+        default: "Testimony"
+
+  # ───────────────────────────────
+  # PREACHING & TEACHING
+  # ───────────────────────────────
+  - name: "preaching_teaching"
+    label: "Preaching & Teaching"
+    label_singular: "Sermon / Teaching"
+    folder: "content/preaching-teaching"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Preacher / Teacher Name", name: "preacher", widget: "string" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "YouTube Video ID (optional)", name: "youtube_id", widget: "string", required: false, hint: "e.g. ynbJnyGie2c — the part after watch?v= in the YouTube URL" }
+      - { label: "Audio File URL (optional)", name: "audio_url", widget: "string", required: false }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Body / Sermon Notes", name: "body", widget: "markdown" }
+      - label: "Series"
+        name: "series"
+        widget: "string"
+        required: false

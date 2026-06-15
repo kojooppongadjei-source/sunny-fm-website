@@ -3,309 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sunny 88.7 FM — Ghana's Premier Christian Radio Station</title>
-<meta name="description" content="Sunny 88.7 FM — Lighting up your faith with uplifting music, inspiring sermons, and a community that feels like family. Accra & Worldwide.">
+<title>News — Sunny 88.7 FM</title>
+<meta name="description" content="The latest news and announcements from Sunny 88.7 FM and our community.">
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --gold:#C8920A;
-  --gold-dark:#a8760a;
-  --cream:#FAF7F0;
-  --ink:#1a1a1a;
-  --muted:#888;
-  --border:#e8e4dc;
-}
-body{font-family:'Segoe UI',Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;}
-a{text-decoration:none;}
+body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
+:root{--gold:#C8920A;--gold-dark:#a8760a;--cream:#FAF7F0;--muted:#888;--border:#e8e4dc;}
+.wrap{max-width:760px;margin:0 auto;padding:32px 5% 64px;}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-dark);font-weight:700;margin-bottom:10px;}
+.post-title{font-size:clamp(26px,4vw,40px);font-weight:800;line-height:1.2;margin-bottom:10px;}
+.post-meta{font-size:13px;color:var(--muted);margin-bottom:24px;}
+.post-image{width:100%;border-radius:14px;margin-bottom:24px;display:block;}
+.post-body{font-size:16px;color:#333;}
+.post-body p{margin-bottom:16px;}
+.post-body h1,.post-body h2,.post-body h3{margin:28px 0 12px;font-weight:800;line-height:1.3;}
+.post-body ul,.post-body ol{margin:0 0 16px 24px;}
+.post-body li{margin-bottom:6px;}
+.post-body a{color:var(--gold-dark);}
+.post-body blockquote{border-left:3px solid var(--gold);padding-left:16px;color:#555;margin:20px 0;font-style:italic;}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--gold-dark);text-decoration:none;font-weight:600;margin-bottom:24px;}
+.back-link:hover{text-decoration:underline;}
+.tag{display:inline-block;background:#fff0e0;color:var(--gold-dark);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.06em;margin-right:6px;}
+.video-embed{position:relative;width:100%;padding-bottom:56.25%;border-radius:14px;overflow:hidden;margin-bottom:24px;background:#000;}
+.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
 
-/* ── NAV ── */
-nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--border);padding:14px 5%;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{display:flex;align-items:center;gap:10px;}
-.nav-logo img{height:46px;width:auto;display:block;}
-.nav-tv{display:flex;align-items:center;gap:6px;background:#1a1a1a;color:#fff!important;padding:8px 16px;border-radius:8px;font-weight:600;}
-.nav-tv:hover{background:#000;}
-.nav-tv img{height:22px;width:auto;border-radius:4px;}
-.nav-links{display:flex;align-items:center;gap:28px;}
-.nav-links a{color:var(--ink);font-size:14px;font-weight:500;transition:color .15s;}
-.nav-links a:hover{color:var(--gold-dark);}
-.nav-cta{background:var(--gold);color:#fff!important;padding:10px 22px;border-radius:8px;font-weight:600;}
-.nav-cta:hover{background:var(--gold-dark);}
-.nav-toggle{display:none;background:none;border:none;font-size:24px;cursor:pointer;}
-
-/* ── HERO ── */
-.hero{background:var(--gold);padding:0;position:relative;overflow:hidden;min-height:520px;display:flex;align-items:stretch;}
-.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.07);z-index:1;}
-.hero::after{content:'';position:absolute;bottom:-100px;left:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.05);z-index:1;}
-.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;position:relative;z-index:2;width:100%;}
-.hero-text{padding:64px 0 64px 5%;display:flex;flex-direction:column;justify-content:center;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;color:#fff;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;width:fit-content;}
-.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:#1a1a1a;}
-.hero h1{font-size:clamp(28px,4.5vw,46px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:10px;}
-.hero h1 em{font-style:italic;color:#1a1a1a;}
-.hero-presenter-name{font-size:clamp(20px,2.5vw,26px);font-weight:700;color:#1a1a1a;margin-bottom:4px;}
-.hero-presenter-show{font-size:14px;color:rgba(255,255,255,.85);margin-bottom:28px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;}
-.hero p{font-size:15px;color:rgba(255,255,255,.85);max-width:420px;margin-bottom:28px;line-height:1.7;}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
-.btn-primary{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;transition:all .2s;}
-.btn-primary:hover{background:#000;}
-.btn-secondary{background:#fff;color:var(--gold-dark);padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;transition:all .2s;}
-.btn-secondary:hover{background:var(--cream);}
-
-/* Hero photo */
-.hero-photo{position:relative;overflow:hidden;min-height:420px;}
-.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;position:absolute;inset:0;}
-.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--gold) 0%,transparent 18%);}
-.hero-photo-caption{position:absolute;bottom:20px;right:20px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);border-radius:10px;padding:10px 18px;color:#fff;text-align:right;z-index:2;}
-.hero-photo-caption .np-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.6);margin-bottom:2px;}
-.hero-photo-caption .np-show{font-size:13px;font-weight:700;}
-
-/* ── SECTIONS ── */
-section{padding:64px 5%;}
-.section-inner{max-width:1100px;margin:0 auto;}
-.section-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-dark);font-weight:700;margin-bottom:10px;}
-.section-title{font-size:clamp(24px,3.5vw,38px);font-weight:800;margin-bottom:14px;line-height:1.15;}
-.section-sub{font-size:15px;color:var(--muted);max-width:480px;line-height:1.7;}
-
-/* Quick links grid */
-.quicklinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:40px;}
-.qlink{border:1px solid var(--border);border-radius:14px;padding:24px;transition:all .2s;display:block;}
-.qlink:hover{border-color:var(--gold);box-shadow:0 6px 24px rgba(200,146,10,.1);transform:translateY(-2px);}
-.qlink-icon{width:48px;height:48px;border-radius:12px;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
-.qlink-title{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:6px;}
-.qlink-desc{font-size:13px;color:var(--muted);line-height:1.6;}
-
-/* Schedule preview */
-.schedule-section{background:var(--cream);}
-.schedule-preview{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:32px;}
-.sched-card{background:#fff;border-radius:12px;padding:18px;border:1px solid var(--border);}
-.sched-time{font-size:11px;color:var(--gold-dark);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;}
-.sched-show{font-size:15px;font-weight:700;margin-bottom:3px;}
-.sched-host{font-size:12px;color:var(--muted);}
-
-/* Stats */
-.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-top:32px;}
-.stat-card{text-align:center;padding:24px;border-radius:14px;background:var(--cream);}
-.stat-num{font-size:32px;font-weight:800;color:var(--gold-dark);}
-.stat-label{font-size:12px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.06em;}
-
-/* CTA band */
-.cta-band{background:var(--ink);color:#fff;text-align:center;}
-.cta-band h2{font-size:clamp(24px,3.5vw,38px);font-weight:800;margin-bottom:12px;}
-.cta-band p{color:rgba(255,255,255,.6);max-width:460px;margin:0 auto 28px;}
-
-/* Footer */
-footer{background:#111;color:rgba(255,255,255,.6);padding:40px 5% 90px;}
-.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;}
-.footer-brand{color:#fff;font-weight:800;font-size:16px;margin-bottom:10px;}
-.footer-col-title{color:#fff;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;}
-.footer-col a{display:block;color:rgba(255,255,255,.6);font-size:13px;margin-bottom:8px;}
-.footer-col a:hover{color:var(--gold);}
-.footer-bottom{max-width:1100px;margin:32px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;text-align:center;color:rgba(255,255,255,.4);}
-
-@media(max-width:768px){
-  .nav-links{display:none;}
-  .hero-inner{grid-template-columns:1fr;}
-  .hero-photo{min-height:320px;order:-1;}
-  .hero-text{padding:40px 5%;}
-}
+/* List page styles */
+.list-hero{background:var(--gold);padding:2.5rem 1.5rem;text-align:center;border-radius:16px;margin-bottom:1.5rem;position:relative;overflow:hidden;}
+.list-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07);}
+.list-hero::after{content:'';position:absolute;bottom:-50px;left:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.05);}
+.list-hero h1{font-size:clamp(26px,4vw,38px);font-weight:800;color:#fff;margin-bottom:8px;position:relative;}
+.list-hero p{font-size:15px;color:rgba(255,255,255,.85);max-width:480px;margin:0 auto;position:relative;}
+.post-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
+.post-card{border:1px solid var(--border);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;transition:box-shadow .2s,transform .2s;display:block;background:#fff;}
+.post-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.08);transform:translateY(-2px);}
+.post-card-img{width:100%;height:160px;object-fit:cover;background:var(--cream);}
+.post-card-body{padding:16px;}
+.post-card-date{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
+.post-card-title{font-size:16px;font-weight:700;margin-bottom:6px;line-height:1.35;}
+.post-card-summary{font-size:13px;color:#666;line-height:1.6;}
+.empty-state{color:var(--muted);font-size:14px;text-align:center;padding:40px 0;}
+@media(max-width:600px){.wrap{padding:20px 5% 48px;}}
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <a href="/" class="nav-logo">
+<style>
+*{box-sizing:border-box;}
+.site-nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e8e4dc;padding:10px 5%;display:flex;align-items:center;justify-content:space-between;font-family:'Segoe UI',Arial,sans-serif;}
+.site-nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.site-nav-logo img{height:46px;width:auto;display:block;}
+.site-nav-links{display:flex;align-items:center;gap:22px;}
+.site-nav-links a{color:#1a1a1a;font-size:14px;font-weight:500;text-decoration:none;transition:color .15s;white-space:nowrap;}
+.site-nav-links a:hover{color:#a8760a;}
+.site-nav-cta{background:#C8920A;color:#fff!important;padding:10px 20px;border-radius:8px;font-weight:600;}
+.site-nav-cta:hover{background:#a8760a;}
+.site-nav-tv{display:flex;align-items:center;gap:6px;background:#1a1a1a;color:#fff!important;padding:8px 16px;border-radius:8px;font-weight:600;}
+.site-nav-tv:hover{background:#000;}
+.site-nav-tv img{height:22px;width:auto;border-radius:4px;}
+@media(max-width:1000px){.site-nav-links{display:none;}}
+</style>
+<nav class="site-nav">
+  <a href="/" class="site-nav-logo">
     <img src="/assets/sunny-fm-logo.png" alt="Sunny 88.7 FM — Positive Soul Music">
   </a>
-  <div class="nav-links">
+  <div class="site-nav-links">
     <a href="/news/">News</a>
     <a href="/listen-live/">Listen Live</a>
     <a href="/lifestyle/">Lifestyle</a>
     <a href="/prayer-testimonies/">Prayer &amp; Testimonies</a>
     <a href="/preaching-teaching/">Preaching &amp; Teaching</a>
     <a href="/events/">Events</a>
-    <a href="/music-videos/">Music & Videos</a>
-    <a href="https://sunnygh.com/index.php/live-tv/" class="nav-tv">
+    <a href="/music-videos/">Music &amp; Videos</a>
+    <a href="https://sunnygh.com/index.php/live-tv/" class="site-nav-tv">
       <img src="/assets/sunny-tv-logo.png" alt="Sunny TV">
       Watch TV
     </a>
-    <a href="/advertise/" class="nav-cta">Advertise</a>
+    <a href="/advertise/" class="site-nav-cta">Advertise</a>
   </div>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-badge"><span class="dot"></span>Sunny 88.7 FM</div>
-      <h1>A place of <em>Faith</em>, Hope &amp; Belonging</h1>
-      <div class="hero-presenter-name">Meet Jennifer J. Danquah</div>
-      <div class="hero-presenter-show">Host, Inspirational Morning Drive &middot; Weekdays 6:30 – 9:00 AM</div>
-      <p>Sunny 88.7FM is a contemporary Christian radio station broadcasting since 2002 from Accra, Ghana — helping our audience put their faith at the heart of daily living.</p>
-      <div class="hero-actions">
-        <a href="/listen-live/" class="btn-primary">▶ Listen Live</a>
-        <a href="/music-videos/" class="btn-secondary">🎬 Watch Videos</a>
-      </div>
+<div class="wrap">
+
+    <div class="list-hero">
+      <h1>📰 News</h1>
+      <p>The latest news and announcements from Sunny 88.7 FM and our community.</p>
     </div>
-    <div class="hero-photo">
-      <img src="/assets/jennifer-danquah.jpg" alt="Jennifer J. Danquah — Inspirational Morning Drive presenter">
-      <div class="hero-photo-caption">
-        <div class="np-label">Inspirational Morning Drive</div>
-        <div class="np-show">Jennifer J. Danquah</div>
+    <div class="post-grid">
+        <a href="/news/welcome-new-website/" class="post-card">
+          <div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-size:32px;">📰</div>
+          <div class="post-card-body">
+            <div class="post-card-date">15 June 2026</div>
+            <div class="post-card-title">Welcome to the new Sunny FM website</div>
+            <div class="post-card-summary">We're excited to launch our brand new, faster website — built for Ghana, built for you.</div>
+          </div>
+        </a>
       </div>
-    </div>
-  </div>
+  
 </div>
-
-<!-- QUICK LINKS -->
-<section id="explore">
-  <div class="section-inner">
-    <div class="section-label">Explore Sunny FM</div>
-    <h2 class="section-title">Everything you need,<br>in one place.</h2>
-    <p class="section-sub">From live radio to sermons, news, and gospel videos — stay connected to Sunny 88.7FM wherever you are.</p>
-    <div class="quicklinks">
-      <a href="/listen-live/" class="qlink">
-        <div class="qlink-icon">📻</div>
-        <div class="qlink-title">Listen Live</div>
-        <div class="qlink-desc">Stream Sunny FM 88.7 live, 24/7, with our full programme schedule.</div>
-      </a>
-      <a href="/news/" class="qlink">
-        <div class="qlink-icon">📰</div>
-        <div class="qlink-title">News</div>
-        <div class="qlink-desc">The latest news and announcements from Sunny FM and our community.</div>
-      </a>
-      <a href="/lifestyle/" class="qlink">
-        <div class="qlink-icon">✨</div>
-        <div class="qlink-title">Lifestyle</div>
-        <div class="qlink-desc">Faith is not just for Sundays — practical wisdom for everyday living.</div>
-      </a>
-      <a href="/preaching-teaching/" class="qlink">
-        <div class="qlink-icon">📖</div>
-        <div class="qlink-title">Preaching &amp; Teaching</div>
-        <div class="qlink-desc">Catch up on sermons and teachings from our roster of pastors and ministers.</div>
-      </a>
-      <a href="/music-videos/" class="qlink">
-        <div class="qlink-icon">🎬</div>
-        <div class="qlink-title">Music &amp; Videos</div>
-        <div class="qlink-desc">Watch the latest gospel music videos and live performances.</div>
-      </a>
-      <a href="/prayer-testimonies/" class="qlink">
-        <div class="qlink-icon">🙏</div>
-        <div class="qlink-title">Prayer &amp; Testimonies</div>
-        <div class="qlink-desc">Bring your needs to God with us, and be encouraged by what He has done.</div>
-      </a>
-      <a href="/events/" class="qlink">
-        <div class="qlink-icon">📅</div>
-        <div class="qlink-title">Events</div>
-        <div class="qlink-desc">Stay up to date with crusades, conferences, and community programs.</div>
-      </a>
-      <a href="/advertise/" class="qlink">
-        <div class="qlink-icon">📢</div>
-        <div class="qlink-title">Advertise With Us</div>
-        <div class="qlink-desc">Reach 50,000+ weekly listeners — book your radio campaign online.</div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- SCHEDULE PREVIEW -->
-<section class="schedule-section">
-  <div class="section-inner">
-    <div class="section-label">On Air Today</div>
-    <h2 class="section-title">A full day of music,<br>ministry &amp; conversation.</h2>
-    <div class="schedule-preview">
-      <div class="sched-card">
-        <div class="sched-time">6:30 – 9:00 AM</div>
-        <div class="sched-show">Inspirational Morning Drive</div>
-        <div class="sched-host">Jennifer &amp; Agyemang</div>
-      </div>
-      <div class="sched-card">
-        <div class="sched-time">10:00 AM</div>
-        <div class="sched-show">Dr. Sam Owusu</div>
-        <div class="sched-host">Calvary Worship Centre</div>
-      </div>
-      <div class="sched-card">
-        <div class="sched-time">12:00 PM</div>
-        <div class="sched-show">PSF Drive</div>
-        <div class="sched-host">Positive Soul Food</div>
-      </div>
-      <div class="sched-card">
-        <div class="sched-time">4:30 PM</div>
-        <div class="sched-show">Sunset Drive</div>
-        <div class="sched-host">Baaba &amp; Vickie</div>
-      </div>
-    </div>
-    <div style="margin-top:28px;">
-      <a href="/listen-live/" class="btn-primary" style="display:inline-block;">See Full Schedule →</a>
-    </div>
-  </div>
-</section>
-
-<!-- STATS -->
-<section>
-  <div class="section-inner">
-    <div class="section-label">Our Reach</div>
-    <h2 class="section-title">Ghana's most engaged<br>Christian audience.</h2>
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-num">50K+</div>
-        <div class="stat-label">Weekly Listeners</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">24/7</div>
-        <div class="stat-label">On Air</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">88.7</div>
-        <div class="stat-label">FM Accra</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-num">2002</div>
-        <div class="stat-label">On Air Since</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-band">
-  <div class="section-inner">
-    <h2>Never miss a moment.</h2>
-    <p>Tune in live, catch up on sermons, or watch the latest gospel videos — all from Sunny 88.7FM.</p>
-    <a href="/listen-live/" class="btn-secondary" style="display:inline-block;">▶ Start Listening</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
+<style>
+.site-footer{background:#111;color:rgba(255,255,255,.6);padding:40px 5% 90px;font-family:'Segoe UI',Arial,sans-serif;}
+.site-footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;}
+.site-footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.site-footer-brand img{height:40px;width:auto;border-radius:6px;background:#fff;padding:2px;}
+.site-footer-col-title{color:#fff;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;}
+.site-footer-col a{display:block;color:rgba(255,255,255,.6);font-size:13px;margin-bottom:8px;text-decoration:none;}
+.site-footer-col a:hover{color:#C8920A;}
+.site-footer-bottom{max-width:1100px;margin:32px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;text-align:center;color:rgba(255,255,255,.4);}
+</style>
+<footer class="site-footer">
+  <div class="site-footer-inner">
     <div>
-      <div class="footer-brand" style="display:flex;align-items:center;gap:10px;margin-bottom:10px;"><img src="/assets/sunny-tv-logo.png" alt="Sunny TV" style="height:40px;width:auto;border-radius:6px;background:#fff;padding:2px;"></div>
+      <div class="site-footer-brand">
+        <img src="/assets/sunny-tv-logo.png" alt="Sunny TV">
+      </div>
       <div style="font-size:13px;line-height:1.7;">Positive Soul Music<br>Ghana's Premier Christian Station<br>Accra &amp; Worldwide</div>
     </div>
-    <div class="footer-col">
-      <div class="footer-col-title">Explore</div>
+    <div class="site-footer-col">
+      <div class="site-footer-col-title">Explore</div>
       <a href="/listen-live/">Listen Live</a>
       <a href="/news/">News</a>
       <a href="/lifestyle/">Lifestyle</a>
       <a href="/preaching-teaching/">Preaching &amp; Teaching</a>
       <a href="/events/">Events</a>
     </div>
-    <div class="footer-col">
-      <div class="footer-col-title">More</div>
+    <div class="site-footer-col">
+      <div class="site-footer-col-title">More</div>
       <a href="/music-videos/">Music &amp; Videos</a>
       <a href="/prayer-testimonies/">Prayer &amp; Testimonies</a>
       <a href="/advertise/">Advertise</a>
       <a href="https://sunnygh.com/index.php/live-tv/">Watch TV</a>
     </div>
-    <div class="footer-col">
-      <div class="footer-col-title">Contact</div>
+    <div class="site-footer-col">
+      <div class="site-footer-col-title">Contact</div>
       <a href="tel:0545223324">054 522 3324</a>
       <a href="mailto:info@sunnygh.com">info@sunnygh.com</a>
       <div style="font-size:13px;margin-top:8px;">45 Hilla Limann Avenue<br>North Ridge, Accra</div>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 Sunny 88.7 FM · All Rights Reserved</div>
+  <div class="site-footer-bottom">© 2026 Sunny 88.7 FM · All Rights Reserved</div>
 </footer>
 
 <style>

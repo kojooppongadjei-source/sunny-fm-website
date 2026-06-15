@@ -1,0 +1,34 @@
+<style>
+*{box-sizing:border-box;}
+.site-nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e8e4dc;padding:10px 5%;display:flex;align-items:center;justify-content:space-between;font-family:'Segoe UI',Arial,sans-serif;}
+.site-nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.site-nav-logo img{height:46px;width:auto;display:block;}
+.site-nav-links{display:flex;align-items:center;gap:22px;}
+.site-nav-links a{color:#1a1a1a;font-size:14px;font-weight:500;text-decoration:none;transition:color .15s;white-space:nowrap;}
+.site-nav-links a:hover{color:#a8760a;}
+.site-nav-cta{background:#C8920A;color:#fff!important;padding:10px 20px;border-radius:8px;font-weight:600;}
+.site-nav-cta:hover{background:#a8760a;}
+.site-nav-tv{display:flex;align-items:center;gap:6px;background:#1a1a1a;color:#fff!important;padding:8px 16px;border-radius:8px;font-weight:600;}
+.site-nav-tv:hover{background:#000;}
+.site-nav-tv img{height:22px;width:auto;border-radius:4px;}
+@media(max-width:1000px){.site-nav-links{display:none;}}
+</style>
+<nav class="site-nav">
+  <a href="/" class="site-nav-logo">
+    <img src="/assets/sunny-fm-logo.png" alt="Sunny 88.7 FM — Positive Soul Music">
+  </a>
+  <div class="site-nav-links">
+    <a href="/news/">News</a>
+    <a href="/listen-live/">Listen Live</a>
+    <a href="/lifestyle/">Lifestyle</a>
+    <a href="/prayer-testimonies/">Prayer &amp; Testimonies</a>
+    <a href="/preaching-teaching/">Preaching &amp; Teaching</a>
+    <a href="/events/">Events</a>
+    <a href="/music-videos/">Music &amp; Videos</a>
+    <a href="https://sunnygh.com/index.php/live-tv/" class="site-nav-tv">
+      <img src="/assets/sunny-tv-logo.png" alt="Sunny TV">
+      Watch TV
+    </a>
+    <a href="/advertise/" class="site-nav-cta">Advertise</a>
+  </div>
+</nav>
