@@ -39,8 +39,7 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid va
 .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;position:relative;z-index:2;width:100%;}
 .hero-text{padding:64px 0 64px 5%;display:flex;flex-direction:column;justify-content:center;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;color:#fff;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;width:fit-content;}
-.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:#ff4444;animation:pulse 1.5s ease-in-out infinite;}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.25;}}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:#1a1a1a;}
 .hero h1{font-size:clamp(28px,4.5vw,46px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:10px;}
 .hero h1 em{font-style:italic;color:#1a1a1a;}
 .hero-presenter-name{font-size:clamp(20px,2.5vw,26px);font-weight:700;color:#1a1a1a;margin-bottom:4px;}
@@ -59,10 +58,6 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid va
 .hero-photo-caption{position:absolute;bottom:20px;right:20px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);border-radius:10px;padding:10px 18px;color:#fff;text-align:right;z-index:2;}
 .hero-photo-caption .np-label{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.6);margin-bottom:2px;}
 .hero-photo-caption .np-show{font-size:13px;font-weight:700;}
-
-/* On-air pulse over photo */
-.hero-onair{position:absolute;top:20px;left:20px;display:inline-flex;align-items:center;gap:8px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);border-radius:20px;padding:7px 16px;font-size:11px;font-weight:700;color:#fff;letter-spacing:.08em;text-transform:uppercase;z-index:2;}
-.hero-onair .dot{width:8px;height:8px;border-radius:50%;background:#ff4444;animation:pulse 1.5s ease-in-out infinite;}
 
 /* ── SECTIONS ── */
 section{padding:64px 5%;}
@@ -141,10 +136,10 @@ footer{background:#111;color:rgba(255,255,255,.6);padding:40px 5% 90px;}
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-badge"><span class="dot"></span>On Air Now</div>
+      <div class="hero-badge"><span class="dot"></span>Sunny 88.7 FM</div>
       <h1>A place of <em>Faith</em>, Hope &amp; Belonging</h1>
-      <div class="hero-presenter-name">Jennifer J. Danquah</div>
-      <div class="hero-presenter-show">Inspirational Morning Drive &middot; 6:30 – 9:00 AM</div>
+      <div class="hero-presenter-name">Meet Jennifer J. Danquah</div>
+      <div class="hero-presenter-show">Host, Inspirational Morning Drive &middot; Weekdays 6:30 – 9:00 AM</div>
       <p>Sunny 88.7FM is a contemporary Christian radio station broadcasting since 2002 from Accra, Ghana — helping our audience put their faith at the heart of daily living.</p>
       <div class="hero-actions">
         <a href="/listen-live/" class="btn-primary">▶ Listen Live</a>
@@ -152,11 +147,10 @@ footer{background:#111;color:rgba(255,255,255,.6);padding:40px 5% 90px;}
       </div>
     </div>
     <div class="hero-photo">
-      <div class="hero-onair"><span class="dot"></span>Live Now</div>
       <img src="/assets/jennifer-danquah.jpg" alt="Jennifer J. Danquah — Inspirational Morning Drive presenter">
       <div class="hero-photo-caption">
-        <div class="np-label">Now Hosting</div>
-        <div class="np-show">Inspirational Morning Drive</div>
+        <div class="np-label">Inspirational Morning Drive</div>
+        <div class="np-show">Jennifer J. Danquah</div>
       </div>
     </div>
   </div>
