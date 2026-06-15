@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watch Sunny TV Live — Sunny 88.7 FM</title>
+<meta name="description" content="Watch Sunny TV live stream — Ghana's Premier Christian Television, streaming 24/7.">
+
+<!-- Video.js -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.6.1/video-js.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.6.1/video.min.js"></script>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --gold:#C8920A;
+  --gold-dark:#a8760a;
+  --cream:#FAF7F0;
+  --ink:#1a1a1a;
+  --muted:#888;
+  --border:#e8e4dc;
+}
+body{font-family:'Segoe UI',Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;}
+a{text-decoration:none;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--border);padding:14px 5%;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.nav-logo img{height:46px;width:auto;display:block;}
+.nav-tv{display:flex;align-items:center;gap:6px;background:#1a1a1a;color:#fff!important;padding:8px 16px;border-radius:8px;font-weight:600;font-size:14px;}
+.nav-tv:hover{background:#000;}
+.nav-tv img{height:22px;width:auto;border-radius:4px;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{color:var(--ink);font-size:14px;font-weight:500;transition:color .15s;}
+.nav-links a:hover{color:var(--gold-dark);}
+.nav-cta{background:var(--gold);color:#fff!important;padding:10px 22px;border-radius:8px;font-weight:600;}
+.nav-cta:hover{background:var(--gold-dark);}
+
+/* PAGE */
+.page-wrap{max-width:1100px;margin:0 auto;padding:40px 5% 80px;}
+
+/* Header */
+.tv-header{display:flex;align-items:center;gap:16px;margin-bottom:28px;}
+.tv-logo{height:48px;width:auto;border-radius:8px;background:#1a1a1a;padding:4px;}
+.tv-title{font-size:clamp(22px,3vw,32px);font-weight:800;color:var(--ink);}
+.tv-subtitle{font-size:14px;color:var(--muted);margin-top:2px;}
+.live-badge{display:inline-flex;align-items:center;gap:6px;background:#ff4444;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.08em;margin-left:12px;vertical-align:middle;}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#fff;animation:pulse 1.5s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+/* Player */
+.player-wrap{background:#000;border-radius:16px;overflow:hidden;position:relative;margin-bottom:24px;box-shadow:0 8px 32px rgba(0,0,0,.18);}
+.video-js{width:100%!important;height:0!important;padding-bottom:56.25%!important;}
+.video-js .vjs-tech{position:absolute;top:0;left:0;width:100%;height:100%;}
+.vjs-default-skin .vjs-big-play-button{background:rgba(200,146,10,.85);border:3px solid #fff;border-radius:50%;width:72px;height:72px;line-height:72px;font-size:32px;top:50%;left:50%;transform:translate(-50%,-50%);}
+.vjs-default-skin:hover .vjs-big-play-button{background:var(--gold);}
+.vjs-default-skin .vjs-control-bar{background:linear-gradient(transparent,rgba(0,0,0,.7));padding:0 12px;}
+.vjs-default-skin .vjs-play-progress,.vjs-default-skin .vjs-volume-level{background:var(--gold);}
+
+/* Error / offline state */
+.stream-error{display:none;position:absolute;inset:0;background:#111;border-radius:16px;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:40px;}
+.stream-error.show{display:flex;}
+.stream-error h3{font-size:20px;font-weight:700;margin-bottom:8px;}
+.stream-error p{font-size:14px;color:rgba(255,255,255,.6);max-width:320px;line-height:1.6;}
+.retry-btn{margin-top:20px;background:var(--gold);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;}
+.retry-btn:hover{background:var(--gold-dark);}
+
+/* Info bar */
+.info-bar{display:flex;align-items:center;gap:16px;background:var(--cream);border-radius:12px;padding:16px 20px;margin-bottom:32px;flex-wrap:wrap;}
+.info-bar-item{display:flex;align-items:center;gap:8px;font-size:13px;color:#555;}
+.info-bar-item strong{color:var(--ink);}
+.info-icon{font-size:16px;}
+
+/* Schedule strip */
+.section-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-dark);font-weight:700;margin-bottom:14px;}
+.schedule-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:40px;}
+.sched-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px;}
+.sched-time{font-size:11px;color:var(--gold-dark);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;}
+.sched-show{font-size:14px;font-weight:700;}
+
+/* CTA */
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{background:var(--ink);color:#fff;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:600;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary:hover{background:#000;}
+.btn-outline{border:2px solid var(--border);color:var(--ink);padding:12px 24px;border-radius:8px;font-size:14px;font-weight:600;transition:all .2s;display:inline-flex;align-items:center;gap:8px;}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold-dark);}
+
+/* Footer */
+footer{background:#111;color:rgba(255,255,255,.6);padding:40px 5% 32px;}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;}
+.footer-col-title{color:#fff;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;}
+.footer-col a{display:block;color:rgba(255,255,255,.6);font-size:13px;margin-bottom:8px;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{max-width:1100px;margin:24px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;text-align:center;color:rgba(255,255,255,.4);}
+
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .tv-header{flex-wrap:wrap;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/assets/sunny-fm-logo.png" alt="Sunny 88.7 FM">
+  </a>
+  <div class="nav-links">
+    <a href="/news/">News</a>
+    <a href="/listen-live/">Listen Live</a>
+    <a href="/lifestyle/">Lifestyle</a>
+    <a href="/prayer-testimonies/">Prayer &amp; Testimonies</a>
+    <a href="/preaching-teaching/">Preaching &amp; Teaching</a>
+    <a href="/events/">Events</a>
+    <a href="/music-videos/">Music &amp; Videos</a>
+    <a href="/watch-tv/" class="nav-tv">
+      <img src="/assets/sunny-tv-logo.png" alt="Sunny TV">
+      Watch TV
+    </a>
+    <a href="/advertise/" class="nav-cta">Advertise</a>
+  </div>
+</nav>
+
+<!-- PAGE -->
+<div class="page-wrap">
+
+  <!-- Header -->
+  <div class="tv-header">
+    <img src="/assets/sunny-tv-logo.png" alt="Sunny TV" class="tv-logo">
+    <div>
+      <div class="tv-title">
+        Sunny TV
+        <span class="live-badge"><span class="live-dot"></span>Live</span>
+      </div>
+      <div class="tv-subtitle">Ghana's Premier Christian Television — streaming 24/7</div>
+    </div>
+  </div>
+
+  <!-- Player -->
+  <div class="player-wrap">
+    <video
+      id="sunny-tv-player"
+      class="video-js vjs-default-skin"
+      controls
+      autoplay
+      preload="auto"
+      poster="/assets/sunny-tv-logo.png"
+      data-setup='{}'>
+      <source src="https://stream-server9-jupiter.muxlive.com/hls/sunnytv/index.m3u8" type="application/x-mpegURL">
+      <p class="vjs-no-js">To view this video please enable JavaScript, or consider upgrading to a web browser that supports HTML5 video.</p>
+    </video>
+    <div class="stream-error" id="stream-error">
+      <h3>Stream currently unavailable</h3>
+      <p>Sunny TV may be off air or undergoing maintenance. Try again shortly.</p>
+      <button class="retry-btn" onclick="retryStream()">Try again</button>
+    </div>
+  </div>
+
+  <!-- Info bar -->
+  <div class="info-bar">
+    <div class="info-bar-item"><span class="info-icon">📡</span> <span><strong>Sunny TV</strong> — Live Stream</span></div>
+    <div class="info-bar-item"><span class="info-icon">📻</span> <span>Also listen on <strong><a href="/listen-live/" style="color:var(--gold-dark);">Sunny FM 88.7</a></strong></span></div>
+    <div class="info-bar-item"><span class="info-icon">📞</span> <span>Call us: <strong><a href="tel:0545223324" style="color:var(--gold-dark);">054 522 3324</a></strong></span></div>
+  </div>
+
+  <!-- Schedule -->
+  <div class="section-label">On Air Today — Radio Schedule</div>
+  <div class="schedule-strip">
+    <div class="sched-card">
+      <div class="sched-time">6:30 – 9:00 AM</div>
+      <div class="sched-show">Inspirational Morning Drive</div>
+    </div>
+    <div class="sched-card">
+      <div class="sched-time">10:00 AM</div>
+      <div class="sched-show">Dr. Sam Owusu</div>
+    </div>
+    <div class="sched-card">
+      <div class="sched-time">12:00 PM</div>
+      <div class="sched-show">PSF Drive</div>
+    </div>
+    <div class="sched-card">
+      <div class="sched-time">4:30 PM</div>
+      <div class="sched-show">Sunset Drive</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-row">
+    <a href="/listen-live/" class="btn-primary">📻 Listen Live on FM</a>
+    <a href="/music-videos/" class="btn-outline">🎬 Gospel Music Videos</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div class="footer-col-title">Explore</div>
+      <a href="/listen-live/">Listen Live</a>
+      <a href="/news/">News</a>
+      <a href="/lifestyle/">Lifestyle</a>
+      <a href="/preaching-teaching/">Preaching &amp; Teaching</a>
+      <a href="/events/">Events</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">More</div>
+      <a href="/music-videos/">Music &amp; Videos</a>
+      <a href="/prayer-testimonies/">Prayer &amp; Testimonies</a>
+      <a href="/watch-tv/">Watch TV</a>
+      <a href="/advertise/">Advertise</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <a href="tel:0545223324">054 522 3324</a>
+      <a href="mailto:info@sunnygh.com">info@sunnygh.com</a>
+      <div style="font-size:13px;margin-top:8px;">45 Hilla Limann Avenue<br>North Ridge, Accra</div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Sunny 88.7 FM · All Rights Reserved</div>
+</footer>
+
+<script>
+// Init Video.js player
+var player = videojs('sunny-tv-player', {
+  fluid: true,
+  liveui: true,
+  html5: {
+    vhs: {
+      overrideNative: true
+    }
+  }
+});
+
+player.on('error', function() {
+  document.getElementById('stream-error').classList.add('show');
+});
+
+player.on('playing', function() {
+  document.getElementById('stream-error').classList.remove('show');
+});
+
+function retryStream() {
+  document.getElementById('stream-error').classList.remove('show');
+  player.src({ src: 'https://stream-server9-jupiter.muxlive.com/hls/sunnytv/index.m3u8', type: 'application/x-mpegURL' });
+  player.play();
+}
+
+// Hide radio footer player on this page (we have video here)
+document.addEventListener('DOMContentLoaded', function() {
+  var bar = document.getElementById('sfp-bar');
+  if (bar) bar.style.display = 'none';
+});
+</script>
+
+</body>
+</html>
