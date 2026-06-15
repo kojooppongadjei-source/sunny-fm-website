@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events — Sunny 88.7 FM</title>
+<meta name="description" content="Upcoming crusades, conferences, and community programs from Sunny 88.7 FM. Register to attend.">
+<style>
+*{box-sizing:border-box;}
+.site-nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e8e4dc;padding:10px 5%;display:flex;align-items:center;justify-content:space-between;font-family:'Segoe UI',Arial,sans-serif;}
+.site-nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.site-nav-logo img{height:46px;width:auto;display:block;}
+.site-nav-links{display:flex;align-items:center;gap:22px;}
+.site-nav-links a{color:#1a1a1a;font-size:14px;font-weight:500;text-decoration:none;transition:color .15s;white-space:nowrap;}
+.site-nav-links a:hover{color:#a8760a;}
+.site-nav-cta{background:#C8920A;color:#fff!important;padding:10px 20px;border-radius:8px;font-weight:600;}
+.site-nav-cta:hover{background:#a8760a;}
+.site-nav-tv{display:flex;align-items:center;gap:6px;background:#1a1a1a;color:#fff!important;padding:8px 16px;border-radius:8px;font-weight:600;}
+.site-nav-tv:hover{background:#000;}
+.site-nav-tv img{height:22px;width:auto;border-radius:4px;}
+@media(max-width:1000px){.site-nav-links{display:none;}}
+</style>
+<nav class="site-nav">
+  <a href="/" class="site-nav-logo">
+    <img src="/assets/sunny-fm-logo.png" alt="Sunny 88.7 FM — Positive Soul Music">
+  </a>
+  <div class="site-nav-links">
+    <a href="/news">News</a>
+    <a href="/listen-live/">Listen Live</a>
+    <a href="/lifestyle">Lifestyle</a>
+    <a href="/preaching-teaching">Preaching &amp; Teaching</a>
+    <a href="/events/">Events</a>
+    <a href="/music-videos/">Music &amp; Videos</a>
+    <a href="https://sunnygh.com/index.php/live-tv/" class="site-nav-tv">
+      <img src="/assets/sunny-tv-logo.png" alt="Sunny TV">
+      Watch TV
+    </a>
+    <a href="/advertise/" class="site-nav-cta">Advertise</a>
+  </div>
+</nav>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;}
+#ev-wrap{max-width:1100px;margin:0 auto;padding:24px 5% 0;}
+
+/* HERO */
+.ev-hero{background:#C8920A;padding:2.5rem 1.5rem;text-align:center;border-radius:16px;margin-bottom:1.5rem;position:relative;overflow:hidden;}
+.ev-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.07);}
+.ev-hero::after{content:'';position:absolute;bottom:-50px;left:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.05);}
+.ev-hero h1{font-size:clamp(26px,4vw,38px);font-weight:800;color:#fff;margin-bottom:8px;position:relative;}
+.ev-hero p{font-size:15px;color:rgba(255,255,255,.85);max-width:480px;margin:0 auto;position:relative;}
+
+/* SECTION */
+.ev-sec{margin-bottom:2.5rem;}
+.ev-sec-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+.ev-sec-label::after{content:'';flex:1;height:1px;background:#e8e8e8;}
+
+/* FEATURED EVENT */
+.ev-featured{display:grid;grid-template-columns:1fr 1.3fr;gap:0;border-radius:16px;overflow:hidden;border:1px solid #e8e4dc;box-shadow:0 4px 24px rgba(0,0,0,.06);}
+.ev-featured-date{background:#1a1a1a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;text-align:center;}
+.ev-featured-date .day{font-size:48px;font-weight:800;color:#C8920A;line-height:1;}
+.ev-featured-date .month{font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-top:4px;}
+.ev-featured-date .year{font-size:13px;color:rgba(255,255,255,.5);margin-top:2px;}
+.ev-featured-body{padding:28px;}
+.ev-featured-tag{display:inline-block;background:#fff0e0;color:#C8920A;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+.ev-featured-title{font-size:22px;font-weight:800;margin-bottom:8px;line-height:1.25;}
+.ev-featured-meta{font-size:13px;color:#888;margin-bottom:12px;display:flex;flex-wrap:wrap;gap:14px;}
+.ev-featured-meta span{display:flex;align-items:center;gap:6px;}
+.ev-featured-desc{font-size:14px;color:#555;line-height:1.7;margin-bottom:18px;}
+.ev-btn{display:inline-flex;align-items:center;gap:8px;background:#C8920A;color:#fff;text-decoration:none;padding:11px 24px;border-radius:8px;font-size:14px;font-weight:700;border:none;cursor:pointer;transition:background .2s;}
+.ev-btn:hover{background:#a8760a;}
+
+/* EVENT GRID */
+.ev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;}
+.ev-card{border:1px solid #e8e4dc;border-radius:14px;overflow:hidden;transition:box-shadow .2s,transform .2s;background:#fff;}
+.ev-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.08);transform:translateY(-2px);}
+.ev-card-top{display:flex;gap:14px;padding:18px;}
+.ev-card-date{flex-shrink:0;width:56px;height:56px;border-radius:10px;background:#f8f3e6;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.ev-card-date .d{font-size:20px;font-weight:800;color:#C8920A;line-height:1;}
+.ev-card-date .m{font-size:10px;font-weight:700;text-transform:uppercase;color:#888;letter-spacing:.05em;}
+.ev-card-info{flex:1;}
+.ev-card-tag{font-size:10px;font-weight:700;color:#C8920A;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
+.ev-card-title{font-size:15px;font-weight:700;line-height:1.35;margin-bottom:4px;}
+.ev-card-loc{font-size:12px;color:#888;}
+.ev-card-foot{border-top:1px solid #f0ede8;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;}
+.ev-card-time{font-size:12px;color:#888;}
+.ev-card-link{font-size:13px;font-weight:700;color:#C8920A;text-decoration:none;}
+.ev-card-link:hover{text-decoration:underline;}
+
+/* PAST EVENTS */
+.ev-past-row{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid #f0ede8;}
+.ev-past-row:last-child{border-bottom:none;}
+.ev-past-date{font-size:12px;color:#aaa;font-family:monospace;min-width:90px;flex-shrink:0;}
+.ev-past-title{font-size:13px;color:#555;flex:1;}
+.ev-past-tag{font-size:10px;background:#f5f5f5;color:#999;padding:3px 10px;border-radius:20px;flex-shrink:0;}
+
+/* REGISTRATION FORM */
+.ev-form-section{background:#FAF7F0;border-radius:16px;padding:32px;}
+.ev-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.ev-form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.ev-form-group.full{grid-column:1/-1;}
+.ev-form-group label{font-size:12px;font-weight:600;color:#555;}
+.ev-form-group input,.ev-form-group select,.ev-form-group textarea{border:1px solid #e0dcd2;border-radius:8px;padding:10px 14px;font-size:14px;background:#fff;font-family:inherit;}
+.ev-form-group textarea{resize:vertical;min-height:70px;}
+.ev-form-submit{background:#C8920A;color:#fff;border:none;padding:13px 32px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s;width:100%;}
+.ev-form-submit:hover{background:#a8760a;}
+.ev-success{display:none;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:20px;text-align:center;margin-top:16px;}
+.ev-success.show{display:block;}
+.ev-wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;text-decoration:none;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;margin-top:12px;}
+
+@media(max-width:700px){
+  .ev-featured{grid-template-columns:1fr;}
+  .ev-featured-date{flex-direction:row;gap:10px;padding:16px;}
+  .ev-featured-date .day{font-size:32px;}
+  .ev-form-grid{grid-template-columns:1fr;}
+}
+</style>
+
+<div id="ev-wrap">
+
+  <!-- HERO -->
+  <div class="ev-hero">
+    <h1>📅 Events</h1>
+    <p>Crusades, conferences, and community programs from Sunny 88.7 FM — join us in person or register to attend.</p>
+  </div>
+
+  <!-- FEATURED EVENT -->
+  <div class="ev-sec">
+    <div class="ev-sec-label">Next up</div>
+    <div class="ev-featured" id="ev-featured">
+      <!-- Filled by JS from EVENTS[0] -->
+    </div>
+  </div>
+
+  <!-- UPCOMING EVENTS -->
+  <div class="ev-sec">
+    <div class="ev-sec-label">Upcoming events</div>
+    <div class="ev-grid" id="ev-grid">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+
+  <!-- REGISTRATION FORM -->
+  <div class="ev-sec">
+    <div class="ev-sec-label">Register to attend</div>
+    <div class="ev-form-section">
+      <h2 style="font-size:20px;font-weight:800;margin-bottom:6px;">Reserve your spot</h2>
+      <p style="font-size:13px;color:#888;margin-bottom:20px;">Fill in your details below and we'll confirm your registration. Entry to most events is free unless stated otherwise.</p>
+
+      <form id="ev-register-form" name="event-registration" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="event-registration">
+        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+        <div class="ev-form-grid">
+          <div class="ev-form-group">
+            <label>Full Name</label>
+            <input type="text" name="name" id="ev-name" placeholder="Your full name" required>
+          </div>
+          <div class="ev-form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" id="ev-phone" placeholder="054 ..." required>
+          </div>
+          <div class="ev-form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" id="ev-email" placeholder="you@example.com">
+          </div>
+          <div class="ev-form-group">
+            <label>Which event?</label>
+            <select name="event" id="ev-event" required>
+              <option value="">Select an event</option>
+            </select>
+          </div>
+          <div class="ev-form-group full">
+            <label>Number of attendees</label>
+            <input type="number" name="attendees" id="ev-attendees" min="1" value="1">
+          </div>
+          <div class="ev-form-group full">
+            <label>Any message or special request (optional)</label>
+            <textarea name="message" id="ev-message" placeholder="Let us know if you have any questions..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="ev-form-submit">✅ Register Now</button>
+      </form>
+
+      <div class="ev-success" id="ev-success">
+        <div style="font-size:32px;margin-bottom:8px;">🎉</div>
+        <div style="font-size:16px;font-weight:800;color:#15803d;margin-bottom:4px;">You're registered!</div>
+        <div style="font-size:13px;color:#166534;">We've saved your details. For instant confirmation, tap below to message us on WhatsApp.</div>
+        <a href="#" id="ev-wa-link" target="_blank" class="ev-wa-btn">💬 Confirm on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAST EVENTS -->
+  <div class="ev-sec">
+    <div class="ev-sec-label">Past events</div>
+    <div id="ev-past"></div>
+  </div>
+
+</div>
+
+<script>
+// ============================================================
+// EVENTS DATA — Edit this list to add/update/remove events.
+// Each event: id, tag, title, desc, date (YYYY-MM-DD), time,
+// location, image (optional), past (true/false)
+// ============================================================
+const EVENTS = [
+  {
+    id: "bold-new-normal-2026",
+    tag: "Conference",
+    title: "The Bold New Normal Conference: Empowering Africa's Diaspora in the UK",
+    desc: "A landmark gathering for the African diaspora community in the UK — featuring inspirational speakers, worship, and practical sessions on faith, family, and finance in a new normal.",
+    date: "2026-07-18",
+    time: "9:00 AM",
+    location: "London, United Kingdom",
+    past: false
+  },
+  {
+    id: "shine-forth-crusade",
+    tag: "Crusade",
+    title: "Shine Forth Gospel Crusade",
+    desc: "An open-air crusade bringing music, ministry and miracles to the heart of Accra. All are welcome — bring your family and friends.",
+    date: "2026-07-04",
+    time: "5:00 PM",
+    location: "Independence Square, Accra",
+    past: false
+  },
+  {
+    id: "family-flourish-summit",
+    tag: "Summit",
+    title: "Building Families That Flourish Summit",
+    desc: "A one-day summit on marriage, parenting and family life featuring Elder Amos Kevin-Annan and guest speakers sharing the F.L.O.U.R.I.S.H principles.",
+    date: "2026-06-27",
+    time: "10:00 AM",
+    location: "Sunny FM Conference Hall, North Ridge",
+    past: false
+  },
+  {
+    id: "morning-drive-anniversary",
+    tag: "Celebration",
+    title: "Inspirational Morning Drive 5th Anniversary",
+    desc: "Celebrating 5 years of Jennifer & Agyemang waking up Accra with faith and music — join us for a special live broadcast and listener appreciation event.",
+    date: "2026-06-30",
+    time: "6:30 AM",
+    location: "Sunny FM Studios & Online",
+    past: false
+  },
+  {
+    id: "youth-fire-night",
+    tag: "Youth Program",
+    title: "Fire Night — Youth Worship Experience",
+    desc: "An evening of worship, testimonies and ministry designed especially for young people.",
+    date: "2026-05-30",
+    time: "6:00 PM",
+    location: "Fountain Gate Chapel, Accra",
+    past: true
+  },
+  {
+    id: "easter-special-2026",
+    tag: "Special Broadcast",
+    title: "Easter Sunday Special Broadcast",
+    desc: "Live coverage of Easter celebrations from churches across Accra.",
+    date: "2026-04-05",
+    time: "7:00 AM",
+    location: "Live on Sunny FM 88.7",
+    past: true
+  }
+];
+
+const MONTHS = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+const MONTHS_FULL = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+function parseDate(d){
+  const [y,m,day] = d.split('-').map(Number);
+  return new Date(y, m-1, day);
+}
+function fmtFull(d){
+  const dt = parseDate(d);
+  return `${dt.getDate()} ${MONTHS_FULL[dt.getMonth()]} ${dt.getFullYear()}`;
+}
+
+function render(){
+  const upcoming = EVENTS.filter(e=>!e.past).sort((a,b)=>parseDate(a.date)-parseDate(b.date));
+  const past = EVENTS.filter(e=>e.past).sort((a,b)=>parseDate(b.date)-parseDate(a.date));
+
+  // Featured = first upcoming
+  const f = upcoming[0];
+  if(f){
+    const fd = parseDate(f.date);
+    document.getElementById('ev-featured').innerHTML = `
+      <div class="ev-featured-date">
+        <div class="day">${fd.getDate()}</div>
+        <div class="month">${MONTHS[fd.getMonth()]}</div>
+        <div class="year">${fd.getFullYear()}</div>
+      </div>
+      <div class="ev-featured-body">
+        <span class="ev-featured-tag">${f.tag}</span>
+        <div class="ev-featured-title">${f.title}</div>
+        <div class="ev-featured-meta">
+          <span>🕐 ${f.time}</span>
+          <span>📍 ${f.location}</span>
+        </div>
+        <div class="ev-featured-desc">${f.desc}</div>
+        <a href="#ev-register-form" class="ev-btn" onclick="document.getElementById('ev-event').value='${f.id}'">✅ Register for this event</a>
+      </div>
+    `;
+  }
+
+  // Grid = remaining upcoming
+  const grid = document.getElementById('ev-grid');
+  grid.innerHTML = upcoming.slice(1).map(e=>{
+    const ed = parseDate(e.date);
+    return `
+      <div class="ev-card">
+        <div class="ev-card-top">
+          <div class="ev-card-date">
+            <div class="d">${ed.getDate()}</div>
+            <div class="m">${MONTHS[ed.getMonth()]}</div>
+          </div>
+          <div class="ev-card-info">
+            <div class="ev-card-tag">${e.tag}</div>
+            <div class="ev-card-title">${e.title}</div>
+            <div class="ev-card-loc">📍 ${e.location}</div>
+          </div>
+        </div>
+        <div class="ev-card-foot">
+          <div class="ev-card-time">🕐 ${e.time}</div>
+          <a href="#ev-register-form" class="ev-card-link" onclick="document.getElementById('ev-event').value='${e.id}'">Register →</a>
+        </div>
+      </div>
+    `;
+  }).join('') || '<p style="color:#aaa;font-size:13px;">No more upcoming events right now — check back soon!</p>';
+
+  // Populate event dropdown
+  const select = document.getElementById('ev-event');
+  upcoming.forEach(e=>{
+    const opt = document.createElement('option');
+    opt.value = e.id;
+    opt.textContent = `${e.title} — ${fmtFull(e.date)}`;
+    select.appendChild(opt);
+  });
+
+  // Past events list
+  document.getElementById('ev-past').innerHTML = past.map(e=>`
+    <div class="ev-past-row">
+      <div class="ev-past-date">${fmtFull(e.date)}</div>
+      <div class="ev-past-title">${e.title}</div>
+      <span class="ev-past-tag">${e.tag}</span>
+    </div>
+  `).join('') || '<p style="color:#aaa;font-size:13px;">No past events yet.</p>';
+}
+
+render();
+
+// Form submission — Netlify Forms handles storage, then show WhatsApp confirm
+document.getElementById('ev-register-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+
+  const name = document.getElementById('ev-name').value.trim();
+  const phone = document.getElementById('ev-phone').value.trim();
+  const eventId = document.getElementById('ev-event').value;
+  const eventObj = EVENTS.find(ev=>ev.id===eventId);
+  const eventName = eventObj ? eventObj.title : 'an event';
+  const attendees = document.getElementById('ev-attendees').value || 1;
+
+  // Submit to Netlify Forms
+  fetch('/', {
+    method: 'POST',
+    headers: {'Content-Type':'application/x-www-form-urlencoded'},
+    body: new URLSearchParams(data).toString()
+  }).catch(()=>{}); // proceed regardless
+
+  // Build WhatsApp confirmation message
+  const msg = `Hi, I've registered for "${eventName}".\n\nName: ${name}\nPhone: ${phone}\nAttendees: ${attendees}\n\nPlease confirm my spot. Thank you!`;
+  const waUrl = 'https://wa.me/233545223324?text=' + encodeURIComponent(msg);
+  document.getElementById('ev-wa-link').href = waUrl;
+
+  document.getElementById('ev-register-form').style.display = 'none';
+  document.getElementById('ev-success').classList.add('show');
+});
+</script>
+<style>
+.site-footer{background:#111;color:rgba(255,255,255,.6);padding:40px 5% 90px;font-family:'Segoe UI',Arial,sans-serif;}
+.site-footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;}
+.site-footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.site-footer-brand img{height:40px;width:auto;border-radius:6px;background:#fff;padding:2px;}
+.site-footer-col-title{color:#fff;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;}
+.site-footer-col a{display:block;color:rgba(255,255,255,.6);font-size:13px;margin-bottom:8px;text-decoration:none;}
+.site-footer-col a:hover{color:#C8920A;}
+.site-footer-bottom{max-width:1100px;margin:32px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;text-align:center;color:rgba(255,255,255,.4);}
+</style>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div>
+      <div class="site-footer-brand">
+        <img src="/assets/sunny-tv-logo.png" alt="Sunny TV">
+      </div>
+      <div style="font-size:13px;line-height:1.7;">Positive Soul Music<br>Ghana's Premier Christian Station<br>Accra &amp; Worldwide</div>
+    </div>
+    <div class="site-footer-col">
+      <div class="site-footer-col-title">Explore</div>
+      <a href="/listen-live/">Listen Live</a>
+      <a href="/news">News</a>
+      <a href="/lifestyle">Lifestyle</a>
+      <a href="/preaching-teaching">Preaching &amp; Teaching</a>
+      <a href="/events/">Events</a>
+    </div>
+    <div class="site-footer-col">
+      <div class="site-footer-col-title">More</div>
+      <a href="/music-videos/">Music &amp; Videos</a>
+      <a href="/prayer-testimonies">Prayer &amp; Testimonies</a>
+      <a href="/advertise/">Advertise</a>
+      <a href="https://sunnygh.com/index.php/live-tv/">Watch TV</a>
+    </div>
+    <div class="site-footer-col">
+      <div class="site-footer-col-title">Contact</div>
+      <a href="tel:0545223324">054 522 3324</a>
+      <a href="mailto:info@sunnygh.com">info@sunnygh.com</a>
+      <div style="font-size:13px;margin-top:8px;">45 Hilla Limann Avenue<br>North Ridge, Accra</div>
+    </div>
+  </div>
+  <div class="site-footer-bottom">© 2026 Sunny 88.7 FM · All Rights Reserved</div>
+</footer>
+<style>
+#sfp-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:99999;
+  background:#1a1100;
+  border-top:3px solid #C8920A;
+  padding:.6rem 1.2rem;
+  display:flex;align-items:center;gap:12px;
+  box-shadow:0 -4px 20px rgba(0,0,0,.3);
+  font-family:'Segoe UI',Arial,sans-serif;
+}
+.sfp-logo{
+  font-size:11px;font-weight:700;color:#C8920A;
+  letter-spacing:.05em;text-transform:uppercase;
+  flex-shrink:0;line-height:1.2;
+  display:flex;flex-direction:column;
+}
+.sfp-logo span{font-size:9px;color:#888;font-weight:400;letter-spacing:.08em;}
+.sfp-playbtn{
+  width:40px;height:40px;border-radius:50%;
+  background:#C8920A;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:background .2s;
+}
+.sfp-playbtn:hover{background:#a8760a;}
+.sfp-playbtn svg{width:18px;height:18px;fill:#fff;margin-left:2px;}
+.sfp-info{flex:1;min-width:0;}
+.sfp-now{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:1px;}
+.sfp-title{font-size:13px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sfp-sub{font-size:11px;color:#C8920A;}
+.sfp-eq{display:flex;align-items:flex-end;gap:2px;height:18px;flex-shrink:0;}
+.sfp-eq span{width:3px;background:#C8920A;border-radius:1px;opacity:0;}
+.sfp-eq.active span{opacity:1;animation:sfp-eq 1.2s ease-in-out infinite;}
+@keyframes sfp-eq{0%,100%{height:20%;}50%{height:100%;}}
+.sfp-eq span:nth-child(1){animation-delay:0s}
+.sfp-eq span:nth-child(2){animation-delay:.15s}
+.sfp-eq span:nth-child(3){animation-delay:.3s}
+.sfp-eq span:nth-child(4){animation-delay:.1s}
+.sfp-eq span:nth-child(5){animation-delay:.25s}
+.sfp-vol{display:flex;align-items:center;gap:6px;flex-shrink:0;}
+.sfp-vol svg{width:14px;height:14px;fill:#888;}
+.sfp-vol input[type=range]{width:70px;accent-color:#C8920A;cursor:pointer;}
+.sfp-live{display:flex;align-items:center;gap:5px;flex-shrink:0;}
+.sfp-live-dot{width:7px;height:7px;border-radius:50%;background:#ff4444;animation:sfp-pulse 1.5s ease-in-out infinite;}
+@keyframes sfp-pulse{0%,100%{opacity:1;}50%{opacity:.2;}}
+.sfp-live span{font-size:10px;font-weight:700;color:#ff4444;text-transform:uppercase;letter-spacing:.06em;}
+
+/* push page content up so footer player doesn't cover it */
+body{padding-bottom:70px!important;}
+
+@media(max-width:480px){
+  .sfp-logo{display:none;}
+  .sfp-vol{display:none;}
+  #sfp-bar{padding:.5rem .8rem;gap:8px;}
+  .sfp-title{font-size:12px;}
+}
+</style>
+
+<div id="sfp-bar">
+  
+  <div class="sfp-logo">Sunny FM<span>88.7 Ghana</span></div>
+
+  
+  <div class="sfp-live"><div class="sfp-live-dot"></div><span>Live</span></div>
+
+  
+  <button class="sfp-playbtn" id="sfp-playbtn" onclick="sfpToggle()" aria-label="Play live stream">
+    <svg id="sfp-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+  </button>
+
+  
+  <div class="sfp-info">
+    <div class="sfp-now">Now playing</div>
+    <div class="sfp-title" id="sfp-title">Sunny FM 88.7</div>
+    <div class="sfp-sub" id="sfp-sub">Ghana's Premier Christian Station</div>
+  </div>
+
+  
+  <div class="sfp-eq" id="sfp-eq">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  
+  <div class="sfp-vol">
+    <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+    <input type="range" min="0" max="100" value="80" id="sfp-vol" aria-label="Volume" oninput="sfpVol(this.value)">
+  </div>
+</div>
+
+<script>
+(function(){
+var STREAM='https://sunny-radio-server.cloud-ip.cc/radio/sunnyradio';
+var audio=null,playing=false;
+
+// DAYS[0]=Sunday, DAYS[1]=Monday ... DAYS[6]=Saturday (matches JS getDay())
+var DAYS=[
+  // SUNDAY [0]
+  {slots:[
+    {t:'06:00',p:"The Lord's Garden",s:'Sunny FM 88.7'},
+    {t:'07:30',p:'Sunday Gospel Café',s:'Sunny FM 88.7'},
+    {t:'10:00',p:'Praise Live',s:'Sunny FM 88.7'},
+    {t:'15:30',p:'Salt & Light',s:'Sunny FM 88.7'},
+    {t:'00:00',p:'Alpha Hour',s:'Sunny FM 88.7 · Overnight'},
+    {t:'02:30',p:'Praise Life',s:'Sunny FM 88.7'}
+  ]},
+  // MONDAY [1]
+  {slots:[
+    {t:'04:00',p:'Morning Devotion',s:'Sunny FM 88.7'},
+    {t:'05:30',p:'Apostle Ayiku',s:'Love Community Chapel'},
+    {t:'06:00',p:'Bishop James Saah',s:'Sunny FM 88.7'},
+    {t:'06:15',p:'Daily Solution',s:'Osborn Nanjo'},
+    {t:'06:30',p:'Inspirational Morning Drive',s:'Jennifer & Agyemang · Sunny FM 88.7'},
+    {t:'10:00',p:'Dr. Sam Owusu',s:'Calvary Worship Centre'},
+    {t:'10:30',p:'Bishop David Oyedepo',s:'Winners International'},
+    {t:'11:00',p:'Pastor Andy Yawson',s:'KICC Ghana'},
+    {t:'11:30',p:'Rev. Eastwood Anaba',s:'Fountain Gate'},
+    {t:'12:00',p:'PSF Drive',s:'Positive Soul Food · Sunny FM 88.7'},
+    {t:'14:05',p:'Bishop Osei Tutu',s:'Breakthrough Broadcast'},
+    {t:'14:15',p:'Kakra Baiden',s:'Air Power'},
+    {t:'14:30',p:'Bishop N.A. Tackie Yarboi',s:'Voice of Victory'},
+    {t:'15:00',p:'Bishop George Adjeman',s:'Life Matters'},
+    {t:'15:30',p:'Prophet Naasei Opoku Sarkodie',s:'Potters Hour'},
+    {t:'16:00',p:'Pastor E.A. Adeboye',s:'RCCG'},
+    {t:'16:30',p:'Sunset Drive',s:'Baaba & Vickie · Sunny FM 88.7'},
+    {t:'20:00',p:'Oasis of Salvation',s:'Sunny FM 88.7'},
+    {t:'22:30',p:'Dana Carson Min',s:'Sunny FM 88.7'},
+    {t:'00:00',p:'Alpha Hour',s:'Sunny FM 88.7 · Overnight'},
+    {t:'01:30',p:'Music',s:'Sunny FM 88.7'}
+  ]},
+  // TUESDAY [2]
+  {slots:[
+    {t:'03:00',p:'Daily Devotion',s:'Sunny FM 88.7'},
+    {t:'06:00',p:'Bishop James Saah',s:'Sunny FM 88.7'},
+    {t:'06:15',p:'Daily Solution',s:'Osborn Nanjo'},
+    {t:'06:30',p:'Inspirational Morning Drive',s:'Jennifer & Agyemang · Sunny FM 88.7'},
+    {t:'10:00',p:'Dr. Sam Owusu',s:'Calvary Worship Centre'},
+    {t:'10:30',p:'Bishop David Oyedepo',s:'Winners International'},
+    {t:'11:00',p:'Pastor Andy Yawson',s:'KICC Ghana'},
+    {t:'11:30',p:'Rev. Eastwood Anaba',s:'Fountain Gate'},
+    {t:'12:00',p:'PSF Drive',s:'Positive Soul Food · Sunny FM 88.7'},
+    {t:'14:05',p:'Bishop Osei Tutu',s:'Breakthrough Broadcast'},
+    {t:'14:15',p:'Kakra Baiden',s:'Air Power'},
+    {t:'14:30',p:'Bishop N.A. Tackie Yarboi',s:'Voice of Victory'},
+    {t:'15:00',p:'Bishop George Adjeman',s:'Life Matters'},
+    {t:'15:30',p:'Prophet Naasei Opoku Sarkodie',s:'Potters Hour'},
+    {t:'16:00',p:'Pastor E.A. Adeboye',s:'RCCG'},
+    {t:'16:30',p:'Sunset Drive',s:'Baaba & Vickie · Sunny FM 88.7'},
+    {t:'19:00',p:'Overdrive',s:'Sunny FM 88.7'},
+    {t:'20:00',p:'Effortless Change',s:'Sunny FM 88.7'},
+    {t:'23:30',p:'Dana Carson Min',s:'Sunny FM 88.7'},
+    {t:'01:00',p:'Alpha Hour',s:'Sunny FM 88.7 · Overnight'},
+    {t:'02:30',p:'Praise Life',s:'Sunny FM 88.7'}
+  ]},
+  {slots:[
+    {t:'06:00',p:'Bishop James Saah',s:'Sunny FM 88.7'},
+    {t:'06:15',p:'Daily Solution',s:'Osborn Nanjo'},
+    {t:'06:30',p:'Inspirational Morning Drive',s:'Jennifer & Agyemang · Sunny FM 88.7'},
+    {t:'10:00',p:'Dr. Sam Owusu',s:'Calvary Worship Centre'},
+    {t:'10:30',p:'Bishop David Oyedepo',s:'Winners International'},
+    {t:'11:00',p:'Pastor Andy Yawson',s:'KICC Ghana'},
+    {t:'11:30',p:'Rev. Eastwood Anaba',s:'Fountain Gate'},
+    {t:'12:00',p:'PSF Drive',s:'Positive Soul Food · Sunny FM 88.7'},
+    {t:'14:05',p:'Bishop Osei Tutu',s:'Breakthrough Broadcast'},
+    {t:'14:15',p:'Kakra Baiden',s:'Air Power'},
+    {t:'14:30',p:'Bishop N.A. Tackie Yarboi',s:'Voice of Victory'},
+    {t:'15:00',p:'Bishop George Adjeman',s:'Life Matters'},
+    {t:'15:30',p:'Prophet Naasei Opoku Sarkodie',s:'Potters Hour'},
+    {t:'16:00',p:'Pastor E.A. Adeboye',s:'RCCG'},
+    {t:'16:30',p:'Sunset Drive',s:'Baaba & Vickie · Sunny FM 88.7'},
+    {t:'19:00',p:'Overdrive',s:'Sunny FM 88.7'},
+    {t:'20:15',p:'Looking Up to Jesus',s:'Sunny FM 88.7'},
+    {t:'21:00',p:'Meditation of the Psalms',s:'Sunny FM 88.7'},
+    {t:'00:30',p:'Alpha Hour',s:'Sunny FM 88.7 · Overnight'}
+  ]},
+  {slots:[
+    {t:'05:30',p:'Anchor of Love',s:'Sunny FM 88.7'},
+    {t:'06:00',p:'Bishop James Saah',s:'Sunny FM 88.7'},
+    {t:'06:15',p:'Daily Solution',s:'Osborn Nanjo'},
+    {t:'06:30',p:'Inspirational Morning Drive',s:'Jennifer & Agyemang · Sunny FM 88.7'},
+    {t:'10:00',p:'Dr. Sam Owusu',s:'Calvary Worship Centre'},
+    {t:'10:30',p:'Bishop David Oyedepo',s:'Winners International'},
+    {t:'11:00',p:'Pastor Andy Yawson',s:'KICC Ghana'},
+    {t:'11:30',p:'Rev. Eastwood Anaba',s:'Fountain Gate'},
+    {t:'12:00',p:'PSF Drive',s:'Positive Soul Food · Sunny FM 88.7'},
+    {t:'14:05',p:'Bishop Osei Tutu',s:'Breakthrough Broadcast'},
+    {t:'14:15',p:'Kakra Baiden',s:'Air Power'},
+    {t:'14:30',p:'Faith School',s:'Sunny FM 88.7'},
+    {t:'15:00',p:'Bishop George Adjeman',s:'Life Matters'},
+    {t:'15:30',p:'Prophet Naasei Opoku Sarkodie',s:'Potters Hour'},
+    {t:'16:00',p:'Bishop James Nanjo',s:'Kings Connect'},
+    {t:'16:30',p:'Sunset Drive',s:'Baaba & Vickie · Sunny FM 88.7'},
+    {t:'20:30',p:'Bible Today',s:'Sunny FM 88.7'},
+    {t:'21:00',p:'Mount Horeb',s:'Sunny FM 88.7'},
+    {t:'00:30',p:'Alpha Hour',s:'Sunny FM 88.7 · Overnight'},
+    {t:'02:30',p:'Praise Life',s:'Sunny FM 88.7'}
+  ]},
+  {slots:[
+    {t:'06:30',p:'Inspirational Morning Drive',s:'Jennifer & Agyemang · Sunny FM 88.7'},
+    {t:'10:00',p:'Dr. Sam Owusu',s:'Calvary Worship Centre'},
+    {t:'10:30',p:'Bishop David Oyedepo',s:'Winners International'},
+    {t:'11:00',p:'Pastor Andy Yawson',s:'KICC Ghana'},
+    {t:'11:30',p:'Rev. Eastwood Anaba',s:'Fountain Gate'},
+    {t:'12:00',p:'PSF Drive',s:'Positive Soul Food · Sunny FM 88.7'},
+    {t:'14:05',p:'Bishop Osei Tutu',s:'Breakthrough Broadcast'},
+    {t:'14:15',p:'Kakra Baiden',s:'Air Power'},
+    {t:'15:00',p:'Bishop George Adjeman',s:'Life Matters'},
+    {t:'15:30',p:'Prophet Naasei Opoku Sarkodie',s:'Potters Hour'},
+    {t:'16:00',p:'Bishop James Nanjo',s:'Kings Connect'},
+    {t:'16:30',p:'Sunset Drive',s:'Baaba & Vickie · Sunny FM 88.7'},
+    {t:'19:30',p:'Family Renaissance Broadcast',s:'Sunny FM 88.7'},
+    {t:'21:00',p:'Shine Forth Prayer Time',s:'Sunny FM 88.7'},
+    {t:'00:30',p:'Alpha Hour',s:'Sunny FM 88.7 · Overnight'},
+    {t:'02:30',p:'Praise Life',s:'Sunny FM 88.7'}
+  ]},
+  {slots:[
+    {t:'03:00',p:'Prevailing Hour',s:'Sunny FM 88.7'},
+    {t:'04:00',p:'Aglow',s:'Sunny FM 88.7'},
+    {t:'05:00',p:'Music',s:'Sunny FM 88.7'},
+    {t:'07:00',p:'Focus on Family',s:'Sunny FM 88.7'},
+    {t:'12:00',p:'Sunny TCA Gospel Countdown',s:'Sunny FM 88.7'},
+    {t:'13:00',p:'TWB',s:'Vickie · Sunny FM 88.7'},
+    {t:'16:30',p:'Sunset Drive',s:'Baaba & Vickie · Sunny FM 88.7'},
+    {t:'23:00',p:'Music',s:'Sunny FM 88.7'}
+  ]},
+  {slots:[
+    {t:'06:00',p:"The Lord's Garden",s:'Sunny FM 88.7'},
+    {t:'07:30',p:'Sunday Gospel Café',s:'Sunny FM 88.7'},
+    {t:'10:00',p:'Praise Live',s:'Sunny FM 88.7'},
+    {t:'15:30',p:'Salt & Light',s:'Sunny FM 88.7'},
+    {t:'00:00',p:'Alpha Hour',s:'Sunny FM 88.7 · Overnight'},
+    {t:'02:30',p:'Praise Life',s:'Sunny FM 88.7'}
+  ]}
+];
+
+function toMins(t){var p=t.split(':');return parseInt(p[0])*60+parseInt(p[1]);}
+
+function updateNowPlaying(){
+  var now=new Date();
+  var dayIdx=now.getDay(); // 0=Sun,1=Mon,2=Tue,3=Wed,4=Thu,5=Fri,6=Sat
+  var d=DAYS[dayIdx];
+  if(!d)return;
+  var nowMins=now.getHours()*60+now.getMinutes();
+  var slots=d.slots.slice().sort(function(a,b){return toMins(a.t)-toMins(b.t);});
+  var current=null;
+  for(var i=0;i<slots.length;i++){
+    var sm=toMins(slots[i].t);
+    var em=i+1<slots.length?toMins(slots[i+1].t):toMins(slots[i].t)+60;
+    if(nowMins>=sm&&nowMins<em){current=slots[i];break;}
+  }
+  if(!current)current=slots[slots.length-1];
+  if(current){
+    document.getElementById('sfp-title').textContent=current.p;
+    document.getElementById('sfp-sub').textContent=current.s;
+  }
+}
+
+window.sfpToggle=function(){
+  if(!audio){
+    audio=new Audio(STREAM);
+    audio.volume=document.getElementById('sfp-vol').value/100;
+    audio.onerror=function(){
+      document.getElementById('sfp-title').textContent='Stream unavailable';
+      playing=false;
+      document.getElementById('sfp-play-icon').innerHTML='<path d="M8 5v14l11-7z"/>';
+      document.getElementById('sfp-eq').classList.remove('active');
+    };
+  }
+  if(playing){
+    audio.pause();playing=false;
+    sessionStorage.removeItem('sfp-active');
+    document.getElementById('sfp-play-icon').innerHTML='<path d="M8 5v14l11-7z"/>';
+    document.getElementById('sfp-eq').classList.remove('active');
+  } else {
+    audio.play().then(function(){
+      playing=true;
+      sessionStorage.setItem('sfp-active','1');
+      document.getElementById('sfp-play-icon').innerHTML='<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+      document.getElementById('sfp-eq').classList.add('active');
+    }).catch(function(){
+      document.getElementById('sfp-title').textContent='Tap play to listen';
+    });
+  }
+};
+window.sfpVol=function(v){if(audio)audio.volume=v/100;};
+
+// Pause the radio if it's playing (used when other media on the page starts)
+window.sfpPause=function(){
+  if(audio&&playing){
+    audio.pause();playing=false;
+    sessionStorage.removeItem('sfp-active');
+    document.getElementById('sfp-play-icon').innerHTML='<path d="M8 5v14l11-7z"/>';
+    document.getElementById('sfp-eq').classList.remove('active');
+  }
+};
+
+// Listen for any other audio/video on the page starting to play, and pause the radio
+function watchPageMedia(){
+  document.querySelectorAll('video, audio').forEach(function(el){
+    if(el===audio)return; // skip our own player
+    if(el._sfpWatched)return; // already attached
+    el._sfpWatched=true;
+    el.addEventListener('play',window.sfpPause);
+  });
+  // Also watch for YouTube/Vimeo iframes starting (best-effort via postMessage)
+  document.querySelectorAll('iframe').forEach(function(el){
+    if(el._sfpWatched)return;
+    el._sfpWatched=true;
+    el.addEventListener('load',function(){
+      try{
+        // YouTube iframe API postMessage listener
+        window.addEventListener('message',function(e){
+          try{
+            var data=JSON.parse(e.data);
+            if(data.event==='video-progress'||data.event==='infoDelivery'){
+              if(data.info&&data.info.playerState===1){window.sfpPause();}
+            }
+            if(data.event==='onStateChange'&&data.info===1){window.sfpPause();}
+          }catch(err){}
+        });
+      }catch(err){}
+    });
+  });
+}
+watchPageMedia();
+// Re-check periodically in case new media loads after page load (e.g. lazy-loaded sermons)
+setInterval(watchPageMedia,2000);
+
+updateNowPlaying();
+setInterval(updateNowPlaying,60000);
+
+// Hide on Live TV page
+var bar=document.getElementById('sfp-bar');
+var isLiveTv=window.location.pathname.indexOf('live-tv')!==-1;
+if(isLiveTv){bar.style.display='none';}
+else if(sessionStorage.getItem('sfp-active')==='1'){
+  bar.style.display='flex';
+  // Auto-resume playing
+  audio=new Audio(STREAM);
+  audio.volume=document.getElementById('sfp-vol').value/100;
+  audio.play().then(function(){
+    playing=true;
+    document.getElementById('sfp-play-icon').innerHTML='<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+    document.getElementById('sfp-eq').classList.add('active');
+  }).catch(function(){});
+} else {
+  bar.style.display='none';
+}
+})();
+</script>
+
+
+</body>
+</html>

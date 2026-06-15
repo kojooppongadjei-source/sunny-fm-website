@@ -1,0 +1,32 @@
+# Netlify configuration for Sunny FM static pages
+# This file enables clean URLs and prevents 404s on direct page loads
+
+[build]
+  publish = "."
+
+# Ensure trailing-slash folders resolve to their index.html
+[[redirects]]
+  from = "/listen-live"
+  to = "/listen-live/"
+  status = 301
+
+[[redirects]]
+  from = "/advertise"
+  to = "/advertise/"
+  status = 301
+
+[[redirects]]
+  from = "/music-videos"
+  to = "/music-videos/"
+  status = 301
+
+[[redirects]]
+  from = "/events"
+  to = "/events/"
+  status = 301
+
+# Custom 404 fallback
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

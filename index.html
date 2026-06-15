@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunny 88.7 FM — Ghana's Premier Christian Radio Station</title>
+<meta name="description" content="Sunny 88.7 FM — Lighting up your faith with uplifting music, inspiring sermons, and a community that feels like family. Accra & Worldwide.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --gold:#C8920A;
+  --gold-dark:#a8760a;
+  --cream:#FAF7F0;
+  --ink:#1a1a1a;
+  --muted:#888;
+  --border:#e8e4dc;
+}
+body{font-family:'Segoe UI',Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;}
+a{text-decoration:none;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--border);padding:14px 5%;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.nav-logo img{height:46px;width:auto;display:block;}
+.nav-tv{display:flex;align-items:center;gap:6px;background:#1a1a1a;color:#fff!important;padding:8px 16px;border-radius:8px;font-weight:600;}
+.nav-tv:hover{background:#000;}
+.nav-tv img{height:22px;width:auto;border-radius:4px;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{color:var(--ink);font-size:14px;font-weight:500;transition:color .15s;}
+.nav-links a:hover{color:var(--gold-dark);}
+.nav-cta{background:var(--gold);color:#fff!important;padding:10px 22px;border-radius:8px;font-weight:600;}
+.nav-cta:hover{background:var(--gold-dark);}
+.nav-toggle{display:none;background:none;border:none;font-size:24px;cursor:pointer;}
+
+/* ── HERO ── */
+.hero{background:var(--gold);padding:60px 5% 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.07);}
+.hero::after{content:'';position:absolute;bottom:-100px;left:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.05);}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;position:relative;z-index:1;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;color:#fff;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px;}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:#ff4444;animation:pulse 1.5s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.25;}}
+.hero h1{font-size:clamp(32px,5vw,52px);font-weight:800;color:#fff;line-height:1.1;margin-bottom:16px;}
+.hero h1 em{font-style:italic;color:#1a1a1a;}
+.hero p{font-size:16px;color:rgba(255,255,255,.85);max-width:440px;margin-bottom:32px;line-height:1.7;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{background:#1a1a1a;color:#fff;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;transition:all .2s;}
+.btn-primary:hover{background:#000;}
+.btn-secondary{background:#fff;color:var(--gold-dark);padding:14px 28px;border-radius:8px;font-size:15px;font-weight:600;transition:all .2s;}
+.btn-secondary:hover{background:var(--cream);}
+
+/* Hero player card */
+.hero-player{background:#fff;border-radius:16px;padding:24px;box-shadow:0 12px 40px rgba(0,0,0,.15);}
+.hero-player-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px;font-weight:600;}
+.hero-player-title{font-size:18px;font-weight:700;margin-bottom:4px;}
+.hero-player-sub{font-size:13px;color:var(--muted);margin-bottom:20px;}
+.hero-player-btn{display:flex;align-items:center;gap:14px;}
+.hp-play{width:54px;height:54px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:20px;border:none;cursor:pointer;}
+.hp-eq{display:flex;align-items:flex-end;gap:3px;height:24px;flex:1;}
+.hp-eq span{flex:1;background:var(--gold);border-radius:2px;opacity:.3;animation:eq 1.2s ease-in-out infinite;}
+.hp-eq span:nth-child(1){animation-delay:0s}.hp-eq span:nth-child(2){animation-delay:.15s}.hp-eq span:nth-child(3){animation-delay:.3s}.hp-eq span:nth-child(4){animation-delay:.1s}.hp-eq span:nth-child(5){animation-delay:.25s}.hp-eq span:nth-child(6){animation-delay:.05s}.hp-eq span:nth-child(7){animation-delay:.2s}.hp-eq span:nth-child(8){animation-delay:.35s}
+@keyframes eq{0%,100%{height:20%;opacity:.3;}50%{height:90%;opacity:.8;}}
+
+/* ── SECTIONS ── */
+section{padding:64px 5%;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-dark);font-weight:700;margin-bottom:10px;}
+.section-title{font-size:clamp(24px,3.5vw,38px);font-weight:800;margin-bottom:14px;line-height:1.15;}
+.section-sub{font-size:15px;color:var(--muted);max-width:480px;line-height:1.7;}
+
+/* Quick links grid */
+.quicklinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:40px;}
+.qlink{border:1px solid var(--border);border-radius:14px;padding:24px;transition:all .2s;display:block;}
+.qlink:hover{border-color:var(--gold);box-shadow:0 6px 24px rgba(200,146,10,.1);transform:translateY(-2px);}
+.qlink-icon{width:48px;height:48px;border-radius:12px;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
+.qlink-title{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.qlink-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* Schedule preview */
+.schedule-section{background:var(--cream);}
+.schedule-preview{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:32px;}
+.sched-card{background:#fff;border-radius:12px;padding:18px;border:1px solid var(--border);}
+.sched-time{font-size:11px;color:var(--gold-dark);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;}
+.sched-show{font-size:15px;font-weight:700;margin-bottom:3px;}
+.sched-host{font-size:12px;color:var(--muted);}
+
+/* Stats */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-top:32px;}
+.stat-card{text-align:center;padding:24px;border-radius:14px;background:var(--cream);}
+.stat-num{font-size:32px;font-weight:800;color:var(--gold-dark);}
+.stat-label{font-size:12px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.06em;}
+
+/* CTA band */
+.cta-band{background:var(--ink);color:#fff;text-align:center;}
+.cta-band h2{font-size:clamp(24px,3.5vw,38px);font-weight:800;margin-bottom:12px;}
+.cta-band p{color:rgba(255,255,255,.6);max-width:460px;margin:0 auto 28px;}
+
+/* Footer */
+footer{background:#111;color:rgba(255,255,255,.6);padding:40px 5% 90px;}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;}
+.footer-brand{color:#fff;font-weight:800;font-size:16px;margin-bottom:10px;}
+.footer-col-title{color:#fff;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;}
+.footer-col a{display:block;color:rgba(255,255,255,.6);font-size:13px;margin-bottom:8px;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{max-width:1100px;margin:32px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;text-align:center;color:rgba(255,255,255,.4);}
+
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hero-inner{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/assets/sunny-fm-logo.png" alt="Sunny 88.7 FM — Positive Soul Music">
+  </a>
+  <div class="nav-links">
+    <a href="/news">News</a>
+    <a href="/listen-live/">Listen Live</a>
+    <a href="/lifestyle">Lifestyle</a>
+    <a href="/preaching-teaching">Preaching & Teaching</a>
+    <a href="/events/">Events</a>
+    <a href="/music-videos/">Music & Videos</a>
+    <a href="https://sunnygh.com/index.php/live-tv/" class="nav-tv">
+      <img src="/assets/sunny-tv-logo.png" alt="Sunny TV">
+      Watch TV
+    </a>
+    <a href="/advertise/" class="nav-cta">Advertise</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span class="dot"></span>On Air Now</div>
+      <h1>A place of <em>Faith</em>, Hope &amp; Belonging</h1>
+      <p>Sunny 88.7FM is a contemporary Christian radio station broadcasting since 2002 from Accra, Ghana — helping our audience put their faith at the heart of daily living.</p>
+      <div class="hero-actions">
+        <a href="/listen-live/" class="btn-primary">▶ Listen Live</a>
+        <a href="/music-videos/" class="btn-secondary">🎬 Watch Videos</a>
+      </div>
+    </div>
+    <div class="hero-player">
+      <div class="hero-player-label">Now Playing</div>
+      <div class="hero-player-title" id="np-title">Sunny FM 88.7</div>
+      <div class="hero-player-sub" id="np-sub">Ghana's Premier Christian Station</div>
+      <div class="hero-player-btn">
+        <button class="hp-play" onclick="location.href='/listen-live/'">▶</button>
+        <div class="hp-eq">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUICK LINKS -->
+<section id="explore">
+  <div class="section-inner">
+    <div class="section-label">Explore Sunny FM</div>
+    <h2 class="section-title">Everything you need,<br>in one place.</h2>
+    <p class="section-sub">From live radio to sermons, news, and gospel videos — stay connected to Sunny 88.7FM wherever you are.</p>
+    <div class="quicklinks">
+      <a href="/listen-live/" class="qlink">
+        <div class="qlink-icon">📻</div>
+        <div class="qlink-title">Listen Live</div>
+        <div class="qlink-desc">Stream Sunny FM 88.7 live, 24/7, with our full programme schedule.</div>
+      </a>
+      <a href="/preaching-teaching" class="qlink">
+        <div class="qlink-icon">📖</div>
+        <div class="qlink-title">Preaching &amp; Teaching</div>
+        <div class="qlink-desc">Catch up on sermons and teachings from our roster of pastors and ministers.</div>
+      </a>
+      <a href="/music-videos/" class="qlink">
+        <div class="qlink-icon">🎬</div>
+        <div class="qlink-title">Music &amp; Videos</div>
+        <div class="qlink-desc">Watch the latest gospel music videos and live performances.</div>
+      </a>
+      <a href="/prayer-testimonies" class="qlink">
+        <div class="qlink-icon">🙏</div>
+        <div class="qlink-title">Prayer &amp; Testimonies</div>
+        <div class="qlink-desc">Bring your needs to God with us, and be encouraged by what He has done.</div>
+      </a>
+      <a href="/events/" class="qlink">
+        <div class="qlink-icon">📅</div>
+        <div class="qlink-title">Events</div>
+        <div class="qlink-desc">Stay up to date with crusades, conferences, and community programs.</div>
+      </a>
+      <a href="/advertise/" class="qlink">
+        <div class="qlink-icon">📢</div>
+        <div class="qlink-title">Advertise With Us</div>
+        <div class="qlink-desc">Reach 50,000+ weekly listeners — book your radio campaign online.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE PREVIEW -->
+<section class="schedule-section">
+  <div class="section-inner">
+    <div class="section-label">On Air Today</div>
+    <h2 class="section-title">A full day of music,<br>ministry &amp; conversation.</h2>
+    <div class="schedule-preview">
+      <div class="sched-card">
+        <div class="sched-time">6:30 – 9:00 AM</div>
+        <div class="sched-show">Inspirational Morning Drive</div>
+        <div class="sched-host">Jennifer &amp; Agyemang</div>
+      </div>
+      <div class="sched-card">
+        <div class="sched-time">10:00 AM</div>
+        <div class="sched-show">Dr. Sam Owusu</div>
+        <div class="sched-host">Calvary Worship Centre</div>
+      </div>
+      <div class="sched-card">
+        <div class="sched-time">12:00 PM</div>
+        <div class="sched-show">PSF Drive</div>
+        <div class="sched-host">Positive Soul Food</div>
+      </div>
+      <div class="sched-card">
+        <div class="sched-time">4:30 PM</div>
+        <div class="sched-show">Sunset Drive</div>
+        <div class="sched-host">Baaba &amp; Vickie</div>
+      </div>
+    </div>
+    <div style="margin-top:28px;">
+      <a href="/listen-live/" class="btn-primary" style="display:inline-block;">See Full Schedule →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section>
+  <div class="section-inner">
+    <div class="section-label">Our Reach</div>
+    <h2 class="section-title">Ghana's most engaged<br>Christian audience.</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">50K+</div>
+        <div class="stat-label">Weekly Listeners</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">On Air</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">88.7</div>
+        <div class="stat-label">FM Accra</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">2002</div>
+        <div class="stat-label">On Air Since</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="section-inner">
+    <h2>Never miss a moment.</h2>
+    <p>Tune in live, catch up on sermons, or watch the latest gospel videos — all from Sunny 88.7FM.</p>
+    <a href="/listen-live/" class="btn-secondary" style="display:inline-block;">▶ Start Listening</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand" style="display:flex;align-items:center;gap:10px;margin-bottom:10px;"><img src="/assets/sunny-tv-logo.png" alt="Sunny TV" style="height:40px;width:auto;border-radius:6px;background:#fff;padding:2px;"></div>
+      <div style="font-size:13px;line-height:1.7;">Positive Soul Music<br>Ghana's Premier Christian Station<br>Accra &amp; Worldwide</div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Explore</div>
+      <a href="/listen-live/">Listen Live</a>
+      <a href="/news">News</a>
+      <a href="/lifestyle">Lifestyle</a>
+      <a href="/preaching-teaching">Preaching &amp; Teaching</a>
+      <a href="/events/">Events</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">More</div>
+      <a href="/music-videos/">Music &amp; Videos</a>
+      <a href="/prayer-testimonies">Prayer &amp; Testimonies</a>
+      <a href="/advertise/">Advertise</a>
+      <a href="https://sunnygh.com/index.php/live-tv/">Watch TV</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contact</div>
+      <a href="tel:0545223324">054 522 3324</a>
+      <a href="mailto:info@sunnygh.com">info@sunnygh.com</a>
+      <div style="font-size:13px;margin-top:8px;">45 Hilla Limann Avenue<br>North Ridge, Accra</div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Sunny 88.7 FM · All Rights Reserved</div>
+</footer>
+
+<style>
+#sfp-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:99999;
+  background:#1a1100;
+  border-top:3px solid #C8920A;
+  padding:.6rem 1.2rem;
+  display:flex;align-items:center;gap:12px;
+  box-shadow:0 -4px 20px rgba(0,0,0,.3);
+  font-family:'Segoe UI',Arial,sans-serif;
+}
+.sfp-logo{
+  font-size:11px;font-weight:700;color:#C8920A;
+  letter-spacing:.05em;text-transform:uppercase;
+  flex-shrink:0;line-height:1.2;
+  display:flex;flex-direction:column;
+}
+.sfp-logo span{font-size:9px;color:#888;font-weight:400;letter-spacing:.08em;}
+.sfp-playbtn{
+  width:40px;height:40px;border-radius:50%;
+  background:#C8920A;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:background .2s;
+}
+.sfp-playbtn:hover{background:#a8760a;}
+.sfp-playbtn svg{width:18px;height:18px;fill:#fff;margin-left:2px;}
+.sfp-info{flex:1;min-width:0;}
+.sfp-now{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:#888;margin-bottom:1px;}
+.sfp-title{font-size:13px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sfp-sub{font-size:11px;color:#C8920A;}
+.sfp-eq{display:flex;align-items:flex-end;gap:2px;height:18px;flex-shrink:0;}
+.sfp-eq span{width:3px;background:#C8920A;border-radius:1px;opacity:0;}
+.sfp-eq.active span{opacity:1;animation:sfp-eq 1.2s ease-in-out infinite;}
+@keyframes sfp-eq{0%,100%{height:20%;}50%{height:100%;}}
+.sfp-eq span:nth-child(1){animation-delay:0s}
+.sfp-eq span:nth-child(2){animation-delay:.15s}
+.sfp-eq span:nth-child(3){animation-delay:.3s}
+.sfp-eq span:nth-child(4){animation-delay:.1s}
+.sfp-eq span:nth-child(5){animation-delay:.25s}
+.sfp-vol{display:flex;align-items:center;gap:6px;flex-shrink:0;}
+.sfp-vol svg{width:14px;height:14px;fill:#888;}
+.sfp-vol input[type=range]{width:70px;accent-color:#C8920A;cursor:pointer;}
+.sfp-live{display:flex;align-items:center;gap:5px;flex-shrink:0;}
+.sfp-live-dot{width:7px;height:7px;border-radius:50%;background:#ff4444;animation:sfp-pulse 1.5s ease-in-out infinite;}
+@keyframes sfp-pulse{0%,100%{opacity:1;}50%{opacity:.2;}}
+.sfp-live span{font-size:10px;font-weight:700;color:#ff4444;text-transform:uppercase;letter-spacing:.06em;}
+
+/* push page content up so footer player doesn't cover it */
+body{padding-bottom:70px!important;}
+
+@media(max-width:480px){
+  .sfp-logo{display:none;}
+  .sfp-vol{display:none;}
+  #sfp-bar{padding:.5rem .8rem;gap:8px;}
+  .sfp-title{font-size:12px;}
+}
+</style>
+
+<div id="sfp-bar">
+  
+  <div class="sfp-logo">Sunny FM<span>88.7 Ghana</span></div>
+
+  
+  <div class="sfp-live"><div class="sfp-live-dot"></div><span>Live</span></div>
+
+  
+  <button class="sfp-playbtn" id="sfp-playbtn" onclick="sfpToggle()" aria-label="Play live stream">
+    <svg id="sfp-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+  </button>
+
+  
+  <div class="sfp-info">
+    <div class="sfp-now">Now playing</div>
+    <div class="sfp-title" id="sfp-title">Sunny FM 88.7</div>
+    <div class="sfp-sub" id="sfp-sub">Ghana's Premier Christian Station</div>
+  </div>
+
+  
+  <div class="sfp-eq" id="sfp-eq">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  
+  <div class="sfp-vol">
+    <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+    <input type="range" min="0" max="100" value="80" id="sfp-vol" aria-label="Volume" oninput="sfpVol(this.value)">
+  </div>
+</div>
+
+<script>
+(function(){
+var STREAM='https://sunny-radio-server.cloud-ip.cc/radio/sunnyradio';
+var audio=null,playing=false;
+
+// DAYS[0]=Sunday, DAYS[1]=Monday ... DAYS[6]=Saturday (matches JS getDay())
+var DAYS=[
+  // SUNDAY [0]
+  {slots:[
+    {t:'06:00',p:"The Lord's Garden",s:'Sunny FM 88.7'},
+    {t:'07:30',p:'Sunday Gospel Café',s:'Sunny FM 88.7'},
+    {t:'10:00',p:'Praise Live',s:'Sunny FM 88.7'},
+    {t:'15:30',p:'Salt & Light',s:'Sunny FM 88.7'},
+    {t:'00:00',p:'Alpha Hour',s:'Sunny FM 88.7 · Overnight'},
+    {t:'02:30',p:'Praise Life',s:'Sunny FM 88.7'}
+  ]},
+  // MONDAY [1]
+  {slots:[
+    {t:'04:00',p:'Morning Devotion',s:'Sunny FM 88.7'},
+    {t:'05:30',p:'Apostle Ayiku',s:'Love Community Chapel'},
+    {t:'06:00',p:'Bishop James Saah',s:'Sunny FM 88.7'},
+    {t:'06:15',p:'Daily Solution',s:'Osborn Nanjo'},
+    {t:'06:30',p:'Inspirational Morning Drive',s:'Jennifer & Agyemang · Sunny FM 88.7'},
+    {t:'10:00',p:'Dr. Sam Owusu',s:'Calvary Worship Centre'},
+    {t:'10:30',p:'Bishop David Oyedepo',s:'Winners International'},
+    {t:'11:00',p:'Pastor Andy Yawson',s:'KICC Ghana'},
+    {t:'11:30',p:'Rev. Eastwood Anaba',s:'Fountain Gate'},
+    {t:'12:00',p:'PSF Drive',s:'Positive Soul Food · Sunny FM 88.7'},
+    {t:'14:05',p:'Bishop Osei Tutu',s:'Breakthrough Broadcast'},
+    {t:'14:15',p:'Kakra Baiden',s:'Air Power'},
+    {t:'14:30',p:'Bishop N.A. Tackie Yarboi',s:'Voice of Victory'},
+    {t:'15:00',p:'Bishop George Adjeman',s:'Life Matters'},
+    {t:'15:30',p:'Prophet Naasei Opoku Sarkodie',s:'Potters Hour'},
+    {t:'16:00',p:'Pastor E.A. Adeboye',s:'RCCG'},
+    {t:'16:30',p:'Sunset Drive',s:'Baaba & Vickie · Sunny FM 88.7'},
+    {t:'20:00',p:'Oasis of Salvation',s:'Sunny FM 88.7'},
+    {t:'22:30',p:'Dana Carson Min',s:'Sunny FM 88.7'},
+    {t:'00:00',p:'Alpha Hour',s:'Sunny FM 88.7 · Overnight'},
+    {t:'01:30',p:'Music',s:'Sunny FM 88.7'}
+  ]},
+  // TUESDAY [2]
+  {slots:[
+    {t:'03:00',p:'Daily Devotion',s:'Sunny FM 88.7'},
+    {t:'06:00',p:'Bishop James Saah',s:'Sunny FM 88.7'},
+    {t:'06:15',p:'Daily Solution',s:'Osborn Nanjo'},
+    {t:'06:30',p:'Inspirational Morning Drive',s:'Jennifer & Agyemang · Sunny FM 88.7'},
+    {t:'10:00',p:'Dr. Sam Owusu',s:'Calvary Worship Centre'},
+    {t:'10:30',p:'Bishop David Oyedepo',s:'Winners International'},
+    {t:'11:00',p:'Pastor Andy Yawson',s:'KICC Ghana'},
+    {t:'11:30',p:'Rev. Eastwood Anaba',s:'Fountain Gate'},
+    {t:'12:00',p:'PSF Drive',s:'Positive Soul Food · Sunny FM 88.7'},
+    {t:'14:05',p:'Bishop Osei Tutu',s:'Breakthrough Broadcast'},
+    {t:'14:15',p:'Kakra Baiden',s:'Air Power'},
+    {t:'14:30',p:'Bishop N.A. Tackie Yarboi',s:'Voice of Victory'},
+    {t:'15:00',p:'Bishop George Adjeman',s:'Life Matters'},
+    {t:'15:30',p:'Prophet Naasei Opoku Sarkodie',s:'Potters Hour'},
+    {t:'16:00',p:'Pastor E.A. Adeboye',s:'RCCG'},
+    {t:'16:30',p:'Sunset Drive',s:'Baaba & Vickie · Sunny FM 88.7'},
+    {t:'19:00',p:'Overdrive',s:'Sunny FM 88.7'},
+    {t:'20:00',p:'Effortless Change',s:'Sunny FM 88.7'},
+    {t:'23:30',p:'Dana Carson Min',s:'Sunny FM 88.7'},
+    {t:'01:00',p:'Alpha Hour',s:'Sunny FM 88.7 · Overnight'},
+    {t:'02:30',p:'Praise Life',s:'Sunny FM 88.7'}
+  ]},
+  {slots:[
+    {t:'06:00',p:'Bishop James Saah',s:'Sunny FM 88.7'},
+    {t:'06:15',p:'Daily Solution',s:'Osborn Nanjo'},
+    {t:'06:30',p:'Inspirational Morning Drive',s:'Jennifer & Agyemang · Sunny FM 88.7'},
+    {t:'10:00',p:'Dr. Sam Owusu',s:'Calvary Worship Centre'},
+    {t:'10:30',p:'Bishop David Oyedepo',s:'Winners International'},
+    {t:'11:00',p:'Pastor Andy Yawson',s:'KICC Ghana'},
+    {t:'11:30',p:'Rev. Eastwood Anaba',s:'Fountain Gate'},
+    {t:'12:00',p:'PSF Drive',s:'Positive Soul Food · Sunny FM 88.7'},
+    {t:'14:05',p:'Bishop Osei Tutu',s:'Breakthrough Broadcast'},
+    {t:'14:15',p:'Kakra Baiden',s:'Air Power'},
+    {t:'14:30',p:'Bishop N.A. Tackie Yarboi',s:'Voice of Victory'},
+    {t:'15:00',p:'Bishop George Adjeman',s:'Life Matters'},
+    {t:'15:30',p:'Prophet Naasei Opoku Sarkodie',s:'Potters Hour'},
+    {t:'16:00',p:'Pastor E.A. Adeboye',s:'RCCG'},
+    {t:'16:30',p:'Sunset Drive',s:'Baaba & Vickie · Sunny FM 88.7'},
+    {t:'19:00',p:'Overdrive',s:'Sunny FM 88.7'},
+    {t:'20:15',p:'Looking Up to Jesus',s:'Sunny FM 88.7'},
+    {t:'21:00',p:'Meditation of the Psalms',s:'Sunny FM 88.7'},
+    {t:'00:30',p:'Alpha Hour',s:'Sunny FM 88.7 · Overnight'}
+  ]},
+  {slots:[
+    {t:'05:30',p:'Anchor of Love',s:'Sunny FM 88.7'},
+    {t:'06:00',p:'Bishop James Saah',s:'Sunny FM 88.7'},
+    {t:'06:15',p:'Daily Solution',s:'Osborn Nanjo'},
+    {t:'06:30',p:'Inspirational Morning Drive',s:'Jennifer & Agyemang · Sunny FM 88.7'},
+    {t:'10:00',p:'Dr. Sam Owusu',s:'Calvary Worship Centre'},
+    {t:'10:30',p:'Bishop David Oyedepo',s:'Winners International'},
+    {t:'11:00',p:'Pastor Andy Yawson',s:'KICC Ghana'},
+    {t:'11:30',p:'Rev. Eastwood Anaba',s:'Fountain Gate'},
+    {t:'12:00',p:'PSF Drive',s:'Positive Soul Food · Sunny FM 88.7'},
+    {t:'14:05',p:'Bishop Osei Tutu',s:'Breakthrough Broadcast'},
+    {t:'14:15',p:'Kakra Baiden',s:'Air Power'},
+    {t:'14:30',p:'Faith School',s:'Sunny FM 88.7'},
+    {t:'15:00',p:'Bishop George Adjeman',s:'Life Matters'},
+    {t:'15:30',p:'Prophet Naasei Opoku Sarkodie',s:'Potters Hour'},
+    {t:'16:00',p:'Bishop James Nanjo',s:'Kings Connect'},
+    {t:'16:30',p:'Sunset Drive',s:'Baaba & Vickie · Sunny FM 88.7'},
+    {t:'20:30',p:'Bible Today',s:'Sunny FM 88.7'},
+    {t:'21:00',p:'Mount Horeb',s:'Sunny FM 88.7'},
+    {t:'00:30',p:'Alpha Hour',s:'Sunny FM 88.7 · Overnight'},
+    {t:'02:30',p:'Praise Life',s:'Sunny FM 88.7'}
+  ]},
+  {slots:[
+    {t:'06:30',p:'Inspirational Morning Drive',s:'Jennifer & Agyemang · Sunny FM 88.7'},
+    {t:'10:00',p:'Dr. Sam Owusu',s:'Calvary Worship Centre'},
+    {t:'10:30',p:'Bishop David Oyedepo',s:'Winners International'},
+    {t:'11:00',p:'Pastor Andy Yawson',s:'KICC Ghana'},
+    {t:'11:30',p:'Rev. Eastwood Anaba',s:'Fountain Gate'},
+    {t:'12:00',p:'PSF Drive',s:'Positive Soul Food · Sunny FM 88.7'},
+    {t:'14:05',p:'Bishop Osei Tutu',s:'Breakthrough Broadcast'},
+    {t:'14:15',p:'Kakra Baiden',s:'Air Power'},
+    {t:'15:00',p:'Bishop George Adjeman',s:'Life Matters'},
+    {t:'15:30',p:'Prophet Naasei Opoku Sarkodie',s:'Potters Hour'},
+    {t:'16:00',p:'Bishop James Nanjo',s:'Kings Connect'},
+    {t:'16:30',p:'Sunset Drive',s:'Baaba & Vickie · Sunny FM 88.7'},
+    {t:'19:30',p:'Family Renaissance Broadcast',s:'Sunny FM 88.7'},
+    {t:'21:00',p:'Shine Forth Prayer Time',s:'Sunny FM 88.7'},
+    {t:'00:30',p:'Alpha Hour',s:'Sunny FM 88.7 · Overnight'},
+    {t:'02:30',p:'Praise Life',s:'Sunny FM 88.7'}
+  ]},
+  {slots:[
+    {t:'03:00',p:'Prevailing Hour',s:'Sunny FM 88.7'},
+    {t:'04:00',p:'Aglow',s:'Sunny FM 88.7'},
+    {t:'05:00',p:'Music',s:'Sunny FM 88.7'},
+    {t:'07:00',p:'Focus on Family',s:'Sunny FM 88.7'},
+    {t:'12:00',p:'Sunny TCA Gospel Countdown',s:'Sunny FM 88.7'},
+    {t:'13:00',p:'TWB',s:'Vickie · Sunny FM 88.7'},
+    {t:'16:30',p:'Sunset Drive',s:'Baaba & Vickie · Sunny FM 88.7'},
+    {t:'23:00',p:'Music',s:'Sunny FM 88.7'}
+  ]},
+  {slots:[
+    {t:'06:00',p:"The Lord's Garden",s:'Sunny FM 88.7'},
+    {t:'07:30',p:'Sunday Gospel Café',s:'Sunny FM 88.7'},
+    {t:'10:00',p:'Praise Live',s:'Sunny FM 88.7'},
+    {t:'15:30',p:'Salt & Light',s:'Sunny FM 88.7'},
+    {t:'00:00',p:'Alpha Hour',s:'Sunny FM 88.7 · Overnight'},
+    {t:'02:30',p:'Praise Life',s:'Sunny FM 88.7'}
+  ]}
+];
+
+function toMins(t){var p=t.split(':');return parseInt(p[0])*60+parseInt(p[1]);}
+
+function updateNowPlaying(){
+  var now=new Date();
+  var dayIdx=now.getDay(); // 0=Sun,1=Mon,2=Tue,3=Wed,4=Thu,5=Fri,6=Sat
+  var d=DAYS[dayIdx];
+  if(!d)return;
+  var nowMins=now.getHours()*60+now.getMinutes();
+  var slots=d.slots.slice().sort(function(a,b){return toMins(a.t)-toMins(b.t);});
+  var current=null;
+  for(var i=0;i<slots.length;i++){
+    var sm=toMins(slots[i].t);
+    var em=i+1<slots.length?toMins(slots[i+1].t):toMins(slots[i].t)+60;
+    if(nowMins>=sm&&nowMins<em){current=slots[i];break;}
+  }
+  if(!current)current=slots[slots.length-1];
+  if(current){
+    document.getElementById('sfp-title').textContent=current.p;
+    document.getElementById('sfp-sub').textContent=current.s;
+  }
+}
+
+window.sfpToggle=function(){
+  if(!audio){
+    audio=new Audio(STREAM);
+    audio.volume=document.getElementById('sfp-vol').value/100;
+    audio.onerror=function(){
+      document.getElementById('sfp-title').textContent='Stream unavailable';
+      playing=false;
+      document.getElementById('sfp-play-icon').innerHTML='<path d="M8 5v14l11-7z"/>';
+      document.getElementById('sfp-eq').classList.remove('active');
+    };
+  }
+  if(playing){
+    audio.pause();playing=false;
+    sessionStorage.removeItem('sfp-active');
+    document.getElementById('sfp-play-icon').innerHTML='<path d="M8 5v14l11-7z"/>';
+    document.getElementById('sfp-eq').classList.remove('active');
+  } else {
+    audio.play().then(function(){
+      playing=true;
+      sessionStorage.setItem('sfp-active','1');
+      document.getElementById('sfp-play-icon').innerHTML='<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+      document.getElementById('sfp-eq').classList.add('active');
+    }).catch(function(){
+      document.getElementById('sfp-title').textContent='Tap play to listen';
+    });
+  }
+};
+window.sfpVol=function(v){if(audio)audio.volume=v/100;};
+
+// Pause the radio if it's playing (used when other media on the page starts)
+window.sfpPause=function(){
+  if(audio&&playing){
+    audio.pause();playing=false;
+    sessionStorage.removeItem('sfp-active');
+    document.getElementById('sfp-play-icon').innerHTML='<path d="M8 5v14l11-7z"/>';
+    document.getElementById('sfp-eq').classList.remove('active');
+  }
+};
+
+// Listen for any other audio/video on the page starting to play, and pause the radio
+function watchPageMedia(){
+  document.querySelectorAll('video, audio').forEach(function(el){
+    if(el===audio)return; // skip our own player
+    if(el._sfpWatched)return; // already attached
+    el._sfpWatched=true;
+    el.addEventListener('play',window.sfpPause);
+  });
+  // Also watch for YouTube/Vimeo iframes starting (best-effort via postMessage)
+  document.querySelectorAll('iframe').forEach(function(el){
+    if(el._sfpWatched)return;
+    el._sfpWatched=true;
+    el.addEventListener('load',function(){
+      try{
+        // YouTube iframe API postMessage listener
+        window.addEventListener('message',function(e){
+          try{
+            var data=JSON.parse(e.data);
+            if(data.event==='video-progress'||data.event==='infoDelivery'){
+              if(data.info&&data.info.playerState===1){window.sfpPause();}
+            }
+            if(data.event==='onStateChange'&&data.info===1){window.sfpPause();}
+          }catch(err){}
+        });
+      }catch(err){}
+    });
+  });
+}
+watchPageMedia();
+// Re-check periodically in case new media loads after page load (e.g. lazy-loaded sermons)
+setInterval(watchPageMedia,2000);
+
+updateNowPlaying();
+setInterval(updateNowPlaying,60000);
+
+// Hide on Live TV page
+var bar=document.getElementById('sfp-bar');
+var isLiveTv=window.location.pathname.indexOf('live-tv')!==-1;
+if(isLiveTv){bar.style.display='none';}
+else if(sessionStorage.getItem('sfp-active')==='1'){
+  bar.style.display='flex';
+  // Auto-resume playing
+  audio=new Audio(STREAM);
+  audio.volume=document.getElementById('sfp-vol').value/100;
+  audio.play().then(function(){
+    playing=true;
+    document.getElementById('sfp-play-icon').innerHTML='<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+    document.getElementById('sfp-eq').classList.add('active');
+  }).catch(function(){});
+} else {
+  bar.style.display='none';
+}
+})();
+</script>
+
+
+</body>
+</html>
