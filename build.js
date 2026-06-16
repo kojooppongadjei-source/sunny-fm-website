@@ -28,9 +28,13 @@ const COLLECTIONS = {
     urlPath: 'prayer-testimonies',
     label: 'Prayer & Testimonies',
   },
-  'preaching-teaching': {
+ 'preaching-teaching': {
     urlPath: 'preaching-teaching',
     label: 'Preaching & Teaching',
+  },
+  'events': {
+    urlPath: 'events',
+    label: 'Events',
   },
 };
 
@@ -307,6 +311,7 @@ function getCollectionEmoji(urlPath) {
     case 'lifestyle': return '✨';
     case 'prayer-testimonies': return '🙏';
     case 'preaching-teaching': return '📖';
+    case 'events': return '📅';
     default: return '';
   }
 }
@@ -317,6 +322,7 @@ function getCollectionTagline(urlPath) {
     case 'lifestyle': return "Faith is not just for Sundays. It's how we love, parent, eat, work, and live.";
     case 'prayer-testimonies': return "You don't have to carry it alone. Bring your needs to God with us — and be encouraged by what He has already done.";
     case 'preaching-teaching': return 'Catch up on sermons and teachings from our roster of pastors and ministers.';
+    case 'events': return 'Crusades, conferences, and community programs from Sunny 88.7 FM.';
     default: return '';
   }
 }
