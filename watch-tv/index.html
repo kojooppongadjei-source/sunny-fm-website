@@ -65,8 +65,22 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid va
 .retry-btn{margin-top:20px;background:var(--gold);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;}
 .retry-btn:hover{background:var(--gold-dark);}
 
+/* Sponsor strip */
+.sponsor-strip{background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:16px 24px;margin-bottom:20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.sponsor-label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700;flex-shrink:0;}
+.sponsor-divider{width:1px;height:36px;background:var(--border);flex-shrink:0;}
+.sponsor-slot{display:flex;align-items:center;gap:12px;flex:1;min-width:200px;}
+.sponsor-logo-placeholder{width:56px;height:40px;border-radius:8px;background:#e0ddd6;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);font-weight:700;text-align:center;line-height:1.2;flex-shrink:0;}
+.sponsor-info{}
+.sponsor-name{font-size:14px;font-weight:700;color:var(--ink);}
+.sponsor-tagline{font-size:12px;color:var(--muted);}
+.sponsor-cta{margin-left:auto;background:var(--gold);color:#fff;padding:8px 18px;border-radius:8px;font-size:12px;font-weight:700;white-space:nowrap;flex-shrink:0;}
+.sponsor-cta:hover{background:var(--gold-dark);}
+.advertise-link{font-size:12px;color:var(--gold-dark);font-weight:600;white-space:nowrap;flex-shrink:0;}
+.advertise-link:hover{text-decoration:underline;}
+
 /* Info bar */
-.info-bar{display:flex;align-items:center;gap:16px;background:var(--cream);border-radius:12px;padding:16px 20px;margin-bottom:32px;flex-wrap:wrap;}
+.info-bar{display:flex;align-items:center;gap:16px;background:#f5f5f5;border-radius:12px;padding:16px 20px;margin-bottom:32px;flex-wrap:wrap;}
 .info-bar-item{display:flex;align-items:center;gap:8px;font-size:13px;color:#555;}
 .info-bar-item strong{color:var(--ink);}
 .info-icon{font-size:16px;}
@@ -155,6 +169,22 @@ footer{background:#111;color:rgba(255,255,255,.6);padding:40px 5% 32px;}
       <p>Sunny TV may be off air or undergoing maintenance. Try again shortly.</p>
       <button class="retry-btn" onclick="retryStream()">Try again</button>
     </div>
+  </div>
+
+
+  <!-- Sponsor strip -->
+  <div class="sponsor-strip">
+    <div class="sponsor-label">Sponsored by</div>
+    <div class="sponsor-divider"></div>
+    <div class="sponsor-slot">
+      <img src="/watch-tv/eye-express.jpg" alt="Eye Express" style="height:48px;width:auto;border-radius:8px;object-fit:contain;">
+      <div class="sponsor-info">
+        <div class="sponsor-name">Eye Express</div>
+        <div class="sponsor-tagline">Your Vision, Our Passion — Quality eyecare in Ghana</div>
+      </div>
+      <a href="https://eyeexpressgh.com/" class="sponsor-cta" target="_blank" rel="noopener">Learn More</a>
+    </div>
+    <a href="/advertise/" class="advertise-link">Advertise here &rarr;</a>
   </div>
 
   <!-- Info bar -->
