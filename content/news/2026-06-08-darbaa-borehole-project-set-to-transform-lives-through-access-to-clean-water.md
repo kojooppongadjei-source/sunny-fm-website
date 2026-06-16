@@ -18,4 +18,4 @@ Listeners were inspired by the conversation, which highlighted the power of comp
 
 At Sunny FM, we remain committed to inspiring our audience through conversations that promote faith, community engagement, and practical solutions to everyday challenges. We invite all our listeners and partners to join us in making this vision a reality for the people of Darbaa.
 
-**To support the Darbaa Borehole Project, kindly donate via Mobile Money by dialing **887**6960# on the Chango platform. Every contribution brings us one step closer to providing clean water and renewed hope to an entire community.**
+**To support the Darbaa Borehole Project, kindly donate via Mobile Money by dialing ***887***6960# on the Chango platform. Every contribution brings us one step closer to providing clean water and renewed hope to an entire community.**
