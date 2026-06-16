@@ -244,12 +244,49 @@ function buildCollection(collectionFolder, config) {
     }).join('') + `</div>`;
   }
 
+  const testimonyForm = config.urlPath === 'prayer-testimonies' ? `
+    <div style="background:var(--cream);border-radius:16px;padding:2rem 1.5rem;margin-top:2rem;">
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-dark);font-weight:700;margin-bottom:8px;">Share With Us</div>
+      <h2 style="font-size:clamp(20px,3vw,28px);font-weight:800;margin-bottom:8px;">Share Your Testimony</h2>
+      <p style="font-size:14px;color:#555;margin-bottom:24px;">Has God done something amazing in your life? We'd love to hear it — and share it to encourage others.</p>
+      <form name="testimony-submission" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/prayer-testimonies/?submitted=true" style="display:grid;gap:14px;">
+        <input type="hidden" name="form-name" value="testimony-submission">
+        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div>
+            <label style="font-size:12px;font-weight:700;color:#333;display:block;margin-bottom:6px;">Your Name *</label>
+            <input type="text" name="name" required placeholder="Full name" style="width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;outline:none;">
+          </div>
+          <div>
+            <label style="font-size:12px;font-weight:700;color:#333;display:block;margin-bottom:6px;">Phone / WhatsApp</label>
+            <input type="tel" name="phone" placeholder="e.g. 054 522 3324" style="width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;outline:none;">
+          </div>
+        </div>
+        <div>
+          <label style="font-size:12px;font-weight:700;color:#333;display:block;margin-bottom:6px;">Your Testimony *</label>
+          <textarea name="testimony" required rows="6" placeholder="Tell us what God has done in your life..." style="width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;outline:none;resize:vertical;"></textarea>
+        </div>
+        <div>
+          <label style="font-size:12px;font-weight:700;color:#333;display:block;margin-bottom:6px;">May we share this on air or online?</label>
+          <select name="permission" style="width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;outline:none;background:#fff;">
+            <option value="yes-both">Yes — on air and online</option>
+            <option value="yes-online">Online only</option>
+            <option value="yes-onair">On air only</option>
+            <option value="no">No — just for your team</option>
+          </select>
+        </div>
+        <button type="submit" style="background:var(--gold);color:#fff;border:none;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;width:fit-content;">🙏 Submit My Testimony</button>
+      </form>
+    </div>
+  ` : '';
+
   const listBody = `
     <div class="list-hero">
       <h1>${getCollectionEmoji(config.urlPath)} ${escapeHtml(config.label)}</h1>
       <p>${getCollectionTagline(config.urlPath)}</p>
     </div>
     ${cardsHtml}
+    ${testimonyForm}
   `;
 
   const listHtml = pageShell({
