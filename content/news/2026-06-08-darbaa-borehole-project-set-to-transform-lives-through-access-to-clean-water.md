@@ -1,7 +1,7 @@
 ---
 title: Darbaa Borehole Project Set to Transform Lives Through Access to Clean Water
 date: 2026-06-08T01:17:00.000+00:00
-image: /assets/uploads/untitled-design-1-.png
+image: /assets/uploads/img-20230808-wa0035.jpg
 summary: Residents of Darbaa and its surrounding communities could soon
   experience a significant improvement in their quality of life as support
   continues to grow for the Darbaa Borehole Project.
