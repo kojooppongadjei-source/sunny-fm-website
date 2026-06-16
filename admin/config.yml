@@ -104,4 +104,19 @@ collections:
       - label: "Series"
         name: "series"
         widget: "string"
+        - name: "events"
+    label: "Events"
+    folder: "content/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Event Date", name: "event_date", widget: "datetime"}
+      - {label: "Event Time", name: "event_time", widget: "string", hint: "e.g. 9:00 AM"}
+      - {label: "Location", name: "location", widget: "string"}
+      - {label: "Tag", name: "tag", widget: "select", options: ["Conference", "Crusade", "Summit", "Celebration", "Youth Program", "Special Broadcast", "Concert", "Workshop"]}
+      - {label: "Description", name: "summary", widget: "text"}
+      - {label: "Past Event?", name: "past", widget: "boolean", default: false}
+      - {label: "Featured Image (Optional)", name: "image", widget: "image", required: false}
         required: false
