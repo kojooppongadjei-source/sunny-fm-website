@@ -1,7 +1,7 @@
 ---
 title: "The Bold New Normal Conference: Empowering Africa’s Diaspora in the UK"
 date: 2026-06-16T00:44:00.000+00:00
-image: /assets/uploads/1.jpg
+image: /assets/uploads/untitled-design.png
 summary: "Lucy Quist is set to host The Bold New Normal Conference in the United
   Kingdom on Saturday, June 13, 2026, under the theme The Power of The Diaspora:
   New Mindsets, New Communities, New Shared Prosperity. Sponsored by Margins ID
