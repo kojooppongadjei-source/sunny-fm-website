@@ -1,5 +1,5 @@
 ---
-title: "Dressing Gracefully: Flatterung outfits for the Modern Christian Woman"
+title: "Dressing Gracefully: Flattering outfits for the Modern Christian Woman"
 date: 2026-06-17T17:47:00.000+00:00
 image: /assets/uploads/untitled-design-6-.png
 summary: >
