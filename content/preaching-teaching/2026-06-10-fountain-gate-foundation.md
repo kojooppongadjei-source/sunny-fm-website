@@ -1,6 +1,6 @@
 ---
 title: Fountain Gate Foundation
-date: 2026-06-10T06:23:00.000+00:00
+date: 2026-06-10T11:30:00.000+00:00
 preacher: Pastor Eastwood Anaba
 image: /assets/uploads/eastwood.png
 audio_url: https://www.mixcloud.com/Sunnymedia887/pastor-eastwood-anaba/
