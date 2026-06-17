@@ -11,7 +11,16 @@ summary: >-
   to connect, explore, and create lasting memories in a fun and faith-filled
   environment.
 
+
   The package includes conquering Afadjato (Ghana's highest peak), a breathtaking visit to Tagbo Falls, buffet dinner and breakfast, lunch and snacks, transportation, and a mingle hangout — everything you need for an unforgettable adventure.
+
+
+  Package Pricing:
+
+
+  Single Occupancy: GHC 2,850
+
+  Double Occupancy: GHC 4,770
 past: false
 image: /assets/uploads/sunny-singles.png
 ---
