@@ -1,10 +1,10 @@
 ---
-title: Potter's Hour
-date: 2026-06-17T11:04:00.000+00:00
-preacher: Nana Sei Opoku Sarkodie
-image: /assets/uploads/untitled-design-4-.png
-audio_url: https://www.mixcloud.com/Sunnymedia887/nana-sei-opoku-sarkodie-potters-hour/
-summary: ": A powerful teaching from Prophet Nana Sei Opoku Sarkodie on the
-  Potter's Hour — a time of divine shaping and transformation in God's hands."
+title: Airpower
+date: 2026-06-17T12:27:00.000+00:00
+preacher: Kakra Baiden
+image: /assets/uploads/kakra-baiden.png
+audio_url: https://www.mixcloud.com/Sunnymedia887/air-power-with-kakra-baiden/
+summary: Bishop Kakra Baiden has a God-ordained mandate to impact the world with
+  the Word and power of God. Exodus 3:7-8 is Kakra’s God given mandate.
 ---
-Where did David learn about Mercy
+How to be Street Smart
