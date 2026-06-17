@@ -191,7 +191,13 @@ function buildCollection(collectionFolder, config) {
       mediaHtml += `<div class="video-embed"><iframe src="https://www.youtube.com/embed/${escapeHtml(post.youtube_id)}" title="${escapeHtml(post.title)}" allowfullscreen></iframe></div>`;
     }
     if (post.audio_url) {
-      mediaHtml += `<audio controls style="width:100%;margin-bottom:24px;"><source src="${escapeHtml(post.audio_url)}"></audio>`;
+      if (post.audio_url.includes('mixcloud.com')) {
+        const mixPath = post.audio_url.replace('https://www.mixcloud.com', '').replace(/\/$/, '') + '/';
+        const mixEmbed = `https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=${encodeURIComponent(mixPath)}`;
+        mediaHtml += `<div style="margin-bottom:24px;"><iframe width="100%" height="120" src="${mixEmbed}" frameborder="0" allowfullscreen allow="autoplay"></iframe></div>`;
+      } else {
+        mediaHtml += `<audio controls style="width:100%;margin-bottom:24px;"><source src="${escapeHtml(post.audio_url)}"></audio>`;
+      }
     }
     if (post.image && !post.youtube_id) {
       mediaHtml += `<img class="post-image" src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}">`;
