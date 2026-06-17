@@ -7,4 +7,4 @@ audio_url: https://www.mixcloud.com/Sunnymedia887/bishop-david-oyedepo-25-05-202
 summary: Bishop David Oyedepo of Winners International delivers a powerful Word
   that builds faith and stirs the believer to action.
 ---
-God's Transformational Word
+Walking in the Light
