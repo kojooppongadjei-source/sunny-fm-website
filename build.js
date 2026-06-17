@@ -233,7 +233,7 @@ function buildCollection(collectionFolder, config) {
       ${eventInfoHtml}
       <div class="post-body">${post.bodyHtml}</div>
     `;
-    `;
+    
 
     const html = pageShell({
       title: post.title,
