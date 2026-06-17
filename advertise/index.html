@@ -210,14 +210,7 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
       <img src="/assets/sunny-fm-logo.png" alt="Sunny 88.7 FM" style="height:42px;width:auto;display:block;">
     </a>
     <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="/listen-live/">Listen Live</a>
-      <a href="/music-videos/">Music &amp; Videos</a>
-      <a href="/advertise" class="active">Advertise</a>
-      <a href="https://sunnygh.com/index.php/live-tv/" style="display:flex;align-items:center;gap:6px;background:#1a1a1a;color:#fff!important;padding:8px 16px;border-radius:6px;font-weight:700;font-size:13px;">
-        <img src="/assets/sunny-tv-logo.png" alt="Sunny TV" style="height:20px;width:auto;border-radius:3px;">
-        Watch TV
-      </a>
+      <a href="/" style="color:var(--muted);font-size:14px;">← Back to site</a>
       <a href="tel:0545223324" class="nav-cta">📞 Call Us</a>
     </div>
   </div>
@@ -228,11 +221,7 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
   <div class="hero-badge">📻 Book Radio Airtime Online</div>
   <h1>Advertise on <em>Sunny 88.7 FM</em></h1>
   <p>Reach thousands of listeners across Accra and beyond. Choose your slot, duration, and campaign — book and pay online in minutes.</p>
-  <div class="hero-stats">
-    <div class="hero-stat"><div class="hero-stat-num">88.7</div><div class="hero-stat-label">FM Frequency</div></div>
-    <div class="hero-stat"><div class="hero-stat-num">50K+</div><div class="hero-stat-label">Weekly Listeners</div></div>
-    <div class="hero-stat"><div class="hero-stat-num">24/7</div><div class="hero-stat-label">On Air</div></div>
-  </div>
+
 </div>
 
 <!-- WHY ADVERTISE SECTION -->
@@ -340,6 +329,76 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
       <div class="type-icon">✝️</div>
       <div class="type-name">Religious Broadcast</div>
       <div class="type-desc">30-minute religious broadcast slot. GH₵ 1,200 flat rate.</div>
+    </div>
+  </div>
+
+  <!-- SUNNY TV -->
+  <div style="margin:28px 0 12px;display:flex;align-items:center;gap:12px;">
+    <img src="/assets/sunny-tv-logo.png" alt="Sunny TV" style="height:32px;width:auto;border-radius:6px;background:#1a1a2e;padding:2px;">
+    <div>
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:#F59E0B;font-weight:700;">Sunny TV</div>
+      <div style="font-size:13px;color:#6b7280;">Advertise on Ghana's Premier Christian Television</div>
+    </div>
+  </div>
+  <div class="type-grid">
+    <div class="type-card" onclick="selectType(this,'tv-spot')">
+      <div class="type-check">✓</div>
+      <div class="type-icon">📺</div>
+      <div class="type-name">TV Spot</div>
+      <div class="type-desc">15, 30 or 60 second TV commercials. Prime time &amp; daytime slots.</div>
+    </div>
+    <div class="type-card" onclick="selectType(this,'tv-sponsorship')">
+      <div class="type-check">✓</div>
+      <div class="type-icon">🎬</div>
+      <div class="type-name">Programme Sponsorship</div>
+      <div class="type-desc">Sponsor a full TV programme. Monthly package with on-screen credit.</div>
+    </div>
+    <div class="type-card" onclick="selectType(this,'tv-lower')">
+      <div class="type-check">✓</div>
+      <div class="type-icon">📊</div>
+      <div class="type-name">Lower Third Banner</div>
+      <div class="type-desc">Your brand as a lower-third banner during live broadcasts. GH₵ 150/slot.</div>
+    </div>
+    <div class="type-card" onclick="selectType(this,'tv-placement')">
+      <div class="type-check">✓</div>
+      <div class="type-icon">🏷️</div>
+      <div class="type-name">Product Placement</div>
+      <div class="type-desc">Feature your product within Sunny TV programming. GH₵ 2,000/month.</div>
+    </div>
+  </div>
+
+  <!-- DIGITAL / WEBSITE -->
+  <div style="margin:28px 0 12px;display:flex;align-items:center;gap:12px;">
+    <span style="font-size:28px;">🌐</span>
+    <div>
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:#F59E0B;font-weight:700;">Digital / Website</div>
+      <div style="font-size:13px;color:#6b7280;">Advertise on sunnygh.com — reaching listeners worldwide</div>
+    </div>
+  </div>
+  <div class="type-grid">
+    <div class="type-card" onclick="selectType(this,'web-banner')">
+      <div class="type-check">✓</div>
+      <div class="type-icon">🖼️</div>
+      <div class="type-name">Homepage Banner</div>
+      <div class="type-desc">Top banner on homepage. Seen by every visitor. GH₵ 800/month.</div>
+    </div>
+    <div class="type-card" onclick="selectType(this,'web-article')">
+      <div class="type-check">✓</div>
+      <div class="type-icon">✍️</div>
+      <div class="type-name">Sponsored Article</div>
+      <div class="type-desc">Written by our team, published on the site under your brand. GH₵ 500.</div>
+    </div>
+    <div class="type-card" onclick="selectType(this,'web-watchtv')">
+      <div class="type-check">✓</div>
+      <div class="type-icon">📡</div>
+      <div class="type-name">Watch TV Sponsor</div>
+      <div class="type-desc">Your brand on the Watch TV live stream page. GH₵ 1,200/month.</div>
+    </div>
+    <div class="type-card" onclick="selectType(this,'web-event')">
+      <div class="type-check">✓</div>
+      <div class="type-icon">📅</div>
+      <div class="type-name">Featured Event Listing</div>
+      <div class="type-desc">Your event featured on our Events page. GH₵ 300 per event.</div>
     </div>
   </div>
 
@@ -547,6 +606,125 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
     </div>
   </div>
 
+  <!-- TV SPOT -->
+  <div id="sec-tv-spot" class="hidden">
+    <div class="card">
+      <div class="card-title">📺 Sunny TV Spot Rates (GH₵) — Select slot</div>
+      <table class="rate-table">
+        <tr><th>Slot</th><th>Time</th><th>15 Secs</th><th>30 Secs</th><th>60 Secs</th></tr>
+        <tr class="seg-row" onclick="selectSeg(this,'Prime Time','6:00pm–10:00pm',200,350,600)" id="tvrow-prime">
+          <td><b>Prime Time</b> <span class="rate-badge">Popular</span></td><td>6:00pm – 10:00pm</td><td class="rate-price">200</td><td class="rate-price">350</td><td class="rate-price">600</td>
+        </tr>
+        <tr class="seg-row" onclick="selectSeg(this,'Daytime','9:00am–6:00pm',120,200,350)" id="tvrow-day">
+          <td><b>Daytime</b></td><td>9:00am – 6:00pm</td><td class="rate-price">120</td><td class="rate-price">200</td><td class="rate-price">350</td>
+        </tr>
+        <tr class="seg-row" onclick="selectSeg(this,'Weekend','Sat & Sun',160,280,480)" id="tvrow-wknd">
+          <td><b>Weekend</b></td><td>Saturday &amp; Sunday</td><td class="rate-price">160</td><td class="rate-price">280</td><td class="rate-price">480</td>
+        </tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">⏱️ Spot Duration</div>
+      <div class="dur-grid">
+        <div class="dur-pill" onclick="selectDur(this,'15s',0)">15 Seconds</div>
+        <div class="dur-pill" onclick="selectDur(this,'30s',1)">30 Seconds</div>
+        <div class="dur-pill" onclick="selectDur(this,'60s',2)">60 Seconds</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">📆 Campaign Duration</div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Start Date</label><input type="date" class="form-input" id="tvspot-start" onchange="updatePrice()"></div>
+        <div class="form-group"><label class="form-label">End Date</label><input type="date" class="form-input" id="tvspot-end" onchange="updatePrice()"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Spots per Day</label><input type="number" class="form-input" id="tvspot-qty" value="2" min="1" max="20" onchange="updatePrice()" style="max-width:100px;"></div>
+    </div>
+  </div>
+
+  <!-- TV SPONSORSHIP -->
+  <div id="sec-tv-sponsorship" class="hidden">
+    <div class="card">
+      <div class="card-title">🎬 TV Programme Sponsorship (GH₵/month) — Select package</div>
+      <table class="rate-table">
+        <tr><th>Package</th><th>Rate/Month</th></tr>
+        <tr class="seg-row" onclick="selectSegFlat(this,'Standard','Monthly sponsorship',3000)">
+          <td><b>Standard</b> — On-screen credit + 2 spots per episode</td><td class="rate-price">GH₵ 3,000</td>
+        </tr>
+        <tr class="seg-row" onclick="selectSegFlat(this,'Premium','Monthly sponsorship',6000)">
+          <td><b>Premium</b> <span class="rate-badge">Popular</span> — Exclusive sponsorship + 5 spots per episode</td><td class="rate-price">GH₵ 6,000</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- TV LOWER THIRD -->
+  <div id="sec-tv-lower" class="hidden">
+    <div class="card">
+      <div class="card-title">📊 Lower Third Banner — GH₵ 150 per slot</div>
+      <div class="callout">Your brand displayed as a lower-third banner during Sunny TV live broadcasts.<br>Contact us to confirm preferred programme and timing.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">📆 Number of Slots</div>
+      <div class="form-group"><label class="form-label">How many slots?</label><input type="number" class="form-input" id="tvlower-qty" value="1" min="1" max="50" onchange="updatePrice()" style="max-width:120px;"></div>
+    </div>
+  </div>
+
+  <!-- TV PLACEMENT -->
+  <div id="sec-tv-placement" class="hidden">
+    <div class="card">
+      <div class="card-title">🏷️ Product Placement — GH₵ 2,000/month</div>
+      <div class="callout">Feature your product or brand naturally within Sunny TV programming. Our team will work with you on integration.</div>
+    </div>
+  </div>
+
+  <!-- WEB BANNER -->
+  <div id="sec-web-banner" class="hidden">
+    <div class="card">
+      <div class="card-title">🖼️ Homepage Banner — GH₵ 800/month</div>
+      <div class="callout">Your banner at the top of sunnygh.com, seen by every visitor. Provide your banner image (1200×200px) and target URL.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">📆 Duration (Months)</div>
+      <div class="form-group"><label class="form-label">How many months?</label><input type="number" class="form-input" id="webbanner-qty" value="1" min="1" max="12" onchange="updatePrice()" style="max-width:120px;"></div>
+    </div>
+  </div>
+
+  <!-- WEB ARTICLE -->
+  <div id="sec-web-article" class="hidden">
+    <div class="card">
+      <div class="card-title">✍️ Sponsored Article — GH₵ 500 per article</div>
+      <div class="callout">Written by our team and published on the Sunny FM website under your brand name. Includes social media promotion.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">📆 Number of Articles</div>
+      <div class="form-group"><label class="form-label">How many articles?</label><input type="number" class="form-input" id="webarticle-qty" value="1" min="1" max="12" onchange="updatePrice()" style="max-width:120px;"></div>
+    </div>
+  </div>
+
+  <!-- WEB WATCH TV -->
+  <div id="sec-web-watchtv" class="hidden">
+    <div class="card">
+      <div class="card-title">📡 Watch TV Sponsor — GH₵ 1,200/month</div>
+      <div class="callout">Your brand featured prominently on the Watch TV live stream page, seen by all online TV viewers. Includes logo, tagline, and website link.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">📆 Duration (Months)</div>
+      <div class="form-group"><label class="form-label">How many months?</label><input type="number" class="form-input" id="webwatchtv-qty" value="1" min="1" max="12" onchange="updatePrice()" style="max-width:120px;"></div>
+    </div>
+  </div>
+
+  <!-- WEB EVENT -->
+  <div id="sec-web-event" class="hidden">
+    <div class="card">
+      <div class="card-title">📅 Featured Event Listing — GH₵ 300 per event</div>
+      <div class="callout">Your event featured prominently on the Sunny FM Events page with full details, image, and registration link.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">📆 Number of Events</div>
+      <div class="form-group"><label class="form-label">How many events?</label><input type="number" class="form-input" id="webevent-qty" value="1" min="1" max="10" onchange="updatePrice()" style="max-width:120px;"></div>
+    </div>
+  </div>
+
   <!-- LIVE PRICE -->
   <div class="price-box" id="price-box" style="display:none;">
     <div class="price-row"><span class="price-label">Ad Type</span><span class="price-val" id="pr-type">—</span></div>
@@ -745,7 +923,15 @@ function selectType(el, type) {
     jingle:'Jingle / Spot', lpm:'Live Programme Mention',
     announcement:'Announcement', interview:'Interview (10 mins)',
     ob:'Outside Broadcast', newrelease:'New Release',
-    religious:'Religious Broadcast (30 mins)'
+    religious:'Religious Broadcast (30 mins)',
+    'tv-spot':'TV Spot — Sunny TV',
+    'tv-sponsorship':'TV Programme Sponsorship',
+    'tv-lower':'TV Lower Third Banner',
+    'tv-placement':'TV Product Placement',
+    'web-banner':'Homepage Banner — sunnygh.com',
+    'web-article':'Sponsored Article — sunnygh.com',
+    'web-watchtv':'Watch TV Sponsor — sunnygh.com',
+    'web-event':'Featured Event Listing — sunnygh.com'
   };
   state.typeLbl = labels[type];
 
@@ -848,6 +1034,42 @@ function calcPrice() {
   } else if(t === 'religious') {
     p = 1200;
     breakdown = '30-minute Religious Broadcast';
+  } else if(t === 'tv-spot') {
+    var unitRate = state.rates[state.durIdx] || 0;
+    var qty = parseInt(document.getElementById('tvspot-qty') ? document.getElementById('tvspot-qty').value : 2) || 2;
+    var start = document.getElementById('tvspot-start') ? document.getElementById('tvspot-start').value : '';
+    var end = document.getElementById('tvspot-end') ? document.getElementById('tvspot-end').value : '';
+    var days = 1;
+    if(start && end){ var d1=new Date(start),d2=new Date(end); days=Math.max(1,Math.round((d2-d1)/86400000)+1); }
+    p = unitRate * qty * days;
+    var dur = state.dur || '30s';
+    breakdown = 'GH₵ ' + unitRate + ' × ' + qty + ' spots/day × ' + days + ' days (' + dur + ')';
+  } else if(t === 'tv-sponsorship') {
+    p = state.flatRate;
+    breakdown = state.segLbl;
+  } else if(t === 'tv-lower') {
+    var qty2 = parseInt(document.getElementById('tvlower-qty') ? document.getElementById('tvlower-qty').value : 1) || 1;
+    p = 150 * qty2;
+    breakdown = 'GH₵ 150 × ' + qty2 + ' slot(s)';
+  } else if(t === 'tv-placement') {
+    p = 2000;
+    breakdown = 'TV Product Placement — 1 month';
+  } else if(t === 'web-banner') {
+    var qty3 = parseInt(document.getElementById('webbanner-qty') ? document.getElementById('webbanner-qty').value : 1) || 1;
+    p = 800 * qty3;
+    breakdown = 'GH₵ 800 × ' + qty3 + ' month(s)';
+  } else if(t === 'web-article') {
+    var qty4 = parseInt(document.getElementById('webarticle-qty') ? document.getElementById('webarticle-qty').value : 1) || 1;
+    p = 500 * qty4;
+    breakdown = 'GH₵ 500 × ' + qty4 + ' article(s)';
+  } else if(t === 'web-watchtv') {
+    var qty5 = parseInt(document.getElementById('webwatchtv-qty') ? document.getElementById('webwatchtv-qty').value : 1) || 1;
+    p = 1200 * qty5;
+    breakdown = 'GH₵ 1,200 × ' + qty5 + ' month(s)';
+  } else if(t === 'web-event') {
+    var qty6 = parseInt(document.getElementById('webevent-qty') ? document.getElementById('webevent-qty').value : 1) || 1;
+    p = 300 * qty6;
+    breakdown = 'GH₵ 300 × ' + qty6 + ' event(s)';
   }
 
   return { total: p, breakdown: breakdown };
@@ -897,7 +1119,7 @@ function goPanel(n) {
 
   // Show right ad-type section in panel 2
   if(n === 2) {
-    ['jingle','lpm','announcement','interview','ob','newrelease','religious'].forEach(function(s){
+    ['jingle','lpm','announcement','interview','ob','newrelease','religious','tv-spot','tv-sponsorship','tv-lower','tv-placement','web-banner','web-article','web-watchtv','web-event'].forEach(function(s){
       var el = document.getElementById('sec-'+s);
       if(el) el.classList.add('hidden');
     });
