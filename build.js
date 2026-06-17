@@ -158,6 +158,13 @@ function buildCollection(collectionFolder, config) {
       series: data.series || null,
       youtube_id: data.youtube_id || null,
       audio_url: data.audio_url || null,
+      // Event-specific fields
+      event_date: data.event_date || null,
+      event_date_formatted: formatDate(data.event_date),
+      event_time: data.event_time || null,
+      location: data.location || null,
+      tag: data.tag || null,
+      past: data.past || false,
     };
 
     posts.push({ ...post, bodyHtml, raw: data });
@@ -206,6 +213,16 @@ function buildCollection(collectionFolder, config) {
       tagsHtml = `<div style="margin-bottom:16px;">${allTags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>`;
     }
 
+    const eventInfoHtml = config.urlPath === 'events' ? `
+      <div style="background:var(--cream);border-radius:12px;padding:20px 24px;margin-bottom:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;">
+        ${post.event_date_formatted ? `<div><div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-dark);font-weight:700;margin-bottom:4px;">📅 Date</div><div style="font-size:15px;font-weight:700;">${escapeHtml(post.event_date_formatted)}</div></div>` : ''}
+        ${post.event_time ? `<div><div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-dark);font-weight:700;margin-bottom:4px;">🕐 Time</div><div style="font-size:15px;font-weight:700;">${escapeHtml(post.event_time)}</div></div>` : ''}
+        ${post.location ? `<div><div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-dark);font-weight:700;margin-bottom:4px;">📍 Location</div><div style="font-size:15px;font-weight:700;">${escapeHtml(post.location)}</div></div>` : ''}
+        ${post.tag ? `<div><div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-dark);font-weight:700;margin-bottom:4px;">🏷️ Type</div><div style="font-size:15px;font-weight:700;">${escapeHtml(post.tag)}</div></div>` : ''}
+      </div>
+      <a href="https://wa.me/233545223324?text=${encodeURIComponent('Hi, I would like to register for ' + post.title)}" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;font-size:15px;font-weight:700;text-decoration:none;margin-bottom:24px;">💬 Register via WhatsApp</a>
+    ` : '';
+
     const bodyHtml = `
       <a href="/${config.urlPath}/" class="back-link">&larr; Back to ${escapeHtml(config.label)}</a>
       <div class="eyebrow">${escapeHtml(config.label)}</div>
@@ -213,7 +230,9 @@ function buildCollection(collectionFolder, config) {
       <div class="post-meta">${metaParts.join(' &middot; ')}</div>
       ${tagsHtml}
       ${mediaHtml}
+      ${eventInfoHtml}
       <div class="post-body">${post.bodyHtml}</div>
+    `;
     `;
 
     const html = pageShell({
