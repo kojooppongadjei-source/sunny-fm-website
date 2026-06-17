@@ -6,9 +6,8 @@ event_time: 27th – 30th August 2026 (3 Nights)
 location: Aqua Safari Resort, Ghana
 tag: Summit
 summary: >-
-  Sunny 88.7 FM and Sunny TV invite married couples to the Couples Retreat 2026
-  — a special four-day getaway designed to help you reconnect, refresh, and
-  rediscover each other in a beautiful resort setting.
+  Couples Retreat 2026 — a special four-day getaway designed to help you
+  reconnect, refresh, and rediscover each other in a beautiful resort setting.
 
   Your experience includes a 3-night luxury stay at Aqua Safari Resort, daily buffet breakfast, lunch and dinner, retreat sessions, exciting couple bonding activities, and quality time for relaxation and fun together.
 
