@@ -488,9 +488,11 @@ function openShow(id) {
   if (!show) return;
   document.getElementById('ls-modal-title').textContent = show.title;
   if (show.url) {
-    var encoded = encodeURIComponent(show.url.replace('https://www.mixcloud.com',''));
+    // Extract the path after mixcloud.com e.g. /Sunnymedia887/empowered-living-series-21-may-2026/
+    var path = show.url.replace(/^https?:\/\/(www\.)?mixcloud\.com/, '');
+    var encoded = encodeURIComponent(path);
     document.getElementById('ls-modal-body').innerHTML =
-      '<iframe src="https://player.mixcloud.com/widget/iframe/?hide_cover=1&mini=0&autoplay=1&feed=' + encoded + '" height="180"></iframe>';
+      '<iframe width="100%" height="180" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=0&autoplay=1&feed=' + encoded + '" frameborder="0"></iframe>';
   } else {
     document.getElementById('ls-modal-body').innerHTML =
       '<div style="padding:32px;text-align:center;color:var(--muted);font-size:14px;">🎙️ Episodes coming soon!<br><br>Follow us on <a href=\"https://www.mixcloud.com/Sunnymedia887/\" target=\"_blank\" style=\"color:var(--gold-dark);font-weight:700;\">Mixcloud</a> to be notified.</div>';
@@ -579,12 +581,7 @@ function closeShowModal(e) {
 <footer>
   <div class="footer-inner">
     <div>
-      <!-- Logo: try colour logo, invert it white for dark footer -->
-      <img src="/assets/sunny-fm-logo.png" alt="Sunny FM"
-           class="footer-logo"
-           style="height:40px;width:auto;margin-bottom:10px;filter:brightness(0) invert(1);"
-           onerror="this.style.display='none';document.getElementById('footer-logo-text').style.display='block';">
-      <div id="footer-logo-text" style="display:none;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:10px;">Sunny 88.7 FM</div>
+      <img src="/assets/sunny-fm-logo-transparent.png" alt="Sunny 88.7 FM" style="height:80px;width:auto;margin-bottom:8px;display:block;filter:brightness(0) invert(1);">
       <div style="font-size:13px;line-height:1.7;">Positive Soul Music<br>Ghana's Premier Christian Station<br>Accra &amp; Worldwide</div>
     </div>
     <div class="footer-col">
