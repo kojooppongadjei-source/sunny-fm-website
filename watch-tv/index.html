@@ -6,9 +6,8 @@
 <title>Watch Sunny TV Live — Sunny 88.7 FM</title>
 <meta name="description" content="Watch Sunny TV live stream — Ghana's Premier Christian Television, streaming 24/7.">
 
-<!-- Video.js -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.6.1/video-js.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.6.1/video.min.js"></script>
+<!-- HLS.js for reliable m3u8 playback -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.4.12/hls.min.js"></script>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -49,15 +48,30 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid va
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
 
 /* Player */
-.player-wrap{background:#000;border-radius:16px;overflow:hidden;position:relative;margin-bottom:24px;box-shadow:0 8px 32px rgba(0,0,0,.18);}
-.video-js{width:100%!important;height:0!important;padding-bottom:56.25%!important;}
-.video-js .vjs-tech{position:absolute;top:0;left:0;width:100%;height:100%;}
-.vjs-default-skin .vjs-big-play-button{background:rgba(200,146,10,.85);border:3px solid #fff;border-radius:50%;width:72px;height:72px;line-height:72px;font-size:32px;top:50%;left:50%;transform:translate(-50%,-50%);}
-.vjs-default-skin:hover .vjs-big-play-button{background:var(--gold);}
-.vjs-default-skin .vjs-control-bar{background:linear-gradient(transparent,rgba(0,0,0,.7));padding:0 12px;}
-.vjs-default-skin .vjs-play-progress,.vjs-default-skin .vjs-volume-level{background:var(--gold);}
+.player-wrap{background:#000;border-radius:16px;overflow:hidden;position:relative;margin-bottom:24px;box-shadow:0 8px 32px rgba(0,0,0,.18);aspect-ratio:16/9;}
+#sunny-tv-player{width:100%;height:100%;display:block;border-radius:16px;}
 
-/* Error / offline state */
+/* Custom controls */
+.player-controls{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.8));padding:16px 20px 14px;display:flex;align-items:center;gap:14px;opacity:0;transition:opacity .3s;}
+.player-wrap:hover .player-controls{opacity:1;}
+.ctrl-play{width:40px;height:40px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ctrl-play svg{width:18px;height:18px;fill:#fff;margin-left:2px;}
+.ctrl-live{display:flex;align-items:center;gap:5px;flex-shrink:0;}
+.ctrl-live-dot{width:7px;height:7px;border-radius:50%;background:#ff4444;animation:pulse 1.5s ease-in-out infinite;}
+.ctrl-live span{font-size:11px;font-weight:700;color:#ff4444;text-transform:uppercase;letter-spacing:.06em;}
+.ctrl-vol{display:flex;align-items:center;gap:6px;margin-left:auto;}
+.ctrl-vol svg{width:16px;height:16px;fill:#fff;}
+.ctrl-vol input{width:80px;accent-color:var(--gold);cursor:pointer;}
+.ctrl-fullscreen{background:none;border:none;cursor:pointer;padding:4px;}
+.ctrl-fullscreen svg{width:18px;height:18px;fill:#fff;}
+
+/* Loading overlay */
+.player-loading{position:absolute;inset:0;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;gap:12px;border-radius:16px;}
+.spinner{width:44px;height:44px;border:3px solid rgba(200,146,10,.3);border-top-color:var(--gold);border-radius:50%;animation:spin 1s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.player-loading p{font-size:13px;color:rgba(255,255,255,.6);}
+
+/* Error state */
 .stream-error{display:none;position:absolute;inset:0;background:#111;border-radius:16px;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:40px;}
 .stream-error.show{display:flex;}
 .stream-error h3{font-size:20px;font-weight:700;margin-bottom:8px;}
@@ -70,7 +84,6 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid va
 .sponsor-label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700;flex-shrink:0;}
 .sponsor-divider{width:1px;height:36px;background:var(--border);flex-shrink:0;}
 .sponsor-slot{display:flex;align-items:center;gap:12px;flex:1;min-width:200px;}
-.sponsor-logo-placeholder{width:56px;height:40px;border-radius:8px;background:#e0ddd6;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--muted);font-weight:700;text-align:center;line-height:1.2;flex-shrink:0;}
 .sponsor-info{}
 .sponsor-name{font-size:14px;font-weight:700;color:var(--ink);}
 .sponsor-tagline{font-size:12px;color:var(--muted);}
@@ -110,6 +123,7 @@ footer{background:#111;color:rgba(255,255,255,.6);padding:40px 5% 32px;}
 @media(max-width:768px){
   .nav-links{display:none;}
   .tv-header{flex-wrap:wrap;}
+  .ctrl-vol{display:none;}
 }
 </style>
 </head>
@@ -152,25 +166,40 @@ footer{background:#111;color:rgba(255,255,255,.6);padding:40px 5% 32px;}
   </div>
 
   <!-- Player -->
-  <div class="player-wrap">
-    <video
-      id="sunny-tv-player"
-      class="video-js vjs-default-skin"
-      controls
-      autoplay
-      preload="auto"
-      poster="/assets/sunny-tv-logo.png"
-      data-setup='{}'>
-      <source src="https://stream-server9-jupiter.muxlive.com/hls/sunnytv/index.m3u8" type="application/x-mpegURL">
-      <p class="vjs-no-js">To view this video please enable JavaScript, or consider upgrading to a web browser that supports HTML5 video.</p>
-    </video>
+  <div class="player-wrap" id="player-wrap">
+    <video id="sunny-tv-player" playsinline controls></video>
+
+    <!-- Loading -->
+    <div class="player-loading" id="player-loading">
+      <div class="spinner"></div>
+      <p>Connecting to Sunny TV...</p>
+    </div>
+
+    <!-- Error -->
     <div class="stream-error" id="stream-error">
-      <h3>Stream currently unavailable</h3>
-      <p>Sunny TV may be off air or undergoing maintenance. Try again shortly.</p>
-      <button class="retry-btn" onclick="retryStream()">Try again</button>
+      <h3>📡 Stream Unavailable</h3>
+      <p>Sunny TV may be off air or undergoing maintenance. Please try again shortly.</p>
+      <button class="retry-btn" onclick="initPlayer()">↺ Try Again</button>
+    </div>
+
+    <!-- Controls -->
+    <div class="player-controls" id="player-controls">
+      <button class="ctrl-play" id="ctrl-play" onclick="togglePlay()">
+        <svg id="ctrl-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <div class="ctrl-live">
+        <div class="ctrl-live-dot"></div>
+        <span>Live</span>
+      </div>
+      <div class="ctrl-vol">
+        <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+        <input type="range" min="0" max="100" value="90" id="vol-slider" oninput="setVol(this.value)">
+      </div>
+      <button class="ctrl-fullscreen" onclick="goFullscreen()" title="Fullscreen">
+        <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+      </button>
     </div>
   </div>
-
 
   <!-- Sponsor strip -->
   <div class="sponsor-strip">
@@ -189,30 +218,18 @@ footer{background:#111;color:rgba(255,255,255,.6);padding:40px 5% 32px;}
 
   <!-- Info bar -->
   <div class="info-bar">
-    <div class="info-bar-item"><span class="info-icon">📡</span> <span><strong>Sunny TV</strong> — Live Stream</span></div>
-    <div class="info-bar-item"><span class="info-icon">📻</span> <span>Also listen on <strong><a href="/listen-live/" style="color:var(--gold-dark);">Sunny FM 88.7</a></strong></span></div>
-    <div class="info-bar-item"><span class="info-icon">📞</span> <span>Call us: <strong><a href="tel:0545223324" style="color:var(--gold-dark);">054 522 3324</a></strong></span></div>
+    <div class="info-bar-item"><span class="info-icon">📡</span><span><strong>Sunny TV</strong> — Live Stream</span></div>
+    <div class="info-bar-item"><span class="info-icon">📻</span><span>Also listen on <strong><a href="/listen-live/" style="color:var(--gold-dark);">Sunny FM 88.7</a></strong></span></div>
+    <div class="info-bar-item"><span class="info-icon">📞</span><span>Call us: <strong><a href="tel:0545223324" style="color:var(--gold-dark);">054 522 3324</a></strong></span></div>
   </div>
 
   <!-- Schedule -->
   <div class="section-label">On Air Today — Radio Schedule</div>
   <div class="schedule-strip">
-    <div class="sched-card">
-      <div class="sched-time">6:30 – 9:00 AM</div>
-      <div class="sched-show">Inspirational Morning Drive</div>
-    </div>
-    <div class="sched-card">
-      <div class="sched-time">10:00 AM</div>
-      <div class="sched-show">Dr. Sam Owusu</div>
-    </div>
-    <div class="sched-card">
-      <div class="sched-time">12:00 PM</div>
-      <div class="sched-show">PSF Drive</div>
-    </div>
-    <div class="sched-card">
-      <div class="sched-time">4:30 PM</div>
-      <div class="sched-show">Sunset Drive</div>
-    </div>
+    <div class="sched-card"><div class="sched-time">6:30 – 9:00 AM</div><div class="sched-show">Inspirational Morning Drive</div></div>
+    <div class="sched-card"><div class="sched-time">10:00 AM</div><div class="sched-show">Dr. Sam Owusu</div></div>
+    <div class="sched-card"><div class="sched-time">12:00 PM</div><div class="sched-show">PSF Drive</div></div>
+    <div class="sched-card"><div class="sched-time">4:30 PM</div><div class="sched-show">Sunset Drive</div></div>
   </div>
 
   <!-- CTA -->
@@ -252,36 +269,76 @@ footer{background:#111;color:rgba(255,255,255,.6);padding:40px 5% 32px;}
 </footer>
 
 <script>
-// Init Video.js player
-var player = videojs('sunny-tv-player', {
-  fluid: true,
-  liveui: true,
-  html5: {
-    vhs: {
-      overrideNative: true
-    }
+var STREAM = 'https://stream-server9-jupiter.muxlive.com/hls/sunnytv/index.m3u8';
+var video = document.getElementById('sunny-tv-player');
+var hls;
+
+function showLoading(){ document.getElementById('player-loading').style.display='flex'; document.getElementById('stream-error').classList.remove('show'); }
+function hideLoading(){ document.getElementById('player-loading').style.display='none'; }
+function showError(){ hideLoading(); document.getElementById('stream-error').classList.add('show'); }
+
+function initPlayer(){
+  showLoading();
+  if(hls){ hls.destroy(); }
+
+  if(Hls.isSupported()){
+    hls = new Hls({
+      enableWorker: true,
+      lowLatencyMode: true,
+      backBufferLength: 90
+    });
+    hls.loadSource(STREAM);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED, function(){
+      hideLoading();
+      video.play().catch(function(){});
+      updatePlayBtn(true);
+    });
+    hls.on(Hls.Events.ERROR, function(event, data){
+      if(data.fatal){ showError(); }
+    });
+  } else if(video.canPlayType('application/vnd.apple.mpegurl')){
+    // Safari native HLS
+    video.src = STREAM;
+    video.addEventListener('loadedmetadata', function(){
+      hideLoading();
+      video.play().catch(function(){});
+      updatePlayBtn(true);
+    });
+    video.addEventListener('error', showError);
+  } else {
+    showError();
   }
-});
-
-player.on('error', function() {
-  document.getElementById('stream-error').classList.add('show');
-});
-
-player.on('playing', function() {
-  document.getElementById('stream-error').classList.remove('show');
-});
-
-function retryStream() {
-  document.getElementById('stream-error').classList.remove('show');
-  player.src({ src: 'https://stream-server9-jupiter.muxlive.com/hls/sunnytv/index.m3u8', type: 'application/x-mpegURL' });
-  player.play();
 }
 
-// Hide radio footer player on this page (we have video here)
-document.addEventListener('DOMContentLoaded', function() {
-  var bar = document.getElementById('sfp-bar');
-  if (bar) bar.style.display = 'none';
-});
+function updatePlayBtn(playing){
+  document.getElementById('ctrl-play-icon').innerHTML = playing
+    ? '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>'
+    : '<path d="M8 5v14l11-7z"/>';
+}
+
+function togglePlay(){
+  if(video.paused){ video.play(); updatePlayBtn(true); }
+  else { video.pause(); updatePlayBtn(false); }
+}
+
+function setVol(v){ video.volume = v/100; }
+
+function goFullscreen(){
+  var wrap = document.getElementById('player-wrap');
+  if(document.fullscreenElement){ document.exitFullscreen(); }
+  else if(wrap.requestFullscreen){ wrap.requestFullscreen(); }
+  else if(wrap.webkitRequestFullscreen){ wrap.webkitRequestFullscreen(); }
+}
+
+video.addEventListener('play', function(){ updatePlayBtn(true); });
+video.addEventListener('pause', function(){ updatePlayBtn(false); });
+
+// Set initial volume
+document.getElementById('vol-slider').value = 90;
+video.volume = 0.9;
+
+initPlayer();
 </script>
 
 </body>
