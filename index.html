@@ -524,27 +524,68 @@ function closeShowModal(e) {
 </div>
 
 <!-- VERSE OF THE DAY -->
-<div class="verse-section">
+<style>
+.verse-section{
+  position:relative;
+  padding:60px 4%;
+  overflow:hidden;
+  transition:background .5s;
+}
+.verse-bg{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  filter:brightness(.35) saturate(1.2);
+  transition:opacity 1s;
+  z-index:0;
+}
+.verse-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(0,0,0,.55),rgba(0,0,0,.3));
+  z-index:1;
+}
+.verse-inner{
+  position:relative;z-index:2;
+  max-width:700px;margin:0 auto;text-align:center;
+}
+.verse-label{font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);font-weight:600;margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.verse-day-pill{display:inline-block;background:rgba(200,146,10,.25);border:1px solid rgba(200,146,10,.5);color:var(--gold);font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.1em;margin-bottom:20px;}
+.verse-text{font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,26px);font-style:italic;font-weight:400;line-height:1.75;margin-bottom:16px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.4);}
+.verse-ref{font-size:14px;color:var(--gold);font-weight:700;margin-bottom:24px;letter-spacing:.04em;}
+.verse-share{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.btn-fb{background:#1877f2;color:#fff;padding:9px 22px;border-radius:6px;font-size:13px;font-weight:700;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,.2);}
+.btn-wa{background:#25D366;color:#fff;padding:9px 22px;border-radius:6px;font-size:13px;font-weight:700;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,.2);}
+.verse-dots{display:flex;justify-content:center;gap:6px;margin-top:20px;}
+.verse-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s;}
+.verse-dot.active{background:var(--gold);}
+</style>
+
+<div class="verse-section" id="verse-section">
+  <div class="verse-bg" id="verse-bg"></div>
+  <div class="verse-overlay"></div>
   <div class="verse-inner">
-    <div class="verse-label">🎙️ Verse of the Day</div>
-    <div class="verse-text" id="verse-text">"The steadfast love of the Lord never ceases; his mercies never come to an end; they are new every morning."</div>
-    <div class="verse-ref" id="verse-ref">— Lamentations 3:22-23</div>
+    <div class="verse-label">✝ Verse of the Day</div>
+    <div class="verse-day-pill" id="verse-day-pill">Today</div>
+    <div class="verse-text" id="verse-text">"The steadfast love of the Lord never ceases."</div>
+    <div class="verse-ref" id="verse-ref">— Lamentations 3:22</div>
     <div class="verse-share">
       <a href="https://www.facebook.com/sharer/sharer.php?u=https://sunnygh.com" target="_blank" class="btn-fb">f Share</a>
       <a href="#" id="wa-verse-share" target="_blank" class="btn-wa">💬 WhatsApp</a>
     </div>
+    <div class="verse-dots" id="verse-dots"></div>
   </div>
 </div>
 
-<!-- FOOTER — FIX 4: Logo uses sunny-fm-logo-white.png on dark background -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div>
-      <!-- Try white logo first, fall back to inverted colour logo -->
-      <img src="/assets/sunny-fm-logo-white.png" alt="Sunny FM"
+      <!-- Logo: try colour logo, invert it white for dark footer -->
+      <img src="/assets/sunny-fm-logo.png" alt="Sunny FM"
            class="footer-logo"
-           onerror="this.src='/assets/sunny-fm-logo.png';this.style.filter='brightness(0) invert(1)';">
-      <div style="font-size:13px;line-height:1.7;margin-top:10px;">Positive Soul Music<br>Ghana's Premier Christian Station<br>Accra &amp; Worldwide</div>
+           style="height:40px;width:auto;margin-bottom:10px;filter:brightness(0) invert(1);"
+           onerror="this.style.display='none';document.getElementById('footer-logo-text').style.display='block';">
+      <div id="footer-logo-text" style="display:none;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:10px;">Sunny 88.7 FM</div>
+      <div style="font-size:13px;line-height:1.7;">Positive Soul Music<br>Ghana's Premier Christian Station<br>Accra &amp; Worldwide</div>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Explore</div>
@@ -648,18 +689,122 @@ fetch('/content/news/index.json')
 
 // ── VERSE OF THE DAY ──
 var VERSES = [
-  {text:'"The steadfast love of the Lord never ceases; his mercies never come to an end; they are new every morning."', ref:'Lamentations 3:22-23'},
-  {text:'"I can do all things through Christ who strengthens me."', ref:'Philippians 4:13'},
-  {text:'"Trust in the Lord with all your heart and lean not on your own understanding."', ref:'Proverbs 3:5'},
-  {text:'"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."', ref:'John 3:16'},
-  {text:'"Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go."', ref:'Joshua 1:9'},
-  {text:'"The Lord is my shepherd, I lack nothing."', ref:'Psalm 23:1'},
-  {text:'"For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future."', ref:'Jeremiah 29:11'},
+  {
+    text:'"The steadfast love of the Lord never ceases; his mercies never come to an end; they are new every morning."',
+    ref:'Lamentations 3:22-23',
+    img:'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&q=80', // sunrise over water
+    color:'#1a3a4a'
+  },
+  {
+    text:'"I can do all things through Christ who strengthens me."',
+    ref:'Philippians 4:13',
+    img:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80', // mountain peak
+    color:'#1a2a1a'
+  },
+  {
+    text:'"Trust in the Lord with all your heart and lean not on your own understanding."',
+    ref:'Proverbs 3:5',
+    img:'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&q=80', // starry night sky
+    color:'#0a0a2a'
+  },
+  {
+    text:'"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life."',
+    ref:'John 3:16',
+    img:'https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=1200&q=80', // golden sunset
+    color:'#2a1a0a'
+  },
+  {
+    text:'"Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go."',
+    ref:'Joshua 1:9',
+    img:'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80', // dramatic mountain
+    color:'#1a1a2a'
+  },
+  {
+    text:'"The Lord is my shepherd, I lack nothing."',
+    ref:'Psalm 23:1',
+    img:'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80', // green meadow
+    color:'#0a1a0a'
+  },
+  {
+    text:'"For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future."',
+    ref:'Jeremiah 29:11',
+    img:'https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=1200&q=80', // light through clouds
+    color:'#1a1a0a'
+  },
+  {
+    text:'"Come to me, all you who are weary and burdened, and I will give you rest."',
+    ref:'Matthew 11:28',
+    img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80', // calm ocean
+    color:'#0a1a2a'
+  },
+  {
+    text:'"But those who hope in the Lord will renew their strength. They will soar on wings like eagles."',
+    ref:'Isaiah 40:31',
+    img:'https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=1200&q=80', // eagle soaring
+    color:'#1a2a3a'
+  },
+  {
+    text:'"The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you."',
+    ref:'Numbers 6:24-25',
+    img:'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1200&q=80', // golden light
+    color:'#2a1a0a'
+  },
+  {
+    text:'"And we know that in all things God works for the good of those who love him."',
+    ref:'Romans 8:28',
+    img:'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1200&q=80', // green valley
+    color:'#0a1a0a'
+  },
+  {
+    text:'"Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God."',
+    ref:'Philippians 4:6',
+    img:'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200&q=80', // calm sea
+    color:'#0a1a2a'
+  },
+  {
+    text:'"The name of the Lord is a fortified tower; the righteous run to it and are safe."',
+    ref:'Proverbs 18:10',
+    img:'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&q=80', // lighthouse
+    color:'#1a1a2a'
+  },
+  {
+    text:'"Give thanks to the Lord, for he is good; his love endures forever."',
+    ref:'Psalm 107:1',
+    img:'https://images.unsplash.com/photo-1504198458649-3128b932f49e?w=1200&q=80', // colourful sunrise
+    color:'#2a0a0a'
+  },
 ];
+
 var dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(),0,0)) / 86400000);
+var dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var todayName = dayNames[new Date().getDay()];
 var verse = VERSES[dayOfYear % VERSES.length];
+
 document.getElementById('verse-text').textContent = verse.text;
 document.getElementById('verse-ref').textContent = '— ' + verse.ref;
+document.getElementById('verse-day-pill').textContent = todayName + "'s Verse";
+document.getElementById('verse-bg').style.backgroundImage = 'url(' + verse.img + ')';
+document.getElementById('verse-section').style.background = verse.color;
+
+// Build dots for browsing verses
+var dotsEl = document.getElementById('verse-dots');
+var displayCount = Math.min(7, VERSES.length);
+for(var i = 0; i < displayCount; i++){
+  var dot = document.createElement('div');
+  dot.className = 'verse-dot' + (i === dayOfYear % VERSES.length ? ' active' : '');
+  (function(idx){
+    dot.onclick = function(){
+      var v = VERSES[idx];
+      document.getElementById('verse-text').textContent = v.text;
+      document.getElementById('verse-ref').textContent = '— ' + v.ref;
+      document.getElementById('verse-bg').style.backgroundImage = 'url(' + v.img + ')';
+      document.getElementById('verse-section').style.background = v.color;
+      document.querySelectorAll('.verse-dot').forEach(function(d,di){ d.classList.toggle('active', di===idx); });
+    };
+  })(i);
+  dotsEl.appendChild(dot);
+}
+
 var waMsg = 'Verse of the Day: ' + verse.text + ' ' + verse.ref + ' — Sunny 88.7 FM';
 document.getElementById('wa-verse-share').href = 'https://wa.me/?text=' + encodeURIComponent(waMsg);
 </script>
