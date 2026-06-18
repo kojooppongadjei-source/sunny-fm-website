@@ -343,6 +343,33 @@ footer{background:#1a1212;color:rgba(255,255,255,.6);padding:40px 4% 90px;}
 </div>
 
 <!-- LIFESTYLE SHOWS -->
+<style>
+.ls-card{flex:0 0 200px;scroll-snap-align:start;border-radius:14px;overflow:hidden;cursor:pointer;position:relative;transition:transform .2s,box-shadow .2s;}
+.ls-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.15);}
+.ls-card-banner{width:100%;height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 16px;position:relative;}
+.ls-card-icon{font-size:32px;margin-bottom:10px;}
+.ls-card-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#fff;text-align:center;line-height:1.3;margin-bottom:4px;}
+.ls-card-host{font-size:11px;color:rgba(255,255,255,.75);text-align:center;font-weight:400;}
+.ls-card-play{position:absolute;top:10px;right:10px;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.4);}
+.ls-card-play svg{width:12px;height:12px;fill:#fff;margin-left:1px;}
+.ls-card-footer{background:#fff;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;}
+.ls-card-badge{font-size:10px;font-weight:700;padding:3px 8px;border-radius:10px;}
+.ls-card-listen{font-size:10px;color:var(--gold-dark);font-weight:700;display:flex;align-items:center;gap:4px;}
+.ls-card-coming{font-size:10px;color:var(--muted);font-style:italic;}
+
+/* AUDIO MODAL */
+.ls-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);align-items:center;justify-content:center;padding:20px;}
+.ls-modal.open{display:flex;}
+.ls-modal-box{background:#fff;border-radius:16px;width:100%;max-width:520px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+.ls-modal-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);}
+.ls-modal-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;}
+.ls-modal-close{background:none;border:none;font-size:22px;cursor:pointer;color:var(--muted);line-height:1;}
+.ls-modal-body{padding:0;}
+.ls-modal-body iframe{width:100%;display:block;border:none;}
+.ls-modal-footer{padding:12px 20px;background:var(--rose);font-size:12px;color:var(--muted);text-align:center;}
+.ls-modal-footer a{color:var(--gold-dark);font-weight:700;}
+</style>
+
 <div class="section">
   <div class="section-inner">
     <div class="section-hdr">
@@ -350,49 +377,138 @@ footer{background:#1a1212;color:rgba(255,255,255,.6);padding:40px 4% 90px;}
       <a href="/lifestyle/" class="section-see-all">See all →</a>
     </div>
     <div class="scroll-row">
-      <div class="life-card">
-        <div style="width:100%;height:140px;background:linear-gradient(135deg,#7c3aed,#4f46e5);display:flex;align-items:center;justify-content:center;font-size:36px;">✨</div>
-        <div class="life-card-body">
-          <div class="life-card-name">Empowered Living</div>
-          <div class="life-card-host">Yawa Hansen-Quao</div>
-          <span class="badge badge-blue">Women</span>
+
+      <!-- Empowered Living -->
+      <div class="ls-card" onclick="openShow('empowered')">
+        <div class="ls-card-banner" style="background:linear-gradient(135deg,#7c3aed,#4f46e5);">
+          <div class="ls-card-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="ls-card-icon">✨</div>
+          <div class="ls-card-title">Empowered Living</div>
+          <div class="ls-card-host">with Yawa Hansen-Quao</div>
+        </div>
+        <div class="ls-card-footer">
+          <span class="ls-card-badge" style="background:#ede9fe;color:#6d28d9;">Women</span>
+          <span class="ls-card-listen">▶ Listen</span>
         </div>
       </div>
-      <div class="life-card">
-        <div style="width:100%;height:140px;background:linear-gradient(135deg,#0891b2,#0e7490);display:flex;align-items:center;justify-content:center;font-size:36px;">🍼</div>
-        <div class="life-card-body">
-          <div class="life-card-name">Cradle to Crayons</div>
-          <div class="life-card-host">Abigail Kontoh</div>
-          <span class="badge badge-blue">Parenting</span>
+
+      <!-- Cradle to Crayons -->
+      <div class="ls-card" onclick="openShow('cradle')">
+        <div class="ls-card-banner" style="background:linear-gradient(135deg,#0891b2,#0e7490);">
+          <div class="ls-card-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="ls-card-icon">🍼</div>
+          <div class="ls-card-title">Cradle to Crayons</div>
+          <div class="ls-card-host">with Abigail Kontoh</div>
+        </div>
+        <div class="ls-card-footer">
+          <span class="ls-card-badge" style="background:#e0f2fe;color:#0369a1;">Parenting</span>
+          <span class="ls-card-listen">▶ Listen</span>
         </div>
       </div>
-      <div class="life-card">
-        <div style="width:100%;height:140px;background:linear-gradient(135deg,#be185d,#9d174d);display:flex;align-items:center;justify-content:center;font-size:36px;">👩</div>
-        <div class="life-card-body">
-          <div class="life-card-name">Every Woman</div>
-          <div class="life-card-host">Afiba Danso</div>
-          <span class="badge badge-blue">Women</span>
+
+      <!-- Every Woman -->
+      <div class="ls-card" onclick="openShow('everywoman')">
+        <div class="ls-card-banner" style="background:linear-gradient(135deg,#be185d,#9d174d);">
+          <div class="ls-card-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="ls-card-icon">👩</div>
+          <div class="ls-card-title">Every Woman</div>
+          <div class="ls-card-host">with Afiba Danso</div>
+        </div>
+        <div class="ls-card-footer">
+          <span class="ls-card-badge" style="background:#fce7f3;color:#9d174d;">Women</span>
+          <span class="ls-card-listen">▶ Listen</span>
         </div>
       </div>
-      <div class="life-card">
-        <div style="width:100%;height:140px;background:linear-gradient(135deg,#15803d,#166534);display:flex;align-items:center;justify-content:center;font-size:36px;">👨‍👩‍👧</div>
-        <div class="life-card-body">
-          <div class="life-card-name">Family Renaissance</div>
-          <div class="life-card-host">Sunny FM</div>
-          <span class="badge badge-blue">Family</span>
+
+      <!-- Family Renaissance -->
+      <div class="ls-card" onclick="openShow('family')">
+        <div class="ls-card-banner" style="background:linear-gradient(135deg,#15803d,#166534);">
+          <div class="ls-card-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <div class="ls-card-icon">👨‍👩‍👧</div>
+          <div class="ls-card-title">Family Renaissance</div>
+          <div class="ls-card-host">with Mama Cathy</div>
+        </div>
+        <div class="ls-card-footer">
+          <span class="ls-card-badge" style="background:#dcfce7;color:#166534;">Family</span>
+          <span class="ls-card-listen">▶ Coming Soon</span>
         </div>
       </div>
-      <div class="life-card">
-        <div style="width:100%;height:140px;background:linear-gradient(135deg,#b45309,#92400e);display:flex;align-items:center;justify-content:center;font-size:36px;">🎙️</div>
-        <div class="life-card-body">
-          <div class="life-card-name">PSF Drive</div>
-          <div class="life-card-host">Positive Soul Food</div>
-          <span class="badge badge-blue">Daily</span>
+
+      <!-- PSF Drive -->
+      <div class="ls-card" style="cursor:default;">
+        <div class="ls-card-banner" style="background:linear-gradient(135deg,#b45309,#92400e);">
+          <div class="ls-card-icon">🎙️</div>
+          <div class="ls-card-title">PSF Drive</div>
+          <div class="ls-card-host">Positive Soul Food</div>
+        </div>
+        <div class="ls-card-footer">
+          <span class="ls-card-badge" style="background:#fef3c7;color:#92400e;">Daily</span>
+          <span class="ls-card-coming">Coming Soon</span>
         </div>
       </div>
+
     </div>
   </div>
 </div>
+
+<!-- AUDIO MODAL -->
+<div class="ls-modal" id="ls-modal" onclick="closeShowModal(event)">
+  <div class="ls-modal-box">
+    <div class="ls-modal-header">
+      <div class="ls-modal-title" id="ls-modal-title">Show</div>
+      <button class="ls-modal-close" onclick="closeShow()">✕</button>
+    </div>
+    <div class="ls-modal-body" id="ls-modal-body"></div>
+    <div class="ls-modal-footer">Latest episode · <a href="https://www.mixcloud.com/Sunnymedia887/" target="_blank">See all episodes on Mixcloud →</a></div>
+  </div>
+</div>
+
+<script>
+var SHOWS = {
+  empowered: {
+    title: 'Empowered Living',
+    url: 'https://www.mixcloud.com/Sunnymedia887/empowered-living-series-21-may-2026/'
+  },
+  cradle: {
+    title: 'Cradle to Crayons',
+    url: 'https://www.mixcloud.com/Sunnymedia887/cradle-to-crayon-22-may-2026/'
+  },
+  everywoman: {
+    title: 'Every Woman',
+    url: 'https://www.mixcloud.com/Sunnymedia887/every-woman-chat-show-21-may-2026/'
+  },
+  family: {
+    title: 'Family Renaissance',
+    url: null
+  }
+};
+
+function openShow(id) {
+  var show = SHOWS[id];
+  if (!show) return;
+  document.getElementById('ls-modal-title').textContent = show.title;
+  if (show.url) {
+    var encoded = encodeURIComponent(show.url.replace('https://www.mixcloud.com',''));
+    document.getElementById('ls-modal-body').innerHTML =
+      '<iframe src="https://player.mixcloud.com/widget/iframe/?hide_cover=1&mini=0&autoplay=1&feed=' + encoded + '" height="180"></iframe>';
+  } else {
+    document.getElementById('ls-modal-body').innerHTML =
+      '<div style="padding:32px;text-align:center;color:var(--muted);font-size:14px;">🎙️ Episodes coming soon!<br><br>Follow us on <a href=\"https://www.mixcloud.com/Sunnymedia887/\" target=\"_blank\" style=\"color:var(--gold-dark);font-weight:700;\">Mixcloud</a> to be notified.</div>';
+  }
+  document.getElementById('ls-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeShow() {
+  document.getElementById('ls-modal').classList.remove('open');
+  document.getElementById('ls-modal-body').innerHTML = '';
+  document.body.style.overflow = '';
+}
+
+function closeShowModal(e) {
+  if (e.target === document.getElementById('ls-modal')) closeShow();
+}
+</script>
 
 <!-- UPCOMING EVENTS -->
 <div class="section" style="background:var(--rose);">
