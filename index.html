@@ -570,7 +570,7 @@ function closeShowModal(e) {
     <div class="verse-text" id="verse-text">"The steadfast love of the Lord never ceases."</div>
     <div class="verse-ref" id="verse-ref">— Lamentations 3:22</div>
     <div class="verse-share">
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://sunnygh.com" target="_blank" class="btn-fb">f Share</a>
+      <button onclick="copyVerse()" id="copy-verse-btn" class="btn-fb" style="border:none;cursor:pointer;">📋 Copy Verse</button>
       <a href="#" id="wa-verse-share" target="_blank" class="btn-wa">💬 WhatsApp</a>
     </div>
     <div class="verse-dots" id="verse-dots"></div>
@@ -804,6 +804,28 @@ for(var i = 0; i < displayCount; i++){
 
 var waMsg = 'Verse of the Day: ' + verse.text + ' ' + verse.ref + ' — Sunny 88.7 FM';
 document.getElementById('wa-verse-share').href = 'https://wa.me/?text=' + encodeURIComponent(waMsg);
+
+window.copyVerse = function(){
+  var text = verse.text + ' ' + verse.ref + ' — Sunny 88.7 FM';
+  navigator.clipboard.writeText(text).then(function(){
+    var btn = document.getElementById('copy-verse-btn');
+    btn.textContent = '✓ Copied!';
+    btn.style.background = '#15803d';
+    setTimeout(function(){ btn.textContent = '📋 Copy Verse'; btn.style.background = ''; }, 2500);
+  }).catch(function(){
+    // Fallback for older browsers
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    var btn = document.getElementById('copy-verse-btn');
+    btn.textContent = '✓ Copied!';
+    btn.style.background = '#15803d';
+    setTimeout(function(){ btn.textContent = '📋 Copy Verse'; btn.style.background = ''; }, 2500);
+  });
+};
 </script>
 
 <style>
