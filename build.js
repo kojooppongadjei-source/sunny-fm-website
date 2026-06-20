@@ -43,6 +43,29 @@ const HEADER = fs.readFileSync(path.join(ROOT, '_includes', 'site-header.html'),
 const FOOTER = fs.readFileSync(path.join(ROOT, '_includes', 'site-footer.html'), 'utf8');
 const FOOTER_PLAYER = fs.readFileSync(path.join(ROOT, '_includes', 'footer-player.html'), 'utf8');
 
+const DONATE_SCRIPT = `
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+function snOpenDonate(){
+  var amount = prompt("Enter donation amount in GHS:", "50");
+  if(!amount || isNaN(amount) || Number(amount) <= 0) return;
+  var email = prompt("Enter your email for the receipt:");
+  if(!email) return;
+  var handler = PaystackPop.setup({
+    key: 'pk_live_de0fc9e3b71f670c1d8e9cd4e3be3f125c9ceb8a',
+    email: email,
+    amount: Math.round(Number(amount) * 100),
+    currency: 'GHS',
+    ref: 'SUNNYDON' + Math.floor(Math.random() * 1000000000),
+    callback: function(response){
+      alert('Thank you! Your donation was successful. Reference: ' + response.reference);
+    },
+    onClose: function(){}
+  });
+  handler.openIframe();
+}
+</script>`;
+
 function slugFromFilename(filename) {
   // 2026-06-15-my-post-title.md -> my-post-title  (keep date prefix off the URL)
   const base = filename.replace(/\.md$/, '');
@@ -121,6 +144,7 @@ ${bodyHtml}
 </div>
 ${FOOTER}
 ${FOOTER_PLAYER}
+${DONATE_SCRIPT}
 </body>
 </html>`;
 }
