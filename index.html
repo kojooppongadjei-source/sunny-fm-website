@@ -117,6 +117,8 @@ img{max-width:100%;display:block;}
 .nav-search{background:none;border:none;cursor:pointer;color:#fff;font-size:20px;padding:4px 8px;}
 .nav-tv-btn{display:flex;align-items:center;gap:8px;background:var(--ink);color:#fff;padding:7px 14px;border-radius:6px;font-size:13px;font-weight:700;}
 .nav-tv-btn img{height:22px;width:auto;border-radius:3px;}
+.nav-donate-btn{background:#C0392B;color:#fff;padding:7px 16px;border-radius:6px;font-size:13px;font-weight:700;margin-left:10px;}
+.nav-donate-btn:hover{background:#962d21;}
 
 /* MOBILE MENU */
 .mobile-menu{display:none;position:fixed;inset:0;top:0;background:rgba(0,0,0,.95);z-index:999;flex-direction:column;padding:0;}
@@ -284,6 +286,8 @@ footer{background:#1a1212;color:rgba(255,255,255,.6);padding:40px 4% 90px;}
       <img src="/assets/sunny-tv-logo.png" alt="Sunny TV">
       Sunny TV
     </a>
+
+    <a href="#" onclick="snOpenDonate();return false;" class="nav-donate-btn">Donate</a>
   </div>
 </nav>
 
@@ -304,6 +308,7 @@ footer{background:#1a1212;color:rgba(255,255,255,.6);padding:40px 4% 90px;}
     <a href="/music-videos/">Music &amp; Videos</a>
     <a href="/watch-tv/">Watch Sunny TV</a>
     <a href="/advertise/" class="mm-cta">Advertise With Us</a>
+    <a href="#" onclick="snOpenDonate();return false;" class="mm-cta" style="background:#C0392B;">Donate</a>
   </div>
 </div>
 
@@ -991,6 +996,28 @@ if(window.location.pathname.indexOf('live-tv')!==-1){bar.style.display='none';}
 else if(sessionStorage.getItem('sfp-active')==='1'){bar.style.display='flex';audio=new Audio(STREAM);audio.volume=document.getElementById('sfp-vol').value/100;audio.play().then(function(){playing=true;document.getElementById('sfp-play-icon').innerHTML='<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';document.getElementById('sfp-eq').classList.add('active');}).catch(function(){});}
 else{bar.style.display='none';}
 })();
+</script>
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+function snOpenDonate(){
+  var amount = prompt("Enter donation amount in GHS:", "50");
+  if(!amount || isNaN(amount) || Number(amount) <= 0) return;
+  var email = prompt("Enter your email for the receipt:");
+  if(!email) return;
+  var handler = PaystackPop.setup({
+    key: 'pk_live_de0fc9e3b71f670c1d8e9cd4e3be3f125c9ceb8a',
+    email: email,
+    amount: Math.round(Number(amount) * 100),
+    currency: 'GHS',
+    ref: 'SUNNYDON' + Math.floor(Math.random() * 1000000000),
+    callback: function(response){
+      alert('Thank you! Your donation was successful. Reference: ' + response.reference);
+    },
+    onClose: function(){}
+  });
+  handler.openIframe();
+}
 </script>
 
 </body>

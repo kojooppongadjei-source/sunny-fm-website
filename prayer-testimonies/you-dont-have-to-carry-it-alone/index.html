@@ -57,6 +57,8 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
 .site-nav-links a:hover{color:#a8760a;}
 .site-nav-cta{background:#C8920A;color:#fff!important;padding:10px 20px;border-radius:8px;font-weight:600;}
 .site-nav-cta:hover{background:#a8760a;}
+.site-nav-donate{background:#C0392B;color:#fff!important;padding:10px 20px;border-radius:8px;font-weight:600;margin-left:8px;}
+.site-nav-donate:hover{background:#962d21;}
 .site-nav-tv{display:flex;align-items:center;gap:6px;background:#1a1a1a;color:#fff!important;padding:8px 16px;border-radius:8px;font-weight:600;}
 .site-nav-tv:hover{background:#000;}
 .site-nav-tv img{height:22px;width:auto;border-radius:4px;}
@@ -79,6 +81,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
       Watch TV
     </a>
     <a href="/advertise/" class="site-nav-cta">Advertise</a>
+    <a href="#" onclick="snOpenDonate();return false;" class="site-nav-donate">Donate</a>
   </div>
 </nav>
 
@@ -487,6 +490,28 @@ else if(sessionStorage.getItem('sfp-active')==='1'){
 })();
 </script>
 
+
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+function snOpenDonate(){
+  var amount = prompt("Enter donation amount in GHS:", "50");
+  if(!amount || isNaN(amount) || Number(amount) <= 0) return;
+  var email = prompt("Enter your email for the receipt:");
+  if(!email) return;
+  var handler = PaystackPop.setup({
+    key: 'pk_live_de0fc9e3b71f670c1d8e9cd4e3be3f125c9ceb8a',
+    email: email,
+    amount: Math.round(Number(amount) * 100),
+    currency: 'GHS',
+    ref: 'SUNNYDON' + Math.floor(Math.random() * 1000000000),
+    callback: function(response){
+      alert('Thank you! Your donation was successful. Reference: ' + response.reference);
+    },
+    onClose: function(){}
+  });
+  handler.openIframe();
+}
+</script>
 
 </body>
 </html>
