@@ -362,6 +362,7 @@ function buildCollection(collectionFolder, config) {
   fs.writeFileSync(path.join(outDir, 'index.html'), listHtml);
 
   console.log(`Built ${posts.length} post(s) for ${config.label}`);
+  return posts;
 }
 
 function getCollectionEmoji(urlPath) {
@@ -386,9 +387,47 @@ function getCollectionTagline(urlPath) {
   }
 }
 
-// Run build for each collection
+// Run build for each collection, collecting post URLs for the sitemap
+const STATIC_PAGES = [
+  { loc: 'https://sunnygh.com/', changefreq: 'daily', priority: '1.0' },
+  { loc: 'https://sunnygh.com/listen-live/', changefreq: 'daily', priority: '0.9' },
+  { loc: 'https://sunnygh.com/watch-tv/', changefreq: 'daily', priority: '0.9' },
+  { loc: 'https://sunnygh.com/news/', changefreq: 'daily', priority: '0.8' },
+  { loc: 'https://sunnygh.com/events/', changefreq: 'weekly', priority: '0.8' },
+  { loc: 'https://sunnygh.com/lifestyle/', changefreq: 'weekly', priority: '0.7' },
+  { loc: 'https://sunnygh.com/preaching-teaching/', changefreq: 'weekly', priority: '0.7' },
+  { loc: 'https://sunnygh.com/music-videos/', changefreq: 'weekly', priority: '0.7' },
+  { loc: 'https://sunnygh.com/prayer-testimonies/', changefreq: 'weekly', priority: '0.6' },
+  { loc: 'https://sunnygh.com/advertise/', changefreq: 'monthly', priority: '0.5' },
+];
+
+const allPostUrls = [];
 for (const [folder, config] of Object.entries(COLLECTIONS)) {
-  buildCollection(folder, config);
+  const posts = buildCollection(folder, config) || [];
+  for (const post of posts) {
+    allPostUrls.push({
+      loc: `https://sunnygh.com${post.url}`,
+      changefreq: 'monthly',
+      priority: '0.6',
+      lastmod: post.date ? new Date(post.date).toISOString().split('T')[0] : null,
+    });
+  }
 }
+
+// Generate sitemap.xml: static pages + every individual post
+const sitemapEntries = [...STATIC_PAGES, ...allPostUrls];
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapEntries.map(e => `
+  <url>
+    <loc>${e.loc}</loc>${e.lastmod ? `\n    <lastmod>${e.lastmod}</lastmod>` : ''}
+    <changefreq>${e.changefreq}</changefreq>
+    <priority>${e.priority}</priority>
+  </url>`).join('\n')}
+
+</urlset>
+`;
+fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemapXml);
+console.log(`Sitemap generated with ${sitemapEntries.length} URLs.`);
 
 console.log('Build complete.');
