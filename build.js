@@ -43,6 +43,15 @@ const HEADER = fs.readFileSync(path.join(ROOT, '_includes', 'site-header.html'),
 const FOOTER = fs.readFileSync(path.join(ROOT, '_includes', 'site-footer.html'), 'utf8');
 const FOOTER_PLAYER = fs.readFileSync(path.join(ROOT, '_includes', 'footer-player.html'), 'utf8');
 
+const GA_SNIPPET = `<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8W4N24JZK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W8W4N24JZK');
+</script>`;
+
 const DONATE_SCRIPT = `
 <script src="https://js.paystack.co/v1/inline.js"></script>
 <script>
@@ -92,6 +101,7 @@ function pageShell({ title, description, bodyHtml, ogImage }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
+${GA_SNIPPET}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${escapeHtml(title)} — Sunny 88.7 FM</title>
