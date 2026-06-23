@@ -13,16 +13,13 @@ Theseries grew out of a global listening process conducted in thelead-up to the 
 
 "FollowingJesus has always been deeply personal, but never merely private,"said Michael Oh, global executive director and CEO of the LausanneMovement. "The God who meets us in our daily lives is also theGod who loves the world, gathers a global church, sends his people inmission, and calls us to live as one body in Christ."
 
-https://youtu.be/3127IakaHJs
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3127IakaHJs?si=Da1seKqs89AMb9cO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 Thefive episodes cover themes including the global church and itsunfinished mission, prayer and cross-cultural learning, friendshipand partnership across cultures, and the relationship between globaland local discipleship. Each episode is paired with discussionquestions, Scripture passages and practical next steps.
 
 Contributorsinclude voices from across the global church: Pearl Ganta, DesmondHenry, Janet Sewell, Joe Handley, Nana-Yaw Offei Awuku, Jurie Krieland Jason Watson, alongside Oh.
 
 Watson,Lausanne's director of content, said the series was built forordinary church contexts. "Many church and ministry leaders caredeeply about global mission, but they are asking how to help ordinarybelievers take meaningful next steps," he said. "Becoming aGlobal Disciple is a practical, accessible resource they can usewithout having to build a series from scratch."
-
-
-
 
 Ratherthan framing global mission as the domain of missionaries or frequenttravelers, the series is intended to help every believer see theirdaily life within the wider mission of God, according to the LausanneMovement.
 
