@@ -1,60 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8W4N24JZK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-W8W4N24JZK');
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Listen Live — Sunny 88.7 FM</title>
-<meta name="description" content="Listen to Sunny 88.7FM live, 24/7. Stream Ghana's premier Christian radio station from anywhere in the world.">
-<style>
-*{box-sizing:border-box;}
-.site-nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e8e4dc;padding:10px 5%;display:flex;align-items:center;justify-content:space-between;font-family:'Segoe UI',Arial,sans-serif;}
-.site-nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.site-nav-logo img{height:46px;width:auto;display:block;}
-.site-nav-links{display:flex;align-items:center;gap:22px;}
-.site-nav-links a{color:#1a1a1a;font-size:14px;font-weight:500;text-decoration:none;transition:color .15s;white-space:nowrap;}
-.site-nav-links a:hover{color:#a8760a;}
-.site-nav-cta{background:#C8920A;color:#fff!important;padding:10px 20px;border-radius:8px;font-weight:600;}
-.site-nav-cta:hover{background:#a8760a;}
-.site-nav-donate{background:#C0392B;color:#fff!important;padding:10px 20px;border-radius:8px;font-weight:600;margin-left:8px;}
-.site-nav-donate:hover{background:#962d21;}
-.site-nav-tv{display:flex;align-items:center;gap:6px;background:#1a1a1a;color:#fff!important;padding:8px 16px;border-radius:8px;font-weight:600;}
-.site-nav-tv:hover{background:#000;}
-.site-nav-tv img{height:22px;width:auto;border-radius:4px;}
-@media(max-width:1000px){.site-nav-links{display:none;}}
-</style>
-<nav class="site-nav">
-  <a href="/" class="site-nav-logo">
-    <img src="/assets/sunny-fm-logo.png" alt="Sunny 88.7 FM — Positive Soul Music">
-  </a>
-  <div class="site-nav-links">
-    <a href="/news/">News</a>
-    <a href="/listen-live/">Listen Live</a>
-    <a href="/lifestyle/">Lifestyle</a>
-    <a href="/preaching-teaching/">Preaching &amp; Teaching</a>
-    <a href="/events/">Events</a>
-    <a href="/music-videos/">Music &amp; Videos</a>
-    <a href="/watch-tv/" class="site-nav-tv">
-      <img src="/assets/sunny-tv-logo.png" alt="Sunny TV">
-      Watch TV
-    </a>
-    <a href="/advertise/" class="site-nav-cta">Advertise</a>
-    <a href="#" onclick="snOpenDonate();return false;" class="site-nav-donate">Donate</a>
-  </div>
-</nav>
-</head>
-<body style="margin:0;font-family:'Segoe UI',Arial,sans-serif;">
-<div style="padding:24px 5%;">
+<!-- ============================================================
+     SUNNY FM 88.7 — LISTEN LIVE PAGE (v2 — Ads + Auto-Reconnect)
+     Paste this entire block into an Elementor HTML Widget
+     ============================================================ -->
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 #sfl-wrap{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;max-width:900px;margin:0 auto;}
+
+/* ── HERO ── */
 .sfl-hero{background:#C8920A;padding:2.5rem 1.5rem 2rem;text-align:center;border-radius:16px;margin-bottom:1.5rem;position:relative;overflow:hidden;}
 .sfl-hero::before{content:'';position:absolute;top:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.07);}
 .sfl-hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.05);}
@@ -63,10 +15,14 @@
 @keyframes sfl-pulse{0%,100%{opacity:1;}50%{opacity:.25;}}
 .sfl-hero h1{font-size:2rem;font-weight:700;color:#fff;margin-bottom:.3rem;line-height:1.15;}
 .sfl-hero p{font-size:.95rem;color:rgba(255,255,255,.8);margin-bottom:1.5rem;}
+
+/* ── PLAYER ── */
 .sfl-player{background:#fff;border-radius:14px;padding:1.1rem 1.3rem;max-width:460px;margin:0 auto;display:flex;align-items:center;gap:14px;position:relative;z-index:1;}
 .sfl-playbtn{width:50px;height:50px;border-radius:50%;background:#C8920A;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s;}
 .sfl-playbtn:hover{background:#a8760a;}
 .sfl-playbtn svg{width:20px;height:20px;fill:#fff;margin-left:2px;}
+.sfl-playbtn.loading{animation:sfl-spin 1s linear infinite;}
+@keyframes sfl-spin{to{transform:rotate(360deg);}}
 .sfl-pinfo{flex:1;min-width:0;}
 .sfl-pnow{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:#999;margin-bottom:2px;}
 .sfl-ptitle{font-size:15px;font-weight:600;color:#1a1a1a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -76,8 +32,28 @@
 .sfl-vol input[type=range]{width:64px;accent-color:#C8920A;cursor:pointer;}
 .sfl-eq{display:flex;align-items:flex-end;gap:3px;height:26px;max-width:460px;margin:.9rem auto 0;}
 .sfl-eq span{flex:1;background:rgba(255,255,255,.5);border-radius:2px;animation:sfl-eq 1.3s ease-in-out infinite;}
+.sfl-eq.paused span{animation:none;height:20%;}
 @keyframes sfl-eq{0%,100%{height:20%;}50%{height:90%;}}
 .sfl-eq span:nth-child(1){animation-delay:0s}.sfl-eq span:nth-child(2){animation-delay:.12s}.sfl-eq span:nth-child(3){animation-delay:.25s}.sfl-eq span:nth-child(4){animation-delay:.08s}.sfl-eq span:nth-child(5){animation-delay:.2s}.sfl-eq span:nth-child(6){animation-delay:.35s}.sfl-eq span:nth-child(7){animation-delay:.05s}.sfl-eq span:nth-child(8){animation-delay:.18s}.sfl-eq span:nth-child(9){animation-delay:.3s}.sfl-eq span:nth-child(10){animation-delay:.42s}.sfl-eq span:nth-child(11){animation-delay:.15s}.sfl-eq span:nth-child(12){animation-delay:.28s}
+
+/* ── HERO BANNER AD ── */
+.sfl-hero-ad{max-width:460px;margin:.9rem auto 0;position:relative;z-index:1;border-radius:10px;overflow:hidden;background:rgba(0,0,0,.15);cursor:pointer;display:none;}
+.sfl-hero-ad.visible{display:block;}
+.sfl-hero-ad img{width:100%;height:auto;display:block;border-radius:10px;}
+.sfl-hero-ad-label{position:absolute;top:6px;left:8px;font-size:9px;font-weight:700;color:rgba(255,255,255,.75);background:rgba(0,0,0,.35);padding:2px 7px;border-radius:10px;letter-spacing:.06em;text-transform:uppercase;}
+.sfl-hero-ad-close{position:absolute;top:5px;right:8px;font-size:11px;color:rgba(255,255,255,.7);cursor:pointer;background:rgba(0,0,0,.3);border:none;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;line-height:1;}
+
+/* ── PRE-ROLL OVERLAY ── */
+.sfl-preroll{display:none;position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(20,20,20,.97);border-radius:14px;z-index:10;padding:1rem;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;}
+.sfl-preroll.active{display:flex;}
+.sfl-preroll-label{font-size:10px;color:#aaa;text-transform:uppercase;letter-spacing:.1em;}
+.sfl-preroll-adname{font-size:14px;font-weight:600;color:#fff;}
+.sfl-preroll-bar{width:100%;height:3px;background:#333;border-radius:2px;overflow:hidden;}
+.sfl-preroll-bar-fill{height:100%;background:#C8920A;transition:width .5s linear;}
+.sfl-preroll-skip{font-size:12px;color:#aaa;cursor:pointer;border:1px solid #444;border-radius:6px;padding:4px 14px;background:transparent;margin-top:4px;}
+.sfl-preroll-skip:hover{color:#fff;border-color:#888;}
+
+/* ── SECTIONS ── */
 .sfl-sec{margin-bottom:1.5rem;}
 .sfl-sec-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;font-weight:600;margin-bottom:.9rem;display:flex;align-items:center;gap:8px;}
 .sfl-sec-label::after{content:'';flex:1;height:1px;background:#e8e8e8;}
@@ -91,6 +67,14 @@
 .sfl-np-time{font-size:12px;color:#888;margin-top:2px;}
 .sfl-live-tag{font-size:11px;padding:3px 10px;border-radius:20px;font-weight:600;background:#fff0f0;color:#c0392b;flex-shrink:0;}
 .sfl-next-tag{font-size:11px;padding:3px 10px;border-radius:20px;font-weight:600;background:#f0ece4;color:#888;border:1px solid #ddd;flex-shrink:0;}
+
+/* ── MID-PAGE BANNER AD ── */
+.sfl-banner-ad{display:none;border-radius:12px;overflow:hidden;margin-bottom:1.5rem;position:relative;cursor:pointer;}
+.sfl-banner-ad.visible{display:block;}
+.sfl-banner-ad img{width:100%;height:auto;display:block;}
+.sfl-banner-ad-label{position:absolute;bottom:8px;right:10px;font-size:9px;color:rgba(255,255,255,.6);background:rgba(0,0,0,.4);padding:2px 8px;border-radius:8px;letter-spacing:.06em;text-transform:uppercase;}
+
+/* ── SCHEDULE ── */
 .sfl-day-tabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:1rem;}
 .sfl-day-tab{padding:5px 13px;border-radius:8px;border:1px solid #ddd;cursor:pointer;font-size:12px;font-weight:600;background:#fff;color:#888;transition:all .15s;}
 .sfl-day-tab.active{background:#C8920A;color:#fff;border-color:#C8920A;}
@@ -115,6 +99,8 @@
 .sfl-legend{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:.9rem;}
 .sfl-leg-item{display:flex;align-items:center;gap:5px;font-size:11px;color:#888;}
 .sfl-leg-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0;}
+
+/* ── LISTEN OPTIONS ── */
 .sfl-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;}
 .sfl-opt{border:1px solid #e8e4dc;border-radius:12px;padding:1rem;text-decoration:none;display:block;cursor:pointer;transition:background .15s;background:#fff;}
 .sfl-opt:hover{background:#faf8f3;}
@@ -122,6 +108,10 @@
 .sfl-opt-icon svg{width:20px;height:20px;fill:#C8920A;}
 .sfl-opt-title{font-size:13px;font-weight:600;color:#1a1a1a;}
 .sfl-opt-desc{font-size:11px;color:#999;margin-top:2px;}
+
+/* ── STATUS BAR ── */
+.sfl-status{font-size:11px;color:rgba(255,255,255,.6);text-align:center;margin-top:.5rem;min-height:16px;}
+
 @media(max-width:480px){
   .sfl-hero h1{font-size:1.5rem;}
   .sfl-player{flex-wrap:wrap;}
@@ -131,30 +121,48 @@
 
 <div id="sfl-wrap">
 
+  <!-- HERO PLAYER -->
   <div class="sfl-hero">
     <div class="sfl-badge"><span class="sfl-dot"></span>On Air Now</div>
     <h1>Sunny FM 88.7</h1>
     <p>Ghana's Premier Christian Station &middot; Accra &amp; Worldwide</p>
-    <div class="sfl-player">
+
+    <div class="sfl-player" style="position:relative;">
+
+      <!-- PRE-ROLL AD OVERLAY (shown before stream starts) -->
+      <div class="sfl-preroll" id="sfl-preroll">
+        <div class="sfl-preroll-label">Advertisement</div>
+        <div class="sfl-preroll-adname" id="sfl-preroll-name"></div>
+        <div class="sfl-preroll-bar"><div class="sfl-preroll-bar-fill" id="sfl-preroll-fill" style="width:0%"></div></div>
+        <button class="sfl-preroll-skip" id="sfl-preroll-skip" onclick="sflSkipPreroll()">Skip ad &#8250;</button>
+      </div>
+
       <button class="sfl-playbtn" id="sfl-playbtn" onclick="sflToggle()" aria-label="Play live stream">
         <svg id="sfl-play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
       </button>
       <div class="sfl-pinfo">
         <div class="sfl-pnow">Now playing</div>
-        <div class="sfl-ptitle" id="sfl-ptitle">Inspirational Morning Drive</div>
-        <div class="sfl-pstation" id="sfl-pstation">Sunny FM 88.7</div>
+        <div class="sfl-ptitle" id="sfl-ptitle">Sunny FM 88.7</div>
+        <div class="sfl-pstation" id="sfl-pstation">Tap play to listen live</div>
       </div>
       <div class="sfl-vol">
         <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
         <input type="range" min="0" max="100" value="80" id="sfl-vol" aria-label="Volume" oninput="sflVol(this.value)">
       </div>
     </div>
-    <div class="sfl-eq">
-      <span></span><span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span><span></span>
+
+    <!-- HERO BANNER AD (below player, inside gold hero) -->
+    <div class="sfl-hero-ad" id="sfl-hero-ad" onclick="sflAdClick('hero')">
+      <span class="sfl-hero-ad-label">Ad</span>
+      <button class="sfl-hero-ad-close" onclick="event.stopPropagation();sflCloseHeroAd()" title="Close">&times;</button>
+      <img id="sfl-hero-ad-img" src="" alt="Advertisement">
     </div>
+
+    <div class="sfl-eq" id="sfl-eq"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="sfl-status" id="sfl-status"></div>
   </div>
 
+  <!-- NOW PLAYING -->
   <div class="sfl-sec">
     <div class="sfl-sec-label">On air now</div>
     <div class="sfl-np-card" id="sfl-now-card">
@@ -162,7 +170,7 @@
         <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9 9 9 0 0 0 9 9 9 9 0 0 0 9-9 9 9 0 0 0-9-9zm-1 13v-6l5 3-5 3z"/></svg>
       </div>
       <div class="sfl-np-detail">
-        <div class="sfl-np-name" id="sfl-now-name">Loading...</div>
+        <div class="sfl-np-name" id="sfl-now-name">Loading…</div>
         <div class="sfl-np-time" id="sfl-now-time"></div>
       </div>
       <span class="sfl-live-tag">&#9679; Live</span>
@@ -172,13 +180,20 @@
         <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
       </div>
       <div class="sfl-np-detail">
-        <div class="sfl-np-name" id="sfl-next-name">Loading...</div>
+        <div class="sfl-np-name" id="sfl-next-name">Loading…</div>
         <div class="sfl-np-time" id="sfl-next-time"></div>
       </div>
       <span class="sfl-next-tag">Up next</span>
     </div>
   </div>
 
+  <!-- MID-PAGE BANNER AD (between Now Playing and Schedule) -->
+  <div class="sfl-banner-ad" id="sfl-banner-ad" onclick="sflAdClick('banner')">
+    <img id="sfl-banner-ad-img" src="" alt="Advertisement">
+    <span class="sfl-banner-ad-label">Advertisement</span>
+  </div>
+
+  <!-- SCHEDULE -->
   <div class="sfl-sec">
     <div class="sfl-sec-label">Weekly schedule</div>
     <div class="sfl-legend">
@@ -201,6 +216,7 @@
     <div id="sfl-grids"></div>
   </div>
 
+  <!-- MORE WAYS TO LISTEN -->
   <div class="sfl-sec">
     <div class="sfl-sec-label">More ways to listen</div>
     <div class="sfl-options">
@@ -209,12 +225,12 @@
         <div class="sfl-opt-title">FM Radio</div>
         <div class="sfl-opt-desc">88.7 FM in Accra</div>
       </div>
-      <a class="sfl-opt" href="/listen-live/">
+      <a class="sfl-opt" href="https://sunnygh.com/index.php/sunnyfm/" target="_blank">
         <div class="sfl-opt-icon"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9 9 9 0 0 0 9 9 9 9 0 0 0 9-9 9 9 0 0 0-9-9zm-1 13v-6l5 3-5 3z"/></svg></div>
         <div class="sfl-opt-title">Stream Online</div>
         <div class="sfl-opt-desc">Listen from anywhere</div>
       </a>
-      <a class="sfl-opt" href="/watch-tv/">
+      <a class="sfl-opt" href="https://sunnygh.com/index.php/live-tv/" target="_blank">
         <div class="sfl-opt-icon"><svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg></div>
         <div class="sfl-opt-title">Sunny TV Live</div>
         <div class="sfl-opt-desc">Watch the TV stream</div>
@@ -227,12 +243,56 @@
     </div>
   </div>
 
-</div>
+</div><!-- end #sfl-wrap -->
 
 <script>
 (function(){
-var STREAM='https://sunny-radio-server.cloud-ip.cc/radio/sunnyradio';
 
+/* ══════════════════════════════════════════════════════════════
+   AD CONFIGURATION
+   ─────────────────────────────────────────────────────────────
+   HOW TO ADD/EDIT ADS:
+   Each ad object has:
+     img   — URL of the ad image (recommended: 460×80px for hero,
+              860×120px for banner)
+     link  — where clicking the ad takes the listener
+     name  — advertiser name (shown on pre-roll overlay)
+     audio — (optional) URL of an MP3 pre-roll audio ad file
+     skipAfter — seconds before Skip button appears (default 5)
+
+   Set HERO_ADS to show rotating ads inside the player area.
+   Set BANNER_ADS to show a mid-page banner between sections.
+   Set PREROLL_ADS to play an audio ad before the stream starts.
+
+   To DISABLE a slot, set it to an empty array: []
+══════════════════════════════════════════════════════════════ */
+
+var HERO_ADS = [
+  // Example — replace with real ad images and links:
+  // {img:'https://sunnygh.com/ads/advertiser1-hero.jpg', link:'https://advertiser1.com', name:'Advertiser One'},
+  // {img:'https://sunnygh.com/ads/advertiser2-hero.jpg', link:'https://advertiser2.com', name:'Advertiser Two'},
+];
+
+var BANNER_ADS = [
+  // Example:
+  // {img:'https://sunnygh.com/ads/advertiser1-banner.jpg', link:'https://advertiser1.com', name:'Advertiser One'},
+];
+
+var PREROLL_ADS = [
+  // Example audio pre-roll (plays before stream on first press):
+  // {audio:'https://sunnygh.com/ads/preroll-sponsor.mp3', name:'This stream is brought to you by XYZ Ghana', skipAfter:5},
+];
+
+/* ══════════════════════════════════════════════════════════════
+   STREAM CONFIG
+══════════════════════════════════════════════════════════════ */
+var STREAM = 'https://sunny-radio-server.cloud-ip.cc/radio/sunnyradio';
+var RECONNECT_DELAY = 5000;   // ms to wait before reconnecting after a drop
+var MAX_RECONNECTS  = 10;     // give up after this many automatic retries
+
+/* ══════════════════════════════════════════════════════════════
+   SCHEDULE DATA
+══════════════════════════════════════════════════════════════ */
 var DAYS=[
   {name:'Monday',slots:[
     {t:'04:00',p:'Morning Devotion',cls:'t-devotion'},
@@ -276,6 +336,8 @@ var DAYS=[
     {t:'16:30',p:'Sunset Drive',cls:'t-ssd',sub:'Music Programme'},
     {t:'19:00',p:'Overdrive',cls:'t-show'},
     {t:'20:00',p:'Effortless Change',cls:'t-show'},
+    {t:'20:30',p:'Local Churches',cls:'t-preach'},
+    {t:'23:00',p:'Music',cls:'t-music'},
     {t:'23:30',p:'Dana Carson Min',cls:'t-preach'},
     {t:'01:00',p:'Alpha Hour',cls:'t-alpha',sub:'Overnight'},
     {t:'02:30',p:'Praise Life',cls:'t-music'}
@@ -298,7 +360,10 @@ var DAYS=[
     {t:'16:30',p:'Sunset Drive',cls:'t-ssd',sub:'Music Programme'},
     {t:'19:00',p:'Overdrive',cls:'t-show'},
     {t:'20:15',p:'Looking Up to Jesus',cls:'t-preach'},
+    {t:'20:45',p:'Pentecost Hour',cls:'t-preach'},
     {t:'21:00',p:'Meditation of the Psalms',cls:'t-devotion'},
+    {t:'21:30',p:'City of Consecration',cls:'t-preach'},
+    {t:'22:00',p:'Music',cls:'t-music'},
     {t:'00:30',p:'Alpha Hour',cls:'t-alpha',sub:'Overnight'}
   ]},
   {name:'Thursday',slots:[
@@ -320,6 +385,10 @@ var DAYS=[
     {t:'16:30',p:'Sunset Drive',cls:'t-ssd',sub:'Music Programme'},
     {t:'20:30',p:'Bible Today',cls:'t-preach'},
     {t:'21:00',p:'Mount Horeb',cls:'t-preach'},
+    {t:'21:30',p:'Global Redemption',cls:'t-preach'},
+    {t:'22:00',p:'Through the Bible',cls:'t-preach'},
+    {t:'22:30',p:'Love Castle Family',cls:'t-preach'},
+    {t:'23:00',p:'Jingle Block',cls:'t-jingle'},
     {t:'00:30',p:'Alpha Hour',cls:'t-alpha',sub:'Overnight'},
     {t:'02:30',p:'Praise Life',cls:'t-music'}
   ]},
@@ -338,6 +407,7 @@ var DAYS=[
     {t:'16:30',p:'Sunset Drive',cls:'t-ssd',sub:'Music Programme'},
     {t:'19:30',p:'Family Renaissance Broadcast',cls:'t-show'},
     {t:'21:00',p:'Shine Forth Prayer Time',cls:'t-devotion'},
+    {t:'23:00',p:'Jingle Block',cls:'t-jingle'},
     {t:'00:30',p:'Alpha Hour',cls:'t-alpha',sub:'Overnight'},
     {t:'02:30',p:'Praise Life',cls:'t-music'}
   ]},
@@ -380,8 +450,10 @@ var DAYS=[
     {t:'07:00',p:'Treasures of Wisdom',cls:'t-preach'},
     {t:'07:30',p:'Sunday Gospel Café',cls:'t-drive',sub:'Music Programme'},
     {t:'08:00',p:'Dr. Rev Som Pimpong',cls:'t-preach'},
+    {t:'08:30',p:'Sunday Gospel Café',cls:'t-drive'},
     {t:'09:00',p:'Jingle Block',cls:'t-jingle'},
     {t:'10:00',p:'Praise Live',cls:'t-music',sub:'Music Programme'},
+    {t:'10:30',p:'Music',cls:'t-music'},
     {t:'12:00',p:'Music',cls:'t-music'},
     {t:'12:30',p:'Adventures of Odyssey',cls:'t-show'},
     {t:'13:00',p:'KLJT',cls:'t-preach'},
@@ -389,8 +461,10 @@ var DAYS=[
     {t:'15:30',p:'Salt & Light',cls:'t-show'},
     {t:'17:30',p:'BT Global Min',cls:'t-preach'},
     {t:'18:00',p:'Tabernacle Worship Center',cls:'t-preach'},
+    {t:'18:30',p:'GPCC',cls:'t-preach'},
     {t:'19:00',p:"John Anorkye's Min",cls:'t-preach'},
     {t:'20:00',p:'Rehoboth / Adonai',cls:'t-preach'},
+    {t:'20:30',p:'New Tabernacle',cls:'t-preach'},
     {t:'21:00',p:'Triumphant Gospel Church',cls:'t-preach'},
     {t:'22:30',p:'Dana Carson',cls:'t-preach'},
     {t:'00:00',p:'Alpha Hour Broadcast Live',cls:'t-alpha',sub:'Overnight'},
@@ -398,12 +472,73 @@ var DAYS=[
   ]}
 ];
 
-function fmt(t){var p=t.split(':'),h=parseInt(p[0]),m=p[1],ap=h>=12?'PM':'AM',h12=h===0?12:h>12?h-12:h;return h12+':'+m+' '+ap;}
+/* ══════════════════════════════════════════════════════════════
+   SCHEDULE HELPERS
+══════════════════════════════════════════════════════════════ */
+function toMinsSeq(t, prevMins) {
+  var p=t.split(':'), mins=parseInt(p[0])*60+parseInt(p[1]);
+  if(prevMins!==undefined && mins<prevMins) mins+=1440; // overnight carry-over fix
+  return mins;
+}
+function fmt12(t){var p=t.split(':'),h=parseInt(p[0]),m=p[1],ap=h>=12?'PM':'AM',h12=h===0?12:h>12?h-12:h;return h12+':'+m+' '+ap;}
+
+function getGhanaTime(){
+  var now=new Date();
+  var parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Africa/Accra',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(now);
+  function get(type){return (parts.find(function(p){return p.type===type;})||{}).value;}
+  var DAY_MAP={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  var jsDay=DAY_MAP[get('weekday')]; // 0=Sun, 1=Mon
+  var dayIdx=[6,0,1,2,3,4,5][jsDay]; // map to DAYS array
+  var h=parseInt(get('hour')), m=parseInt(get('minute'));
+  return {dayIdx:dayIdx, nowMins:h*60+m};
+}
+
+function getSortedSlots(dayIdx){
+  var raw=DAYS[dayIdx].slots;
+  var result=[]; var prev=-1;
+  for(var i=0;i<raw.length;i++){
+    var mins=toMinsSeq(raw[i].t, prev===-1?undefined:prev);
+    result.push({slot:raw[i],mins:mins});
+    prev=mins;
+  }
+  result.sort(function(a,b){return a.mins-b.mins;});
+  return result;
+}
+
+function updateNowPlaying(){
+  var g=getGhanaTime();
+  var sorted=getSortedSlots(g.dayIdx);
+  var current=null, next=null;
+  for(var i=0;i<sorted.length;i++){
+    var sm=sorted[i].mins;
+    var em=i+1<sorted.length?sorted[i+1].mins:sm+60;
+    if(g.nowMins>=sm && g.nowMins<em){current=sorted[i];next=sorted[i+1]||sorted[0];break;}
+  }
+  if(!current&&sorted.length){current=sorted[sorted.length-1];next=sorted[0];}
+  if(!current) return;
+
+  var sl=current.slot, nx=next?next.slot:null;
+  document.getElementById('sfl-now-name').textContent=sl.p;
+  document.getElementById('sfl-now-time').textContent=fmt12(sl.t)+(nx?' – '+fmt12(nx.t):'');
+
+  var PRESENTERS={'Inspirational Morning Drive':'Jennifer & Agyemang · Sunny FM 88.7','PSF Drive':'Sunny FM 88.7 · Positive Soul Food','Positive Soul Food — PSF':'Sunny FM 88.7 · Positive Soul Food','Sunset Drive':'Baaba & Vickie · Sunny FM 88.7','Sunday Gospel Café':'Sunny FM 88.7','Praise Live':'Sunny FM 88.7','Sunny TCA Gospel Countdown':'Sunny FM 88.7','TWB — Vickie':'Vickie · Sunny FM 88.7','Steve Show':'Steve · Sunny FM 88.7','Alpha Hour':'Sunny FM 88.7 · Overnight','Alpha Hour Broadcast Live':'Sunny FM 88.7 · Overnight','Music':'Sunny FM 88.7'};
+  if(!streamPlaying){
+    document.getElementById('sfl-ptitle').textContent=sl.p;
+    document.getElementById('sfl-pstation').textContent=PRESENTERS[sl.p]||'Sunny FM 88.7';
+  }
+  if(nx){
+    document.getElementById('sfl-next-name').textContent=nx.p;
+    document.getElementById('sfl-next-time').textContent='Starts '+fmt12(nx.t);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SCHEDULE GRID RENDER
+══════════════════════════════════════════════════════════════ */
 function renderDay(idx){
-  var d=DAYS[idx],s=[...d.slots].sort(function(a,b){return a.t.localeCompare(b.t);});
-  return s.map(function(sl){
-    return'<div class="sfl-slot-row"><div class="sfl-slot-time">'+fmt(sl.t)+'</div><div class="sfl-slot-pill '+sl.cls+'">'+sl.p+(sl.sub?'<small>'+sl.sub+'</small>':'')+'</div></div>';
-  }).join('');
+  var raw=DAYS[idx].slots; var prev=-1;
+  var sorted=raw.map(function(sl){var m=toMinsSeq(sl.t,prev===-1?undefined:prev);prev=m;return{slot:sl,mins:m};}).sort(function(a,b){return a.mins-b.mins;});
+  return sorted.map(function(s){var sl=s.slot;return'<div class="sfl-slot-row"><div class="sfl-slot-time">'+fmt12(sl.t)+'</div><div class="sfl-slot-pill '+sl.cls+'">'+sl.p+(sl.sub?'<small>'+sl.sub+'</small>':'')+'</div></div>';}).join('');
 }
 function buildGrids(){
   var c=document.getElementById('sfl-grids');
@@ -414,129 +549,208 @@ window.sflDay=function(idx){
   document.querySelectorAll('.sfl-sched-grid').forEach(function(g,i){g.classList.toggle('active',i===idx);});
 };
 
-var audio=null,playing=false;
-window.sflToggle=function(){
-  if(!audio){
-    audio=new Audio(STREAM);
-    audio.volume=document.getElementById('sfl-vol').value/100;
-    audio.onerror=function(){
-      document.getElementById('sfl-ptitle').textContent='Stream unavailable — try again shortly';
-      playing=false;
-      document.getElementById('sfl-play-icon').innerHTML='<path d="M8 5v14l11-7z"/>';
-    };
+/* ══════════════════════════════════════════════════════════════
+   AUDIO PLAYER — with auto-reconnect + proper error recovery
+══════════════════════════════════════════════════════════════ */
+var audio=null, streamPlaying=false, reconnectCount=0, reconnectTimer=null;
+
+function setStatus(msg){ document.getElementById('sfl-status').textContent=msg||''; }
+function setPlayIcon(pause){ document.getElementById('sfl-play-icon').innerHTML=pause?'<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>':'<path d="M8 5v14l11-7z"/>'; }
+function setEqPlaying(on){ document.getElementById('sfl-eq').classList.toggle('paused',!on); }
+
+function destroyAudio(){
+  if(audio){ try{audio.pause();}catch(e){} audio.src=''; audio=null; }
+}
+
+function doConnect(){
+  destroyAudio();
+  audio=new Audio(STREAM+'?t='+Date.now()); // cache-bust prevents stale stream
+  audio.volume=(document.getElementById('sfl-vol').value||80)/100;
+
+  audio.onplaying=function(){
+    streamPlaying=true; reconnectCount=0;
+    setPlayIcon(true); setEqPlaying(true);
+    setStatus('');
+    document.getElementById('sfl-ptitle').textContent=document.getElementById('sfl-now-name').textContent||'Sunny FM 88.7';
+    document.getElementById('sfl-pnow-label') && (document.getElementById('sfl-pnow-label').textContent='Now playing');
+  };
+
+  // FIX: handle all network/server drop scenarios
+  function handleDrop(reason){
+    if(!streamPlaying && reconnectCount===0) return; // wasn't playing, ignore
+    streamPlaying=false; setPlayIcon(false); setEqPlaying(false);
+    if(reconnectCount<MAX_RECONNECTS){
+      reconnectCount++;
+      setStatus('Reconnecting… ('+reconnectCount+'/'+MAX_RECONNECTS+')');
+      reconnectTimer=setTimeout(function(){ if(streamPlaying===false) doConnect(); },RECONNECT_DELAY);
+    } else {
+      setStatus('Stream unavailable. Tap play to try again.');
+      destroyAudio();
+      reconnectCount=0;
+    }
   }
-  if(playing){
-    audio.pause();playing=false;
-    sessionStorage.removeItem('sfp-active');
-    document.getElementById('sfl-play-icon').innerHTML='<path d="M8 5v14l11-7z"/>';
+
+  audio.onerror  =function(){ handleDrop('error'); };
+  audio.onstalled=function(){ handleDrop('stalled'); };
+  audio.onended  =function(){ handleDrop('ended'); };
+  audio.onwaiting=function(){ if(streamPlaying) setStatus('Buffering…'); };
+
+  audio.play().catch(function(){ setStatus('Tap play to listen live.'); destroyAudio(); });
+}
+
+function startStream(){
+  if(reconnectTimer){ clearTimeout(reconnectTimer); reconnectTimer=null; }
+  reconnectCount=0;
+  document.getElementById('sfl-pstation').textContent='Sunny FM 88.7';
+  setStatus('Connecting…');
+  doConnect();
+}
+
+function stopStream(){
+  if(reconnectTimer){ clearTimeout(reconnectTimer); reconnectTimer=null; }
+  streamPlaying=false; reconnectCount=0;
+  destroyAudio();
+  setPlayIcon(false); setEqPlaying(false);
+  setStatus('');
+  updateNowPlaying();
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PRE-ROLL AUDIO AD
+══════════════════════════════════════════════════════════════ */
+var prerollDone=sessionStorage.getItem('sfl-preroll-done');
+var prerollAd=null, prerollTimer=null, prerollIdx=0;
+
+function sflSkipPreroll(){
+  if(prerollTimer){clearInterval(prerollTimer);prerollTimer=null;}
+  if(prerollAd){try{prerollAd.pause();}catch(e){}prerollAd=null;}
+  document.getElementById('sfl-preroll').classList.remove('active');
+  sessionStorage.setItem('sfl-preroll-done','1');
+  startStream();
+}
+window.sflSkipPreroll=sflSkipPreroll;
+
+function playPreroll(ad){
+  var el=document.getElementById('sfl-preroll');
+  document.getElementById('sfl-preroll-name').textContent=ad.name||'Advertisement';
+  document.getElementById('sfl-preroll-skip').style.display='none';
+  document.getElementById('sfl-preroll-fill').style.width='0%';
+  el.classList.add('active');
+
+  prerollAd=new Audio(ad.audio);
+  var skipAfter=(ad.skipAfter||5)*1000;
+  var started=Date.now();
+  var dur=0;
+
+  prerollAd.onloadedmetadata=function(){ dur=prerollAd.duration*1000||15000; };
+  prerollAd.onended=function(){ sflSkipPreroll(); };
+  prerollAd.onerror=function(){ sflSkipPreroll(); };
+  prerollAd.play().catch(function(){ sflSkipPreroll(); });
+
+  prerollTimer=setInterval(function(){
+    var elapsed=Date.now()-started;
+    var total=dur||15000;
+    document.getElementById('sfl-preroll-fill').style.width=Math.min(100,elapsed/total*100)+'%';
+    if(elapsed>=skipAfter) document.getElementById('sfl-preroll-skip').style.display='';
+    if(elapsed>=total) sflSkipPreroll();
+  },200);
+}
+
+window.sflToggle=function(){
+  if(streamPlaying){
+    stopStream();
   } else {
-    audio.play().then(function(){
-      playing=true;
-      sessionStorage.setItem('sfp-active','1');
-      document.getElementById('sfl-play-icon').innerHTML='<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
-    }).catch(function(){
-      document.getElementById('sfl-ptitle').textContent='Tap play to listen live';
-    });
+    // Pre-roll: only once per session, only if audio ads configured
+    if(!prerollDone && PREROLL_ADS.length>0){
+      prerollDone=true;
+      var pr=PREROLL_ADS[prerollIdx % PREROLL_ADS.length]; prerollIdx++;
+      playPreroll(pr);
+    } else {
+      startStream();
+    }
   }
 };
-window.sflVol=function(v){if(audio)audio.volume=v/100;};
+window.sflVol=function(v){ if(audio) audio.volume=v/100; };
 
-buildGrids();
+/* ══════════════════════════════════════════════════════════════
+   VISUAL ADS — HERO BANNER
+══════════════════════════════════════════════════════════════ */
+var heroAdIdx=0, heroAdTimer=null, currentHeroAdLink='#';
 
-function toMins(t){var p=t.split(':');return parseInt(p[0])*60+parseInt(p[1]);}
-function fmt12(t){var p=t.split(':'),h=parseInt(p[0]),m=p[1],ap=h>=12?'PM':'AM',h12=h===0?12:h>12?h-12:h;return h12+':'+m+' '+ap;}
-
-function updateNowPlaying(){
-  var now=new Date();
-  var day=now.getDay();
-  var dayIdx=[6,0,1,2,3,4,5][day];
-  var nowMins=now.getHours()*60+now.getMinutes();
-  var slots=DAYS[dayIdx].slots.slice().sort(function(a,b){return toMins(a.t)-toMins(b.t);});
-  var current=null,next=null;
-  for(var i=0;i<slots.length;i++){
-    var sm=toMins(slots[i].t);
-    var em=i+1<slots.length?toMins(slots[i+1].t):toMins(slots[i].t)+60;
-    if(nowMins>=sm&&nowMins<em){current=slots[i];next=slots[i+1]||slots[0];break;}
-  }
-  if(!current&&slots.length){current=slots[slots.length-1];next=slots[0];}
-  if(current){
-    document.getElementById('sfl-now-name').textContent=current.p;
-    var ni=slots.indexOf(current),ne=slots[ni+1]||slots[0];
-    document.getElementById('sfl-now-time').textContent=fmt12(current.t)+(ne?' – '+fmt12(ne.t):'');
-    document.getElementById('sfl-ptitle').textContent=current.p;
-    var presenters={'Inspirational Morning Drive':'Jennifer & Agyemang · Sunny FM 88.7','PSF Drive':'Sunny FM 88.7 · Positive Soul Food','Sunset Drive':'Baaba & Vickie · Sunny FM 88.7','Sunday Gospel Café':'Sunny FM 88.7','Praise Live':'Sunny FM 88.7','Alpha Hour':'Sunny FM 88.7 · Overnight','Alpha Hour Broadcast Live':'Sunny FM 88.7 · Overnight','Praise Life':'Sunny FM 88.7','Music':'Sunny FM 88.7'};
-    document.getElementById('sfl-pstation').textContent=presenters[current.p]||'Sunny FM 88.7';
-  }
-  if(next){
-    document.getElementById('sfl-next-name').textContent=next.p;
-    document.getElementById('sfl-next-time').textContent='Starts '+fmt12(next.t);
-  }
+function showHeroAd(idx){
+  if(!HERO_ADS.length) return;
+  var ad=HERO_ADS[idx % HERO_ADS.length];
+  var el=document.getElementById('sfl-hero-ad');
+  var img=document.getElementById('sfl-hero-ad-img');
+  if(!ad.img) return;
+  img.src=ad.img; img.alt=ad.name||'Advertisement';
+  currentHeroAdLink=ad.link||'#';
+  el.classList.add('visible');
 }
+function rotateHeroAds(){
+  if(!HERO_ADS.length) return;
+  showHeroAd(heroAdIdx);
+  heroAdTimer=setInterval(function(){
+    heroAdIdx=(heroAdIdx+1)%HERO_ADS.length;
+    showHeroAd(heroAdIdx);
+  },30000); // rotate every 30 seconds
+}
+window.sflCloseHeroAd=function(){
+  document.getElementById('sfl-hero-ad').classList.remove('visible');
+  if(heroAdTimer){clearInterval(heroAdTimer);heroAdTimer=null;}
+};
+
+/* ══════════════════════════════════════════════════════════════
+   VISUAL ADS — MID-PAGE BANNER
+══════════════════════════════════════════════════════════════ */
+var bannerAdIdx=0, bannerAdTimer=null, currentBannerAdLink='#';
+
+function showBannerAd(idx){
+  if(!BANNER_ADS.length) return;
+  var ad=BANNER_ADS[idx % BANNER_ADS.length];
+  var el=document.getElementById('sfl-banner-ad');
+  var img=document.getElementById('sfl-banner-ad-img');
+  if(!ad.img) return;
+  img.src=ad.img; img.alt=ad.name||'Advertisement';
+  currentBannerAdLink=ad.link||'#';
+  el.classList.add('visible');
+}
+function rotateBannerAds(){
+  if(!BANNER_ADS.length) return;
+  showBannerAd(bannerAdIdx);
+  bannerAdTimer=setInterval(function(){
+    bannerAdIdx=(bannerAdIdx+1)%BANNER_ADS.length;
+    showBannerAd(bannerAdIdx);
+  },30000);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   AD CLICK TRACKING
+══════════════════════════════════════════════════════════════ */
+window.sflAdClick=function(slot){
+  var link=slot==='hero'?currentHeroAdLink:currentBannerAdLink;
+  // Log to Google Analytics if available
+  if(window.gtag) gtag('event','ad_click',{ad_slot:slot,ad_url:link});
+  if(link&&link!=='#') window.open(link,'_blank','noopener');
+};
+
+/* ══════════════════════════════════════════════════════════════
+   INIT
+══════════════════════════════════════════════════════════════ */
+buildGrids();
 updateNowPlaying();
 setInterval(updateNowPlaying,60000);
+rotateHeroAds();
+rotateBannerAds();
+
+// Highlight today's schedule tab
+var g=getGhanaTime();
+var tabs=document.querySelectorAll('.sfl-day-tab');
+if(tabs[g.dayIdx]) tabs.forEach(function(t,i){t.classList.toggle('active',i===g.dayIdx);});
+document.querySelectorAll('.sfl-sched-grid').forEach(function(gr,i){gr.classList.toggle('active',i===g.dayIdx);});
+
 })();
 </script>
-</div>
-
-<style>
-.site-footer{background:#111;color:rgba(255,255,255,.6);padding:40px 5% 90px;font-family:'Segoe UI',Arial,sans-serif;}
-.site-footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;}
-.site-footer-col-title{color:#fff;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;}
-.site-footer-col a{display:block;color:rgba(255,255,255,.6);font-size:13px;margin-bottom:8px;text-decoration:none;}
-.site-footer-col a:hover{color:#C8920A;}
-.site-footer-bottom{max-width:1100px;margin:32px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:12px;text-align:center;color:rgba(255,255,255,.4);}
-</style>
-<footer class="site-footer">
-  <div class="site-footer-inner">
-    <div>
-      <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:6px;">Sunny <span style="color:#C8920A;">88.7</span> FM</div>
-      <div style="font-size:13px;line-height:1.7;">Positive Soul Music<br>Ghana's Premier Christian Station<br>Accra &amp; Worldwide</div>
-    </div>
-    <div class="site-footer-col">
-      <div class="site-footer-col-title">Explore</div>
-      <a href="/listen-live/">Listen Live</a>
-      <a href="/news/">News</a>
-      <a href="/lifestyle/">Lifestyle</a>
-      <a href="/preaching-teaching/">Preaching &amp; Teaching</a>
-      <a href="/events/">Events</a>
-    </div>
-    <div class="site-footer-col">
-      <div class="site-footer-col-title">More</div>
-      <a href="/music-videos/">Music &amp; Videos</a>
-      <a href="/prayer-testimonies/">Prayer &amp; Testimonies</a>
-      <a href="/advertise/">Advertise</a>
-      <a href="/watch-tv/">Watch TV</a>
-    </div>
-    <div class="site-footer-col">
-      <div class="site-footer-col-title">Contact</div>
-      <a href="tel:0545223324">054 522 3324</a>
-      <a href="mailto:info@sunnygh.com">info@sunnygh.com</a>
-      <div style="font-size:13px;margin-top:8px;">45 Hilla Limann Avenue<br>North Ridge, Accra</div>
-    </div>
-  </div>
-  <div class="site-footer-bottom">© 2026 Sunny 88.7 FM · All Rights Reserved</div>
-</footer>
-<script src="https://js.paystack.co/v1/inline.js"></script>
-<script>
-function snOpenDonate(){
-  var amount = prompt("Enter donation amount in GHS:", "50");
-  if(!amount || isNaN(amount) || Number(amount) <= 0) return;
-  var email = prompt("Enter your email for the receipt:");
-  if(!email) return;
-  var handler = PaystackPop.setup({
-    key: 'pk_live_de0fc9e3b71f670c1d8e9cd4e3be3f125c9ceb8a',
-    email: email,
-    amount: Math.round(Number(amount) * 100),
-    currency: 'GHS',
-    ref: 'SUNNYDON' + Math.floor(Math.random() * 1000000000),
-    callback: function(response){
-      alert('Thank you! Your donation was successful. Reference: ' + response.reference);
-    },
-    onClose: function(){}
-  });
-  handler.openIframe();
-}
-</script>
-
-</body>
-</html>
+<!-- ============================================================
+     END SUNNY FM 88.7 LISTEN LIVE — v2 (Ads + Auto-Reconnect)
+     ============================================================ -->
