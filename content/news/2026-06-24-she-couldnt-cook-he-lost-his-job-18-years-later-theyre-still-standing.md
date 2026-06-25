@@ -5,23 +5,21 @@ image: /assets/uploads/untitled-design-7-.png
 summary: >
   It started with a social media post.
 
-  Evangeline wasn't looking for attention. She simply listed — honestly, without polish — 18 challenges she and Isaac had walked through together. The post took off. Nearly 50,000 views. Hundreds of comments from people who recognised their own marriage in it.
+  Evangeline wasn't looking for attention. She simply listed honestly, without polish 18 challenges she and Isaac had walked through together. The post took off. Nearly 50,000 views. Hundreds of comments from people who recognised their own marriage in it.
 
   That post brought the couple to Sunny FM's IM Drive, where they told the fuller story.
 ---
-
-
 ## When the First Years Are Also the Hard Years
 
 Shortly after they wed, Evangeline lost her job. The financial pressure was real, and Isaac struggled to understand why they were going through it. Time gave him an answer he wasn't expecting.
 
 *"What felt like discomfort then became the foundation for greater intimacy and understanding."*
 
-Stripped of busyness, they were left with each other — and a friendship was forged that became the bedrock of everything that followed.
+Stripped of busyness, they were left with each other and a friendship was forged that became the bedrock of everything that followed.
 
 ## The Cooking Confession
 
-Evangeline grew up in a household where food was an art form. And yet she entered marriage not knowing how to cook. Isaac didn't lead with that — he saw her character, her values, the woman she was.
+Evangeline grew up in a household where food was an art form. And yet she entered marriage not knowing how to cook. Isaac didn't lead with that he saw her character, her values, the woman she was.
 
 But the children were less diplomatic.
 
@@ -29,11 +27,11 @@ When her kids started giving honest, unhesitating feedback about her meals, Evan
 
 ## Letting Go of the Picture in Your Head
 
-Evangeline walked into marriage with a picture — her parents' marriage, the rhythms and roles she'd grown up watching. It took years to realise she was building something new, not recreating something old.
+Evangeline walked into marriage with a picture  her parents' marriage, the rhythms and roles she'd grown up watching. It took years to realise she was building something new, not recreating something old.
 
 *"I didn't marry my father, and I wasn't becoming my mother."*
 
-Isaac had his own version of the same lesson. He believed choosing the right person was the hard part — that love, romance, and communication would simply follow.
+Isaac had his own version of the same lesson. He believed choosing the right person was the hard part that love, romance, and communication would simply follow.
 
 They didn't.
 
@@ -54,7 +52,5 @@ After eighteen years, their message to couples is simple.
 *"Marriage is always changing. When the season changes, seek the wisdom you need to navigate it."*
 
 Not a formula. Just an honest truth from two people who have lived it — and are still choosing each other, every day.
-
-
 
 Story by Esther Benjamin
