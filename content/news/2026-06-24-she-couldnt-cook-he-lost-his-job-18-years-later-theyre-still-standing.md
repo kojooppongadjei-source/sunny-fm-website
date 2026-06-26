@@ -25,6 +25,8 @@ But the children were less diplomatic.
 
 When her kids started giving honest, unhesitating feedback about her meals, Evangeline decided to learn. She prayed, called her mother, and listened. Today, Isaac calls home from work to make sure there is food left *for him* before the children finish it.
 
+iframe width="560" height="315" src="https://www.youtube.com/embed/HFzeCgBceuk?si=ZGe1ynF9v6bNH7jn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Letting Go of the Picture in Your Head
 
 Evangeline walked into marriage with a picture  her parents' marriage, the rhythms and roles she'd grown up watching. It took years to realise she was building something new, not recreating something old.
