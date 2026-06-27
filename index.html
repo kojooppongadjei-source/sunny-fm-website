@@ -1032,5 +1032,114 @@ function snOpenDonate(){
 }
 </script>
 
+
+<!-- ══ LITERACY TRAINING AD — POPUP + BOTTOM BANNER ══ -->
+<style>
+/* POPUP AD */
+#sn-ad-popup{
+  display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
+  z-index:99998;width:min(420px,90vw);
+  background:#fff;border-radius:12px;overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+#sn-ad-popup.show{display:block;}
+#sn-ad-overlay{
+  display:none;position:fixed;inset:0;z-index:99997;
+  background:rgba(0,0,0,.6);
+}
+#sn-ad-overlay.show{display:block;}
+.sn-ad-top{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:6px 10px 6px 14px;background:#0D1B3E;
+}
+.sn-ad-label{font-size:10px;font-weight:700;color:#C9A84C;text-transform:uppercase;letter-spacing:.1em;}
+.sn-ad-close{
+  background:none;border:none;color:rgba(255,255,255,.6);
+  font-size:20px;cursor:pointer;line-height:1;padding:2px 6px;
+}
+.sn-ad-close:hover{color:#fff;}
+#sn-ad-popup a{display:block;}
+#sn-ad-popup img{width:100%;display:block;}
+
+/* BOTTOM BANNER */
+#sn-ad-bottom{
+  display:none;position:fixed;bottom:70px;left:0;right:0;z-index:99996;
+  background:#0D1B3E;
+}
+#sn-ad-bottom.show{display:block;}
+.sn-bottom-inner{
+  max-width:900px;margin:0 auto;
+  display:flex;align-items:center;gap:0;
+  position:relative;
+}
+#sn-ad-bottom img{
+  width:100%;height:80px;object-fit:cover;object-position:top;
+  display:block;cursor:pointer;
+}
+.sn-bottom-close{
+  position:absolute;top:4px;right:8px;
+  background:rgba(0,0,0,.5);border:none;color:#fff;
+  font-size:16px;cursor:pointer;border-radius:4px;
+  width:24px;height:24px;display:flex;align-items:center;justify-content:center;
+  line-height:1;
+}
+.sn-bottom-label{
+  position:absolute;top:4px;left:8px;
+  font-size:9px;font-weight:700;color:#C9A84C;
+  text-transform:uppercase;letter-spacing:.08em;
+  background:rgba(0,0,0,.5);padding:2px 6px;border-radius:3px;
+}
+</style>
+
+<!-- Popup overlay -->
+<div id="sn-ad-overlay" onclick="snAdClose()"></div>
+
+<!-- Popup ad -->
+<div id="sn-ad-popup">
+  <div class="sn-ad-top">
+    <span class="sn-ad-label">AD · Sponsored</span>
+    <button class="sn-ad-close" onclick="snAdClose()">✕</button>
+  </div>
+  <a href="https://thewhyteacademy.com" target="_blank" rel="noopener">
+    <img src="/ads/LunchLearn_banner.jpg" alt="Literacy Training for Elementary Teachers — July 2027 at Sunny FM">
+  </a>
+</div>
+
+<!-- Bottom banner -->
+<div id="sn-ad-bottom">
+  <div class="sn-bottom-inner">
+    <span class="sn-bottom-label">AD</span>
+    <a href="https://thewhyteacademy.com" target="_blank" rel="noopener" style="flex:1;">
+      <img src="/ads/LunchLearn_hero_banner.jpg" alt="Literacy Training — July 9 & 10, 2027 · Sunny FM Kanda Accra · GH₵ 1,200 · thewhyteacademy.com">
+    </a>
+    <button class="sn-bottom-close" onclick="snBottomClose()">✕</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Show popup after 3 seconds (once per session)
+  if(!sessionStorage.getItem('sn-ad-seen')){
+    setTimeout(function(){
+      document.getElementById('sn-ad-popup').classList.add('show');
+      document.getElementById('sn-ad-overlay').classList.add('show');
+    }, 3000);
+  }
+  // Always show bottom banner
+  document.getElementById('sn-ad-bottom').classList.add('show');
+})();
+
+window.snAdClose = function(){
+  document.getElementById('sn-ad-popup').classList.remove('show');
+  document.getElementById('sn-ad-overlay').classList.remove('show');
+  sessionStorage.setItem('sn-ad-seen','1');
+};
+
+window.snBottomClose = function(){
+  document.getElementById('sn-ad-bottom').classList.remove('show');
+};
+</script>
+<!-- ══ END LITERACY TRAINING AD ══ -->
+
 </body>
 </html>
