@@ -7,17 +7,16 @@ location: Sunny FM, Kanda, Accra, Ghana
 tag: Education
 summary: >-
   Join us for a two-day professional Literacy Training workshop for Elementary
-  Teachers — Teaching Reading, Phonics and Writing. Led by literacy expert
-  Anita Shirley Whyte, Ed.S., Literacy Coach, Educator, and Reading & Writing
+  Teachers — Teaching Reading, Phonics and Writing. Led by literacy expert Anita
+  Shirley Whyte, Ed.S., Literacy Coach, Educator, and Reading & Writing
   Specialist from Atlanta, Georgia.
 
 
-  Empower. Equip. Elevate. Strengthen literacy instruction. Inspire young
-  readers. Transform classrooms.
+  Empower. Equip. Elevate. Strengthen literacy instruction. Inspire young readers. Transform classrooms.
 
 
   Registration Fee: GH₵ 1,200. Register at thewhyteacademy.com.
 past: false
-image: /assets/uploads/literacy-training-2027.jpg
 link: https://thewhyteacademy.com
+image: /assets/uploads/untitled-design-8-.png
 ---
