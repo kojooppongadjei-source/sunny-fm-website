@@ -22,6 +22,6 @@ summary: >-
 
 
   An Early Bird Rate of GHS 1,500 is available for participants who register ahead of the event.
-past: false
+past: true
 image: /assets/uploads/use-me.png
 ---
