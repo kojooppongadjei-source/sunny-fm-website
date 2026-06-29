@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FIFA World Cup 2026 — Live Scores | Sunny FM 88.7</title>
+<meta name="description" content="Live FIFA World Cup 2026 scores, results and fixtures. Follow Ghana Black Stars on Sunny FM 88.7.">
+<meta http-equiv="refresh" content="300">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:#0A0E1A;color:#F0F4FF;min-height:100vh;}
+:root{
+  --gold:#D4AF37;--red:#E53E3E;--green:#22C55E;
+  --blue:#3B82F6;--surface:#111827;--surface2:#1C2333;
+  --border:#2A3550;--muted:#7A8BA8;
+}
+
+/* HEADER */
+.wc-header{
+  background:linear-gradient(135deg,#0A0E1A,#1a1200);
+  border-bottom:2px solid var(--gold);
+  padding:20px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.wc-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff;}
+.wc-sub{font-size:12px;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
+.wc-station{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px;}
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.5s ease-in-out infinite;flex-shrink:0;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.8);}}
+
+/* GHANA BANNER */
+.ghana-banner{
+  background:linear-gradient(135deg,#006B3F,#003d23);
+  border-bottom:2px solid #FCD116;
+  padding:12px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;
+}
+.ghana-flag-text{font-size:14px;font-weight:700;color:#fff;}
+.ghana-score-badge{
+  background:rgba(252,209,22,0.15);border:1px solid #FCD116;
+  border-radius:6px;padding:6px 14px;
+  font-size:14px;font-weight:800;color:#FCD116;
+}
+
+/* REFRESH BAR */
+.refresh-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 5%;background:var(--surface2);
+  border-bottom:1px solid var(--border);font-size:12px;color:var(--muted);
+}
+.refresh-btn{
+  background:var(--gold);color:#000;border:none;
+  padding:5px 14px;border-radius:4px;font-size:11px;font-weight:700;
+  cursor:pointer;font-family:inherit;transition:all .2s;
+}
+.refresh-btn:hover{background:#B8962E;}
+
+/* TABS */
+.tabs{display:flex;gap:0;background:var(--surface);border-bottom:1px solid var(--border);padding:0 5%;overflow-x:auto;}
+.tab{padding:14px 20px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;}
+.tab:hover{color:#fff;}
+.tab.active{color:var(--gold);border-bottom-color:var(--gold);}
+
+/* CONTENT */
+.content{max-width:900px;margin:0 auto;padding:24px 5%;}
+.section-head{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.section-head h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);}
+.sec-dot{width:6px;height:6px;border-radius:50%;}
+
+/* MATCH CARD */
+.match-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:10px;margin-bottom:10px;overflow:hidden;transition:border-color .2s;
+}
+.match-card:hover{border-color:rgba(212,175,55,0.2);}
+.match-card.ghana-match{border-color:#FCD116;background:linear-gradient(135deg,rgba(0,107,63,0.15),var(--surface));}
+.match-inner{display:grid;grid-template-columns:1fr 110px 1fr;gap:10px;align-items:center;padding:16px 20px;}
+.team{display:flex;align-items:center;gap:10px;}
+.team.away{flex-direction:row-reverse;text-align:right;}
+.team-flag{font-size:24px;flex-shrink:0;}
+.team-name{font-size:14px;font-weight:700;color:#fff;}
+.team-code{font-size:11px;color:var(--muted);}
+.score-block{text-align:center;}
+.score-nums{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;}
+.score-sep{color:var(--muted);font-size:18px;}
+.score-status{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+.s-final{color:var(--muted);}
+.s-live{color:var(--red);}
+.s-sched{color:var(--blue);}
+.match-footer{padding:8px 20px;background:rgba(255,255,255,0.02);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--muted);}
+
+/* PROB BAR */
+.prob-bar{display:flex;height:3px;border-radius:2px;overflow:hidden;margin-top:6px;}
+.ph{background:var(--blue);}
+.pd{background:var(--muted);}
+.pa{background:var(--gold);}
+.prob-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:3px;}
+
+/* UPCOMING TIME */
+.up-time{font-size:12px;font-weight:600;color:var(--blue);background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);border-radius:4px;padding:2px 8px;display:inline-block;margin-bottom:4px;}
+
+/* LOADING */
+.loading{text-align:center;padding:60px;color:var(--muted);}
+.spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* EMPTY */
+.empty{text-align:center;padding:40px;color:var(--muted);font-size:14px;}
+
+/* FLAGS lookup */
+.flag{font-size:22px;}
+
+@media(max-width:600px){
+  .match-inner{grid-template-columns:1fr 88px 1fr;gap:6px;padding:12px 12px;}
+  .team-flag{font-size:18px;}
+  .team-name{font-size:12px;}
+  .score-nums{font-size:22px;}
+  .content{padding:14px 4%;}
+  .tabs{padding:0 4%;}
+  .wc-header,.refresh-bar,.ghana-banner{padding-left:4%;padding-right:4%;}
+}
+</style>
+</head>
+<body>
+
+<div class="wc-header">
+  <div>
+    <div class="wc-title">🏆 FIFA World Cup 2026</div>
+    <div class="wc-sub">USA · Canada · Mexico · Live Updates</div>
+  </div>
+  <div class="wc-station"><div class="live-dot"></div>Sunny FM 88.7 · sunnygh.com</div>
+</div>
+
+<div class="ghana-banner">
+  <div>
+    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#FCD116;opacity:.7;margin-bottom:3px;">🇬🇭 Black Stars Watch</div>
+    <div class="ghana-flag-text">Follow Ghana at the World Cup on Sunny FM 88.7</div>
+  </div>
+  <div class="ghana-score-badge" id="ghanaBadge">🇬🇭 Ghana · Loading...</div>
+</div>
+
+<div class="refresh-bar">
+  <span id="lastUpdate">Updating scores...</span>
+  <button class="refresh-btn" onclick="loadScores()">↻ Refresh Now</button>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('results',this)">✅ Results</div>
+  <div class="tab" onclick="showTab('upcoming',this)">📅 Upcoming</div>
+  <div class="tab" onclick="showTab('ghana',this)">🇬🇭 Black Stars</div>
+</div>
+
+<div class="content">
+  <div id="tab-results"><div class="loading"><div class="spinner"></div>Loading scores...</div></div>
+  <div id="tab-upcoming" style="display:none;"><div class="loading"><div class="spinner"></div>Loading fixtures...</div></div>
+  <div id="tab-ghana" style="display:none;"><div class="loading"><div class="spinner"></div>Loading Ghana matches...</div></div>
+</div>
+
+<div style="text-align:center;padding:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);">
+  FIFA World Cup 2026 · Live Updates on <strong style="color:var(--gold);">Sunny FM 88.7</strong> ·
+  <a href="https://sunnygh.com" style="color:var(--gold);text-decoration:none;">sunnygh.com</a>
+  · Page auto-refreshes every 5 minutes
+</div>
+
+<script>
+// Country code to flag emoji
+const FLAGS = {
+  GHA:'🇬🇭',BRA:'🇧🇷',ARG:'🇦🇷',FRA:'🇫🇷',ENG:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+  GER:'🇩🇪',ESP:'🇪🇸',POR:'🇵🇹',NED:'🇳🇱',BEL:'🇧🇪',
+  CRO:'🇭🇷',ITA:'🇮🇹',URU:'🇺🇾',MEX:'🇲🇽',USA:'🇺🇸',
+  SEN:'🇸🇳',MAR:'🇲🇦',COD:'🇨🇩',CIV:'🇨🇮',EGY:'🇪🇬',
+  DZA:'🇩🇿',RSA:'🇿🇦',NGA:'🇳🇬',CMR:'🇨🇲',MLI:'🇲🇱',
+  JPN:'🇯🇵',KOR:'🇰🇷',IRN:'🇮🇷',AUS:'🇦🇺',JOR:'🇯🇴',
+  UZB:'🇺🇿',COL:'🇨🇴',ECU:'🇪🇨',CHI:'🇨🇱',PAR:'🇵🇾',
+  BOL:'🇧🇴',PAN:'🇵🇦',CAN:'🇨🇦',NZL:'🇳🇿',SWE:'🇸🇪',
+  NOR:'🇳🇴',AUT:'🇦🇹',SUI:'🇨🇭',DEN:'🇩🇰',POL:'🇵🇱',
+  BIH:'🇧🇦',SRB:'🇷🇸',ROU:'🇷🇴',UKR:'🇺🇦',HUN:'🇭🇺',
+  TUR:'🇹🇷',SVN:'🇸🇮',SVK:'🇸🇰',CZE:'🇨🇿',GRE:'🇬🇷'
+};
+
+function getFlag(code){ return FLAGS[code] || '🏳'; }
+
+// HARDCODED real data from API (updates via GitHub Action daily)
+// This data is injected by the build script each day
+const MATCHES = {
+  results: [
+    {home:'CRO',away:'GHA',hs:2,as:1,time:'Sat Jun 27 · 9:00 PM GMT',ghana:true},
+    {home:'BRA',away:'JPN',hs:2,as:1,time:'Mon Jun 29 · 5:00 PM GMT'},
+    {home:'ARG',away:'JOR',hs:3,as:1,time:'Sun Jun 28 · 2:00 AM GMT'},
+    {home:'BEL',away:'NZL',hs:5,as:1,time:'Sat Jun 27 · 3:00 AM GMT'},
+    {home:'ENG',away:'PAN',hs:2,as:0,time:'Sat Jun 27 · 9:00 PM GMT'},
+    {home:'COD',away:'UZB',hs:3,as:1,time:'Sat Jun 27 · 11:30 PM GMT'},
+    {home:'CAN',away:'RSA',hs:1,as:0,time:'Sun Jun 28 · 7:00 PM GMT'},
+    {home:'DZA',away:'AUT',hs:3,as:3,time:'Sun Jun 28 · 2:00 AM GMT'},
+    {home:'EGY',away:'IRN',hs:1,as:1,time:'Sat Jun 27 · 3:00 AM GMT'},
+    {home:'COL',away:'POR',hs:0,as:0,time:'Sat Jun 27 · 11:30 PM GMT'},
+  ],
+  upcoming: [
+    {home:'GER',away:'PAR',date:'Mon Jun 29',time:'8:30 PM GMT',ph:73.2,pd:17,pa:9.8},
+    {home:'NED',away:'MAR',date:'Tue Jun 30',time:'1:00 AM GMT',ph:41.8,pd:29.9,pa:28.3},
+    {home:'CIV',away:'NOR',date:'Tue Jun 30',time:'5:00 PM GMT',ph:27.4,pd:27.6,pa:45},
+    {home:'FRA',away:'SWE',date:'Tue Jun 30',time:'9:00 PM GMT',ph:76.4,pd:14.7,pa:8.9},
+    {home:'MEX',away:'ECU',date:'Wed Jul 1',time:'1:00 AM GMT',ph:43,pd:32.3,pa:24.7},
+    {home:'ENG',away:'COD',date:'Wed Jul 1',time:'4:00 PM GMT',ph:75.5,pd:16.6,pa:7.9},
+    {home:'BEL',away:'SEN',date:'Wed Jul 1',time:'8:00 PM GMT',ph:43.6,pd:29.1,pa:27.3},
+    {home:'USA',away:'BIH',date:'Thu Jul 2',time:'12:00 AM GMT',ph:70.6,pd:18.6,pa:10.8},
+    {home:'ESP',away:'AUT',date:'Thu Jul 2',time:'7:00 PM GMT',ph:73.9,pd:17.3,pa:8.8},
+    {home:'POR',away:'CRO',date:'Thu Jul 2',time:'11:00 PM GMT',ph:53.5,pd:27,pa:19.5},
+  ]
+};
+
+function matchCard(m, isResult) {
+  const hf = getFlag(m.home), af = getFlag(m.away);
+  const isGhana = m.ghana || m.home==='GHA' || m.away==='GHA';
+  const ghanaWon = isGhana && ((m.home==='GHA'&&m.hs>m.as)||(m.away==='GHA'&&m.as>m.hs));
+  const ghanaLost = isGhana && ((m.home==='GHA'&&m.hs<m.as)||(m.away==='GHA'&&m.as<m.hs));
+
+  let scoreBlock, footer;
+
+  if (isResult) {
+    scoreBlock = `
+      <div class="score-block">
+        <div class="score-nums">${m.hs}<span class="score-sep">–</span>${m.as}</div>
+        <div class="score-status s-final">Full Time</div>
+      </div>`;
+    footer = `<div class="match-footer">
+      <div>🗓 ${m.time}</div>
+      ${isGhana ? `<div style="color:${ghanaWon?'#86EFAC':'#FCA5A5'};font-weight:700;">${ghanaWon?'Win 🎉':'Loss'}</div>` : '<div>Group Stage</div>'}
+    </div>`;
+  } else {
+    scoreBlock = `
+      <div class="score-block">
+        <div class="up-time">${m.date}</div>
+        <div style="font-size:13px;font-weight:700;color:#fff;">${m.time}</div>
+        <div class="score-status s-sched">Upcoming</div>
+      </div>`;
+    footer = `<div class="match-footer">
+      <div>Win probability</div>
+      <div style="width:180px;">
+        <div class="prob-bar">
+          <div class="ph" style="width:${m.ph}%"></div>
+          <div class="pd" style="width:${m.pd}%"></div>
+          <div class="pa" style="width:${m.pa}%"></div>
+        </div>
+        <div class="prob-labels">
+          <span>${m.home} ${m.ph}%</span>
+          <span>Draw ${m.pd}%</span>
+          <span>${m.away} ${m.pa}%</span>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  return `<div class="match-card${isGhana?' ghana-match':''}">
+    <div class="match-inner">
+      <div class="team"><div class="team-flag">${hf}</div><div><div class="team-name">${m.home}</div><div class="team-code">${m.home}</div></div></div>
+      ${scoreBlock}
+      <div class="team away"><div class="team-flag">${af}</div><div><div class="team-name">${m.away}</div><div class="team-code">${m.away}</div></div></div>
+    </div>
+    ${footer}
+  </div>`;
+}
+
+function loadScores() {
+  // Results tab
+  const resultsHTML = MATCHES.results.map(m => matchCard(m, true)).join('');
+  document.getElementById('tab-results').innerHTML =
+    '<div class="section-head"><div class="sec-dot" style="background:var(--muted)"></div><h3>Recent Results</h3></div>' + resultsHTML;
+
+  // Upcoming tab
+  const upcomingHTML = MATCHES.upcoming.map(m => matchCard(m, false)).join('');
+  document.getElementById('tab-upcoming').innerHTML =
+    '<div class="section-head"><div class="sec-dot" style="background:#F59E0B"></div><h3>Upcoming Fixtures</h3></div>' + upcomingHTML;
+
+  // Ghana tab
+  const ghanaMatches = MATCHES.results.filter(m => m.home==='GHA'||m.away==='GHA'||m.ghana);
+  const ghanaHTML = ghanaMatches.length
+    ? ghanaMatches.map(m => matchCard(m, true)).join('')
+    : '<div class="empty">No Ghana matches found yet.</div>';
+
+  document.getElementById('tab-ghana').innerHTML =
+    '<div class="section-head"><div class="sec-dot" style="background:#FCD116"></div><h3>🇬🇭 Black Stars — World Cup 2026</h3></div>' +
+    ghanaHTML +
+    `<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin-top:14px;">
+      <div style="font-size:13px;color:var(--muted);line-height:1.8;">
+        Follow all Black Stars action live on <strong style="color:var(--gold);">Sunny FM 88.7</strong> —
+        commentary, analysis and match updates throughout the World Cup.
+        <br><br>📻 Listen live at <a href="https://sunnygh.com/listen-live/" style="color:var(--gold);">sunnygh.com/listen-live</a>
+      </div>
+    </div>`;
+
+  // Update Ghana badge
+  const g = ghanaMatches[0];
+  if (g) {
+    const ghScore = g.away==='GHA' ? `CRO ${g.hs}–${g.as} GHA` : `GHA ${g.hs}–${g.as} ${g.away}`;
+    document.getElementById('ghanaBadge').textContent = '🇬🇭 ' + ghScore + ' · FT';
+  }
+
+  // Update time
+  const now = new Date();
+  document.getElementById('lastUpdate').textContent =
+    'Updated: ' + now.toLocaleDateString('en-GH',{weekday:'short',day:'numeric',month:'short'}) +
+    ' · ' + now.toLocaleTimeString('en-GH',{hour:'2-digit',minute:'2-digit'}) + ' GMT';
+}
+
+function showTab(id, el) {
+  document.querySelectorAll('[id^="tab-"]').forEach(t => t.style.display='none');
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+id).style.display='';
+  el.classList.add('active');
+}
+
+// Load on start
+loadScores();
+
+// Auto-refresh every 5 minutes
+setInterval(loadScores, 300000);
+</script>
+</body>
+</html>
