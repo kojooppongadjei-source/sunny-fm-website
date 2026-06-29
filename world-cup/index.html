@@ -112,23 +112,28 @@ function flag(c){return FLAGS[c]||'🏳';}
 // Fallback hardcoded data (always works even if API fails)
 const FALLBACK = {
   results:[
-    {home:'CRO',away:'GHA',hs:2,as:1,time:'Sat Jun 27 · 21:00 GMT',ghana:true},
+    {home:'GER',away:'PAR',hs:1,as:1,time:'Mon Jun 29 · 20:30 GMT',note:'Paraguay win 4-3 on penalties · Round of 32'},
     {home:'BRA',away:'JPN',hs:2,as:1,time:'Mon Jun 29 · 17:00 GMT'},
-    {home:'ARG',away:'JOR',hs:3,as:1,time:'Sun Jun 28 · 02:00 GMT'},
-    {home:'BEL',away:'NZL',hs:5,as:1,time:'Sat Jun 27 · 03:00 GMT'},
-    {home:'ENG',away:'PAN',hs:2,as:0,time:'Sat Jun 27 · 21:00 GMT'},
-    {home:'COD',away:'UZB',hs:3,as:1,time:'Sat Jun 27 · 23:30 GMT'},
-    {home:'CAN',away:'RSA',hs:1,as:0,time:'Sun Jun 28 · 19:00 GMT'},
+    {home:'RSA',away:'CAN',hs:0,as:1,time:'Sun Jun 28 · 19:00 GMT'},
+    {home:'JOR',away:'ARG',hs:1,as:3,time:'Sun Jun 28 · 02:00 GMT'},
     {home:'DZA',away:'AUT',hs:3,as:3,time:'Sun Jun 28 · 02:00 GMT'},
+    {home:'COD',away:'UZB',hs:3,as:1,time:'Sat Jun 27 · 23:30 GMT'},
+    {home:'COL',away:'POR',hs:0,as:0,time:'Sat Jun 27 · 23:30 GMT'},
+    {home:'CRO',away:'GHA',hs:2,as:1,time:'Sat Jun 27 · 21:00 GMT',ghana:true},
+    {home:'PAN',away:'ENG',hs:0,as:2,time:'Sat Jun 27 · 21:00 GMT'},
+    {home:'EGY',away:'IRN',hs:1,as:1,time:'Sat Jun 27 · 03:00 GMT'},
   ],
   upcoming:[
-    {home:'GER',away:'PAR',date:'Mon Jun 29',time:'20:30 GMT',ph:73,pd:17,pa:10},
     {home:'NED',away:'MAR',date:'Tue Jun 30',time:'01:00 GMT',ph:42,pd:30,pa:28},
+    {home:'CIV',away:'NOR',date:'Tue Jun 30',time:'17:00 GMT',ph:27,pd:27,pa:46},
     {home:'FRA',away:'SWE',date:'Tue Jun 30',time:'21:00 GMT',ph:76,pd:15,pa:9},
+    {home:'MEX',away:'ECU',date:'Wed Jul 1',time:'01:00 GMT',ph:43,pd:32,pa:25},
     {home:'ENG',away:'COD',date:'Wed Jul 1',time:'16:00 GMT',ph:76,pd:17,pa:8},
     {home:'BEL',away:'SEN',date:'Wed Jul 1',time:'20:00 GMT',ph:44,pd:29,pa:27},
+    {home:'USA',away:'BIH',date:'Thu Jul 2',time:'00:00 GMT',ph:70,pd:19,pa:11},
     {home:'ESP',away:'AUT',date:'Thu Jul 2',time:'19:00 GMT',ph:74,pd:17,pa:9},
     {home:'POR',away:'CRO',date:'Thu Jul 2',time:'23:00 GMT',ph:54,pd:27,pa:20},
+    {home:'SUI',away:'DZA',date:'Fri Jul 3',time:'03:00 GMT',ph:48,pd:28,pa:24},
   ]
 };
 
@@ -143,7 +148,7 @@ function matchCard(m, isResult) {
     inner = `<div class="team"><div class="team-flag">${flag(m.home)}</div><div><div class="team-name">${m.home}</div></div></div>
       <div class="score-block"><div class="score-nums">${m.hs}<span class="score-sep">–</span>${m.as}</div><div class="score-status s-final">Full Time</div></div>
       <div class="team away"><div class="team-flag">${flag(m.away)}</div><div><div class="team-name">${m.away}</div></div></div>`;
-    footer = `<div class="match-footer"><div>🗓 ${m.time}</div>${isGhana?`<div style="color:${ghanaWon?'#86EFAC':'#FCA5A5'};font-weight:700;">${ghanaWon?'Win 🎉':'Loss'}</div>`:'<div>Group Stage</div>'}</div>`;
+    footer = `<div class="match-footer"><div>🗓 ${m.time}</div>${m.note?`<div style="color:#FCD34D;font-weight:600;font-size:10px;">${m.note}</div>`:isGhana?`<div style="color:${ghanaWon?'#86EFAC':'#FCA5A5'};font-weight:700;">${ghanaWon?'Win 🎉':'Loss'}</div>`:'<div>Group Stage</div>'}</div>`;
   } else {
     inner = `<div class="team"><div class="team-flag">${flag(m.home)}</div><div><div class="team-name">${m.home}</div></div></div>
       <div class="score-block"><div class="up-time">${m.date}</div><div style="font-size:13px;font-weight:700;color:#fff;">${m.time}</div><div class="score-status s-sched">Upcoming</div></div>
