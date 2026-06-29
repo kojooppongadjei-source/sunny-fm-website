@@ -4,73 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FIFA World Cup 2026 — Live Scores | Sunny FM 88.7</title>
-<meta name="description" content="Live FIFA World Cup 2026 scores, results and fixtures. Follow Ghana Black Stars on Sunny FM 88.7.">
-<meta http-equiv="refresh" content="300">
+<meta name="description" content="Live FIFA World Cup 2026 scores and results. Follow Ghana Black Stars on Sunny FM 88.7.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Inter',sans-serif;background:#0A0E1A;color:#F0F4FF;min-height:100vh;}
-:root{
-  --gold:#D4AF37;--red:#E53E3E;--green:#22C55E;
-  --blue:#3B82F6;--surface:#111827;--surface2:#1C2333;
-  --border:#2A3550;--muted:#7A8BA8;
-}
-
-/* HEADER */
-.wc-header{
-  background:linear-gradient(135deg,#0A0E1A,#1a1200);
-  border-bottom:2px solid var(--gold);
-  padding:20px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
-}
+:root{--gold:#D4AF37;--red:#E53E3E;--green:#22C55E;--blue:#3B82F6;--surface:#111827;--surface2:#1C2333;--border:#2A3550;--muted:#7A8BA8;}
+.wc-header{background:linear-gradient(135deg,#0A0E1A,#1a1200);border-bottom:2px solid var(--gold);padding:20px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
 .wc-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff;}
 .wc-sub{font-size:12px;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
 .wc-station{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px;}
 .live-dot{width:8px;height:8px;border-radius:50%;background:var(--red);animation:pulse 1.5s ease-in-out infinite;flex-shrink:0;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.8);}}
-
-/* GHANA BANNER */
-.ghana-banner{
-  background:linear-gradient(135deg,#006B3F,#003d23);
-  border-bottom:2px solid #FCD116;
-  padding:12px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;
-}
+.ghana-banner{background:linear-gradient(135deg,#006B3F,#003d23);border-bottom:2px solid #FCD116;padding:12px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
 .ghana-flag-text{font-size:14px;font-weight:700;color:#fff;}
-.ghana-score-badge{
-  background:rgba(252,209,22,0.15);border:1px solid #FCD116;
-  border-radius:6px;padding:6px 14px;
-  font-size:14px;font-weight:800;color:#FCD116;
-}
-
-/* REFRESH BAR */
-.refresh-bar{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:10px 5%;background:var(--surface2);
-  border-bottom:1px solid var(--border);font-size:12px;color:var(--muted);
-}
-.refresh-btn{
-  background:var(--gold);color:#000;border:none;
-  padding:5px 14px;border-radius:4px;font-size:11px;font-weight:700;
-  cursor:pointer;font-family:inherit;transition:all .2s;
-}
-.refresh-btn:hover{background:#B8962E;}
-
-/* TABS */
+.ghana-score-badge{background:rgba(252,209,22,0.15);border:1px solid #FCD116;border-radius:6px;padding:6px 14px;font-size:14px;font-weight:800;color:#FCD116;}
+.refresh-bar{display:flex;align-items:center;justify-content:space-between;padding:10px 5%;background:var(--surface2);border-bottom:1px solid var(--border);font-size:12px;color:var(--muted);}
+.refresh-btn{background:var(--gold);color:#000;border:none;padding:5px 14px;border-radius:4px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;}
 .tabs{display:flex;gap:0;background:var(--surface);border-bottom:1px solid var(--border);padding:0 5%;overflow-x:auto;}
 .tab{padding:14px 20px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;}
-.tab:hover{color:#fff;}
-.tab.active{color:var(--gold);border-bottom-color:var(--gold);}
-
-/* CONTENT */
+.tab:hover{color:#fff;}.tab.active{color:var(--gold);border-bottom-color:var(--gold);}
 .content{max-width:900px;margin:0 auto;padding:24px 5%;}
 .section-head{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);}
 .section-head h3{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);}
 .sec-dot{width:6px;height:6px;border-radius:50%;}
-
-/* MATCH CARD */
-.match-card{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:10px;margin-bottom:10px;overflow:hidden;transition:border-color .2s;
-}
+.match-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:10px;overflow:hidden;transition:border-color .2s;}
 .match-card:hover{border-color:rgba(212,175,55,0.2);}
 .match-card.ghana-match{border-color:#FCD116;background:linear-gradient(135deg,rgba(0,107,63,0.15),var(--surface));}
 .match-inner{display:grid;grid-template-columns:1fr 110px 1fr;gap:10px;align-items:center;padding:16px 20px;}
@@ -83,39 +41,20 @@ body{font-family:'Inter',sans-serif;background:#0A0E1A;color:#F0F4FF;min-height:
 .score-nums{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;}
 .score-sep{color:var(--muted);font-size:18px;}
 .score-status{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
-.s-final{color:var(--muted);}
-.s-live{color:var(--red);}
-.s-sched{color:var(--blue);}
+.s-final{color:var(--muted);}.s-live{color:var(--red);}.s-sched{color:var(--blue);}
 .match-footer{padding:8px 20px;background:rgba(255,255,255,0.02);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--muted);}
-
-/* PROB BAR */
 .prob-bar{display:flex;height:3px;border-radius:2px;overflow:hidden;margin-top:6px;}
-.ph{background:var(--blue);}
-.pd{background:var(--muted);}
-.pa{background:var(--gold);}
+.ph{background:var(--blue);}.pd{background:var(--muted);}.pa{background:var(--gold);}
 .prob-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-top:3px;}
-
-/* UPCOMING TIME */
 .up-time{font-size:12px;font-weight:600;color:var(--blue);background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);border-radius:4px;padding:2px 8px;display:inline-block;margin-bottom:4px;}
-
-/* LOADING */
 .loading{text-align:center;padding:60px;color:var(--muted);}
 .spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px;}
 @keyframes spin{to{transform:rotate(360deg);}}
-
-/* EMPTY */
 .empty{text-align:center;padding:40px;color:var(--muted);font-size:14px;}
-
-/* FLAGS lookup */
-.flag{font-size:22px;}
-
 @media(max-width:600px){
   .match-inner{grid-template-columns:1fr 88px 1fr;gap:6px;padding:12px 12px;}
-  .team-flag{font-size:18px;}
-  .team-name{font-size:12px;}
-  .score-nums{font-size:22px;}
-  .content{padding:14px 4%;}
-  .tabs{padding:0 4%;}
+  .team-flag{font-size:18px;}.team-name{font-size:12px;}.score-nums{font-size:22px;}
+  .content{padding:14px 4%;}.tabs{padding:0 4%;}
   .wc-header,.refresh-bar,.ghana-banner{padding-left:4%;padding-right:4%;}
 }
 </style>
@@ -133,14 +72,14 @@ body{font-family:'Inter',sans-serif;background:#0A0E1A;color:#F0F4FF;min-height:
 <div class="ghana-banner">
   <div>
     <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#FCD116;opacity:.7;margin-bottom:3px;">🇬🇭 Black Stars Watch</div>
-    <div class="ghana-flag-text">Follow Ghana at the World Cup on Sunny FM 88.7</div>
+    <div class="ghana-flag-text">Follow Ghana at World Cup 2026 — Live on Sunny FM 88.7</div>
   </div>
-  <div class="ghana-score-badge" id="ghanaBadge">🇬🇭 Ghana · Loading...</div>
+  <div class="ghana-score-badge" id="ghanaBadge">🇬🇭 Loading...</div>
 </div>
 
 <div class="refresh-bar">
-  <span id="lastUpdate">Updating scores...</span>
-  <button class="refresh-btn" onclick="loadScores()">↻ Refresh Now</button>
+  <span id="lastUpdate">Fetching latest scores...</span>
+  <button class="refresh-btn" onclick="loadAll()">↻ Refresh</button>
 </div>
 
 <div class="tabs">
@@ -156,164 +95,152 @@ body{font-family:'Inter',sans-serif;background:#0A0E1A;color:#F0F4FF;min-height:
 </div>
 
 <div style="text-align:center;padding:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);">
-  FIFA World Cup 2026 · Live Updates on <strong style="color:var(--gold);">Sunny FM 88.7</strong> ·
-  <a href="https://sunnygh.com" style="color:var(--gold);text-decoration:none;">sunnygh.com</a>
-  · Page auto-refreshes every 5 minutes
+  FIFA World Cup 2026 · Updates every 5 minutes · <strong style="color:var(--gold);">Sunny FM 88.7</strong> · <a href="https://sunnygh.com" style="color:var(--gold);text-decoration:none;">sunnygh.com</a>
 </div>
 
 <script>
-// Country code to flag emoji
 const FLAGS = {
-  GHA:'🇬🇭',BRA:'🇧🇷',ARG:'🇦🇷',FRA:'🇫🇷',ENG:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',
-  GER:'🇩🇪',ESP:'🇪🇸',POR:'🇵🇹',NED:'🇳🇱',BEL:'🇧🇪',
-  CRO:'🇭🇷',ITA:'🇮🇹',URU:'🇺🇾',MEX:'🇲🇽',USA:'🇺🇸',
-  SEN:'🇸🇳',MAR:'🇲🇦',COD:'🇨🇩',CIV:'🇨🇮',EGY:'🇪🇬',
-  DZA:'🇩🇿',RSA:'🇿🇦',NGA:'🇳🇬',CMR:'🇨🇲',MLI:'🇲🇱',
-  JPN:'🇯🇵',KOR:'🇰🇷',IRN:'🇮🇷',AUS:'🇦🇺',JOR:'🇯🇴',
-  UZB:'🇺🇿',COL:'🇨🇴',ECU:'🇪🇨',CHI:'🇨🇱',PAR:'🇵🇾',
-  BOL:'🇧🇴',PAN:'🇵🇦',CAN:'🇨🇦',NZL:'🇳🇿',SWE:'🇸🇪',
-  NOR:'🇳🇴',AUT:'🇦🇹',SUI:'🇨🇭',DEN:'🇩🇰',POL:'🇵🇱',
-  BIH:'🇧🇦',SRB:'🇷🇸',ROU:'🇷🇴',UKR:'🇺🇦',HUN:'🇭🇺',
-  TUR:'🇹🇷',SVN:'🇸🇮',SVK:'🇸🇰',CZE:'🇨🇿',GRE:'🇬🇷'
+  GHA:'🇬🇭',BRA:'🇧🇷',ARG:'🇦🇷',FRA:'🇫🇷',ENG:'🏴',GER:'🇩🇪',ESP:'🇪🇸',
+  POR:'🇵🇹',NED:'🇳🇱',BEL:'🇧🇪',CRO:'🇭🇷',MEX:'🇲🇽',USA:'🇺🇸',CAN:'🇨🇦',
+  SEN:'🇸🇳',MAR:'🇲🇦',COD:'🇨🇩',CIV:'🇨🇮',EGY:'🇪🇬',DZA:'🇩🇿',RSA:'🇿🇦',
+  JPN:'🇯🇵',JOR:'🇯🇴',UZB:'🇺🇿',COL:'🇨🇴',PAR:'🇵🇾',PAN:'🇵🇦',NZL:'🇳🇿',
+  SWE:'🇸🇪',NOR:'🇳🇴',AUT:'🇦🇹',IRN:'🇮🇷',BIH:'🇧🇦',URU:'🇺🇾',ECU:'🇪🇨',
+  CHI:'🇨🇱',VEN:'🇻🇪',BOL:'🇧🇴',MEX:'🇲🇽'
 };
+function flag(c){return FLAGS[c]||'🏳';}
 
-function getFlag(code){ return FLAGS[code] || '🏳'; }
-
-// HARDCODED real data from API (updates via GitHub Action daily)
-// This data is injected by the build script each day
-const MATCHES = {
-  results: [
-    {home:'CRO',away:'GHA',hs:2,as:1,time:'Sat Jun 27 · 9:00 PM GMT',ghana:true},
-    {home:'BRA',away:'JPN',hs:2,as:1,time:'Mon Jun 29 · 5:00 PM GMT'},
-    {home:'ARG',away:'JOR',hs:3,as:1,time:'Sun Jun 28 · 2:00 AM GMT'},
-    {home:'BEL',away:'NZL',hs:5,as:1,time:'Sat Jun 27 · 3:00 AM GMT'},
-    {home:'ENG',away:'PAN',hs:2,as:0,time:'Sat Jun 27 · 9:00 PM GMT'},
-    {home:'COD',away:'UZB',hs:3,as:1,time:'Sat Jun 27 · 11:30 PM GMT'},
-    {home:'CAN',away:'RSA',hs:1,as:0,time:'Sun Jun 28 · 7:00 PM GMT'},
-    {home:'DZA',away:'AUT',hs:3,as:3,time:'Sun Jun 28 · 2:00 AM GMT'},
-    {home:'EGY',away:'IRN',hs:1,as:1,time:'Sat Jun 27 · 3:00 AM GMT'},
-    {home:'COL',away:'POR',hs:0,as:0,time:'Sat Jun 27 · 11:30 PM GMT'},
+// Fallback hardcoded data (always works even if API fails)
+const FALLBACK = {
+  results:[
+    {home:'CRO',away:'GHA',hs:2,as:1,time:'Sat Jun 27 · 21:00 GMT',ghana:true},
+    {home:'BRA',away:'JPN',hs:2,as:1,time:'Mon Jun 29 · 17:00 GMT'},
+    {home:'ARG',away:'JOR',hs:3,as:1,time:'Sun Jun 28 · 02:00 GMT'},
+    {home:'BEL',away:'NZL',hs:5,as:1,time:'Sat Jun 27 · 03:00 GMT'},
+    {home:'ENG',away:'PAN',hs:2,as:0,time:'Sat Jun 27 · 21:00 GMT'},
+    {home:'COD',away:'UZB',hs:3,as:1,time:'Sat Jun 27 · 23:30 GMT'},
+    {home:'CAN',away:'RSA',hs:1,as:0,time:'Sun Jun 28 · 19:00 GMT'},
+    {home:'DZA',away:'AUT',hs:3,as:3,time:'Sun Jun 28 · 02:00 GMT'},
   ],
-  upcoming: [
-    {home:'GER',away:'PAR',date:'Mon Jun 29',time:'8:30 PM GMT',ph:73.2,pd:17,pa:9.8},
-    {home:'NED',away:'MAR',date:'Tue Jun 30',time:'1:00 AM GMT',ph:41.8,pd:29.9,pa:28.3},
-    {home:'CIV',away:'NOR',date:'Tue Jun 30',time:'5:00 PM GMT',ph:27.4,pd:27.6,pa:45},
-    {home:'FRA',away:'SWE',date:'Tue Jun 30',time:'9:00 PM GMT',ph:76.4,pd:14.7,pa:8.9},
-    {home:'MEX',away:'ECU',date:'Wed Jul 1',time:'1:00 AM GMT',ph:43,pd:32.3,pa:24.7},
-    {home:'ENG',away:'COD',date:'Wed Jul 1',time:'4:00 PM GMT',ph:75.5,pd:16.6,pa:7.9},
-    {home:'BEL',away:'SEN',date:'Wed Jul 1',time:'8:00 PM GMT',ph:43.6,pd:29.1,pa:27.3},
-    {home:'USA',away:'BIH',date:'Thu Jul 2',time:'12:00 AM GMT',ph:70.6,pd:18.6,pa:10.8},
-    {home:'ESP',away:'AUT',date:'Thu Jul 2',time:'7:00 PM GMT',ph:73.9,pd:17.3,pa:8.8},
-    {home:'POR',away:'CRO',date:'Thu Jul 2',time:'11:00 PM GMT',ph:53.5,pd:27,pa:19.5},
+  upcoming:[
+    {home:'GER',away:'PAR',date:'Mon Jun 29',time:'20:30 GMT',ph:73,pd:17,pa:10},
+    {home:'NED',away:'MAR',date:'Tue Jun 30',time:'01:00 GMT',ph:42,pd:30,pa:28},
+    {home:'FRA',away:'SWE',date:'Tue Jun 30',time:'21:00 GMT',ph:76,pd:15,pa:9},
+    {home:'ENG',away:'COD',date:'Wed Jul 1',time:'16:00 GMT',ph:76,pd:17,pa:8},
+    {home:'BEL',away:'SEN',date:'Wed Jul 1',time:'20:00 GMT',ph:44,pd:29,pa:27},
+    {home:'ESP',away:'AUT',date:'Thu Jul 2',time:'19:00 GMT',ph:74,pd:17,pa:9},
+    {home:'POR',away:'CRO',date:'Thu Jul 2',time:'23:00 GMT',ph:54,pd:27,pa:20},
   ]
 };
 
 function matchCard(m, isResult) {
-  const hf = getFlag(m.home), af = getFlag(m.away);
   const isGhana = m.ghana || m.home==='GHA' || m.away==='GHA';
-  const ghanaWon = isGhana && ((m.home==='GHA'&&m.hs>m.as)||(m.away==='GHA'&&m.as>m.hs));
-  const ghanaLost = isGhana && ((m.home==='GHA'&&m.hs<m.as)||(m.away==='GHA'&&m.as<m.hs));
+  const ghanaWon = isGhana && (
+    (m.home==='GHA' && m.hs > m.as) || (m.away==='GHA' && m.as > m.hs)
+  );
 
-  let scoreBlock, footer;
-
+  let inner, footer;
   if (isResult) {
-    scoreBlock = `
-      <div class="score-block">
-        <div class="score-nums">${m.hs}<span class="score-sep">–</span>${m.as}</div>
-        <div class="score-status s-final">Full Time</div>
-      </div>`;
-    footer = `<div class="match-footer">
-      <div>🗓 ${m.time}</div>
-      ${isGhana ? `<div style="color:${ghanaWon?'#86EFAC':'#FCA5A5'};font-weight:700;">${ghanaWon?'Win 🎉':'Loss'}</div>` : '<div>Group Stage</div>'}
-    </div>`;
+    inner = `<div class="team"><div class="team-flag">${flag(m.home)}</div><div><div class="team-name">${m.home}</div></div></div>
+      <div class="score-block"><div class="score-nums">${m.hs}<span class="score-sep">–</span>${m.as}</div><div class="score-status s-final">Full Time</div></div>
+      <div class="team away"><div class="team-flag">${flag(m.away)}</div><div><div class="team-name">${m.away}</div></div></div>`;
+    footer = `<div class="match-footer"><div>🗓 ${m.time}</div>${isGhana?`<div style="color:${ghanaWon?'#86EFAC':'#FCA5A5'};font-weight:700;">${ghanaWon?'Win 🎉':'Loss'}</div>`:'<div>Group Stage</div>'}</div>`;
   } else {
-    scoreBlock = `
-      <div class="score-block">
-        <div class="up-time">${m.date}</div>
-        <div style="font-size:13px;font-weight:700;color:#fff;">${m.time}</div>
-        <div class="score-status s-sched">Upcoming</div>
-      </div>`;
-    footer = `<div class="match-footer">
-      <div>Win probability</div>
-      <div style="width:180px;">
-        <div class="prob-bar">
-          <div class="ph" style="width:${m.ph}%"></div>
-          <div class="pd" style="width:${m.pd}%"></div>
-          <div class="pa" style="width:${m.pa}%"></div>
-        </div>
-        <div class="prob-labels">
-          <span>${m.home} ${m.ph}%</span>
-          <span>Draw ${m.pd}%</span>
-          <span>${m.away} ${m.pa}%</span>
-        </div>
-      </div>
-    </div>`;
+    inner = `<div class="team"><div class="team-flag">${flag(m.home)}</div><div><div class="team-name">${m.home}</div></div></div>
+      <div class="score-block"><div class="up-time">${m.date}</div><div style="font-size:13px;font-weight:700;color:#fff;">${m.time}</div><div class="score-status s-sched">Upcoming</div></div>
+      <div class="team away"><div class="team-flag">${flag(m.away)}</div><div><div class="team-name">${m.away}</div></div></div>`;
+    footer = `<div class="match-footer"><div>Win probability</div><div style="width:180px;"><div class="prob-bar"><div class="ph" style="width:${m.ph}%"></div><div class="pd" style="width:${m.pd}%"></div><div class="pa" style="width:${m.pa}%"></div></div><div class="prob-labels"><span>${m.home} ${m.ph}%</span><span>Draw ${m.pd}%</span><span>${m.away} ${m.pa}%</span></div></div></div>`;
   }
 
-  return `<div class="match-card${isGhana?' ghana-match':''}">
-    <div class="match-inner">
-      <div class="team"><div class="team-flag">${hf}</div><div><div class="team-name">${m.home}</div><div class="team-code">${m.home}</div></div></div>
-      ${scoreBlock}
-      <div class="team away"><div class="team-flag">${af}</div><div><div class="team-name">${m.away}</div><div class="team-code">${m.away}</div></div></div>
-    </div>
-    ${footer}
-  </div>`;
+  return `<div class="match-card${isGhana?' ghana-match':''}"><div class="match-inner">${inner}</div>${footer}</div>`;
 }
 
-function loadScores() {
-  // Results tab
-  const resultsHTML = MATCHES.results.map(m => matchCard(m, true)).join('');
+function renderMatches(data) {
+  // Results
+  const rHTML = data.results.slice(0,12).map(m=>matchCard(m,true)).join('');
   document.getElementById('tab-results').innerHTML =
-    '<div class="section-head"><div class="sec-dot" style="background:var(--muted)"></div><h3>Recent Results</h3></div>' + resultsHTML;
+    '<div class="section-head"><div class="sec-dot" style="background:var(--muted)"></div><h3>Recent Results</h3></div>' + (rHTML||'<div class="empty">No results yet.</div>');
 
-  // Upcoming tab
-  const upcomingHTML = MATCHES.upcoming.map(m => matchCard(m, false)).join('');
+  // Upcoming
+  const uHTML = data.upcoming.slice(0,10).map(m=>matchCard(m,false)).join('');
   document.getElementById('tab-upcoming').innerHTML =
-    '<div class="section-head"><div class="sec-dot" style="background:#F59E0B"></div><h3>Upcoming Fixtures</h3></div>' + upcomingHTML;
+    '<div class="section-head"><div class="sec-dot" style="background:#F59E0B"></div><h3>Upcoming Fixtures</h3></div>' + (uHTML||'<div class="empty">No upcoming fixtures.</div>');
 
-  // Ghana tab
-  const ghanaMatches = MATCHES.results.filter(m => m.home==='GHA'||m.away==='GHA'||m.ghana);
-  const ghanaHTML = ghanaMatches.length
-    ? ghanaMatches.map(m => matchCard(m, true)).join('')
-    : '<div class="empty">No Ghana matches found yet.</div>';
-
+  // Ghana
+  const gMatches = data.results.filter(m=>m.home==='GHA'||m.away==='GHA'||m.ghana);
+  const gHTML = gMatches.map(m=>matchCard(m,true)).join('');
   document.getElementById('tab-ghana').innerHTML =
     '<div class="section-head"><div class="sec-dot" style="background:#FCD116"></div><h3>🇬🇭 Black Stars — World Cup 2026</h3></div>' +
-    ghanaHTML +
-    `<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin-top:14px;">
-      <div style="font-size:13px;color:var(--muted);line-height:1.8;">
-        Follow all Black Stars action live on <strong style="color:var(--gold);">Sunny FM 88.7</strong> —
-        commentary, analysis and match updates throughout the World Cup.
-        <br><br>📻 Listen live at <a href="https://sunnygh.com/listen-live/" style="color:var(--gold);">sunnygh.com/listen-live</a>
-      </div>
+    (gHTML||'<div class="empty">No Ghana matches recorded yet.</div>') +
+    `<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin-top:14px;font-size:13px;color:var(--muted);line-height:1.8;">
+      Follow all Black Stars action live on <strong style="color:var(--gold);">Sunny FM 88.7</strong> — commentary, analysis and match updates throughout the tournament.
+      <br><br>📻 <a href="/listen-live/" style="color:var(--gold);">Listen live at sunnygh.com</a>
     </div>`;
 
-  // Update Ghana badge
-  const g = ghanaMatches[0];
-  if (g) {
-    const ghScore = g.away==='GHA' ? `CRO ${g.hs}–${g.as} GHA` : `GHA ${g.hs}–${g.as} ${g.away}`;
-    document.getElementById('ghanaBadge').textContent = '🇬🇭 ' + ghScore + ' · FT';
+  // Ghana badge
+  if (gMatches.length > 0) {
+    const g = gMatches[0];
+    const res = g.away==='GHA' ? `${g.home} ${g.hs}–${g.as} GHA` : `GHA ${g.hs}–${g.as} ${g.away}`;
+    document.getElementById('ghanaBadge').textContent = '🇬🇭 ' + res + ' · FT';
+  } else {
+    document.getElementById('ghanaBadge').textContent = '🇬🇭 Ghana · Watch this space';
   }
 
-  // Update time
   const now = new Date();
   document.getElementById('lastUpdate').textContent =
-    'Updated: ' + now.toLocaleDateString('en-GH',{weekday:'short',day:'numeric',month:'short'}) +
-    ' · ' + now.toLocaleTimeString('en-GH',{hour:'2-digit',minute:'2-digit'}) + ' GMT';
+    'Updated: ' + now.toUTCString().replace(' GMT','') + ' GMT';
+}
+
+async function loadAll() {
+  // Try fetching from TheSportsDB (free, no key, CORS-friendly)
+  // World Cup 2026 league ID on TheSportsDB = 4836
+  try {
+    const res = await fetch('https://www.thesportsdb.com/api/v1/json/3/eventsseason.php?id=4836&s=2026', {
+      signal: AbortSignal.timeout(8000)
+    });
+    const data = await res.json();
+
+    if (data && data.events && data.events.length > 0) {
+      const results = [], upcoming = [];
+      for (const e of data.events) {
+        const home = e.strHomeTeam ? e.strHomeTeam.toUpperCase().slice(0,3) : '???';
+        const away = e.strAwayTeam ? e.strAwayTeam.toUpperCase().slice(0,3) : '???';
+        const homeName = e.strHomeTeam || home;
+        const awayName = e.strAwayTeam || away;
+        const matchDate = new Date(e.strTimestamp || e.dateEvent);
+        const timeStr = matchDate.toLocaleDateString('en-GH',{weekday:'short',month:'short',day:'numeric',timeZone:'UTC'}) + ' · ' + matchDate.toLocaleTimeString('en-GH',{hour:'2-digit',minute:'2-digit',timeZone:'UTC'}) + ' GMT';
+        const isGhana = homeName.includes('Ghana') || awayName.includes('Ghana');
+
+        if (e.intHomeScore !== null && e.intHomeScore !== '') {
+          const homeCode = homeName.includes('Ghana')?'GHA': homeName.includes('Brazil')?'BRA': homeName.includes('Argentina')?'ARG': homeName.includes('France')?'FRA': homeName.includes('England')?'ENG': homeName.includes('Germany')?'GER': homeName.includes('Spain')?'ESP': homeName.includes('Portugal')?'POR': homeName.includes('Netherlands')?'NED': homeName.includes('Belgium')?'BEL': homeName.includes('Croatia')?'CRO': homeName.slice(0,3).toUpperCase();
+          const awayCode = awayName.includes('Ghana')?'GHA': awayName.includes('Brazil')?'BRA': awayName.includes('Argentina')?'ARG': awayName.includes('France')?'FRA': awayName.includes('England')?'ENG': awayName.includes('Germany')?'GER': awayName.includes('Spain')?'ESP': awayName.includes('Portugal')?'POR': awayName.includes('Netherlands')?'NED': awayName.includes('Belgium')?'BEL': awayName.includes('Croatia')?'CRO': awayName.slice(0,3).toUpperCase();
+          results.unshift({home:homeCode,away:awayCode,hs:parseInt(e.intHomeScore)||0,as:parseInt(e.intAwayScore)||0,time:timeStr,ghana:isGhana});
+        } else if (matchDate > new Date()) {
+          upcoming.push({home:homeName.slice(0,3).toUpperCase(),away:awayName.slice(0,3).toUpperCase(),date:matchDate.toLocaleDateString('en-GH',{weekday:'short',month:'short',day:'numeric',timeZone:'UTC'}),time:matchDate.toLocaleTimeString('en-GH',{hour:'2-digit',minute:'2-digit',timeZone:'UTC'})+' GMT',ph:40,pd:30,pa:30});
+        }
+      }
+      if (results.length > 0 || upcoming.length > 0) {
+        renderMatches({results:results.slice(0,15),upcoming:upcoming.slice(0,10)});
+        return;
+      }
+    }
+  } catch(e) {
+    console.log('API unavailable, using cached data');
+  }
+
+  // Use fallback data
+  renderMatches(FALLBACK);
 }
 
 function showTab(id, el) {
-  document.querySelectorAll('[id^="tab-"]').forEach(t => t.style.display='none');
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('[id^="tab-"]').forEach(t=>t.style.display='none');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
   document.getElementById('tab-'+id).style.display='';
   el.classList.add('active');
 }
 
-// Load on start
-loadScores();
-
+loadAll();
 // Auto-refresh every 5 minutes
-setInterval(loadScores, 300000);
+setInterval(loadAll, 300000);
 </script>
 </body>
 </html>
