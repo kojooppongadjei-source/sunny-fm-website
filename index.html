@@ -328,6 +328,10 @@ footer{background:#1a1212;color:rgba(255,255,255,.6);padding:40px 4% 90px;}
 <div class="live-bar">
   <div class="live-dot"></div>
   <div class="live-show" id="live-show-name">Sunny FM 88.7</div>
+  <div id="now-playing-ticker" style="font-size:12px;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:6px;margin-left:8px;">
+    <span style="font-size:10px;">🎵</span>
+    <span id="np-song">Loading...</span>
+  </div>
   <div class="live-next" id="live-next-show"></div>
   <a href="/listen-live/" class="live-listen-btn">▶ Listen Live</a>
 </div>
@@ -534,6 +538,70 @@ footer{background:#1a1212;color:rgba(255,255,255,.6);padding:40px 4% 90px;}
   </div>
 </div>
 
+
+<!-- SHOW SCHEDULE -->
+<div style="background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 4%;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;">
+      <div>
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold-dark);margin-bottom:4px;">On Air Today</div>
+        <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--dark);">Today's Programme</div>
+      </div>
+      <div id="schedule-date" style="font-size:12px;color:var(--muted);"></div>
+    </div>
+    <div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;" id="schedule-strip">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+</div>
+<!-- END SHOW SCHEDULE -->
+
+
+<!-- PRESENTERS -->
+<div style="background:var(--bg);padding:48px 4%;border-top:1px solid var(--border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="margin-bottom:28px;">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold-dark);margin-bottom:6px;">Meet the Team</div>
+      <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--dark);">The Voices of Sunny FM</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;">
+      <div style="background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:all .2s;cursor:pointer;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="height:120px;background:linear-gradient(135deg,#C8920A,#a8760a);display:flex;align-items:center;justify-content:center;font-size:40px;">👩🏾‍🎤</div>
+        <div style="padding:14px;">
+          <div style="font-size:14px;font-weight:700;color:var(--dark);margin-bottom:2px;">Yawa Hansen-Quao</div>
+          <div style="font-size:11px;color:var(--muted);margin-bottom:6px;">Empowered Living</div>
+          <div style="font-size:10px;font-weight:700;color:var(--gold-dark);background:#FFF9E6;padding:3px 8px;border-radius:4px;display:inline-block;">Mon–Fri · 10AM</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:all .2s;cursor:pointer;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="height:120px;background:linear-gradient(135deg,#2563EB,#1d4ed8);display:flex;align-items:center;justify-content:center;font-size:40px;">👩🏾‍🎙️</div>
+        <div style="padding:14px;">
+          <div style="font-size:14px;font-weight:700;color:var(--dark);margin-bottom:2px;">Abigail Kontoh</div>
+          <div style="font-size:11px;color:var(--muted);margin-bottom:6px;">Cradle to Crayons</div>
+          <div style="font-size:10px;font-weight:700;color:var(--gold-dark);background:#FFF9E6;padding:3px 8px;border-radius:4px;display:inline-block;">Mon–Fri · 12PM</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:all .2s;cursor:pointer;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="height:120px;background:linear-gradient(135deg,#7C3AED,#5b21b6);display:flex;align-items:center;justify-content:center;font-size:40px;">👩🏾‍💼</div>
+        <div style="padding:14px;">
+          <div style="font-size:14px;font-weight:700;color:var(--dark);margin-bottom:2px;">Afiba Danso</div>
+          <div style="font-size:11px;color:var(--muted);margin-bottom:6px;">Every Woman</div>
+          <div style="font-size:10px;font-weight:700;color:var(--gold-dark);background:#FFF9E6;padding:3px 8px;border-radius:4px;display:inline-block;">Mon–Fri · 2PM</div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:all .2s;cursor:pointer;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div style="height:120px;background:linear-gradient(135deg,#059669,#047857);display:flex;align-items:center;justify-content:center;font-size:40px;">👩🏾‍🍳</div>
+        <div style="padding:14px;">
+          <div style="font-size:14px;font-weight:700;color:var(--dark);margin-bottom:2px;">Mama Cathy</div>
+          <div style="font-size:11px;color:var(--muted);margin-bottom:6px;">Family Renaissance</div>
+          <div style="font-size:10px;font-weight:700;color:var(--gold-dark);background:#FFF9E6;padding:3px 8px;border-radius:4px;display:inline-block;">Mon–Fri · 4PM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END PRESENTERS -->
+
 <!-- AUDIO MODAL -->
 <div class="ls-modal" id="ls-modal" onclick="closeShowModal(event)">
   <div class="ls-modal-box">
@@ -690,6 +758,103 @@ function closeShowModal(e) {
     <div class="verse-dots" id="verse-dots"></div>
   </div>
 </div>
+
+
+<!-- PRAYER & SHOUTOUT -->
+<div style="background:linear-gradient(135deg,#0B1F3A,#1a3a5c);padding:48px 4%;">
+  <div style="max-width:700px;margin:0 auto;text-align:center;">
+    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:8px;">Connect with Us</div>
+    <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#fff;margin-bottom:8px;">Send a Prayer Request or Shoutout</div>
+    <div style="font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:28px;line-height:1.7;">Our presenters read listener messages on air. Send your prayer request, birthday shoutout or praise report and we'll share it with the Sunny FM family.</div>
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:28px;text-align:left;">
+      <div id="prayerFormBody">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;" class="prayer-form-row">
+          <div>
+            <label style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.5);display:block;margin-bottom:5px;">Your Name</label>
+            <input type="text" id="pName" placeholder="Your name" style="width:100%;padding:10px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:6px;font-family:inherit;font-size:14px;color:#fff;">
+          </div>
+          <div>
+            <label style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.5);display:block;margin-bottom:5px;">Request Type</label>
+            <select id="pType" style="width:100%;padding:10px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:6px;font-family:inherit;font-size:14px;color:#fff;">
+              <option value="Prayer Request">🙏 Prayer Request</option>
+              <option value="Birthday Shoutout">🎂 Birthday Shoutout</option>
+              <option value="Song Request">🎵 Song Request</option>
+              <option value="Praise Report">🎉 Praise Report</option>
+              <option value="General Message">💬 General Message</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-bottom:12px;">
+          <label style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:rgba(255,255,255,.5);display:block;margin-bottom:5px;">Your Message</label>
+          <textarea id="pMessage" rows="3" placeholder="Type your message here..." style="width:100%;padding:10px 14px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:6px;font-family:inherit;font-size:14px;color:#fff;resize:vertical;"></textarea>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button onclick="submitPrayer()" style="flex:1;padding:12px;background:var(--gold);color:#000;border:none;border-radius:7px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;min-width:140px;">Send Message ✉️</button>
+          <a href="https://wa.me/233545223324?text=Hello+Sunny+FM!" target="_blank" rel="noopener" style="flex:1;padding:12px;background:#25D366;color:#fff;border:none;border-radius:7px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;text-align:center;min-width:140px;">WhatsApp Us 💬</a>
+        </div>
+      </div>
+      <div id="prayerSuccess" style="display:none;text-align:center;padding:20px;">
+        <div style="font-size:40px;margin-bottom:10px;">🙏</div>
+        <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:6px;">Message received!</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.5);">Thank you. Our presenters will read your message on air. God bless you!</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END PRAYER & SHOUTOUT -->
+
+
+<!-- TESTIMONIALS -->
+<div style="background:var(--bg);padding:48px 4%;border-top:1px solid var(--border);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="margin-bottom:28px;">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold-dark);margin-bottom:6px;">Listener Stories</div>
+      <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--dark);">What Our Listeners Say</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:24px;position:relative;">
+        <div style="font-family:'Playfair Display',serif;font-size:52px;color:var(--gold);opacity:.2;position:absolute;top:8px;left:16px;line-height:1;">"</div>
+        <div style="font-size:14px;color:#374151;line-height:1.8;margin-bottom:16px;padding-top:16px;">Sunny FM is the first thing I turn on every morning. The devotions and music set the tone for my entire day. I have been listening for over 10 years and it never gets old.</div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#a8760a);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#000;">AK</div>
+          <div><div style="font-size:13px;font-weight:700;color:var(--dark);">Abena Koomson</div><div style="font-size:11px;color:var(--muted);">Listener · East Legon, Accra</div></div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:24px;position:relative;">
+        <div style="font-family:'Playfair Display',serif;font-size:52px;color:var(--gold);opacity:.2;position:absolute;top:8px;left:16px;line-height:1;">"</div>
+        <div style="font-size:14px;color:#374151;line-height:1.8;margin-bottom:16px;padding-top:16px;">I sent a birthday shoutout for my mother on Sunny FM and Yawa read it on air. My mother cried happy tears. That moment made our whole family love this station even more.</div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#2563EB,#1d4ed8);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;">KO</div>
+          <div><div style="font-size:13px;font-weight:700;color:var(--dark);">Kweku Osei</div><div style="font-size:11px;color:var(--muted);">Listener · Tema</div></div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid var(--border);border-radius:10px;padding:24px;position:relative;">
+        <div style="font-family:'Playfair Display',serif;font-size:52px;color:var(--gold);opacity:.2;position:absolute;top:8px;left:16px;line-height:1;">"</div>
+        <div style="font-size:14px;color:#374151;line-height:1.8;margin-bottom:16px;padding-top:16px;">As a business owner I advertise on Sunny FM because I know the audience trusts the station completely. When Sunny FM says something, their listeners believe it. That trust transfers to my business.</div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#059669,#047857);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;">EA</div>
+          <div><div style="font-size:13px;font-weight:700;color:var(--dark);">Emmanuel Asante</div><div style="font-size:11px;color:var(--muted);">Business Owner · Accra</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END TESTIMONIALS -->
+
+
+<!-- APP / TUNEIN CTA -->
+<div style="background:linear-gradient(135deg,#C8920A,#a8760a);padding:40px 4%;text-align:center;">
+  <div style="max-width:700px;margin:0 auto;">
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,32px);font-weight:700;color:#fff;margin-bottom:8px;">Listen to Sunny FM Anywhere</div>
+    <div style="font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:24px;line-height:1.7;">Take Sunny FM 88.7 with you everywhere — on TuneIn, Online Radio Box or directly on our website. Free, live and always on.</div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://tunein.com/radio/Sunny-FM-887-s274742/" target="_blank" rel="noopener" style="background:#000;color:#fff;padding:12px 24px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">📱 Listen on TuneIn</a>
+      <a href="/listen-live/" style="background:#fff;color:#C8920A;padding:12px 24px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">▶ Listen on Website</a>
+      <a href="https://wa.me/233545223324" target="_blank" rel="noopener" style="background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">💬 WhatsApp Us</a>
+    </div>
+  </div>
+</div>
+<!-- END APP / TUNEIN CTA -->
 
 <!-- FOOTER -->
 <footer>
@@ -1068,5 +1233,89 @@ function snOpenDonate(){
 <!-- Contest -->
 <span style="color:#F5F5F0;font-size:1px;user-select:text;position:absolute;left:-9999px;">SUNNY399</span>
 
+
+<script>
+// ── SHOW SCHEDULE ──
+(function(){
+  var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var now=new Date();
+  var day=now.getDay();
+  var el=document.getElementById('schedule-date');
+  if(el) el.textContent=days[day]+', '+now.getDate()+' '+months[now.getMonth()]+' '+now.getFullYear();
+
+  var schedule=[
+    {time:'5:00 AM',show:'Morning Devotion',host:'',live:false},
+    {time:'6:00 AM',show:'Sunrise Drive',host:'',live:false},
+    {time:'9:00 AM',show:'Mid-Morning Show',host:'',live:false},
+    {time:'10:00 AM',show:'Empowered Living',host:'Yawa Hansen-Quao',live:false},
+    {time:'12:00 PM',show:'Cradle to Crayons',host:'Abigail Kontoh',live:false},
+    {time:'2:00 PM',show:'Every Woman',host:'Afiba Danso',live:false},
+    {time:'4:00 PM',show:'Family Renaissance',host:'Mama Cathy',live:false},
+    {time:'6:00 PM',show:'Evening Drive',host:'',live:false},
+    {time:'8:00 PM',show:'Night Programme',host:'',live:false},
+  ];
+
+  var h=now.getHours(), m=now.getMinutes();
+  var currentMins=h*60+m;
+  var strip=document.getElementById('schedule-strip');
+  if(!strip) return;
+
+  schedule.forEach(function(s,i){
+    var parts=s.time.split(/[: ]/);
+    var sh=parseInt(parts[0])+(parts[2]==='PM'&&parseInt(parts[0])!==12?12:0);
+    var sm=parseInt(parts[1]);
+    var showMins=sh*60+sm;
+    var nextMins=i<schedule.length-1?(function(){
+      var np=schedule[i+1].time.split(/[: ]/);
+      var nsh=parseInt(np[0])+(np[2]==='PM'&&parseInt(np[0])!==12?12:0);
+      return nsh*60+parseInt(np[1]);
+    }()):24*60;
+    var isLive=currentMins>=showMins&&currentMins<nextMins;
+    var isPast=currentMins>=nextMins;
+
+    var card=document.createElement('div');
+    card.style.cssText='flex:0 0 160px;border-radius:8px;padding:12px 14px;border:1px solid '+(isLive?'var(--gold)':'var(--border)')+';background:'+(isLive?'rgba(200,146,10,0.08)':isPast?'rgba(0,0,0,0.02)':'#fff')+';opacity:'+(isPast?'0.5':'1');
+    card.innerHTML='<div style="font-size:10px;font-weight:700;color:'+(isLive?'var(--gold-dark)':'var(--muted)')+';margin-bottom:4px;">'+s.time+(isLive?' · <span style="color:var(--red)">LIVE</span>':'')+'</div><div style="font-size:13px;font-weight:700;color:var(--dark);margin-bottom:2px;line-height:1.3;">'+s.show+'</div>'+(s.host?'<div style="font-size:11px;color:var(--muted);">'+s.host+'</div>':'');
+    strip.appendChild(card);
+  });
+})();
+
+// ── NOW PLAYING (fetch from Icecast metadata) ──
+(function fetchNP(){
+  fetch('https://sunny-radio-server.cloud-ip.cc/status-json.xsl')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var src=d&&d.icestats&&d.icestats.source;
+      if(src){
+        var s=Array.isArray(src)?src[0]:src;
+        var title=s.title||s.song||'';
+        if(title){
+          var el=document.getElementById('np-song');
+          if(el) el.textContent=title;
+        }
+      }
+    })
+    .catch(function(){
+      var el=document.getElementById('np-song');
+      if(el) el.textContent='Sunny FM 88.7 Live';
+    });
+  setTimeout(fetchNP,30000);
+}());
+
+// ── PRAYER FORM ──
+window.submitPrayer=function(){
+  var name=document.getElementById('pName').value.trim();
+  var type=document.getElementById('pType').value;
+  var msg=document.getElementById('pMessage').value.trim();
+  if(!name||!msg){alert('Please fill in your name and message.');return;}
+  var body=encodeURIComponent(type+'\n\nFrom: '+name+'\n\n'+msg+'\n\nSent from sunnygh.com');
+  window.location.href='mailto:sunnyfm@gmail.com?subject='+encodeURIComponent(type+' from '+name)+'&body='+body;
+  setTimeout(function(){
+    document.getElementById('prayerFormBody').style.display='none';
+    document.getElementById('prayerSuccess').style.display='block';
+  },800);
+};
+</script>
 </body>
 </html>
