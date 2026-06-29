@@ -7,6 +7,8 @@ summary: Heavy rains that swept across Accra in the early hours of Monday have
   caused widespread flooding in several parts of the capital, leaving commuters
   stranded, disrupting businesses and once again raising concerns over the
   city's drainage system.
+tags:
+  - National
 ---
 Several major roads became submerged after hours of persistent rainfall, resulting in heavy traffic and forcing many drivers to seek alternative routes. Hundreds of commuters experienced significant delays as floodwaters made some roads difficult to navigate.
 
