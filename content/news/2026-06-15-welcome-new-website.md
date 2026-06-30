@@ -1,7 +1,7 @@
 ---
 title: Alpha Ghana Invites Churches to Rediscover the Power of Relational Evangelism
 date: 2026-06-02T01:28:00.000+00:00
-image: /assets/uploads/untitled-design-2-.png
+image: /assets/uploads/untitled-design-3-.png
 summary: As churches across Ghana seek fresh and effective ways to share the
   Gospel, the Alpha Course continues to emerge as one of the world's most
   impactful tools for evangelism and discipleship.
