@@ -1073,5 +1073,112 @@ function snOpenDonate(){
 <!-- Contest -->
 <span style="color:#F5F5F0;font-size:1px;user-select:text;position:absolute;left:-9999px;">SUNNY399</span>
 
+
+<!-- COUPLES RETREAT 2026 POPUP -->
+<style>
+#crp-overlay{
+  display:none;position:fixed;inset:0;z-index:9500;
+  background:rgba(0,0,0,0.65);
+  align-items:center;justify-content:center;padding:20px;
+}
+#crp-overlay.show{display:flex;}
+#crp-modal{
+  background:#fff;border-radius:16px;max-width:460px;width:100%;
+  overflow:hidden;position:relative;
+  box-shadow:0 24px 70px rgba(0,0,0,0.35);
+}
+.crp-close{
+  position:absolute;top:14px;right:14px;z-index:5;
+  background:rgba(0,0,0,0.5);border:none;color:#fff;
+  width:30px;height:30px;border-radius:50%;cursor:pointer;
+  font-size:16px;display:flex;align-items:center;justify-content:center;
+  transition:background .2s;
+}
+.crp-close:hover{background:rgba(0,0,0,0.7);}
+#crp-img{width:100%;display:block;}
+.crp-body{padding:22px 24px 24px;}
+.crp-eyebrow{
+  font-size:10px;font-weight:800;text-transform:uppercase;
+  letter-spacing:2px;color:#C8920A;margin-bottom:8px;
+}
+.crp-title{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:21px;font-weight:800;color:#1a1a2e;
+  line-height:1.25;margin-bottom:10px;
+}
+.crp-details{
+  display:flex;flex-direction:column;gap:6px;
+  margin-bottom:16px;
+}
+.crp-detail{
+  font-size:13px;color:#444;display:flex;align-items:center;gap:8px;
+}
+.crp-detail strong{color:#1a1a2e;}
+.crp-price{
+  background:#FFF9E6;border:1px solid #F0D98A;
+  border-radius:8px;padding:10px 14px;
+  font-size:14px;font-weight:700;color:#a8760a;
+  margin-bottom:16px;text-align:center;
+}
+.crp-actions{display:flex;gap:10px;}
+.crp-cta{
+  flex:1;text-align:center;padding:12px;
+  background:#C8920A;color:#fff;font-weight:700;
+  font-size:13px;border-radius:7px;text-decoration:none;
+  transition:background .2s;
+}
+.crp-cta:hover{background:#a8760a;}
+.crp-cta-wa{
+  flex:1;text-align:center;padding:12px;
+  background:#25D366;color:#fff;font-weight:700;
+  font-size:13px;border-radius:7px;text-decoration:none;
+  transition:background .2s;
+}
+.crp-cta-wa:hover{background:#1ea952;}
+@media(max-width:480px){
+  #crp-modal{border-radius:12px;}
+  .crp-body{padding:18px 18px 20px;}
+}
+</style>
+
+<div id="crp-overlay" onclick="crpClose(event)">
+  <div id="crp-modal" onclick="event.stopPropagation()">
+    <button class="crp-close" onclick="crpClose()">✕</button>
+    <img id="crp-img" src="/assets/uploads/untitled-design-3-.png" alt="Couples Retreat 2026 — Aqua Safari Resort">
+    <div class="crp-body">
+      <div class="crp-eyebrow">💑 Sunny FM Presents</div>
+      <div class="crp-title">Couples Retreat 2026 — A Time to Reconnect, Refresh and Rediscover</div>
+      <div class="crp-details">
+        <div class="crp-detail">📅 <strong>27th – 30th August 2026</strong> (3 Nights)</div>
+        <div class="crp-detail">📍 <strong>Aqua Safari Resort</strong>, Ghana</div>
+        <div class="crp-detail">⏰ Registration deadline: <strong>21st August 2026</strong></div>
+      </div>
+      <div class="crp-price">GH₵ 9,999 per couple · All-inclusive</div>
+      <div class="crp-actions">
+        <a class="crp-cta-wa" href="https://wa.me/233545223324?text=Hi%2C%20I%27d%20like%20to%20register%20for%20the%20Couples%20Retreat%202026" target="_blank" rel="noopener">💬 WhatsApp to Register</a>
+        <a class="crp-cta" href="/events/" onclick="crpClose()">View Details →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var CRP_KEY = 'sunny_couples_retreat_popup_seen';
+  if(!sessionStorage.getItem(CRP_KEY)){
+    setTimeout(function(){
+      document.getElementById('crp-overlay').classList.add('show');
+    }, 4000);
+  }
+})();
+
+function crpClose(e){
+  if(e && e.target !== document.getElementById('crp-overlay')) return;
+  document.getElementById('crp-overlay').classList.remove('show');
+  sessionStorage.setItem('sunny_couples_retreat_popup_seen', '1');
+}
+</script>
+<!-- END COUPLES RETREAT 2026 POPUP -->
+
 </body>
 </html>
