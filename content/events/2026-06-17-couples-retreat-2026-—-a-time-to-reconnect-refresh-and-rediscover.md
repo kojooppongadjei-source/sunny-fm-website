@@ -17,5 +17,5 @@ summary: >-
 
   To register, WhatsApp: 054 522 3324
 past: false
-image: /assets/uploads/untitled-design-3-.png
+image: /assets/uploads/untitled-design-4-.png
 ---
