@@ -164,7 +164,12 @@
 
   <!-- NOW PLAYING -->
   <div class="sfl-sec">
-    <div class="sfl-sec-label">On air now</div>
+    <div class="sfl-sec-label" style="display:flex;align-items:center;justify-content:space-between;">
+      <span>On air now</span>
+      <button id="shazamBtn" onclick="identifySong()" style="background:#C8920A;color:#000;border:none;border-radius:6px;padding:7px 14px;font-size:11px;font-weight:800;cursor:pointer;display:flex;align-items:center;gap:6px;font-family:inherit;text-transform:uppercase;letter-spacing:.5px;">
+        <span id="shazamIcon">🎵</span> <span id="shazamLabel">What's Playing?</span>
+      </button>
+    </div>
     <div class="sfl-np-card" id="sfl-now-card">
       <div class="sfl-np-icon">
         <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9 9 9 0 0 0 9 9 9 9 0 0 0 9-9 9 9 0 0 0-9-9zm-1 13v-6l5 3-5 3z"/></svg>
