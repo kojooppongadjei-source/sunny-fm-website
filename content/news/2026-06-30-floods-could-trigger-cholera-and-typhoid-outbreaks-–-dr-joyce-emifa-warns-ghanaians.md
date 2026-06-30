@@ -4,7 +4,7 @@ title: Floods Could Trigger Cholera and Typhoid Outbreaks – Dr. Joyce Emefa
 date: 2026-06-30T21:00:00.000+00:00
 image: /assets/uploads/untitled-design-1-.png
 summary: Accra, Ghana – As communities across Accra continue to recover from the
-  devastating floods that followed Tuesday's heavy rains, medical practitioner
+  devastating floods that followed Monday's heavy rains, medical practitioner
   Dr. Joyce Emifa has urged Ghanaians to take extra precautions to protect
   themselves from disease outbreaks that often follow flooding.
 ---
