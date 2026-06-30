@@ -1,6 +1,6 @@
 ---
-title: Floods Could Trigger Cholera and Typhoid Outbreaks – Dr. Joyce Emifa
-  Warns Ghanaians
+title: Floods Could Trigger Cholera and Typhoid Outbreaks – Dr. Joyce Emefa
+  Addo- Klah Warns Ghanaians
 date: 2026-06-30T21:00:00.000+00:00
 image: /assets/uploads/untitled-design-1-.png
 summary: Accra, Ghana – As communities across Accra continue to recover from the
@@ -8,13 +8,13 @@ summary: Accra, Ghana – As communities across Accra continue to recover from t
   Dr. Joyce Emifa has urged Ghanaians to take extra precautions to protect
   themselves from disease outbreaks that often follow flooding.
 ---
-Speaking on **Sunny 88.7 FM's Morning Drive** with host **Jennifer Jessica Danquah (JJD)**, Dr. Emifa expressed deep concern not only about the destruction caused by the floods but also about the serious public health risks that could emerge in the coming days.
+Speaking on **Sunny 88.7 FM's Morning Drive** with host **Jennifer Jessica Danquah (JJD)**, Dr. Emefa expressed deep concern not only about the destruction caused by the floods but also about the serious public health risks that could emerge in the coming days.
 
 > "Apart from the property loss and people being carried away by the floods, from a public health perspective, I'm very concerned about the aftermath. We need to brace ourselves for a surge in foodborne diseases," she said.
 
 ### Floodwaters Carry Dangerous Contaminants
 
-Dr. Emifa explained that floodwater is far more dangerous than ordinary rainwater because it mixes with sewage, refuse, industrial chemicals, and human waste as it flows through communities.
+Dr. Emefa explained that floodwater is far more dangerous than ordinary rainwater because it mixes with sewage, refuse, industrial chemicals, and human waste as it flows through communities.
 
 According to her, these contaminants often settle on vegetables grown in low-lying areas, especially leafy vegetables such as lettuce and cabbage, making them unsafe if not properly cleaned.
 
@@ -24,7 +24,7 @@ She cautioned that roadside food vendors may not always take the necessary preca
 
 ### Practice Good Hygiene
 
-Dr. Emifa stressed that proper handwashing remains one of the most effective ways to prevent infection during the post-flood period.
+Dr. Emefa stressed that proper handwashing remains one of the most effective ways to prevent infection during the post-flood period.
 
 She also advised residents who rely on tap water to boil and filter it before drinking, explaining that floodwaters may contaminate water supplies.
 
@@ -42,7 +42,7 @@ She further encouraged people to avoid consuming raw salads and uncooked leafy v
 
 ### Expect More Malaria Cases
 
-Beyond foodborne illnesses, Dr. Emifa noted that stagnant pools of water left behind after flooding provide ideal breeding grounds for mosquitoes.
+Beyond foodborne illnesses, Dr. Emefa noted that stagnant pools of water left behind after flooding provide ideal breeding grounds for mosquitoes.
 
 She warned that malaria cases are likely to rise in the coming weeks and encouraged parents to take extra care of young children.
 
@@ -56,7 +56,7 @@ Pregnant women were also encouraged to consistently use treated mosquito nets du
 
 ### Don't Ignore Diarrhoea
 
-Dr. Emifa urged the public not to dismiss symptoms such as diarrhoea, vomiting or severe stomach upset.
+Dr. Emefa urged the public not to dismiss symptoms such as diarrhoea, vomiting or severe stomach upset.
 
 She explained that diarrhoeal diseases can quickly lead to dehydration, especially in young children, making early medical attention essential.
 
