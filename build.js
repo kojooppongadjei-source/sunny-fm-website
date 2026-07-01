@@ -53,25 +53,39 @@ const GA_SNIPPET = `<!-- Google tag (gtag.js) -->
 </script>`;
 
 const DONATE_SCRIPT = `
-<script src="https://js.paystack.co/v1/inline.js"></script>
 <script>
 function snOpenDonate(){
   var amount = prompt("Enter donation amount in GHS:", "50");
   if(!amount || isNaN(amount) || Number(amount) <= 0) return;
   var email = prompt("Enter your email for the receipt:");
   if(!email) return;
-  var handler = PaystackPop.setup({
-    key: 'pk_live_de0fc9e3b71f670c1d8e9cd4e3be3f125c9ceb8a',
-    email: email,
-    amount: Math.round(Number(amount) * 100),
-    currency: 'GHS',
-    ref: 'SUNNYDON' + Math.floor(Math.random() * 1000000000),
-    callback: function(response){
-      alert('Thank you! Your donation was successful. Reference: ' + response.reference);
-    },
-    onClose: function(){}
-  });
-  handler.openIframe();
+
+  function launch(){
+    var handler = PaystackPop.setup({
+      key: 'pk_live_de0fc9e3b71f670c1d8e9cd4e3be3f125c9ceb8a',
+      email: email,
+      amount: Math.round(Number(amount) * 100),
+      currency: 'GHS',
+      ref: 'SUNNYDON' + Math.floor(Math.random() * 1000000000),
+      callback: function(response){
+        alert('Thank you! Your donation was successful. Reference: ' + response.reference);
+      },
+      onClose: function(){}
+    });
+    handler.openIframe();
+  }
+
+  // Load Paystack's SDK on demand instead of on every page load —
+  // most visitors never click Donate, so this saves ~570KB of JS per pageview.
+  if (window.PaystackPop) {
+    launch();
+  } else {
+    var s = document.createElement('script');
+    s.src = 'https://js.paystack.co/v1/inline.js';
+    s.onload = launch;
+    s.onerror = function(){ alert('Could not load the payment form. Please check your connection and try again.'); };
+    document.head.appendChild(s);
+  }
 }
 </script>`;
 

@@ -14,7 +14,6 @@
 <meta name="description" content="Advertise on Sunny FM 88.7 and reach thousands of faith-based listeners across Accra and Ghana. Book radio spots, sponsorships and digital ads online.">
 <title>Advertise on Sunny FM 88.7 — Reach Ghana's Christian Audience</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
-<script src="https://js.paystack.co/v1/inline.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
@@ -1165,34 +1164,46 @@ function payNow() {
 
   if(amount <= 0){ alert('Invalid amount. Please go back and check your selections.'); return; }
 
-  var handler = PaystackPop.setup({
-    key: 'pk_live_328bca15b76ff8f294e7c8d07a74263d21bc0ca1', // ← Replace with your key
-    email: email,
-    amount: amount,
-    currency: 'GHS',
-    ref: 'SunnyFM-' + new Date().getTime(),
-    metadata: {
-      custom_fields: [
-        {display_name: 'Client Name', variable_name: 'client_name', value: name},
-        {display_name: 'Brand', variable_name: 'brand', value: brand},
-        {display_name: 'Phone', variable_name: 'phone', value: phone},
-        {display_name: 'Ad Type', variable_name: 'ad_type', value: state.typeLbl},
-        {display_name: 'Segment', variable_name: 'segment', value: state.segLbl},
-      ]
-    },
-    callback: function(response) {
-      state.lastRef = response.reference;
-      document.getElementById('success-ref').textContent = response.reference;
-      for(var i=1;i<=4;i++) document.getElementById('step'+i).classList.add('done');
-      document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('active'); });
-      document.getElementById('panel5').classList.add('active');
-      window.scrollTo({top:0,behavior:'smooth'});
-    },
-    onClose: function() {
-      // User closed without paying — do nothing
-    }
-  });
-  handler.openIframe();
+  function launch() {
+    var handler = PaystackPop.setup({
+      key: 'pk_live_328bca15b76ff8f294e7c8d07a74263d21bc0ca1', // ← Replace with your key
+      email: email,
+      amount: amount,
+      currency: 'GHS',
+      ref: 'SunnyFM-' + new Date().getTime(),
+      metadata: {
+        custom_fields: [
+          {display_name: 'Client Name', variable_name: 'client_name', value: name},
+          {display_name: 'Brand', variable_name: 'brand', value: brand},
+          {display_name: 'Phone', variable_name: 'phone', value: phone},
+          {display_name: 'Ad Type', variable_name: 'ad_type', value: state.typeLbl},
+          {display_name: 'Segment', variable_name: 'segment', value: state.segLbl},
+        ]
+      },
+      callback: function(response) {
+        state.lastRef = response.reference;
+        document.getElementById('success-ref').textContent = response.reference;
+        for(var i=1;i<=4;i++) document.getElementById('step'+i).classList.add('done');
+        document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('active'); });
+        document.getElementById('panel5').classList.add('active');
+        window.scrollTo({top:0,behavior:'smooth'});
+      },
+      onClose: function() {
+        // User closed without paying — do nothing
+      }
+    });
+    handler.openIframe();
+  }
+
+  if (window.PaystackPop) {
+    launch();
+  } else {
+    var s = document.createElement('script');
+    s.src = 'https://js.paystack.co/v1/inline.js';
+    s.onload = launch;
+    s.onerror = function(){ alert('Could not load the payment form. Please check your connection and try again.'); };
+    document.head.appendChild(s);
+  }
 }
 
 // ── FILE PREVIEW ──
