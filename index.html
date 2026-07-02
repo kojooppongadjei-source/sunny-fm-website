@@ -1175,7 +1175,9 @@ function snOpenDonate(){
 <script>
 (function(){
   var CRP_KEY = 'sunny_couples_retreat_popup_seen';
-  if(!sessionStorage.getItem(CRP_KEY)){
+  var COOLDOWN_MS = 24 * 60 * 60 * 1000; // 24 hours
+  var lastSeen = parseInt(localStorage.getItem(CRP_KEY) || '0', 10);
+  if(Date.now() - lastSeen > COOLDOWN_MS){
     setTimeout(function(){
       document.getElementById('crp-overlay').classList.add('show');
     }, 4000);
@@ -1185,7 +1187,7 @@ function snOpenDonate(){
 function crpClose(e){
   if(e && e.target !== document.getElementById('crp-overlay')) return;
   document.getElementById('crp-overlay').classList.remove('show');
-  sessionStorage.setItem('sunny_couples_retreat_popup_seen', '1');
+  localStorage.setItem('sunny_couples_retreat_popup_seen', String(Date.now()));
 }
 </script>
 <!-- END COUPLES RETREAT 2026 POPUP -->
