@@ -2,7 +2,7 @@
 title: 'Flood Trauma in Ghana: Mental Health Effects Can Linger Long After the
   Water Recedes – Psychiatrist Warns'
 date: 2026-07-02T09:00:00.000+00:00
-image: /assets/uploads/mental-health-photo.png
+image: /assets/uploads/dr-albert-sedohia.jpeg
 summary: Korle Bu psychiatrist Dr. Albert Sedohia explains why flood survivors
   in Ghana may face anxiety, fear and grief long after the floodwaters
   recede — and shares warning signs, coping steps, and where to get help.
