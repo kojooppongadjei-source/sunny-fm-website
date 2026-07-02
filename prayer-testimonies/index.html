@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8W4N24JZK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W8W4N24JZK');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prayer &amp; Testimonies — Sunny 88.7 FM</title>
@@ -76,7 +84,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
     <a href="/preaching-teaching/">Preaching &amp; Teaching</a>
     <a href="/events/">Events</a>
     <a href="/music-videos/">Music &amp; Videos</a>
-    <a href="https://sunnygh.com/index.php/live-tv/" class="site-nav-tv">
+    <a href="/watch-tv/" class="site-nav-tv">
       <img src="/assets/sunny-tv-logo.png" alt="Sunny TV">
       Watch TV
     </a>
@@ -92,15 +100,50 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
       <p>You don't have to carry it alone. Bring your needs to God with us — and be encouraged by what He has already done.</p>
     </div>
     <div class="post-grid">
-        <a href="/prayer-testimonies/you-dont-have-to-carry-it-alone/" class="post-card">
-          <div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-size:32px;">🙏</div>
+        <a href="/prayer-testimonies/god-made-a-way-a-midnight-journey-home/" class="post-card">
+          <img class="post-card-img" src="/assets/uploads/agbogba-traffic.png" alt="God Made a Way: A Midnight Journey Home">
           <div class="post-card-body">
-            <div class="post-card-date">15 June 2026</div>
-            <div class="post-card-title">You don't have to carry it alone</div>
-            <div class="post-card-summary">Bring your needs to God with us — and be encouraged by what He has already done in the lives of our listeners.</div>
+            <div class="post-card-date">4 June 2026</div>
+            <div class="post-card-title">God Made a Way: A Midnight Journey Home</div>
+            <div class="post-card-summary">Sometimes, God's faithfulness is revealed not through dramatic miracles, but through His perfect timing, guidance, and provision in the most unexpected circumstances.</div>
           </div>
         </a>
       </div>
+    
+    <div style="background:var(--cream);border-radius:16px;padding:2rem 1.5rem;margin-top:2rem;">
+      <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-dark);font-weight:700;margin-bottom:8px;">Share With Us</div>
+      <h2 style="font-size:clamp(20px,3vw,28px);font-weight:800;margin-bottom:8px;">Share Your Testimony</h2>
+      <p style="font-size:14px;color:#555;margin-bottom:24px;">Has God done something amazing in your life? We'd love to hear it — and share it to encourage others.</p>
+      <form name="testimony-submission" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/prayer-testimonies/?submitted=true" style="display:grid;gap:14px;">
+        <input type="hidden" name="form-name" value="testimony-submission">
+        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div>
+            <label style="font-size:12px;font-weight:700;color:#333;display:block;margin-bottom:6px;">Your Name *</label>
+            <input type="text" name="name" required placeholder="Full name" style="width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;outline:none;">
+          </div>
+          <div>
+            <label style="font-size:12px;font-weight:700;color:#333;display:block;margin-bottom:6px;">Phone / WhatsApp</label>
+            <input type="tel" name="phone" placeholder="e.g. 054 522 3324" style="width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;outline:none;">
+          </div>
+        </div>
+        <div>
+          <label style="font-size:12px;font-weight:700;color:#333;display:block;margin-bottom:6px;">Your Testimony *</label>
+          <textarea name="testimony" required rows="6" placeholder="Tell us what God has done in your life..." style="width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;outline:none;resize:vertical;"></textarea>
+        </div>
+        <div>
+          <label style="font-size:12px;font-weight:700;color:#333;display:block;margin-bottom:6px;">May we share this on air or online?</label>
+          <select name="permission" style="width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;outline:none;background:#fff;">
+            <option value="yes-both">Yes — on air and online</option>
+            <option value="yes-online">Online only</option>
+            <option value="yes-onair">On air only</option>
+            <option value="no">No — just for your team</option>
+          </select>
+        </div>
+        <button type="submit" style="background:var(--gold);color:#fff;border:none;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;width:fit-content;">🙏 Submit My Testimony</button>
+      </form>
+    </div>
+  
   
 </div>
 <style>
@@ -134,7 +177,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
       <a href="/music-videos/">Music &amp; Videos</a>
       <a href="/prayer-testimonies/">Prayer &amp; Testimonies</a>
       <a href="/advertise/">Advertise</a>
-      <a href="https://sunnygh.com/index.php/live-tv/">Watch TV</a>
+      <a href="/watch-tv/">Watch TV</a>
     </div>
     <div class="site-footer-col">
       <div class="site-footer-col-title">Contact</div>
@@ -496,27 +539,41 @@ else if(sessionStorage.getItem('sfp-active')==='1'){
 </script>
 
 
-<script src="https://js.paystack.co/v1/inline.js"></script>
+
 <script>
 function snOpenDonate(){
   var amount = prompt("Enter donation amount in GHS:", "50");
   if(!amount || isNaN(amount) || Number(amount) <= 0) return;
   var email = prompt("Enter your email for the receipt:");
   if(!email) return;
-  var handler = PaystackPop.setup({
-    key: 'pk_live_de0fc9e3b71f670c1d8e9cd4e3be3f125c9ceb8a',
-    email: email,
-    amount: Math.round(Number(amount) * 100),
-    currency: 'GHS',
-    ref: 'SUNNYDON' + Math.floor(Math.random() * 1000000000),
-    callback: function(response){
-      alert('Thank you! Your donation was successful. Reference: ' + response.reference);
-    },
-    onClose: function(){}
-  });
-  handler.openIframe();
+
+  function launch(){
+    var handler = PaystackPop.setup({
+      key: 'pk_live_de0fc9e3b71f670c1d8e9cd4e3be3f125c9ceb8a',
+      email: email,
+      amount: Math.round(Number(amount) * 100),
+      currency: 'GHS',
+      ref: 'SUNNYDON' + Math.floor(Math.random() * 1000000000),
+      callback: function(response){
+        alert('Thank you! Your donation was successful. Reference: ' + response.reference);
+      },
+      onClose: function(){}
+    });
+    handler.openIframe();
+  }
+
+  // Load Paystack's SDK on demand instead of on every page load —
+  // most visitors never click Donate, so this saves ~570KB of JS per pageview.
+  if (window.PaystackPop) {
+    launch();
+  } else {
+    var s = document.createElement('script');
+    s.src = 'https://js.paystack.co/v1/inline.js';
+    s.onload = launch;
+    s.onerror = function(){ alert('Could not load the payment form. Please check your connection and try again.'); };
+    document.head.appendChild(s);
+  }
 }
 </script>
-
 </body>
 </html>

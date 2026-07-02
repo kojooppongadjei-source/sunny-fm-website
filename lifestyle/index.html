@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8W4N24JZK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W8W4N24JZK');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lifestyle — Sunny 88.7 FM</title>
@@ -76,7 +84,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
     <a href="/preaching-teaching/">Preaching &amp; Teaching</a>
     <a href="/events/">Events</a>
     <a href="/music-videos/">Music &amp; Videos</a>
-    <a href="https://sunnygh.com/index.php/live-tv/" class="site-nav-tv">
+    <a href="/watch-tv/" class="site-nav-tv">
       <img src="/assets/sunny-tv-logo.png" alt="Sunny TV">
       Watch TV
     </a>
@@ -92,15 +100,38 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
       <p>Faith is not just for Sundays. It's how we love, parent, eat, work, and live.</p>
     </div>
     <div class="post-grid">
-        <a href="/lifestyle/faith-not-just-sundays/" class="post-card">
-          <div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-size:32px;">✨</div>
+        <a href="/lifestyle/dressing-gracefully-flatterung-outfits-for-the-modern-christian-woman/" class="post-card">
+          <img class="post-card-img" src="/assets/uploads/untitled-design-6-.png" alt="Dressing Gracefully: Flattering outfits for the Modern Christian Woman">
+          <div class="post-card-body">
+            <div class="post-card-date">17 June 2026</div>
+            <div class="post-card-title">Dressing Gracefully: Flattering outfits for the Modern Christian Woman</div>
+            <div class="post-card-summary">“True elegance occurs when the outer wardrobe harmonizes beautifully with an inner spirit of grace”.
+(1Peter 3:3-4)
+</div>
+          </div>
+        </a>
+      
+        <a href="/lifestyle/dressing-your-bump-with-grace-a-christian-perspective-on-pregnancy-apparel-faith-family/" class="post-card">
+          <img class="post-card-img" src="/assets/uploads/pregnancy-apparel.png" alt="Dressing Your Bump with Grace: A Christian Perspective on Pregnancy Apparel Faith &amp; Family">
+          <div class="post-card-body">
+            <div class="post-card-date">17 June 2026</div>
+            <div class="post-card-title">Dressing Your Bump with Grace: A Christian Perspective on Pregnancy Apparel Faith &amp; Family</div>
+            <div class="post-card-summary">Pregnancy is one of the most sacred seasons a woman can walk through. Your body is doing something extraordinary — nurturing new life, knit together by the very hands of God. And yet, for many expectant mothers, the question of what to wear can feel surprisingly stressful. Maternity fashion is an afterthought in many wardrobes, and for Christian women who care about modesty, comfort, and dignity, the options can feel even more limited.
+But here is the truth: dressing your bump well is not vanity. It is stewardship.</div>
+          </div>
+        </a>
+      
+        <a href="/lifestyle/faith-is-not-just-for-sundays/" class="post-card">
+          <img class="post-card-img" src="/assets/uploads/faith-everyday.png" alt="Faith is Not Just for Sundays">
           <div class="post-card-body">
             <div class="post-card-date">15 June 2026</div>
-            <div class="post-card-title">Faith is not just for Sundays</div>
-            <div class="post-card-summary">It's how we love, parent, eat, work, and live. Explore real conversations and practical wisdom for every area of your Christian life.</div>
+            <div class="post-card-title">Faith is Not Just for Sundays</div>
+            <div class="post-card-summary">There is a tendency, even among committed believers, to keep faith neatly contained — reserved for Sunday mornings, midweek services, and quiet devotional time. But the Christian life was never designed to fit inside a one-hour slot once a week. Faith is not a compartment. It is a lens through which everything else is seen.
+The way we speak to our spouse when we are tired. The patience we extend — or withhold — to our children at the end of a long day. The integrity we bring to our work when no one is watching. The kindness we show a stranger, or the grace we offer ourselves when we fall short. These are not separate from our faith. They are expressions of it.</div>
           </div>
         </a>
       </div>
+    
   
 </div>
 <style>
@@ -134,7 +165,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
       <a href="/music-videos/">Music &amp; Videos</a>
       <a href="/prayer-testimonies/">Prayer &amp; Testimonies</a>
       <a href="/advertise/">Advertise</a>
-      <a href="https://sunnygh.com/index.php/live-tv/">Watch TV</a>
+      <a href="/watch-tv/">Watch TV</a>
     </div>
     <div class="site-footer-col">
       <div class="site-footer-col-title">Contact</div>
@@ -496,27 +527,41 @@ else if(sessionStorage.getItem('sfp-active')==='1'){
 </script>
 
 
-<script src="https://js.paystack.co/v1/inline.js"></script>
+
 <script>
 function snOpenDonate(){
   var amount = prompt("Enter donation amount in GHS:", "50");
   if(!amount || isNaN(amount) || Number(amount) <= 0) return;
   var email = prompt("Enter your email for the receipt:");
   if(!email) return;
-  var handler = PaystackPop.setup({
-    key: 'pk_live_de0fc9e3b71f670c1d8e9cd4e3be3f125c9ceb8a',
-    email: email,
-    amount: Math.round(Number(amount) * 100),
-    currency: 'GHS',
-    ref: 'SUNNYDON' + Math.floor(Math.random() * 1000000000),
-    callback: function(response){
-      alert('Thank you! Your donation was successful. Reference: ' + response.reference);
-    },
-    onClose: function(){}
-  });
-  handler.openIframe();
+
+  function launch(){
+    var handler = PaystackPop.setup({
+      key: 'pk_live_de0fc9e3b71f670c1d8e9cd4e3be3f125c9ceb8a',
+      email: email,
+      amount: Math.round(Number(amount) * 100),
+      currency: 'GHS',
+      ref: 'SUNNYDON' + Math.floor(Math.random() * 1000000000),
+      callback: function(response){
+        alert('Thank you! Your donation was successful. Reference: ' + response.reference);
+      },
+      onClose: function(){}
+    });
+    handler.openIframe();
+  }
+
+  // Load Paystack's SDK on demand instead of on every page load —
+  // most visitors never click Donate, so this saves ~570KB of JS per pageview.
+  if (window.PaystackPop) {
+    launch();
+  } else {
+    var s = document.createElement('script');
+    s.src = 'https://js.paystack.co/v1/inline.js';
+    s.onload = launch;
+    s.onerror = function(){ alert('Could not load the payment form. Please check your connection and try again.'); };
+    document.head.appendChild(s);
+  }
 }
 </script>
-
 </body>
 </html>

@@ -1,19 +1,25 @@
 [
   {
-    "slug": "you-dont-have-to-carry-it-alone",
-    "title": "You don't have to carry it alone",
-    "date": "2026-06-15T08:00:00.000Z",
-    "dateFormatted": "15 June 2026",
-    "summary": "Bring your needs to God with us — and be encouraged by what He has already done in the lives of our listeners.",
-    "image": null,
-    "url": "/prayer-testimonies/you-dont-have-to-carry-it-alone/",
+    "slug": "god-made-a-way-a-midnight-journey-home",
+    "title": "God Made a Way: A Midnight Journey Home",
+    "date": "2026-06-04T12:30:00.000Z",
+    "dateFormatted": "4 June 2026",
+    "summary": "Sometimes, God's faithfulness is revealed not through dramatic miracles, but through His perfect timing, guidance, and provision in the most unexpected circumstances.",
+    "image": "/assets/uploads/agbogba-traffic.png",
+    "url": "/prayer-testimonies/god-made-a-way-a-midnight-journey-home/",
     "tags": [],
     "category": null,
     "entry_type": "Testimony",
-    "submitted_by": null,
+    "submitted_by": "Kojo",
     "preacher": null,
     "series": null,
     "youtube_id": null,
-    "audio_url": null
+    "audio_url": null,
+    "event_date": null,
+    "event_date_formatted": "",
+    "event_time": null,
+    "location": null,
+    "tag": null,
+    "past": false
   }
 ]

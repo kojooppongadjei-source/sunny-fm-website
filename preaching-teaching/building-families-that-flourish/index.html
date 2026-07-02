@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8W4N24JZK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W8W4N24JZK');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Building Families That Flourish — Sunny 88.7 FM</title>
-<meta name="description" content="Elder Amos Kevin-Annan shares powerful F.L.O.U.R.I.S.H principles for building families that thrive in faith and love.">
-
+<title>Potters Hour — Sunny 88.7 FM</title>
+<meta name="description" content="A powerful teaching from Prophet Nana Sei Opoku Sarkodie on the Potter's Hour — a time of divine shaping and transformation in God's hands.">
+<meta property="og:image" content="/assets/uploads/untitled-design-4-.png">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
@@ -76,7 +84,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
     <a href="/preaching-teaching/">Preaching &amp; Teaching</a>
     <a href="/events/">Events</a>
     <a href="/music-videos/">Music &amp; Videos</a>
-    <a href="https://sunnygh.com/index.php/live-tv/" class="site-nav-tv">
+    <a href="/watch-tv/" class="site-nav-tv">
       <img src="/assets/sunny-tv-logo.png" alt="Sunny TV">
       Watch TV
     </a>
@@ -89,23 +97,12 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
 
       <a href="/preaching-teaching/" class="back-link">&larr; Back to Preaching &amp; Teaching</a>
       <div class="eyebrow">Preaching &amp; Teaching</div>
-      <h1 class="post-title">Building Families That Flourish</h1>
-      <div class="post-meta">15 June 2026 &middot; Preacher: Elder Amos Kevin-Annan &middot; Series: Family Foundations</div>
+      <h1 class="post-title">Potters Hour</h1>
+      <div class="post-meta">15 June 2026 &middot; Preacher: Nana Sei Opoku Sarkodie &middot; Series: Family Foundations</div>
       
+      <div style="margin-bottom:24px;"><iframe width="100%" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2FSunnymedia887%2Fnana-sei-opoku-sarkodie-potters-hour%2F" frameborder="0" allowfullscreen allow="autoplay"></iframe></div><img class="post-image" src="/assets/uploads/untitled-design-4-.png" alt="Potters Hour">
       
-      <div class="post-body"><p>In this teaching, Elder Amos Kevin-Annan walks through the F.L.O.U.R.I.S.H principles — a practical framework for building strong, faith-centered families.</p>
-<p>Topics covered include:</p>
-<ul>
-<li>Faith as the foundation of family life</li>
-<li>Love that reflects God&#39;s love</li>
-<li>Open communication between spouses and children</li>
-<li>Unity in purpose and direction</li>
-<li>Respect for one another</li>
-<li>Investing time intentionally</li>
-<li>Service to one another and the community</li>
-<li>Hope that anchors the family through challenges</li>
-</ul>
-<p>Stay tuned to Sunny 88.7FM for more teachings in this series.</p>
+      <div class="post-body"><p>How did David get to know about the Mercies of God</p>
 </div>
     
 </div>
@@ -140,7 +137,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
       <a href="/music-videos/">Music &amp; Videos</a>
       <a href="/prayer-testimonies/">Prayer &amp; Testimonies</a>
       <a href="/advertise/">Advertise</a>
-      <a href="https://sunnygh.com/index.php/live-tv/">Watch TV</a>
+      <a href="/watch-tv/">Watch TV</a>
     </div>
     <div class="site-footer-col">
       <div class="site-footer-col-title">Contact</div>
@@ -502,27 +499,41 @@ else if(sessionStorage.getItem('sfp-active')==='1'){
 </script>
 
 
-<script src="https://js.paystack.co/v1/inline.js"></script>
+
 <script>
 function snOpenDonate(){
   var amount = prompt("Enter donation amount in GHS:", "50");
   if(!amount || isNaN(amount) || Number(amount) <= 0) return;
   var email = prompt("Enter your email for the receipt:");
   if(!email) return;
-  var handler = PaystackPop.setup({
-    key: 'pk_live_de0fc9e3b71f670c1d8e9cd4e3be3f125c9ceb8a',
-    email: email,
-    amount: Math.round(Number(amount) * 100),
-    currency: 'GHS',
-    ref: 'SUNNYDON' + Math.floor(Math.random() * 1000000000),
-    callback: function(response){
-      alert('Thank you! Your donation was successful. Reference: ' + response.reference);
-    },
-    onClose: function(){}
-  });
-  handler.openIframe();
+
+  function launch(){
+    var handler = PaystackPop.setup({
+      key: 'pk_live_de0fc9e3b71f670c1d8e9cd4e3be3f125c9ceb8a',
+      email: email,
+      amount: Math.round(Number(amount) * 100),
+      currency: 'GHS',
+      ref: 'SUNNYDON' + Math.floor(Math.random() * 1000000000),
+      callback: function(response){
+        alert('Thank you! Your donation was successful. Reference: ' + response.reference);
+      },
+      onClose: function(){}
+    });
+    handler.openIframe();
+  }
+
+  // Load Paystack's SDK on demand instead of on every page load —
+  // most visitors never click Donate, so this saves ~570KB of JS per pageview.
+  if (window.PaystackPop) {
+    launch();
+  } else {
+    var s = document.createElement('script');
+    s.src = 'https://js.paystack.co/v1/inline.js';
+    s.onload = launch;
+    s.onerror = function(){ alert('Could not load the payment form. Please check your connection and try again.'); };
+    document.head.appendChild(s);
+  }
 }
 </script>
-
 </body>
 </html>

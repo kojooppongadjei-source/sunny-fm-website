@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8W4N24JZK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W8W4N24JZK');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Welcome to the new Sunny FM website — Sunny 88.7 FM</title>
-<meta name="description" content="We're excited to launch our brand new, faster website — built for Ghana, built for you.">
-
+<title>Alpha Ghana Invites Churches to Rediscover the Power of Relational Evangelism — Sunny 88.7 FM</title>
+<meta name="description" content="As churches across Ghana seek fresh and effective ways to share the Gospel, the Alpha Course continues to emerge as one of the world's most impactful tools for evangelism and discipleship.">
+<meta property="og:image" content="/assets/uploads/untitled-design-3-.png">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
@@ -76,7 +84,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
     <a href="/preaching-teaching/">Preaching &amp; Teaching</a>
     <a href="/events/">Events</a>
     <a href="/music-videos/">Music &amp; Videos</a>
-    <a href="https://sunnygh.com/index.php/live-tv/" class="site-nav-tv">
+    <a href="/watch-tv/" class="site-nav-tv">
       <img src="/assets/sunny-tv-logo.png" alt="Sunny TV">
       Watch TV
     </a>
@@ -89,13 +97,20 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
 
       <a href="/news/" class="back-link">&larr; Back to News</a>
       <div class="eyebrow">News</div>
-      <h1 class="post-title">Welcome to the new Sunny FM website</h1>
-      <div class="post-meta">15 June 2026</div>
+      <h1 class="post-title">Alpha Ghana Invites Churches to Rediscover the Power of Relational Evangelism</h1>
+      <div class="post-meta">2 June 2026</div>
       <div style="margin-bottom:16px;"><span class="tag">Announcements</span></div>
+      <img class="post-image" src="/assets/uploads/untitled-design-3-.png" alt="Alpha Ghana Invites Churches to Rediscover the Power of Relational Evangelism">
       
-      <div class="post-body"><p>We&#39;re thrilled to welcome you to the brand new Sunny 88.7FM website! After a period of technical challenges with our old site, we&#39;ve rebuilt everything from the ground up to be faster, more reliable, and easier to use.</p>
-<p>You can now stream live radio, browse our schedule, register for events, and catch up on news — all from one place that loads in an instant, wherever you are in the world.</p>
-<p>Thank you for being part of the Sunny FM family. Stay tuned for more updates!</p>
+      <div class="post-body"><p>Speaking on Sunny 88.7 FM, Dr. Francis Osei, National Director of Alpha Ghana, shared how the Alpha Course is helping churches create welcoming environments where people can explore life&#39;s biggest questions, discover the Christian faith, and encounter Jesus Christ in a meaningful way.</p>
+<p>Originally developed at Holy Trinity Brompton Church in London, Alpha has grown into a global movement used in more than 100 countries and translated into numerous languages. The course provides a safe, open, and non-judgmental space where participants can discuss topics such as faith, purpose, prayer, the Bible, and the person of Jesus Christ.</p>
+<p>According to Dr. Osei, Alpha is built on a simple but powerful principle: people are more likely to encounter Christ through authentic relationships and honest conversations than through arguments or pressure. The course typically combines a shared meal, a short video presentation, and small group discussions where participants are encouraged to ask questions and share their thoughts freely.</p>
+<p>&quot;Many people are curious about faith but may not feel comfortable walking into a church service,&quot; Dr. Osei explained. &quot;Alpha creates a welcoming environment where everyone is free to explore Christianity at their own pace.&quot;</p>
+<p>Over the years, Alpha has been embraced by churches from various denominations, helping thousands of people begin or deepen their faith journey. Beyond evangelism, the course has also become a valuable discipleship tool, helping believers grow in their understanding of God and build meaningful Christian community.</p>
+<p>Dr. Osei encouraged churches, ministries, and Christian leaders across Ghana to consider using Alpha as part of their outreach strategy. He noted that in an increasingly complex and digital world, the need for genuine human connection and Christ-centered conversations has never been greater.</p>
+<p>The discussion highlighted the importance of equipping believers not only to share the Gospel but also to listen well, build relationships, and walk alongside those who are searching for answers.</p>
+<p>As the Church seeks to fulfill the Great Commission, Alpha continues to demonstrate that evangelism is most effective when it is rooted in hospitality, friendship, and the transforming power of the Holy Spirit.</p>
+<p>Churches and individuals interested in learning more about Alpha Ghana are encouraged to connect with the ministry and discover how the course can be used to reach communities with the message of hope found in Jesus Christ.</p>
 </div>
     
 </div>
@@ -130,7 +145,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
       <a href="/music-videos/">Music &amp; Videos</a>
       <a href="/prayer-testimonies/">Prayer &amp; Testimonies</a>
       <a href="/advertise/">Advertise</a>
-      <a href="https://sunnygh.com/index.php/live-tv/">Watch TV</a>
+      <a href="/watch-tv/">Watch TV</a>
     </div>
     <div class="site-footer-col">
       <div class="site-footer-col-title">Contact</div>
@@ -492,27 +507,41 @@ else if(sessionStorage.getItem('sfp-active')==='1'){
 </script>
 
 
-<script src="https://js.paystack.co/v1/inline.js"></script>
+
 <script>
 function snOpenDonate(){
   var amount = prompt("Enter donation amount in GHS:", "50");
   if(!amount || isNaN(amount) || Number(amount) <= 0) return;
   var email = prompt("Enter your email for the receipt:");
   if(!email) return;
-  var handler = PaystackPop.setup({
-    key: 'pk_live_de0fc9e3b71f670c1d8e9cd4e3be3f125c9ceb8a',
-    email: email,
-    amount: Math.round(Number(amount) * 100),
-    currency: 'GHS',
-    ref: 'SUNNYDON' + Math.floor(Math.random() * 1000000000),
-    callback: function(response){
-      alert('Thank you! Your donation was successful. Reference: ' + response.reference);
-    },
-    onClose: function(){}
-  });
-  handler.openIframe();
+
+  function launch(){
+    var handler = PaystackPop.setup({
+      key: 'pk_live_de0fc9e3b71f670c1d8e9cd4e3be3f125c9ceb8a',
+      email: email,
+      amount: Math.round(Number(amount) * 100),
+      currency: 'GHS',
+      ref: 'SUNNYDON' + Math.floor(Math.random() * 1000000000),
+      callback: function(response){
+        alert('Thank you! Your donation was successful. Reference: ' + response.reference);
+      },
+      onClose: function(){}
+    });
+    handler.openIframe();
+  }
+
+  // Load Paystack's SDK on demand instead of on every page load —
+  // most visitors never click Donate, so this saves ~570KB of JS per pageview.
+  if (window.PaystackPop) {
+    launch();
+  } else {
+    var s = document.createElement('script');
+    s.src = 'https://js.paystack.co/v1/inline.js';
+    s.onload = launch;
+    s.onerror = function(){ alert('Could not load the payment form. Please check your connection and try again.'); };
+    document.head.appendChild(s);
+  }
 }
 </script>
-
 </body>
 </html>
