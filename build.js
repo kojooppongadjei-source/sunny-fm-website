@@ -111,7 +111,7 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-function pageShell({ title, description, bodyHtml, ogImage }) {
+function pageShell({ title, description, bodyHtml, ogImage, jsonLd }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -121,6 +121,9 @@ ${GA_SNIPPET}
 <title>${escapeHtml(title)} — Sunny 88.7 FM</title>
 <meta name="description" content="${escapeHtml(description)}">
 ${ogImage ? `<meta property="og:image" content="${escapeHtml(ogImage)}">` : ''}
+<meta property="og:title" content="${escapeHtml(title)}">
+<meta property="og:description" content="${escapeHtml(description)}">
+${jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>` : ''}
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
@@ -213,6 +216,8 @@ function buildCollection(collectionFolder, config) {
       location: data.location || null,
       tag: data.tag || null,
       past: data.past || false,
+      price: data.price || null,
+      price_currency: data.price_currency || null,
     };
 
     posts.push({ ...post, bodyHtml, raw: data });
@@ -289,11 +294,43 @@ function buildCollection(collectionFolder, config) {
     `;
     
 
+    let eventJsonLd = null;
+    if (config.urlPath === 'events' && post.event_date) {
+      eventJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Event',
+        name: post.title,
+        startDate: post.event_date,
+        eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+        eventStatus: 'https://schema.org/EventScheduled',
+        location: {
+          '@type': 'Place',
+          name: post.location || 'Ghana',
+          address: post.location || 'Ghana',
+        },
+        image: post.image ? [`https://sunnygh.com${post.image}`] : undefined,
+        description: post.summary || post.title,
+        organizer: {
+          '@type': 'Organization',
+          name: 'Sunny 88.7 FM',
+          url: 'https://sunnygh.com',
+        },
+        offers: post.price ? {
+          '@type': 'Offer',
+          price: String(post.price).replace(/[^0-9.]/g, ''),
+          priceCurrency: post.price_currency || 'GHS',
+          availability: 'https://schema.org/InStock',
+          url: `https://sunnygh.com/${config.urlPath}/${post.slug}/`,
+        } : undefined,
+      };
+    }
+
     const html = pageShell({
       title: post.title,
       description: post.summary || post.title,
       bodyHtml,
       ogImage: post.image,
+      jsonLd: eventJsonLd,
     });
 
     fs.writeFileSync(path.join(postDir, 'index.html'), html);

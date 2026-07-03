@@ -20,6 +20,8 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   }
 ]

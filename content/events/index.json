@@ -20,14 +20,16 @@
     "event_time": "10:00 am",
     "location": "Sunny FM, Kanda, Accra, Ghana",
     "tag": "Education",
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   },
   {
     "slug": "couples-retreat-2026-—-a-time-to-reconnect-refresh-and-rediscover",
-    "title": "Couples Retreat 2026 — A Time to Reconnect, Refresh and Rediscover",
+    "title": "Couples Retreat 2026 Ghana — A Time to Reconnect, Refresh and Rediscover at Aqua Safari Resort",
     "date": "2026-06-17T09:27:00.000Z",
     "dateFormatted": "17 June 2026",
-    "summary": "Couples Retreat 2026 — a special four-day getaway designed to help you reconnect, refresh, and rediscover each other in a beautiful resort setting.\nYour experience includes a 3-night luxury stay at Aqua Safari Resort, daily buffet breakfast, lunch and dinner, retreat sessions, exciting couple bonding activities, and quality time for relaxation and fun together.\nCost: GHC 9,999 per couple\nRegistration deadline: 21st August 2026\nTo register, WhatsApp: 054 522 3324",
+    "summary": "A 3-night couples retreat at Aqua Safari Resort, Ghana — 27th to 30th August 2026. Includes luxury accommodation, daily meals, guided retreat sessions and couple bonding activities. GHC 9,999 per couple.",
     "image": "/assets/uploads/untitled-design-4-.png",
     "url": "/events/couples-retreat-2026-—-a-time-to-reconnect-refresh-and-rediscover/",
     "tags": [],
@@ -43,6 +45,8 @@
     "event_time": "27th – 30th August 2026 (3 Nights)",
     "location": "Aqua Safari Resort, Ghana",
     "tag": "Summit",
-    "past": false
+    "past": false,
+    "price": "9999",
+    "price_currency": "GHS"
   }
 ]

@@ -20,7 +20,9 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   },
   {
     "slug": "dressing-your-bump-with-grace-a-christian-perspective-on-pregnancy-apparel-faith-family",
@@ -43,7 +45,9 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   },
   {
     "slug": "faith-is-not-just-for-sundays",
@@ -66,6 +70,8 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   }
 ]

@@ -23,7 +23,9 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   },
   {
     "slug": "mtn-stands-in-worship-takoradi-2026-mercy-chinwo-joe-mettle-lineup-palms-by-eagles",
@@ -49,7 +51,9 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   },
   {
     "slug": "flood-trauma-ghana-mental-health-effects-can-linger-long-after-floodwaters-recede",
@@ -72,7 +76,9 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   },
   {
     "slug": "floods-could-trigger-cholera-and-typhoid-outbreaks-–-dr-joyce-emifa-warns-ghanaians",
@@ -95,7 +101,9 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   },
   {
     "slug": "flood-victims-with-comprehensive-insurance-can-file-claims-–-insurance-expert-advises-ghanaians",
@@ -118,7 +126,9 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   },
   {
     "slug": "rain-could-not-stop-the-praise-thousands-worship-at-joe-mettles-praise-reloaded-2026",
@@ -141,7 +151,9 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   },
   {
     "slug": "heavy-rains-trigger-flooding-across-accra-disrupting-traffic-and-daily-activities",
@@ -164,7 +176,9 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   },
   {
     "slug": "joe-mettle-invites-christians-to-gather-to-lift-jesus-at-praise-reloaded-2026",
@@ -187,7 +201,9 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   },
   {
     "slug": "she-couldnt-cook-he-lost-his-job-18-years-later-theyre-still-standing",
@@ -210,7 +226,9 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   },
   {
     "slug": "youth-alpha-leaders-training-set-for-the-dan-peters-memorial-conference-room",
@@ -233,7 +251,9 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   },
   {
     "slug": "everyday-faith-global-purpose-lausanne-launches-free-discipleship-video-series",
@@ -256,7 +276,9 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   },
   {
     "slug": "why-parental-mental-health-matters-more-than-ever",
@@ -281,7 +303,9 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   },
   {
     "slug": "darbaa-borehole-project-set-to-transform-lives-through-access-to-clean-water",
@@ -304,7 +328,9 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   },
   {
     "slug": "welcome-new-website",
@@ -329,6 +355,8 @@
     "event_time": null,
     "location": null,
     "tag": null,
-    "past": false
+    "past": false,
+    "price": null,
+    "price_currency": null
   }
 ]
