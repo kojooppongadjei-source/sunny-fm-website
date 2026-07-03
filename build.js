@@ -111,7 +111,7 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-function pageShell({ title, description, bodyHtml, ogImage, jsonLd }) {
+function pageShell({ title, description, bodyHtml, ogImage, jsonLd, wide }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -161,12 +161,13 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
 .post-card-title{font-size:16px;font-weight:700;margin-bottom:6px;line-height:1.35;}
 .post-card-summary{font-size:13px;color:#666;line-height:1.6;}
 .empty-state{color:var(--muted);font-size:14px;text-align:center;padding:40px 0;}
+.wrap-wide{max-width:1240px;}
 @media(max-width:600px){.wrap{padding:20px 5% 48px;}}
 </style>
 </head>
 <body>
 ${HEADER}
-<div class="wrap">
+<div class="wrap${wide ? ' wrap-wide' : ''}">
 ${bodyHtml}
 </div>
 ${FOOTER}
@@ -407,6 +408,7 @@ function buildCollection(collectionFolder, config) {
     title: config.label,
     description: getCollectionTagline(config.urlPath),
     bodyHtml: listBody,
+    wide: true,
   });
 
   fs.mkdirSync(outDir, { recursive: true });
