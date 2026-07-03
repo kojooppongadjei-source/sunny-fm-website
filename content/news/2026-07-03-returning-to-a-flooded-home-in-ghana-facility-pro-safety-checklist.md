@@ -2,7 +2,7 @@
 title: 'Returning to a Flooded Home in Ghana? Facility Pro’s Charity Oforiwaa Bekoe
   Shares the Safety Checklist to Follow Before You Go Back In'
 date: 2026-07-03T08:00:00.000+00:00
-image: /assets/uploads/charity-baku-facility-pro.jpg
+image: /assets/uploads/charity-oforiwaa-bekoe-facility-pro.jpg
 summary: Facility Pro General Manager Charity Oforiwaa Bekoe joined Sunny 88.7 FM's
   Morning Drive to share the safety checks, cleanup steps and pest risks
   every Ghanaian family should know before re-entering a flooded home.
