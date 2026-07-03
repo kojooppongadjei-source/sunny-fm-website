@@ -2,6 +2,7 @@
 title: 'MTN Stands in Worship Takoradi 2026: Mercy Chinwo, Joe Mettle Headline
   Gospel Concert at Palms by Eagles'
 date: 2026-07-02T18:00:00.000+00:00
+image: /assets/uploads/mtn-stands-in-worship-takoradi-2026.jpg
 summary: MTN Stands in Worship returns to Takoradi on Friday, July 3, 2026,
   featuring Mercy Chinwo, Joe Mettle, Ps. Joe Beecham, Amy Newman and Steve O
   & The Broken Chains at the Palms by Eagles Auditorium.
