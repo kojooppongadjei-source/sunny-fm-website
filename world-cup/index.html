@@ -116,7 +116,15 @@ function flag(c){return FLAGS[c]||'🏳';}
 // Fallback hardcoded data (always works even if API fails)
 const FALLBACK = {
   results:[
+    {home:'BRA',away:'NOR',hs:1,as:2,time:'Sun Jul 5 · Full Time · Round of 16',note:'Haaland 79\', 90\' — Neymar 90+1\' (P)'},
+    {home:'CAN',away:'MAR',hs:0,as:3,time:'Sat Jul 4 · Full Time · Round of 16',note:'Ounahi 50\', 82\' — Rahimi 90+8\''},
+    {home:'FRA',away:'PAR',hs:1,as:0,time:'Sat Jul 4 · Full Time · Round of 16',note:'Mbappé 45\' (P)'},
+    {home:'COL',away:'GHA',hs:1,as:0,time:'Fri Jul 3 · Full Time · Round of 32',note:'Arias 14\'',ghana:true},
+    {home:'ARG',away:'CPV',hs:3,as:2,time:'Fri Jul 3 · Full Time (AET) · Round of 32',note:'Messi 29\', L.Martinez 93\', Romero 111\' (og) — Duarte, Cabral'},
+    {home:'AUS',away:'EGY',hs:1,as:1,time:'Fri Jul 3 · Full Time · Round of 32',note:'Egypt win 4-2 on penalties'},
     {home:'ESP',away:'AUT',hs:3,as:0,time:'Thu Jul 2 · Full Time · Round of 32'},
+    {home:'POR',away:'CRO',hs:2,as:1,time:'Thu Jul 2 · Full Time · Round of 32'},
+    {home:'SUI',away:'DZA',hs:2,as:0,time:'Thu Jul 2 · Full Time · Round of 32'},
     {home:'USA',away:'BIH',hs:2,as:0,time:'Wed Jul 1 · Full Time · Round of 32'},
     {home:'BEL',away:'SEN',hs:3,as:2,time:'Wed Jul 1 · Full Time (AET) · Round of 32',note:'Lukaku 86\', Tielemans 89\' 120+5\' (P) — Diarra 24\', Sarr 51\''},
     {home:'ENG',away:'COD',hs:2,as:1,time:'Wed Jul 1 · Full Time · Round of 32'},
@@ -127,23 +135,14 @@ const FALLBACK = {
     {home:'GER',away:'PAR',hs:1,as:1,time:'Mon Jun 29 · 20:30 GMT',note:'Paraguay win 4-3 on penalties · Round of 32'},
     {home:'BRA',away:'JPN',hs:2,as:1,time:'Mon Jun 29 · 17:00 GMT'},
     {home:'RSA',away:'CAN',hs:0,as:1,time:'Sun Jun 28 · 19:00 GMT'},
-    {home:'JOR',away:'ARG',hs:1,as:3,time:'Sun Jun 28 · 02:00 GMT'},
-    {home:'DZA',away:'AUT',hs:3,as:3,time:'Sun Jun 28 · 02:00 GMT'},
-    {home:'COD',away:'UZB',hs:3,as:1,time:'Sat Jun 27 · 23:30 GMT'},
-    {home:'COL',away:'POR',hs:0,as:0,time:'Sat Jun 27 · 23:30 GMT'},
     {home:'CRO',away:'GHA',hs:2,as:1,time:'Sat Jun 27 · 21:00 GMT',ghana:true},
-    {home:'PAN',away:'ENG',hs:0,as:2,time:'Sat Jun 27 · 21:00 GMT'},
-    {home:'EGY',away:'IRN',hs:1,as:1,time:'Sat Jun 27 · 03:00 GMT'},
   ],
   upcoming:[
-    {home:'POR',away:'CRO',date:'Thu Jul 2',time:'23:00 GMT',ph:54,pd:27,pa:20},
-    {home:'SUI',away:'DZA',date:'Fri Jul 3',time:'03:00 GMT',ph:48,pd:28,pa:24},
-    {home:'COL',away:'GHA',date:'Fri Jul 3',time:'20:30 GMT',ph:56,pd:24,pa:20,ghana:true},
-    {home:'AUS',away:'EGY',date:'Fri Jul 3',time:'22:00 GMT',ph:38,pd:30,pa:32},
-    {home:'CAN',away:'MAR',date:'Sat Jul 4',time:'17:00 GMT',ph:41,pd:29,pa:30},
-    {home:'FRA',away:'PAR',date:'Sat Jul 4',time:'21:00 GMT',ph:73,pd:18,pa:9},
-    {home:'BRA',away:'NOR',date:'Sun Jul 5',time:'20:00 GMT',ph:58,pd:24,pa:18},
-    {home:'MEX',away:'ENG',date:'Sun Jul 5',time:'00:00 GMT',ph:36,pd:29,pa:35},
+    {home:'MEX',away:'ENG',date:'Mon Jul 6',time:'00:00 GMT',ph:36,pd:29,pa:35},
+    {home:'POR',away:'ESP',date:'Mon Jul 6',time:'19:00 GMT',ph:34,pd:26,pa:40},
+    {home:'USA',away:'BEL',date:'Mon Jul 6',time:'23:00 GMT',ph:38,pd:27,pa:35},
+    {home:'ARG',away:'EGY',date:'Tue Jul 7',time:'16:00 GMT',ph:70,pd:20,pa:10},
+    {home:'SUI',away:'COL',date:'Tue Jul 7',time:'20:00 GMT',ph:32,pd:28,pa:40},
   ]
 };
 
