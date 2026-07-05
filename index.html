@@ -1094,18 +1094,19 @@ function snOpenDonate(){
 #crp-overlay.show{display:flex;}
 #crp-modal{
   background:#fff;border-radius:16px;max-width:460px;width:100%;
-  overflow:hidden;position:relative;
+  max-height:90vh;overflow-y:auto;position:relative;
   box-shadow:0 24px 70px rgba(0,0,0,0.35);
+  -webkit-overflow-scrolling:touch;
 }
 .crp-close{
-  position:absolute;top:14px;right:14px;z-index:5;
-  background:rgba(0,0,0,0.5);border:none;color:#fff;
-  width:30px;height:30px;border-radius:50%;cursor:pointer;
+  position:fixed;top:calc(5vh + 14px);right:14px;z-index:9600;
+  background:rgba(0,0,0,0.6);border:none;color:#fff;
+  width:32px;height:32px;border-radius:50%;cursor:pointer;
   font-size:16px;display:flex;align-items:center;justify-content:center;
   transition:background .2s;
 }
-.crp-close:hover{background:rgba(0,0,0,0.7);}
-#crp-img{width:100%;display:block;}
+.crp-close:hover{background:rgba(0,0,0,0.8);}
+#crp-img{width:100%;height:auto;display:block;aspect-ratio:1200/630;object-fit:cover;}
 .crp-body{padding:22px 24px 24px;}
 .crp-eyebrow{
   font-size:10px;font-weight:800;text-transform:uppercase;
