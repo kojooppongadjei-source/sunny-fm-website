@@ -52,6 +52,9 @@ const GA_SNIPPET = `<!-- Google tag (gtag.js) -->
   gtag('config', 'G-W8W4N24JZK');
 </script>`;
 
+const ADSENSE_SNIPPET = `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3442619894645176"
+     crossorigin="anonymous"></script>`;
+
 const DONATE_SCRIPT = `
 <script>
 function snOpenDonate(){
@@ -116,6 +119,7 @@ function pageShell({ title, description, bodyHtml, ogImage, jsonLd, wide }) {
 <html lang="en">
 <head>
 ${GA_SNIPPET}
+${ADSENSE_SNIPPET}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${escapeHtml(title)} — Sunny 88.7 FM</title>
