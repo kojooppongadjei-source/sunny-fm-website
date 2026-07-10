@@ -1,13 +1,12 @@
 ---
-title: 'Ghanaian-Born Literacy Expert Anita Whyte to Lead Phonological
-  Awareness Training in Accra — Here''s Why It Matters for Every Reading Child'
-date: 2026-07-14T09:00:00.000+00:00
+title: Ghanaian-Born Literacy Expert Anita Whyte to Lead Phonological Awareness
+  Training in Accra — Here's Why It Matters for Every Reading Child
+date: 2026-07-10T22:54:00.000+00:00
 image: /assets/uploads/anita-shirley-whyte-headshot.png
-summary: Literacy educator Anita S. Whyte explains why phonological
-  awareness — not phonics — is the real foundation of reading, and why
-  children who "can't read" often just weren't given that foundation first.
-  She leads a hands-on training for teachers and parents at Sunny FM on
-  Friday, July 17.
+summary: Literacy educator Anita S. Whyte explains why phonological awareness —
+  not phonics — is the real foundation of reading, and why children who "can't
+  read" often just weren't given that foundation first. She leads a hands-on
+  training for teachers and parents at Sunny FM on Friday, July 17.
 ---
 Accra, Ghana – Many Ghanaian children struggling to read aren't lacking ability — they're simply missing a foundational step that comes before letters and print altogether, according to literacy educator Anita S. Whyte, EdS.
 
