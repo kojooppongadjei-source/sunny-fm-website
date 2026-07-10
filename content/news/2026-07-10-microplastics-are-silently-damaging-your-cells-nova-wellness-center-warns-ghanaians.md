@@ -2,7 +2,7 @@
 title: 'Microplastics Are Silently Damaging Your Cells, Nova Wellness Center
   Warns Ghanaians'
 date: 2026-07-10T09:00:00.000+00:00
-image: /assets/uploads/dr-naa-asheley-ashietey-nova-wellness-center.jpeg
+image: /assets/uploads/dr-naa-asheley-ashietey-headshot.png
 summary: Dr. Naa Asheley Ashietey of Nova Wellness Center explains how everyday
   plastics — from kenkey wrappers to sachet water — are building up inside our
   cells, why it's linked to rising illness among young people, and simple
