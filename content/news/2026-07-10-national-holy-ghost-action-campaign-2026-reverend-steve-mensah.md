@@ -1,13 +1,13 @@
 ---
-title: 'Reverend Steve Mensah: "We''ve Put the Holy Spirit in a Box" — National
-  Holy Ghost Action Campaign Returns This Week'
-date: 2026-07-10T09:00:00.000+00:00
+title: "Reverend Steve Mensah: \"We've Put The Holy Spirit in a Box\" — National
+  Holy Ghost Action Campaign Returns This Week"
+date: 2026-07-06T09:00:00.000+00:00
 image: /assets/uploads/rev-steve-mensah-holy-ghost-action-2026.png
 summary: For nearly three decades, one week every year has drawn Ghanaian
   Christians of every denomination onto the same campus grounds, chasing the
   same thing — the presence of God, not just His power. Reverend Steve Mensah
-  joined Sunny 88.7 FM's Inspirational Morning Drive to talk about this
-  year's National Holy Ghost Action Campaign, running July 8–12, 2026.
+  joined Sunny 88.7 FM's Inspirational Morning Drive to talk about this year's
+  National Holy Ghost Action Campaign, running July 8–12, 2026.
 ---
 Accra, Ghana — For nearly three decades, one week every year has drawn Ghanaian Christians of every denomination onto the same campus grounds, chasing the same thing: the presence of God, not just His power.
 
