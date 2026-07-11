@@ -1,12 +1,12 @@
 ---
-title: 'Microplastics Are Silently Damaging Your Cells, Nova Wellness Center
-  Warns Ghanaians'
+title: Microplastics Are Silently Damaging Your Cells, Nova Wellness Center
+  Warns Ghanaians
 date: 2026-07-10T09:00:00.000+00:00
 image: /assets/uploads/dr-naa-asheley-ashietey-headshot.png
 summary: Dr. Naa Asheley Ashietey of Nova Wellness Center explains how everyday
-  plastics — from kenkey wrappers to sachet water — are building up inside our
-  cells, why it's linked to rising illness among young people, and simple
-  daily habits that can help the body eliminate microplastics.
+  plastics  from kenkey wrappers to sachet water are building up inside our
+  cells, why it's linked to rising illness among young people, and simple daily
+  habits that can help the body eliminate microplastics.
 ---
 Accra, Ghana – As Ghanaians continue clearing plastic waste left behind by recent flooding, health experts are warning that the same plastics clogging our gutters and shorelines are quietly building up inside our bodies too.
 
@@ -16,7 +16,7 @@ Speaking on **Sunny 88.7 FM**, Dr. Naa Asheley Ashietey of Nova Wellness Center 
 
 ### What Are Microplastics, Exactly?
 
-Dr. Naa explained that microplastics are thin plastic materials — generally under 5 millimetres wide — that Ghanaians encounter constantly without realising it. Common local examples include:
+Dr. Naa explained that microplastics are thin plastic materials — generally under 5 millimetres wide  that Ghanaians encounter constantly without realising it. Common local examples include:
 
 * "Olonka" rubber bags used at the market
 * Takeaway food packs and disposable cups
@@ -24,7 +24,7 @@ Dr. Naa explained that microplastics are thin plastic materials — generally un
 * Sachet water bags
 * Synthetic fibres in some fast-fashion clothing
 
-"There's no running away from plastics — there's a big reliance on plastics these days," she said. "I'm not saying don't touch it, but we all need to see how well we can reduce the dependence on plastics, because it does have an effect on how your body and your cells function."
+"There's no running away from plastics  there's a big reliance on plastics these days," she said. "I'm not saying don't touch it, but we all need to see how well we can reduce the dependence on plastics, because it does have an effect on how your body and your cells function."
 
 ### Why Young People Are Getting Sicker
 
@@ -32,13 +32,13 @@ Dr. Naa said her research into regenerative health and longevity began after not
 
 She explained that microplastics act as a foreign substance in the body, triggering the same kind of immune response as a virus or bacteria. The difference, she said, is exposure never stops.
 
-"Imagine you have your breakfast, there's a bunch of microplastics in there. Your body's trying to break it down and eliminate it — then lunchtime, there's more, and in the evening, there's more," she said. "Your body becomes overburdened, and that immune response keeps going and going without a break. That persistent fight leads to fatigue in your cells and, over time, can turn into inflammation. Inflammation doesn't just go away — that's how disease starts."
+"Imagine you have your breakfast, there's a bunch of microplastics in there. Your body's trying to break it down and eliminate it  then lunchtime, there's more, and in the evening, there's more," she said. "Your body becomes overburdened, and that immune response keeps going and going without a break. That persistent fight leads to fatigue in your cells and, over time, can turn into inflammation. Inflammation doesn't just go away  that's how disease starts."
 
 ### Not All Plastic Is Equal
 
-According to Dr. Naa, the thinner and more flimsy a plastic is, the more reactive it becomes when exposed to heat — making items like hot kenkey wrapped in rubber, or cocoa poured straight into a hot rubber bag, especially harmful.
+According to Dr. Naa, the thinner and more flimsy a plastic is, the more reactive it becomes when exposed to heat making items like hot kenkey wrapped in rubber, or cocoa poured straight into a hot rubber bag, especially harmful.
 
-"The more solid it is, the less reactive," she said, pointing to thicker containers labelled "microwavable" as a lower-risk option than single-use bags — though she still recommends glass over plastic wherever possible, even for microwaving.
+"The more solid it is, the less reactive," she said, pointing to thicker containers labelled "microwavable" as a lower-risk option than single-use bags  though she still recommends glass over plastic wherever possible, even for microwaving.
 
 Sachet water and thin drinking bottles left in a hot car for hours were flagged as other common, everyday risks.
 
@@ -47,7 +47,7 @@ Sachet water and thin drinking bottles left in a hot car for hours were flagged 
 Dr. Naa encouraged listeners not to abandon foods like kenkey, but to change how they're handled:
 
 * Pour hot cocoa or drinks into a cup instead of drinking straight from a hot rubber bag
-* Favour traditional wrappings — such as banana or "watchy" leaves — over plastic where possible
+* Favour traditional wrappings  such as banana or "watchy" leaves — over plastic where possible
 * Avoid boiling or microwaving food while it's still wrapped in plastic
 * Store leftovers in glass or aluminium instead of rubber bags
 * Choose thicker, reusable bottles (such as Stanley cups) over single-use sachets and bottles
@@ -57,7 +57,7 @@ She also welcomed Ghana's Environmental Protection Agency's announced plans to r
 
 ### Helping the Body Recover
 
-Beyond reducing exposure, Dr. Naa outlined simple daily habits — sometimes called "biohacking" — that help the body clear out toxins it does encounter:
+Beyond reducing exposure, Dr. Naa outlined simple daily habits  sometimes called "biohacking" — that help the body clear out toxins it does encounter:
 
 * **Morning sunlight** – supports vitamin D and hormone production
 * **Exercise and sweating** – one of the body's natural ways to release toxins
@@ -69,7 +69,7 @@ Beyond reducing exposure, Dr. Naa outlined simple daily habits — sometimes cal
 
 ### Getting Checked
 
-Dr. Naa said Nova Wellness Center's longevity clinic, Nova Viva, now offers assessments that measure how well the body is functioning at a cellular level — including biological age compared to chronological age — and can recommend detox plans or therapies such as sauna, ice, and infrared therapy where needed.
+Dr. Naa said Nova Wellness Center's longevity clinic, Nova Viva, now offers assessments that measure how well the body is functioning at a cellular level  including biological age compared to chronological age  and can recommend detox plans or therapies such as sauna, ice, and infrared therapy where needed.
 
 Nova Wellness Center has grown into a two-branch clinic, with a Kumasi office alongside its main Accra branch in Dzorwulu, where it continues to offer spine and pain-related wellness care alongside the newly launched Nova Viva longevity services.
 
