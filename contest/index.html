@@ -13,8 +13,8 @@
      crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Win GH₵ 399 Data — Sunny FM Contest</title>
-<meta name="description" content="Found the hidden code on sunnygh.com? Redeem it here to win GH₵ 399 of mobile data!">
+<title>Contest Closed — Sunny FM</title>
+<meta name="description" content="This Sunny FM contest has ended. A winner has already been found — thank you to everyone who played!">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -24,66 +24,37 @@ body{font-family:'Inter',sans-serif;background:#0D1B0D;min-height:100vh;display:
   background:#fff;border-radius:16px;overflow:hidden;
   width:100%;max-width:480px;
   box-shadow:0 24px 60px rgba(0,0,0,0.4);
+  text-align:center;
 }
 
 .card-header{
   background:linear-gradient(135deg,#C8920A,#a8760a);
-  padding:36px 32px 28px;text-align:center;
-  position:relative;
+  padding:44px 32px 36px;
 }
 
 .card-header::before{
-  content:'🎁';font-size:48px;display:block;margin-bottom:12px;
+  content:'🎉';font-size:52px;display:block;margin-bottom:14px;
 }
 
 .card-header h1{
   font-family:'Playfair Display',serif;
   font-size:26px;font-weight:900;color:#fff;
-  margin-bottom:6px;line-height:1.2;
+  margin-bottom:8px;line-height:1.2;
 }
 
-.card-header p{font-size:14px;color:rgba(255,255,255,0.8);}
+.card-header p{font-size:14px;color:rgba(255,255,255,0.85);}
 
-.prize-badge{
-  background:#fff;color:#C8920A;
-  font-size:22px;font-weight:900;
-  display:inline-block;padding:6px 20px;
-  border-radius:99px;margin-top:14px;
-  font-family:'Playfair Display',serif;
-}
+.card-body{padding:36px 32px;}
+.card-body p{font-size:15px;color:#374151;line-height:1.7;margin-bottom:16px;}
 
-.card-body{padding:32px;}
-
-.status-box{
-  display:none;padding:16px;border-radius:8px;
-  margin-bottom:20px;text-align:center;font-size:14px;font-weight:600;
-}
-.status-box.success{display:block;background:#DCFCE7;color:#166534;border:1px solid #BBF7D0;}
-.status-box.error{display:block;background:#FEF2F2;color:#991B1B;border:1px solid #FECACA;}
-.status-box.taken{display:block;background:#FFF7ED;color:#9A3412;border:1px solid #FED7AA;}
-
-.fgroup{margin-bottom:16px;}
-.fgroup label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#374151;margin-bottom:5px;}
-.fgroup input, .fgroup select{
-  width:100%;padding:11px 14px;
-  border:1.5px solid #E5E7EB;border-radius:8px;
-  font-family:inherit;font-size:14px;color:#111827;
-  transition:border-color .15s;
-}
-.fgroup input:focus, .fgroup select:focus{outline:none;border-color:#C8920A;}
-
-.submit-btn{
-  width:100%;padding:14px;
+.btn-home{
+  display:inline-block;margin-top:8px;
   background:#C8920A;color:#fff;
-  border:none;border-radius:8px;
-  font-family:inherit;font-size:15px;font-weight:700;
-  cursor:pointer;transition:all .2s;margin-top:4px;
+  padding:14px 28px;border-radius:8px;
+  font-weight:700;font-size:15px;text-decoration:none;
+  transition:background .15s;
 }
-.submit-btn:hover{background:#a8760a;transform:translateY(-1px);}
-.submit-btn:disabled{background:#9CA3AF;cursor:not-allowed;transform:none;}
-
-.terms{font-size:11px;color:#9CA3AF;text-align:center;margin-top:14px;line-height:1.6;}
-.terms a{color:#C8920A;text-decoration:none;}
+.btn-home:hover{background:#a8760a;}
 
 .back-link{
   display:inline-flex;align-items:center;gap:6px;
@@ -91,23 +62,6 @@ body{font-family:'Inter',sans-serif;background:#0D1B0D;min-height:100vh;display:
   text-decoration:none;margin-bottom:20px;transition:color .15s;
 }
 .back-link:hover{color:#fff;}
-
-/* SUCCESS SCREEN */
-.success-screen{
-  display:none;padding:40px 32px;text-align:center;
-}
-.success-screen.show{display:block;}
-.success-icon{font-size:64px;margin-bottom:16px;}
-.success-screen h2{
-  font-family:'Playfair Display',serif;
-  font-size:26px;color:#166534;margin-bottom:10px;
-}
-.success-screen p{font-size:14px;color:#374151;line-height:1.7;margin-bottom:6px;}
-.success-ref{
-  background:#DCFCE7;border:1px solid #BBF7D0;
-  border-radius:8px;padding:12px;margin-top:16px;
-  font-size:13px;color:#166534;font-weight:600;
-}
 </style>
 </head>
 <body>
@@ -116,138 +70,16 @@ body{font-family:'Inter',sans-serif;background:#0D1B0D;min-height:100vh;display:
 
 <div class="card">
   <div class="card-header">
-    <h1>You Found the Code!<br>Claim Your Prize</h1>
-    <p>Enter the secret code from sunnygh.com</p>
-    <div class="prize-badge">GH₵ 399 Mobile Data 📱</div>
+    <h1>This Contest Has Ended</h1>
+    <p>We've already found our winner!</p>
   </div>
 
-  <div class="card-body" id="formBody">
-    <div class="status-box" id="statusBox"></div>
-
-    <div class="fgroup">
-      <label>Secret Code</label>
-      <input type="text" id="codeInput" placeholder="Enter the code you found" autocomplete="off" style="text-transform:uppercase;letter-spacing:2px;font-weight:700;">
-    </div>
-    <div class="fgroup">
-      <label>Your Full Name</label>
-      <input type="text" id="nameInput" placeholder="Akua Mensah">
-    </div>
-    <div class="fgroup">
-      <label>Phone Number (to receive data)</label>
-      <input type="tel" id="phoneInput" placeholder="024 000 0000">
-    </div>
-    <div class="fgroup">
-      <label>Mobile Network</label>
-      <select id="networkInput">
-        <option value="">Select your network…</option>
-        <option>MTN</option>
-        <option>Telecel</option>
-        <option>AirtelTigo</option>
-      </select>
-    </div>
-    <div class="fgroup">
-      <label>Email Address</label>
-      <input type="email" id="emailInput" placeholder="you@gmail.com">
-    </div>
-
-    <button class="submit-btn" id="submitBtn" onclick="submitClaim()">
-      🎁 Claim My GH₵ 399 Data Prize
-    </button>
-
-    <div class="terms">
-      One entry per person. First valid entry wins. <br>
-      By submitting you agree to be contacted by <a href="https://sunnygh.com">Sunny FM 88.7</a>.<br>
-      Contest run by Apt Communications / Sky Broadcasting Ltd.
-    </div>
-  </div>
-
-  <div class="success-screen" id="successScreen">
-    <div class="success-icon">🎉</div>
-    <h2>Congratulations!</h2>
-    <p>Your claim has been received. Our team will verify your entry and send your <strong>GH₵ 399 data</strong> to your number within 24 hours.</p>
-    <p>Watch out for a call from the Sunny FM team!</p>
-    <div class="success-ref" id="successRef"></div>
+  <div class="card-body">
+    <p>Thank you to everyone who played — the hidden code has been found and the GH₵ 399 data prize has been claimed.</p>
+    <p>Keep listening to Sunny 88.7 FM and following sunnygh.com for our next contest and giveaway.</p>
+    <a href="https://sunnygh.com" class="btn-home">Back to Sunny FM →</a>
   </div>
 </div>
-
-<script>
-const VALID_CODE = 'SUNNY399';
-const STORAGE_KEY = 'sunny_contest_claimed';
-
-// Check if already claimed (session level)
-window.onload = function() {
-  if (sessionStorage.getItem(STORAGE_KEY)) {
-    showStatus('taken', 'You have already submitted a claim in this session.');
-    document.getElementById('submitBtn').disabled = true;
-  }
-  // Auto uppercase code input
-  document.getElementById('codeInput').addEventListener('input', function() {
-    this.value = this.value.toUpperCase();
-  });
-};
-
-function showStatus(type, msg) {
-  const box = document.getElementById('statusBox');
-  box.className = 'status-box ' + type;
-  box.textContent = msg;
-}
-
-function submitClaim() {
-  const code = document.getElementById('codeInput').value.trim().toUpperCase();
-  const name = document.getElementById('nameInput').value.trim();
-  const phone = document.getElementById('phoneInput').value.trim();
-  const network = document.getElementById('networkInput').value;
-  const email = document.getElementById('emailInput').value.trim();
-
-  // Validate
-  if (!code || !name || !phone || !network || !email) {
-    showStatus('error', 'Please fill in all fields.');
-    return;
-  }
-
-  if (code !== VALID_CODE) {
-    showStatus('error', '❌ That code is incorrect. Keep searching on sunnygh.com!');
-    return;
-  }
-
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    showStatus('error', 'Please enter a valid email address.');
-    return;
-  }
-
-  // Valid — submit
-  const btn = document.getElementById('submitBtn');
-  btn.disabled = true;
-  btn.textContent = 'Submitting…';
-
-  // Build mailto link to notify Sunny FM
-  const ref = 'SUNNY399-' + Date.now();
-  const body = encodeURIComponent(
-    'CONTEST CLAIM\n\n' +
-    'Reference: ' + ref + '\n' +
-    'Name: ' + name + '\n' +
-    'Phone: ' + phone + '\n' +
-    'Network: ' + network + '\n' +
-    'Email: ' + email + '\n' +
-    'Code: ' + code + '\n' +
-    'Time: ' + new Date().toLocaleString('en-GH')
-  );
-
-  // Open mailto to notify station
-  window.location.href = 'mailto:sunnyfm@gmail.com?subject=SUNNY399 Contest Claim — ' + name + '&body=' + body;
-
-  // Mark as submitted
-  sessionStorage.setItem(STORAGE_KEY, '1');
-
-  // Show success after short delay
-  setTimeout(function() {
-    document.getElementById('formBody').style.display = 'none';
-    const ss = document.getElementById('successScreen');
-    ss.classList.add('show');
-    document.getElementById('successRef').textContent = 'Reference: ' + ref;
-  }, 1500);
-}
-</script>
 
 </body>
 </html>
