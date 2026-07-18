@@ -298,47 +298,47 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
 <div class="panel active" id="panel1">
   <div class="section-hdr">
     <h2>What type of advertising?</h2>
-    <p>Select the format that suits your campaign.</p>
+    <p>Select one or more formats — you can combine Jingles, LPMs, Interviews and more in a single booking.</p>
   </div>
 
   <div class="type-grid">
-    <div class="type-card" onclick="selectType(this,'jingle')">
+    <div class="type-card" onclick="toggleType(this,'jingle')">
       <div class="type-check">✓</div>
       <div class="type-icon">🎵</div>
       <div class="type-name">Jingle / Spot</div>
       <div class="type-desc">30, 45 or 60 second audio commercials. Best for brand awareness.</div>
     </div>
-    <div class="type-card" onclick="selectType(this,'lpm')">
+    <div class="type-card" onclick="toggleType(this,'lpm')">
       <div class="type-check">✓</div>
       <div class="type-icon">🎙️</div>
       <div class="type-name">Live Programme Mention</div>
       <div class="type-desc">Presenter mentions your brand live on air. High impact.</div>
     </div>
-    <div class="type-card" onclick="selectType(this,'announcement')">
+    <div class="type-card" onclick="toggleType(this,'announcement')">
       <div class="type-check">✓</div>
       <div class="type-icon">📢</div>
       <div class="type-name">Announcement</div>
       <div class="type-desc">P2 segment morning announcement. Mon–Thu at 9:30am, Fri at 9:15am.</div>
     </div>
-    <div class="type-card" onclick="selectType(this,'interview')">
+    <div class="type-card" onclick="toggleType(this,'interview')">
       <div class="type-check">✓</div>
       <div class="type-icon">🗣️</div>
       <div class="type-name">Interview (10 mins)</div>
       <div class="type-desc">Feature your brand, product, or event in a 10-minute interview.</div>
     </div>
-    <div class="type-card" onclick="selectType(this,'ob')">
+    <div class="type-card" onclick="toggleType(this,'ob')">
       <div class="type-check">✓</div>
       <div class="type-icon">🎪</div>
       <div class="type-name">Outside Broadcast</div>
       <div class="type-desc">Broadcast live from your location — 1 or 2 hours.</div>
     </div>
-    <div class="type-card" onclick="selectType(this,'newrelease')">
+    <div class="type-card" onclick="toggleType(this,'newrelease')">
       <div class="type-check">✓</div>
       <div class="type-icon">🎶</div>
       <div class="type-name">New Release</div>
       <div class="type-desc">Saturdays on P5 — LPMs & interview. 2 weeks or 1 month.</div>
     </div>
-    <div class="type-card" onclick="selectType(this,'religious')">
+    <div class="type-card" onclick="toggleType(this,'religious')">
       <div class="type-check">✓</div>
       <div class="type-icon">✝️</div>
       <div class="type-name">Religious Broadcast</div>
@@ -355,25 +355,25 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
     </div>
   </div>
   <div class="type-grid">
-    <div class="type-card" onclick="selectType(this,'tv-spot')">
+    <div class="type-card" onclick="toggleType(this,'tv-spot')">
       <div class="type-check">✓</div>
       <div class="type-icon">📺</div>
       <div class="type-name">TV Spot</div>
       <div class="type-desc">15, 30 or 60 second TV commercials. Prime time &amp; daytime slots.</div>
     </div>
-    <div class="type-card" onclick="selectType(this,'tv-sponsorship')">
+    <div class="type-card" onclick="toggleType(this,'tv-sponsorship')">
       <div class="type-check">✓</div>
       <div class="type-icon">🎬</div>
       <div class="type-name">Programme Sponsorship</div>
       <div class="type-desc">Sponsor a full TV programme. Monthly package with on-screen credit.</div>
     </div>
-    <div class="type-card" onclick="selectType(this,'tv-lower')">
+    <div class="type-card" onclick="toggleType(this,'tv-lower')">
       <div class="type-check">✓</div>
       <div class="type-icon">📊</div>
       <div class="type-name">Lower Third Banner</div>
       <div class="type-desc">Your brand as a lower-third banner during live broadcasts. GH₵ 150/slot.</div>
     </div>
-    <div class="type-card" onclick="selectType(this,'tv-placement')">
+    <div class="type-card" onclick="toggleType(this,'tv-placement')">
       <div class="type-check">✓</div>
       <div class="type-icon">🏷️</div>
       <div class="type-name">Product Placement</div>
@@ -390,25 +390,25 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
     </div>
   </div>
   <div class="type-grid">
-    <div class="type-card" onclick="selectType(this,'web-banner')">
+    <div class="type-card" onclick="toggleType(this,'web-banner')">
       <div class="type-check">✓</div>
       <div class="type-icon">🖼️</div>
       <div class="type-name">Homepage Banner</div>
       <div class="type-desc">Top banner on homepage. Seen by every visitor. GH₵ 800/month.</div>
     </div>
-    <div class="type-card" onclick="selectType(this,'web-article')">
+    <div class="type-card" onclick="toggleType(this,'web-article')">
       <div class="type-check">✓</div>
       <div class="type-icon">✍️</div>
       <div class="type-name">Sponsored Article</div>
       <div class="type-desc">Written by our team, published on the site under your brand. GH₵ 500.</div>
     </div>
-    <div class="type-card" onclick="selectType(this,'web-watchtv')">
+    <div class="type-card" onclick="toggleType(this,'web-watchtv')">
       <div class="type-check">✓</div>
       <div class="type-icon">📡</div>
       <div class="type-name">Watch TV Sponsor</div>
       <div class="type-desc">Your brand on the Watch TV live stream page. GH₵ 1,200/month.</div>
     </div>
-    <div class="type-card" onclick="selectType(this,'web-event')">
+    <div class="type-card" onclick="toggleType(this,'web-event')">
       <div class="type-check">✓</div>
       <div class="type-icon">📅</div>
       <div class="type-name">Featured Event Listing</div>
@@ -447,22 +447,22 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
       <div class="card-title" style="margin-top:8px;">💰 Jingle Rates (GH₵) — Select your segment</div>
       <table class="rate-table">
         <tr><th>Segment</th><th>Time</th><th>30 Secs</th><th>45 Secs</th><th>60 Secs</th><th>Pro Rata/sec</th></tr>
-        <tr class="seg-row" onclick="selectSeg(this,'P1','6:30am–8:00am',253,290.95,316,18.90)" id="jrow-P1">
+        <tr class="seg-row" onclick="selectSeg(this,'jingle','P1','6:30am–8:00am',253,290.95,316,18.90)" id="jrow-P1">
           <td><b>P1</b></td><td>6:30am – 8:00am</td><td class="rate-price">253</td><td class="rate-price">290.95</td><td class="rate-price">316</td><td>18.90</td>
         </tr>
-        <tr class="seg-row" onclick="selectSeg(this,'P2','8:00am–10:00am',227.70,276,290,15.18)" id="jrow-P2">
+        <tr class="seg-row" onclick="selectSeg(this,'jingle','P2','8:00am–10:00am',227.70,276,290,15.18)" id="jrow-P2">
           <td><b>P2</b></td><td>8:00am – 10:00am</td><td class="rate-price">227.70</td><td class="rate-price">276</td><td class="rate-price">290</td><td>15.18</td>
         </tr>
-        <tr class="seg-row" onclick="selectSeg(this,'P5','12noon–3:00pm',126.50,164.45,190,6.33)" id="jrow-P5">
+        <tr class="seg-row" onclick="selectSeg(this,'jingle','P5','12noon–3:00pm',126.50,164.45,190,6.33)" id="jrow-P5">
           <td><b>P5</b> <span class="rate-badge">Popular</span></td><td>12noon – 3:00pm</td><td class="rate-price">126.50</td><td class="rate-price">164.45</td><td class="rate-price">190</td><td>6.33</td>
         </tr>
-        <tr class="seg-row" onclick="selectSeg(this,'P3','4:00pm–6:00pm',189.75,227.70,253,12.65)" id="jrow-P3">
+        <tr class="seg-row" onclick="selectSeg(this,'jingle','P3','4:00pm–6:00pm',189.75,227.70,253,12.65)" id="jrow-P3">
           <td><b>P3</b></td><td>4:00pm – 6:00pm</td><td class="rate-price">189.75</td><td class="rate-price">227.70</td><td class="rate-price">253</td><td>12.65</td>
         </tr>
-        <tr class="seg-row" onclick="selectSeg(this,'P4','6:00pm–8:00pm',164.45,198.75,221,8.90)" id="jrow-P4">
+        <tr class="seg-row" onclick="selectSeg(this,'jingle','P4','6:00pm–8:00pm',164.45,198.75,221,8.90)" id="jrow-P4">
           <td><b>P4</b></td><td>6:00pm – 8:00pm</td><td class="rate-price">164.45</td><td class="rate-price">198.75</td><td class="rate-price">221</td><td>8.90</td>
         </tr>
-        <tr class="seg-row" onclick="selectSeg(this,'P6','8:00pm–4:00am',101.20,126.50,152,3.80)" id="jrow-P6">
+        <tr class="seg-row" onclick="selectSeg(this,'jingle','P6','8:00pm–4:00am',101.20,126.50,152,3.80)" id="jrow-P6">
           <td><b>P6</b></td><td>8:00pm – 4:00am</td><td class="rate-price">101.20</td><td class="rate-price">126.50</td><td class="rate-price">152</td><td>3.80</td>
         </tr>
       </table>
@@ -471,9 +471,9 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
     <div class="card">
       <div class="card-title">⏱️ Spot Duration</div>
       <div class="dur-grid">
-        <div class="dur-pill" onclick="selectDur(this,'30s',0)">30 Seconds</div>
-        <div class="dur-pill" onclick="selectDur(this,'45s',1)">45 Seconds</div>
-        <div class="dur-pill" onclick="selectDur(this,'60s',2)">60 Seconds</div>
+        <div class="dur-pill" onclick="selectDur(this,'jingle','30s',0)">30 Seconds</div>
+        <div class="dur-pill" onclick="selectDur(this,'jingle','45s',1)">45 Seconds</div>
+        <div class="dur-pill" onclick="selectDur(this,'jingle','60s',2)">60 Seconds</div>
       </div>
     </div>
 
@@ -503,19 +503,19 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
       <p class="vat-note" style="margin-top:-4px;">👆 Click to select/deselect multiple segments. Rates will be combined.</p>
       <table class="rate-table">
         <tr><th>Segment</th><th>Mon – Fri</th><th>Saturday</th><th>Sunday</th><th>Rate (GH₵)</th></tr>
-        <tr class="seg-row" onclick="toggleSegMulti(this,'P1','7:00am–8:00am',418)" id="lrow-P1">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'lpm','P1','7:00am–8:00am',418)" id="lrow-P1">
           <td><b>P1</b></td><td>7:00am – 8:00am</td><td>—</td><td>—</td><td class="rate-price">418</td>
         </tr>
-        <tr class="seg-row" onclick="toggleSegMulti(this,'P2','8:00am onwards',380)" id="lrow-P2">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'lpm','P2','8:00am onwards',380)" id="lrow-P2">
           <td><b>P2</b></td><td colspan="3">Mon – Fri</td><td class="rate-price">380</td>
         </tr>
-        <tr class="seg-row" onclick="toggleSegMulti(this,'P5','12noon–3pm',253)" id="lrow-P5">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'lpm','P5','12noon–3pm',253)" id="lrow-P5">
           <td><b>P5</b> <span class="rate-badge">Popular</span></td><td>—</td><td>12noon – 2:00pm</td><td>12noon – 3:00pm</td><td class="rate-price">253</td>
         </tr>
-        <tr class="seg-row" onclick="toggleSegMulti(this,'P3','4:00pm–6:00pm',342)" id="lrow-P3">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'lpm','P3','4:00pm–6:00pm',342)" id="lrow-P3">
           <td><b>P3</b></td><td colspan="3">Mon – Fri</td><td class="rate-price">342</td>
         </tr>
-        <tr class="seg-row" onclick="toggleSegMulti(this,'P4','6:00pm–8:00pm',304)" id="lrow-P4">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'lpm','P4','6:00pm–8:00pm',304)" id="lrow-P4">
           <td><b>P4</b></td><td colspan="3">Mon – Fri</td><td class="rate-price">304</td>
         </tr>
       </table>
@@ -536,7 +536,7 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
       <div class="card-title">📢 Announcement Rate (GH₵)</div>
       <table class="rate-table">
         <tr><th>Segment</th><th>Monday – Thursday</th><th>Fridays</th><th>Rate</th></tr>
-        <tr class="seg-row selected" onclick="selectSegFlat(this,'P2','9:30am (Mon–Thu) / 9:15am (Fri)',190)">
+        <tr class="seg-row selected" onclick="selectSegFlat(this,'announcement','P2','9:30am (Mon–Thu) / 9:15am (Fri)',190)">
           <td><b>P2</b></td><td>9:30am</td><td>9:15am</td><td class="rate-price">GH₵ 190</td>
         </tr>
       </table>
@@ -558,13 +558,13 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
       <p class="vat-note" style="margin-top:-4px;">👆 Book interviews in multiple segments. Rates will be combined.</p>
       <table class="rate-table">
         <tr><th>Segment</th><th>Time</th><th>Rate (10 mins)</th></tr>
-        <tr class="seg-row" onclick="toggleSegMulti(this,'P2','8:00am–10:00am',4000)" id="irow-P2">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'interview','P2','8:00am–10:00am',4000)" id="irow-P2">
           <td><b>P2</b></td><td>8:00am – 10:00am</td><td class="rate-price">GH₵ 4,000</td>
         </tr>
-        <tr class="seg-row" onclick="toggleSegMulti(this,'P5','12noon–3:00pm',1700)" id="irow-P5">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'interview','P5','12noon–3:00pm',1700)" id="irow-P5">
           <td><b>P5</b> <span class="rate-badge">Popular</span></td><td>12noon – 3:00pm</td><td class="rate-price">GH₵ 1,700</td>
         </tr>
-        <tr class="seg-row" onclick="toggleSegMulti(this,'P4','6:00pm–8:00pm',2800)" id="irow-P4">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'interview','P4','6:00pm–8:00pm',2800)" id="irow-P4">
           <td><b>P4</b></td><td>6:00pm – 8:00pm</td><td class="rate-price">GH₵ 2,800</td>
         </tr>
       </table>
@@ -577,19 +577,19 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
       <div class="card-title">🎪 Outside Broadcast Rates (GH₵) — Select segment & duration</div>
       <table class="rate-table">
         <tr><th>Segment</th><th>Time</th><th>1 Hour</th><th>2 Hours</th></tr>
-        <tr class="seg-row" onclick="selectOB(this,'P2','8:00am–10:00am')" id="obrow-P2">
+        <tr class="seg-row" onclick="selectOB(this,'ob','P2','8:00am–10:00am')" id="obrow-P2">
           <td><b>P2</b></td><td>8:00am – 10:00am</td><td class="rate-price">2,530</td><td class="rate-price">4,428</td>
         </tr>
-        <tr class="seg-row" onclick="selectOB(this,'P5','12noon–3:00pm')" id="obrow-P5">
+        <tr class="seg-row" onclick="selectOB(this,'ob','P5','12noon–3:00pm')" id="obrow-P5">
           <td><b>P5</b> <span class="rate-badge">Popular</span></td><td>12noon – 3:00pm</td><td class="rate-price">1,523</td><td class="rate-price">2,530</td>
         </tr>
-        <tr class="seg-row" onclick="selectOB(this,'P4','6:00pm–8:00pm')" id="obrow-P4">
+        <tr class="seg-row" onclick="selectOB(this,'ob','P4','6:00pm–8:00pm')" id="obrow-P4">
           <td><b>P4</b></td><td>6:00pm – 8:00pm</td><td class="rate-price">1,725</td><td class="rate-price">3,163</td>
         </tr>
       </table>
       <div class="dur-grid mt8">
-        <div class="dur-pill" onclick="selectOBDur(this,1)">1 Hour</div>
-        <div class="dur-pill" onclick="selectOBDur(this,2)">2 Hours</div>
+        <div class="dur-pill" onclick="selectOBDur(this,'ob',1)">1 Hour</div>
+        <div class="dur-pill" onclick="selectOBDur(this,'ob',2)">2 Hours</div>
       </div>
     </div>
   </div>
@@ -600,10 +600,10 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
       <div class="card-title">🎶 New Release Rates — Saturdays on P5 (LPMs & Interview)</div>
       <table class="rate-table">
         <tr><th>Package</th><th>Rate (GH₵)</th></tr>
-        <tr class="seg-row" onclick="selectSegFlat(this,'2 Weeks','Saturdays P5',1265)" id="nrrow-2w">
+        <tr class="seg-row" onclick="selectSegFlat(this,'newrelease','2 Weeks','Saturdays P5',1265)" id="nrrow-2w">
           <td><b>2 Weeks</b> — Saturdays on P5</td><td class="rate-price">GH₵ 1,265</td>
         </tr>
-        <tr class="seg-row" onclick="selectSegFlat(this,'1 Month','Saturdays P5',2000)" id="nrrow-1m">
+        <tr class="seg-row" onclick="selectSegFlat(this,'newrelease','1 Month','Saturdays P5',2000)" id="nrrow-1m">
           <td><b>1 Month</b> — Saturdays on P5</td><td class="rate-price">GH₵ 2,000</td>
         </tr>
       </table>
@@ -628,13 +628,13 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
       <div class="card-title">📺 Sunny TV Spot Rates (GH₵) — Select slot</div>
       <table class="rate-table">
         <tr><th>Slot</th><th>Time</th><th>15 Secs</th><th>30 Secs</th><th>60 Secs</th></tr>
-        <tr class="seg-row" onclick="selectSeg(this,'Prime Time','6:00pm–10:00pm',200,350,600)" id="tvrow-prime">
+        <tr class="seg-row" onclick="selectSeg(this,'tv-spot','Prime Time','6:00pm–10:00pm',200,350,600)" id="tvrow-prime">
           <td><b>Prime Time</b> <span class="rate-badge">Popular</span></td><td>6:00pm – 10:00pm</td><td class="rate-price">200</td><td class="rate-price">350</td><td class="rate-price">600</td>
         </tr>
-        <tr class="seg-row" onclick="selectSeg(this,'Daytime','9:00am–6:00pm',120,200,350)" id="tvrow-day">
+        <tr class="seg-row" onclick="selectSeg(this,'tv-spot','Daytime','9:00am–6:00pm',120,200,350)" id="tvrow-day">
           <td><b>Daytime</b></td><td>9:00am – 6:00pm</td><td class="rate-price">120</td><td class="rate-price">200</td><td class="rate-price">350</td>
         </tr>
-        <tr class="seg-row" onclick="selectSeg(this,'Weekend','Sat & Sun',160,280,480)" id="tvrow-wknd">
+        <tr class="seg-row" onclick="selectSeg(this,'tv-spot','Weekend','Sat & Sun',160,280,480)" id="tvrow-wknd">
           <td><b>Weekend</b></td><td>Saturday &amp; Sunday</td><td class="rate-price">160</td><td class="rate-price">280</td><td class="rate-price">480</td>
         </tr>
       </table>
@@ -642,9 +642,9 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
     <div class="card">
       <div class="card-title">⏱️ Spot Duration</div>
       <div class="dur-grid">
-        <div class="dur-pill" onclick="selectDur(this,'15s',0)">15 Seconds</div>
-        <div class="dur-pill" onclick="selectDur(this,'30s',1)">30 Seconds</div>
-        <div class="dur-pill" onclick="selectDur(this,'60s',2)">60 Seconds</div>
+        <div class="dur-pill" onclick="selectDur(this,'tv-spot','15s',0)">15 Seconds</div>
+        <div class="dur-pill" onclick="selectDur(this,'tv-spot','30s',1)">30 Seconds</div>
+        <div class="dur-pill" onclick="selectDur(this,'tv-spot','60s',2)">60 Seconds</div>
       </div>
     </div>
     <div class="card">
@@ -663,10 +663,10 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
       <div class="card-title">🎬 TV Programme Sponsorship (GH₵/month) — Select package</div>
       <table class="rate-table">
         <tr><th>Package</th><th>Rate/Month</th></tr>
-        <tr class="seg-row" onclick="selectSegFlat(this,'Standard','Monthly sponsorship',3000)">
+        <tr class="seg-row" onclick="selectSegFlat(this,'tv-sponsorship','Standard','Monthly sponsorship',3000)">
           <td><b>Standard</b> — On-screen credit + 2 spots per episode</td><td class="rate-price">GH₵ 3,000</td>
         </tr>
-        <tr class="seg-row" onclick="selectSegFlat(this,'Premium','Monthly sponsorship',6000)">
+        <tr class="seg-row" onclick="selectSegFlat(this,'tv-sponsorship','Premium','Monthly sponsorship',6000)">
           <td><b>Premium</b> <span class="rate-badge">Popular</span> — Exclusive sponsorship + 5 spots per episode</td><td class="rate-price">GH₵ 6,000</td>
         </tr>
       </table>
@@ -743,10 +743,11 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
 
   <!-- LIVE PRICE -->
   <div class="price-box" id="price-box" style="display:none;">
-    <div class="price-row"><span class="price-label">Ad Type</span><span class="price-val" id="pr-type">—</span></div>
-    <div class="price-row"><span class="price-label">Segment</span><span class="price-val" id="pr-seg">—</span></div>
-    <div class="price-row"><span class="price-label">Breakdown</span><span class="price-val" id="pr-break">—</span></div>
-    <div class="price-row"><span class="price-label">Total (excl. VAT)</span><span class="price-total" id="pr-total">GH₵ 0</span></div>
+    <div id="pr-items"></div>
+    <div class="price-row" style="border-top:1.5px solid #86efac;margin-top:8px;padding-top:10px;">
+      <span class="price-label" style="font-size:15px;font-weight:700;">Total (excl. VAT)</span>
+      <span class="price-total" id="pr-total">GH₵ 0</span>
+    </div>
     <p class="vat-note">All rates are exclusive of VAT as per Sunny FM Standard Rate Card 2026.</p>
   </div>
 
@@ -831,9 +832,7 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
     <div class="review-row"><span class="review-label">Brand</span><span class="review-val" id="rv-brand">—</span></div>
     <div class="review-row"><span class="review-label">Phone</span><span class="review-val" id="rv-phone">—</span></div>
     <div class="review-row"><span class="review-label">Email</span><span class="review-val" id="rv-email">—</span></div>
-    <div class="review-row"><span class="review-label">Ad Type</span><span class="review-val" id="rv-type">—</span></div>
-    <div class="review-row"><span class="review-label">Segment</span><span class="review-val" id="rv-seg">—</span></div>
-    <div class="review-row"><span class="review-label">Details</span><span class="review-val" id="rv-break">—</span></div>
+    <div id="rv-items"></div>
     <div class="review-row" style="border-top:2px solid var(--border);margin-top:8px;padding-top:12px;">
       <span class="review-label" style="font-size:16px;color:var(--dark);">Total (excl. VAT)</span>
       <span class="price-total" id="rv-total">GH₵ 0</span>
@@ -921,130 +920,141 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
 
 <script>
 // ── STATE ──
+var TYPE_LABELS = {
+  jingle:'Jingle / Spot', lpm:'Live Programme Mention',
+  announcement:'Announcement', interview:'Interview (10 mins)',
+  ob:'Outside Broadcast', newrelease:'New Release',
+  religious:'Religious Broadcast (30 mins)',
+  'tv-spot':'TV Spot — Sunny TV',
+  'tv-sponsorship':'TV Programme Sponsorship',
+  'tv-lower':'TV Lower Third Banner',
+  'tv-placement':'TV Product Placement',
+  'web-banner':'Homepage Banner — sunnygh.com',
+  'web-article':'Sponsored Article — sunnygh.com',
+  'web-watchtv':'Watch TV Sponsor — sunnygh.com',
+  'web-event':'Featured Event Listing — sunnygh.com'
+};
+var ALL_TYPES = Object.keys(TYPE_LABELS);
+var SEG_REQUIRED_TYPES = ['jingle','lpm','interview','ob','newrelease','tv-spot','tv-sponsorship'];
+
 var state = {
-  type: null, typeLbl: '',
-  seg: null, segLbl: '', segTime: '',
-  segArr: [],
-  dur: null, durIdx: 0,
-  rates: [0,0,0], flatRate: 0,
-  obSeg: null, obSeg1h: 0, obSeg2h: 0, obHours: 1,
+  selected: [],   // ad types currently chosen, in the order they were selected
+  T: {},          // per-type booking data, keyed by type
   price: 0, lastRef: ''
 };
 
-// ── TYPE SELECT ──
-function selectType(el, type) {
-  document.querySelectorAll('.type-card').forEach(function(c){ c.classList.remove('selected'); });
-  el.classList.add('selected');
-  state.type = type;
-  var labels = {
-    jingle:'Jingle / Spot', lpm:'Live Programme Mention',
-    announcement:'Announcement', interview:'Interview (10 mins)',
-    ob:'Outside Broadcast', newrelease:'New Release',
-    religious:'Religious Broadcast (30 mins)',
-    'tv-spot':'TV Spot — Sunny TV',
-    'tv-sponsorship':'TV Programme Sponsorship',
-    'tv-lower':'TV Lower Third Banner',
-    'tv-placement':'TV Product Placement',
-    'web-banner':'Homepage Banner — sunnygh.com',
-    'web-article':'Sponsored Article — sunnygh.com',
-    'web-watchtv':'Watch TV Sponsor — sunnygh.com',
-    'web-event':'Featured Event Listing — sunnygh.com'
-  };
-  state.typeLbl = labels[type];
+function freshTypeData(type) {
+  var d = { seg:null, segLbl:'', dur:null, durIdx:0, rates:[0,0,0], flatRate:0, segArr:[], obSeg:null, obSeg1h:0, obSeg2h:0, obHours:1 };
+  if(type === 'announcement') { d.seg = 'P2'; d.segLbl = 'P2 — 9:30am (Mon–Thu) / 9:15am (Fri)'; d.flatRate = 190; }
+  if(type === 'religious') { d.seg = 'Religious'; d.segLbl = '30-min Slot'; d.flatRate = 1200; }
+  return d;
+}
 
-  // Reset seg
-  state.seg = null; state.segLbl = ''; state.flatRate = 0; state.segArr = [];
-  document.querySelectorAll('.seg-row').forEach(function(r){ r.classList.remove('selected'); });
-  document.querySelectorAll('.dur-pill').forEach(function(p){ p.classList.remove('selected'); });
-
-  // Handle flat types
-  if(type === 'announcement'){
-    state.seg = 'P2'; state.segLbl = 'P2 — 9:30am (Mon–Thu) / 9:15am (Fri)';
-    state.flatRate = 190;
-  }
-  if(type === 'religious'){
-    state.seg = 'Religious'; state.segLbl = '30-min Slot';
-    state.flatRate = 1200;
+// ── TYPE SELECT (multiple types can be booked together) ──
+function toggleType(el, type) {
+  var idx = state.selected.indexOf(type);
+  if(idx > -1) {
+    state.selected.splice(idx, 1);
+    el.classList.remove('selected');
+    delete state.T[type];
+    var sec = document.getElementById('sec-' + type);
+    if(sec) {
+      sec.querySelectorAll('.seg-row').forEach(function(r){ r.classList.remove('selected'); });
+      sec.querySelectorAll('.dur-pill').forEach(function(p){ p.classList.remove('selected'); });
+    }
+  } else {
+    state.selected.push(type);
+    el.classList.add('selected');
+    state.T[type] = freshTypeData(type);
+    if(type === 'announcement') {
+      var sec2 = document.getElementById('sec-announcement');
+      var row = sec2 ? sec2.querySelector('.seg-row') : null;
+      if(row) row.classList.add('selected');
+    }
   }
   updatePrice();
 }
 
-// ── JINGLE SEGMENT SELECT ──
-function selectSeg(el, seg, time, r30, r45, r60, rpr) {
-  document.querySelectorAll('#sec-jingle .seg-row').forEach(function(r){ r.classList.remove('selected'); });
+// ── JINGLE / TV SPOT SEGMENT SELECT (single choice per type) ──
+function selectSeg(el, type, seg, time, r30, r45, r60, rpr) {
+  document.querySelectorAll('#sec-' + type + ' .seg-row').forEach(function(r){ r.classList.remove('selected'); });
   el.classList.add('selected');
-  state.seg = seg; state.segLbl = seg + ' — ' + time;
-  state.rates = [r30, r45, r60]; state.proRata = rpr;
+  var d = state.T[type];
+  d.seg = seg; d.segLbl = seg + ' — ' + time;
+  d.rates = [r30, r45, r60]; d.proRata = rpr;
   updatePrice();
 }
 
-// ── FLAT RATE SEGMENT ──
-function selectSegFlat(el, seg, time, rate) {
+// ── FLAT RATE SEGMENT (single choice per type) ──
+function selectSegFlat(el, type, seg, time, rate) {
   el.closest('table').querySelectorAll('.seg-row').forEach(function(r){ r.classList.remove('selected'); });
   el.classList.add('selected');
-  state.seg = seg; state.segLbl = seg + ' — ' + time;
-  state.flatRate = rate;
+  var d = state.T[type];
+  d.seg = seg; d.segLbl = seg + ' — ' + time;
+  d.flatRate = rate;
   updatePrice();
 }
 
 // ── MULTI SEGMENT SELECT (LPM & Interview — select up to 4, rates combine) ──
-function toggleSegMulti(el, seg, time, rate) {
+function toggleSegMulti(el, type, seg, time, rate) {
   var MAX_SEGS = 4;
+  var d = state.T[type];
   var idx = -1;
-  for(var i=0;i<state.segArr.length;i++){ if(state.segArr[i].seg === seg){ idx = i; break; } }
+  for(var i=0;i<d.segArr.length;i++){ if(d.segArr[i].seg === seg){ idx = i; break; } }
 
   if(idx > -1) {
-    state.segArr.splice(idx, 1);
+    d.segArr.splice(idx, 1);
     el.classList.remove('selected');
   } else {
-    if(state.segArr.length >= MAX_SEGS) { alert('You can select up to ' + MAX_SEGS + ' segments.'); return; }
-    state.segArr.push({seg: seg, time: time, rate: rate});
+    if(d.segArr.length >= MAX_SEGS) { alert('You can select up to ' + MAX_SEGS + ' segments.'); return; }
+    d.segArr.push({seg: seg, time: time, rate: rate});
     el.classList.add('selected');
   }
 
-  if(state.segArr.length === 0) {
-    state.seg = null; state.segLbl = ''; state.flatRate = 0;
+  if(d.segArr.length === 0) {
+    d.seg = null; d.segLbl = ''; d.flatRate = 0;
   } else {
-    state.seg = state.segArr.map(function(s){ return s.seg; }).join('+');
-    state.segLbl = state.segArr.map(function(s){ return s.seg + ' (' + s.time + ')'; }).join(' + ');
-    state.flatRate = state.segArr.reduce(function(sum, s){ return sum + s.rate; }, 0);
+    d.seg = d.segArr.map(function(s){ return s.seg; }).join('+');
+    d.segLbl = d.segArr.map(function(s){ return s.seg + ' (' + s.time + ')'; }).join(' + ');
+    d.flatRate = d.segArr.reduce(function(sum, s){ return sum + s.rate; }, 0);
   }
   updatePrice();
 }
 
-// ── DURATION ──
-function selectDur(el, label, idx) {
-  document.querySelectorAll('.dur-pill').forEach(function(p){ p.classList.remove('selected'); });
+// ── DURATION (scoped to whichever type's duration grid was clicked) ──
+function selectDur(el, type, label, idx) {
+  el.closest('.dur-grid').querySelectorAll('.dur-pill').forEach(function(p){ p.classList.remove('selected'); });
   el.classList.add('selected');
-  state.dur = label; state.durIdx = idx;
+  var d = state.T[type];
+  d.dur = label; d.durIdx = idx;
   updatePrice();
 }
 
 // ── OB ──
-var OB_RATES = {
-  P2: [2530, 4428], P5: [1523, 2530], P4: [1725, 3163]
-};
-function selectOB(el, seg, time) {
-  document.querySelectorAll('#sec-ob .seg-row').forEach(function(r){ r.classList.remove('selected'); });
+var OB_RATES = { P2: [2530, 4428], P5: [1523, 2530], P4: [1725, 3163] };
+function selectOB(el, type, seg, time) {
+  document.querySelectorAll('#sec-' + type + ' .seg-row').forEach(function(r){ r.classList.remove('selected'); });
   el.classList.add('selected');
-  state.obSeg = seg; state.segLbl = seg + ' — ' + time;
-  state.obSeg1h = OB_RATES[seg][0]; state.obSeg2h = OB_RATES[seg][1];
+  var d = state.T[type];
+  d.obSeg = seg; d.segLbl = seg + ' — ' + time;
+  d.obSeg1h = OB_RATES[seg][0]; d.obSeg2h = OB_RATES[seg][1];
   updatePrice();
 }
-function selectOBDur(el, hours) {
-  document.querySelectorAll('.dur-pill').forEach(function(p){ p.classList.remove('selected'); });
+function selectOBDur(el, type, hours) {
+  el.closest('.dur-grid').querySelectorAll('.dur-pill').forEach(function(p){ p.classList.remove('selected'); });
   el.classList.add('selected');
-  state.obHours = hours;
+  state.T[type].obHours = hours;
   updatePrice();
 }
 
-// ── PRICE CALCULATION ──
-function calcPrice() {
-  var t = state.type; var p = 0;
+// ── PRICE CALCULATION (per type) ──
+function calcOne(type) {
+  var d = state.T[type];
+  var p = 0;
   var breakdown = '—';
 
-  if(t === 'jingle') {
-    var unitRate = state.rates[state.durIdx] || 0;
+  if(type === 'jingle') {
+    var unitRate = d.rates[d.durIdx] || 0;
     var spots = parseInt(document.getElementById('j-spots') ? document.getElementById('j-spots').value : 1) || 1;
     var start = document.getElementById('j-start') ? document.getElementById('j-start').value : '';
     var end = document.getElementById('j-end') ? document.getElementById('j-end').value : '';
@@ -1054,93 +1064,112 @@ function calcPrice() {
       days = Math.max(1, Math.round((d2 - d1) / 86400000) + 1);
     }
     p = unitRate * spots * days;
-    var dur = state.dur || '30s';
+    var dur = d.dur || '30s';
     breakdown = 'GH₵ ' + unitRate + ' × ' + spots + ' spots/day × ' + days + ' days (' + dur + ')';
-  } else if(t === 'lpm') {
+  } else if(type === 'lpm') {
     var qty = parseInt(document.getElementById('lpm-qty') ? document.getElementById('lpm-qty').value : 1) || 1;
-    p = state.flatRate * qty;
-    var lpmSegCount = state.segArr.length;
-    breakdown = 'GH₵ ' + state.flatRate + ' (' + lpmSegCount + ' segment' + (lpmSegCount === 1 ? '' : 's') + ' combined) × ' + qty + ' mention(s)';
-  } else if(t === 'announcement') {
+    p = d.flatRate * qty;
+    var lpmSegCount = d.segArr.length;
+    breakdown = 'GH₵ ' + d.flatRate + ' (' + lpmSegCount + ' segment' + (lpmSegCount === 1 ? '' : 's') + ' combined) × ' + qty + ' mention(s)';
+  } else if(type === 'announcement') {
     var qty2 = parseInt(document.getElementById('ann-qty') ? document.getElementById('ann-qty').value : 1) || 1;
     p = 190 * qty2;
     breakdown = 'GH₵ 190 × ' + qty2 + ' announcement(s)';
-  } else if(t === 'interview') {
-    p = state.flatRate;
-    var ivSegCount = state.segArr.length;
-    breakdown = '10-minute interview × ' + ivSegCount + ' segment' + (ivSegCount === 1 ? '' : 's') + ' — ' + state.segLbl;
-  } else if(t === 'ob') {
-    p = state.obHours === 1 ? state.obSeg1h : state.obSeg2h;
-    breakdown = state.obHours + ' hour(s) — ' + state.segLbl;
-  } else if(t === 'newrelease') {
-    p = state.flatRate;
-    breakdown = state.segLbl;
-  } else if(t === 'religious') {
+  } else if(type === 'interview') {
+    p = d.flatRate;
+    var ivSegCount = d.segArr.length;
+    breakdown = '10-minute interview × ' + ivSegCount + ' segment' + (ivSegCount === 1 ? '' : 's') + ' — ' + d.segLbl;
+  } else if(type === 'ob') {
+    p = d.obHours === 1 ? d.obSeg1h : d.obSeg2h;
+    breakdown = d.obHours + ' hour(s) — ' + d.segLbl;
+  } else if(type === 'newrelease') {
+    p = d.flatRate;
+    breakdown = d.segLbl;
+  } else if(type === 'religious') {
     p = 1200;
     breakdown = '30-minute Religious Broadcast';
-  } else if(t === 'tv-spot') {
-    var unitRate = state.rates[state.durIdx] || 0;
-    var qty = parseInt(document.getElementById('tvspot-qty') ? document.getElementById('tvspot-qty').value : 2) || 2;
-    var start = document.getElementById('tvspot-start') ? document.getElementById('tvspot-start').value : '';
-    var end = document.getElementById('tvspot-end') ? document.getElementById('tvspot-end').value : '';
-    var days = 1;
-    if(start && end){ var d1=new Date(start),d2=new Date(end); days=Math.max(1,Math.round((d2-d1)/86400000)+1); }
-    p = unitRate * qty * days;
-    var dur = state.dur || '30s';
-    breakdown = 'GH₵ ' + unitRate + ' × ' + qty + ' spots/day × ' + days + ' days (' + dur + ')';
-  } else if(t === 'tv-sponsorship') {
-    p = state.flatRate;
-    breakdown = state.segLbl;
-  } else if(t === 'tv-lower') {
-    var qty2 = parseInt(document.getElementById('tvlower-qty') ? document.getElementById('tvlower-qty').value : 1) || 1;
-    p = 150 * qty2;
-    breakdown = 'GH₵ 150 × ' + qty2 + ' slot(s)';
-  } else if(t === 'tv-placement') {
+  } else if(type === 'tv-spot') {
+    var unitRate2 = d.rates[d.durIdx] || 0;
+    var qty3 = parseInt(document.getElementById('tvspot-qty') ? document.getElementById('tvspot-qty').value : 2) || 2;
+    var start2 = document.getElementById('tvspot-start') ? document.getElementById('tvspot-start').value : '';
+    var end2 = document.getElementById('tvspot-end') ? document.getElementById('tvspot-end').value : '';
+    var days2 = 1;
+    if(start2 && end2){ var e1=new Date(start2), e2=new Date(end2); days2=Math.max(1,Math.round((e2-e1)/86400000)+1); }
+    p = unitRate2 * qty3 * days2;
+    var dur2 = d.dur || '30s';
+    breakdown = 'GH₵ ' + unitRate2 + ' × ' + qty3 + ' spots/day × ' + days2 + ' days (' + dur2 + ')';
+  } else if(type === 'tv-sponsorship') {
+    p = d.flatRate;
+    breakdown = d.segLbl;
+  } else if(type === 'tv-lower') {
+    var qty4 = parseInt(document.getElementById('tvlower-qty') ? document.getElementById('tvlower-qty').value : 1) || 1;
+    p = 150 * qty4;
+    breakdown = 'GH₵ 150 × ' + qty4 + ' slot(s)';
+  } else if(type === 'tv-placement') {
     p = 2000;
     breakdown = 'TV Product Placement — 1 month';
-  } else if(t === 'web-banner') {
-    var qty3 = parseInt(document.getElementById('webbanner-qty') ? document.getElementById('webbanner-qty').value : 1) || 1;
-    p = 800 * qty3;
-    breakdown = 'GH₵ 800 × ' + qty3 + ' month(s)';
-  } else if(t === 'web-article') {
-    var qty4 = parseInt(document.getElementById('webarticle-qty') ? document.getElementById('webarticle-qty').value : 1) || 1;
-    p = 500 * qty4;
-    breakdown = 'GH₵ 500 × ' + qty4 + ' article(s)';
-  } else if(t === 'web-watchtv') {
-    var qty5 = parseInt(document.getElementById('webwatchtv-qty') ? document.getElementById('webwatchtv-qty').value : 1) || 1;
-    p = 1200 * qty5;
-    breakdown = 'GH₵ 1,200 × ' + qty5 + ' month(s)';
-  } else if(t === 'web-event') {
-    var qty6 = parseInt(document.getElementById('webevent-qty') ? document.getElementById('webevent-qty').value : 1) || 1;
-    p = 300 * qty6;
-    breakdown = 'GH₵ 300 × ' + qty6 + ' event(s)';
+  } else if(type === 'web-banner') {
+    var qty5 = parseInt(document.getElementById('webbanner-qty') ? document.getElementById('webbanner-qty').value : 1) || 1;
+    p = 800 * qty5;
+    breakdown = 'GH₵ 800 × ' + qty5 + ' month(s)';
+  } else if(type === 'web-article') {
+    var qty6 = parseInt(document.getElementById('webarticle-qty') ? document.getElementById('webarticle-qty').value : 1) || 1;
+    p = 500 * qty6;
+    breakdown = 'GH₵ 500 × ' + qty6 + ' article(s)';
+  } else if(type === 'web-watchtv') {
+    var qty7 = parseInt(document.getElementById('webwatchtv-qty') ? document.getElementById('webwatchtv-qty').value : 1) || 1;
+    p = 1200 * qty7;
+    breakdown = 'GH₵ 1,200 × ' + qty7 + ' month(s)';
+  } else if(type === 'web-event') {
+    var qty8 = parseInt(document.getElementById('webevent-qty') ? document.getElementById('webevent-qty').value : 1) || 1;
+    p = 300 * qty8;
+    breakdown = 'GH₵ 300 × ' + qty8 + ' event(s)';
   }
 
-  return { total: p, breakdown: breakdown };
+  return { type: type, label: TYPE_LABELS[type], segLbl: d.segLbl, total: p, breakdown: breakdown };
+}
+
+function calcAll() {
+  var items = state.selected.map(calcOne);
+  var total = items.reduce(function(sum, it){ return sum + it.total; }, 0);
+  return { items: items, total: total };
+}
+
+function money(n) {
+  return 'GH₵ ' + n.toLocaleString('en-GH', {minimumFractionDigits:2, maximumFractionDigits:2});
 }
 
 function updatePrice() {
-  if(!state.type) return;
-  var r = calcPrice();
+  var r = calcAll();
   state.price = r.total;
 
   var box = document.getElementById('price-box');
-  if(r.total > 0) {
-    box.style.display = 'block';
-    document.getElementById('pr-type').textContent = state.typeLbl;
-    document.getElementById('pr-seg').textContent = state.segLbl || '—';
-    document.getElementById('pr-break').textContent = r.breakdown;
-    document.getElementById('pr-total').textContent = 'GH₵ ' + r.total.toLocaleString('en-GH', {minimumFractionDigits:2, maximumFractionDigits:2});
-  }
+  if(state.selected.length === 0) { box.style.display = 'none'; return; }
+
+  box.style.display = 'block';
+  document.getElementById('pr-items').innerHTML = r.items.map(function(it){
+    var label = it.label + (it.segLbl ? ' — ' + it.segLbl : '');
+    var val = it.total > 0 ? money(it.total) : '—';
+    return '<div class="price-row"><span class="price-label">' + label + '</span><span class="price-val">' + val + '</span></div>';
+  }).join('');
+  document.getElementById('pr-total').textContent = money(r.total);
 }
 
 // ── PANEL NAVIGATION ──
 function goPanel(n) {
   // Validation
-  if(n === 2 && !state.type) { alert('Please select an ad type first.'); return; }
+  if(n === 2 && state.selected.length === 0) { alert('Please select at least one ad type.'); return; }
   if(n === 3) {
-    if(!state.seg) { alert('Please select a time segment.'); return; }
-    if(state.type === 'jingle' && !state.dur) { alert('Please select a spot duration (30s / 45s / 60s).'); return; }
+    for(var i=0;i<state.selected.length;i++) {
+      var type = state.selected[i];
+      var d = state.T[type];
+      if(SEG_REQUIRED_TYPES.indexOf(type) > -1 && !d.seg) {
+        alert('Please select a time segment for ' + TYPE_LABELS[type] + '.'); return;
+      }
+      if((type === 'jingle' || type === 'tv-spot') && !d.dur) {
+        alert('Please select a spot duration for ' + TYPE_LABELS[type] + '.'); return;
+      }
+    }
     if(state.price <= 0) { alert('Could not calculate price. Please check your selections.'); return; }
   }
   if(n === 4) {
@@ -1150,39 +1179,39 @@ function goPanel(n) {
     var br = document.getElementById('c-brand').value.trim();
     if(!nm || !em || !ph || !br) { alert('Please fill in all required contact fields.'); return; }
     // Populate review
-    var r = calcPrice();
+    var r = calcAll();
     document.getElementById('rv-name').textContent = nm;
     document.getElementById('rv-brand').textContent = br;
     document.getElementById('rv-phone').textContent = ph;
     document.getElementById('rv-email').textContent = em;
-    document.getElementById('rv-type').textContent = state.typeLbl;
-    document.getElementById('rv-seg').textContent = state.segLbl;
-    document.getElementById('rv-break').textContent = r.breakdown;
-    document.getElementById('rv-total').textContent = 'GH₵ ' + r.total.toLocaleString('en-GH', {minimumFractionDigits:2, maximumFractionDigits:2});
+    document.getElementById('rv-items').innerHTML = r.items.map(function(it){
+      return '<div class="review-row"><span class="review-label">' + it.label + '</span><span class="review-val">' + it.breakdown + ' — ' + money(it.total) + '</span></div>';
+    }).join('');
+    document.getElementById('rv-total').textContent = money(r.total);
   }
 
-  // Show right ad-type section in panel 2
+  // Show sections for every selected ad type in panel 2
   if(n === 2) {
-    ['jingle','lpm','announcement','interview','ob','newrelease','religious','tv-spot','tv-sponsorship','tv-lower','tv-placement','web-banner','web-article','web-watchtv','web-event'].forEach(function(s){
-      var el = document.getElementById('sec-'+s);
-      if(el) el.classList.add('hidden');
+    ALL_TYPES.forEach(function(s){
+      var el = document.getElementById('sec-' + s);
+      if(!el) return;
+      if(state.selected.indexOf(s) > -1) el.classList.remove('hidden');
+      else el.classList.add('hidden');
     });
-    var show = document.getElementById('sec-'+state.type);
-    if(show) show.classList.remove('hidden');
-    document.getElementById('price-box').style.display = 'none';
+    updatePrice();
   }
 
   // Steps
-  for(var i=1;i<=4;i++){
-    var s = document.getElementById('step'+i);
-    s.classList.remove('active','done');
-    if(i < n) s.classList.add('done');
-    if(i === n) s.classList.add('active');
+  for(var j=1;j<=4;j++){
+    var s2 = document.getElementById('step' + j);
+    s2.classList.remove('active','done');
+    if(j < n) s2.classList.add('done');
+    if(j === n) s2.classList.add('active');
   }
 
   // Panels
   document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('active'); });
-  document.getElementById('panel'+n).classList.add('active');
+  document.getElementById('panel' + n).classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -1196,6 +1225,10 @@ function payNow() {
 
   if(amount <= 0){ alert('Invalid amount. Please go back and check your selections.'); return; }
 
+  var r = calcAll();
+  var typesStr = r.items.map(function(it){ return it.label; }).join(' + ');
+  var detailsStr = r.items.map(function(it){ return it.label + ': ' + it.breakdown; }).join(' | ');
+
   function launch() {
     var handler = PaystackPop.setup({
       key: 'pk_live_328bca15b76ff8f294e7c8d07a74263d21bc0ca1', // ← Replace with your key
@@ -1208,8 +1241,8 @@ function payNow() {
           {display_name: 'Client Name', variable_name: 'client_name', value: name},
           {display_name: 'Brand', variable_name: 'brand', value: brand},
           {display_name: 'Phone', variable_name: 'phone', value: phone},
-          {display_name: 'Ad Type', variable_name: 'ad_type', value: state.typeLbl},
-          {display_name: 'Segment', variable_name: 'segment', value: state.segLbl},
+          {display_name: 'Ad Type(s)', variable_name: 'ad_type', value: typesStr},
+          {display_name: 'Booking Details', variable_name: 'segment', value: detailsStr},
         ]
       },
       callback: function(response) {
