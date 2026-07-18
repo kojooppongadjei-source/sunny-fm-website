@@ -444,25 +444,26 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
         <tr><td><b>P6</b></td><td>8:00pm – 4:00am</td><td>—</td><td>—</td></tr>
       </table>
 
-      <div class="card-title" style="margin-top:8px;">💰 Jingle Rates (GH₵) — Select your segment</div>
+      <div class="card-title" style="margin-top:8px;">💰 Jingle Rates (GH₵) — Select up to 4 segments</div>
+      <p class="vat-note" style="margin-top:-4px;">👆 Click to select/deselect multiple segments. Rates will be combined.</p>
       <table class="rate-table">
         <tr><th>Segment</th><th>Time</th><th>30 Secs</th><th>45 Secs</th><th>60 Secs</th><th>Pro Rata/sec</th></tr>
-        <tr class="seg-row" onclick="selectSeg(this,'jingle','P1','6:30am–8:00am',253,290.95,316,18.90)" id="jrow-P1">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'jingle','P1','6:30am–8:00am',[253,290.95,316])" id="jrow-P1">
           <td><b>P1</b></td><td>6:30am – 8:00am</td><td class="rate-price">253</td><td class="rate-price">290.95</td><td class="rate-price">316</td><td>18.90</td>
         </tr>
-        <tr class="seg-row" onclick="selectSeg(this,'jingle','P2','8:00am–10:00am',227.70,276,290,15.18)" id="jrow-P2">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'jingle','P2','8:00am–10:00am',[227.70,276,290])" id="jrow-P2">
           <td><b>P2</b></td><td>8:00am – 10:00am</td><td class="rate-price">227.70</td><td class="rate-price">276</td><td class="rate-price">290</td><td>15.18</td>
         </tr>
-        <tr class="seg-row" onclick="selectSeg(this,'jingle','P5','12noon–3:00pm',126.50,164.45,190,6.33)" id="jrow-P5">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'jingle','P5','12noon–3:00pm',[126.50,164.45,190])" id="jrow-P5">
           <td><b>P5</b> <span class="rate-badge">Popular</span></td><td>12noon – 3:00pm</td><td class="rate-price">126.50</td><td class="rate-price">164.45</td><td class="rate-price">190</td><td>6.33</td>
         </tr>
-        <tr class="seg-row" onclick="selectSeg(this,'jingle','P3','4:00pm–6:00pm',189.75,227.70,253,12.65)" id="jrow-P3">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'jingle','P3','4:00pm–6:00pm',[189.75,227.70,253])" id="jrow-P3">
           <td><b>P3</b></td><td>4:00pm – 6:00pm</td><td class="rate-price">189.75</td><td class="rate-price">227.70</td><td class="rate-price">253</td><td>12.65</td>
         </tr>
-        <tr class="seg-row" onclick="selectSeg(this,'jingle','P4','6:00pm–8:00pm',164.45,198.75,221,8.90)" id="jrow-P4">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'jingle','P4','6:00pm–8:00pm',[164.45,198.75,221])" id="jrow-P4">
           <td><b>P4</b></td><td>6:00pm – 8:00pm</td><td class="rate-price">164.45</td><td class="rate-price">198.75</td><td class="rate-price">221</td><td>8.90</td>
         </tr>
-        <tr class="seg-row" onclick="selectSeg(this,'jingle','P6','8:00pm–4:00am',101.20,126.50,152,3.80)" id="jrow-P6">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'jingle','P6','8:00pm–4:00am',[101.20,126.50,152])" id="jrow-P6">
           <td><b>P6</b></td><td>8:00pm – 4:00am</td><td class="rate-price">101.20</td><td class="rate-price">126.50</td><td class="rate-price">152</td><td>3.80</td>
         </tr>
       </table>
@@ -574,16 +575,17 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
   <!-- OUTSIDE BROADCAST SECTION -->
   <div id="sec-ob" class="hidden">
     <div class="card">
-      <div class="card-title">🎪 Outside Broadcast Rates (GH₵) — Select segment & duration</div>
+      <div class="card-title">🎪 Outside Broadcast Rates (GH₵) — Select up to 4 segments & duration</div>
+      <p class="vat-note" style="margin-top:-4px;">👆 Click to select/deselect multiple segments. Rates will be combined.</p>
       <table class="rate-table">
         <tr><th>Segment</th><th>Time</th><th>1 Hour</th><th>2 Hours</th></tr>
-        <tr class="seg-row" onclick="selectOB(this,'ob','P2','8:00am–10:00am')" id="obrow-P2">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'ob','P2','8:00am–10:00am',[2530,4428])" id="obrow-P2">
           <td><b>P2</b></td><td>8:00am – 10:00am</td><td class="rate-price">2,530</td><td class="rate-price">4,428</td>
         </tr>
-        <tr class="seg-row" onclick="selectOB(this,'ob','P5','12noon–3:00pm')" id="obrow-P5">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'ob','P5','12noon–3:00pm',[1523,2530])" id="obrow-P5">
           <td><b>P5</b> <span class="rate-badge">Popular</span></td><td>12noon – 3:00pm</td><td class="rate-price">1,523</td><td class="rate-price">2,530</td>
         </tr>
-        <tr class="seg-row" onclick="selectOB(this,'ob','P4','6:00pm–8:00pm')" id="obrow-P4">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'ob','P4','6:00pm–8:00pm',[1725,3163])" id="obrow-P4">
           <td><b>P4</b></td><td>6:00pm – 8:00pm</td><td class="rate-price">1,725</td><td class="rate-price">3,163</td>
         </tr>
       </table>
@@ -625,16 +627,17 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
   <!-- TV SPOT -->
   <div id="sec-tv-spot" class="hidden">
     <div class="card">
-      <div class="card-title">📺 Sunny TV Spot Rates (GH₵) — Select slot</div>
+      <div class="card-title">📺 Sunny TV Spot Rates (GH₵) — Select up to 4 slots</div>
+      <p class="vat-note" style="margin-top:-4px;">👆 Click to select/deselect multiple slots. Rates will be combined.</p>
       <table class="rate-table">
         <tr><th>Slot</th><th>Time</th><th>15 Secs</th><th>30 Secs</th><th>60 Secs</th></tr>
-        <tr class="seg-row" onclick="selectSeg(this,'tv-spot','Prime Time','6:00pm–10:00pm',200,350,600)" id="tvrow-prime">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'tv-spot','Prime Time','6:00pm–10:00pm',[200,350,600])" id="tvrow-prime">
           <td><b>Prime Time</b> <span class="rate-badge">Popular</span></td><td>6:00pm – 10:00pm</td><td class="rate-price">200</td><td class="rate-price">350</td><td class="rate-price">600</td>
         </tr>
-        <tr class="seg-row" onclick="selectSeg(this,'tv-spot','Daytime','9:00am–6:00pm',120,200,350)" id="tvrow-day">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'tv-spot','Daytime','9:00am–6:00pm',[120,200,350])" id="tvrow-day">
           <td><b>Daytime</b></td><td>9:00am – 6:00pm</td><td class="rate-price">120</td><td class="rate-price">200</td><td class="rate-price">350</td>
         </tr>
-        <tr class="seg-row" onclick="selectSeg(this,'tv-spot','Weekend','Sat & Sun',160,280,480)" id="tvrow-wknd">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'tv-spot','Weekend','Sat & Sun',[160,280,480])" id="tvrow-wknd">
           <td><b>Weekend</b></td><td>Saturday &amp; Sunday</td><td class="rate-price">160</td><td class="rate-price">280</td><td class="rate-price">480</td>
         </tr>
       </table>
@@ -944,7 +947,7 @@ var state = {
 };
 
 function freshTypeData(type) {
-  var d = { seg:null, segLbl:'', dur:null, durIdx:0, rates:[0,0,0], flatRate:0, segArr:[], obSeg:null, obSeg1h:0, obSeg2h:0, obHours:1 };
+  var d = { seg:null, segLbl:'', dur:null, durIdx:0, flatRate:0, segArr:[], obHours:1 };
   if(type === 'announcement') { d.seg = 'P2'; d.segLbl = 'P2 — 9:30am (Mon–Thu) / 9:15am (Fri)'; d.flatRate = 190; }
   if(type === 'religious') { d.seg = 'Religious'; d.segLbl = '30-min Slot'; d.flatRate = 1200; }
   return d;
@@ -975,17 +978,7 @@ function toggleType(el, type) {
   updatePrice();
 }
 
-// ── JINGLE / TV SPOT SEGMENT SELECT (single choice per type) ──
-function selectSeg(el, type, seg, time, r30, r45, r60, rpr) {
-  document.querySelectorAll('#sec-' + type + ' .seg-row').forEach(function(r){ r.classList.remove('selected'); });
-  el.classList.add('selected');
-  var d = state.T[type];
-  d.seg = seg; d.segLbl = seg + ' — ' + time;
-  d.rates = [r30, r45, r60]; d.proRata = rpr;
-  updatePrice();
-}
-
-// ── FLAT RATE SEGMENT (single choice per type) ──
+// ── FLAT RATE SEGMENT (single choice per type — used by Announcement, New Release, TV Sponsorship packages) ──
 function selectSegFlat(el, type, seg, time, rate) {
   el.closest('table').querySelectorAll('.seg-row').forEach(function(r){ r.classList.remove('selected'); });
   el.classList.add('selected');
@@ -995,8 +988,10 @@ function selectSegFlat(el, type, seg, time, rate) {
   updatePrice();
 }
 
-// ── MULTI SEGMENT SELECT (LPM & Interview — select up to 4, rates combine) ──
-function toggleSegMulti(el, type, seg, time, rate) {
+// ── MULTI SEGMENT SELECT (select up to 4 segments — rates combine)
+//    rateData can be: a flat number (LPM/Interview), or an array indexed by
+//    duration choice (Jingle/TV Spot: [30s,45s,60s]) or by OB hours (1h/2h) ──
+function toggleSegMulti(el, type, seg, time, rateData) {
   var MAX_SEGS = 4;
   var d = state.T[type];
   var idx = -1;
@@ -1007,7 +1002,7 @@ function toggleSegMulti(el, type, seg, time, rate) {
     el.classList.remove('selected');
   } else {
     if(d.segArr.length >= MAX_SEGS) { alert('You can select up to ' + MAX_SEGS + ' segments.'); return; }
-    d.segArr.push({seg: seg, time: time, rate: rate});
+    d.segArr.push({seg: seg, time: time, rateData: rateData});
     el.classList.add('selected');
   }
 
@@ -1016,7 +1011,7 @@ function toggleSegMulti(el, type, seg, time, rate) {
   } else {
     d.seg = d.segArr.map(function(s){ return s.seg; }).join('+');
     d.segLbl = d.segArr.map(function(s){ return s.seg + ' (' + s.time + ')'; }).join(' + ');
-    d.flatRate = d.segArr.reduce(function(sum, s){ return sum + s.rate; }, 0);
+    d.flatRate = d.segArr.reduce(function(sum, s){ return sum + (typeof s.rateData === 'number' ? s.rateData : 0); }, 0);
   }
   updatePrice();
 }
@@ -1031,15 +1026,6 @@ function selectDur(el, type, label, idx) {
 }
 
 // ── OB ──
-var OB_RATES = { P2: [2530, 4428], P5: [1523, 2530], P4: [1725, 3163] };
-function selectOB(el, type, seg, time) {
-  document.querySelectorAll('#sec-' + type + ' .seg-row').forEach(function(r){ r.classList.remove('selected'); });
-  el.classList.add('selected');
-  var d = state.T[type];
-  d.obSeg = seg; d.segLbl = seg + ' — ' + time;
-  d.obSeg1h = OB_RATES[seg][0]; d.obSeg2h = OB_RATES[seg][1];
-  updatePrice();
-}
 function selectOBDur(el, type, hours) {
   el.closest('.dur-grid').querySelectorAll('.dur-pill').forEach(function(p){ p.classList.remove('selected'); });
   el.classList.add('selected');
@@ -1054,7 +1040,7 @@ function calcOne(type) {
   var breakdown = '—';
 
   if(type === 'jingle') {
-    var unitRate = d.rates[d.durIdx] || 0;
+    var unitRate = d.segArr.reduce(function(sum, s){ return sum + (s.rateData[d.durIdx] || 0); }, 0);
     var spots = parseInt(document.getElementById('j-spots') ? document.getElementById('j-spots').value : 1) || 1;
     var start = document.getElementById('j-start') ? document.getElementById('j-start').value : '';
     var end = document.getElementById('j-end') ? document.getElementById('j-end').value : '';
@@ -1065,7 +1051,8 @@ function calcOne(type) {
     }
     p = unitRate * spots * days;
     var dur = d.dur || '30s';
-    breakdown = 'GH₵ ' + unitRate + ' × ' + spots + ' spots/day × ' + days + ' days (' + dur + ')';
+    var jSegCount = d.segArr.length;
+    breakdown = 'GH₵ ' + unitRate + ' (' + jSegCount + ' segment' + (jSegCount === 1 ? '' : 's') + ' combined) × ' + spots + ' spots/day × ' + days + ' days (' + dur + ')';
   } else if(type === 'lpm') {
     var qty = parseInt(document.getElementById('lpm-qty') ? document.getElementById('lpm-qty').value : 1) || 1;
     p = d.flatRate * qty;
@@ -1080,8 +1067,10 @@ function calcOne(type) {
     var ivSegCount = d.segArr.length;
     breakdown = '10-minute interview × ' + ivSegCount + ' segment' + (ivSegCount === 1 ? '' : 's') + ' — ' + d.segLbl;
   } else if(type === 'ob') {
-    p = d.obHours === 1 ? d.obSeg1h : d.obSeg2h;
-    breakdown = d.obHours + ' hour(s) — ' + d.segLbl;
+    var obIdx = d.obHours === 1 ? 0 : 1;
+    p = d.segArr.reduce(function(sum, s){ return sum + (s.rateData[obIdx] || 0); }, 0);
+    var obSegCount = d.segArr.length;
+    breakdown = d.obHours + ' hour(s) × ' + obSegCount + ' segment' + (obSegCount === 1 ? '' : 's') + ' — ' + d.segLbl;
   } else if(type === 'newrelease') {
     p = d.flatRate;
     breakdown = d.segLbl;
@@ -1089,7 +1078,7 @@ function calcOne(type) {
     p = 1200;
     breakdown = '30-minute Religious Broadcast';
   } else if(type === 'tv-spot') {
-    var unitRate2 = d.rates[d.durIdx] || 0;
+    var unitRate2 = d.segArr.reduce(function(sum, s){ return sum + (s.rateData[d.durIdx] || 0); }, 0);
     var qty3 = parseInt(document.getElementById('tvspot-qty') ? document.getElementById('tvspot-qty').value : 2) || 2;
     var start2 = document.getElementById('tvspot-start') ? document.getElementById('tvspot-start').value : '';
     var end2 = document.getElementById('tvspot-end') ? document.getElementById('tvspot-end').value : '';
@@ -1097,7 +1086,8 @@ function calcOne(type) {
     if(start2 && end2){ var e1=new Date(start2), e2=new Date(end2); days2=Math.max(1,Math.round((e2-e1)/86400000)+1); }
     p = unitRate2 * qty3 * days2;
     var dur2 = d.dur || '30s';
-    breakdown = 'GH₵ ' + unitRate2 + ' × ' + qty3 + ' spots/day × ' + days2 + ' days (' + dur2 + ')';
+    var tvSegCount = d.segArr.length;
+    breakdown = 'GH₵ ' + unitRate2 + ' (' + tvSegCount + ' slot' + (tvSegCount === 1 ? '' : 's') + ' combined) × ' + qty3 + ' spots/day × ' + days2 + ' days (' + dur2 + ')';
   } else if(type === 'tv-sponsorship') {
     p = d.flatRate;
     breakdown = d.segLbl;
