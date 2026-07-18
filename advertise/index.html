@@ -499,22 +499,23 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
   <!-- LPM SECTION -->
   <div id="sec-lpm" class="hidden">
     <div class="card">
-      <div class="card-title">💰 Live Programme Mention Rates (GH₵) — Select your segment</div>
+      <div class="card-title">💰 Live Programme Mention Rates (GH₵) — Select up to 4 segments</div>
+      <p class="vat-note" style="margin-top:-4px;">👆 Click to select/deselect multiple segments. Rates will be combined.</p>
       <table class="rate-table">
         <tr><th>Segment</th><th>Mon – Fri</th><th>Saturday</th><th>Sunday</th><th>Rate (GH₵)</th></tr>
-        <tr class="seg-row" onclick="selectSegFlat(this,'P1','7:00am–8:00am',418)" id="lrow-P1">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'P1','7:00am–8:00am',418)" id="lrow-P1">
           <td><b>P1</b></td><td>7:00am – 8:00am</td><td>—</td><td>—</td><td class="rate-price">418</td>
         </tr>
-        <tr class="seg-row" onclick="selectSegFlat(this,'P2','8:00am onwards',380)" id="lrow-P2">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'P2','8:00am onwards',380)" id="lrow-P2">
           <td><b>P2</b></td><td colspan="3">Mon – Fri</td><td class="rate-price">380</td>
         </tr>
-        <tr class="seg-row" onclick="selectSegFlat(this,'P5','12noon–3pm',253)" id="lrow-P5">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'P5','12noon–3pm',253)" id="lrow-P5">
           <td><b>P5</b> <span class="rate-badge">Popular</span></td><td>—</td><td>12noon – 2:00pm</td><td>12noon – 3:00pm</td><td class="rate-price">253</td>
         </tr>
-        <tr class="seg-row" onclick="selectSegFlat(this,'P3','4:00pm–6:00pm',342)" id="lrow-P3">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'P3','4:00pm–6:00pm',342)" id="lrow-P3">
           <td><b>P3</b></td><td colspan="3">Mon – Fri</td><td class="rate-price">342</td>
         </tr>
-        <tr class="seg-row" onclick="selectSegFlat(this,'P4','6:00pm–8:00pm',304)" id="lrow-P4">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'P4','6:00pm–8:00pm',304)" id="lrow-P4">
           <td><b>P4</b></td><td colspan="3">Mon – Fri</td><td class="rate-price">304</td>
         </tr>
       </table>
@@ -553,16 +554,17 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
   <!-- INTERVIEW SECTION -->
   <div id="sec-interview" class="hidden">
     <div class="card">
-      <div class="card-title">🗣️ Interview Rates — 10 Minutes (GH₵) — Select segment</div>
+      <div class="card-title">🗣️ Interview Rates — 10 Minutes (GH₵) — Select up to 4 segments</div>
+      <p class="vat-note" style="margin-top:-4px;">👆 Book interviews in multiple segments. Rates will be combined.</p>
       <table class="rate-table">
         <tr><th>Segment</th><th>Time</th><th>Rate (10 mins)</th></tr>
-        <tr class="seg-row" onclick="selectSegFlat(this,'P2','8:00am–10:00am',4000)" id="irow-P2">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'P2','8:00am–10:00am',4000)" id="irow-P2">
           <td><b>P2</b></td><td>8:00am – 10:00am</td><td class="rate-price">GH₵ 4,000</td>
         </tr>
-        <tr class="seg-row" onclick="selectSegFlat(this,'P5','12noon–3:00pm',1700)" id="irow-P5">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'P5','12noon–3:00pm',1700)" id="irow-P5">
           <td><b>P5</b> <span class="rate-badge">Popular</span></td><td>12noon – 3:00pm</td><td class="rate-price">GH₵ 1,700</td>
         </tr>
-        <tr class="seg-row" onclick="selectSegFlat(this,'P4','6:00pm–8:00pm',2800)" id="irow-P4">
+        <tr class="seg-row" onclick="toggleSegMulti(this,'P4','6:00pm–8:00pm',2800)" id="irow-P4">
           <td><b>P4</b></td><td>6:00pm – 8:00pm</td><td class="rate-price">GH₵ 2,800</td>
         </tr>
       </table>
@@ -922,6 +924,7 @@ main{max-width:880px;margin:0 auto;padding:36px 5% 100px;}
 var state = {
   type: null, typeLbl: '',
   seg: null, segLbl: '', segTime: '',
+  segArr: [],
   dur: null, durIdx: 0,
   rates: [0,0,0], flatRate: 0,
   obSeg: null, obSeg1h: 0, obSeg2h: 0, obHours: 1,
@@ -950,7 +953,7 @@ function selectType(el, type) {
   state.typeLbl = labels[type];
 
   // Reset seg
-  state.seg = null; state.segLbl = ''; state.flatRate = 0;
+  state.seg = null; state.segLbl = ''; state.flatRate = 0; state.segArr = [];
   document.querySelectorAll('.seg-row').forEach(function(r){ r.classList.remove('selected'); });
   document.querySelectorAll('.dur-pill').forEach(function(p){ p.classList.remove('selected'); });
 
@@ -981,6 +984,31 @@ function selectSegFlat(el, seg, time, rate) {
   el.classList.add('selected');
   state.seg = seg; state.segLbl = seg + ' — ' + time;
   state.flatRate = rate;
+  updatePrice();
+}
+
+// ── MULTI SEGMENT SELECT (LPM & Interview — select up to 4, rates combine) ──
+function toggleSegMulti(el, seg, time, rate) {
+  var MAX_SEGS = 4;
+  var idx = -1;
+  for(var i=0;i<state.segArr.length;i++){ if(state.segArr[i].seg === seg){ idx = i; break; } }
+
+  if(idx > -1) {
+    state.segArr.splice(idx, 1);
+    el.classList.remove('selected');
+  } else {
+    if(state.segArr.length >= MAX_SEGS) { alert('You can select up to ' + MAX_SEGS + ' segments.'); return; }
+    state.segArr.push({seg: seg, time: time, rate: rate});
+    el.classList.add('selected');
+  }
+
+  if(state.segArr.length === 0) {
+    state.seg = null; state.segLbl = ''; state.flatRate = 0;
+  } else {
+    state.seg = state.segArr.map(function(s){ return s.seg; }).join('+');
+    state.segLbl = state.segArr.map(function(s){ return s.seg + ' (' + s.time + ')'; }).join(' + ');
+    state.flatRate = state.segArr.reduce(function(sum, s){ return sum + s.rate; }, 0);
+  }
   updatePrice();
 }
 
@@ -1031,14 +1059,16 @@ function calcPrice() {
   } else if(t === 'lpm') {
     var qty = parseInt(document.getElementById('lpm-qty') ? document.getElementById('lpm-qty').value : 1) || 1;
     p = state.flatRate * qty;
-    breakdown = 'GH₵ ' + state.flatRate + ' × ' + qty + ' mention(s)';
+    var lpmSegCount = state.segArr.length;
+    breakdown = 'GH₵ ' + state.flatRate + ' (' + lpmSegCount + ' segment' + (lpmSegCount === 1 ? '' : 's') + ' combined) × ' + qty + ' mention(s)';
   } else if(t === 'announcement') {
     var qty2 = parseInt(document.getElementById('ann-qty') ? document.getElementById('ann-qty').value : 1) || 1;
     p = 190 * qty2;
     breakdown = 'GH₵ 190 × ' + qty2 + ' announcement(s)';
   } else if(t === 'interview') {
     p = state.flatRate;
-    breakdown = '10-minute interview — ' + state.segLbl;
+    var ivSegCount = state.segArr.length;
+    breakdown = '10-minute interview × ' + ivSegCount + ' segment' + (ivSegCount === 1 ? '' : 's') + ' — ' + state.segLbl;
   } else if(t === 'ob') {
     p = state.obHours === 1 ? state.obSeg1h : state.obSeg2h;
     breakdown = state.obHours + ' hour(s) — ' + state.segLbl;
