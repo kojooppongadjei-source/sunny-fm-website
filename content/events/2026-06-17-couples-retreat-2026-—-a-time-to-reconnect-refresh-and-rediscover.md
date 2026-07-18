@@ -12,7 +12,7 @@ summary: A 3-night couples retreat at Aqua Safari Resort, Ghana — 27th to
   30th August 2026. Includes luxury accommodation, daily meals, guided
   retreat sessions and couple bonding activities. GHC 9,999 per couple.
 past: false
-image: /assets/uploads/untitled-design-4-.png
+image: /assets/uploads/couples-retreat-2026.jpg
 ---
 Looking for a **marriage retreat in Ghana** that's more than a hotel weekend away? **Couples Retreat 2026** is a four-day, three-night getaway at Aqua Safari Resort designed to give couples uninterrupted time to reconnect, refresh, and rediscover each other — away from work, phones, and the daily grind.
 
