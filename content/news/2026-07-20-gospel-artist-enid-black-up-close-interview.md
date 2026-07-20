@@ -5,11 +5,12 @@ date: 2026-07-20T08:00:00.000+00:00
 image: /assets/uploads/enid-black.jpg
 image_position: center 24%
 summary: Singer, songwriter and multi-instrumentalist Enid Black joined Sunny
-  88.7 FM's Up Close on the AM Drive for a morning full of live acoustic
+  88.7 FM's Up Close on The IM Drive (The Inspirational Morning Drive) for a
+  morning full of live acoustic
   performances and an honest conversation about faith, identity and finding
   the courage to tell his story through music.
 ---
-Gospel artist, producer and instrumentalist Enid Black paid a visit to the Sunny 88.7 FM studio this week, joining the Up Close segment on the AM Drive for a morning that mixed live music with a candid conversation about faith, calling, and the long road to stepping into the spotlight.
+Gospel artist, producer and instrumentalist Enid Black paid a visit to the Sunny 88.7 FM studio this week, joining the Up Close segment on The IM Drive (The Inspirational Morning Drive) for a morning that mixed live music with a candid conversation about faith, calling, and the long road to stepping into the spotlight.
 
 ### From "Black" the Nickname to Enid Black the Artist
 
@@ -41,8 +42,8 @@ Reflecting on his journey, Enid took time to thank those who shaped it — his f
 
 He closed with an encouragement for listeners still finding their way. "I believe life without God is absolute death," he said. "If you've been feeling this nudge towards God, open up to Him and let Him in. And if you're already on this walk and it's been difficult — the difficulty of the journey is not a reflection of who God is. Once you yield to that, you'll find it's such a sweet and beautiful journey, and you never regret it."
 
-The segment closed out with *Privileged*, Enid's collaboration with Luigi McLean — a fitting send-off after a morning that, as host Chantelle put it, helped "shift the atmosphere" on the AM Drive.
+The segment closed out with *Privileged*, Enid's collaboration with Luigi McLean — a fitting send-off after a morning that, as host Chantelle put it, helped "shift the atmosphere" on The IM Drive.
 
 **Find Enid Black's music on Spotify, Apple Music, and all major digital platforms, and connect with him on Instagram @enid_black.**
 
-*Catch Up Close every weekday on the AM Drive, only on Sunny 88.7 FM — and watch it live on Sunny TV at sunnygh.com.*
+*Catch Up Close every weekday on The IM Drive, only on Sunny 88.7 FM — and watch it live on Sunny TV at sunnygh.com.*
