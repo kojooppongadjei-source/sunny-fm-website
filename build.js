@@ -204,6 +204,7 @@ function buildCollection(collectionFolder, config) {
       dateFormatted: formatDate(data.date),
       summary: data.summary || '',
       image: data.image || null,
+      image_position: data.image_position || null,
       url: `/${config.urlPath}/${slug}/`,
       // Collection-specific extra fields
       tags: data.tags || [],
@@ -348,7 +349,7 @@ function buildCollection(collectionFolder, config) {
   } else {
     cardsHtml = `<div class="post-grid">` + posts.map(post => {
       const img = post.image
-        ? `<img class="post-card-img" src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}">`
+        ? `<img class="post-card-img" src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}"${post.image_position ? ` style="object-position:${escapeHtml(post.image_position)};"` : ''}>`
         : `<div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-size:32px;">${config.urlPath === 'preaching-teaching' ? '📖' : config.urlPath === 'prayer-testimonies' ? '🙏' : config.urlPath === 'lifestyle' ? '✨' : '📰'}</div>`;
       return `
         <a href="${post.url}" class="post-card">
