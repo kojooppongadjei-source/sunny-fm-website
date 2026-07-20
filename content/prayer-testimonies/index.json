@@ -23,6 +23,9 @@
     "tag": null,
     "past": false,
     "price": null,
-    "price_currency": null
+    "price_currency": null,
+    "scripture_ref": null,
+    "scripture_text": null,
+    "prayer": null
   }
 ]

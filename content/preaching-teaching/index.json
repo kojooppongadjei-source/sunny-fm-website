@@ -23,7 +23,10 @@
     "tag": null,
     "past": false,
     "price": null,
-    "price_currency": null
+    "price_currency": null,
+    "scripture_ref": null,
+    "scripture_text": null,
+    "prayer": null
   },
   {
     "slug": "potters-hour",
@@ -49,7 +52,10 @@
     "tag": null,
     "past": false,
     "price": null,
-    "price_currency": null
+    "price_currency": null,
+    "scripture_ref": null,
+    "scripture_text": null,
+    "prayer": null
   },
   {
     "slug": "back-to-the-word-broadcast-calvary-worship-centre",
@@ -75,7 +81,10 @@
     "tag": null,
     "past": false,
     "price": null,
-    "price_currency": null
+    "price_currency": null,
+    "scripture_ref": null,
+    "scripture_text": null,
+    "prayer": null
   },
   {
     "slug": "building-families-that-flourish",
@@ -101,7 +110,10 @@
     "tag": null,
     "past": false,
     "price": null,
-    "price_currency": null
+    "price_currency": null,
+    "scripture_ref": null,
+    "scripture_text": null,
+    "prayer": null
   },
   {
     "slug": "fountain-gate-foundation",
@@ -127,7 +139,10 @@
     "tag": null,
     "past": false,
     "price": null,
-    "price_currency": null
+    "price_currency": null,
+    "scripture_ref": null,
+    "scripture_text": null,
+    "prayer": null
   },
   {
     "slug": "winning-ways-express",
@@ -153,7 +168,10 @@
     "tag": null,
     "past": false,
     "price": null,
-    "price_currency": null
+    "price_currency": null,
+    "scripture_ref": null,
+    "scripture_text": null,
+    "prayer": null
   },
   {
     "slug": "winners-chapel-international",
@@ -179,6 +197,9 @@
     "tag": null,
     "past": false,
     "price": null,
-    "price_currency": null
+    "price_currency": null,
+    "scripture_ref": null,
+    "scripture_text": null,
+    "prayer": null
   }
 ]

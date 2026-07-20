@@ -23,7 +23,10 @@
     "tag": null,
     "past": false,
     "price": null,
-    "price_currency": null
+    "price_currency": null,
+    "scripture_ref": null,
+    "scripture_text": null,
+    "prayer": null
   },
   {
     "slug": "dressing-gracefully-flatterung-outfits-for-the-modern-christian-woman",
@@ -49,7 +52,10 @@
     "tag": null,
     "past": false,
     "price": null,
-    "price_currency": null
+    "price_currency": null,
+    "scripture_ref": null,
+    "scripture_text": null,
+    "prayer": null
   },
   {
     "slug": "dressing-your-bump-with-grace-a-christian-perspective-on-pregnancy-apparel-faith-family",
@@ -75,7 +81,10 @@
     "tag": null,
     "past": false,
     "price": null,
-    "price_currency": null
+    "price_currency": null,
+    "scripture_ref": null,
+    "scripture_text": null,
+    "prayer": null
   },
   {
     "slug": "faith-is-not-just-for-sundays",
@@ -101,6 +110,9 @@
     "tag": null,
     "past": false,
     "price": null,
-    "price_currency": null
+    "price_currency": null,
+    "scripture_ref": null,
+    "scripture_text": null,
+    "prayer": null
   }
 ]

@@ -36,6 +36,10 @@ const COLLECTIONS = {
     urlPath: 'events',
     label: 'Events',
   },
+  'daily-bread': {
+    urlPath: 'daily-bread',
+    label: 'Sunny Daily Bread',
+  },
 };
 
 // Read shared header/footer snippets
@@ -224,6 +228,10 @@ function buildCollection(collectionFolder, config) {
       past: data.past || false,
       price: data.price || null,
       price_currency: data.price_currency || null,
+      // Daily Bread-specific fields
+      scripture_ref: data.scripture_ref || null,
+      scripture_text: data.scripture_text || null,
+      prayer: data.prayer || null,
     };
 
     posts.push({ ...post, bodyHtml, raw: data });
@@ -278,6 +286,28 @@ function buildCollection(collectionFolder, config) {
       tagsHtml = `<div style="margin-bottom:16px;">${allTags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>`;
     }
 
+    const dailyBreadHtml = config.urlPath === 'daily-bread' && (post.scripture_text || post.scripture_ref) ? `
+      <div style="background:linear-gradient(135deg,#1a1200 0%,#0A0E1A 100%);border-radius:14px;padding:32px 28px;margin-bottom:28px;">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:#D4AF37;font-weight:700;margin-bottom:14px;">📖 Today's Scripture</div>
+        ${post.scripture_text ? `<div style="font-family:'Playfair Display',serif;font-size:20px;font-style:italic;line-height:1.7;color:#fff;margin-bottom:10px;">"${escapeHtml(post.scripture_text)}"</div>` : ''}
+        ${post.scripture_ref ? `<div style="font-size:14px;color:#D4AF37;font-weight:700;">— ${escapeHtml(post.scripture_ref)}</div>` : ''}
+      </div>
+    ` : '';
+
+    const dailyBreadPrayerHtml = config.urlPath === 'daily-bread' && post.prayer ? `
+      <div style="background:var(--cream);border-left:4px solid var(--gold-dark);border-radius:8px;padding:24px 26px;margin:28px 0;">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-dark);font-weight:700;margin-bottom:10px;">🙏 Prayer</div>
+        <div style="font-size:15px;line-height:1.8;color:var(--dark);">${escapeHtml(post.prayer)}</div>
+      </div>
+    ` : '';
+
+    const dailyBreadShareHtml = config.urlPath === 'daily-bread' ? `
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin:28px 0;">
+        <a href="https://wa.me/?text=${encodeURIComponent((post.scripture_text ? '"' + post.scripture_text + '" — ' + (post.scripture_ref || '') + '\n\n' : '') + post.title + '\n\nhttps://sunnygh.com' + post.url)}" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:11px 22px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">💬 Share with a Friend</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://sunnygh.com' + post.url)}" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#1877f2;color:#fff;padding:11px 22px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">Share on Facebook</a>
+      </div>
+    ` : '';
+
     const eventInfoHtml = config.urlPath === 'events' ? `
       <div style="background:var(--cream);border-radius:12px;padding:20px 24px;margin-bottom:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;">
         ${post.event_date_formatted ? `<div><div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-dark);font-weight:700;margin-bottom:4px;">📅 Date</div><div style="font-size:15px;font-weight:700;">${escapeHtml(post.event_date_formatted)}</div></div>` : ''}
@@ -295,8 +325,11 @@ function buildCollection(collectionFolder, config) {
       <div class="post-meta">${metaParts.join(' &middot; ')}</div>
       ${tagsHtml}
       ${mediaHtml}
+      ${dailyBreadHtml}
       ${eventInfoHtml}
       <div class="post-body">${post.bodyHtml}</div>
+      ${dailyBreadPrayerHtml}
+      ${dailyBreadShareHtml}
     `;
     
 
@@ -350,14 +383,19 @@ function buildCollection(collectionFolder, config) {
     cardsHtml = `<div class="post-grid">` + posts.map(post => {
       const img = post.image
         ? `<img class="post-card-img" src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}"${post.image_position ? ` style="object-position:${escapeHtml(post.image_position)};"` : ''}>`
-        : `<div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-size:32px;">${config.urlPath === 'preaching-teaching' ? '📖' : config.urlPath === 'prayer-testimonies' ? '🙏' : config.urlPath === 'lifestyle' ? '✨' : '📰'}</div>`;
+        : config.urlPath === 'daily-bread'
+          ? `<div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-size:32px;background:linear-gradient(135deg,#1a1200,#0A0E1A);">📖</div>`
+          : `<div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-size:32px;">${config.urlPath === 'preaching-teaching' ? '📖' : config.urlPath === 'prayer-testimonies' ? '🙏' : config.urlPath === 'lifestyle' ? '✨' : '📰'}</div>`;
+      const cardSummary = config.urlPath === 'daily-bread' && post.scripture_ref
+        ? `<span style="color:var(--gold-dark);font-weight:700;">${escapeHtml(post.scripture_ref)}</span> — ${escapeHtml(post.summary)}`
+        : escapeHtml(post.summary);
       return `
         <a href="${post.url}" class="post-card">
           ${img}
           <div class="post-card-body">
             <div class="post-card-date">${post.dateFormatted}</div>
             <div class="post-card-title">${escapeHtml(post.title)}</div>
-            <div class="post-card-summary">${escapeHtml(post.summary)}</div>
+            <div class="post-card-summary">${cardSummary}</div>
           </div>
         </a>
       `;

@@ -685,13 +685,14 @@ function closeShowModal(e) {
   <div class="verse-bg" id="verse-bg"></div>
   <div class="verse-overlay"></div>
   <div class="verse-inner">
-    <div class="verse-label">✝ Verse of the Day</div>
-    <div class="verse-day-pill" id="verse-day-pill">Today</div>
+    <div class="verse-label">✝ Sunny Daily Bread</div>
+    <div class="verse-day-pill" id="verse-day-pill">Today's Reading</div>
     <div class="verse-text" id="verse-text">"The steadfast love of the Lord never ceases."</div>
     <div class="verse-ref" id="verse-ref">— Lamentations 3:22</div>
     <div class="verse-share">
+      <a href="/daily-bread/" class="btn-fb" style="background:var(--gold-dark);">📖 Read Today's Reflection</a>
       <button onclick="copyVerse()" id="copy-verse-btn" class="btn-fb" style="border:none;cursor:pointer;">📋 Copy Verse</button>
-      <a href="#" id="wa-verse-share" target="_blank" class="btn-wa">💬 WhatsApp</a>
+      <a href="#" id="wa-verse-share" target="_blank" class="btn-wa">💬 Share with a Friend</a>
     </div>
     <div class="verse-dots" id="verse-dots"></div>
   </div>
@@ -925,11 +926,11 @@ for(var i = 0; i < displayCount; i++){
   dotsEl.appendChild(dot);
 }
 
-var waMsg = 'Verse of the Day: ' + verse.text + ' ' + verse.ref + ' — Sunny 88.7 FM';
+var waMsg = verse.text + ' ' + verse.ref + '\n\nSunny Daily Bread — your daily encouragement from God\'s Word.\nhttps://sunnygh.com/daily-bread/';
 document.getElementById('wa-verse-share').href = 'https://wa.me/?text=' + encodeURIComponent(waMsg);
 
 window.copyVerse = function(){
-  var text = verse.text + ' ' + verse.ref + ' — Sunny 88.7 FM';
+  var text = verse.text + ' ' + verse.ref + ' — Sunny Daily Bread, Sunny 88.7 FM';
   navigator.clipboard.writeText(text).then(function(){
     var btn = document.getElementById('copy-verse-btn');
     btn.textContent = '✓ Copied!';

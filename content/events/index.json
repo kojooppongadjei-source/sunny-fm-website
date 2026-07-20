@@ -23,7 +23,10 @@
     "tag": "Adventure",
     "past": false,
     "price": "2850",
-    "price_currency": "GHS"
+    "price_currency": "GHS",
+    "scripture_ref": null,
+    "scripture_text": null,
+    "prayer": null
   },
   {
     "slug": "couples-retreat-2026-—-a-time-to-reconnect-refresh-and-rediscover",
@@ -49,6 +52,9 @@
     "tag": "Summit",
     "past": false,
     "price": "9999",
-    "price_currency": "GHS"
+    "price_currency": "GHS",
+    "scripture_ref": null,
+    "scripture_text": null,
+    "prayer": null
   }
 ]
