@@ -102,6 +102,26 @@ collections:
       - { label: "Series", name: "series", widget: "string", required: false }
 
   # ───────────────────────────────
+  # SUNNY DAILY BREAD
+  # ───────────────────────────────
+  - name: "daily_bread"
+    label: "Sunny Daily Bread"
+    label_singular: "Daily Bread Entry"
+    folder: "content/daily-bread"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string", hint: "A short theme for the day, e.g. 'His Mercies Are New Every Morning'" }
+      - { label: "Publish Date", name: "date", widget: "datetime", hint: "The day this devotional goes live" }
+      - { label: "Scripture Reference", name: "scripture_ref", widget: "string", hint: "e.g. Lamentations 3:22-23" }
+      - { label: "Scripture Text", name: "scripture_text", widget: "text", hint: "The full verse(s), no quotation marks needed" }
+      - { label: "One-line Summary (shown on the archive card)", name: "summary", widget: "text", hint: "One sentence — the takeaway in plain words" }
+      - { label: "Reflection", name: "body", widget: "markdown", hint: "The main devotional writing — a few short paragraphs" }
+      - { label: "Prayer", name: "prayer", widget: "text", hint: "A short closing prayer, 2-4 sentences" }
+      - { label: "Image (optional)", name: "image", widget: "image", required: false }
+
+  # ───────────────────────────────
   # EVENTS
   # ───────────────────────────────
   - name: "events"
