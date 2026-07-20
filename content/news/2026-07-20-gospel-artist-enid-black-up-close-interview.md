@@ -2,7 +2,7 @@
 title: 'Enid Black Talks Music, Ministry, and Trusting God with Your Story on
   Up Close'
 date: 2026-07-20T08:00:00.000+00:00
-image: /assets/uploads/enid-black.png
+image: /assets/uploads/enid-black.jpg
 summary: Singer, songwriter and multi-instrumentalist Enid Black joined Sunny
   88.7 FM's Up Close on the AM Drive for a morning full of live acoustic
   performances and an honest conversation about faith, identity and finding
