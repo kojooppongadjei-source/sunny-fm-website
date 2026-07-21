@@ -7,7 +7,6 @@ prayer: Lord, I don't always know when the morning will come, but I trust
   that it will. Meet me in this night season with Your presence, and remind
   me that this pain is not the end of my story. Amen.
 summary: Your night season has an expiry date — joy is already on its way.
-image: /assets/uploads/daily-bread-morning.jpg
 ---
 This verse doesn't pretend the night doesn't happen. It doesn't rush you past your grief or tell you to skip straight to praise. It simply says: weeping may stay for the night.
 

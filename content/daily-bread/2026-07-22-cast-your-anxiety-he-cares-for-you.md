@@ -7,7 +7,6 @@ prayer: Father, I bring You everything I've been carrying alone — the worry,
   the what-ifs, the pressure. Thank You that I don't have to hold it by
   myself. Help me to actually let it go into Your hands today. Amen.
 summary: You weren't designed to carry your worry alone — He's already offered to hold it.
-image: /assets/uploads/daily-bread-anxiety.jpg
 ---
 Notice the word Peter uses — cast. Not "manage" your anxiety. Not "push through" it quietly. Cast it, the way you'd throw something away from yourself entirely, putting real distance between you and the weight.
 

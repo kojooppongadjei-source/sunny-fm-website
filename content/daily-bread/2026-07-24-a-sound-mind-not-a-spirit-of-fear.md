@@ -8,7 +8,6 @@ prayer: Father, when fear tries to settle into my thinking, remind me that
   it did not come from You. Fill me instead with Your power, Your love, and
   a mind that is clear and steady. Amen.
 summary: Fear feels natural, but Paul reminds Timothy it was never God's gift to give.
-image: /assets/uploads/daily-bread-courage.jpg
 ---
 Paul wrote these words to Timothy at a time when Timothy had every reason to be afraid — young, leading a church during real persecution, apparently struggling with timidity. Paul doesn't tell him fear isn't real. He tells him where it didn't come from.
 

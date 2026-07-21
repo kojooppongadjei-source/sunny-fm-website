@@ -8,7 +8,6 @@ prayer: Lord, thank You that no matter how yesterday ended, today is a fresh
   start in You. Help me to walk into this day trusting Your mercy and Your
   faithfulness. In Jesus' name, Amen.
 summary: No matter how yesterday ended, God's mercy meets you fresh this morning.
-image: /assets/uploads/daily-bread-sunrise.jpg
 ---
 There is something deeply comforting about the word "new." Yesterday's failures, yesterday's regrets, yesterday's disappointments — none of them get the final word over today.
 

@@ -8,7 +8,6 @@ prayer: Lord, You are enough for me today — not the outcome I'm hoping for,
   not the answer I'm waiting on, but You Yourself. Teach me to wait on You
   with a settled heart. Amen.
 summary: When everything else feels uncertain, He is the one thing you can build on.
-image: /assets/uploads/daily-bread-portion.jpg
 ---
 "The Lord is my portion." It's a strange phrase to modern ears, but in a culture where land and inheritance defined your security, saying God was your portion meant something specific — He is what I actually have. Not what I hope to get. What I already possess, right now, regardless of circumstance.
 

@@ -8,7 +8,6 @@ prayer: Lord, teach me to delight in You first — not as a means to get what
   I want, but because knowing You is the desire underneath every other
   desire. Shape my heart to want what You want. Amen.
 summary: This isn't a formula for getting what you want — it's a promise about who you become.
-image: /assets/uploads/daily-bread-delight.jpg
 ---
 It's easy to read this verse as a transaction — delight in God, and He'll hand over your wish list. But that reading misses something important about how delight actually works.
 

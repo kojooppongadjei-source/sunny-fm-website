@@ -7,7 +7,6 @@ prayer: Lord, quiet the noise in my mind today. Help me to stop striving
   long enough to remember that You are already God over this situation,
   whether I strive or not. Amen.
 summary: Sometimes the most faithful thing you can do is stop moving.
-image: /assets/uploads/daily-bread-stillness.jpg
 ---
 Psalm 46 was written in the middle of chaos — nations in uproar, mountains shaking, the earth giving way. It's not a psalm about a peaceful season. And it's exactly there, in the middle of the shaking, that God says: be still.
 
