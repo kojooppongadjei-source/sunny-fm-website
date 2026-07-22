@@ -43,6 +43,6 @@ He closed with an encouragement for listeners still finding their way. "I believ
 
 The segment closed out with *Privileged*, Enid's collaboration with Luigi McLean — a fitting send-off after a morning that, as host Chantelle put it, helped "shift the atmosphere" on The IM Drive.
 
-**Find Enid Blekk's music on Spotify, Apple Music, and all major digital platforms, and connect with him on Instagram @enid_black.**
+**Find Enid Blekk's music on Spotify, Apple Music, and all major digital platforms, and connect with him on Instagram @enid_blekk.**
 
 *Catch Up Close every weekday on The IM Drive, only on Sunny 88.7 FM — and watch it live on Sunny TV at sunnygh.com.*
