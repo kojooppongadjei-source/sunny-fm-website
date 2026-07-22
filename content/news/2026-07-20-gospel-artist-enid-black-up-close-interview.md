@@ -1,17 +1,17 @@
 ---
-title: 'Enid Black Talks Music, Ministry, and Trusting God with Your Story on
+title: 'Enid Blekk Talks Music, Ministry, and Trusting God with Your Story on
   Up Close'
 date: 2026-07-20T08:00:00.000+00:00
 image: /assets/uploads/enid-black-2.jpg
-summary: Singer, songwriter and multi-instrumentalist Enid Black joined Sunny
+summary: Singer, songwriter and multi-instrumentalist Enid Blekk joined Sunny
   88.7 FM's Up Close on The IM Drive (The Inspirational Morning Drive) for a
   morning full of live acoustic
   performances and an honest conversation about faith, identity and finding
   the courage to tell his story through music.
 ---
-Gospel artist, producer and instrumentalist Enid Black paid a visit to the Sunny 88.7 FM studio this week, joining the Up Close segment on The IM Drive (The Inspirational Morning Drive) for a morning that mixed live music with a candid conversation about faith, calling, and the long road to stepping into the spotlight.
+Gospel artist, producer and instrumentalist Enid Blekk paid a visit to the Sunny 88.7 FM studio this week, joining the Up Close segment on The IM Drive (The Inspirational Morning Drive) for a morning that mixed live music with a candid conversation about faith, calling, and the long road to stepping into the spotlight.
 
-### From "Black" the Nickname to Enid Black the Artist
+### From "Black" the Nickname to Enid Blekk the Artist
 
 Before the music, listeners got to know the man behind the name. Born Enid, he explained that "Black" started out as a school nickname — a nod to his complexion that stuck with him from his days as a guitarist, eventually following him into his music career. "I didn't have problems with it," he said. "I am dark."
 
@@ -23,11 +23,11 @@ Despite writing songs and playing guitar since his school days, Enid admitted he
 
 The turning point, he said, was a persistent nudge that his personal journey needed to be heard. "It's easier to remember a song, but it's not easy to remember a sermon," he told host Chantelle, citing research suggesting listeners retain very little of a sermon just a day later. That conviction became the driving force behind La Famille's project of turning sermon messages into songs, starting with their debut album, *Light and Love*.
 
-Since then, Enid has released the *Ahava* album (2023, nine tracks), two singles — *Out of Water* and *Onimajimu* — and most recently a four-song EP.
+Since then, Enid has released the *Ahava* album (2023, nine tracks), two singles — *Out of Water* and *Oni Majemu* — and most recently a four-song EP.
 
-### The Story Behind "Onimajimu"
+### The Story Behind "Oni Majemu"
 
-Asked which of his songs best captures his personal journey, Enid pointed to *Onimajimu*, a Yoruba title meaning "the one who keeps covenant." He described writing it out of a season where he felt he had only God to lean on. "I felt like I only had God, and I called on Him, and He came through in interesting ways. That experience just transformed me. So I had to put that in a song."
+Asked which of his songs best captures his personal journey, Enid pointed to *Oni Majemu*, a Yoruba title meaning "the one who keeps covenant." He described writing it out of a season where he felt he had only God to lean on. "I felt like I only had God, and I called on Him, and He came through in interesting ways. That experience just transformed me. So I had to put that in a song."
 
 ### Live in the Studio
 
@@ -43,6 +43,6 @@ He closed with an encouragement for listeners still finding their way. "I believ
 
 The segment closed out with *Privileged*, Enid's collaboration with Luigi McLean — a fitting send-off after a morning that, as host Chantelle put it, helped "shift the atmosphere" on The IM Drive.
 
-**Find Enid Black's music on Spotify, Apple Music, and all major digital platforms, and connect with him on Instagram @enid_black.**
+**Find Enid Blekk's music on Spotify, Apple Music, and all major digital platforms, and connect with him on Instagram @enid_black.**
 
 *Catch Up Close every weekday on The IM Drive, only on Sunny 88.7 FM — and watch it live on Sunny TV at sunnygh.com.*
