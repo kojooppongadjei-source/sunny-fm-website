@@ -610,7 +610,169 @@ function buildLegalPages() {
 }
 buildLegalPages();
 
-// ── SERVER-RENDER HOMEPAGE NEWS & EVENTS CARDS ──
+function buildSelfServiceAdvertPage() {
+  const body = `
+    <div class="eyebrow">Self Service</div>
+    <h1 class="post-title">Self Service Advert</h1>
+    <div class="post-body">
+      <p>Promote your business or event on sunnygh.com with a self service advert. Upload your ad, pay online, and we'll place it in our homepage advertising spot after confirming your payment.</p>
+
+      <h2>Benefits</h2>
+      <ul>
+        <li><strong>Affordable.</strong> Starting from GH₵20 per day.</li>
+        <li><strong>Flexible.</strong> Advertise from 1 to 30 days.</li>
+        <li><strong>Simple.</strong> A website is optional — your customers can reach you by phone, WhatsApp, or Instagram.</li>
+        <li><strong>Convenient.</strong> Pay online with any mobile money wallet or card via Paystack.</li>
+      </ul>
+
+      <p>Once you submit and pay, our team reviews and places your advert on the homepage within 24 hours. If you have questions, email <a href="mailto:info@sunnygh.com">info@sunnygh.com</a>.</p>
+    </div>
+
+    <form id="ssa-form" name="self-service-ad" method="POST" action="/self-service-advert/thank-you/" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" style="margin-top:32px;border:1px solid var(--border);border-radius:14px;padding:24px;">
+      <input type="hidden" name="form-name" value="self-service-ad">
+      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <input type="hidden" name="payment_reference" id="ssa-payment-reference">
+      <input type="hidden" name="amount_paid" id="ssa-amount-paid">
+
+      <div style="margin-bottom:16px;">
+        <label style="display:block;font-size:13px;font-weight:700;margin-bottom:6px;">Business / advert name</label>
+        <input type="text" name="business_name" required style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;">
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <label style="display:block;font-size:13px;font-weight:700;margin-bottom:6px;">Ad image</label>
+        <input type="file" name="image_upload" accept="image/*" required style="width:100%;font-size:14px;">
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <label style="display:block;font-size:13px;font-weight:700;margin-bottom:6px;">Short description (shown on your ad card)</label>
+        <textarea name="description" required maxlength="100" rows="2" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;"></textarea>
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <label style="display:block;font-size:13px;font-weight:700;margin-bottom:6px;">Link (website, WhatsApp link, or Instagram — required)</label>
+        <input type="text" name="link" required placeholder="https://wa.me/233..." style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;">
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+        <div>
+          <label style="display:block;font-size:13px;font-weight:700;margin-bottom:6px;">Your email (for receipt)</label>
+          <input type="email" name="email" required style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;">
+        </div>
+        <div>
+          <label style="display:block;font-size:13px;font-weight:700;margin-bottom:6px;">Your phone / WhatsApp</label>
+          <input type="text" name="advertiser_contact" required style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;">
+        </div>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label style="display:block;font-size:13px;font-weight:700;margin-bottom:6px;">Duration</label>
+        <select name="duration_days" id="ssa-duration" onchange="ssaCalcPrice()" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;">
+          <option value="1">1 day</option>
+          <option value="3">3 days</option>
+          <option value="7" selected>7 days</option>
+          <option value="14">14 days</option>
+          <option value="21">21 days</option>
+          <option value="30">30 days</option>
+        </select>
+      </div>
+
+      <div style="display:flex;align-items:baseline;justify-content:space-between;padding:14px 16px;background:var(--cream);border-radius:8px;margin-bottom:20px;">
+        <span style="font-size:13px;color:var(--muted);">Total (GH₵20/day)</span>
+        <span id="ssa-price" style="font-size:22px;font-weight:800;">GH₵140</span>
+      </div>
+
+      <button type="button" id="ssa-submit-btn" onclick="ssaSubmit(event)" style="width:100%;background:var(--gold-dark);color:#fff;border:none;padding:14px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;">Pay GH₵140 &amp; submit advert</button>
+      <p style="font-size:12px;color:var(--muted);margin-top:10px;text-align:center;">You'll be asked to pay securely via Paystack before your advert is submitted for review.</p>
+    </form>
+
+    <script>
+    function ssaCalcPrice(){
+      var days = parseInt(document.getElementById('ssa-duration').value, 10);
+      var price = days * 20;
+      document.getElementById('ssa-price').textContent = 'GH₵' + price;
+      document.getElementById('ssa-submit-btn').textContent = 'Pay GH₵' + price + ' & submit advert';
+      return price;
+    }
+    ssaCalcPrice();
+
+    function ssaSubmit(e){
+      e.preventDefault();
+      var form = document.getElementById('ssa-form');
+      var required = ['business_name','email','advertiser_contact','description','link','image_upload'];
+      for (var i = 0; i < required.length; i++){
+        var el = form.elements[required[i]];
+        if (!el || !el.value){
+          alert('Please fill in all fields before continuing.');
+          return;
+        }
+      }
+      var price = ssaCalcPrice();
+      var email = form.elements['email'].value;
+      var btn = document.getElementById('ssa-submit-btn');
+
+      function launch(){
+        var handler = PaystackPop.setup({
+          key: 'pk_live_de0fc9e3b71f670c1d8e9cd4e3be3f125c9ceb8a',
+          email: email,
+          amount: price * 100,
+          currency: 'GHS',
+          ref: 'SUNNYADS' + Math.floor(Math.random() * 1000000000),
+          callback: function(response){
+            form.elements['payment_reference'].value = response.reference;
+            form.elements['amount_paid'].value = price;
+            btn.textContent = 'Submitting…';
+            btn.disabled = true;
+            form.submit();
+          },
+          onClose: function(){}
+        });
+        handler.openIframe();
+      }
+
+      if (window.PaystackPop){
+        launch();
+      } else {
+        var s = document.createElement('script');
+        s.src = 'https://js.paystack.co/v1/inline.js';
+        s.onload = launch;
+        s.onerror = function(){ alert('Could not load the payment form. Please check your connection and try again.'); };
+        document.head.appendChild(s);
+      }
+    }
+    </script>
+  `;
+
+  const html = pageShell({
+    title: 'Self Service Advert',
+    description: "Promote your business on sunnygh.com — upload your own advert, pay online, and we'll place it on the homepage.",
+    bodyHtml: body,
+  });
+  fs.mkdirSync(path.join(ROOT, 'self-service-advert'), { recursive: true });
+  fs.writeFileSync(path.join(ROOT, 'self-service-advert', 'index.html'), html);
+
+  const thankYouBody = `
+    <div class="eyebrow">Self Service</div>
+    <h1 class="post-title">Thanks — we've got your advert</h1>
+    <div class="post-body">
+      <p>Your payment and advert details have been submitted. Our team will verify your payment and place your advert on the homepage within 24 hours.</p>
+      <p>If you have any questions, email <a href="mailto:info@sunnygh.com">info@sunnygh.com</a> or call 054 522 3324.</p>
+      <p><a href="/" class="back-link">&larr; Back to sunnygh.com</a></p>
+    </div>
+  `;
+  const thankYouHtml = pageShell({
+    title: 'Advert submitted',
+    description: 'Your self service advert submission was received.',
+    bodyHtml: thankYouBody,
+  });
+  fs.mkdirSync(path.join(ROOT, 'self-service-advert', 'thank-you'), { recursive: true });
+  fs.writeFileSync(path.join(ROOT, 'self-service-advert', 'thank-you', 'index.html'), thankYouHtml);
+
+  console.log('Built self-service-advert page and thank-you page');
+}
+buildSelfServiceAdvertPage();
+
+
 // The homepage previously showed "Loading news..." / "Loading events..." placeholders
 // that only filled in via client-side JS after fetching /content/*/index.json.
 // That meant crawlers (including AdSense's review) could see an near-empty homepage.
@@ -708,7 +870,105 @@ function linkHomepagePreachingCards(collectionsPosts) {
   console.log('Linked homepage Preaching & Teaching cards to their post pages.');
 }
 
-// Run build for each collection, collecting post URLs for the sitemap
+// ── SELF SERVICE ADS ──
+// Reads content/self-service-ads/*.md (added manually via CMS after Kojo verifies
+// payment on a submission) and returns the ones currently within their paid window.
+function getActiveSelfServiceAds() {
+  const dir = path.join(CONTENT_DIR, 'self-service-ads');
+  if (!fs.existsSync(dir)) return [];
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const ads = [];
+  for (const file of fs.readdirSync(dir)) {
+    if (!file.endsWith('.md')) continue;
+    const raw = fs.readFileSync(path.join(dir, file), 'utf8');
+    const { data } = matter(raw);
+    if (!data.start_date || !data.business_name) continue;
+
+    const start = new Date(data.start_date);
+    start.setHours(0, 0, 0, 0);
+    const durationDays = Number(data.duration_days) || 7;
+    const end = new Date(start);
+    end.setDate(end.getDate() + durationDays);
+
+    if (today >= start && today < end) {
+      ads.push({
+        business_name: data.business_name,
+        image: data.image || null,
+        description: data.description || '',
+        link: data.link || '#',
+      });
+    }
+  }
+  return ads;
+}
+
+function renderSelfServiceAdCard(ad) {
+  const img = ad.image
+    ? `<img src="${escapeHtml(ad.image)}" alt="${escapeHtml(ad.business_name)}" style="width:100%;height:120px;object-fit:cover;display:block;">`
+    : `<div style="width:100%;height:120px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:28px;">📢</div>`;
+  return `
+    <a href="${escapeHtml(ad.link)}" target="_blank" rel="noopener sponsored" style="display:block;text-decoration:none;color:inherit;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:var(--white);">
+      ${img}
+      <div style="background:var(--navy,#16222E);color:#fff;padding:10px 12px;">
+        <div style="font-size:12px;font-weight:700;margin-bottom:2px;">${escapeHtml(ad.business_name)}</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.75);">${escapeHtml(ad.description)}</div>
+      </div>
+    </a>
+  `;
+}
+
+function injectSelfServiceAdsBox() {
+  const indexPath = path.join(ROOT, 'index.html');
+  let html = fs.readFileSync(indexPath, 'utf8');
+  const ads = getActiveSelfServiceAds();
+
+  let boxHtml;
+  if (ads.length === 0) {
+    boxHtml = `
+      <div class="section" id="self-service-ads-box">
+        <div class="section-inner" style="max-width:480px;">
+          <div style="border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center;">
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:10px;">Self Service Adverts</div>
+            <div style="font-size:14px;color:var(--muted);margin-bottom:14px;">Promote your business here from as little as GH₵20/day.</div>
+            <a href="/self-service-advert/" style="display:inline-block;background:var(--gold-dark,#C4652C);color:#fff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;">Upload Your Advert</a>
+          </div>
+        </div>
+      </div>
+    `;
+  } else {
+    const cardsHtml = ads.slice(0, 6).map(renderSelfServiceAdCard).join('');
+    boxHtml = `
+      <div class="section" id="self-service-ads-box">
+        <div class="section-inner">
+          <div class="section-hdr">
+            <div class="section-title">Self Service Adverts</div>
+            <a href="/self-service-advert/" class="section-see-all">Advertise here →</a>
+          </div>
+          <div class="scroll-row">${cardsHtml}</div>
+        </div>
+      </div>
+    `;
+  }
+
+  if (html.includes('id="self-service-ads-box"')) {
+    html = html.replace(
+      /<div class="section" id="self-service-ads-box">[\s\S]*?<\/div>\s*<\/div>\s*<\/div>\s*\n\s*(?=<!--)/,
+      boxHtml.trim() + '\n\n'
+    );
+  } else {
+    html = html.replace(
+      /(<!-- ADVERTISE PROMO BANNER -->)/,
+      boxHtml.trim() + '\n\n$1'
+    );
+  }
+
+  fs.writeFileSync(indexPath, html);
+  console.log(`Injected Self Service Ads box (${ads.length} active ad(s)).`);
+}
+
+
 const STATIC_PAGES = [
   { loc: 'https://sunnygh.com/', changefreq: 'daily', priority: '1.0' },
   { loc: 'https://sunnygh.com/listen-live/', changefreq: 'daily', priority: '0.9' },
@@ -720,6 +980,7 @@ const STATIC_PAGES = [
   { loc: 'https://sunnygh.com/music-videos/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/prayer-testimonies/', changefreq: 'weekly', priority: '0.6' },
   { loc: 'https://sunnygh.com/advertise/', changefreq: 'monthly', priority: '0.5' },
+  { loc: 'https://sunnygh.com/self-service-advert/', changefreq: 'monthly', priority: '0.5' },
   { loc: 'https://sunnygh.com/privacy-policy/', changefreq: 'yearly', priority: '0.3' },
   { loc: 'https://sunnygh.com/terms/', changefreq: 'yearly', priority: '0.3' },
 ];
@@ -741,6 +1002,7 @@ for (const [folder, config] of Object.entries(COLLECTIONS)) {
 
 injectHomepageCards(collectionsPosts);
 linkHomepagePreachingCards(collectionsPosts);
+injectSelfServiceAdsBox();
 
 // Generate sitemap.xml: static pages + every individual post
 const sitemapEntries = [...STATIC_PAGES, ...allPostUrls];

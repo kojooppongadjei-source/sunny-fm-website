@@ -62,6 +62,12 @@
   </url>
 
   <url>
+    <loc>https://sunnygh.com/self-service-advert/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://sunnygh.com/privacy-policy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

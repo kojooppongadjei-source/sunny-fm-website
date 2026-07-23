@@ -145,3 +145,21 @@ collections:
       - { label: "Description", name: "summary", widget: "text" }
       - { label: "Past Event?", name: "past", widget: "boolean", default: false }
       - { label: "Featured Image (Optional)", name: "image", widget: "image", required: false }
+
+  - name: "self_service_ads"
+    label: "Self Service Ads"
+    label_singular: "Ad"
+    folder: "content/self-service-ads"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{business_name}} — starts {{start_date}}, {{duration_days}} day(s)"
+    fields:
+      - { label: "Business / Advert Name", name: "business_name", widget: "string" }
+      - { label: "Ad Image", name: "image", widget: "image" }
+      - { label: "Short Description (shown on the ad card)", name: "description", widget: "string" }
+      - { label: "Link (website, WhatsApp wa.me link, or Instagram URL)", name: "link", widget: "string" }
+      - { label: "Start Date", name: "start_date", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Duration (days paid for)", name: "duration_days", widget: "number", value_type: "int", min: 1, max: 30, default: 7 }
+      - { label: "Advertiser Contact (for your reference only, not shown publicly)", name: "advertiser_contact", widget: "string", required: false }
+      - { label: "Payment Reference (from Paystack, for your reference)", name: "payment_reference", widget: "string", required: false }
+      - { label: "Amount Paid (GHS, for your reference)", name: "amount_paid", widget: "string", required: false }
