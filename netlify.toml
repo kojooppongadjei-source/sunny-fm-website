@@ -4,6 +4,7 @@
 [build]
   publish = "."
   command = "npm install && node build.js"
+  functions = "netlify/functions"
 
 # Ensure trailing-slash folders resolve to their index.html
 [[redirects]]
