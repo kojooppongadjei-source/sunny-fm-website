@@ -1,5 +1,5 @@
 ---
-title: 'Poor Sleep Could Be Aging You Faster, Wellness Expert Warns — The Insomnia
+title: 'Poor Sleep Could Be Aging You Faster, Wellness Expert Warns: The Insomnia
   Symptoms Most Ghanaians Ignore'
 date: 2026-07-22T09:00:00.000+00:00
 image: /assets/uploads/dr-naa-asheley-ashietey-sleep-interview.jpg
@@ -9,15 +9,15 @@ summary: Dr. Naa Asheley Ashietey of Nova Wellness Center explains the warning s
 tags:
   - Health
 ---
-Many people think sleeping less is simply part of a busy lifestyle. But according to **Dr. Naa Asheley Ashietey**, CEO of **Nova Wellness Center** and **Nova Viva**, poor sleep can have serious consequences for your health — affecting your brain, your immune system, your energy levels, and even how quickly your body ages.
+Many people think sleeping less is simply part of a busy lifestyle. But according to **Dr. Naa Asheley Ashietey**, CEO of **Nova Wellness Center** and **Nova Viva**, poor sleep can have serious consequences for your health, affecting your brain, your immune system, your energy levels, and even how quickly your body ages.
 
-Speaking on the **Inspirational Morning Drive (IMDrive)** on **Sunny 88.7 FM**, Dr. Ashietey broke down the causes of insomnia, the warning signs most people overlook, and the simple lifestyle changes that can help Ghanaians sleep better — starting tonight.
+Speaking on the **Inspirational Morning Drive (IMDrive)** on **Sunny 88.7 FM**, Dr. Ashietey broke down the causes of insomnia, the warning signs most people overlook, and the simple lifestyle changes that can help Ghanaians sleep better, starting tonight.
 
 > "When people sleep well, their bodies heal better."
 
 ### What Is Insomnia, Exactly?
 
-Dr. Ashietey described insomnia as a sleep disorder that shows up in two main ways: struggling to fall asleep once you're in bed, or falling asleep only to wake up during the night and lie there unable to drift off again. Both are forms of insomnia — and both are more common in Ghanaian households than most people realise.
+Dr. Ashietey described insomnia as a sleep disorder that shows up in two main ways: struggling to fall asleep once you're in bed, or falling asleep only to wake up during the night and lie there unable to drift off again. Both are forms of insomnia, and both are more common in Ghanaian households than most people realise.
 
 ### Signs You May Have Insomnia Without Realizing It
 
@@ -32,11 +32,11 @@ Many people are living with insomnia and simply calling it "normal." Dr. Ashiete
 * Brain fog, poor concentration and low motivation
 * Needing coffee just to get through the day
 
-Occasional sleepless nights during a stressful period are normal, she noted — but sleep problems that persist for weeks or months should never be ignored.
+Occasional sleepless nights during a stressful period are normal, she noted, but sleep problems that persist for weeks or months should never be ignored.
 
 ### What Causes Insomnia?
 
-Stress is one of the biggest drivers of insomnia in Ghana today — financial pressure, work demands, family responsibilities, relationship challenges and health worries can all keep the mind too active to rest. Other common causes include:
+Stress is one of the biggest drivers of insomnia in Ghana today: financial pressure, work demands, family responsibilities, relationship challenges and health worries can all keep the mind too active to rest. Other common causes include:
 
 * Anxiety and depression
 * Shift work
@@ -46,26 +46,26 @@ Stress is one of the biggest drivers of insomnia in Ghana today — financial pr
 * Heavy meals late at night
 * Excessive phone, tablet and television use before bed
 
-Dr. Ashietey explained that light from electronic screens keeps the brain artificially stimulated, making it much harder for the body to wind down and prepare for sleep — one of the most common, and most fixable, culprits behind poor sleep today.
+Dr. Ashietey explained that light from electronic screens keeps the brain artificially stimulated, making it much harder for the body to wind down and prepare for sleep, one of the most common and most fixable culprits behind poor sleep today.
 
 ### Why Sleep Matters More Than You Think
 
-Quality sleep allows the brain to clear out toxins that build up over the course of the day. Without enough deep sleep, Dr. Ashietey warned, these waste products accumulate over time — raising the long-term risk of conditions such as dementia and Alzheimer's disease.
+Quality sleep allows the brain to clear out toxins that build up over the course of the day. Without enough deep sleep, Dr. Ashietey warned, these waste products accumulate over time, raising the long-term risk of conditions such as dementia and Alzheimer's disease.
 
 Poor sleep also weakens the immune system, driving chronic inflammation that has been linked to a wide range of long-term health conditions.
 
 ### Daytime Sleepiness Can Be Dangerous
 
-Dozing off during meetings, conversations, or — most dangerously — while driving, is a warning sign that your body isn't getting the quality sleep it needs.
+Dozing off during meetings, conversations, or, most dangerously, while driving, is a warning sign that your body isn't getting the quality sleep it needs.
 
-During the programme, the host shared a personal account of briefly falling asleep behind the wheel after several nights of inadequate rest, resulting in a road accident. No one was seriously injured, but the experience underlined just how dangerous sleep deprivation can be — not only to your health, but to your safety and the safety of others on the road.
+During the programme, the host shared a personal account of briefly falling asleep behind the wheel after several nights of inadequate rest, resulting in a road accident. No one was seriously injured, but the experience underlined just how dangerous sleep deprivation can be, not only to your health, but to your safety and the safety of others on the road.
 
 ### Simple, Practical Ways to Sleep Better Tonight
 
 Dr. Ashietey shared habits that can improve sleep naturally, without medication:
 
 * Get at least 15 minutes of morning sunlight
-* Put away phones, tablets and TVs 30–60 minutes before bed
+* Put away phones, tablets and TVs 30 to 60 minutes before bed
 * Practice deep breathing to relax the body before sleep
 * Keep your bedroom cool and comfortable
 * Exercise regularly during the day
@@ -77,7 +77,7 @@ Dr. Ashietey shared habits that can improve sleep naturally, without medication:
 
 One of the most consistent patterns Dr. Ashietey has observed among clients whose biological age is *lower* than their actual age: they all sleep well, consistently.
 
-"When people sleep well, their bodies heal better," she explained — good sleep supports the body's natural repair systems and directly promotes healthier, slower aging.
+"When people sleep well, their bodies heal better," she explained, and good sleep supports the body's natural repair systems and directly promotes healthier, slower aging.
 
 ### When Should You Seek Help?
 
