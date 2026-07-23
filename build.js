@@ -651,6 +651,54 @@ function injectHomepageCards(collectionsPosts) {
   console.log(`Injected ${newsPosts.length} news card(s) and ${upcomingEvents.length} event card(s) into homepage.`);
 }
 
+// ── LINK HOMEPAGE PREACHING & TEACHING CARDS ──
+// These cards are hand-maintained on the homepage (photo + name + schedule) and were
+// plain <div>s with no link at all — clicking them did nothing. This wires each card
+// to its matching post in the Preaching & Teaching collection by preacher name, so
+// they actually navigate somewhere; falls back to the section listing page if no
+// confident match is found.
+function normalizeNameWords(name) {
+  const titles = new Set(['bishop', 'rev', 'reverend', 'pastor', 'dr', 'prophet', 'apostle', 'rev.', 'dr.', 'na', 'international', 'n.a.', 'n.a']);
+  return (name || '')
+    .toLowerCase()
+    .replace(/[.,]/g, ' ')
+    .split(/\s+/)
+    .filter(w => w.length > 2 && !titles.has(w));
+}
+
+function findPreachingUrl(collectionsPosts, cardName) {
+  const posts = collectionsPosts['preaching-teaching'] || [];
+  const cardWords = normalizeNameWords(cardName);
+  let best = null;
+  let bestScore = 0;
+  for (const post of posts) {
+    if (!post.preacher) continue;
+    const postWords = normalizeNameWords(post.preacher);
+    const score = cardWords.filter(w => postWords.includes(w)).length;
+    if (score > bestScore) {
+      bestScore = score;
+      best = post;
+    }
+  }
+  return best && bestScore > 0 ? best.url : '/preaching-teaching/';
+}
+
+function linkHomepagePreachingCards(collectionsPosts) {
+  const indexPath = path.join(ROOT, 'index.html');
+  let html = fs.readFileSync(indexPath, 'utf8');
+
+  html = html.replace(
+    /<div class="preach-card">([\s\S]*?)<div class="preach-card-name">([^<]+)<\/div>([\s\S]*?)<\/div>\s*<\/div>/g,
+    (match, before, name, after) => {
+      const url = findPreachingUrl(collectionsPosts, name);
+      return `<a href="${url}" class="preach-card" style="text-decoration:none;color:inherit;display:block;">${before}<div class="preach-card-name">${name}</div>${after}</div></a>`;
+    }
+  );
+
+  fs.writeFileSync(indexPath, html);
+  console.log('Linked homepage Preaching & Teaching cards to their post pages.');
+}
+
 // Run build for each collection, collecting post URLs for the sitemap
 const STATIC_PAGES = [
   { loc: 'https://sunnygh.com/', changefreq: 'daily', priority: '1.0' },
@@ -683,6 +731,7 @@ for (const [folder, config] of Object.entries(COLLECTIONS)) {
 }
 
 injectHomepageCards(collectionsPosts);
+linkHomepagePreachingCards(collectionsPosts);
 
 // Generate sitemap.xml: static pages + every individual post
 const sitemapEntries = [...STATIC_PAGES, ...allPostUrls];
