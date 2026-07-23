@@ -483,6 +483,159 @@ function getCollectionTagline(urlPath) {
   }
 }
 
+// ── LEGAL PAGES (Privacy Policy / Terms) ──
+// Required for Google AdSense approval and general compliance.
+function buildLegalPages() {
+  const lastUpdated = formatDate(new Date().toISOString());
+
+  const privacyBody = `
+    <div class="eyebrow">Legal</div>
+    <h1 class="post-title">Privacy Policy</h1>
+    <div class="post-meta">Last updated: ${lastUpdated}</div>
+    <div class="post-body">
+      <p>This Privacy Policy explains how Sunny 88.7 FM ("Sunny FM", "we", "us", "our"), operated by Apt Communications / Sky Broadcasting Ltd., collects, uses, and protects information when you visit sunnygh.com (the "Site") or use our streaming, TV, and related services.</p>
+
+      <h2>Information We Collect</h2>
+      <p>We collect information in the following ways:</p>
+      <ul>
+        <li><strong>Automatically collected data:</strong> When you visit the Site, we use Google Analytics to collect standard usage data such as pages visited, time on site, device and browser type, and approximate location, to help us understand how the Site is used.</li>
+        <li><strong>Cookies and similar technologies:</strong> We and our partners (including Google) use cookies and similar technologies to operate the Site, remember preferences, and serve relevant advertising.</li>
+        <li><strong>Information you provide directly:</strong> If you submit a prayer request or testimony, register for an event, contact us, or make a donation, we collect the information you choose to provide, such as your name, phone number, email address, and message content.</li>
+        <li><strong>Payment information:</strong> Donations and certain payments are processed by Paystack. We do not store your card details — these are handled directly by Paystack under its own privacy and security policies.</li>
+      </ul>
+
+      <h2>Advertising and Google AdSense</h2>
+      <p>Sunny FM uses Google AdSense to display advertising on the Site. Google, as a third-party vendor, uses cookies to serve ads based on your prior visits to this and other websites. Google's use of advertising cookies enables it and its partners to serve ads based on your visit to our Site and/or other sites on the internet.</p>
+      <p>You may opt out of personalized advertising by visiting <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ads Settings</a>. Visitors from the EEA, UK, and Switzerland are shown a consent management prompt allowing them to accept or decline non-essential cookies and personalized advertising before any such data is collected.</p>
+
+      <h2>How We Use Information</h2>
+      <ul>
+        <li>To operate, maintain, and improve the Site and our broadcasts</li>
+        <li>To respond to prayer requests, testimonies, event registrations, and enquiries</li>
+        <li>To process donations and advertising bookings</li>
+        <li>To understand Site usage through aggregated analytics</li>
+        <li>To display relevant advertising through Google AdSense</li>
+      </ul>
+
+      <h2>Sharing of Information</h2>
+      <p>We do not sell your personal information. We may share information with service providers who help us operate the Site (such as Google, for analytics and advertising, and Paystack, for payment processing), or when required by law.</p>
+
+      <h2>Your Choices</h2>
+      <p>You can control cookies through your browser settings, and manage ad personalization through <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google Ads Settings</a>. If you are in the EEA, UK, or Switzerland, you can update your consent choices at any time via the consent prompt on the Site.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>The Site is intended for a general audience and is not directed at children under 13. We do not knowingly collect personal information from children under 13.</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last updated" date.</p>
+
+      <h2>Contact Us</h2>
+      <p>If you have questions about this Privacy Policy, please contact us at <a href="mailto:info@sunnygh.com">info@sunnygh.com</a> or call 054 522 3324. Our address is 45 Hilla Limann Avenue, North Ridge, Accra, Ghana.</p>
+    </div>
+  `;
+
+  const termsBody = `
+    <div class="eyebrow">Legal</div>
+    <h1 class="post-title">Terms of Use</h1>
+    <div class="post-meta">Last updated: ${lastUpdated}</div>
+    <div class="post-body">
+      <p>Welcome to sunnygh.com, operated by Sunny 88.7 FM (Apt Communications / Sky Broadcasting Ltd.). By accessing or using this Site, you agree to these Terms of Use.</p>
+
+      <h2>Use of the Site</h2>
+      <p>You may use the Site for lawful, personal, non-commercial purposes, including listening to our livestream, watching Sunny TV, reading content, and engaging with our community features (prayer requests, testimonies, event registration).</p>
+
+      <h2>Content</h2>
+      <p>All content on this Site — including articles, images, logos, audio, and video — is owned by or licensed to Sunny 88.7 FM and is protected by copyright. You may not reproduce, redistribute, or use our content for commercial purposes without written permission.</p>
+
+      <h2>User Submissions</h2>
+      <p>If you submit a testimony, prayer request, or other content to us, you grant Sunny FM permission to use, edit, and share it (on air and/or online) according to the sharing preference you select at submission.</p>
+
+      <h2>Donations and Payments</h2>
+      <p>Donations and advertising payments made through the Site are processed securely via Paystack. All donations are voluntary and non-refundable unless otherwise agreed in writing.</p>
+
+      <h2>Third-Party Links and Advertising</h2>
+      <p>The Site may display advertising, including through Google AdSense, and may link to third-party websites. We are not responsible for the content or practices of third-party sites.</p>
+
+      <h2>Disclaimer</h2>
+      <p>The Site and its content are provided "as is" without warranties of any kind. We do our best to keep information accurate and up to date but cannot guarantee it is error-free.</p>
+
+      <h2>Changes</h2>
+      <p>We may update these Terms from time to time. Continued use of the Site after changes constitutes acceptance of the updated Terms.</p>
+
+      <h2>Contact Us</h2>
+      <p>Questions about these Terms can be sent to <a href="mailto:info@sunnygh.com">info@sunnygh.com</a> or 054 522 3324.</p>
+    </div>
+  `;
+
+  const pages = [
+    { slug: 'privacy-policy', title: 'Privacy Policy', description: "Sunny 88.7 FM's Privacy Policy — how we collect, use, and protect your information.", body: privacyBody },
+    { slug: 'terms', title: 'Terms of Use', description: "Sunny 88.7 FM's Terms of Use for sunnygh.com.", body: termsBody },
+  ];
+
+  for (const page of pages) {
+    const html = pageShell({
+      title: page.title,
+      description: page.description,
+      bodyHtml: page.body,
+    });
+    const outDir = path.join(ROOT, page.slug);
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.writeFileSync(path.join(outDir, 'index.html'), html);
+  }
+  console.log('Built legal pages: privacy-policy, terms');
+}
+buildLegalPages();
+
+// ── SERVER-RENDER HOMEPAGE NEWS & EVENTS CARDS ──
+// The homepage previously showed "Loading news..." / "Loading events..." placeholders
+// that only filled in via client-side JS after fetching /content/*/index.json.
+// That meant crawlers (including AdSense's review) could see an near-empty homepage.
+// This renders the first batch of cards directly into index.html at build time;
+// the existing client-side JS still runs afterward to keep them fresh.
+function renderNewsCardHtml(p) {
+  const img = p.image
+    ? `<img class="news-card-img" src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title || '')}">`
+    : `<div class="news-card-img-placeholder">📰</div>`;
+  const tags = [].concat(p.tags || [], p.category ? [p.category] : []);
+  const cat = tags.length ? tags[0] : 'News';
+  return `<a href="${p.url}" class="news-card">${img}<div class="news-card-body"><div class="news-card-cat">${escapeHtml(cat)}</div><div class="news-card-title">${escapeHtml(p.title || '')}</div><div class="news-card-date">${p.dateFormatted || ''}</div></div></a>`;
+}
+
+function renderEventCardHtml(p) {
+  const img = p.image
+    ? `<img class="event-card-img" src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title || '')}">`
+    : `<div class="event-card-img-placeholder">📅</div>`;
+  const date = p.event_date_formatted || '';
+  const loc = p.location ? '📍 ' + escapeHtml(p.location) : '';
+  return `<a href="${p.url}" class="event-card">${img}<div class="event-card-body"><div class="event-card-title">${escapeHtml(p.title || '')}</div><div class="event-card-meta">${[date, loc].filter(Boolean).join(' · ')}</div><div class="event-card-btn">Register Now →</div></div></a>`;
+}
+
+function injectHomepageCards(collectionsPosts) {
+  const indexPath = path.join(ROOT, 'index.html');
+  let html = fs.readFileSync(indexPath, 'utf8');
+
+  const newsPosts = (collectionsPosts['news'] || []).slice(0, 6);
+  const newsHtml = newsPosts.length
+    ? newsPosts.map(renderNewsCardHtml).join('')
+    : `<div style="color:var(--muted);font-size:13px;padding:20px 0;">No news yet.</div>`;
+  html = html.replace(
+    /(<div class="scroll-row" id="news-row">)[\s\S]*?(<\/div>\s*<\/div>\s*<\/div>\s*\n\s*<!-- PREACHING)/,
+    (match, open, close) => `${open}${newsHtml}${close}`
+  );
+
+  const upcomingEvents = (collectionsPosts['events'] || []).filter(p => !p.past).slice(0, 6);
+  const eventsHtml = upcomingEvents.length
+    ? upcomingEvents.map(renderEventCardHtml).join('')
+    : `<div style="color:var(--muted);font-size:13px;padding:20px 0;">No upcoming events right now.</div>`;
+  html = html.replace(
+    /(<div class="scroll-row" id="events-row">)[\s\S]*?(<\/div>\s*<\/div>\s*<\/div>\s*\n\s*<!-- ADVERTISE PROMO BANNER)/,
+    (match, open, close) => `${open}${eventsHtml}${close}`
+  );
+
+  fs.writeFileSync(indexPath, html);
+  console.log(`Injected ${newsPosts.length} news card(s) and ${upcomingEvents.length} event card(s) into homepage.`);
+}
+
 // Run build for each collection, collecting post URLs for the sitemap
 const STATIC_PAGES = [
   { loc: 'https://sunnygh.com/', changefreq: 'daily', priority: '1.0' },
@@ -495,11 +648,15 @@ const STATIC_PAGES = [
   { loc: 'https://sunnygh.com/music-videos/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/prayer-testimonies/', changefreq: 'weekly', priority: '0.6' },
   { loc: 'https://sunnygh.com/advertise/', changefreq: 'monthly', priority: '0.5' },
+  { loc: 'https://sunnygh.com/privacy-policy/', changefreq: 'yearly', priority: '0.3' },
+  { loc: 'https://sunnygh.com/terms/', changefreq: 'yearly', priority: '0.3' },
 ];
 
 const allPostUrls = [];
+const collectionsPosts = {};
 for (const [folder, config] of Object.entries(COLLECTIONS)) {
   const posts = buildCollection(folder, config) || [];
+  collectionsPosts[folder] = posts;
   for (const post of posts) {
     allPostUrls.push({
       loc: `https://sunnygh.com${post.url}`,
@@ -509,6 +666,8 @@ for (const [folder, config] of Object.entries(COLLECTIONS)) {
     });
   }
 }
+
+injectHomepageCards(collectionsPosts);
 
 // Generate sitemap.xml: static pages + every individual post
 const sitemapEntries = [...STATIC_PAGES, ...allPostUrls];
