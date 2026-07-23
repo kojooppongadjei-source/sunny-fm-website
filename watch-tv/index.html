@@ -108,7 +108,8 @@ nav{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid va
 .sponsor-strip{background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:16px 24px;margin-bottom:20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
 .sponsor-label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700;flex-shrink:0;}
 .sponsor-divider{width:1px;height:36px;background:var(--border);flex-shrink:0;}
-.sponsor-slot{display:flex;align-items:center;gap:12px;flex:1;min-width:200px;}
+.sponsor-slot{display:flex;align-items:center;gap:12px;flex:1;min-width:200px;transition:opacity .4s ease;}
+.sponsor-slot.fading{opacity:0;}
 .sponsor-info{}
 .sponsor-name{font-size:14px;font-weight:700;color:var(--ink);}
 .sponsor-tagline{font-size:12px;color:var(--muted);}
@@ -229,24 +230,16 @@ function toggleTvMobileMenu(){
   <div class="sponsor-strip">
     <div class="sponsor-label">Sponsored by</div>
     <div class="sponsor-divider"></div>
-    <div class="sponsor-slot">
-      <img src="/watch-tv/eye-express.jpg" alt="Eye Express" style="height:48px;width:auto;border-radius:8px;object-fit:contain;">
+    <div class="sponsor-slot" id="sponsor-slot">
+      <img id="sponsor-img" src="/watch-tv/eye-express.jpg" alt="Eye Express" style="height:48px;width:auto;border-radius:8px;object-fit:contain;">
       <div class="sponsor-info">
-        <div class="sponsor-name">Eye Express</div>
-        <div class="sponsor-tagline">Your Vision, Our Passion — Quality eyecare in Ghana</div>
+        <div class="sponsor-name" id="sponsor-name">Eye Express</div>
+        <div class="sponsor-tagline" id="sponsor-tagline">Your Vision, Our Passion — Quality eyecare in Ghana</div>
       </div>
-      <a href="https://eyeexpressgh.com/" class="sponsor-cta" target="_blank" rel="noopener">Learn More</a>
-    </div>
-    <div class="sponsor-divider"></div>
-    <div class="sponsor-slot">
-      <img src="/watch-tv/chango-logo.png" alt="Chango" style="height:36px;width:auto;object-fit:contain;">
-      <div class="sponsor-info">
-        <div class="sponsor-name">Chango</div>
-        <div class="sponsor-tagline">Group contributions &amp; crowdfunding, made simple</div>
-      </div>
-      <a href="https://changoapp.com/" class="sponsor-cta" target="_blank" rel="noopener">Learn More</a>
+      <a href="https://eyeexpressgh.com/" class="sponsor-cta" id="sponsor-cta" target="_blank" rel="noopener">Learn More</a>
     </div>
     <a href="/advertise/" class="advertise-link">Advertise here &rarr;</a>
+
   </div>
 
   <div class="player-wrap" id="player-wrap">
@@ -438,6 +431,36 @@ function snOpenDonate(){
     s.onerror = function(){ alert('Could not load the payment form. Please check your connection and try again.'); };
     document.head.appendChild(s);
   }
+}
+</script>
+
+<script>
+var SPONSORS = [
+  {name:'Eye Express', img:'/watch-tv/eye-express.jpg', imgHeight:'48px', rounded:true, tagline:'Your Vision, Our Passion — Quality eyecare in Ghana', link:'https://eyeexpressgh.com/'},
+  {name:'Chango', img:'/watch-tv/chango-logo.png', imgHeight:'36px', rounded:false, tagline:'Group contributions & crowdfunding, made simple', link:'https://changoapp.com/'},
+];
+var sponsorIdx = 0;
+function rotateSponsor(){
+  var slot = document.getElementById('sponsor-slot');
+  if(!slot) return;
+  slot.classList.add('fading');
+  setTimeout(function(){
+    sponsorIdx = (sponsorIdx + 1) % SPONSORS.length;
+    var s = SPONSORS[sponsorIdx];
+    var img = document.getElementById('sponsor-img');
+    img.src = s.img;
+    img.alt = s.name;
+    img.style.height = s.imgHeight;
+    img.style.borderRadius = s.rounded ? '8px' : '0';
+    document.getElementById('sponsor-name').textContent = s.name;
+    document.getElementById('sponsor-tagline').textContent = s.tagline;
+    var cta = document.getElementById('sponsor-cta');
+    cta.href = s.link;
+    slot.classList.remove('fading');
+  }, 400);
+}
+if (SPONSORS.length > 1) {
+  setInterval(rotateSponsor, 8000);
 }
 </script>
 
