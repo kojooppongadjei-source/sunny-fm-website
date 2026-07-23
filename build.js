@@ -216,6 +216,7 @@ function buildCollection(collectionFolder, config) {
       entry_type: data.entry_type || null,
       submitted_by: data.submitted_by || null,
       preacher: data.preacher || null,
+      preacher_bio: data.preacher_bio || null,
       series: data.series || null,
       youtube_id: data.youtube_id || null,
       audio_url: data.audio_url || null,
@@ -333,6 +334,13 @@ function buildCollection(collectionFolder, config) {
       <a href="https://wa.me/233545223324?text=${encodeURIComponent('Hi, I would like to register for ' + post.title)}" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;font-size:15px;font-weight:700;text-decoration:none;margin-bottom:24px;">💬 Register via WhatsApp</a>
     ` : '';
 
+    const preacherBioHtml = post.preacher_bio ? `
+      <div style="background:var(--cream);border-radius:12px;padding:20px 24px;margin:24px 0;">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-dark);font-weight:700;margin-bottom:8px;">About ${escapeHtml(post.preacher || 'the Preacher')}</div>
+        <div style="font-size:14px;line-height:1.75;color:#444;">${escapeHtml(post.preacher_bio)}</div>
+      </div>
+    ` : '';
+
     const bodyHtml = `
       <a href="/${config.urlPath}/" class="back-link">&larr; Back to ${escapeHtml(config.label)}</a>
       <div class="eyebrow">${escapeHtml(config.label)}</div>
@@ -343,6 +351,7 @@ function buildCollection(collectionFolder, config) {
       ${dailyBreadHtml}
       ${eventInfoHtml}
       <div class="post-body">${effectiveBodyHtml}</div>
+      ${preacherBioHtml}
       ${dailyBreadPrayerHtml}
       ${dailyBreadShareHtml}
     `;

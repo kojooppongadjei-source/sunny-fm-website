@@ -7,5 +7,11 @@ audio_url: https://www.mixcloud.com/Sunnymedia887/nana-sei-opoku-sarkodie-potter
 summary: A powerful teaching from Prophet Nana Sei Opoku Sarkodie on the
   Potter's Hour — a time of divine shaping and transformation in God's hands.
 series: Family Foundations
+preacher_bio: >-
+  Prophet Nanasei Opoku-Sarkodie is founder and General Overseer of Potter's
+  City in Miotso-Prampram, Ghana, along with its World Prayer Centre and
+  Praying Family Chapel. His ministry centers on messages of faith, holiness
+  and revival, delivered through weekly prayer meetings and international
+  outreach.
 ---
 How did David get to know about the Mercies of God

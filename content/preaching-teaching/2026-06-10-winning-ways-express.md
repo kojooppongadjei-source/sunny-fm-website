@@ -9,5 +9,11 @@ summary: >+
   living a winning Christian life every day.
 
   Series: Winning Ways Express
+preacher_bio: >-
+  Pastor Andy Yawson oversees KICC (Kingsway International Christian Centre)
+  churches in Ghana and is resident pastor of KICC Dominion Centre in Accra.
+  He has served under KICC founder Pastor Matthew Ashimolowo since 1987, and
+  co-hosts the Winning Ways Xpress broadcast along with the annual KICC
+  Singles and Marriage Summits.
 ---
 Become a Man and Woman of Prayer
