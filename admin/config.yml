@@ -94,6 +94,7 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Preacher / Teacher Name", name: "preacher", widget: "string" }
+      - { label: "Preacher Bio (2-3 sentences — who they are, their church, credentials)", name: "preacher_bio", widget: "text", required: false, hint: "Shown in an 'About [Preacher]' box on the page. Keep it factual and short — church founded, role, notable credentials." }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
       - { label: "YouTube Video ID (optional)", name: "youtube_id", widget: "string", required: false, hint: "e.g. ynbJnyGie2c" }
       - { label: "Audio File URL (optional)", name: "audio_url", widget: "string", required: false }
