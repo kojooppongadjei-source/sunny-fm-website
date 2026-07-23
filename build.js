@@ -517,7 +517,7 @@ function buildLegalPages() {
     <h1 class="post-title">Privacy Policy</h1>
     <div class="post-meta">Last updated: ${lastUpdated}</div>
     <div class="post-body">
-      <p>This Privacy Policy explains how Sunny 88.7 FM ("Sunny FM", "we", "us", "our"), operated by Apt Communications / Sky Broadcasting Ltd., collects, uses, and protects information when you visit sunnygh.com (the "Site") or use our streaming, TV, and related services.</p>
+      <p>This Privacy Policy explains how Sunny 88.7 FM ("Sunny FM", "we", "us", "our") collects, uses, and protects information when you visit sunnygh.com (the "Site") or use our streaming, TV, and related services.</p>
 
       <h2>Information We Collect</h2>
       <p>We collect information in the following ways:</p>
@@ -563,7 +563,7 @@ function buildLegalPages() {
     <h1 class="post-title">Terms of Use</h1>
     <div class="post-meta">Last updated: ${lastUpdated}</div>
     <div class="post-body">
-      <p>Welcome to sunnygh.com, operated by Sunny 88.7 FM (Apt Communications / Sky Broadcasting Ltd.). By accessing or using this Site, you agree to these Terms of Use.</p>
+      <p>Welcome to sunnygh.com, operated by Sunny 88.7 FM. By accessing or using this Site, you agree to these Terms of Use.</p>
 
       <h2>Use of the Site</h2>
       <p>You may use the Site for lawful, personal, non-commercial purposes, including listening to our livestream, watching Sunny TV, reading content, and engaging with our community features (prayer requests, testimonies, event registration).</p>
