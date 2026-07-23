@@ -7,10 +7,10 @@ audio_url: https://www.mixcloud.com/Sunnymedia887/air-power-with-kakra-baiden/
 summary: Bishop Kakra Baiden has a God-ordained mandate to impact the world with
   the Word and power of God. Exodus 3:7-8 is Kakra’s God given mandate.
 preacher_bio: >-
-  Kakra Baiden is an architect by profession and a bishop within the
-  Lighthouse Chapel International denomination, serving as senior pastor of
-  Morning Star Cathedral in Accra. Known as "the walking Bible" for his
-  ability to teach scripture from memory, he leads the Airpower media
-  ministry, broadcast in more than 50 countries.
+  Kakra Baiden is a pastor, author, and conference speaker known for his
+  prophetic gifts and healing ministry. Through Airpower, a non-denominational
+  Christian ministry, he teaches the Word of God with signs and wonders across
+  radio, television, social media, and print — reaching more than 52 countries
+  — and hosts Airpower Conferences both locally and internationally.
 ---
 How to be Street Smart
