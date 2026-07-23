@@ -364,7 +364,7 @@ function buildCollection(collectionFolder, config) {
     ` : '';
 
     const ttsSourceHtml = [dailyBreadHtml, effectiveBodyHtml, preacherBioHtml, dailyBreadPrayerHtml].filter(Boolean).join(' ');
-    const ttsSentences = splitIntoSentences(htmlToPlainText(ttsSourceHtml));
+    const ttsSentences = post.audio_url ? [] : splitIntoSentences(htmlToPlainText(ttsSourceHtml));
     const ttsSentencesJson = JSON.stringify(ttsSentences).replace(/</g, '\\u003c');
 
     const ttsPlayerHtml = ttsSentences.length ? `
