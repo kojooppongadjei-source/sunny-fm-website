@@ -270,6 +270,21 @@ function buildCollection(collectionFolder, config) {
       mediaHtml += `<img class="post-image" src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}">`;
     }
 
+    // Some entries (esp. Preaching & Teaching) only have a one-line body in the CMS
+    // ("How to be Street Smart") with the real substance sitting unused in `summary`.
+    // When the raw body is too thin to stand as a page on its own, promote the
+    // summary into the visible body instead of leaving the page almost empty.
+    const rawBodyWordCount = (post.bodyHtml || '').replace(/<[^>]+>/g, ' ').trim().split(/\s+/).filter(Boolean).length;
+    let effectiveBodyHtml = post.bodyHtml;
+    if (rawBodyWordCount < 25 && post.summary) {
+      const shortLine = (post.bodyHtml || '').replace(/<\/?p>/g, '').trim();
+      effectiveBodyHtml = (shortLine ? `<p style="font-weight:700;color:var(--gold-dark);">${shortLine}</p>` : '')
+        + `<p>${escapeHtml(post.summary)}</p>`;
+      if (post.preacher) {
+        effectiveBodyHtml += `<p>This teaching is part of Sunny 88.7 FM's Preaching &amp; Teaching lineup${post.series ? `, part of the <em>${escapeHtml(post.series)}</em> series` : ''}. Tune in to Sunny 88.7 FM or stream live at <a href="/listen-live/">sunnygh.com/listen-live</a> to catch more from ${escapeHtml(post.preacher)} and our other daily preachers.</p>`;
+      }
+    }
+
     let metaParts = [];
     if (post.dateFormatted) metaParts.push(post.dateFormatted);
     if (post.preacher) metaParts.push(`Preacher: ${escapeHtml(post.preacher)}`);
@@ -327,7 +342,7 @@ function buildCollection(collectionFolder, config) {
       ${mediaHtml}
       ${dailyBreadHtml}
       ${eventInfoHtml}
-      <div class="post-body">${post.bodyHtml}</div>
+      <div class="post-body">${effectiveBodyHtml}</div>
       ${dailyBreadPrayerHtml}
       ${dailyBreadShareHtml}
     `;
