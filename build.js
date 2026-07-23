@@ -109,6 +109,28 @@ function formatDate(dateStr) {
   return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 }
 
+function htmlToPlainText(html) {
+  if (!html) return '';
+  return html
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&rsquo;|&#39;/g, "'")
+    .replace(/&ldquo;|&rdquo;|&quot;/g, '"')
+    .replace(/&mdash;/g, '-')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function splitIntoSentences(text) {
+  if (!text) return [];
+  const ABBR = /\b(Dr|Mr|Mrs|Ms|Rev|Pastor|Bishop|Prof|St|Jr|Sr|vs|etc|e\.g|i\.e|No|vol|Rd|Ave)\.(\s)/gi;
+  const placeholder = text.replace(ABBR, (m, word, space) => `${word}\u0000${space}`);
+  const matches = placeholder.match(/[^.!?]+[.!?]+(\s+|$)/g);
+  const restore = s => s.replace(/\u0000/g, '.');
+  return matches ? matches.map(s => restore(s.trim())).filter(Boolean) : (text.trim() ? [text.trim()] : []);
+}
+
 function escapeHtml(str) {
   if (!str) return '';
   return String(str)
@@ -341,6 +363,83 @@ function buildCollection(collectionFolder, config) {
       </div>
     ` : '';
 
+    const ttsSourceHtml = [dailyBreadHtml, effectiveBodyHtml, preacherBioHtml, dailyBreadPrayerHtml].filter(Boolean).join(' ');
+    const ttsSentences = splitIntoSentences(htmlToPlainText(ttsSourceHtml));
+    const ttsSentencesJson = JSON.stringify(ttsSentences).replace(/</g, '\\u003c');
+
+    const ttsPlayerHtml = ttsSentences.length ? `
+      <div style="border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin:20px 0 28px;">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <button id="tts-play-btn" onclick="ttsToggle()" aria-label="Listen to the article" style="width:44px;height:44px;border-radius:50%;background:var(--gold);border:none;color:#fff;font-size:16px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;">&#9654;</button>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:15px;font-weight:700;">Listen to the article now</div>
+            <div style="font-size:12px;color:var(--muted);">Text-to-speech, powered by your browser</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+            <button onclick="ttsSkip(-1)" aria-label="Back 10 seconds" style="background:none;border:none;cursor:pointer;font-size:12px;color:#333;font-weight:700;">&#8630;10</button>
+            <button onclick="ttsCycleSpeed()" id="tts-speed-btn" style="border:1px solid var(--border);border-radius:20px;padding:4px 10px;background:none;font-size:12px;font-weight:700;cursor:pointer;">1.0x</button>
+            <button onclick="ttsSkip(1)" aria-label="Forward 10 seconds" style="background:none;border:none;cursor:pointer;font-size:12px;color:#333;font-weight:700;">10&#8631;</button>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:12px;">
+          <input type="range" id="tts-progress" min="0" max="100" value="0" oninput="ttsSeek(this.value)" style="flex:1;">
+          <span style="display:flex;align-items:center;gap:6px;">
+            <span style="font-size:14px;">&#128266;</span>
+            <input type="range" id="tts-volume" min="0" max="1" step="0.1" value="1" style="width:70px;">
+          </span>
+        </div>
+      </div>
+      <script>
+      (function(){
+        var ttsSentences = ${ttsSentencesJson};
+        var ttsIdx = 0, ttsRate = 1, ttsPlaying = false;
+        function ttsUpdateProgress(){
+          var bar = document.getElementById('tts-progress');
+          if (bar) bar.value = ttsSentences.length ? Math.round((ttsIdx / ttsSentences.length) * 100) : 0;
+        }
+        function ttsUpdateBtn(){
+          var btn = document.getElementById('tts-play-btn');
+          if (btn) btn.innerHTML = ttsPlaying ? '&#10074;&#10074;' : '&#9654;';
+        }
+        function ttsSpeakFrom(i){
+          if (!('speechSynthesis' in window)) return;
+          window.speechSynthesis.cancel();
+          if (i >= ttsSentences.length || i < 0){ ttsIdx = 0; ttsPlaying = false; ttsUpdateBtn(); ttsUpdateProgress(); return; }
+          ttsIdx = i;
+          ttsUpdateProgress();
+          var volEl = document.getElementById('tts-volume');
+          var utter = new SpeechSynthesisUtterance(ttsSentences[i]);
+          utter.rate = ttsRate;
+          utter.volume = volEl ? parseFloat(volEl.value) : 1;
+          utter.onend = function(){ if (ttsPlaying) ttsSpeakFrom(i + 1); };
+          window.speechSynthesis.speak(utter);
+        }
+        window.ttsToggle = function(){
+          if (!('speechSynthesis' in window)){ alert('Text-to-speech is not supported in this browser.'); return; }
+          if (ttsPlaying){ window.speechSynthesis.cancel(); ttsPlaying = false; ttsUpdateBtn(); }
+          else { ttsPlaying = true; ttsUpdateBtn(); ttsSpeakFrom(ttsIdx); }
+        };
+        window.ttsSkip = function(dir){
+          var next = Math.min(ttsSentences.length - 1, Math.max(0, ttsIdx + dir * 2));
+          if (ttsPlaying) ttsSpeakFrom(next); else { ttsIdx = next; ttsUpdateProgress(); }
+        };
+        window.ttsCycleSpeed = function(){
+          var speeds = [1, 1.25, 1.5, 2, 0.75];
+          ttsRate = speeds[(speeds.indexOf(ttsRate) + 1) % speeds.length];
+          document.getElementById('tts-speed-btn').textContent = ttsRate + 'x';
+          if (ttsPlaying) ttsSpeakFrom(ttsIdx);
+        };
+        window.ttsSeek = function(pct){
+          var idx = Math.min(ttsSentences.length - 1, Math.max(0, Math.round((pct / 100) * ttsSentences.length)));
+          if (ttsPlaying) ttsSpeakFrom(idx); else ttsIdx = idx;
+        };
+        document.addEventListener('visibilitychange', function(){
+          if (document.hidden && ttsPlaying){ window.speechSynthesis.cancel(); ttsPlaying = false; ttsUpdateBtn(); }
+        });
+      })();
+      </script>
+    ` : '';
+
     const bodyHtml = `
       <a href="/${config.urlPath}/" class="back-link">&larr; Back to ${escapeHtml(config.label)}</a>
       <div class="eyebrow">${escapeHtml(config.label)}</div>
@@ -348,6 +447,7 @@ function buildCollection(collectionFolder, config) {
       <div class="post-meta">${metaParts.join(' &middot; ')}</div>
       ${tagsHtml}
       ${mediaHtml}
+      ${ttsPlayerHtml}
       ${dailyBreadHtml}
       ${eventInfoHtml}
       <div class="post-body">${effectiveBodyHtml}</div>

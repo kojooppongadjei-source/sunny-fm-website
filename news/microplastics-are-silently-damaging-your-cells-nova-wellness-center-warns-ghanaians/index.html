@@ -152,6 +152,78 @@ function toggleSiteMobileMenu(){
       
       <img class="post-image" src="/assets/uploads/dr-naa-asheley-ashietey-headshot.png" alt="Microplastics Are Silently Damaging Your Cells, Nova Wellness Center Warns Ghanaians">
       
+      <div style="border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin:20px 0 28px;">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <button id="tts-play-btn" onclick="ttsToggle()" aria-label="Listen to the article" style="width:44px;height:44px;border-radius:50%;background:var(--gold);border:none;color:#fff;font-size:16px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;">&#9654;</button>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:15px;font-weight:700;">Listen to the article now</div>
+            <div style="font-size:12px;color:var(--muted);">Text-to-speech, powered by your browser</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+            <button onclick="ttsSkip(-1)" aria-label="Back 10 seconds" style="background:none;border:none;cursor:pointer;font-size:12px;color:#333;font-weight:700;">&#8630;10</button>
+            <button onclick="ttsCycleSpeed()" id="tts-speed-btn" style="border:1px solid var(--border);border-radius:20px;padding:4px 10px;background:none;font-size:12px;font-weight:700;cursor:pointer;">1.0x</button>
+            <button onclick="ttsSkip(1)" aria-label="Forward 10 seconds" style="background:none;border:none;cursor:pointer;font-size:12px;color:#333;font-weight:700;">10&#8631;</button>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:12px;">
+          <input type="range" id="tts-progress" min="0" max="100" value="0" oninput="ttsSeek(this.value)" style="flex:1;">
+          <span style="display:flex;align-items:center;gap:6px;">
+            <span style="font-size:14px;">&#128266;</span>
+            <input type="range" id="tts-volume" min="0" max="1" step="0.1" value="1" style="width:70px;">
+          </span>
+        </div>
+      </div>
+      <script>
+      (function(){
+        var ttsSentences = ["Accra, Ghana – As Ghanaians continue clearing plastic waste left behind by recent flooding, health experts are warning that the same plastics clogging our gutters and shorelines are quietly building up inside our bodies too.","7 FM , Dr. Naa Asheley Ashietey of Nova Wellness Center said the surge of visible plastic waste after the rains prompted her to draw a direct comparison between the environment and the human body.","\"Just as plastics cannot be broken down or eliminated easily in the environment, the same thing is happening inside our bodies.","\" What Are Microplastics, Exactly?","Dr. Naa explained that microplastics are thin plastic materials — generally under 5 millimetres wide that Ghanaians encounter constantly without realising it.","Common local examples include: \"Olonka\" rubber bags used at the market Takeaway food packs and disposable cups The thin rubber wrapped around hot kenkey (\"banku rubber\") Sachet water bags Synthetic fibres in some fast-fashion clothing \"There's no running away from plastics there's a big reliance on plastics these days,\" she said.","\" Why Young People Are Getting Sicker Dr. Naa said her research into regenerative health and longevity began after noticing how many young Ghanaians were falling seriously ill, or dying, far earlier than expected.","She explained that microplastics act as a foreign substance in the body, triggering the same kind of immune response as a virus or bacteria.","The difference, she said, is exposure never stops.","\"Imagine you have your breakfast, there's a bunch of microplastics in there.","Your body's trying to break it down and eliminate it then lunchtime, there's more, and in the evening, there's more,\" she said.","\"Your body becomes overburdened, and that immune response keeps going and going without a break.","That persistent fight leads to fatigue in your cells and, over time, can turn into inflammation.","\" Not All Plastic Is Equal According to Dr. Naa, the thinner and more flimsy a plastic is, the more reactive it becomes when exposed to heat making items like hot kenkey wrapped in rubber, or cocoa poured straight into a hot rubber bag, especially harmful.","\"The more solid it is, the less reactive,\" she said, pointing to thicker containers labelled \"microwavable\" as a lower-risk option than single-use bags though she still recommends glass over plastic wherever possible, even for microwaving.","Sachet water and thin drinking bottles left in a hot car for hours were flagged as other common, everyday risks.","Simple Swaps for Ghanaian Homes Dr. Naa encouraged listeners not to abandon foods like kenkey, but to change how they're handled: Pour hot cocoa or drinks into a cup instead of drinking straight from a hot rubber bag Favour traditional wrappings such as banana or \"watchy\" leaves — over plastic where possible Avoid boiling or microwaving food while it's still wrapped in plastic Store leftovers in glass or aluminium instead of rubber bags Choose thicker, reusable bottles (such as Stanley cups) over single-use sachets and bottles Separate plastic waste at home for recycling wherever possible She also welcomed Ghana's Environmental Protection Agency's announced plans to restrict certain single-use plastics from 2027, calling it \"really, really important\" for public health.","Helping the Body Recover Beyond reducing exposure, Dr. Naa outlined simple daily habits sometimes called \"biohacking\" — that help the body clear out toxins it does encounter: Morning sunlight – supports vitamin D and hormone production Exercise and sweating – one of the body's natural ways to release toxins Hydration – water helps bind to and flush out toxins at a cellular level Rest – supports stronger immune function 6–7 hours of sleep – allows the body to regenerate and absorb nutrients properly \"These are simple things you can do daily, not only to remove microplastics from your body, but to help regenerate your cells so that all the other body functions can work properly,\" she said.","Getting Checked Dr. Naa said Nova Wellness Center's longevity clinic, Nova Viva, now offers assessments that measure how well the body is functioning at a cellular level including biological age compared to chronological age and can recommend detox plans or therapies such as sauna, ice, and infrared therapy where needed.","Nova Wellness Center has grown into a two-branch clinic, with a Kumasi office alongside its main Accra branch in Dzorwulu, where it continues to offer spine and pain-related wellness care alongside the newly launched Nova Viva longevity services.","To book an assessment, contact Nova Viva on 024 721 5425 or Nova Wellness Center on 054 958 6494.","Follow @NovaViva and @NovaWellnessCenter on Facebook and Instagram for more health tips."];
+        var ttsIdx = 0, ttsRate = 1, ttsPlaying = false;
+        function ttsUpdateProgress(){
+          var bar = document.getElementById('tts-progress');
+          if (bar) bar.value = ttsSentences.length ? Math.round((ttsIdx / ttsSentences.length) * 100) : 0;
+        }
+        function ttsUpdateBtn(){
+          var btn = document.getElementById('tts-play-btn');
+          if (btn) btn.innerHTML = ttsPlaying ? '&#10074;&#10074;' : '&#9654;';
+        }
+        function ttsSpeakFrom(i){
+          if (!('speechSynthesis' in window)) return;
+          window.speechSynthesis.cancel();
+          if (i >= ttsSentences.length || i < 0){ ttsIdx = 0; ttsPlaying = false; ttsUpdateBtn(); ttsUpdateProgress(); return; }
+          ttsIdx = i;
+          ttsUpdateProgress();
+          var volEl = document.getElementById('tts-volume');
+          var utter = new SpeechSynthesisUtterance(ttsSentences[i]);
+          utter.rate = ttsRate;
+          utter.volume = volEl ? parseFloat(volEl.value) : 1;
+          utter.onend = function(){ if (ttsPlaying) ttsSpeakFrom(i + 1); };
+          window.speechSynthesis.speak(utter);
+        }
+        window.ttsToggle = function(){
+          if (!('speechSynthesis' in window)){ alert('Text-to-speech is not supported in this browser.'); return; }
+          if (ttsPlaying){ window.speechSynthesis.cancel(); ttsPlaying = false; ttsUpdateBtn(); }
+          else { ttsPlaying = true; ttsUpdateBtn(); ttsSpeakFrom(ttsIdx); }
+        };
+        window.ttsSkip = function(dir){
+          var next = Math.min(ttsSentences.length - 1, Math.max(0, ttsIdx + dir * 2));
+          if (ttsPlaying) ttsSpeakFrom(next); else { ttsIdx = next; ttsUpdateProgress(); }
+        };
+        window.ttsCycleSpeed = function(){
+          var speeds = [1, 1.25, 1.5, 2, 0.75];
+          ttsRate = speeds[(speeds.indexOf(ttsRate) + 1) % speeds.length];
+          document.getElementById('tts-speed-btn').textContent = ttsRate + 'x';
+          if (ttsPlaying) ttsSpeakFrom(ttsIdx);
+        };
+        window.ttsSeek = function(pct){
+          var idx = Math.min(ttsSentences.length - 1, Math.max(0, Math.round((pct / 100) * ttsSentences.length)));
+          if (ttsPlaying) ttsSpeakFrom(idx); else ttsIdx = idx;
+        };
+        document.addEventListener('visibilitychange', function(){
+          if (document.hidden && ttsPlaying){ window.speechSynthesis.cancel(); ttsPlaying = false; ttsUpdateBtn(); }
+        });
+      })();
+      </script>
+    
+      
       
       <div class="post-body"><p>Accra, Ghana – As Ghanaians continue clearing plastic waste left behind by recent flooding, health experts are warning that the same plastics clogging our gutters and shorelines are quietly building up inside our bodies too.</p>
 <p>Speaking on <strong>Sunny 88.7 FM</strong>, Dr. Naa Asheley Ashietey of Nova Wellness Center said the surge of visible plastic waste after the rains prompted her to draw a direct comparison between the environment and the human body.</p>

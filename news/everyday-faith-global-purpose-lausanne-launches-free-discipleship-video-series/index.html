@@ -152,6 +152,78 @@ function toggleSiteMobileMenu(){
       
       <img class="post-image" src="/assets/uploads/michael-oh-global-executive-director-and-ceo-of-the-lausanne-movement-.webp" alt="Everyday Faith, Global Purpose: Lausanne Launches Free Discipleship Video Series">
       
+      <div style="border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin:20px 0 28px;">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <button id="tts-play-btn" onclick="ttsToggle()" aria-label="Listen to the article" style="width:44px;height:44px;border-radius:50%;background:var(--gold);border:none;color:#fff;font-size:16px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;">&#9654;</button>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:15px;font-weight:700;">Listen to the article now</div>
+            <div style="font-size:12px;color:var(--muted);">Text-to-speech, powered by your browser</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+            <button onclick="ttsSkip(-1)" aria-label="Back 10 seconds" style="background:none;border:none;cursor:pointer;font-size:12px;color:#333;font-weight:700;">&#8630;10</button>
+            <button onclick="ttsCycleSpeed()" id="tts-speed-btn" style="border:1px solid var(--border);border-radius:20px;padding:4px 10px;background:none;font-size:12px;font-weight:700;cursor:pointer;">1.0x</button>
+            <button onclick="ttsSkip(1)" aria-label="Forward 10 seconds" style="background:none;border:none;cursor:pointer;font-size:12px;color:#333;font-weight:700;">10&#8631;</button>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:12px;">
+          <input type="range" id="tts-progress" min="0" max="100" value="0" oninput="ttsSeek(this.value)" style="flex:1;">
+          <span style="display:flex;align-items:center;gap:6px;">
+            <span style="font-size:14px;">&#128266;</span>
+            <input type="range" id="tts-volume" min="0" max="1" step="0.1" value="1" style="width:70px;">
+          </span>
+        </div>
+      </div>
+      <script>
+      (function(){
+        var ttsSentences = ["Becominga Global Disciple, which launched June 22, offers short videoepisodes, discussion guides and devotional plans for use by churches,small groups, student ministries and individual believers.","org/globaldisciple ,with French and Spanish translations expected within weeks.","Theseries grew out of a global listening process conducted in thelead-up to the Fourth Lausanne Congress, which identified deeperdiscipleship as one of the most significant gaps facing the church infulfilling the Great Commission, the movement said.","\"FollowingJesus has always been deeply personal, but never merely private,\"said Michael Oh, global executive director and CEO of the LausanneMovement.","\" Thefive episodes cover themes including the global church and itsunfinished mission, prayer and cross-cultural learning, friendshipand partnership across cultures, and the relationship between globaland local discipleship.","Each episode is paired with discussionquestions, Scripture passages and practical next steps.","Contributorsinclude voices from across the global church: Pearl Ganta, DesmondHenry, Janet Sewell, Joe Handley, Nana-Yaw Offei Awuku, Jurie Krieland Jason Watson, alongside Oh.","Watson,Lausanne's director of content, said the series was built forordinary church contexts.","\"Many church and ministry leaders caredeeply about global mission, but they are asking how to help ordinarybelievers take meaningful next steps,\" he said.","\" Ratherthan framing global mission as the domain of missionaries or frequenttravelers, the series is intended to help every believer see theirdaily life within the wider mission of God, according to the LausanneMovement.","org/globaldisciple ."];
+        var ttsIdx = 0, ttsRate = 1, ttsPlaying = false;
+        function ttsUpdateProgress(){
+          var bar = document.getElementById('tts-progress');
+          if (bar) bar.value = ttsSentences.length ? Math.round((ttsIdx / ttsSentences.length) * 100) : 0;
+        }
+        function ttsUpdateBtn(){
+          var btn = document.getElementById('tts-play-btn');
+          if (btn) btn.innerHTML = ttsPlaying ? '&#10074;&#10074;' : '&#9654;';
+        }
+        function ttsSpeakFrom(i){
+          if (!('speechSynthesis' in window)) return;
+          window.speechSynthesis.cancel();
+          if (i >= ttsSentences.length || i < 0){ ttsIdx = 0; ttsPlaying = false; ttsUpdateBtn(); ttsUpdateProgress(); return; }
+          ttsIdx = i;
+          ttsUpdateProgress();
+          var volEl = document.getElementById('tts-volume');
+          var utter = new SpeechSynthesisUtterance(ttsSentences[i]);
+          utter.rate = ttsRate;
+          utter.volume = volEl ? parseFloat(volEl.value) : 1;
+          utter.onend = function(){ if (ttsPlaying) ttsSpeakFrom(i + 1); };
+          window.speechSynthesis.speak(utter);
+        }
+        window.ttsToggle = function(){
+          if (!('speechSynthesis' in window)){ alert('Text-to-speech is not supported in this browser.'); return; }
+          if (ttsPlaying){ window.speechSynthesis.cancel(); ttsPlaying = false; ttsUpdateBtn(); }
+          else { ttsPlaying = true; ttsUpdateBtn(); ttsSpeakFrom(ttsIdx); }
+        };
+        window.ttsSkip = function(dir){
+          var next = Math.min(ttsSentences.length - 1, Math.max(0, ttsIdx + dir * 2));
+          if (ttsPlaying) ttsSpeakFrom(next); else { ttsIdx = next; ttsUpdateProgress(); }
+        };
+        window.ttsCycleSpeed = function(){
+          var speeds = [1, 1.25, 1.5, 2, 0.75];
+          ttsRate = speeds[(speeds.indexOf(ttsRate) + 1) % speeds.length];
+          document.getElementById('tts-speed-btn').textContent = ttsRate + 'x';
+          if (ttsPlaying) ttsSpeakFrom(ttsIdx);
+        };
+        window.ttsSeek = function(pct){
+          var idx = Math.min(ttsSentences.length - 1, Math.max(0, Math.round((pct / 100) * ttsSentences.length)));
+          if (ttsPlaying) ttsSpeakFrom(idx); else ttsIdx = idx;
+        };
+        document.addEventListener('visibilitychange', function(){
+          if (document.hidden && ttsPlaying){ window.speechSynthesis.cancel(); ttsPlaying = false; ttsUpdateBtn(); }
+        });
+      })();
+      </script>
+    
+      
       
       <div class="post-body"><p>Becominga Global Disciple, which launched June 22, offers short videoepisodes, discussion guides and devotional plans for use by churches,small groups, student ministries and individual believers. Theresource is available in English and Portugueseat <a href="https://lausanne.org/globaldisciple">lausanne.org/globaldisciple</a>,with French and Spanish translations expected within weeks.</p>
 <p>Theseries grew out of a global listening process conducted in thelead-up to the Fourth Lausanne Congress, which identified deeperdiscipleship as one of the most significant gaps facing the church infulfilling the Great Commission, the movement said.</p>

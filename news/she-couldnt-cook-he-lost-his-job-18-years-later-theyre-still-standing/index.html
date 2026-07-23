@@ -158,6 +158,78 @@ function toggleSiteMobileMenu(){
       
       <img class="post-image" src="/assets/uploads/untitled-design-7-.png" alt="She Couldn't Cook. She Lost Her Job. 18 Years Later, They're Still Standing.">
       
+      <div style="border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin:20px 0 28px;">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <button id="tts-play-btn" onclick="ttsToggle()" aria-label="Listen to the article" style="width:44px;height:44px;border-radius:50%;background:var(--gold);border:none;color:#fff;font-size:16px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;">&#9654;</button>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:15px;font-weight:700;">Listen to the article now</div>
+            <div style="font-size:12px;color:var(--muted);">Text-to-speech, powered by your browser</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+            <button onclick="ttsSkip(-1)" aria-label="Back 10 seconds" style="background:none;border:none;cursor:pointer;font-size:12px;color:#333;font-weight:700;">&#8630;10</button>
+            <button onclick="ttsCycleSpeed()" id="tts-speed-btn" style="border:1px solid var(--border);border-radius:20px;padding:4px 10px;background:none;font-size:12px;font-weight:700;cursor:pointer;">1.0x</button>
+            <button onclick="ttsSkip(1)" aria-label="Forward 10 seconds" style="background:none;border:none;cursor:pointer;font-size:12px;color:#333;font-weight:700;">10&#8631;</button>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:12px;">
+          <input type="range" id="tts-progress" min="0" max="100" value="0" oninput="ttsSeek(this.value)" style="flex:1;">
+          <span style="display:flex;align-items:center;gap:6px;">
+            <span style="font-size:14px;">&#128266;</span>
+            <input type="range" id="tts-volume" min="0" max="1" step="0.1" value="1" style="width:70px;">
+          </span>
+        </div>
+      </div>
+      <script>
+      (function(){
+        var ttsSentences = ["When the First Years Are Also the Hard Years Shortly after they wed, Evangeline lost her job.","The financial pressure was real, and Isaac struggled to understand why they were going through it.","Time gave him an answer he wasn't expecting.","\" Stripped of busyness, they were left with each other and a friendship was forged that became the bedrock of everything that followed.","The Cooking Confession Evangeline grew up in a household where food was an art form.","And yet she entered marriage not knowing how to cook.","Isaac didn't lead with that he saw her character, her values, the woman she was.","But the children were less diplomatic.","When her kids started giving honest, unhesitating feedback about her meals, Evangeline decided to learn.","She prayed, called her mother, and listened.","Today, Isaac calls home from work to make sure there is food left for him before the children finish it.","si=ZGe1ynF9v6bNH7jn \" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen&gt; Letting Go of the Picture in Your Head Evangeline walked into marriage with a picture her parents' marriage, the rhythms and roles she'd grown up watching.","It took years to realise she was building something new, not recreating something old.","\" Isaac had his own version of the same lesson.","He believed choosing the right person was the hard part that love, romance, and communication would simply follow.","They didn't.","\" What a Phone Reminder Said Without Words One day Isaac picked up Evangeline's phone and found a recurring daily reminder.","Not a shopping list.","Just six words: Pray for Isaac Gbenartey.","Evangeline had spoken about the weight men carry — the pressure to provide, to keep going even when running on empty.","That quiet, daily reminder said everything about what it means to truly support your spouse.","Keep Seeking Wisdom After eighteen years, their message to couples is simple.","\"Marriage is always changing.","\" Not a formula.","Just an honest truth from two people who have lived it — and are still choosing each other, every day."];
+        var ttsIdx = 0, ttsRate = 1, ttsPlaying = false;
+        function ttsUpdateProgress(){
+          var bar = document.getElementById('tts-progress');
+          if (bar) bar.value = ttsSentences.length ? Math.round((ttsIdx / ttsSentences.length) * 100) : 0;
+        }
+        function ttsUpdateBtn(){
+          var btn = document.getElementById('tts-play-btn');
+          if (btn) btn.innerHTML = ttsPlaying ? '&#10074;&#10074;' : '&#9654;';
+        }
+        function ttsSpeakFrom(i){
+          if (!('speechSynthesis' in window)) return;
+          window.speechSynthesis.cancel();
+          if (i >= ttsSentences.length || i < 0){ ttsIdx = 0; ttsPlaying = false; ttsUpdateBtn(); ttsUpdateProgress(); return; }
+          ttsIdx = i;
+          ttsUpdateProgress();
+          var volEl = document.getElementById('tts-volume');
+          var utter = new SpeechSynthesisUtterance(ttsSentences[i]);
+          utter.rate = ttsRate;
+          utter.volume = volEl ? parseFloat(volEl.value) : 1;
+          utter.onend = function(){ if (ttsPlaying) ttsSpeakFrom(i + 1); };
+          window.speechSynthesis.speak(utter);
+        }
+        window.ttsToggle = function(){
+          if (!('speechSynthesis' in window)){ alert('Text-to-speech is not supported in this browser.'); return; }
+          if (ttsPlaying){ window.speechSynthesis.cancel(); ttsPlaying = false; ttsUpdateBtn(); }
+          else { ttsPlaying = true; ttsUpdateBtn(); ttsSpeakFrom(ttsIdx); }
+        };
+        window.ttsSkip = function(dir){
+          var next = Math.min(ttsSentences.length - 1, Math.max(0, ttsIdx + dir * 2));
+          if (ttsPlaying) ttsSpeakFrom(next); else { ttsIdx = next; ttsUpdateProgress(); }
+        };
+        window.ttsCycleSpeed = function(){
+          var speeds = [1, 1.25, 1.5, 2, 0.75];
+          ttsRate = speeds[(speeds.indexOf(ttsRate) + 1) % speeds.length];
+          document.getElementById('tts-speed-btn').textContent = ttsRate + 'x';
+          if (ttsPlaying) ttsSpeakFrom(ttsIdx);
+        };
+        window.ttsSeek = function(pct){
+          var idx = Math.min(ttsSentences.length - 1, Math.max(0, Math.round((pct / 100) * ttsSentences.length)));
+          if (ttsPlaying) ttsSpeakFrom(idx); else ttsIdx = idx;
+        };
+        document.addEventListener('visibilitychange', function(){
+          if (document.hidden && ttsPlaying){ window.speechSynthesis.cancel(); ttsPlaying = false; ttsUpdateBtn(); }
+        });
+      })();
+      </script>
+    
+      
       
       <div class="post-body"><h2>When the First Years Are Also the Hard Years</h2>
 <p>Shortly after they wed, Evangeline lost her job. The financial pressure was real, and Isaac struggled to understand why they were going through it. Time gave him an answer he wasn&#39;t expecting.</p>
