@@ -43,6 +43,6 @@ Closing out the conversation, Craige encouraged listeners to give his music a ch
 
 The segment featured live cuts from his catalogue, including "Good Days," and closed out with his latest single, "No Delay."
 
-**Find Craige Osei's music on Spotify, Apple Music, YouTube, and all major platforms, and follow him on Instagram, TikTok, and YouTube @creigosae.**
+**Find Craige Osei's music on Spotify, Apple Music, YouTube, and all major platforms, and follow him on Instagram, TikTok, and YouTube @craigeosei.**
 
 *Catch Up Close every weekday on The IM Drive, only on Sunny 88.7 FM — and watch it live on Sunny TV at sunnygh.com.*
