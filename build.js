@@ -118,7 +118,7 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-function pageShell({ title, description, bodyHtml, ogImage, jsonLd, wide }) {
+function pageShell({ title, description, bodyHtml, ogImage, jsonLd, wide, url }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,6 +128,7 @@ ${ADSENSE_SNIPPET}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${escapeHtml(title)} — Sunny 88.7 FM</title>
 <meta name="description" content="${escapeHtml(description)}">
+${url ? `<link rel="canonical" href="https://sunnygh.com${url}">` : ''}
 ${ogImage ? `<meta property="og:image" content="${escapeHtml(ogImage)}">` : ''}
 <meta property="og:title" content="${escapeHtml(title)}">
 <meta property="og:description" content="${escapeHtml(description)}">
@@ -394,6 +395,7 @@ function buildCollection(collectionFolder, config) {
       bodyHtml,
       ogImage: post.image,
       jsonLd: eventJsonLd,
+      url: post.url,
     });
 
     fs.writeFileSync(path.join(postDir, 'index.html'), html);
@@ -476,6 +478,7 @@ function buildCollection(collectionFolder, config) {
     description: getCollectionTagline(config.urlPath),
     bodyHtml: listBody,
     wide: true,
+    url: `/${config.urlPath}/`,
   });
 
   fs.mkdirSync(outDir, { recursive: true });
@@ -601,6 +604,7 @@ function buildLegalPages() {
       title: page.title,
       description: page.description,
       bodyHtml: page.body,
+      url: `/${page.slug}/`,
     });
     const outDir = path.join(ROOT, page.slug);
     fs.mkdirSync(outDir, { recursive: true });
@@ -747,6 +751,7 @@ function buildSelfServiceAdvertPage() {
     title: 'Self Service Advert',
     description: "Promote your business on sunnygh.com — upload your own advert, pay online, and we'll place it on the homepage.",
     bodyHtml: body,
+    url: '/self-service-advert/',
   });
   fs.mkdirSync(path.join(ROOT, 'self-service-advert'), { recursive: true });
   fs.writeFileSync(path.join(ROOT, 'self-service-advert', 'index.html'), html);
@@ -764,6 +769,7 @@ function buildSelfServiceAdvertPage() {
     title: 'Advert submitted',
     description: 'Your self service advert submission was received.',
     bodyHtml: thankYouBody,
+    url: '/self-service-advert/thank-you/',
   });
   fs.mkdirSync(path.join(ROOT, 'self-service-advert', 'thank-you'), { recursive: true });
   fs.writeFileSync(path.join(ROOT, 'self-service-advert', 'thank-you', 'index.html'), thankYouHtml);
