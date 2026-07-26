@@ -1,7 +1,10 @@
 ---
-title: 'Gospel Music Ghana 2026: Rising Voices to Watch This Year'
+title: "Gospel Music Ghana 2026: Rising Voices to Watch This Year"
 date: 2026-07-26T08:54:32.000+00:00
-summary: 'From Kumasi highlife-gospel fusions to Accra''s new worship leaders, here are the rising Ghanaian gospel artists set to shape the sound of praise in 2026.'
+image: /assets/uploads/untitled-design-15-.png
+summary: From Kumasi highlife-gospel fusions to Accra's new worship leaders,
+  here are the rising Ghanaian gospel artists set to shape the sound of praise
+  in 2026.
 tags:
   - Ministry
   - Community
