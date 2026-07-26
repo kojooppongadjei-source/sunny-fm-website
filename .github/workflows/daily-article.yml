@@ -1,0 +1,36 @@
+name: Daily SEO Article
+
+on:
+  schedule:
+    # 07:00 GMT daily (adjust as needed — Ghana is GMT year-round)
+    - cron: "0 7 * * *"
+  workflow_dispatch: {} # lets you trigger manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate article
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generate-article.js
+
+      - name: Commit and push
+        run: |
+          git config user.name "sunnygh-content-bot"
+          git config user.email "sunnyfm@gmail.com"
+          git add content/news content/lifestyle content/seo/keywords.csv
+          git diff --staged --quiet && echo "No changes to commit" && exit 0
+          git commit -m "Auto: daily SEO article"
+          git push
