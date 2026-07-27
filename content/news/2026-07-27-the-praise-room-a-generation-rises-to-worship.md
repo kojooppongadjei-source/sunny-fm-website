@@ -13,11 +13,11 @@ tags:
 ---
 There's a particular kind of joy that fills a room when young people gather with one purpose — not to be entertained, not to be seen, but to worship. That was the atmosphere at the maiden edition of **THE PRAISE ROOM**, organised by *Let's Vibe with Steve* at the Sunny FM studios, and it was nothing short of extraordinary.
 
-![](/assets/uploads/praise-room-worship-1.jpg)
+![](/assets/uploads/lady-1.png)
 
 From the moment the first note played, it was clear this was more than an event — it was an encounter. Young voices rose together in prayer and praise, eyes closed, hearts open, hands raised. His presence filled the room. Lives were touched. Faith was strengthened.
 
-![](/assets/uploads/praise-room-prayer.jpg)
+![](/assets/uploads/guy-1.png)
 
 ### Why this matters for Christian youth today
 
@@ -25,15 +25,15 @@ We live in a generation pulled in a hundred directions — school, careers, soci
 
 If you're a young person searching for community, for purpose, for a room full of people who understand exactly what it means to chase after God in this generation — this is that room.
 
-![](/assets/uploads/praise-room-behind-scenes.jpg)
+![]()
 
 ### Good music, good vibes, God's presence
 
 The night wasn't short on energy either. Our DJs kept the atmosphere alive, blending praise with rhythm that had the whole room moving.
 
-![](/assets/uploads/praise-room-dj-1.jpg)
+![](/assets/uploads/worship-ladies.png)
 
-![](/assets/uploads/praise-room-dj-2.jpg)
+![](/assets/uploads/guy-man.png)
 
 And of course, no gathering at Sunny FM is complete without the voice behind the mic keeping everything flowing smoothly.
 
@@ -45,7 +45,7 @@ Beyond the powerful moments of worship, everyone who joined was treated to refre
 
 ![](/assets/uploads/praise-room-fellowship-1.jpg)
 
-![](/assets/uploads/praise-room-fellowship-2.jpg)
+![]()
 
 ### All glory to God
 
