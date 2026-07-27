@@ -25,27 +25,17 @@ We live in a generation pulled in a hundred directions — school, careers, soci
 
 If you're a young person searching for community, for purpose, for a room full of people who understand exactly what it means to chase after God in this generation — this is that room.
 
-![]()
-
 ### Good music, good vibes, God's presence
 
 The night wasn't short on energy either. Our DJs kept the atmosphere alive, blending praise with rhythm that had the whole room moving.
 
-![](/assets/uploads/worship-ladies.png)
-
-![](/assets/uploads/guy-man.png)
-
 And of course, no gathering at Sunny FM is complete without the voice behind the mic keeping everything flowing smoothly.
-
-![](/assets/uploads/praise-room-on-air.jpg)
 
 ### Fellowship, food, and friendship
 
 Beyond the powerful moments of worship, everyone who joined was treated to refreshing drinks and delicious finger foods — because fellowship is just as much a part of faith as the songs we sing. Friends stood shoulder to shoulder, soaking in the moment together.
 
 ![](/assets/uploads/praise-room-fellowship-1.jpg)
-
-![]()
 
 ### All glory to God
 
