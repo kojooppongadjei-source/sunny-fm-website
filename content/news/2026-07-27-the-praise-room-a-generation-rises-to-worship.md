@@ -31,6 +31,8 @@ The night wasn't short on energy either. Our DJs kept the atmosphere alive, blen
 
 And of course, no gathering at Sunny FM is complete without the voice behind the mic keeping everything flowing smoothly.
 
+![](/assets/uploads/philippians-46-7-2-.png)
+
 ### Fellowship, food, and friendship
 
 Beyond the powerful moments of worship, everyone who joined was treated to refreshing drinks and delicious finger foods — because fellowship is just as much a part of faith as the songs we sing. Friends stood shoulder to shoulder, soaking in the moment together.
