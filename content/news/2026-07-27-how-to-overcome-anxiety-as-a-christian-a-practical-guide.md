@@ -1,7 +1,11 @@
 ---
-title: 'How to Overcome Anxiety as a Christian: A Practical Guide'
+title: "How to Overcome Anxiety as a Christian: A Practical Guide"
 date: 2026-07-27T10:44:47.000+00:00
-summary: 'Anxiety can feel overwhelming even for the strongest believer, but Scripture and practical daily habits can help you find real, lasting peace. Here''s a gentle, faith-anchored guide to walking through worry with God by your side.'
+image: /assets/uploads/philippians-46-7.png
+summary: Anxiety can feel overwhelming even for the strongest believer, but
+  Scripture and practical daily habits can help you find real, lasting peace.
+  Here's a gentle, faith-anchored guide to walking through worry with God by
+  your side.
 tags:
   - Ministry
   - Community
