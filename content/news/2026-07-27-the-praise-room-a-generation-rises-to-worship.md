@@ -17,13 +17,13 @@ There's a particular kind of joy that fills a room when young people gather with
 
 From the moment the first note played, it was clear this was more than an event — it was an encounter. Young voices rose together in prayer and praise, eyes closed, hearts open, hands raised. His presence filled the room. Lives were touched. Faith was strengthened.
 
-![](/assets/uploads/guy-1.png)
-
 ### Why this matters for Christian youth today
 
 We live in a generation pulled in a hundred directions — school, careers, social media, the noise of everyday life. It's easy for young people to feel like faith is something to schedule around everything else, rather than the centre of it all. THE PRAISE ROOM exists to flip that script: a space built *by* young people, *for* young people, where worship isn't formal or distant — it's real, it's loud, it's alive.
 
 If you're a young person searching for community, for purpose, for a room full of people who understand exactly what it means to chase after God in this generation — this is that room.
+
+![](/assets/uploads/worship-ladies.png)
 
 ### Good music, good vibes, God's presence
 
