@@ -21,24 +21,14 @@ Then there's the company you'll keep. There's something powerful about being sur
 
 So take the trip. Make the time. Come as you are, and leave a little more like the couple in that photo close, unhurried, and glad to be exactly where you are, with exactly who you're with.
 
-This retreat isn't an escape from your marriage. It's an investment in it.                               Hosted by Sunny 88.7 FM, this year's retreat runs from **27th to 30th August 2026** at one of Ghana's most serene resort settings.
+This retreat isn't an escape from your marriage. It's an investment in it.   
+
+Hosted by Sunny 88.7 FM, this year's retreat runs from **27th to 30th August 2026** at one of Ghana's most serene resort settings.
 
 ### What's Included
 
-* **3-night luxury stay**
-
-   at Aqua Safari Resort
+* **3-night luxury stay** at Aqua Safari Resort
 * **Daily buffet breakfast, lunch and dinner**
-* **Guided retreat sessions**
-
-   on communication, intimacy and building a stronger marriage
-* **Couple bonding activities**
-
-   designed to help partners reconnect
-* Dedicated time for 
-
-  **relaxation and fun together**
-
-  , away from daily distractions
-
-\
+* **Guided retreat sessions** on communication, intimacy and building a stronger marriage
+* **Couple bonding activities** designed to help partners reconnect
+* Dedicated time for **relaxation and fun together**, awayfrom daily distractions
