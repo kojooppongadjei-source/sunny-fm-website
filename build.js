@@ -149,6 +149,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
 .post-body li{margin-bottom:6px;}
 .post-body a{color:var(--gold-dark);}
 .post-body blockquote{border-left:3px solid var(--gold);padding-left:16px;color:#555;margin:20px 0;font-style:italic;}
+.post-body img{max-width:100%;height:auto;display:block;border-radius:14px;margin:24px auto;}
 .back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--gold-dark);text-decoration:none;font-weight:600;margin-bottom:24px;}
 .back-link:hover{text-decoration:underline;}
 .tag{display:inline-block;background:#fff0e0;color:var(--gold-dark);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.06em;margin-right:6px;}
