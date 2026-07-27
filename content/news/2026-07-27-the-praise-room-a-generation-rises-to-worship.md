@@ -25,7 +25,7 @@ We live in a generation pulled in a hundred directions — school, careers, soci
 
 If you're a young person searching for community, for purpose, for a room full of people who understand exactly what it means to chase after God in this generation — this is that room.
 
-![]()
+![](/assets/uploads/praise-room-behind-scenes.jpg)
 
 ### Good music, good vibes, God's presence
 
@@ -45,7 +45,7 @@ Beyond the powerful moments of worship, everyone who joined was treated to refre
 
 ![](/assets/uploads/praise-room-fellowship-1.jpg)
 
-![]()
+![](/assets/uploads/praise-room-fellowship-2.jpg)
 
 ### All glory to God
 
