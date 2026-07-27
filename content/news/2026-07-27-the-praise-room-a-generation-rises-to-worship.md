@@ -1,11 +1,15 @@
 ---
 title: "THE PRAISE ROOM: A Generation Rises to Worship"
 date: 2026-07-27T18:00:00.000+00:00
-image: /assets/uploads/praise-room-worship-1.jpg
+image: /assets/uploads/philippians-46-7-1-.png
 summary: The maiden edition of THE PRAISE ROOM, organised by Let's Vibe with
-  Steve at the studios of Sunny FM, brought young people together with one
-  heart and one purpose — to worship, pray and praise God.
-tags: ["Community", "Church", "Events", "Ministry"]
+  Steve at the studios of Sunny FM, brought young people together with one heart
+  and one purpose — to worship, pray and praise God.
+tags:
+  - Community
+  - Church
+  - Events
+  - Ministry
 ---
 There's a particular kind of joy that fills a room when young people gather with one purpose — not to be entertained, not to be seen, but to worship. That was the atmosphere at the maiden edition of **THE PRAISE ROOM**, organised by *Let's Vibe with Steve* at the Sunny FM studios, and it was nothing short of extraordinary.
 
