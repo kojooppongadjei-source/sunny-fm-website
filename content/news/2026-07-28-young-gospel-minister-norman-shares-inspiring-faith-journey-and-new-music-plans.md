@@ -1,17 +1,18 @@
 ---
-title: "Young Gospel Minister Norman Shares Inspiring Faith Journey and New Music Plans"
+title: Young Gospel Minister Norman Shares Inspiring Faith Journey and New Music Plans
 date: 2026-07-28T10:00:00.000+00:00
 image: /assets/uploads/norman-griffiths-group-sunny-fm.jpg
 summary: Rising gospel minister Norman Michael Griffiths tells Sunny FM how a
-  life-changing encounter with God shaped his ministry, worship, and
-  upcoming music releases.
-tags: ["Community", "Music", "Ministry"]
+  life-changing encounter with God shaped his ministry, worship, and upcoming
+  music releases.
+tags:
+  - Community
+  - Music
+  - Ministry
 ---
 **Accra, Ghana** – Rising gospel minister Norman Michael Griffiths, popularly known as **Norman**, has opened up about his journey into music, revealing that his passion for ministry was shaped by a life-changing encounter with God in 2015.
 
 Speaking in an interview on the **Sunset Drive** with **Baaba Ocran** on Sunny 88.7 FM, the young worship leader shared how growing up in a family of musicians naturally introduced him to music, but it took a personal encounter with God to transform it into a lifelong calling.
-
-![](/assets/uploads/norman-griffiths-group-sunny-fm.jpg)
 
 Norman, the son of renowned musician Michael Griffiths — the first host of the Inspirational Morning Drive on Sunny 88.7FM — said music has always been part of his family life.
 
