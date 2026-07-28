@@ -166,8 +166,10 @@ img{max-width:100%;display:block;}
 .btn-gold:hover{background:var(--gold-dark);}
 .btn-outline{border:1px solid var(--gold);color:var(--gold-dark);padding:11px 24px;border-radius:24px;font-size:13px;font-weight:400;letter-spacing:.04em;display:inline-flex;align-items:center;gap:8px;transition:all .2s;}
 .btn-outline:hover{background:var(--gold);color:#fff;}
-.hero-photo{position:relative;border-radius:16px;overflow:hidden;}
+.hero-photo{position:relative;border-radius:16px;overflow:hidden;height:380px;}
 .hero-photo img{width:100%;height:380px;object-fit:cover;object-position:top;}
+.hero-photo-img{position:absolute;top:0;left:0;opacity:0;transition:opacity 1s ease;}
+.hero-photo-img.is-active{opacity:1;}
 .hero-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(30,10,10,.75));padding:20px 16px 16px;color:#fff;}
 .hero-caption-label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.65);font-weight:300;}
 .hero-caption-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;font-style:italic;}
@@ -251,7 +253,7 @@ footer{background:#1a1212;color:rgba(255,255,255,.6);padding:40px 4% 90px;}
 /* RESPONSIVE */
 @media(max-width:768px){
   .hero-inner{grid-template-columns:1fr;}
-  .hero-photo{order:-1;}
+  .hero-photo{order:-1;height:260px;}
   .hero-photo img{height:260px;}
   .topbar-date{font-size:11px;}
 }
@@ -354,14 +356,29 @@ footer{background:#1a1212;color:rgba(255,255,255,.6);padding:40px 4% 90px;}
       </div>
     </div>
     <div class="hero-photo">
-      <img src="/assets/jennifer-danquah.jpg" alt="Jennifer J. Danquah" width="810" height="1080">
+      <img src="/assets/jennifer-danquah.jpg" alt="Jennifer J. Danquah" width="810" height="1080" class="hero-photo-img is-active" data-name="Jennifer J. Danquah">
+      <img src="/assets/agyemang-oppong-peprah.jpg" alt="Agyemang Oppong Peprah" width="809" height="1080" class="hero-photo-img" data-name="Agyemang Oppong Peprah">
       <div class="hero-caption">
         <div class="hero-caption-label">Inspirational Morning Drive · 6:30–9:00 AM Mon–Fri</div>
-        <div class="hero-caption-name">Jennifer J. Danquah</div>
+        <div class="hero-caption-name" id="hero-caption-name">Jennifer J. Danquah</div>
       </div>
     </div>
   </div>
 </div>
+<script>
+(function(){
+  var imgs = document.querySelectorAll('.hero-photo-img');
+  var nameEl = document.getElementById('hero-caption-name');
+  if (!imgs.length) return;
+  var i = 0;
+  setInterval(function(){
+    imgs[i].classList.remove('is-active');
+    i = (i + 1) % imgs.length;
+    imgs[i].classList.add('is-active');
+    if (nameEl) nameEl.textContent = imgs[i].getAttribute('data-name');
+  }, 5000);
+})();
+</script>
 
 <!-- LATEST NEWS -->
 <div class="section">
