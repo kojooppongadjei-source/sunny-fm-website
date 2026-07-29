@@ -18,6 +18,8 @@ Marketing Officer Eugenia Bako described the Commercial Division as the supply a
 
 She said the company is certified by the Energy Commission of Ghana and serves homeowners, institutions and commercial clients with quality products and expert technical advice.
 
+![](/assets/uploads/sin-theta-eugenia-bako-interview.jpg)
+
 "Whether you are building a new home, wiring a commercial facility or installing a solar system, we provide complete solutions from supply to installation," she explained.
 
 ### Flexible Payment Plans Remove the Cost Barrier
@@ -35,6 +37,8 @@ Project Manager Engineer Desmond Dake encouraged customers not to delay their tr
 He explained that clients can initially install only solar panels and an inverter, then add batteries later as finances permit.
 
 "The inverter converts the direct current produced by solar panels into alternating current used by household appliances. Batteries can be added later to store excess energy," he explained.
+
+![](/assets/uploads/sin-theta-desmond-dake-interview.jpg)
 
 ### Safety and Quality Remain a Priority
 
