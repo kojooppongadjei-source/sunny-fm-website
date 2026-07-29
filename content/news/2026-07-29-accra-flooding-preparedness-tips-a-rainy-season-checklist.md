@@ -1,7 +1,10 @@
 ---
-title: 'Accra Flooding Preparedness Tips: A Rainy Season Checklist'
+title: "Accra Flooding Preparedness Tips: A Rainy Season Checklist"
 date: 2026-07-29T17:17:42.000+00:00
-summary: 'With Accra''s rains growing heavier each year, here is a practical, faith-filled checklist to help your family stay safe, prepared, and prayerful this rainy season.'
+image: /assets/uploads/philippians-46-7-4-.png
+summary: With Accra's rains growing heavier each year, here is a practical,
+  faith-filled checklist to help your family stay safe, prepared, and prayerful
+  this rainy season.
 tags:
   - Community
   - National
