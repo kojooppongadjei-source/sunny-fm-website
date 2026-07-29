@@ -1,7 +1,10 @@
 ---
-title: 'Accra Flooding Preparedness Tips: A Rainy Season Checklist'
+title: "Accra Flooding Preparedness Tips: A Rainy Season Checklist"
 date: 2026-07-29T17:17:42.000+00:00
-summary: 'With Accra''s rains growing heavier each year, here is a practical, faith-filled checklist to help your family stay safe, prepared, and prayerful this rainy season.'
+image: /assets/uploads/philippians-46-7-4-.png
+summary: With Accra's rains growing heavier each year, here is a practical,
+  faith-filled checklist to help your family stay safe, prepared, and prayerful
+  this rainy season.
 tags:
   - Community
   - National
@@ -16,22 +19,22 @@ As believers, we are called to be wise stewards of what God has given us, includ
 
 Every Accra neighbourhood has its own flood history. If you live near a drain, a river, or in a valley area, you are at higher risk than someone on higher ground. Take time now, not during a downpour, to:
 
-- Identify the nearest high ground or safe shelter in your area
-- Ask long-time neighbours which streets flood first
-- Note whether your compound has adequate drainage or needs urgent clearing
+* Identify the nearest high ground or safe shelter in your area
+* Ask long-time neighbours which streets flood first
+* Note whether your compound has adequate drainage or needs urgent clearing
 
-Understanding your risk is the first act of wisdom. Nehemiah inspected the walls of Jerusalem before rebuilding — he assessed the situation honestly before acting (Nehemiah 2:13-15). We are called to do the same with our homes.
+Understanding your risk is the first act of wisdom. Nehemiah inspected the walls of Jerusalem before rebuilding  he assessed the situation honestly before acting (Nehemiah 2:13-15). We are called to do the same with our homes.
 
 ### 2. Prepare an Emergency Go-Bag
 
 Every household, especially those with children or elderly relatives, should have a simple go-bag ready near the door. It should include:
 
-- Copies of important documents (ID cards, land documents, insurance papers) in a waterproof sleeve
-- A torchlight and spare batteries
-- A first-aid kit with basic medication
-- Bottled water and non-perishable snacks
-- A charged power bank
-- Cash in small denominations, since ATMs and mobile money networks can go down during flooding
+* Copies of important documents (ID cards, land documents, insurance papers) in a waterproof sleeve
+* A torchlight and spare batteries
+* A first-aid kit with basic medication
+* Bottled water and non-perishable snacks
+* A charged power bank
+* Cash in small denominations, since ATMs and mobile money networks can go down during flooding
 
 If you have comprehensive home or vehicle insurance, keep your policy documents in this bag too. As one insurance expert recently advised, [flood victims with comprehensive insurance can file claims](https://sunnygh.com/news/flood-victims-with-comprehensive-insurance-can-file-claims-–-insurance-expert-advises-ghanaians/), but only if you can act quickly and provide the right documentation.
 
@@ -39,23 +42,23 @@ If you have comprehensive home or vehicle insurance, keep your policy documents 
 
 A little effort now can save a great deal of loss later. Consider these steps:
 
-- Clear gutters, drains, and compound entrances of rubbish and debris regularly
-- Raise electrical appliances and valuables off the floor, especially in ground-floor rooms
-- Store important items in waterproof containers, elevated where possible
-- Check your roof for leaks and reinforce weak points before the heavy rains set in
-- Keep sandbags or improvised barriers ready if you live in a flood-prone compound
+* Clear gutters, drains, and compound entrances of rubbish and debris regularly
+* Raise electrical appliances and valuables off the floor, especially in ground-floor rooms
+* Store important items in waterproof containers, elevated where possible
+* Check your roof for leaks and reinforce weak points before the heavy rains set in
+* Keep sandbags or improvised barriers ready if you live in a flood-prone compound
 
 Proverbs 27:12 tells us the prudent see danger coming and take cover, while the simple walk on and suffer for it. Taking these small steps is simply obedience to that wisdom.
 
 ### 4. Protect Your Family's Health
 
-Floodwater is rarely just water — it often carries contamination that puts families at serious health risk. As Dr. Joyce Emefa warned, [floods could trigger cholera and typhoid outbreaks](https://sunnygh.com/news/floods-could-trigger-cholera-and-typhoid-outbreaks-–-dr-joyce-emifa-warns-ghanaians/) in affected communities. To protect your household:
+Floodwater is rarely just water ,it often carries contamination that puts families at serious health risk. As Dr. Joyce Emefa warned, [floods could trigger cholera and typhoid outbreaks](https://sunnygh.com/news/floods-could-trigger-cholera-and-typhoid-outbreaks-–-dr-joyce-emifa-warns-ghanaians/) in affected communities. To protect your household:
 
-- Boil or treat all drinking water during and after flooding
-- Avoid walking through floodwater barefoot or with open wounds
-- Store food in sealed, elevated containers
-- Wash hands frequently, especially before meals
-- Seek medical attention quickly if anyone shows signs of fever, diarrhoea, or stomach illness
+* Boil or treat all drinking water during and after flooding
+* Avoid walking through floodwater barefoot or with open wounds
+* Store food in sealed, elevated containers
+* Wash hands frequently, especially before meals
+* Seek medical attention quickly if anyone shows signs of fever, diarrhoea, or stomach illness
 
 Our bodies are described in Scripture as temples of the Holy Spirit (1 Corinthians 6:19), and guarding our health during risky seasons is one way we honour that truth.
 
@@ -63,11 +66,11 @@ Our bodies are described in Scripture as temples of the Holy Spirit (1 Corinthia
 
 During flooding, phone networks and roads can become unreliable. Agree with your family in advance on:
 
-- A meeting point if you get separated
-- A trusted family member or friend outside the flood zone to serve as a point of contact
-- How you will check on elderly relatives, neighbours, or church members who may need help
+* A meeting point if you get separated
+* A trusted family member or friend outside the flood zone to serve as a point of contact
+* How you will check on elderly relatives, neighbours, or church members who may need help
 
-This is also a season to lean on your church community. Many congregations organise support networks during flooding emergencies, and being connected to yours in advance means help can reach you faster. It also gives you the chance to be a blessing to others — carrying one another's burdens, as Galatians 6:2 instructs us.
+This is also a season to lean on your church community. Many congregations organise support networks during flooding emergencies, and being connected to yours in advance means help can reach you faster. It also gives you the chance to be a blessing to others, carrying one another's burdens, as Galatians 6:2 instructs us.
 
 ### 6. Know What to Do If Your Home Floods Anyway
 
