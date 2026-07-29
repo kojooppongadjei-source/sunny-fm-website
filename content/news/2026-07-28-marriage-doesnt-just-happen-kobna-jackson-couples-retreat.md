@@ -1,14 +1,14 @@
 ---
-title: "Marriage Doesn't Just Happen: Doubles Founder Kobna Jackson on Intentionality Ahead of Sunny FM's Couples Retreat"
+title: "Marriage Doesn't Just Happen: Doubles Founder Kobina Jackson on Intentionality Ahead of Sunny FM's Couples Retreat"
 date: 2026-07-28T08:00:00.000+00:00
 image: /assets/uploads/kobna-jackson-doubles-sunny-fm.jpg
-summary: Kobna Jackson, founder of Doubles - The Marriage Conversation, joined
+summary: Kobina Jackson, founder of Doubles - The Marriage Conversation, joined
   Sunny 88.7 FM's Inspirational Morning Drive to talk intentionality,
   friendship, and why even "good" marriages need a retreat — ahead of
   Sunny FM's Couples Retreat on August 27.
 tags: ["Ministry", "Community"]
 ---
-As Sunny 88.7 FM counts down to this year's Couples Retreat, the **Inspirational Morning Drive** welcomed **Kobna Jackson**, founder of *Doubles — The Marriage Conversation*, for a candid conversation about what it really takes to build a marriage that lasts.
+As Sunny 88.7 FM counts down to this year's Couples Retreat, the **Inspirational Morning Drive** welcomed **Kobina Jackson**, founder of *Doubles — The Marriage Conversation*, for a candid conversation about what it really takes to build a marriage that lasts.
 
 "We're good. We're good. And we're excited," the host said, opening the segment. With the retreat already about 80% booked — and roughly 20 of those bookings first-timers — excitement was easy to come by. "That alone is exciting for us," the host added, "that we're going to see faces we've never seen before."
 
