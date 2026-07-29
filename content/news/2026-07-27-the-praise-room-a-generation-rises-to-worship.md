@@ -35,7 +35,7 @@ And of course, no gathering at Sunny FM is complete without the voice behind the
 
 ### Fellowship, food, and friendship
 
-Beyond the powerful moments of worship, everyone who joined was treated to refreshing drinks and delicious finger foods — because fellowship is just as much a part of faith as the songs we sing. Friends stood shoulder to shoulder, soaking in the moment together.
+Beyond the powerful moments of worship, everyone who joined was treated to refreshing drinks and delicious finger foods  because fellowship is just as much a part of faith as the songs we sing. Friends stood shoulder to shoulder, soaking in the moment together.
 
 ![](/assets/uploads/praise-room-fellowship-1.jpg)
 
@@ -43,7 +43,7 @@ Beyond the powerful moments of worship, everyone who joined was treated to refre
 
 We give all the glory and honour to God for the success of this maiden edition. This is only the beginning of greater things to come.
 
-A heartfelt thank you to every individual, partner, volunteer, and supporter who contributed in diverse ways to make this vision a reality — your generosity, time, prayers, and support made all the difference.
+A heartfelt thank you to every individual, partner, volunteer, and supporter who contributed in diverse ways to make this vision a reality your generosity, time, prayers, and support made all the difference.
 
 May the Lord richly bless each and every one of you in the mighty name of Jesus Christ. May God take care of our generation, and we pray for His protection and guidance over every young person, in Jesus' name. Amen.
 
