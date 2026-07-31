@@ -1,8 +1,11 @@
 ---
-title: 'Rebuilding Communication in Marriage: Christian Advice for Ghanaian Couples'
+title: "Rebuilding Communication in Marriage: Christian Advice for Ghanaian Couples"
 date: 2026-07-28T09:37:36.000+00:00
-summary: 'When conversations turn into silence or shouting, God''s Word offers a way back. Here''s practical, scripture-anchored guidance for Ghanaian couples ready to rebuild communication in their marriage.'
-category: 'undefined'
+image: /assets/uploads/children-and-screens.png
+summary: When conversations turn into silence or shouting, God's Word offers a
+  way back. Here's practical, scripture-anchored guidance for Ghanaian couples
+  ready to rebuild communication in their marriage.
+category: undefined
 ---
 Every marriage begins with talking — long phone calls, shared dreams whispered over jollof at a family gathering, promises exchanged before God and witnesses. But somewhere between school fees, in-law visits, church programs, and the daily grind of Accra traffic, many couples wake up one day to realize they are living as roommates rather than partners. The conversations have thinned out. What used to be easy has become work.
 
