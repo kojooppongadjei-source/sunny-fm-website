@@ -10,6 +10,8 @@
 .site-nav-cta:hover{background:#a8760a;}
 .site-nav-donate{background:#C0392B;color:#fff!important;padding:10px 20px;border-radius:8px;font-weight:600;margin-left:8px;}
 .site-nav-donate:hover{background:#962d21;}
+.sn-heart{display:inline-block;margin-left:4px;animation:snHeartBeat 1.1s ease-in-out infinite;}
+@keyframes snHeartBeat{0%,100%{transform:scale(1);}25%{transform:scale(1.3);}40%{transform:scale(1);}60%{transform:scale(1.2);}}
 .site-nav-tv{display:flex;align-items:center;gap:6px;background:#1a1a1a;color:#fff!important;padding:8px 16px;border-radius:8px;font-weight:600;}
 .site-nav-tv:hover{background:#000;}
 .site-nav-tv img{height:22px;width:auto;border-radius:4px;}
@@ -47,7 +49,7 @@
       Watch TV
     </a>
     <a href="/advertise/" class="site-nav-cta">Advertise</a>
-    <a href="#" onclick="snOpenDonate();return false;" class="site-nav-donate">Donate</a>
+    <a href="#" onclick="snOpenDonate();return false;" class="site-nav-donate">Please Give <span class="sn-heart">♥</span></a>
   </div>
   <button class="site-nav-hamburger" onclick="toggleSiteMobileMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -71,7 +73,7 @@
     <a href="/music-videos/">Music &amp; Videos</a>
     <a href="/watch-tv/">Watch Sunny TV</a>
     <a href="/advertise/" class="smm-cta">Advertise With Us</a>
-    <a href="#" onclick="toggleSiteMobileMenu();snOpenDonate();return false;" class="smm-cta" style="background:#C0392B;">Donate</a>
+    <a href="#" onclick="toggleSiteMobileMenu();snOpenDonate();return false;" class="smm-cta" style="background:#C0392B;">Please Give <span class="sn-heart">♥</span></a>
   </div>
 </div>
 <script>
