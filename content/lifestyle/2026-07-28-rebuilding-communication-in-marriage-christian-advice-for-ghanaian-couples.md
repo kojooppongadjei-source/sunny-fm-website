@@ -1,7 +1,7 @@
 ---
 title: "Rebuilding Communication in Marriage: Christian Advice for Ghanaian Couples"
 date: 2026-07-28T09:37:36.000+00:00
-image: /assets/uploads/children-and-screens.png
+image: ""
 summary: When conversations turn into silence or shouting, God's Word offers a
   way back. Here's practical, scripture-anchored guidance for Ghanaian couples
   ready to rebuild communication in their marriage.
