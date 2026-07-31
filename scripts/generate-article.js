@@ -165,7 +165,7 @@ Write the article now as JSON only.`;
     },
     body: JSON.stringify({
       model: "claude-sonnet-5",
-      max_tokens: 4000,
+      max_tokens: 6000,
       system: systemPrompt,
       messages: [{ role: "user", content: userPrompt }],
     }),
@@ -178,8 +178,43 @@ Write the article now as JSON only.`;
   const textBlock = data.content.find((b) => b.type === "text");
   if (!textBlock) throw new Error("No text block in Claude response");
 
-  const cleaned = textBlock.text.replace(/```json|```/g, "").trim();
-  return JSON.parse(cleaned);
+  return parseArticleJson(textBlock.text, data.stop_reason);
+}
+
+function parseArticleJson(rawText, stopReason) {
+  const cleaned = rawText.replace(/```json|```/g, "").trim();
+  try {
+    return JSON.parse(cleaned);
+  } catch (err) {
+    // Fallback: response may have leading/trailing prose, or (if stop_reason
+    // is "max_tokens") got cut off mid-string. Try isolating the outermost
+    // {...} block before giving up.
+    const start = cleaned.indexOf("{");
+    const end = cleaned.lastIndexOf("}");
+    if (start !== -1 && end !== -1 && end > start) {
+      try {
+        return JSON.parse(cleaned.slice(start, end + 1));
+      } catch (err2) {
+        // fall through to throw below
+      }
+    }
+    const truncNote = stopReason === "max_tokens" ? " (response was truncated at max_tokens)" : "";
+    throw new Error(`Failed to parse article JSON${truncNote}: ${err.message}`);
+  }
+}
+
+async function callClaudeWithRetry(row, attempts = 3) {
+  let lastErr;
+  for (let i = 1; i <= attempts; i++) {
+    try {
+      return await callClaude(row);
+    } catch (err) {
+      lastErr = err;
+      console.warn(`Attempt ${i}/${attempts} failed: ${err.message}`);
+      if (i < attempts) await new Promise((r) => setTimeout(r, 2000 * i));
+    }
+  }
+  throw lastErr;
 }
 
 function buildFrontmatter(row, article) {
@@ -215,7 +250,7 @@ async function main() {
   const row = rows[nextIndex];
   console.log(`Generating article for keyword: "${row.keyword}" (${row.collection})`);
 
-  const article = await callClaude(row);
+  const article = await callClaudeWithRetry(row);
   const frontmatter = buildFrontmatter(row, article);
   const fileContent = `${frontmatter}\n${article.body.trim()}\n`;
 
