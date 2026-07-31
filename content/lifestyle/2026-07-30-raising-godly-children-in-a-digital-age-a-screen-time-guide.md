@@ -1,8 +1,11 @@
 ---
-title: 'Raising Godly Children in a Digital Age: A Screen Time Guide'
+title: "Raising Godly Children in a Digital Age: A Screen Time Guide"
 date: 2026-07-30T09:32:52.000+00:00
-summary: 'From TikTok to TV streaming, Ghanaian parents face new challenges in raising children who love God. Here''s practical, faith-filled guidance for navigating screens with grace and wisdom.'
-category: 'Parenting'
+image: /assets/uploads/children-and-screens.png
+summary: From TikTok to TV streaming, Ghanaian parents face new challenges in
+  raising children who love God. Here's practical, faith-filled guidance for
+  navigating screens with grace and wisdom.
+category: Parenting
 ---
 ### A New Kind of Mission Field
 
