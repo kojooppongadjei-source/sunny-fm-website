@@ -40,6 +40,10 @@ const COLLECTIONS = {
     urlPath: 'daily-bread',
     label: 'Sunny Daily Bread',
   },
+  'gospel-countdown': {
+    urlPath: 'gospel-countdown',
+    label: 'Sunny TCA Top 10 Gospel Countdown',
+  },
 };
 
 // Read shared header/footer snippets
@@ -150,6 +154,11 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
 .post-body a{color:var(--gold-dark);}
 .post-body blockquote{border-left:3px solid var(--gold);padding-left:16px;color:#555;margin:20px 0;font-style:italic;}
 .post-body img{max-width:100%;height:auto;display:block;border-radius:14px;margin:24px auto;}
+.post-body table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;}
+.post-body th{background:var(--gold);color:#fff;text-align:left;padding:10px 14px;font-weight:700;}
+.post-body td{padding:10px 14px;border-bottom:1px solid var(--border);}
+.post-body tr:nth-child(even) td{background:var(--cream);}
+.post-body table td:first-child{font-weight:800;color:var(--gold-dark);white-space:nowrap;}
 .back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--gold-dark);text-decoration:none;font-weight:600;margin-bottom:24px;}
 .back-link:hover{text-decoration:underline;}
 .tag{display:inline-block;background:#fff0e0;color:var(--gold-dark);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.06em;margin-right:6px;}
@@ -412,7 +421,7 @@ function buildCollection(collectionFolder, config) {
         ? `<img class="post-card-img" src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}"${post.image_position ? ` style="object-position:${escapeHtml(post.image_position)};"` : ''}>`
         : config.urlPath === 'daily-bread'
           ? `<div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-size:32px;background:linear-gradient(135deg,#1a1200,#0A0E1A);">📖</div>`
-          : `<div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-size:32px;">${config.urlPath === 'preaching-teaching' ? '📖' : config.urlPath === 'prayer-testimonies' ? '🙏' : config.urlPath === 'lifestyle' ? '✨' : '📰'}</div>`;
+          : `<div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-size:32px;">${config.urlPath === 'preaching-teaching' ? '📖' : config.urlPath === 'prayer-testimonies' ? '🙏' : config.urlPath === 'lifestyle' ? '✨' : config.urlPath === 'gospel-countdown' ? '🎵' : '📰'}</div>`;
       const cardSummary = config.urlPath === 'daily-bread' && post.scripture_ref
         ? `<span style="color:var(--gold-dark);font-weight:700;">${escapeHtml(post.scripture_ref)}</span> — ${escapeHtml(post.summary)}`
         : escapeHtml(post.summary);
@@ -496,6 +505,7 @@ function getCollectionEmoji(urlPath) {
     case 'prayer-testimonies': return '🙏';
     case 'preaching-teaching': return '📖';
     case 'events': return '📅';
+    case 'gospel-countdown': return '🎵';
     default: return '';
   }
 }
@@ -507,6 +517,7 @@ function getCollectionTagline(urlPath) {
     case 'prayer-testimonies': return "You don't have to carry it alone. Bring your needs to God with us — and be encouraged by what He has already done.";
     case 'preaching-teaching': return 'Catch up on sermons and teachings from our roster of pastors and ministers.';
     case 'events': return 'Crusades, conferences, and community programs from Sunny 88.7 FM.';
+    case 'gospel-countdown': return "Ghana's favourite gospel songs, ranked every week on Sunny 88.7 FM.";
     default: return '';
   }
 }
@@ -984,6 +995,7 @@ const STATIC_PAGES = [
   { loc: 'https://sunnygh.com/events/', changefreq: 'weekly', priority: '0.8' },
   { loc: 'https://sunnygh.com/lifestyle/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/preaching-teaching/', changefreq: 'weekly', priority: '0.7' },
+  { loc: 'https://sunnygh.com/gospel-countdown/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/music-videos/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/prayer-testimonies/', changefreq: 'weekly', priority: '0.6' },
   { loc: 'https://sunnygh.com/advertise/', changefreq: 'monthly', priority: '0.5' },

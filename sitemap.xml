@@ -44,6 +44,12 @@
   </url>
 
   <url>
+    <loc>https://sunnygh.com/gospel-countdown/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://sunnygh.com/music-videos/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -77,6 +83,20 @@
     <loc>https://sunnygh.com/terms/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/news/ken-blege-invites-christians-to-intimate-ken-and-friends-worship-gathering/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/news/gospel-events-this-weekend-ghana-august-1-2-2026/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <url>
@@ -318,6 +338,13 @@
   </url>
 
   <url>
+    <loc>https://sunnygh.com/lifestyle/work-life-balance-for-christian-professionals-in-ghana/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://sunnygh.com/lifestyle/raising-godly-children-in-a-digital-age-a-screen-time-guide/</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -474,6 +501,13 @@
   <url>
     <loc>https://sunnygh.com/daily-bread/his-mercies-are-new-every-morning/</loc>
     <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/gospel-countdown/sunny-tca-top-10-gospel-countdown-week-ending-august-1-2026/</loc>
+    <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
