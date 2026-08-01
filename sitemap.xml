@@ -50,12 +50,6 @@
   </url>
 
   <url>
-    <loc>https://sunnygh.com/music-videos/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://sunnygh.com/prayer-testimonies/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -83,6 +77,13 @@
     <loc>https://sunnygh.com/terms/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/news/edwin-dadson-king-of-zion-feat-gas/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <url>
