@@ -1,6 +1,7 @@
 ---
 title: "Sunny TCA Top 10 Gospel Countdown — Week Ending August 1, 2026"
 date: 2026-08-01T09:00:00.000+00:00
+image: /assets/uploads/gospel-countdown-week-aug-1-2026.png
 summary: >
   Daughters of Glorious Jesus take the #1 spot this week with "Bue Mani,"
   featuring Sandra Boakye Duah. See the full top 10 gospel countdown on
