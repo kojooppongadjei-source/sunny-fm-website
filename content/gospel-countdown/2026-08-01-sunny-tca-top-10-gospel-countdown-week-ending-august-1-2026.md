@@ -12,16 +12,16 @@ Here's this week's Sunny TCA Top 10 Gospel Countdown — Ghana's favourite gospe
 
 | Position | Song | Artist |
 | --- | --- | --- |
-| #10 | Calvary Sumsum | Piesie Esther ft Kwaku Teye |
-| #9 | Maseda | Kofi Owusu Peprah ft. Diana Hamilton |
-| #8 | Obe Tumi Aye | Collins Nyantekyi |
-| #7 | Nyame Aboa Me | Adom Kiki |
-| #6 | Show Me Your Glory | Lordina the Soprano |
-| #5 | Oguanna | Perez Music ft Daughters of Glorious Jesus |
-| #4 | Ye Di Adee | Daughters of Glorious Jesus ft MPraise |
-| #3 | This Year | Joe Mettle |
-| #2 | Victory Song | Keepers Music ft Tansy |
 | #1 | Bue Mani | Daughters of Glorious Jesus ft Sandra Boakye Duah |
+| #2 | Victory Song | Keepers Music ft Tansy |
+| #3 | This Year | Joe Mettle |
+| #4 | Ye Di Adee | Daughters of Glorious Jesus ft MPraise |
+| #5 | Oguanma | Perez Music ft Daughters of Glorious Jesus |
+| #6 | Show Me Your Glory | Lordina the Soprano |
+| #7 | Nyame Aboa Me | Adom Kiki |
+| #8 | Obe Tumi Aye | Collins Nyantekyi |
+| #9 | Maseda | Kofi Owusu Peprah ft. Diana Hamilton |
+| #10 | Calvary Sumsum | Piesie Esther ft Kwaku Teye |
 
 Daughters of Glorious Jesus hold two spots in this week's top 5 — landing at #1 with "Bue Mani" alongside Sandra Boakye Duah, and at #4 with "Ye Di Adee" featuring MPraise. Joe Mettle's "This Year" holds strong at #3.
 
