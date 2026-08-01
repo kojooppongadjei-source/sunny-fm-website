@@ -2,10 +2,11 @@
 title: "New Music: Edwin Dadson Releases 'King of Zion' feat. GAS"
 date: 2026-08-01T17:00:00.000+00:00
 youtube_id: ynbJnyGie2c
+image: /assets/uploads/screenshot-2026-08-01-173620.png
 summary: >
   Edwin Dadson is back with a powerful declaration of faith. "King of Zion,"
-  featuring GAS, lifts the name of Jesus as the ultimate King and ruler
-  over all.
+  featuring GAS, lifts the name of Jesus as the ultimate King and ruler over
+  all.
 tags:
   - Music
 ---
