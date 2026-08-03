@@ -16,4 +16,4 @@ He added that he feels “maximum strength” from fellow Manchester City playe
 
 “We pray in the hotel together, the night before \[a game], and in the tunnel,” he shared. “I think when you have brothers in Christ… we’re confident… it’s great.”
 
-``
+``<https://www.instagram.com/reel/DbkS4Nrq8_k/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==>
