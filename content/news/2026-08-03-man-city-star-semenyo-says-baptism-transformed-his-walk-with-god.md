@@ -1,7 +1,8 @@
 ---
 title: Man City star Semenyo says baptism transformed his walk with God
 date: 2026-08-03T20:13:00.000+00:00
-summary: >+
+image: /assets/uploads/semenyo.jpg
+summary: >
   Footballer Antoine Semenyo has opened up about faith with teammates at
   Manchester City, ahead of the new Premier League season.
 ---
