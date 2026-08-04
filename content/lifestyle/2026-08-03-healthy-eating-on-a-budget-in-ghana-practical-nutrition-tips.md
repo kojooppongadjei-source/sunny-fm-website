@@ -1,8 +1,11 @@
 ---
-title: 'Healthy Eating on a Budget in Ghana: Practical Nutrition Tips'
+title: "Healthy Eating on a Budget in Ghana: Practical Nutrition Tips"
 date: 2026-08-03T10:44:53.000+00:00
-summary: 'Eating well doesn''t have to break the bank. Here are practical, faith-filled tips for nourishing your body and your family with everyday Ghanaian foods, even on a tight budget.'
-category: 'Health & Wellness'
+image: /assets/uploads/budget.jpg
+summary: Eating well doesn't have to break the bank. Here are practical,
+  faith-filled tips for nourishing your body and your family with everyday
+  Ghanaian foods, even on a tight budget.
+category: Health & Wellness
 ---
 ### The Body As a Temple, Even on a Tight Budget
 
