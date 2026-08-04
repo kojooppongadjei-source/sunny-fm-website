@@ -1,7 +1,10 @@
 ---
-title: 'How to Pray Effectively: A Daily Devotion Guide'
+title: "How to Pray Effectively: A Daily Devotion Guide"
 date: 2026-08-04T09:40:03.000+00:00
-summary: 'Struggling to keep a consistent prayer life? Here''s a practical, scripture-anchored guide to help you pray effectively every day, even in the busyness of Ghanaian life.'
+image: /assets/uploads/philippians-46-7.png
+summary: Struggling to keep a consistent prayer life? Here's a practical,
+  scripture-anchored guide to help you pray effectively every day, even in the
+  busyness of Ghanaian life.
 tags:
   - Ministry
   - Community
