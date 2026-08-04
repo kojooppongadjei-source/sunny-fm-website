@@ -1,17 +1,11 @@
 ---
-title: Royal Praise 2026 — A Night of Worship, Praise and Life-Changing Encounters
+title: "Royal Praise 2026: Obaapa Christy, Empress Gifty, Joyce Blessing and Uncle Ato Set for Night of Worship at UPSA"
 date: 2026-08-04T09:00:00.000+00:00
-event_date: 2026-08-09T16:00:00.000+00:00
-event_time: Sunday, 9th August 2026 · 4:00 PM
-location: UPSA Auditorium, Accra
-tag: Concert
-price: '0'
-price_currency: GHS
+image: /assets/uploads/royal-praise-2026-obaapa-adwoa-christy.jpg
 summary: Royal Praise 2026 brings Obaapa Adwoa Christy, Empress Gifty, Joyce
   Blessing, Uncle Ato and other anointed ministers together for an evening
   of worship at the UPSA Auditorium — Sunday, 9th August 2026, 4PM.
-past: false
-image: /assets/uploads/royal-praise-2026-obaapa-adwoa-christy.jpg
+tags: ["Ministry", "Community"]
 ---
 Accra, the countdown is on! In just a few days, the **UPSA Auditorium** will host **Royal Praise 2026** — an unforgettable gathering of worship, praise, and life-changing encounters with God.
 
