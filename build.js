@@ -954,6 +954,43 @@ function renderSelfServiceAdCard(ad) {
   `;
 }
 
+// ── FEATURE DAILY BREAD ON THE LIFESTYLE PAGE ──
+// Daily Bread no longer has its own top-nav link; instead it gets a featured
+// widget at the top of the Lifestyle listing page (linking to /daily-bread/
+// and previewing the latest devotional), since it's a natural fit under Lifestyle.
+function injectDailyBreadIntoLifestyle(collectionsPosts) {
+  const indexPath = path.join(ROOT, 'lifestyle', 'index.html');
+  if (!fs.existsSync(indexPath)) return;
+  let html = fs.readFileSync(indexPath, 'utf8');
+
+  const dailyBreadPosts = collectionsPosts['daily-bread'] || [];
+  const latest = dailyBreadPosts[0];
+
+  const widgetHtml = `
+    <a href="/daily-bread/" style="display:flex;align-items:center;gap:16px;background:linear-gradient(135deg,#1a1200,#0A0E1A);color:#fff;border-radius:16px;padding:20px 22px;margin:1.5rem 0;text-decoration:none;">
+      <div style="font-size:32px;flex-shrink:0;line-height:1;">📖</div>
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);font-weight:700;margin-bottom:4px;">Sunny Daily Bread</div>
+        ${latest ? `
+          <div style="font-weight:800;font-size:16px;margin-bottom:2px;">${escapeHtml(latest.title)}</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.75);">${latest.scripture_ref ? escapeHtml(latest.scripture_ref) + ' — ' : ''}A daily word of encouragement</div>
+        ` : `
+          <div style="font-weight:800;font-size:16px;">A daily word of encouragement, every morning</div>
+        `}
+      </div>
+      <div style="font-size:13px;font-weight:700;color:var(--gold);white-space:nowrap;flex-shrink:0;">Read Today →</div>
+    </a>
+  `;
+
+  html = html.replace(
+    /(<div class="list-hero">[\s\S]*?<\/div>)/,
+    (match) => `${match}${widgetHtml}`
+  );
+
+  fs.writeFileSync(indexPath, html);
+  console.log(`Injected Daily Bread widget into Lifestyle page${latest ? ` (featuring "${latest.title}")` : ''}.`);
+}
+
 function injectSelfServiceAdsBox() {
   const indexPath = path.join(ROOT, 'index.html');
   let html = fs.readFileSync(indexPath, 'utf8');
@@ -1037,6 +1074,7 @@ for (const [folder, config] of Object.entries(COLLECTIONS)) {
 
 injectHomepageCards(collectionsPosts);
 linkHomepagePreachingCards(collectionsPosts);
+injectDailyBreadIntoLifestyle(collectionsPosts);
 injectSelfServiceAdsBox();
 
 // Generate sitemap.xml: static pages + every individual post
