@@ -474,11 +474,28 @@ function buildCollection(collectionFolder, config) {
     </div>
   ` : '';
 
+  const testimonySuccessBanner = config.urlPath === 'prayer-testimonies' ? `
+    <div id="testimony-success-banner" style="display:none;background:#ECFDF5;border:1.5px solid #10B981;border-radius:14px;padding:18px 22px;margin-bottom:1.5rem;align-items:center;gap:12px;">
+      <span style="font-size:22px;">✅</span>
+      <div>
+        <div style="font-weight:800;color:#065F46;font-size:15px;">Thank you, your testimony was received!</div>
+        <div style="font-size:13px;color:#065F46;opacity:.85;">Our team will review it, and it may be shared on air or here on the site soon.</div>
+      </div>
+    </div>
+    <script>
+      if (window.location.search.indexOf('submitted=true') !== -1) {
+        var b = document.getElementById('testimony-success-banner');
+        if (b) { b.style.display = 'flex'; b.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      }
+    </script>
+  ` : '';
+
   const listBody = `
     <div class="list-hero">
       <h1>${getCollectionEmoji(config.urlPath)} ${escapeHtml(config.label)}</h1>
       <p>${getCollectionTagline(config.urlPath)}</p>
     </div>
+    ${testimonySuccessBanner}
     ${cardsHtml}
     ${testimonyForm}
   `;
