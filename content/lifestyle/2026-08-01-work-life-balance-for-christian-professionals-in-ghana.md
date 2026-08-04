@@ -1,8 +1,11 @@
 ---
-title: 'Work-Life Balance for Christian Professionals in Ghana'
+title: Work-Life Balance for Christian Professionals in Ghana
 date: 2026-08-01T09:07:13.000+00:00
-summary: 'Feeling stretched between deadlines and devotion? Here''s faith-based, practical wisdom for Christian professionals in Accra seeking real balance between work, family, and walking with God.'
-category: 'Work & Career'
+image: /assets/uploads/yep.jpg
+summary: Feeling stretched between deadlines and devotion? Here's faith-based,
+  practical wisdom for Christian professionals in Accra seeking real balance
+  between work, family, and walking with God.
+category: Work & Career
 ---
 ### The Monday Morning Tension
 
