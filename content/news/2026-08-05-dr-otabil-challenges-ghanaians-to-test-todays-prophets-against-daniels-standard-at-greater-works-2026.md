@@ -28,8 +28,8 @@ The Greater Works convention continues through the rest of the week at Christ Te
 
 ---
 
-<div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;padding:20px;background:#f7f7f7;border-radius:12px;margin-top:1.5rem;">
+<div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding:24px;background:#f7f7f7;border-radius:12px;margin-top:1.5rem;">
   <span style="font-size:13px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.05em;">This broadcast is sponsored by:</span>
-  <img src="/assets/uploads/tilapia-to-go-logo.jpeg" alt="Tilapia To Go" style="height:48px;width:auto;">
-  <img src="/assets/uploads/media-instinct-outdoor-logo.png" alt="Media Instinct Outdoor" style="height:48px;width:auto;">
+  <img src="/assets/uploads/tilapia-to-go-logo.jpeg" alt="Tilapia To Go" style="height:90px;width:auto;">
+  <img src="/assets/uploads/media-instinct-outdoor-logo.png" alt="Media Instinct Outdoor" style="height:90px;width:auto;">
 </div>
