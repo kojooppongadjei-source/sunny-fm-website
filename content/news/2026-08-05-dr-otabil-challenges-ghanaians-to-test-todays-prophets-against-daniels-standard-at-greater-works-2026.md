@@ -25,3 +25,11 @@ He closed by declaring that just as the stone in Daniel's vision brought down em
 The Greater Works convention continues through the rest of the week at Christ Temple East.
 
 **Watch Greater Works live:** Sunny TV — available on Android and iOS, Amazon Fire TV, Google/Android TV, and LG Smart TV — as well as on [sunnygh.com](https://sunnygh.com/watch-tv/).
+
+---
+
+<div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;padding:20px;background:#f7f7f7;border-radius:12px;margin-top:1.5rem;">
+  <span style="font-size:13px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.05em;">This broadcast is sponsored by:</span>
+  <img src="/assets/uploads/tilapia-to-go-logo.jpeg" alt="Tilapia To Go" style="height:48px;width:auto;">
+  <img src="/assets/uploads/media-instinct-outdoor-logo.png" alt="Media Instinct Outdoor" style="height:48px;width:auto;">
+</div>
