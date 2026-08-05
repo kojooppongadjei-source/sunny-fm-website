@@ -23,3 +23,5 @@ Dr. Otabil went on to describe the persecution the early Christian Church endure
 He closed by declaring that just as the stone in Daniel's vision brought down empires, it would move that same night to pull down kingdoms and broken images at work in the lives of those gathered.
 
 The Greater Works convention continues through the rest of the week at Christ Temple East.
+
+**Watch Greater Works live:** Sunny TV — available on Android and iOS, Amazon Fire TV, Google/Android TV, and LG Smart TV — as well as on [sunnygh.com](https://sunnygh.com/watch-tv/).
