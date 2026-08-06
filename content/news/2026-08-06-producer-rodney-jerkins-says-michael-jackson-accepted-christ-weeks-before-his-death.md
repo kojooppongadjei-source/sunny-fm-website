@@ -1,11 +1,12 @@
 ---
-title: "Producer Rodney Jerkins Says Michael Jackson Accepted Christ Weeks Before His Death"
+title: Producer Rodney Jerkins Says Michael Jackson Accepted Christ Weeks Before
+  His Death
 date: 2026-08-06T09:00:00.000+00:00
-image: /assets/uploads/rodney-jerkins-michael-jackson-faith.jpg
+image: /assets/uploads/rodney.png
 summary: >
-  Grammy-winning producer Rodney "Darkchild" Jerkins says he learned at
-  Michael Jackson's funeral that the pop icon had accepted Christ roughly
-  two weeks before he died in 2009.
+  Grammy-winning producer Rodney "Darkchild" Jerkins says he learned at Michael
+  Jackson's funeral that the pop icon had accepted Christ roughly two weeks
+  before he died in 2009.
 tags:
   - Ministry
   - Testimony
