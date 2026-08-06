@@ -14,6 +14,40 @@ const { marked } = require('marked');
 const ROOT = __dirname;
 const CONTENT_DIR = path.join(ROOT, 'content');
 
+// Lightweight image dimension reader (no npm dependency) — supports PNG, JPEG, WEBP.
+// Used to detect ad flyer orientation so landscape vs portrait images can be
+// displayed differently (see renderSelfServiceAdCard).
+function getImageDimensions(filePath) {
+  try {
+    const buf = fs.readFileSync(filePath);
+    // PNG: signature + IHDR chunk holds width/height at fixed offsets
+    if (buf.length > 24 && buf[0] === 0x89 && buf[1] === 0x50 && buf[2] === 0x4e && buf[3] === 0x47) {
+      return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) };
+    }
+    // JPEG: walk markers looking for SOF0/2 segment
+    if (buf[0] === 0xff && buf[1] === 0xd8) {
+      let offset = 2;
+      while (offset < buf.length) {
+        if (buf[offset] !== 0xff) break;
+        const marker = buf[offset + 1];
+        if (marker === 0xc0 || marker === 0xc2) {
+          return { height: buf.readUInt16BE(offset + 5), width: buf.readUInt16BE(offset + 7) };
+        }
+        const segLength = buf.readUInt16BE(offset + 2);
+        offset += 2 + segLength;
+      }
+    }
+    // WEBP (VP8/VP8L simple parse)
+    if (buf.toString('ascii', 0, 4) === 'RIFF' && buf.toString('ascii', 8, 12) === 'WEBP') {
+      const fmt = buf.toString('ascii', 12, 16);
+      if (fmt === 'VP8 ') {
+        return { width: buf.readUInt16LE(26) & 0x3fff, height: buf.readUInt16LE(28) & 0x3fff };
+      }
+    }
+  } catch (e) { /* fall through */ }
+  return null;
+}
+
 // Collection config: folder name -> { urlPath, label, fields to expose in index }
 const COLLECTIONS = {
   'news': {
@@ -950,12 +984,18 @@ function getActiveSelfServiceAds() {
     end.setDate(end.getDate() + durationDays);
 
     if (today >= start && today < end) {
+      let orientation = 'portrait';
+      if (data.image) {
+        const dims = getImageDimensions(path.join(ROOT, data.image.replace(/^\//, '')));
+        if (dims && dims.width > dims.height) orientation = 'landscape';
+      }
       ads.push({
         business_name: data.business_name,
         image: data.image || null,
         description: data.description || '',
         link: data.link || '#',
         phone_display: data.phone_display || null,
+        orientation,
       });
     }
   }
@@ -963,8 +1003,9 @@ function getActiveSelfServiceAds() {
 }
 
 function renderSelfServiceAdCard(ad) {
+  const isLandscape = ad.orientation === 'landscape';
   const img = ad.image
-    ? `<img src="${escapeHtml(ad.image)}" alt="${escapeHtml(ad.business_name)}" style="width:100%;height:260px;object-fit:contain;object-position:center;background:#f4f4f4;display:block;">`
+    ? `<img src="${escapeHtml(ad.image)}" alt="${escapeHtml(ad.business_name)}" style="width:100%;height:260px;object-fit:${isLandscape ? 'cover' : 'contain'};object-position:center;background:#f4f4f4;display:block;">`
     : `<div style="width:100%;height:260px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:28px;">📢</div>`;
   return `
     <a href="${escapeHtml(ad.link)}" target="_blank" rel="noopener sponsored" style="display:block;text-decoration:none;color:inherit;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:var(--white);flex:0 0 220px;scroll-snap-align:start;">
