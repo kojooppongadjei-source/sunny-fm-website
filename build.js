@@ -955,6 +955,7 @@ function getActiveSelfServiceAds() {
         image: data.image || null,
         description: data.description || '',
         link: data.link || '#',
+        phone_display: data.phone_display || null,
       });
     }
   }
@@ -970,7 +971,8 @@ function renderSelfServiceAdCard(ad) {
       ${img}
       <div style="background:var(--navy,#16222E);color:#fff;padding:10px 12px;">
         <div style="font-size:12px;font-weight:700;margin-bottom:2px;">${escapeHtml(ad.business_name)}</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.75);">${escapeHtml(ad.description)}</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.75);margin-bottom:6px;">${escapeHtml(ad.description)}</div>
+        ${ad.phone_display ? `<div style="font-size:12px;font-weight:700;color:var(--gold,#D9A441);">📞 Call ${escapeHtml(ad.phone_display)}</div>` : ''}
       </div>
     </a>
   `;
