@@ -1,11 +1,11 @@
 ---
-title: "Diana Hamilton and Dr. Joseph Hamilton Celebrate 21 Years of Marriage"
+title: Diana Hamilton and Dr. Joseph Hamilton Celebrate 21 Years of Marriage
 date: 2026-08-06T10:00:00.000+00:00
-image: /assets/uploads/diana-joseph-hamilton-21st-anniversary.jpg
+image: /assets/uploads/dah.png
 summary: >
-  Gospel singer Diana Hamilton and her husband, Dr. Joseph Hamilton, are
-  marking 21 years of marriage — a partnership fans say has quietly
-  undergirded her decades-long music ministry.
+  Gospel singer Diana Hamilton and her husband, Dr. Joseph Hamilton, are marking
+  21 years of marriage — a partnership fans say has quietly undergirded her
+  decades-long music ministry.
 tags:
   - Ministry
   - Marriage
