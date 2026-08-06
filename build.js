@@ -963,10 +963,10 @@ function getActiveSelfServiceAds() {
 
 function renderSelfServiceAdCard(ad) {
   const img = ad.image
-    ? `<img src="${escapeHtml(ad.image)}" alt="${escapeHtml(ad.business_name)}" style="width:100%;height:120px;object-fit:cover;display:block;">`
-    : `<div style="width:100%;height:120px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:28px;">📢</div>`;
+    ? `<img src="${escapeHtml(ad.image)}" alt="${escapeHtml(ad.business_name)}" style="width:100%;height:260px;object-fit:contain;object-position:center;background:#f4f4f4;display:block;">`
+    : `<div style="width:100%;height:260px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:28px;">📢</div>`;
   return `
-    <a href="${escapeHtml(ad.link)}" target="_blank" rel="noopener sponsored" style="display:block;text-decoration:none;color:inherit;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:var(--white);">
+    <a href="${escapeHtml(ad.link)}" target="_blank" rel="noopener sponsored" style="display:block;text-decoration:none;color:inherit;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:var(--white);flex:0 0 220px;scroll-snap-align:start;">
       ${img}
       <div style="background:var(--navy,#16222E);color:#fff;padding:10px 12px;">
         <div style="font-size:12px;font-weight:700;margin-bottom:2px;">${escapeHtml(ad.business_name)}</div>
