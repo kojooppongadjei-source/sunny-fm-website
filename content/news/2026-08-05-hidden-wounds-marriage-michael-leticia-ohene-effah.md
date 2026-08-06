@@ -1,9 +1,10 @@
 ---
-title: "Hidden Wounds Are Pulling Couples Apart — Michael and Leticia Ohene-Effah Urge Couples to Reconnect"
+title: Hidden Wounds Are Pulling Couples Apart — Michael and Letitia Ohene-Effah
+  Urge Couples to Reconnect
 date: 2026-08-05T09:00:00.000+00:00
 image: /assets/uploads/michael-leticia-ohene-effah-love-unscripted.jpg
 summary: >
-  Marriage coaches Michael and Leticia Ohene-Effah say unresolved childhood
+  Marriage coaches Michael and Letitia Ohene-Effah say unresolved childhood
   experiences, unspoken expectations and emotional disconnection are quietly
   damaging many marriages, ahead of the 2026 Sunny Couples Retreat.
 tags:
@@ -14,7 +15,7 @@ Many marriages are not being destroyed by one dramatic argument or a single act 
 
 Instead, they are slowly being weakened by unresolved pain, repeated misunderstandings and emotional wounds that couples may not even realise they are carrying.
 
-Marriage coaches Michael and Leticia Ohene-Effah say these invisible struggles often shape how husbands and wives communicate, respond to conflict and interpret each other's behaviour.
+Marriage coaches Michael and Letitia Ohene-Effah say these invisible struggles often shape how husbands and wives communicate, respond to conflict and interpret each other's behaviour.
 
 Speaking on **Love Unscripted** on the **Inspirational Morning Drive** on Sunny 88.7 FM, the couple introduced the theme for the 2026 Sunny Couples Retreat: *Heartstrings: Healing Hidden Wounds, Building Lasting Love.*
 
@@ -72,9 +73,9 @@ She said healthy couples continually move between these different expressions of
 
 ### Friendship Formed the Foundation of Their Marriage
 
-Michael and Leticia also reflected on the friendship that shaped their own relationship. Michael said they were close friends before they became a couple and often discussed their ideas, challenges and aspirations. He realised he was in love when Leticia became the person he wanted to speak to whenever he had a problem — they could talk for hours, sometimes until early in the morning.
+Michael and Leticia also reflected on the friendship that shaped their own relationship. Michael said they were close friends before they became a couple and often discussed their ideas, challenges and aspirations. He realised he was in love when Letitia became the person he wanted to speak to whenever he had a problem — they could talk for hours, sometimes until early in the morning.
 
-For Leticia, the defining moment came when Michael told her an uncomfortable truth respectfully. She said his honesty showed that he was not afraid to engage her at a deeper level. When Michael eventually expressed his love for her, she responded with an unexpected question: "Do you know why you want to love me?" Michael said the question challenged him to go beyond emotion and identify why he truly wanted her in his life.
+For Letitia, the defining moment came when Michael told her an uncomfortable truth respectfully. She said his honesty showed that he was not afraid to engage her at a deeper level. When Michael eventually expressed his love for her, she responded with an unexpected question: "Do you know why you want to love me?" Michael said the question challenged him to go beyond emotion and identify why he truly wanted her in his life.
 
 He believes their ability to hold honest and meaningful conversations has helped sustain their marriage over the years.
 
@@ -106,7 +107,7 @@ The experience demonstrated how a brief pause, greater empathy and a willingness
 
 ### Rebuilding Connection Before It Is Too Late
 
-The message from Michael and Leticia Ohene-Effah is that many couples still love each other, but they have stopped understanding each other. The affection may still be present, yet it is buried beneath disappointment, emotional distance and repeated conflict.
+The message from Michael and Letitia Ohene-Effah is that many couples still love each other, but they have stopped understanding each other. The affection may still be present, yet it is buried beneath disappointment, emotional distance and repeated conflict.
 
 Healing begins when couples become willing to examine the hidden wounds influencing their behaviour. It also requires the courage to listen without becoming defensive, speak honestly without becoming disrespectful and approach conflict with curiosity rather than anger.
 
