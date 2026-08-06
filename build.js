@@ -443,7 +443,7 @@ function buildCollection(collectionFolder, config) {
       <div style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-dark);font-weight:700;margin-bottom:8px;">Share With Us</div>
       <h2 style="font-size:clamp(20px,3vw,28px);font-weight:800;margin-bottom:8px;">Share Your Testimony</h2>
       <p style="font-size:14px;color:#555;margin-bottom:24px;">Has God done something amazing in your life? We'd love to hear it — and share it to encourage others.</p>
-      <form name="testimony-submission" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/prayer-testimonies/?submitted=true" style="display:grid;gap:14px;">
+      <form name="testimony-submission" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/prayer-testimonies/thank-you/" style="display:grid;gap:14px;">
         <input type="hidden" name="form-name" value="testimony-submission">
         <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
@@ -806,6 +806,28 @@ function buildSelfServiceAdvertPage() {
   console.log('Built self-service-advert page and thank-you page');
 }
 buildSelfServiceAdvertPage();
+
+function buildTestimonyThankYouPage() {
+  const thankYouBody = `
+    <div class="eyebrow">Prayer &amp; Testimonies</div>
+    <h1 class="post-title">Thank you — your testimony was received 🙏</h1>
+    <div class="post-body">
+      <p>We're grateful you took the time to share what God has done in your life. Our team will review it, and with your permission it may be shared on air or here on the site to encourage others.</p>
+      <p>If you have any questions, email <a href="mailto:sunnyfm@gmail.com">sunnyfm@gmail.com</a>.</p>
+      <p><a href="/prayer-testimonies/" class="back-link">&larr; Back to Prayer &amp; Testimonies</a></p>
+    </div>
+  `;
+  const thankYouHtml = pageShell({
+    title: 'Testimony received',
+    description: 'Your testimony submission to Sunny 88.7 FM was received.',
+    bodyHtml: thankYouBody,
+    url: '/prayer-testimonies/thank-you/',
+  });
+  fs.mkdirSync(path.join(ROOT, 'prayer-testimonies', 'thank-you'), { recursive: true });
+  fs.writeFileSync(path.join(ROOT, 'prayer-testimonies', 'thank-you', 'index.html'), thankYouHtml);
+  console.log('Built prayer-testimonies thank-you page');
+}
+buildTestimonyThankYouPage();
 
 
 // The homepage previously showed "Loading news..." / "Loading events..." placeholders

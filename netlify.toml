@@ -42,6 +42,11 @@
   status = 301
 
 [[redirects]]
+  from = "/prayer-testimonies/thank-you"
+  to = "/prayer-testimonies/thank-you/"
+  status = 301
+
+[[redirects]]
   from = "/preaching-teaching"
   to = "/preaching-teaching/"
   status = 301
