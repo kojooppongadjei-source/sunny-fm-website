@@ -1056,10 +1056,51 @@ function injectDailyBreadIntoLifestyle(collectionsPosts) {
   console.log(`Injected Daily Bread widget into Lifestyle page${latest ? ` (featuring "${latest.title}")` : ''}.`);
 }
 
-function injectSelfServiceAdsBox() {
+function renderLandscapeAdBanner(ad) {
+  return `
+    <a href="${escapeHtml(ad.link)}" target="_blank" rel="noopener sponsored" style="display:flex;align-items:stretch;text-decoration:none;color:inherit;border-radius:16px;overflow:hidden;border:1px solid var(--border);background:var(--white);flex-wrap:wrap;">
+      <img src="${escapeHtml(ad.image)}" alt="${escapeHtml(ad.business_name)}" style="flex:1 1 340px;min-width:280px;max-height:280px;object-fit:cover;display:block;">
+      <div style="flex:1 1 260px;min-width:220px;background:var(--navy,#16222E);color:#fff;padding:24px 26px;display:flex;flex-direction:column;justify-content:center;gap:10px;">
+        <div style="font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold,#D9A441);font-weight:700;">Advertisement</div>
+        <div style="font-size:18px;font-weight:800;line-height:1.25;">${escapeHtml(ad.business_name)}</div>
+        <div style="font-size:13.5px;color:rgba(255,255,255,.8);line-height:1.5;">${escapeHtml(ad.description)}</div>
+        ${ad.phone_display ? `<div style="font-size:14px;font-weight:700;color:var(--gold,#D9A441);margin-top:4px;">📞 Call ${escapeHtml(ad.phone_display)}</div>` : ''}
+      </div>
+    </a>
+  `;
+}
+
+function injectLandscapeAdBanners(ads) {
   const indexPath = path.join(ROOT, 'index.html');
   let html = fs.readFileSync(indexPath, 'utf8');
-  const ads = getActiveSelfServiceAds();
+  const landscapeAds = ads.filter(ad => ad.orientation === 'landscape');
+
+  let bannerHtml = '';
+  if (landscapeAds.length > 0) {
+    bannerHtml = `
+    <div class="section">
+      <div class="section-inner" style="display:grid;gap:18px;">
+        ${landscapeAds.map(renderLandscapeAdBanner).join('')}
+      </div>
+    </div>
+    `;
+  }
+
+  html = html.replace(
+    /<!-- LANDSCAPE AD BANNER -->[\s\S]*?<!-- END LANDSCAPE AD BANNER -->/,
+    `<!-- LANDSCAPE AD BANNER -->${bannerHtml}<!-- END LANDSCAPE AD BANNER -->`
+  );
+
+  fs.writeFileSync(indexPath, html);
+  console.log(`Injected ${landscapeAds.length} landscape ad banner(s).`);
+}
+
+function injectSelfServiceAdsBox() {
+  const indexPath = path.join(ROOT, 'index.html');
+  const allAds = getActiveSelfServiceAds();
+  injectLandscapeAdBanners(allAds);
+  let html = fs.readFileSync(indexPath, 'utf8');
+  const ads = allAds.filter(ad => ad.orientation !== 'landscape');
 
   let boxHtml;
   if (ads.length === 0) {
