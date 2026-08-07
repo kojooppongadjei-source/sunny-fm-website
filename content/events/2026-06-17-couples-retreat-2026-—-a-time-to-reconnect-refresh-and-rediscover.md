@@ -3,6 +3,7 @@ title: Couples Retreat 2026 Ghana — A Time to Reconnect, Refresh and
   Rediscover at Aqua Safari Resort
 date: 2026-06-17T09:27:00.000+00:00
 event_date: 2026-08-27T06:30:00.000+00:00
+event_end_date: 2026-08-30T12:00:00.000+00:00
 event_time: 27th – 30th August 2026 (3 Nights)
 location: Aqua Safari Resort, Ghana
 tag: Summit

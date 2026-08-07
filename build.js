@@ -268,8 +268,10 @@ function buildCollection(collectionFolder, config) {
       // Event-specific fields
       event_date: data.event_date || null,
       event_date_formatted: formatDate(data.event_date),
+      event_end_date: data.event_end_date || null,
       event_time: data.event_time || null,
       location: data.location || null,
+      performer: data.performer || null,
       tag: data.tag || null,
       past: data.past || false,
       price: data.price || null,
@@ -418,6 +420,11 @@ function buildCollection(collectionFolder, config) {
         },
         image: post.image ? [`https://sunnygh.com${post.image}`] : undefined,
         description: post.summary || post.title,
+        endDate: post.event_end_date || post.event_date,
+        performer: {
+          '@type': 'PerformingGroup',
+          name: post.performer || 'Sunny 88.7 FM',
+        },
         organizer: {
           '@type': 'Organization',
           name: 'Sunny 88.7 FM',
@@ -428,6 +435,7 @@ function buildCollection(collectionFolder, config) {
           price: String(post.price).replace(/[^0-9.]/g, ''),
           priceCurrency: post.price_currency || 'GHS',
           availability: 'https://schema.org/InStock',
+          validFrom: post.date || new Date().toISOString(),
           url: `https://sunnygh.com/${config.urlPath}/${post.slug}/`,
         } : undefined,
       };

@@ -2,6 +2,7 @@
 title: Sunny Singles Adventure — Volta Edition
 date: 2026-06-29T00:00:00.000+00:00
 event_date: 2026-09-26T00:00:00.000+00:00
+event_end_date: 2026-09-27T18:00:00.000+00:00
 event_time: 26th – 27th September 2026
 location: Volta Region, Ghana
 tag: Adventure

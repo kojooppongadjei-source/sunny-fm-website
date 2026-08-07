@@ -138,8 +138,10 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Event Date", name: "event_date", widget: "datetime" }
+      - { label: "Event Date (Start)", name: "event_date", widget: "datetime" }
+      - { label: "Event End Date", name: "event_end_date", widget: "datetime", required: false, hint: "When the event ends — used for Google's structured data. If left blank, defaults to the start date." }
       - { label: "Event Time", name: "event_time", widget: "string", hint: "e.g. 9:00 AM" }
+      - { label: "Performer / Headliner", name: "performer", widget: "string", required: false, hint: "e.g. an artist or speaker name. Defaults to 'Sunny 88.7 FM' if left blank." }
       - { label: "Location", name: "location", widget: "string" }
       - label: "Tag"
         name: "tag"
