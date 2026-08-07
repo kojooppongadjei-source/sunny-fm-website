@@ -1,20 +1,20 @@
 ---
-title: Apostle Eric Nyamekye, Ghana's Fight Against Corruption Must Begin
-  with the Church
+title: Apostle Eric Nyamekye, Ghana's Fight Against Corruption Must Begin with
+  the Church
 date: 2026-08-07T12:00:00.000+00:00
 image: /assets/uploads/apostle-eric-nyamekye-lausanne-workplace-forum.png
 summary: >
-  The Chairman of The Church of Pentecost, Apostle Eric Nyamekye, tells the
-  Lausanne Workplace Forum that Ghana's fight against corruption starts with
-  churches preaching righteousness and Christians living out biblical values
-  in every sphere of society.
+  The Chairman of The Church of Pentecost, Apostle Eric Nyamekye, says Ghana's
+  fight against corruption must begin with the Church, urging Christians to live
+  out biblical values in every sphere of society while calling on churches to
+  return to preaching righteousness.
 tags:
   - Ministry
   - Community
 ---
 The Chairman of The Church of Pentecost, Apostle Eric Nyamekye, has challenged churches across Ghana to return to preaching righteousness, arguing that the country's persistent corruption reflects a failure of discipleship rather than a shortage of Christians.
 
-Speaking at the **Lausanne Workplace Forum**, Apostle Nyamekye said the Church has a divine responsibility to shape society by living out biblical values in every sphere of influence.
+Speaking to Sunny TV at the Lausanne Workplace Forum, Apostle Nyamekye said the Church has a divine responsibility to shape society by living out biblical values in every sphere of influence.
 
 The Lausanne Workplace Forum, which forms part of the global Lausanne Movement, encourages Christians to actively participate in God's mission by demonstrating biblical principles in the marketplace, education, governance, science, media, the arts and every other area of society.
 
