@@ -662,6 +662,24 @@ window.sflDay=function(idx){
 ══════════════════════════════════════════════════════════════ */
 var audio=null, streamPlaying=false, reconnectCount=0, reconnectTimer=null;
 
+/* ── Listening-time tracking (sends real listen minutes to Google Analytics) ── */
+var sflHeartbeatTimer=null, sflListenSeconds=0, sflListenId=null;
+function sflStartHeartbeat(){
+  if(sflHeartbeatTimer) return; // already running
+  sflListenId='l_'+Date.now()+'_'+Math.random().toString(36).slice(2,7);
+  sflListenSeconds=0;
+  if(window.gtag) gtag('event','listen_start',{stream:'radio',listen_id:sflListenId});
+  sflHeartbeatTimer=setInterval(function(){
+    sflListenSeconds+=30;
+    if(window.gtag) gtag('event','listen_heartbeat',{stream:'radio',listen_id:sflListenId,engagement_time_msec:30000,total_seconds:sflListenSeconds});
+  },30000);
+}
+function sflStopHeartbeat(){
+  if(!sflHeartbeatTimer) return;
+  clearInterval(sflHeartbeatTimer); sflHeartbeatTimer=null;
+  if(window.gtag) gtag('event','listen_stop',{stream:'radio',listen_id:sflListenId,total_seconds:sflListenSeconds});
+}
+
 function setStatus(msg){ document.getElementById('sfl-status').textContent=msg||''; }
 function setPlayIcon(pause){ document.getElementById('sfl-play-icon').innerHTML=pause?'<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>':'<path d="M8 5v14l11-7z"/>'; }
 function setEqPlaying(on){ document.getElementById('sfl-eq').classList.toggle('paused',!on); }
@@ -679,6 +697,7 @@ function doConnect(){
     streamPlaying=true; reconnectCount=0;
     setPlayIcon(true); setEqPlaying(true);
     setStatus('');
+    sflStartHeartbeat();
     document.getElementById('sfl-ptitle').textContent=document.getElementById('sfl-now-name').textContent||'Sunny FM 88.7';
     document.getElementById('sfl-pnow-label') && (document.getElementById('sfl-pnow-label').textContent='Now playing');
   };
@@ -687,6 +706,7 @@ function doConnect(){
   function handleDrop(reason){
     if(!streamPlaying && reconnectCount===0) return; // wasn't playing, ignore
     streamPlaying=false; setPlayIcon(false); setEqPlaying(false);
+    sflStopHeartbeat();
     if(reconnectCount<MAX_RECONNECTS){
       reconnectCount++;
       setStatus('Reconnecting… ('+reconnectCount+'/'+MAX_RECONNECTS+')');
@@ -717,6 +737,7 @@ function startStream(){
 function stopStream(){
   if(reconnectTimer){ clearTimeout(reconnectTimer); reconnectTimer=null; }
   streamPlaying=false; reconnectCount=0;
+  sflStopHeartbeat();
   destroyAudio();
   setPlayIcon(false); setEqPlaying(false);
   setStatus('');
@@ -856,6 +877,9 @@ var g=getGhanaTime();
 var tabs=document.querySelectorAll('.sfl-day-tab');
 if(tabs[g.dayIdx]) tabs.forEach(function(t,i){t.classList.toggle('active',i===g.dayIdx);});
 document.querySelectorAll('.sfl-sched-grid').forEach(function(gr,i){gr.classList.toggle('active',i===g.dayIdx);});
+
+// Send a final listen_stop if the person closes the tab / navigates away while playing
+window.addEventListener('pagehide',function(){ if(streamPlaying) sflStopHeartbeat(); });
 
 })();
 </script>

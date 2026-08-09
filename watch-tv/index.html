@@ -398,6 +398,29 @@ function goFullscreen(){
 video.addEventListener('play', function(){ updatePlayBtn(true); });
 video.addEventListener('pause', function(){ updatePlayBtn(false); });
 
+/* ── Watch-time tracking (sends real watch minutes to Google Analytics) ── */
+var stvHeartbeatTimer=null, stvWatchSeconds=0, stvWatchId=null;
+function stvStartHeartbeat(){
+  if(stvHeartbeatTimer) return;
+  stvWatchId='w_'+Date.now()+'_'+Math.random().toString(36).slice(2,7);
+  stvWatchSeconds=0;
+  if(window.gtag) gtag('event','watch_start',{stream:'tv',watch_id:stvWatchId});
+  stvHeartbeatTimer=setInterval(function(){
+    stvWatchSeconds+=30;
+    if(window.gtag) gtag('event','watch_heartbeat',{stream:'tv',watch_id:stvWatchId,engagement_time_msec:30000,total_seconds:stvWatchSeconds});
+  },30000);
+}
+function stvStopHeartbeat(){
+  if(!stvHeartbeatTimer) return;
+  clearInterval(stvHeartbeatTimer); stvHeartbeatTimer=null;
+  if(window.gtag) gtag('event','watch_stop',{stream:'tv',watch_id:stvWatchId,total_seconds:stvWatchSeconds});
+}
+video.addEventListener('playing', stvStartHeartbeat);
+video.addEventListener('pause', stvStopHeartbeat);
+video.addEventListener('ended', stvStopHeartbeat);
+video.addEventListener('error', stvStopHeartbeat);
+window.addEventListener('pagehide', function(){ if(!video.paused) stvStopHeartbeat(); });
+
 // Set initial volume
 document.getElementById('vol-slider').value = 90;
 video.volume = 0.9;
