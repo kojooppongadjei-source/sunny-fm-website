@@ -333,6 +333,218 @@ function toggleTvMobileMenu(){
 </footer>
 
 <script>
+/* ══ RADIO SCHEDULE (mirrors listen-live — Sunny TV simulcasts the same lineup) ══ */
+var DAYS=[
+  {name:'Monday',slots:[
+    {t:'04:00',p:'Morning Devotion',cls:'t-devotion'},
+    {t:'05:30',p:'Apostle Ayiku — Love Community Chapel',cls:'t-preach'},
+    {t:'06:00',p:'Bishop James Saah',cls:'t-preach',sub:'Preaching'},
+    {t:'06:15',p:'Osborn Nanjo — Daily Solution',cls:'t-preach',sub:'Preaching'},
+    {t:'06:30',p:'Inspirational Morning Drive',cls:'t-drive',sub:'Morning Drive'},
+    {t:'10:00',p:'Dr. Sam Owusu — Calvary Worship Centre',cls:'t-preach',sub:'Preaching Slot'},
+    {t:'10:30',p:'Bishop David Oyedepo — Winners International',cls:'t-preach',sub:'Preaching Slot'},
+    {t:'11:00',p:'Pastor Andy Yawson — KICC',cls:'t-preach',sub:'Preaching Slot'},
+    {t:'11:30',p:'Rev. Eastwood Anaba — Fountain Gate',cls:'t-preach',sub:'Preaching Slot'},
+    {t:'12:00',p:'PSF Drive',cls:'t-psf',sub:'Positive Soul Food'},
+    {t:'14:05',p:'Bishop Osei Tutu — Breakthrough Broadcast',cls:'t-preach'},
+    {t:'14:15',p:'Kakra Baiden — Air Power',cls:'t-preach'},
+    {t:'14:30',p:'Bishop N.A. Tackie Yarboi — VOV',cls:'t-preach'},
+    {t:'15:00',p:'Bishop George Adjeman — Life Matters',cls:'t-preach'},
+    {t:'15:30',p:'Prophet Naasei Opoku Sarkodie — Potters Hour',cls:'t-preach'},
+    {t:'16:00',p:'Pastor E.A. Adeboye — RCCG',cls:'t-preach'},
+    {t:'16:30',p:'Sunset Drive',cls:'t-ssd',sub:'Music Programme'},
+    {t:'20:00',p:'Oasis of Salvation',cls:'t-preach'},
+    {t:'22:30',p:'Dana Carson Min',cls:'t-preach'},
+    {t:'00:00',p:'Alpha Hour',cls:'t-alpha',sub:'Overnight'},
+    {t:'01:30',p:'Music',cls:'t-music'}
+  ]},
+  {name:'Tuesday',slots:[
+    {t:'03:00',p:'Daily Devotion',cls:'t-devotion'},
+    {t:'06:00',p:'Bishop James Saah',cls:'t-preach'},
+    {t:'06:15',p:'Osborn Nanjo — Daily Solution',cls:'t-preach'},
+    {t:'06:30',p:'Inspirational Morning Drive',cls:'t-drive',sub:'Morning Drive'},
+    {t:'10:00',p:'Dr. Sam Owusu — Calvary Worship Centre',cls:'t-preach'},
+    {t:'10:30',p:'Bishop David Oyedepo — Winners International',cls:'t-preach'},
+    {t:'11:00',p:'Pastor Andy Yawson — KICC',cls:'t-preach'},
+    {t:'11:30',p:'Rev. Eastwood Anaba — Fountain Gate',cls:'t-preach'},
+    {t:'12:00',p:'Positive Soul Food — PSF',cls:'t-psf',sub:'Music Programme'},
+    {t:'14:05',p:'Bishop Osei Tutu — Breakthrough Broadcast',cls:'t-preach'},
+    {t:'14:15',p:'Kakra Baiden — Air Power',cls:'t-preach'},
+    {t:'14:30',p:'Bishop N.A. Tackie Yarboi — VOV',cls:'t-preach'},
+    {t:'15:00',p:'Bishop George Adjeman — Life Matters',cls:'t-preach'},
+    {t:'15:30',p:'Prophet Naasei Opoku Sarkodie — Potters Hour',cls:'t-preach'},
+    {t:'16:00',p:'Pastor E.A. Adeboye — RCCG',cls:'t-preach'},
+    {t:'16:30',p:'Sunset Drive',cls:'t-ssd',sub:'Music Programme'},
+    {t:'19:00',p:'Overdrive',cls:'t-show'},
+    {t:'20:00',p:'Effortless Change',cls:'t-show'},
+    {t:'20:30',p:'Local Churches',cls:'t-preach'},
+    {t:'23:00',p:'Music',cls:'t-music'},
+    {t:'23:30',p:'Dana Carson Min',cls:'t-preach'},
+    {t:'01:00',p:'Alpha Hour',cls:'t-alpha',sub:'Overnight'},
+    {t:'02:30',p:'Praise Life',cls:'t-music'}
+  ]},
+  {name:'Wednesday',slots:[
+    {t:'06:00',p:'Bishop James Saah',cls:'t-preach'},
+    {t:'06:15',p:'Osborn Nanjo — Daily Solution',cls:'t-preach'},
+    {t:'06:30',p:'Inspirational Morning Drive',cls:'t-drive',sub:'Morning Drive'},
+    {t:'10:00',p:'Dr. Sam Owusu — Calvary Worship Centre',cls:'t-preach'},
+    {t:'10:30',p:'Bishop David Oyedepo — Winners International',cls:'t-preach'},
+    {t:'11:00',p:'Pastor Andy Yawson — KICC Ghana',cls:'t-preach'},
+    {t:'11:30',p:'Rev. Eastwood Anaba — Fountain Gate',cls:'t-preach'},
+    {t:'12:00',p:'Positive Soul Food — PSF',cls:'t-psf',sub:'Music Programme'},
+    {t:'14:05',p:'Bishop Osei Tutu — Breakthrough Broadcast',cls:'t-preach'},
+    {t:'14:15',p:'Kakra Baiden — Air Power',cls:'t-preach'},
+    {t:'14:30',p:'Bishop N.A. Tackie Yarboi — Voice of Victory',cls:'t-preach'},
+    {t:'15:00',p:'Bishop George Adjeman — Life Matters',cls:'t-preach'},
+    {t:'15:30',p:'Prophet Naasei Opoku Sarkodie — Potters Hour',cls:'t-preach'},
+    {t:'16:00',p:'Pastor E.A. Adeboye — RCCG',cls:'t-preach'},
+    {t:'16:30',p:'Sunset Drive',cls:'t-ssd',sub:'Music Programme'},
+    {t:'19:00',p:'Overdrive',cls:'t-show'},
+    {t:'20:15',p:'Looking Up to Jesus',cls:'t-preach'},
+    {t:'20:45',p:'Pentecost Hour',cls:'t-preach'},
+    {t:'21:00',p:'Meditation of the Psalms',cls:'t-devotion'},
+    {t:'21:30',p:'City of Consecration',cls:'t-preach'},
+    {t:'22:00',p:'Music',cls:'t-music'},
+    {t:'00:30',p:'Alpha Hour',cls:'t-alpha',sub:'Overnight'}
+  ]},
+  {name:'Thursday',slots:[
+    {t:'05:30',p:'Anchor of Love',cls:'t-devotion'},
+    {t:'06:00',p:'Bishop James Saah',cls:'t-preach'},
+    {t:'06:15',p:'Osborn Nanjo — Daily Solution',cls:'t-preach'},
+    {t:'06:30',p:'Inspirational Morning Drive',cls:'t-drive',sub:'Morning Drive'},
+    {t:'10:00',p:'Dr. Sam Owusu — Calvary Worship Centre',cls:'t-preach'},
+    {t:'10:30',p:'Bishop David Oyedepo — Winners International',cls:'t-preach'},
+    {t:'11:00',p:'Pastor Andy Yawson — KICC Ghana',cls:'t-preach'},
+    {t:'11:30',p:'Rev. Eastwood Anaba — Fountain Gate',cls:'t-preach'},
+    {t:'12:00',p:'Positive Soul Food — PSF',cls:'t-psf',sub:'Music Programme'},
+    {t:'14:05',p:'Bishop Osei Tutu — Breakthrough Broadcast',cls:'t-preach'},
+    {t:'14:15',p:'Kakra Baiden — Air Power',cls:'t-preach'},
+    {t:'14:30',p:'Faith School',cls:'t-preach'},
+    {t:'15:00',p:'Bishop George Adjeman — Life Matters',cls:'t-preach'},
+    {t:'15:30',p:'Prophet Naasei Opoku Sarkodie — Potters Hour',cls:'t-preach'},
+    {t:'16:00',p:'Bishop James Nanjo — Kings Connect',cls:'t-preach'},
+    {t:'16:30',p:'Sunset Drive',cls:'t-ssd',sub:'Music Programme'},
+    {t:'20:30',p:'Bible Today',cls:'t-preach'},
+    {t:'21:00',p:'Mount Horeb',cls:'t-preach'},
+    {t:'21:30',p:'Global Redemption',cls:'t-preach'},
+    {t:'22:00',p:'Through the Bible',cls:'t-preach'},
+    {t:'22:30',p:'Love Castle Family',cls:'t-preach'},
+    {t:'23:00',p:'Jingle Block',cls:'t-jingle'},
+    {t:'00:30',p:'Alpha Hour',cls:'t-alpha',sub:'Overnight'},
+    {t:'02:30',p:'Praise Life',cls:'t-music'}
+  ]},
+  {name:'Friday',slots:[
+    {t:'06:30',p:'Inspirational Morning Drive',cls:'t-drive',sub:'Morning Drive'},
+    {t:'10:00',p:'Dr. Sam Owusu — Calvary Worship Centre',cls:'t-preach'},
+    {t:'10:30',p:'Bishop David Oyedepo — Winners International',cls:'t-preach'},
+    {t:'11:00',p:'Pastor Andy Yawson — KICC',cls:'t-preach'},
+    {t:'11:30',p:'Rev. Eastwood Anaba — Fountain Gate',cls:'t-preach'},
+    {t:'12:00',p:'PSF Drive',cls:'t-psf',sub:'Positive Soul Food'},
+    {t:'14:05',p:'Bishop Osei Tutu — Breakthrough Broadcast',cls:'t-preach'},
+    {t:'14:15',p:'Kakra Baiden — Air Power',cls:'t-preach'},
+    {t:'15:00',p:'Bishop George Adjeman — Life Matters',cls:'t-preach'},
+    {t:'15:30',p:'Prophet Naasei Opoku Sarkodie — Potters Hour',cls:'t-preach'},
+    {t:'16:00',p:'Bishop James Nanjo — Kings Connect',cls:'t-preach'},
+    {t:'16:30',p:'Sunset Drive',cls:'t-ssd',sub:'Music Programme'},
+    {t:'19:30',p:'Family Renaissance Broadcast',cls:'t-show'},
+    {t:'21:00',p:'Shine Forth Prayer Time',cls:'t-devotion'},
+    {t:'23:00',p:'Jingle Block',cls:'t-jingle'},
+    {t:'00:30',p:'Alpha Hour',cls:'t-alpha',sub:'Overnight'},
+    {t:'02:30',p:'Praise Life',cls:'t-music'}
+  ]},
+  {name:'Saturday',slots:[
+    {t:'03:00',p:'Prevailing Hour',cls:'t-devotion'},
+    {t:'04:00',p:'Aglow',cls:'t-devotion'},
+    {t:'05:00',p:'Music',cls:'t-music'},
+    {t:'06:00',p:'Supernatural Word',cls:'t-preach'},
+    {t:'06:30',p:'Impact Church',cls:'t-preach'},
+    {t:'07:00',p:'Focus on Family',cls:'t-show'},
+    {t:'08:00',p:'Knowing the Law',cls:'t-show'},
+    {t:'09:00',p:'Digital Marketing',cls:'t-show'},
+    {t:'09:15',p:'William Backson',cls:'t-preach'},
+    {t:'09:30',p:'Christ Home',cls:'t-preach'},
+    {t:'10:00',p:'BackToBaze',cls:'t-show'},
+    {t:'11:00',p:'Shiloh Hour',cls:'t-preach'},
+    {t:'11:30',p:'Fountain Gate',cls:'t-preach'},
+    {t:'12:00',p:'Sunny TCA Gospel Countdown',cls:'t-music',sub:'Music Programme'},
+    {t:'13:00',p:'TWB — Vickie',cls:'t-music',sub:'Music Programme'},
+    {t:'14:00',p:'Steve Show',cls:'t-show'},
+    {t:'14:30',p:'Radiant Place',cls:'t-preach'},
+    {t:'15:00',p:'Music',cls:'t-music'},
+    {t:'15:30',p:'Pentecost Hour',cls:'t-preach'},
+    {t:'16:00',p:'Music',cls:'t-music'},
+    {t:'16:45',p:'Every Woman',cls:'t-show'},
+    {t:'17:30',p:'Bible Today',cls:'t-preach'},
+    {t:'18:00',p:'Bible Study',cls:'t-preach'},
+    {t:'18:30',p:'Eye Opener',cls:'t-show'},
+    {t:'19:00',p:'Letters to My Younger Self',cls:'t-show'},
+    {t:'19:30',p:'Keeping the Light / WOT',cls:'t-preach'},
+    {t:'20:00',p:'Calvary Baptist Church',cls:'t-preach'},
+    {t:'20:30',p:'Joy Hour',cls:'t-preach'},
+    {t:'21:00',p:'Christ Life Avenue',cls:'t-preach'},
+    {t:'22:30',p:'Dana Carson Min',cls:'t-preach'},
+    {t:'23:00',p:'Music',cls:'t-music'}
+  ]},
+  {name:'Sunday',slots:[
+    {t:'06:00',p:"The Lord's Garden",cls:'t-devotion'},
+    {t:'06:30',p:'Watered Garden Spirit Life',cls:'t-devotion'},
+    {t:'07:00',p:'Treasures of Wisdom',cls:'t-preach'},
+    {t:'07:30',p:'Sunday Gospel Café',cls:'t-drive',sub:'Music Programme'},
+    {t:'08:00',p:'Dr. Rev Som Pimpong',cls:'t-preach'},
+    {t:'08:30',p:'Sunday Gospel Café',cls:'t-drive'},
+    {t:'09:00',p:'Jingle Block',cls:'t-jingle'},
+    {t:'10:00',p:'Praise Live',cls:'t-music',sub:'Music Programme'},
+    {t:'10:30',p:'Music',cls:'t-music'},
+    {t:'12:00',p:'Music',cls:'t-music'},
+    {t:'12:30',p:'Adventures of Odyssey',cls:'t-show'},
+    {t:'13:00',p:'KLJT',cls:'t-preach'},
+    {t:'15:00',p:'Music',cls:'t-music'},
+    {t:'15:30',p:'Salt & Light',cls:'t-show'},
+    {t:'17:30',p:'BT Global Min',cls:'t-preach'},
+    {t:'18:00',p:'Tabernacle Worship Center',cls:'t-preach'},
+    {t:'18:30',p:'GPCC',cls:'t-preach'},
+    {t:'19:00',p:"John Anorkye's Min",cls:'t-preach'},
+    {t:'20:00',p:'Rehoboth / Adonai',cls:'t-preach'},
+    {t:'20:30',p:'New Tabernacle',cls:'t-preach'},
+    {t:'21:00',p:'Triumphant Gospel Church',cls:'t-preach'},
+    {t:'22:30',p:'Dana Carson',cls:'t-preach'},
+    {t:'00:00',p:'Alpha Hour Broadcast Live',cls:'t-alpha',sub:'Overnight'},
+    {t:'02:30',p:'Praise Life',cls:'t-music'}
+  ]}
+];
+
+function stvToMinsSeq(t, prevMins) {
+  var p=t.split(':'), mins=parseInt(p[0])*60+parseInt(p[1]);
+  if(prevMins!==undefined && mins<prevMins) mins+=1440;
+  return mins;
+}
+function stvGetGhanaTime(){
+  var now=new Date();
+  var parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Africa/Accra',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(now);
+  function get(type){return (parts.find(function(p){return p.type===type;})||{}).value;}
+  var DAY_MAP={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  var jsDay=DAY_MAP[get('weekday')];
+  var dayIdx=[6,0,1,2,3,4,5][jsDay];
+  var h=parseInt(get('hour')), m=parseInt(get('minute'));
+  return {dayIdx:dayIdx, nowMins:h*60+m};
+}
+function stvGetCurrentShow(){
+  var g=stvGetGhanaTime();
+  var raw=DAYS[g.dayIdx].slots, sorted=[], prev=-1;
+  for(var i=0;i<raw.length;i++){
+    var mins=stvToMinsSeq(raw[i].t, prev===-1?undefined:prev);
+    sorted.push({slot:raw[i],mins:mins}); prev=mins;
+  }
+  sorted.sort(function(a,b){return a.mins-b.mins;});
+  var current=null;
+  for(var i=0;i<sorted.length;i++){
+    var sm=sorted[i].mins, em=i+1<sorted.length?sorted[i+1].mins:sm+60;
+    if(g.nowMins>=sm && g.nowMins<em){ current=sorted[i]; break; }
+  }
+  if(!current && sorted.length) current=sorted[sorted.length-1];
+  return current ? current.slot.p : 'Sunny FM 88.7';
+}
+
 var STREAM = 'https://stream-server9-jupiter.muxlive.com/hls/sunnytv/index.m3u8';
 var video = document.getElementById('sunny-tv-player');
 var hls;
@@ -404,16 +616,16 @@ function stvStartHeartbeat(){
   if(stvHeartbeatTimer) return;
   stvWatchId='w_'+Date.now()+'_'+Math.random().toString(36).slice(2,7);
   stvWatchSeconds=0;
-  if(window.gtag) gtag('event','watch_start',{stream:'tv',watch_id:stvWatchId});
+  if(window.gtag) gtag('event','watch_start',{stream:'tv',watch_id:stvWatchId,show:stvGetCurrentShow()});
   stvHeartbeatTimer=setInterval(function(){
     stvWatchSeconds+=30;
-    if(window.gtag) gtag('event','watch_heartbeat',{stream:'tv',watch_id:stvWatchId,engagement_time_msec:30000,total_seconds:stvWatchSeconds});
+    if(window.gtag) gtag('event','watch_heartbeat',{stream:'tv',watch_id:stvWatchId,engagement_time_msec:30000,total_seconds:stvWatchSeconds,show:stvGetCurrentShow()});
   },30000);
 }
 function stvStopHeartbeat(){
   if(!stvHeartbeatTimer) return;
   clearInterval(stvHeartbeatTimer); stvHeartbeatTimer=null;
-  if(window.gtag) gtag('event','watch_stop',{stream:'tv',watch_id:stvWatchId,total_seconds:stvWatchSeconds});
+  if(window.gtag) gtag('event','watch_stop',{stream:'tv',watch_id:stvWatchId,total_seconds:stvWatchSeconds,show:stvGetCurrentShow()});
 }
 video.addEventListener('playing', stvStartHeartbeat);
 video.addEventListener('pause', stvStopHeartbeat);

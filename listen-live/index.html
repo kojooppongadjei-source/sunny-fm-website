@@ -664,20 +664,24 @@ var audio=null, streamPlaying=false, reconnectCount=0, reconnectTimer=null;
 
 /* ── Listening-time tracking (sends real listen minutes to Google Analytics) ── */
 var sflHeartbeatTimer=null, sflListenSeconds=0, sflListenId=null;
+function sflCurrentShowName(){
+  var el=document.getElementById('sfl-now-name');
+  return (el && el.textContent) ? el.textContent : 'Sunny FM 88.7';
+}
 function sflStartHeartbeat(){
   if(sflHeartbeatTimer) return; // already running
   sflListenId='l_'+Date.now()+'_'+Math.random().toString(36).slice(2,7);
   sflListenSeconds=0;
-  if(window.gtag) gtag('event','listen_start',{stream:'radio',listen_id:sflListenId});
+  if(window.gtag) gtag('event','listen_start',{stream:'radio',listen_id:sflListenId,show:sflCurrentShowName()});
   sflHeartbeatTimer=setInterval(function(){
     sflListenSeconds+=30;
-    if(window.gtag) gtag('event','listen_heartbeat',{stream:'radio',listen_id:sflListenId,engagement_time_msec:30000,total_seconds:sflListenSeconds});
+    if(window.gtag) gtag('event','listen_heartbeat',{stream:'radio',listen_id:sflListenId,engagement_time_msec:30000,total_seconds:sflListenSeconds,show:sflCurrentShowName()});
   },30000);
 }
 function sflStopHeartbeat(){
   if(!sflHeartbeatTimer) return;
   clearInterval(sflHeartbeatTimer); sflHeartbeatTimer=null;
-  if(window.gtag) gtag('event','listen_stop',{stream:'radio',listen_id:sflListenId,total_seconds:sflListenSeconds});
+  if(window.gtag) gtag('event','listen_stop',{stream:'radio',listen_id:sflListenId,total_seconds:sflListenSeconds,show:sflCurrentShowName()});
 }
 
 function setStatus(msg){ document.getElementById('sfl-status').textContent=msg||''; }
