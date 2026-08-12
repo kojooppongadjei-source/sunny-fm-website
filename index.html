@@ -1128,7 +1128,112 @@ function snOpenDonate(){
 
 <!-- Contest -->
 
+<!-- SUNNY SINGLES ADVENTURE POPUP -->
+<style>
+#ssa-overlay{
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);
+  z-index:9999;align-items:center;justify-content:center;padding:16px;
+}
+#ssa-overlay.show{display:flex;}
+#ssa-modal{
+  background:#fff;border-radius:16px;max-width:420px;width:100%;
+  overflow:hidden;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.3);
+  animation:ssaPop .3s ease;
+}
+@keyframes ssaPop{from{opacity:0;transform:scale(.95);}to{opacity:1;transform:scale(1);}}
+.ssa-close{
+  position:absolute;top:10px;right:10px;width:30px;height:30px;
+  border-radius:50%;background:rgba(0,0,0,0.55);color:#fff;border:none;
+  cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;
+  transition:background .2s;z-index:2;
+}
+.ssa-close:hover{background:rgba(0,0,0,0.8);}
+#ssa-img{width:100%;height:auto;display:block;aspect-ratio:1200/630;object-fit:cover;}
+.ssa-body{padding:22px 24px 24px;}
+.ssa-eyebrow{
+  font-size:10px;font-weight:800;text-transform:uppercase;
+  letter-spacing:2px;color:#0E9E8B;margin-bottom:8px;
+}
+.ssa-title{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:21px;font-weight:800;color:#1a1a2e;
+  line-height:1.25;margin-bottom:10px;
+}
+.ssa-details{
+  display:flex;flex-direction:column;gap:6px;
+  margin-bottom:16px;
+}
+.ssa-detail{
+  font-size:13px;color:#444;display:flex;align-items:center;gap:8px;
+}
+.ssa-detail strong{color:#1a1a2e;}
+.ssa-price{
+  background:#E9FBF8;border:1px solid #9FE3D8;
+  border-radius:8px;padding:10px 14px;
+  font-size:14px;font-weight:700;color:#0E7D6D;
+  margin-bottom:16px;text-align:center;
+}
+.ssa-actions{display:flex;gap:10px;}
+.ssa-cta{
+  flex:1;text-align:center;padding:12px;
+  background:#0E9E8B;color:#fff;font-weight:700;
+  font-size:13px;border-radius:7px;text-decoration:none;
+  transition:background .2s;
+}
+.ssa-cta:hover{background:#0b7e6e;}
+.ssa-cta-wa{
+  flex:1;text-align:center;padding:12px;
+  background:#25D366;color:#fff;font-weight:700;
+  font-size:13px;border-radius:7px;text-decoration:none;
+  transition:background .2s;
+}
+.ssa-cta-wa:hover{background:#1ea952;}
+@media(max-width:480px){
+  #ssa-modal{border-radius:12px;}
+  .ssa-body{padding:18px 18px 20px;}
+}
+</style>
 
+<div id="ssa-overlay" onclick="ssaClose(event)">
+  <div id="ssa-modal" onclick="event.stopPropagation()">
+    <button class="ssa-close" onclick="ssaClose()">✕</button>
+    <img id="ssa-img" src="/assets/uploads/sunny-singles-adventure-volta-edition.jpg" alt="Sunny Singles Adventure — Volta Edition" width="1200" height="630">
+    <div class="ssa-body">
+      <div class="ssa-eyebrow">🌄 Sunny FM Presents</div>
+      <div class="ssa-title">Sunny Singles Adventure — Volta Edition</div>
+      <div class="ssa-details">
+        <div class="ssa-detail">📅 <strong>26th – 27th September 2026</strong></div>
+        <div class="ssa-detail">📍 <strong>Volta Region</strong>, Ghana — Afadjato & Tagbo Falls</div>
+        <div class="ssa-detail">⏰ Registration deadline: <strong>21st September 2026</strong></div>
+      </div>
+      <div class="ssa-price">GH₵ 2,850 single · GH₵ 4,770 double</div>
+      <div class="ssa-actions">
+        <a class="ssa-cta-wa" href="https://wa.me/233545223324?text=Hi%2C%20I%27d%20like%20to%20register%20for%20the%20Sunny%20Singles%20Adventure%20-%20Volta%20Edition" target="_blank" rel="noopener">💬 WhatsApp to Register</a>
+        <a class="ssa-cta" href="/events/sunny-singles-adventure-volta-edition/" onclick="ssaClose()">View Details →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var SSA_KEY = 'sunny_singles_adventure_popup_seen';
+  var COOLDOWN_MS = 24 * 60 * 60 * 1000; // 24 hours
+  var lastSeen = parseInt(localStorage.getItem(SSA_KEY) || '0', 10);
+  if(Date.now() - lastSeen > COOLDOWN_MS){
+    setTimeout(function(){
+      document.getElementById('ssa-overlay').classList.add('show');
+    }, 4000);
+  }
+})();
+
+function ssaClose(e){
+  if(e && e.target !== document.getElementById('ssa-overlay')) return;
+  document.getElementById('ssa-overlay').classList.remove('show');
+  localStorage.setItem('sunny_singles_adventure_popup_seen', String(Date.now()));
+}
+</script>
+<!-- END SUNNY SINGLES ADVENTURE POPUP -->
 
 </body>
 </html>
