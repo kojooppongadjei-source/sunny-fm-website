@@ -17,8 +17,6 @@ Life, however, had other plans.
 
 Nearly five years into their marriage, career opportunities have forced the couple to spend significant periods in different countries. Yet instead of allowing the distance to pull them apart, they say it has taught them important lessons about sacrifice, trust, communication and intentionally protecting a marriage.
 
-![](/assets/uploads/jonathan-janice-dugbartey-love-unscripted-group-photo.png)
-
 Appearing on **The Couple Next Door**, Sunny 88.7 FM's August Love Unscripted series on the **Inspirational Morning Drive (IMDrive)**, Jonathan and Janice shared the unconventional love story that brought together a public health researcher and a fashion designer — and how they have kept their marriage going across thousands of kilometres.
 
 ### The Researcher and the Tailor
