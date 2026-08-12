@@ -2,7 +2,7 @@
 title: "Marriage Across the Miles: Jonathan and Janice Dugbartey Share How
   Faith, Sacrifice and Boundaries Keep Their Love Strong"
 date: 2026-08-13T09:00:00.000+00:00
-image: /assets/uploads/jonathan-janice-dugbartey-love-unscripted-interview.png
+image: /assets/uploads/jonathan-janice-dugbartey-love-unscripted-group-photo.png
 summary: >
   Jonathan and Janice Dugbartey open up on Sunny 88.7 FM's Love Unscripted
   series about building a marriage across continents, sacrifice, faith and the
@@ -17,7 +17,7 @@ Life, however, had other plans.
 
 Nearly five years into their marriage, career opportunities have forced the couple to spend significant periods in different countries. Yet instead of allowing the distance to pull them apart, they say it has taught them important lessons about sacrifice, trust, communication and intentionally protecting a marriage.
 
-![](/assets/uploads/jonathan-janice-dugbartey-love-unscripted-interview.png)
+![](/assets/uploads/jonathan-janice-dugbartey-love-unscripted-group-photo.png)
 
 Appearing on **The Couple Next Door**, Sunny 88.7 FM's August Love Unscripted series on the **Inspirational Morning Drive (IMDrive)**, Jonathan and Janice shared the unconventional love story that brought together a public health researcher and a fashion designer — and how they have kept their marriage going across thousands of kilometres.
 
@@ -165,7 +165,7 @@ But communication alone was not enough.
 
 The couple also recognised the need to protect their marriage.
 
-![](/assets/uploads/jonathan-janice-dugbartey-love-unscripted-group-photo.png)
+![](/assets/uploads/jonathan-janice-dugbartey-love-unscripted-interview.png)
 
 ### "Don't Just Have Boundaries — Prevent"
 
