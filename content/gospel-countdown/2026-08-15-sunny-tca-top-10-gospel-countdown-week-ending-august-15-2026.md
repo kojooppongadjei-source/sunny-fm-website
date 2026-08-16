@@ -1,6 +1,7 @@
 ---
 title: "Sunny TCA Top 10 Gospel Countdown — Week Ending August 15, 2026"
 date: 2026-08-15T09:00:00.000+00:00
+image: /assets/uploads/gospel-countdown-week-aug-15-2026.png
 summary: >
   Diana Antwi Hamilton takes the #1 spot this week with "Ahay3," featuring
   Ntokozo Mbambo and Elder Mireku. See the full top 10 gospel countdown on
