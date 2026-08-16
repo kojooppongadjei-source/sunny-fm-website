@@ -13,4 +13,10 @@ preacher_bio: >-
   of Victory radio broadcast and has authored several books, including The
   Believer's Mind and Overcoming Depression.
 ---
-Faith
+### Faith
+
+Bishop N.A. Tackie-Yarboi teaches on faith as the substance that turns God's promises into a believer's present reality — grounding the message in Hebrews 11:1, "faith is the substance of things hoped for, the evidence of things not seen." He explains that faith is not wishful thinking but a confident, active trust that takes God at His word before the circumstances have changed.
+
+Drawing on decades of pastoral experience since founding Victory Bible Church International in 1985, Bishop Tackie-Yarboi shares that every major turnaround he has witnessed — in ministry and in the lives of members — began with someone choosing to declare God's Word over their situation instead of merely describing what they saw. He addresses doubt directly, teaching that it is dealt with not by ignoring it but by deliberately feeding faith through the Word, worship, and testimony.
+
+The broadcast closes with a declaration of victory over every discouraging report, encouraging listeners to hold their confession steady, since — as the Voice of Victory broadcast consistently teaches — God's victory belongs to every situation surrendered to Him in faith.

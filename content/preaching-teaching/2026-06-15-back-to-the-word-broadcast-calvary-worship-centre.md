@@ -13,4 +13,10 @@ preacher_bio: >-
   Divinity School, and has authored several books, including Fresh Fire and
   Dream Again.
 ---
-Walking with God
+### Walking with God
+
+Dr. Sam Owusu teaches from the life of Enoch — "Enoch walked with God: and he was not; for God took him" (Genesis 5:24) — to explore what it means to live in step with the supernatural rather than settling for a purely natural Christian experience. He explains that walking with God is a relationship of agreement, not a set of rules, and that intimacy with God is what qualifies a believer to carry His power.
+
+Dr. Owusu draws on his years leading a multicultural congregation to illustrate that the supernatural life is not reserved for a spiritual elite — it is available to any believer willing to prioritise God's presence over routine religious activity. He unpacks practical markers of this walk: sensitivity to the Holy Spirit, obedience in small things, and a hunger that keeps growing rather than plateauing.
+
+The teaching closes with an invitation to step boldly into the fullness of what God has prepared, framing the supernatural not as strange or unreachable, but as the normal Christian life lived in close fellowship with God.

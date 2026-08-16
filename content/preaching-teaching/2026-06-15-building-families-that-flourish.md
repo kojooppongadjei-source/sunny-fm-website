@@ -14,4 +14,10 @@ preacher_bio: >-
   and revival, delivered through weekly prayer meetings and international
   outreach.
 ---
-How did David get to know about the Mercies of God
+### How Did David Get to Know About the Mercies of God
+
+Prophet Nana Sei Opoku-Sarkodie traces King David's confidence in God's mercy back to lived experience rather than theory — from the shepherd fields where he faced the lion and the bear, to the wilderness years fleeing Saul, to his own failures with Bathsheba. He teaches that David could write "surely goodness and mercy shall follow me all the days of my life" (Psalm 23:6) precisely because he had tested God's mercy in real crisis and found it faithful every time.
+
+He applies this to the "Potter's Hour" theme of divine shaping: mercy is not merely forgiveness for sin, but the hand of God reshaping a broken vessel into something useful again. Prophet Opoku-Sarkodie encourages listeners not to despise seasons of pressure or failure, since it is often in those very seasons — as it was for David — that a person comes to truly know the depth of God's mercy rather than simply hearing about it.
+
+The broadcast, part of the Family Foundations series, closes by connecting this personal revelation of mercy to the health of the home — arguing that families are strengthened when parents lead from a place of experienced grace rather than performance and fear.

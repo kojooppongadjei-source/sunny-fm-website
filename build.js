@@ -156,7 +156,7 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-function pageShell({ title, description, bodyHtml, ogImage, jsonLd, wide, url }) {
+function pageShell({ title, description, bodyHtml, ogImage, jsonLd, wide, url, noindex }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -166,6 +166,7 @@ ${ADSENSE_SNIPPET}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${escapeHtml(title)} — Sunny 88.7 FM</title>
 <meta name="description" content="${escapeHtml(description)}">
+${noindex ? '<meta name="robots" content="noindex,follow">' : ''}
 ${url ? `<link rel="canonical" href="https://sunnygh.com${url}">` : ''}
 ${ogImage ? `<meta property="og:image" content="${escapeHtml(ogImage)}">` : ''}
 <meta property="og:title" content="${escapeHtml(title)}">
@@ -841,6 +842,7 @@ function buildSelfServiceAdvertPage() {
     description: 'Your self service advert submission was received.',
     bodyHtml: thankYouBody,
     url: '/self-service-advert/thank-you/',
+    noindex: true,
   });
   fs.mkdirSync(path.join(ROOT, 'self-service-advert', 'thank-you'), { recursive: true });
   fs.writeFileSync(path.join(ROOT, 'self-service-advert', 'thank-you', 'index.html'), thankYouHtml);
@@ -864,6 +866,7 @@ function buildTestimonyThankYouPage() {
     description: 'Your testimony submission to Sunny 88.7 FM was received.',
     bodyHtml: thankYouBody,
     url: '/prayer-testimonies/thank-you/',
+    noindex: true,
   });
   fs.mkdirSync(path.join(ROOT, 'prayer-testimonies', 'thank-you'), { recursive: true });
   fs.writeFileSync(path.join(ROOT, 'prayer-testimonies', 'thank-you', 'index.html'), thankYouHtml);
