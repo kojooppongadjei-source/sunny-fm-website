@@ -2,6 +2,7 @@
 title: "How The Church of Pentecost Began in Ghana: The Remarkable Story of
   James and Sophia McKeown"
 date: 2026-08-17T14:00:00.000+00:00
+image: /assets/uploads/james-sophia-mckeown-archival.png
 summary: >
   An archival interview with James and Sophia McKeown reveals how The Church
   of Pentecost grew from open-air preaching in the Gold Coast in 1937 to
