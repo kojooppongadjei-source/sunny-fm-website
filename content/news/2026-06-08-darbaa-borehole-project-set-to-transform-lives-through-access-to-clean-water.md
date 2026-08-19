@@ -1,4 +1,5 @@
 ---
+category: Community
 title: Darbaa Borehole Project Set to Transform Lives Through Access to Clean Water
 date: 2026-06-08T01:17:00.000+00:00
 image: /assets/uploads/water-photo.png

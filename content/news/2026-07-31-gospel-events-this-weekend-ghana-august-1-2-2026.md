@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: "Gospel Events This Weekend: What's Happening Across Ghana (August 1-2, 2026)"
 date: 2026-07-31T18:00:00.000+00:00
 image: /assets/uploads/sonnie-badu-en-concert-a-lome_i1200.jpg

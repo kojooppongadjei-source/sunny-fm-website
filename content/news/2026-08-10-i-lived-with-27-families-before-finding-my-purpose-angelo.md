@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: "'I Lived With 27 Families Before Finding My Purpose' – Afro-Gospel Artist
   Angelo Shares Inspiring Story"
 date: 2026-08-10T09:00:00.000+00:00

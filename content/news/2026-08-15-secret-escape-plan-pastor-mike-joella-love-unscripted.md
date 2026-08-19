@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: "For 13 Years She Kept a Secret Escape Plan. Then God Asked Her to Let\
   \ It Go."
 date: 2026-08-15T09:00:00.000+00:00

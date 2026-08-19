@@ -1,4 +1,5 @@
 ---
+category: Health
 title: Microplastics Are Silently Damaging Your Cells, Nova Wellness Center
   Warns Ghanaians
 date: 2026-07-10T09:00:00.000+00:00

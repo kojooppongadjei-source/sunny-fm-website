@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: "Gospel Music Ghana 2026: Rising Voices to Watch This Year"
 date: 2026-07-26T08:54:32.000+00:00
 image: /assets/uploads/untitled-design-15-.png

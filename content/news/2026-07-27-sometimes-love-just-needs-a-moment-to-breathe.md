@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: Sometimes, Love Just Needs a Moment to Breathe
 date: 2026-07-27T13:01:00.000+00:00
 image: /assets/uploads/couples-retreat-use.png

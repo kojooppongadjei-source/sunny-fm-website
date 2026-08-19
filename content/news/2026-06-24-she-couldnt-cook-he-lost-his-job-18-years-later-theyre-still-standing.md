@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: She Couldn't Cook. She Lost Her Job. 18 Years Later, They're Still Standing.
 date: 2026-06-24T08:10:00.000+00:00
 image: /assets/uploads/untitled-design-7-.png

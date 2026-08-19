@@ -1,4 +1,5 @@
 ---
+category: Health
 title: Why Parental Mental Health Matters More Than Ever
 date: 2026-06-13T08:27:00.000+00:00
 image: /assets/uploads/mental-health-photo.png

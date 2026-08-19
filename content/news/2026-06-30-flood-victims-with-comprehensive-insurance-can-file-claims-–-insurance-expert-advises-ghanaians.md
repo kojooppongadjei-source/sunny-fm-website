@@ -1,4 +1,5 @@
 ---
+category: Community
 title: Flood Victims with Comprehensive Insurance Can File Claims – Insurance
   Expert Advises Ghanaians
 date: 2026-06-30T17:17:00.000+00:00

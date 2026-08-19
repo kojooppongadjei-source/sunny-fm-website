@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: "THE PRAISE ROOM: A Generation Rises to Worship"
 date: 2026-07-27T18:00:00.000+00:00
 image: /assets/uploads/philippians-46-7-1-.png

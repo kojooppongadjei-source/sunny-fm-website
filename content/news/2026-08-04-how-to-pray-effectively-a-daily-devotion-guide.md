@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: "How to Pray Effectively: A Daily Devotion Guide"
 date: 2026-08-04T09:40:03.000+00:00
 image: /assets/uploads/philippians-46-7.png

@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: Ken Blege Invites Christians to Intimate 'Ken & Friends' Worship Gathering at Alisa Hotel
 date: 2026-07-31T18:30:00.000+00:00
 image: /assets/uploads/ken-blege-sunny-fm.jpg

@@ -1,4 +1,5 @@
 ---
+category: Lifestyle
 title: Ghanaian-Born Literacy Expert Anita Whyte to Lead Phonological Awareness
   Training in Accra; Here's Why It Matters for Every Reading Child
 date: 2026-07-10T22:54:00.000+00:00

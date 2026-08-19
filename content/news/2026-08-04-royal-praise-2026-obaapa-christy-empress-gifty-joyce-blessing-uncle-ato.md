@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: "Royal Praise 2026: Obaapa Christy, Empress Gifty, Joyce Blessing and Uncle Ato Set for Night of Worship at UPSA"
 date: 2026-08-04T09:00:00.000+00:00
 image: /assets/uploads/royal-praise-2026-obaapa-adwoa-christy.jpg

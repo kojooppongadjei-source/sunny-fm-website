@@ -1,4 +1,5 @@
 ---
+category: Health
 title: 'Poor Sleep Could Be Aging You Faster, Wellness Expert Warns: The Insomnia
   Symptoms Most Ghanaians Ignore'
 date: 2026-07-22T09:00:00.000+00:00

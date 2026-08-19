@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: "How to Overcome Anxiety as a Christian: A Practical Guide"
 date: 2026-07-27T10:44:47.000+00:00
 image: /assets/uploads/philippians-46-7.png

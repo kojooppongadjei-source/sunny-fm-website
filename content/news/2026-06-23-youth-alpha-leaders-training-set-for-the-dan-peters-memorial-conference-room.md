@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: Youth Alpha Leaders Training Set for the Dan Peter's Memorial Conference Room
 date: 2026-06-23T17:44:00.000+00:00
 image: /assets/uploads/alpha-2-.png

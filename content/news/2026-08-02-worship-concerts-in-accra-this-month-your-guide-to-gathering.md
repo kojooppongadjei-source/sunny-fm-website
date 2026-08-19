@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: "Worship Concerts in Accra This Month: Your Guide to Gathering"
 date: 2026-08-02T09:10:01.000+00:00
 image: /assets/uploads/screenshot-2026-08-03-175600.png

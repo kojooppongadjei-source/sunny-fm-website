@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: From Five Years of Waiting to a Ministry of Hope, Couple Shares How
   Infertility Became Their Purpose
 date: 2026-08-07T09:00:00.000+00:00

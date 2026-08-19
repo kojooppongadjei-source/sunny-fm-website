@@ -1,4 +1,5 @@
 ---
+category: Sports
 title: Man City star Semenyo says baptism transformed his walk with God
 date: 2026-08-03T20:13:00.000+00:00
 image: /assets/uploads/semenyo.jpg

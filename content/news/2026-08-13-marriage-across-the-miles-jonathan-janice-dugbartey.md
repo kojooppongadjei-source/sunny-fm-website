@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: "Marriage Across the Miles: Jonathan and Janice Dugbartey Share How
   Faith, Sacrifice and Boundaries Keep Their Love Strong"
 date: 2026-08-13T09:00:00.000+00:00

@@ -1,4 +1,5 @@
 ---
+category: Community
 title: Heavy Rains Trigger Flooding Across Accra, Disrupting Traffic and Daily
   Activities
 date: 2026-06-29T15:42:00.000+00:00

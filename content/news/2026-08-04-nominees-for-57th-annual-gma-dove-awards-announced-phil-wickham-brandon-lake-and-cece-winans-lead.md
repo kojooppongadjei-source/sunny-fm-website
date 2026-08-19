@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: "Nominees for 57th Annual GMA Dove Awards Announced: Phil Wickham,
   Brandon Lake and CeCe Winans Lead"
 date: 2026-08-04T22:31:00.000+00:00

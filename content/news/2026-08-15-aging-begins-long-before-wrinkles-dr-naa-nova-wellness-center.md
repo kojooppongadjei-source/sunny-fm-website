@@ -1,4 +1,5 @@
 ---
+category: Health
 title: 'Aging Begins Long Before the Wrinkles: Dr. Naa Explains How to Stay Younger
   for Longer'
 date: 2026-08-15T09:00:00.000+00:00

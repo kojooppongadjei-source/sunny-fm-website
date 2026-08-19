@@ -1,4 +1,5 @@
 ---
+category: Business
 title: "Sin Theta Engineering Offers Affordable Solar Solutions with Flexible Payment Plans in Ghana"
 date: 2026-07-28T11:00:00.000+00:00
 image: /assets/uploads/sin-theta-engineering-sunny-fm.jpg

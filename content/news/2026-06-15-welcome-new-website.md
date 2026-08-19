@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: Alpha Ghana Invites Churches to Rediscover the Power of Relational Evangelism
 date: 2026-06-02T01:28:00.000+00:00
 image: /assets/uploads/alpha-ghana-youth-leaders-training.jpg

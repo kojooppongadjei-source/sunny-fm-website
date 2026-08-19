@@ -1,4 +1,5 @@
 ---
+category: Business
 title: 'Ghana''s OTT Revolution: Why Streaming Is Becoming the Future of Television'
 date: 2026-07-22T08:00:00.000+00:00
 image: /assets/uploads/smart-tv-streaming-apps-ghana.jpg

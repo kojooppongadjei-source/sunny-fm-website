@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: Gospel Artist Craige Osei Talks Faith, Music, and His Breakout Single
   "Good Days" on Up Close
 date: 2026-07-24T08:00:00.000+00:00

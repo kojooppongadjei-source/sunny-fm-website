@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: Joe Mettle Invites Christians to Gather to Lift Jesus at Praise Reloaded 2026
 date: 2026-06-24T12:02:00.000+00:00
 image: /assets/uploads/joseph-oscar-mettle.png

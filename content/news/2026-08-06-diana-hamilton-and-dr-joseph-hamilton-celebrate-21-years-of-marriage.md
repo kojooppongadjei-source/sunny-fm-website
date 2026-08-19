@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: Diana Hamilton and Dr. Joseph Hamilton Celebrate 21 Years of Marriage
 date: 2026-08-06T10:00:00.000+00:00
 image: /assets/uploads/dah.png

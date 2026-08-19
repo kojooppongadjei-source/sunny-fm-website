@@ -1,4 +1,5 @@
 ---
+category: Health
 title: "Flat Feet in Children: What Every Parent Needs to Know"
 date: 2026-07-27T12:00:00.000+00:00
 image: /assets/uploads/dr-naa-asheley-ashietey-headshot.png

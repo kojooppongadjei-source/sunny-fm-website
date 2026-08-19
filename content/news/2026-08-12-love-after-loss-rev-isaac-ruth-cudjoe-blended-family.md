@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: "Love After Loss: Rev. Isaac and Ruth Cudjoe Share Their Journey of
   Grief, Healing and a Blended Family"
 date: 2026-08-12T09:00:00.000+00:00

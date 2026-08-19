@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: "Reverend Steve Mensah: \"We've Put The Holy Spirit in a Box\" National
   Holy Ghost Action Campaign Returns This Week"
 date: 2026-07-06T09:00:00.000+00:00

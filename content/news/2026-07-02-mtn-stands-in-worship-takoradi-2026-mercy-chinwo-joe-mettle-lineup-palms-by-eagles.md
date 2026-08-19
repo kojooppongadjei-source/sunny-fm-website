@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: 'MTN Stands in Worship Takoradi 2026: Mercy Chinwo, Joe Mettle Headline
   Gospel Concert at Palms by Eagles'
 date: 2026-07-02T18:00:00.000+00:00

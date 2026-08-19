@@ -1,4 +1,5 @@
 ---
+category: Lifestyle
 title: 'Discipline vs. Punishment: Ghanaian Parenting Experts Explain the
   Difference — And Why Consistency Matters More Than Shouting'
 date: 2026-07-10T09:00:00.000+00:00

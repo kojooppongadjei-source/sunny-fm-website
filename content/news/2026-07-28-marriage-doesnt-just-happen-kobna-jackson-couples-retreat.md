@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: "Marriage Doesn't Just Happen: Doubles Founder Kobina Jackson on
   Intentionality Ahead of Sunny FM's Couples Retreat"
 date: 2026-07-28T08:00:00.000+00:00

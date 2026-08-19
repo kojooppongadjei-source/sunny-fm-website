@@ -1,4 +1,5 @@
 ---
+category: Community
 title: "Accra Flooding Preparedness Tips: A Rainy Season Checklist"
 date: 2026-07-29T17:17:42.000+00:00
 image: /assets/uploads/philippians-46-7-4-.png

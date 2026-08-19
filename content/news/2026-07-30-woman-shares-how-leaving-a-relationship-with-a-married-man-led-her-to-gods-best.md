@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: Woman Shares How Leaving a Relationship with a Married Man Led Her to God's Best
 date: 2026-07-30T10:00:00.000+00:00
 image: /assets/uploads/mrs-angela-antwi-sunny-fm.png

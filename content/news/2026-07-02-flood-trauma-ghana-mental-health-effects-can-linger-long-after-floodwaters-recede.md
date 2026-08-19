@@ -1,4 +1,5 @@
 ---
+category: Health
 title: 'Flood Trauma in Ghana: Mental Health Effects Can Linger Long After the
   Water Recedes – Psychiatrist Warns'
 date: 2026-07-02T09:00:00.000+00:00

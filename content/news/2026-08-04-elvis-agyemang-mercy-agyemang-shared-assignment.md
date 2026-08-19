@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: "A Shared Assignment: Celebrating Pastor Elvis Agyemang and Lady Mercy Agyemang"
 date: 2026-08-04T10:00:00.000+00:00
 image: /assets/uploads/elvis-mercy-agyemang-featured.jpg

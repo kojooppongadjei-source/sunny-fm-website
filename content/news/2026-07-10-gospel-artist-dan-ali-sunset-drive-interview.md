@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: 'Gospel Artist Dan Ali Opens Up on Sunset Drive: "I Just Kept Falling
   Farther in Your Love"'
 date: 2026-07-10T17:00:00.000+00:00

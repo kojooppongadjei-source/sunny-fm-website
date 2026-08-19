@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: Apostle Eric Nyamekye, Ghana's Fight Against Corruption Must Begin with
   the Church
 date: 2026-08-07T12:00:00.000+00:00

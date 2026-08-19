@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: Young Gospel Minister Norman Shares Inspiring Faith Journey and New Music Plans
 date: 2026-07-28T10:00:00.000+00:00
 image: /assets/uploads/norman-griffiths-group-sunny-fm.jpg

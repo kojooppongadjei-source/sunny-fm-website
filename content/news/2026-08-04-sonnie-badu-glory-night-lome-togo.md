@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: "Sonnie Badu Leads Thousands in Powerful Glory Night Worship Experience in Togo"
 date: 2026-08-04T11:00:00.000+00:00
 image: /assets/uploads/sonnie-badu-glory-night-lome-featured.jpg

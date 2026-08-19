@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: "How The Church of Pentecost Began in Ghana: The Remarkable Story of
   James and Sophia McKeown"
 date: 2026-08-17T14:00:00.000+00:00

@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: "Dr. Otabil Challenges Ghanaians to Test Today's Prophets Against Daniel's Standard at Greater Works 2026"
 date: 2026-08-05T08:00:00.000+00:00
 image: /assets/uploads/greater-works-2026-day1-otabil.png

@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: "Church of Pentecost Chairman Dedicates GH₵13 Million Auditorium for Dr. Thomas Wyatt English Assembly"
 date: 2026-08-17T10:00:00.000+00:00
 image: /assets/uploads/cop-wyatt-assembly-dedication-wyatt_2.png

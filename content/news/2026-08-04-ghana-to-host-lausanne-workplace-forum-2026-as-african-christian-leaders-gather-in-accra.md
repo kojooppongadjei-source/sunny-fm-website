@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: "Ghana to Host Lausanne Workplace Forum 2026 as African Christian Leaders Gather in Accra"
 date: 2026-08-04T09:00:00.000+00:00
 image: /assets/uploads/lausanne-workplace-forum-2026.png

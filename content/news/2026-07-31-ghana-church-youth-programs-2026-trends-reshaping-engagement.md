@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: "Ghana Church Youth Programs 2026: Trends Reshaping Engagement"
 date: 2026-07-31T15:12:56.000+00:00
 image: /assets/uploads/screenshot-2026-07-31-152506.png

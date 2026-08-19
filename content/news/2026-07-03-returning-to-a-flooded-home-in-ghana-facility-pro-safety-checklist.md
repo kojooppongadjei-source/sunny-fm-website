@@ -1,4 +1,5 @@
 ---
+category: Community
 title: 'Returning to a Flooded Home in Ghana? Facility Pro’s Charity Oforiwaa Bekoe
   Shares the Safety Checklist to Follow Before You Go Back In'
 date: 2026-07-03T08:00:00.000+00:00

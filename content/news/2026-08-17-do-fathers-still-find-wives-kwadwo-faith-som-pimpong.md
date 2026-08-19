@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: "Do Fathers Still Find Wives for Their Sons? Kwadwo Som-Pimpong's Story
   Says They Can"
 date: 2026-08-17T10:00:00.000+00:00

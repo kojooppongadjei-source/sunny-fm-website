@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: 'Enid Blekk Talks Music, Ministry, and Trusting God with Your Story on
   Up Close'
 date: 2026-07-20T08:00:00.000+00:00

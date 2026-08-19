@@ -1,4 +1,5 @@
 ---
+category: Health
 title: Floods Could Trigger Cholera and Typhoid Outbreaks – Dr. Joyce Emefa
   Addo- Klah Warns Ghanaians
 date: 2026-06-30T21:00:00.000+00:00

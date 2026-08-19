@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: Hidden Wounds Are Pulling Couples Apart — Michael and Letitia Ohene-Effah
   Urge Couples to Reconnect
 date: 2026-08-05T09:00:00.000+00:00

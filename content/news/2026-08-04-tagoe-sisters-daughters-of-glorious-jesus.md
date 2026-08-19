@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: "Nearly 80 Combined Years of Gospel Ministry: The Tagoe Sisters and Daughters of Glorious Jesus Together in One Iconic Photo"
 date: 2026-08-04T12:00:00.000+00:00
 image: /assets/uploads/tagoe-sisters-daughters-of-glorious-jesus.jpg

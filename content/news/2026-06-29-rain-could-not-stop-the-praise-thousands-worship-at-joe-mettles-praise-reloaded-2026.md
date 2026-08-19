@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: "Rain Could Not Stop the Praise: Thousands Worship at Joe Mettle's Praise
   Reloaded 2026  "
 date: 2026-06-29T16:22:00.000+00:00

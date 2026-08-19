@@ -1,4 +1,5 @@
 ---
+category: Entertainment
 title: "New Music: Edwin Dadson Releases 'King of Zion' feat. GAS"
 date: 2026-08-01T17:00:00.000+00:00
 youtube_id: ynbJnyGie2c
