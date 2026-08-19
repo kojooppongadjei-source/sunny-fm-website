@@ -29,6 +29,11 @@ collections:
       - { label: "Interview Audio URL (Mixcloud link or direct audio file — if this article is from a radio interview)", name: "audio_url", widget: "string", required: false }
       - { label: "Summary (shown on News list page)", name: "summary", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Ministry", "Health", "Entertainment", "Business", "Community", "Sports", "Lifestyle"]
+        default: "Community"
       - label: "Tags"
         name: "tags"
         widget: "select"

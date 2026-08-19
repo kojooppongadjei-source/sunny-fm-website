@@ -342,8 +342,8 @@ function buildCollection(collectionFolder, config) {
 
     let tagsHtml = '';
     const allTags = [
-      ...(post.tags || []),
       ...(post.category ? [post.category] : []),
+      ...(post.tags || []),
       ...(post.entry_type ? [post.entry_type] : []),
     ];
     if (allTags.length) {
@@ -884,7 +884,7 @@ function renderNewsCardHtml(p) {
   const img = p.image
     ? `<img class="news-card-img" src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title || '')}">`
     : `<div class="news-card-img-placeholder">📰</div>`;
-  const tags = [].concat(p.tags || [], p.category ? [p.category] : []);
+  const tags = [].concat(p.category ? [p.category] : [], p.tags || []);
   const cat = tags.length ? tags[0] : 'News';
   return `<a href="${p.url}" class="news-card">${img}<div class="news-card-body"><div class="news-card-cat">${escapeHtml(cat)}</div><div class="news-card-title">${escapeHtml(p.title || '')}</div><div class="news-card-date">${p.dateFormatted || ''}</div></div></a>`;
 }
