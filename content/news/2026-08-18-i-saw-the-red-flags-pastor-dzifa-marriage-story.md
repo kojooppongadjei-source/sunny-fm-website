@@ -2,6 +2,7 @@
 title: "\u201cI Saw the Red Flags but Still Went Ahead\u201d \u2013 Pastor Dzifa Shares
   Painful Marriage Story on Sunny FM"
 date: 2026-08-18T09:00:00.000+00:00
+image: /assets/uploads/pastor-dzifa-jennifer-danquah-love-unscripted.png
 summary: >
   Pastor Dzifa opens up on Sunny FM's Love Unscripted about ignoring red
   flags before marriage, alleged abuse, pregnancy losses and the dangers of
