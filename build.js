@@ -704,6 +704,16 @@ function buildResourcePages() {
       cta: 'Visit Spirit FM →',
     },
     {
+      name: 'Shaft FM 98.1',
+      location: 'Obuasi, Ashanti Region',
+      desc: 'A radio station broadcasting on 98.1 FM to Obuasi and the surrounding Ashanti Region.',
+    },
+    {
+      name: 'Potters Radio 98.7',
+      location: 'Accra, Greater Accra',
+      desc: 'A Christian radio station broadcasting on 98.7 FM in the Greater Accra area.',
+    },
+    {
       name: 'Sweet Melodies 94.3 FM',
       location: 'Accra, Greater Accra',
       desc: 'A Christian contemporary station broadcasting from Accra since 2009, playing Christian and gospel music.',
