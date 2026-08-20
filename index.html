@@ -360,10 +360,11 @@ footer{background:#1a1212;color:rgba(255,255,255,.6);padding:40px 4% 90px;}
       </div>
     </div>
     <div class="hero-photo">
-      <img src="/assets/jennifer-danquah.jpg" alt="Jennifer J. Danquah" width="810" height="1080" class="hero-photo-img is-active" data-name="Jennifer J. Danquah">
-      <img src="/assets/agyemang-oppong-peprah.jpg" alt="Agyemang Oppong Peprah" width="1280" height="800" class="hero-photo-img" data-name="Agyemang Oppong Peprah" style="object-position:center 25%;">
+      <img src="/assets/jennifer-danquah.jpg" alt="Jennifer J. Danquah" width="810" height="1080" class="hero-photo-img is-active" data-name="Jennifer J. Danquah" data-label="Inspirational Morning Drive · 6:30–9:00 AM Mon–Fri">
+      <img src="/assets/agyemang-oppong-peprah.jpg" alt="Agyemang Oppong Peprah" width="1280" height="800" class="hero-photo-img" data-name="Agyemang Oppong Peprah" data-label="Inspirational Morning Drive · 6:30–9:00 AM Mon–Fri" style="object-position:center 25%;">
+      <img src="/assets/vickie-amoah.jpg" alt="Vickie Amoah" width="1463" height="2048" class="hero-photo-img" data-name="Vickie Amoah" data-label="Co-Host, Sunset Drive · 4:30 PM Mon–Fri" style="object-position:center 15%;">
       <div class="hero-caption">
-        <div class="hero-caption-label">Inspirational Morning Drive · 6:30–9:00 AM Mon–Fri</div>
+        <div class="hero-caption-label" id="hero-caption-label">Inspirational Morning Drive · 6:30–9:00 AM Mon–Fri</div>
         <div class="hero-caption-name" id="hero-caption-name">Jennifer J. Danquah</div>
       </div>
     </div>
@@ -373,6 +374,7 @@ footer{background:#1a1212;color:rgba(255,255,255,.6);padding:40px 4% 90px;}
 (function(){
   var imgs = document.querySelectorAll('.hero-photo-img');
   var nameEl = document.getElementById('hero-caption-name');
+  var labelEl = document.getElementById('hero-caption-label');
   if (!imgs.length) return;
   var i = 0;
   setInterval(function(){
@@ -380,6 +382,7 @@ footer{background:#1a1212;color:rgba(255,255,255,.6);padding:40px 4% 90px;}
     i = (i + 1) % imgs.length;
     imgs[i].classList.add('is-active');
     if (nameEl) nameEl.textContent = imgs[i].getAttribute('data-name');
+    if (labelEl) labelEl.textContent = imgs[i].getAttribute('data-label') || labelEl.textContent;
   }, 5000);
 })();
 </script>
