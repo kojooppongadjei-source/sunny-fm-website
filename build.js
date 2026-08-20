@@ -686,6 +686,103 @@ function buildLegalPages() {
 }
 buildLegalPages();
 
+function buildResourcePages() {
+  const stations = [
+    {
+      name: 'Sunny 88.7 FM',
+      location: 'Accra, Greater Accra',
+      desc: "Ghana's premier Christian radio station, broadcasting positive soul music, worship, preaching and devotions live from Accra since 2002. Stream free online or tune to 88.7 FM.",
+      url: '/listen-live/',
+      cta: 'Listen to Sunny FM live →',
+      featured: true,
+    },
+    {
+      name: 'Spirit 88.3 FM',
+      location: 'Kumasi, Ashanti Region',
+      desc: 'A Christian radio station broadcasting gospel music and faith-based programming to the Ashanti Region from Kumasi.',
+      url: 'https://spiritgh.com',
+      cta: 'Visit Spirit FM →',
+    },
+    {
+      name: 'Sweet Melodies 94.3 FM',
+      location: 'Accra, Greater Accra',
+      desc: 'A Christian contemporary station broadcasting from Accra since 2009, playing Christian and gospel music.',
+    },
+    {
+      name: 'Life FM',
+      location: 'Offinso, Ashanti Region',
+      desc: 'A gospel station broadcasting from Offinso in partnership with Lifeword Broadcasting Ministry (USA), airing gospel music and community programs.',
+    },
+    {
+      name: 'Sam Bennah Radio (SB-Radio)',
+      location: 'Accra (online)',
+      desc: 'A 24/7 Christian online radio station playing gospel music and godly messages.',
+    },
+    {
+      name: 'Fullness In Christ Radio',
+      location: 'Ashanti Region',
+      desc: 'The official radio station of Fullness In Christ International Church, airing Christian talk and music programming.',
+    },
+  ];
+
+  const stationCardsHtml = stations.map(s => `
+        <div style="border:1px solid var(--border);border-radius:14px;padding:20px;${s.featured ? 'background:#fff9ec;border-color:var(--gold);' : ''}">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+            <h3 style="margin:0;font-size:19px;">${escapeHtml(s.name)}</h3>
+            ${s.featured ? '<span class="tag" style="margin:0;">Featured</span>' : ''}
+          </div>
+          <div style="font-size:13px;color:var(--muted);margin-bottom:10px;">${escapeHtml(s.location)}</div>
+          <p style="font-size:14.5px;color:#444;margin-bottom:${s.url ? '12px' : '0'};">${escapeHtml(s.desc)}</p>
+          ${s.url ? `<a href="${s.url}" style="font-size:14px;font-weight:700;color:var(--gold-dark);text-decoration:none;">${escapeHtml(s.cta)}</a>` : ''}
+        </div>`).join('\n');
+
+  const body = `
+    <div class="eyebrow">Guide</div>
+    <h1 class="post-title">Christian &amp; Gospel Radio Stations in Ghana</h1>
+    <div class="post-meta">Updated ${formatDate(new Date().toISOString())}</div>
+    <div class="post-body">
+      <p>Looking to listen to gospel radio in Ghana or find Ghana worship music radio online? Here's a guide to Christian and gospel radio stations broadcasting in Ghana today, starting with Sunny 88.7 FM — Ghana's premier Christian radio station, streaming live from Accra 24/7.</p>
+    </div>
+
+    <div style="display:grid;gap:16px;margin:28px 0 32px;">
+${stationCardsHtml}
+    </div>
+
+    <div class="post-body">
+      <h2>How to listen to Christian radio online in Ghana</h2>
+      <p>Most Christian and gospel stations in Ghana, including Sunny FM, stream live online for free — no sign-up required. Just visit the station's website and tap play, or tune to the FM frequency if you're within broadcast range in Ghana.</p>
+
+      <h2>Frequently asked questions</h2>
+      <p><strong>What is the best Christian radio station in Ghana?</strong><br>Sunny 88.7 FM is one of Ghana's leading Christian stations, broadcasting worship music, preaching and devotions live from Accra since 2002 — <a href="/listen-live/">listen live here</a>.</p>
+      <p><strong>Can I listen to Ghana FM stations online for free?</strong><br>Yes — Sunny FM and most Ghanaian Christian stations stream free online, so you can listen to gospel and worship radio from Ghana anywhere in the world.</p>
+      <p><strong>Is there a gospel radio station in Kumasi?</strong><br>Yes, Spirit 88.3 FM broadcasts Christian and gospel programming to the Ashanti Region from Kumasi.</p>
+    </div>
+  `;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: stations.map((s, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: s.name,
+    })),
+  };
+
+  const html = pageShell({
+    title: 'Christian & Gospel Radio Stations in Ghana',
+    description: "A guide to Christian and gospel radio stations in Ghana, featuring Sunny 88.7 FM plus other stations you can listen to online or on FM — worship music, preaching and gospel radio from Accra, Kumasi and beyond.",
+    bodyHtml: body,
+    url: '/christian-radio-stations-ghana/',
+    jsonLd,
+  });
+  const outDir = path.join(ROOT, 'christian-radio-stations-ghana');
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(path.join(outDir, 'index.html'), html);
+  console.log('Built resource page: christian-radio-stations-ghana');
+}
+buildResourcePages();
+
 function buildSelfServiceAdvertPage() {
   const body = `
     <div class="eyebrow">Self Service</div>
@@ -1161,6 +1258,7 @@ function injectSelfServiceAdsBox() {
 const STATIC_PAGES = [
   { loc: 'https://sunnygh.com/', changefreq: 'daily', priority: '1.0' },
   { loc: 'https://sunnygh.com/listen-live/', changefreq: 'daily', priority: '0.9' },
+  { loc: 'https://sunnygh.com/christian-radio-stations-ghana/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/watch-tv/', changefreq: 'daily', priority: '0.9' },
   { loc: 'https://sunnygh.com/news/', changefreq: 'daily', priority: '0.8' },
   { loc: 'https://sunnygh.com/events/', changefreq: 'weekly', priority: '0.8' },
