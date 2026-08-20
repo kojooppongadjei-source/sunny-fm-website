@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: "\u201cFriendship Has Kept Us Going\u201d \u2013 Daniel and Michelle Share 13-Year
   Marriage Journey on Sunny FM"
 date: 2026-08-18T13:00:00.000+00:00

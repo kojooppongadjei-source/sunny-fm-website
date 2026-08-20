@@ -1,4 +1,5 @@
 ---
+category: Business
 title: "WHIT School Joins Sunny FM Couples Retreat to Give Children Their Own
   Aqua Safari Experience"
 date: 2026-08-18T15:00:00.000+00:00

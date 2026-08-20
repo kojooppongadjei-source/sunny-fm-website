@@ -1,4 +1,5 @@
 ---
+category: Ministry
 title: "\u201cI Saw the Red Flags but Still Went Ahead\u201d \u2013 Pastor Dzifa Shares
   Painful Marriage Story on Sunny FM"
 date: 2026-08-18T09:00:00.000+00:00

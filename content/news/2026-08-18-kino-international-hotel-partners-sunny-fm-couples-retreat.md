@@ -1,4 +1,5 @@
 ---
+category: Business
 title: "Kino International Hotel Partners Sunny FM Couples Retreat, Promises
   Unique Hospitality Experience"
 date: 2026-08-18T11:00:00.000+00:00
