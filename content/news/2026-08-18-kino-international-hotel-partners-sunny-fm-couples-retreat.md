@@ -14,7 +14,7 @@ tags:
 ---
 Kinno International Hotel has joined this year's Sunny FM Couples Retreat as a partner, describing the collaboration as a natural fit between two brands committed to family and community values.
 
-Anita, a representative of the Tema-based hotel, told Sunny FM that the partnership goes beyond sponsorship and reflects a shared commitment to strengthening relationships and creating memorable experiences for couples and families.
+Anita, Assistant General Manager of the Tema-based hotel, told Sunny FM that the partnership goes beyond sponsorship and reflects a shared commitment to strengthening relationships and creating memorable experiences for couples and families.
 
 "Sunny FM is also family-oriented and community-focused, and that's something that Kinno also stands for," she said.
 
