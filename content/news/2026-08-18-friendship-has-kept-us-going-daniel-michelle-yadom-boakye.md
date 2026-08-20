@@ -12,7 +12,7 @@ tags:
   - Marriage
   - Community
 ---
-After 13 years of marriage, Daniel and Michelle Yadom Boakye say friendship has been one of the strongest foundations holding their relationship together through love, parenthood, disagreements and the painful loss of two pregnancies.
+After 13 years of marriage, Daniel and Michelle Yiadom Boakye say friendship has been one of the strongest foundations holding their relationship together through love, parenthood, disagreements and the painful loss of two pregnancies.
 
 The couple shared their story on **The Couple Next Door**, part of Sunny 88.7 FM's Love Unscripted series on the Inspirational Morning Drive (IMDrive).
 
