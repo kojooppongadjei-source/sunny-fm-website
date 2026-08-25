@@ -2,7 +2,7 @@
 category: News
 title: 'Museveni Hosts Pastor Adeboye at State Dinner During Apostolic Visit to Uganda'
 date: 2026-08-25T09:00:00.000+00:00
-image: ''
+image: /assets/uploads/museveni-adeboye-state-dinner.png
 summary: 'President Yoweri Museveni and First Lady Janet Museveni hosted RCCG General Overseer Pastor Enoch Adeboye and his wife at a state dinner in Entebbe, as part of a visit that also saw the President''s daughter consecrated as bishop.'
 seo_title: Museveni Hosts Pastor Adeboye at State Dinner in Uganda
 ---
