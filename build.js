@@ -250,6 +250,7 @@ function buildCollection(collectionFolder, config) {
     const post = {
       slug,
       title: data.title || 'Untitled',
+      seo_title: data.seo_title || data.title || 'Untitled',
       date: data.date || null,
       dateFormatted: formatDate(data.date),
       summary: data.summary || '',
@@ -443,7 +444,7 @@ function buildCollection(collectionFolder, config) {
     }
 
     const html = pageShell({
-      title: post.title,
+      title: post.seo_title || post.title,
       description: post.summary || post.title,
       bodyHtml,
       ogImage: post.image,
