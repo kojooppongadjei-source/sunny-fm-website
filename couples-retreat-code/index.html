@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Couples Retreat Hidden Code Contest | Sunny 88.7 FM</title>
+<title>Couples Retreat Contest | Sunny 88.7 FM</title>
 <meta name="robots" content="noindex,nofollow">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -67,50 +67,47 @@
     color: #444;
     margin-top: 4px;
   }
-  .hunt-graphic {
-    position: relative;
-    width: 100%;
-    height: 140px;
-    margin-bottom: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .question-box {
+    background: #fff;
+    border: 2px solid #ffe0d5;
+    border-radius: 16px;
+    padding: 26px 20px;
+    margin-bottom: 20px;
   }
-  .heart {
-    font-size: 90px;
-    filter: drop-shadow(0 6px 10px rgba(255,107,74,0.25));
-    user-select: text;
-    position: relative;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-  }
-  /* The hidden code — very low-opacity watermark, visible if you zoom in closely.
-     Primary discovery method on mobile is tap-and-hold on the heart (see JS below). */
-  .secret {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: rgba(120,50,40,0.10);
-    white-space: nowrap;
-    pointer-events: none;
-    user-select: text;
-    transition: color 0.4s ease, transform 0.4s ease;
-  }
-  .secret.revealed {
+  .question-box .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     color: #ff6b4a;
-    font-size: 20px;
-    transform: translate(-50%, -50%) scale(1.15);
+    font-weight: 700;
+    margin-bottom: 10px;
   }
-  .hunt-hint {
-    font-size: 12px;
-    color: #b8988e;
-    margin-top: 6px;
-    letter-spacing: 0.3px;
+  .question-box .q {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2b2b2b;
+    line-height: 1.4;
+  }
+  .blank {
+    display: inline-block;
+    min-width: 90px;
+    border-bottom: 3px dotted #ff6b4a;
+    color: #ff6b4a;
+  }
+  .answer-input {
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px 16px;
+    font-size: 16px;
+    border: 2px solid #f0ddd5;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 700;
+    color: #2b2b2b;
+    outline: none;
+  }
+  .answer-input:focus {
+    border-color: #ff6b4a;
   }
   .actions {
     display: none;
@@ -170,21 +167,26 @@
 
 <div class="card">
   <span class="logo-tag">Sunny 88.7 FM &middot; Couples Retreat 2026</span>
-  <h1>🕵️ The Hidden Code Hunt</h1>
-  <p class="sub">Somewhere on this page, we've hidden a secret code. Be the first couple to find it and claim your prize!</p>
+  <h1>💞 Fill in the Blank</h1>
+  <p class="sub">Complete the phrase below and be the first couple to send us the right answer!</p>
 
   <div class="prize-box">
     <div class="amount">GH₵500</div>
     <div class="brand">Voucher from Everything Bags by H&amp;B</div>
   </div>
 
-  <div class="hunt-graphic">
-    <div class="heart" id="secretHeart">
-      💕
-      <span class="secret" id="secretText">SUNNY500BAG</span>
-    </div>
+  <div class="question-box">
+    <div class="label">Complete the phrase</div>
+    <div class="q">As strong as <span class="blank">&nbsp;</span></div>
+    <input
+      type="text"
+      id="answerInput"
+      class="answer-input"
+      placeholder="Type your answer here"
+      autocomplete="off"
+      autocapitalize="words"
+    >
   </div>
-  <p class="hunt-hint">👀 Look closely... some things reveal themselves if you hold on.</p>
 
   <div class="actions" id="actionButtons">
     <a class="wa" id="waBtn" target="_blank" rel="noopener">💬 WhatsApp</a>
@@ -193,8 +195,8 @@
 
   <div class="instructions">
     <p><strong>How to win:</strong></p>
-    <p>1. Find the hidden code above (press and hold the heart 💕).</p>
-    <p>2. Once revealed, tap WhatsApp or Text above to send it straight to our Events team.</p>
+    <p>1. Type your answer above.</p>
+    <p>2. Tap WhatsApp or Text to send it straight to our Events team.</p>
     <p>3. First correct entry wins the voucher! 🎉</p>
     <span class="number">📱 0545 223 324</span>
   </div>
@@ -202,51 +204,28 @@
   <footer>Sunny 88.7 FM &middot; Live at Aqua Safari &middot; #SunnyCouplesRetreat</footer>
 </div>
 
-<!--
-  Hunter's note (backup for the tech-savvy): the code is SUNNY500BAG
--->
-
 <script>
-  // Tap-and-hold reveal — main discovery method, works reliably on mobile
-  // where text-selection/highlighting is awkward. WhatsApp/SMS buttons only
-  // appear (with the code pre-filled) once the code has actually been found.
   (function () {
-    var heart = document.getElementById('secretHeart');
-    var secret = document.getElementById('secretText');
+    var input = document.getElementById('answerInput');
     var actions = document.getElementById('actionButtons');
     var waBtn = document.getElementById('waBtn');
     var smsBtn = document.getElementById('smsBtn');
-    var timer = null;
-    var HOLD_MS = 1200;
-    var CODE = 'SUNNY500BAG';
-    var revealedOnce = false;
 
-    function reveal() {
-      if (revealedOnce) return;
-      revealedOnce = true;
-      secret.classList.add('revealed');
+    function update() {
+      var val = input.value.trim();
+      if (val.length === 0) {
+        actions.classList.remove('show');
+        return;
+      }
       var msg = encodeURIComponent(
-        "Hi! I found the hidden code from the Couples Retreat contest: " + CODE + " - my name is "
+        'Hi! My answer to "As strong as ___" is: ' + val + ' - my name is '
       );
       waBtn.href = 'https://wa.me/233545223324?text=' + msg;
       smsBtn.href = 'sms:+233545223324?body=' + msg;
       actions.classList.add('show');
     }
 
-    function startHold() {
-      clearTimeout(timer);
-      timer = setTimeout(reveal, HOLD_MS);
-    }
-    function cancelHold() {
-      clearTimeout(timer);
-    }
-
-    heart.addEventListener('touchstart', startHold, { passive: true });
-    heart.addEventListener('touchend', cancelHold);
-    heart.addEventListener('touchcancel', cancelHold);
-    heart.addEventListener('mousedown', startHold);
-    heart.addEventListener('mouseup', cancelHold);
-    heart.addEventListener('mouseleave', cancelHold);
+    input.addEventListener('input', update);
   })();
 </script>
 
