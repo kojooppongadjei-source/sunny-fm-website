@@ -112,6 +112,35 @@
     margin-top: 6px;
     letter-spacing: 0.3px;
   }
+  .actions {
+    display: none;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .actions.show {
+    display: flex;
+  }
+  .actions a {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 13px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .actions .wa {
+    background: #25D366;
+    color: #fff;
+  }
+  .actions .sms {
+    background: #2b2b2b;
+    color: #fff;
+  }
   .instructions {
     background: #f7f7f9;
     border-radius: 14px;
@@ -157,10 +186,15 @@
   </div>
   <p class="hunt-hint">👀 Look closely... some things reveal themselves if you hold on.</p>
 
+  <div class="actions" id="actionButtons">
+    <a class="wa" id="waBtn" target="_blank" rel="noopener">💬 WhatsApp</a>
+    <a class="sms" id="smsBtn">✉️ Text</a>
+  </div>
+
   <div class="instructions">
     <p><strong>How to win:</strong></p>
-    <p>1. Find the hidden code on this page.</p>
-    <p>2. Text the code + your name to our Events line below.</p>
+    <p>1. Find the hidden code above (press and hold the heart 💕).</p>
+    <p>2. Once revealed, tap WhatsApp or Text above to send it straight to our Events team.</p>
     <p>3. First correct entry wins the voucher! 🎉</p>
     <span class="number">📱 0545 223 324</span>
   </div>
@@ -174,18 +208,34 @@
 
 <script>
   // Tap-and-hold reveal — main discovery method, works reliably on mobile
-  // where text-selection/highlighting is awkward.
+  // where text-selection/highlighting is awkward. WhatsApp/SMS buttons only
+  // appear (with the code pre-filled) once the code has actually been found.
   (function () {
     var heart = document.getElementById('secretHeart');
     var secret = document.getElementById('secretText');
+    var actions = document.getElementById('actionButtons');
+    var waBtn = document.getElementById('waBtn');
+    var smsBtn = document.getElementById('smsBtn');
     var timer = null;
     var HOLD_MS = 1200;
+    var CODE = 'SUNNY500BAG';
+    var revealedOnce = false;
+
+    function reveal() {
+      if (revealedOnce) return;
+      revealedOnce = true;
+      secret.classList.add('revealed');
+      var msg = encodeURIComponent(
+        "Hi! I found the hidden code from the Couples Retreat contest: " + CODE + " - my name is "
+      );
+      waBtn.href = 'https://wa.me/233545223324?text=' + msg;
+      smsBtn.href = 'sms:+233545223324?body=' + msg;
+      actions.classList.add('show');
+    }
 
     function startHold() {
       clearTimeout(timer);
-      timer = setTimeout(function () {
-        secret.classList.add('revealed');
-      }, HOLD_MS);
+      timer = setTimeout(reveal, HOLD_MS);
     }
     function cancelHold() {
       clearTimeout(timer);

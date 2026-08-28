@@ -1228,7 +1228,7 @@ function ssaClose(e){
 #retreat-heart-fab{
   position:fixed;
   right:18px;
-  bottom:150px;
+  bottom:100px;
   z-index:99998;
   width:56px;height:56px;
   border-radius:50%;
@@ -1246,26 +1246,10 @@ function ssaClose(e){
   0%,100%{transform:scale(1);box-shadow:0 8px 20px rgba(255,107,74,0.4);}
   50%{transform:scale(1.08);box-shadow:0 10px 26px rgba(255,107,74,0.55);}
 }
-#retreat-sms-fab{
-  position:fixed;
-  right:24px;
-  bottom:100px;
-  z-index:99998;
-  width:44px;height:44px;
-  border-radius:50%;
-  background:#2b2b2b;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 6px 16px rgba(0,0,0,0.3);
-  cursor:pointer;
-  border:2px solid #fff;
-  text-decoration:none;
-  -webkit-tap-highlight-color:transparent;
-}
-#retreat-sms-fab span{font-size:19px;line-height:1;}
 #retreat-heart-tip{
   position:fixed;
   right:18px;
-  bottom:210px;
+  bottom:160px;
   z-index:99998;
   background:#2b2b2b;
   color:#fff;
@@ -1278,26 +1262,17 @@ function ssaClose(e){
   opacity:0.92;
 }
 @media (max-width:520px){
-  #retreat-heart-fab{bottom:140px;right:14px;width:50px;height:50px;}
+  #retreat-heart-fab{bottom:90px;right:14px;width:50px;height:50px;}
   #retreat-heart-fab span{font-size:22px;}
-  #retreat-sms-fab{bottom:94px;right:20px;width:40px;height:40px;}
-  #retreat-sms-fab span{font-size:17px;}
-  #retreat-heart-tip{bottom:194px;right:14px;font-size:10px;}
+  #retreat-heart-tip{bottom:144px;right:14px;font-size:10px;}
 }
 </style>
 <a
   id="retreat-heart-fab"
-  href="https://wa.me/233545223324?text=Hi!%20I%20found%20the%20hidden%20code%20from%20the%20Couples%20Retreat%20contest%3A%20"
-  target="_blank"
-  rel="noopener"
-  aria-label="Found the hidden contest code? Tap to send it to us on WhatsApp"
+  href="/couples-retreat-code/"
+  aria-label="Couples Retreat hidden code contest"
 ><span>💕</span></a>
-<a
-  id="retreat-sms-fab"
-  href="sms:+233545223324?body=Hi!%20I%20found%20the%20hidden%20code%20from%20the%20Couples%20Retreat%20contest%3A%20"
-  aria-label="Prefer SMS? Tap to text us the code instead"
-><span>💬</span></a>
-<div id="retreat-heart-tip">Found the code?</div>
+<div id="retreat-heart-tip">Hidden code contest</div>
 
 </body>
 </html>
