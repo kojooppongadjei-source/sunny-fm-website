@@ -9,7 +9,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background: linear-gradient(160deg, #fdf6f0 0%, #ffe9e0 100%);
+    background: linear-gradient(160deg, #2b1b2f 0%, #5c2a3f 50%, #ff6b4a 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -22,7 +22,7 @@
     max-width: 520px;
     width: 100%;
     padding: 40px 32px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
     text-align: center;
     position: relative;
   }
@@ -67,14 +67,14 @@
     color: #444;
     margin-top: 4px;
   }
-  .question-box {
-    background: #fff;
-    border: 2px solid #ffe0d5;
+  .theme-box {
+    background: linear-gradient(135deg, #fff4ef, #ffe6db);
+    border: 2px solid #ffd0bb;
     border-radius: 16px;
     padding: 26px 20px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
-  .question-box .label {
+  .theme-box .label {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -82,40 +82,33 @@
     font-weight: 700;
     margin-bottom: 10px;
   }
-  .question-box .q {
-    font-size: 20px;
-    font-weight: 700;
+  .theme-box .title {
+    font-size: 22px;
+    font-weight: 800;
     color: #2b2b2b;
-    line-height: 1.4;
+    line-height: 1.35;
+    margin-bottom: 8px;
   }
-  .blank {
-    display: inline-block;
-    min-width: 90px;
-    border-bottom: 3px dotted #ff6b4a;
-    color: #ff6b4a;
+  .theme-box .desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
   }
-  .answer-input {
-    width: 100%;
-    margin-top: 18px;
-    padding: 14px 16px;
-    font-size: 16px;
-    border: 2px solid #f0ddd5;
-    border-radius: 12px;
-    text-align: center;
-    font-weight: 700;
-    color: #2b2b2b;
-    outline: none;
-  }
-  .answer-input:focus {
-    border-color: #ff6b4a;
-  }
-  .actions {
-    display: none;
-    gap: 10px;
+  .steps {
+    text-align: left;
+    background: #f7f7f9;
+    border-radius: 14px;
+    padding: 20px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.8;
     margin-bottom: 20px;
   }
-  .actions.show {
+  .steps strong { color: #ff6b4a; }
+  .actions {
     display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
   }
   .actions a {
     flex: 1;
@@ -123,9 +116,9 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    padding: 13px 10px;
+    padding: 15px 10px;
     border-radius: 12px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
@@ -138,23 +131,24 @@
     background: #2b2b2b;
     color: #fff;
   }
-  .instructions {
-    background: #f7f7f9;
-    border-radius: 14px;
-    padding: 20px;
-    text-align: left;
-    font-size: 14px;
-    color: #333;
-    line-height: 1.7;
-  }
-  .instructions strong { color: #ff6b4a; }
   .number {
-    display: inline-block;
-    margin-top: 10px;
+    display: block;
+    margin-top: 4px;
     font-size: 18px;
     font-weight: 800;
     color: #2b2b2b;
     letter-spacing: 0.5px;
+    text-align: center;
+  }
+  .deadline {
+    font-size: 12px;
+    color: #a06a4a;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: #fff4ef;
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 999px;
   }
   footer {
     margin-top: 24px;
@@ -167,67 +161,37 @@
 
 <div class="card">
   <span class="logo-tag">Sunny 88.7 FM &middot; Couples Retreat 2026</span>
-  <h1>💞 Fill in the Blank</h1>
-  <p class="sub">Complete the phrase below and be the first couple to send us the right answer!</p>
+  <h1>✨ Tonight's Grand Finale</h1>
+  <p class="sub">Our last contest of the retreat — make it count!</p>
 
   <div class="prize-box">
     <div class="amount">GH₵500</div>
     <div class="brand">Voucher from Everything Bags by H&amp;B</div>
   </div>
 
-  <div class="question-box">
-    <div class="label">Complete the phrase</div>
-    <div class="q">As strong as <span class="blank">&nbsp;</span></div>
-    <input
-      type="text"
-      id="answerInput"
-      class="answer-input"
-      placeholder="Type your answer here"
-      autocomplete="off"
-      autocapitalize="words"
-    >
+  <div class="theme-box">
+    <div class="label">Tonight's Challenge</div>
+    <div class="title">📸 Best Couple Photo — "Golden Hour at Aqua Safari"</div>
+    <div class="desc">Grab your partner and take your best, most creative photo together tonight — funny, romantic, or unforgettable. Send it in before the night ends. The most loved photo, picked live, wins!</div>
   </div>
 
-  <div class="actions" id="actionButtons">
-    <a class="wa" id="waBtn" target="_blank" rel="noopener">💬 WhatsApp</a>
-    <a class="sms" id="smsBtn">✉️ Text</a>
+  <div class="deadline">⏰ Entries close tonight — submit before you leave</div>
+
+  <div class="actions">
+    <a class="wa" href="https://wa.me/233545223324?text=Hi!%20Here%27s%20our%20Golden%20Hour%20photo%20for%20tonight%27s%20contest%20-%20our%20names%20are%20" target="_blank" rel="noopener">💬 WhatsApp Photo</a>
+    <a class="sms" href="sms:+233545223324?body=Hi!%20We%20submitted%20our%20Golden%20Hour%20photo%20on%20WhatsApp%20for%20tonight%27s%20contest%20-%20our%20names%20are%20">✉️ Text Us</a>
   </div>
 
-  <div class="instructions">
+  <div class="steps">
     <p><strong>How to win:</strong></p>
-    <p>1. Type your answer above.</p>
-    <p>2. Tap WhatsApp or Text to send it straight to our Events team.</p>
-    <p>3. First correct entry wins the voucher! 🎉</p>
+    <p>1. Take your best photo together — anywhere at Aqua Safari.</p>
+    <p>2. Tap "WhatsApp Photo" above and send it with your names.</p>
+    <p>3. Winner announced live tonight! 🎉</p>
     <span class="number">📱 0545 223 324</span>
   </div>
 
   <footer>Sunny 88.7 FM &middot; Live at Aqua Safari &middot; #SunnyCouplesRetreat</footer>
 </div>
-
-<script>
-  (function () {
-    var input = document.getElementById('answerInput');
-    var actions = document.getElementById('actionButtons');
-    var waBtn = document.getElementById('waBtn');
-    var smsBtn = document.getElementById('smsBtn');
-
-    function update() {
-      var val = input.value.trim();
-      if (val.length === 0) {
-        actions.classList.remove('show');
-        return;
-      }
-      var msg = encodeURIComponent(
-        'Hi! My answer to "As strong as ___" is: ' + val + ' - my name is '
-      );
-      waBtn.href = 'https://wa.me/233545223324?text=' + msg;
-      smsBtn.href = 'sms:+233545223324?body=' + msg;
-      actions.classList.add('show');
-    }
-
-    input.addEventListener('input', update);
-  })();
-</script>
 
 </body>
 </html>
