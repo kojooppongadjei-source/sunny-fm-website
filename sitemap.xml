@@ -62,6 +62,12 @@
   </url>
 
   <url>
+    <loc>https://sunnygh.com/contemporary-chart/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://sunnygh.com/top-10/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -764,6 +770,13 @@
 
   <url>
     <loc>https://sunnygh.com/worship-chart/christian-worship-radio-chart-week-34-august-24-30-2026/</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/contemporary-chart/christian-contemporary-radio-chart-week-34-august-24-30-2026/</loc>
     <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

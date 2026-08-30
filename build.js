@@ -82,6 +82,10 @@ const COLLECTIONS = {
     urlPath: 'worship-chart',
     label: 'International Christian Worship Chart',
   },
+  'contemporary-chart': {
+    urlPath: 'contemporary-chart',
+    label: 'International Christian Contemporary Chart',
+  },
 };
 
 // Read shared header/footer snippets
@@ -469,7 +473,7 @@ function buildCollection(collectionFolder, config) {
         ? `<img class="post-card-img" src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}"${post.image_position ? ` style="object-position:${escapeHtml(post.image_position)};"` : ''}>`
         : config.urlPath === 'daily-bread'
           ? `<div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-size:32px;background:linear-gradient(135deg,#1a1200,#0A0E1A);">📖</div>`
-          : `<div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-size:32px;">${config.urlPath === 'preaching-teaching' ? '📖' : config.urlPath === 'prayer-testimonies' ? '🙏' : config.urlPath === 'lifestyle' ? '✨' : config.urlPath === 'gospel-countdown' ? '🎵' : config.urlPath === 'worship-chart' ? '🌍' : '📰'}</div>`;
+          : `<div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-size:32px;">${config.urlPath === 'preaching-teaching' ? '📖' : config.urlPath === 'prayer-testimonies' ? '🙏' : config.urlPath === 'lifestyle' ? '✨' : config.urlPath === 'gospel-countdown' ? '🎵' : config.urlPath === 'worship-chart' ? '🌍' : config.urlPath === 'contemporary-chart' ? '🎧' : '📰'}</div>`;
       const cardSummary = config.urlPath === 'daily-bread' && post.scripture_ref
         ? `<span style="color:var(--gold-dark);font-weight:700;">${escapeHtml(post.scripture_ref)}</span> — ${escapeHtml(post.summary)}`
         : escapeHtml(post.summary);
@@ -572,6 +576,7 @@ function getCollectionEmoji(urlPath) {
     case 'events': return '📅';
     case 'gospel-countdown': return '🎵';
     case 'worship-chart': return '🌍';
+    case 'contemporary-chart': return '🎧';
     default: return '';
   }
 }
@@ -585,6 +590,7 @@ function getCollectionTagline(urlPath) {
     case 'events': return 'Crusades, conferences, and community programs from Sunny 88.7 FM.';
     case 'gospel-countdown': return "Ghana's favourite gospel songs, ranked every week on Sunny 88.7 FM.";
     case 'worship-chart': return "Tracking the world's most-played Christian worship songs on radio, powered by Muzooka's music recognition technology.";
+    case 'contemporary-chart': return "Tracking the world's most-played Christian contemporary songs on radio, powered by Muzooka's music recognition technology.";
     default: return '';
   }
 }
@@ -802,6 +808,7 @@ ${stationCardsHtml}
 function buildTop10HubPage(allPostsByCollection) {
   const gospelPosts = allPostsByCollection['gospel-countdown'] || [];
   const worshipPosts = allPostsByCollection['worship-chart'] || [];
+  const contemporaryPosts = allPostsByCollection['contemporary-chart'] || [];
 
   function renderChartCard(post, urlPath, emoji) {
     if (!post) return '';
@@ -837,6 +844,13 @@ function buildTop10HubPage(allPostsByCollection) {
   ${worshipPosts.slice(0, 3).map(p => renderChartCard(p, 'worship-chart', '🌍')).join('')}
 </div>
 <a href="/worship-chart/" class="back-link" style="margin-top:16px;display:inline-flex;">See all Worship Chart editions →</a>
+
+<h2 style="font-size:20px;font-weight:800;margin-bottom:14px;margin-top:20px;">🎧 International Christian Contemporary Chart</h2>
+<p style="color:var(--muted);font-size:14px;margin-bottom:16px;">Tracking the world's most-played Christian contemporary songs on radio, powered by Muzooka's music recognition technology.</p>
+<div class="top10-list">
+  ${contemporaryPosts.slice(0, 3).map(p => renderChartCard(p, 'contemporary-chart', '🎧')).join('')}
+</div>
+<a href="/contemporary-chart/" class="back-link" style="margin-top:16px;display:inline-flex;">See all Contemporary Chart editions →</a>
 
 <style>
 .top10-list{display:flex;flex-direction:column;gap:12px;}
@@ -1345,6 +1359,7 @@ const STATIC_PAGES = [
   { loc: 'https://sunnygh.com/preaching-teaching/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/gospel-countdown/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/worship-chart/', changefreq: 'weekly', priority: '0.7' },
+  { loc: 'https://sunnygh.com/contemporary-chart/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/top-10/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/prayer-testimonies/', changefreq: 'weekly', priority: '0.6' },
   { loc: 'https://sunnygh.com/advertise/', changefreq: 'monthly', priority: '0.5' },
