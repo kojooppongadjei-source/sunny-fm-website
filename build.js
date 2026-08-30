@@ -78,6 +78,10 @@ const COLLECTIONS = {
     urlPath: 'gospel-countdown',
     label: 'Sunny TCA Top 10 Gospel Countdown',
   },
+  'worship-chart': {
+    urlPath: 'worship-chart',
+    label: 'International Christian Worship Chart',
+  },
 };
 
 // Read shared header/footer snippets
@@ -465,7 +469,7 @@ function buildCollection(collectionFolder, config) {
         ? `<img class="post-card-img" src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}"${post.image_position ? ` style="object-position:${escapeHtml(post.image_position)};"` : ''}>`
         : config.urlPath === 'daily-bread'
           ? `<div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-size:32px;background:linear-gradient(135deg,#1a1200,#0A0E1A);">📖</div>`
-          : `<div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-size:32px;">${config.urlPath === 'preaching-teaching' ? '📖' : config.urlPath === 'prayer-testimonies' ? '🙏' : config.urlPath === 'lifestyle' ? '✨' : config.urlPath === 'gospel-countdown' ? '🎵' : '📰'}</div>`;
+          : `<div class="post-card-img" style="display:flex;align-items:center;justify-content:center;font-size:32px;">${config.urlPath === 'preaching-teaching' ? '📖' : config.urlPath === 'prayer-testimonies' ? '🙏' : config.urlPath === 'lifestyle' ? '✨' : config.urlPath === 'gospel-countdown' ? '🎵' : config.urlPath === 'worship-chart' ? '🌍' : '📰'}</div>`;
       const cardSummary = config.urlPath === 'daily-bread' && post.scripture_ref
         ? `<span style="color:var(--gold-dark);font-weight:700;">${escapeHtml(post.scripture_ref)}</span> — ${escapeHtml(post.summary)}`
         : escapeHtml(post.summary);
@@ -567,6 +571,7 @@ function getCollectionEmoji(urlPath) {
     case 'preaching-teaching': return '📖';
     case 'events': return '📅';
     case 'gospel-countdown': return '🎵';
+    case 'worship-chart': return '🌍';
     default: return '';
   }
 }
@@ -579,6 +584,7 @@ function getCollectionTagline(urlPath) {
     case 'preaching-teaching': return 'Catch up on sermons and teachings from our roster of pastors and ministers.';
     case 'events': return 'Crusades, conferences, and community programs from Sunny 88.7 FM.';
     case 'gospel-countdown': return "Ghana's favourite gospel songs, ranked every week on Sunny 88.7 FM.";
+    case 'worship-chart': return "Tracking the world's most-played Christian worship songs on radio, powered by Muzooka's music recognition technology.";
     default: return '';
   }
 }
