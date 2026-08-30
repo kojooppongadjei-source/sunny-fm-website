@@ -56,6 +56,18 @@
   </url>
 
   <url>
+    <loc>https://sunnygh.com/worship-chart/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/top-10/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://sunnygh.com/prayer-testimonies/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>

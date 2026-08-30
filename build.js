@@ -798,6 +798,68 @@ ${stationCardsHtml}
   fs.writeFileSync(path.join(outDir, 'index.html'), html);
   console.log('Built resource page: christian-radio-stations-ghana');
 }
+
+function buildTop10HubPage(allPostsByCollection) {
+  const gospelPosts = allPostsByCollection['gospel-countdown'] || [];
+  const worshipPosts = allPostsByCollection['worship-chart'] || [];
+
+  function renderChartCard(post, urlPath, emoji) {
+    if (!post) return '';
+    return `<a class="top10-card" href="${post.url}">
+      <div class="top10-card-emoji">${emoji}</div>
+      <div class="top10-card-body">
+        <div class="top10-card-date">${escapeHtml(post.dateFormatted)}</div>
+        <div class="top10-card-title">${escapeHtml(post.title)}</div>
+        <div class="top10-card-summary">${escapeHtml(post.summary || '')}</div>
+      </div>
+    </a>`;
+  }
+
+  const body = `
+<div class="eyebrow">Sunny 88.7 FM</div>
+<h1 class="post-title" style="margin-bottom:8px;">Top 10 Charts</h1>
+<p style="color:var(--muted);font-size:15px;margin-bottom:32px;max-width:600px;">
+  Every week we track the songs Ghana and the world are playing most —
+  from local gospel favourites to the biggest names in international
+  Christian worship radio.
+</p>
+
+<h2 style="font-size:20px;font-weight:800;margin-bottom:14px;">🎵 Sunny TCA Top 10 Gospel Countdown</h2>
+<p style="color:var(--muted);font-size:14px;margin-bottom:16px;">Ghana's favourite gospel songs, ranked every week on Sunny 88.7 FM.</p>
+<div class="top10-list" style="margin-bottom:36px;">
+  ${gospelPosts.slice(0, 3).map(p => renderChartCard(p, 'gospel-countdown', '🎵')).join('')}
+</div>
+<a href="/gospel-countdown/" class="back-link" style="margin-bottom:36px;display:inline-flex;">See all Gospel Countdown editions →</a>
+
+<h2 style="font-size:20px;font-weight:800;margin-bottom:14px;margin-top:20px;">🌍 International Christian Worship Chart</h2>
+<p style="color:var(--muted);font-size:14px;margin-bottom:16px;">Tracking the world's most-played Christian worship songs on radio, powered by Muzooka's music recognition technology.</p>
+<div class="top10-list">
+  ${worshipPosts.slice(0, 3).map(p => renderChartCard(p, 'worship-chart', '🌍')).join('')}
+</div>
+<a href="/worship-chart/" class="back-link" style="margin-top:16px;display:inline-flex;">See all Worship Chart editions →</a>
+
+<style>
+.top10-list{display:flex;flex-direction:column;gap:12px;}
+.top10-card{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--border);border-radius:14px;padding:16px;text-decoration:none;color:inherit;background:#fff;transition:box-shadow .2s,transform .2s;}
+.top10-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.08);transform:translateY(-2px);}
+.top10-card-emoji{font-size:26px;line-height:1;flex-shrink:0;}
+.top10-card-date{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;}
+.top10-card-title{font-size:15px;font-weight:700;margin-bottom:4px;line-height:1.35;}
+.top10-card-summary{font-size:13px;color:#666;line-height:1.6;}
+</style>
+`;
+
+  const html = pageShell({
+    title: 'Top 10 Charts',
+    description: "Sunny 88.7 FM's Top 10 charts — the Sunny TCA Top 10 Gospel Countdown for Ghana's favourite gospel songs, and the International Christian Worship Chart tracking the world's most-played worship songs on radio.",
+    bodyHtml: body,
+    url: '/top-10/',
+  });
+  const outDir = path.join(ROOT, 'top-10');
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(path.join(outDir, 'index.html'), html);
+  console.log('Built Top 10 hub page (/top-10/)');
+}
 buildResourcePages();
 
 function buildSelfServiceAdvertPage() {
@@ -1282,6 +1344,8 @@ const STATIC_PAGES = [
   { loc: 'https://sunnygh.com/lifestyle/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/preaching-teaching/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/gospel-countdown/', changefreq: 'weekly', priority: '0.7' },
+  { loc: 'https://sunnygh.com/worship-chart/', changefreq: 'weekly', priority: '0.7' },
+  { loc: 'https://sunnygh.com/top-10/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/prayer-testimonies/', changefreq: 'weekly', priority: '0.6' },
   { loc: 'https://sunnygh.com/advertise/', changefreq: 'monthly', priority: '0.5' },
   { loc: 'https://sunnygh.com/self-service-advert/', changefreq: 'monthly', priority: '0.5' },
@@ -1308,6 +1372,7 @@ injectHomepageCards(collectionsPosts);
 linkHomepagePreachingCards(collectionsPosts);
 injectDailyBreadIntoLifestyle(collectionsPosts);
 injectSelfServiceAdsBox();
+buildTop10HubPage(collectionsPosts);
 
 // Generate sitemap.xml: static pages + every individual post
 const sitemapEntries = [...STATIC_PAGES, ...allPostUrls];
