@@ -5,6 +5,13 @@
   publish = "."
   command = "npm install && node build.js"
 
+# Cache static assets (logo, banner, uploaded photos) in the browser for 7 days
+# to cut down repeat downloads across pages and reduce bandwidth usage
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, must-revalidate"
+
 # Ensure trailing-slash folders resolve to their index.html
 [[redirects]]
   from = "/listen-live"
