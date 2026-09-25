@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>APT Communications — Websites, built and shipped</title>
+<meta name="description" content="Websites built by the team behind Sunny FM and Spirit FM — live in days, built to last.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#081C3A;
+    --navy-soft:#132B52;
+    --cream:#FAF7F0;
+    --paper:#FFFFFF;
+    --gold:#F5B335;
+    --charcoal:#23262B;
+    --line:rgba(8,28,58,0.12);
+    --muted:#6B6F76;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  html{scroll-padding-top:env(safe-area-inset-top,0px); scroll-behavior:smooth;}
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--cream); color:var(--charcoal);
+    font-family:'Inter',sans-serif; font-size:16px; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif; margin:0; color:var(--navy); letter-spacing:-0.01em;}
+  a{color:inherit;}
+  img{max-width:100%;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+  .cols{max-width:64ch;}
+
+  /* NAV */
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 24px; max-width:1080px; margin:0 auto;
+  }
+  .brand{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; color:var(--navy);}
+  .brand span{color:var(--gold);}
+  nav .cta{
+    background:var(--navy); color:#fff; padding:10px 18px; border-radius:999px;
+    font-size:14px; font-weight:600; text-decoration:none; white-space:nowrap;
+  }
+
+  /* HERO */
+  header.hero{padding:56px 0 40px;}
+  .onair{
+    display:inline-flex; align-items:center; gap:8px;
+    background:#fff; border:1px solid var(--line); border-radius:999px;
+    padding:6px 14px; font-size:13px; color:var(--muted); margin-bottom:28px;
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:#E0483E; box-shadow:0 0 0 3px rgba(224,72,62,0.15);}
+  .hero h1{
+    font-size:clamp(34px,5.4vw,58px); font-weight:600; line-height:1.08; max-width:15ch;
+  }
+  .hero p.sub{
+    margin-top:22px; max-width:46ch; font-size:18px; color:var(--muted);
+  }
+  .hero-actions{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--gold); color:var(--navy); padding:14px 26px; border-radius:10px;
+    font-weight:600; text-decoration:none; font-size:15px; display:inline-block;
+  }
+  .btn-secondary{
+    border:1px solid var(--line); padding:14px 26px; border-radius:10px;
+    font-weight:600; text-decoration:none; font-size:15px; color:var(--navy); display:inline-block;
+  }
+
+  /* STATS */
+  .stats{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    padding:36px 0; margin-top:16px;
+  }
+  .stat b{display:block; font-size:34px; font-family:'Space Grotesk',sans-serif; color:var(--navy); font-weight:600;}
+  .stat span{font-size:14px; color:var(--muted);}
+
+  /* SECTION HEADS */
+  section{padding:64px 0;}
+  .section-head{max-width:52ch; margin-bottom:40px;}
+  .section-head h2{font-size:clamp(26px,3.4vw,34px); font-weight:600;}
+  .section-head p{margin-top:12px; color:var(--muted); font-size:16px;}
+
+  /* PORTFOLIO */
+  .work-list{border-top:1px solid var(--line);}
+  .work-row{
+    display:grid; grid-template-columns:1.4fr 2fr auto; gap:20px; align-items:center;
+    padding:22px 0; border-bottom:1px solid var(--line);
+  }
+  .work-row h3{font-size:19px; font-weight:600;}
+  .work-row .kind{font-size:13px; color:var(--gold); font-weight:600; display:block; margin-bottom:4px;}
+  .work-row p{margin:0; color:var(--muted); font-size:15px;}
+  .work-row a.visit{
+    font-size:14px; font-weight:600; color:var(--navy); text-decoration:none;
+    border-bottom:1.5px solid var(--gold); padding-bottom:2px; white-space:nowrap;
+  }
+  .work-row .noLink{font-size:14px; color:var(--muted);}
+
+  /* SERVICES */
+  .services{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden;}
+  .service{background:var(--paper); padding:28px 24px;}
+  .service h3{font-size:18px; font-weight:600; margin-bottom:10px;}
+  .service p{margin:0; color:var(--muted); font-size:14.5px;}
+
+  /* PROCESS */
+  .process{display:flex; flex-direction:column; gap:0;}
+  .step{display:flex; gap:20px; padding:24px 0; border-bottom:1px solid var(--line);}
+  .step:last-child{border-bottom:none;}
+  .step .num{font-family:'Space Grotesk',sans-serif; font-weight:600; color:var(--gold); font-size:15px; width:28px; flex-shrink:0;}
+  .step h3{font-size:17px; font-weight:600; margin-bottom:6px;}
+  .step p{margin:0; color:var(--muted); font-size:15px; max-width:56ch;}
+
+  /* CTA BAND */
+  .band{background:var(--navy); color:#fff; border-radius:20px; padding:48px 40px;}
+  .band h2{color:#fff; font-size:clamp(24px,3.2vw,32px); font-weight:600; max-width:22ch;}
+  .band p{color:rgba(255,255,255,0.72); margin-top:14px; max-width:42ch; font-size:16px;}
+  .band-actions{display:flex; gap:14px; margin-top:26px; flex-wrap:wrap;}
+  .band .btn-secondary{color:#fff; border-color:rgba(255,255,255,0.28);}
+
+  footer{padding:36px 0 48px; border-top:1px solid var(--line); margin-top:20px;}
+  .foot-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  .foot-row p{margin:0; font-size:14px; color:var(--muted);}
+
+  @media (max-width:760px){
+    .stats{grid-template-columns:1fr; gap:18px;}
+    .services{grid-template-columns:1fr;}
+    .work-row{grid-template-columns:1fr; gap:6px;}
+    .work-row a.visit,.work-row .noLink{margin-top:4px;}
+  }
+
+  :root:not([data-theme="light"]) { }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">APT<span>·</span>Web</div>
+  <a class="cta" href="tel:0245621346">Call 0245 621 346</a>
+</nav>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="onair"><span class="dot"></span> Also running Sunny FM &amp; Spirit FM — on air, right now</div>
+    <h1>Someone searched for your business today. Were you there to answer?</h1>
+    <p class="sub">A website is the most overlooked form of advertising for a small, owner-run business. Every dentist, café, boutique and repair shop that used to need a line in the yellow pages now needs a home online — not necessarily to sell there, but to be found there. It's the half-step between your advertising and your front door, where a customer can learn what they need before they ever call or walk in. Nearly half of them would rather read than ask. We build the page that answers for you.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#work">See the sites we've shipped</a>
+      <a class="btn-secondary" href="tel:0245621346">Talk to us directly</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>10+</b><span>Live websites shipped this year</span></div>
+      <div class="stat"><b>3</b><span>Radio &amp; TV stations run on custom-built platforms</span></div>
+      <div class="stat"><b>Days</b><span>not months — from brief to launch</span></div>
+    </div>
+  </header>
+
+  <section id="work">
+    <div class="section-head">
+      <h2>A few things already live</h2>
+      <p>No mockups here — every one of these is a real, working site for a real business.</p>
+    </div>
+
+    <div class="work-list">
+      <div class="work-row">
+        <div><span class="kind">Radio</span><h3>Sunny 88.7 FM</h3></div>
+        <p>Station website, self-hosted live-stream infrastructure, and a full editorial/content system.</p>
+        <a class="visit" href="https://sunnygh.com" target="_blank" rel="noopener">sunnygh.com</a>
+      </div>
+      <div class="work-row">
+        <div><span class="kind">Radio</span><h3>Spirit 88.3 FM</h3></div>
+        <p>Rebuilt site, custom live player, moved off third-party streaming onto our own server.</p>
+        <a class="visit" href="https://spiritgh.com" target="_blank" rel="noopener">spiritgh.com</a>
+      </div>
+      <div class="work-row">
+        <div><span class="kind">Radio &amp; TV</span><h3>Spirit FM 96.6 &amp; Spirit TV, Uganda</h3></div>
+        <p>Two-station client rebuild migrated off WordPress, with a full show schedule and live listen-in.</p>
+        <a class="visit" href="https://spiritfm.co.ug" target="_blank" rel="noopener">spiritfm.co.ug</a>
+      </div>
+      <div class="work-row">
+        <div><span class="kind">Agency</span><h3>Kanjy Communications</h3></div>
+        <p>Multi-page marketing site for a Ghanaian marketing &amp; comms consultancy, built from their corporate deck.</p>
+        <a class="visit" href="https://kanjycommunications.com" target="_blank" rel="noopener">kanjycommunications.com</a>
+      </div>
+      <div class="work-row">
+        <div><span class="kind">Software</span><h3>AirDesk Pro</h3></div>
+        <p>Product site for our own radio-automation software, built for broadcasters across Africa.</p>
+        <a class="visit" href="https://airdeskpro.com" target="_blank" rel="noopener">airdeskpro.com</a>
+      </div>
+      <div class="work-row">
+        <div><span class="kind">Real estate</span><h3>Mahanaim Estates</h3></div>
+        <p>Marketing site for a US-based realtor, built to convert visitors into serious property leads.</p>
+        <span class="noLink">Client site — case study on request</span>
+      </div>
+      <div class="work-row">
+        <div><span class="kind">Automotive</span><h3>Apex EV Ghana</h3></div>
+        <p>Multi-brand EV, PHEV and petrol dealership site with full model catalogue and specs.</p>
+        <span class="noLink">Client site — case study on request</span>
+      </div>
+      <div class="work-row">
+        <div><span class="kind">Personal brand</span><h3>Bahati Hilda Sabiti</h3></div>
+        <p>Multi-page brand site for a life &amp; relationship coach, speaker and author.</p>
+        <span class="noLink">Client site — case study on request</span>
+      </div>
+      <div class="work-row">
+        <div><span class="kind">Internal tools</span><h3>CRMs &amp; sales trackers</h3></div>
+        <p>Beyond marketing sites — custom tools like a service-history CRM for an AC repair business, and a multi-user sales tracker for Sunny FM's team.</p>
+        <span class="noLink">Built to order</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>What we build</h2>
+      <p>Whatever gets your business properly online — and keeps it running after launch.</p>
+    </div>
+    <div class="services">
+      <div class="service">
+        <h3>New business website</h3>
+        <p>A clean, fast site that explains what you do and makes it easy to get in touch — live in days.</p>
+      </div>
+      <div class="service">
+        <h3>Rebuilds &amp; migrations</h3>
+        <p>Moving off a slow WordPress site or an outgrown platform, without losing your content or your traffic.</p>
+      </div>
+      <div class="service">
+        <h3>Ongoing care</h3>
+        <p>Monthly hosting, small edits, content updates and security, so the site keeps working long after launch.</p>
+      </div>
+      <div class="service">
+        <h3>Custom tools</h3>
+        <p>Booking systems, CRMs, sales trackers — anything your business needs beyond a standard website.</p>
+      </div>
+      <div class="service">
+        <h3>Streaming &amp; media</h3>
+        <p>Live audio streaming infrastructure for radio stations, built and hosted from the ground up.</p>
+      </div>
+      <div class="service">
+        <h3>Brand &amp; content</h3>
+        <p>Copy, structure and design that sound like your business — not a generic template.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>How it works</h2>
+    </div>
+    <div class="process">
+      <div class="step">
+        <span class="num">01</span>
+        <div><h3>Tell us what you need</h3><p>A call or a message — what your business does, and what the site needs to achieve.</p></div>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <div><h3>We build it</h3><p>Working, not just designed — you can see and test the real site as it comes together.</p></div>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <div><h3>It goes live</h3><p>Deployed, connected to your domain, and ready for customers.</p></div>
+      </div>
+      <div class="step">
+        <span class="num">04</span>
+        <div><h3>We keep it running</h3><p>Ongoing updates and support, so you're never stuck when something needs to change.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="band">
+      <h2>Your business deserves a site like this too.</h2>
+      <p>Call, WhatsApp, or email — tell us about your business and let's get you live this month.</p>
+      <div class="band-actions">
+        <a class="btn-primary" href="tel:0245621346">Call 0245 621 346</a>
+        <a class="btn-secondary" href="mailto:aptcomgh@gmail.com">aptcomgh@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-row">
+      <p>APT Communications — Accra, Ghana</p>
+      <p>Also behind Sunny 88.7 FM &amp; Spirit 88.3 FM</p>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
