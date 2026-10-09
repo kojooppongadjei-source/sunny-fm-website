@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Send a shout-out on air | Sunny 88.7 FM</title>
+  <meta name="description" content="Birthday, anniversary, thanksgiving or just because. Send a shout-out and Sunny 88.7 FM will read it on air.">
+  <link rel="canonical" href="https://sunnygh.com/shoutout/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sunnygh.com/shoutout/">
+  <meta property="og:title" content="Send a shout-out on Sunny 88.7 FM">
+  <meta property="og:description" content="Celebrate someone you love on air. Birthdays, anniversaries, thanksgiving and more.">
+  <meta name="theme-color" content="#FFB800">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/sunny-forms.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8W4N24JZK"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W8W4N24JZK');</script>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span>Sunny 88.7 FM</a>
+    <a class="home-link" href="/">sunnygh.com</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="sun" aria-hidden="true"></div>
+      <p class="heard">As heard on Sunny 88.7 FM</p>
+      <h1>Celebrate someone on air</h1>
+      <p class="lede">Birthday, anniversary, thanksgiving or just because. Send it here and we'll read it on Sunny.</p>
+    </section>
+
+    <div class="wrap">
+      <div class="card">
+        <form id="shoutout-form" novalidate>
+          <div class="form-error" role="alert"></div>
+
+          <fieldset class="field">
+            <legend class="legend">What are we celebrating?</legend>
+            <div class="chips">
+              <label><input type="radio" name="occasion" value="Birthday" checked><span>Birthday</span></label>
+              <label><input type="radio" name="occasion" value="Anniversary"><span>Anniversary</span></label>
+              <label><input type="radio" name="occasion" value="Thanksgiving"><span>Thanksgiving</span></label>
+              <label><input type="radio" name="occasion" value="Graduation"><span>Graduation</span></label>
+              <label><input type="radio" name="occasion" value="New baby"><span>New baby</span></label>
+              <label><input type="radio" name="occasion" value="Just because"><span>Just because</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="recipient">Who is it for?</label>
+            <input id="recipient" name="recipient" type="text" maxlength="80" placeholder="e.g. Mama Grace, or Kwame and Efua">
+          </div>
+
+          <div class="field">
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" maxlength="300" placeholder="e.g. Happy 60th birthday, Mama. God has been faithful. We love you!"></textarea>
+            <p class="hint"><span data-count-for="message">0</span> of 300 characters. Short messages get read first.</p>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" maxlength="80" placeholder="e.g. Kofi and the family">
+            </div>
+            <div class="field">
+              <label for="location">Your location <span class="opt">(optional)</span></label>
+              <input id="location" name="location" type="text" autocomplete="address-level2" maxlength="80" placeholder="e.g. Ashaiman">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="for_date">Read it on</label>
+              <input id="for_date" name="for_date" type="date">
+            </div>
+            <div class="field">
+              <label for="phone">Phone number <span class="opt">(optional)</span></label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="024 123 4567">
+            </div>
+          </div>
+
+          <fieldset class="field">
+            <legend class="legend">Best time</legend>
+            <div class="chips">
+              <label><input type="radio" name="show" value="Any time" checked><span>Any time</span></label>
+              <label><input type="radio" name="show" value="Morning"><span>Morning</span></label>
+              <label><input type="radio" name="show" value="Afternoon"><span>Afternoon</span></label>
+              <label><input type="radio" name="show" value="Evening"><span>Evening</span></label>
+            </div>
+          </fieldset>
+
+          <div class="hp" aria-hidden="true">
+            <label for="website">Leave this empty</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button class="btn" type="submit">Send shout-out</button>
+        </form>
+
+        <div class="success" role="status" tabindex="-1">
+          <div class="tick" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <h2>Shout-out sent</h2>
+          <p data-success-text>We'll read it on Sunny 88.7 FM. Tell them to tune in.</p>
+          <div class="btn-stack">
+            <a class="btn btn-wa" data-share href="#" target="_blank" rel="noopener">Tell them on WhatsApp</a>
+            <button class="btn btn-plain" type="button" data-again>Send another shout-out</button>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="next-title">What happens next</h2>
+      <ol class="steps">
+        <li><span>Your shout-out goes straight to the Sunny studio.</span></li>
+        <li><span>Our presenters read it on the day you picked, as close to your preferred time as the show allows.</span></li>
+        <li><span>Share the news so they're listening on 88.7 FM or at sunnygh.com.</span></li>
+      </ol>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap"><a href="/">Sunny 88.7 FM</a>. Also send a <a href="/pray/">prayer request</a> or enter today's <a href="/win/">code word contest</a>.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="/assets/sunny-config.js"></script>
+  <script src="/assets/sunny-forms.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById('shoutout-form');
+      var dateInput = document.getElementById('for_date');
+
+      function isoDay(offsetDays) {
+        var d = new Date(Date.now() + (offsetDays || 0) * 864e5);
+        return d.toISOString().slice(0, 10); // Ghana is UTC
+      }
+      function setDates() {
+        dateInput.min = isoDay(0);
+        dateInput.max = isoDay(60);
+        dateInput.value = isoDay(0);
+      }
+      setDates();
+
+      function prettyDate(iso) {
+        if (iso === isoDay(0)) return 'today';
+        if (iso === isoDay(1)) return 'tomorrow';
+        return new Date(iso + 'T12:00:00Z').toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
+      }
+
+      SunnyForm.init(form, {
+        kind: 'shoutout',
+        onReset: setDates,
+        build: function (fd) {
+          var recipient = SunnyForm.clean(fd.get('recipient'), 80);
+          if (!recipient) return { error: 'Tell us who the shout-out is for.' };
+
+          var message = String(fd.get('message') || '').trim().slice(0, 300);
+          if (message.length < 3) return { error: 'Write your message before sending.' };
+
+          var name = SunnyForm.clean(fd.get('name'), 80);
+          if (!name) return { error: 'Enter your name so we can say who it\u2019s from.' };
+
+          var forDate = String(fd.get('for_date') || '') || isoDay(0);
+          if (forDate < isoDay(0)) return { error: 'Pick today or a future date.' };
+          if (forDate > isoDay(60)) return { error: 'Pick a date within the next two months.' };
+
+          var phone = null;
+          var rawPhone = SunnyForm.clean(fd.get('phone'), 20);
+          if (rawPhone) {
+            phone = SunnyForm.phone(rawPhone);
+            if (!phone) return { error: 'Enter a Ghana phone number like 024 123 4567, or leave it blank.' };
+          }
+
+          return {
+            row: {
+              name: name,
+              phone: phone,
+              location: SunnyForm.clean(fd.get('location'), 80) || null,
+              message: message,
+              details: {
+                occasion: fd.get('occasion') || 'Just because',
+                recipient: recipient,
+                for_date: forDate,
+                show: fd.get('show') || 'Any time'
+              }
+            }
+          };
+        },
+        onSuccess: function (row, success) {
+          success.querySelector('[data-success-text]').textContent =
+            'We\u2019ll read it on Sunny 88.7 FM ' + prettyDate(row.details.for_date) + '. Tell ' + row.details.recipient + ' to tune in.';
+        },
+        shareText: function (row) {
+          return row.details.recipient + ', tune in to Sunny 88.7 FM ' + prettyDate(row.details.for_date) +
+            '. I\u2019ve sent you a shout-out! Listen live at https://sunnygh.com or send one for someone you love at https://sunnygh.com/shoutout';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

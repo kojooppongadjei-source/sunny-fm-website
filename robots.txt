@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /studio/
 
 # Sitemap location
 Sitemap: https://sunnygh.com/sitemap.xml

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Send a prayer request | Sunny 88.7 FM</title>
+  <meta name="description" content="Send your prayer request to Sunny 88.7 FM. Our presenters pray over listeners' requests live on air every morning.">
+  <link rel="canonical" href="https://sunnygh.com/pray/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sunnygh.com/pray/">
+  <meta property="og:title" content="Send your prayer request to Sunny 88.7 FM">
+  <meta property="og:description" content="We pray over listeners' requests live on air every morning.">
+  <meta name="theme-color" content="#FFB800">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/sunny-forms.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8W4N24JZK"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W8W4N24JZK');</script>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span>Sunny 88.7 FM</a>
+    <a class="home-link" href="/">sunnygh.com</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="sun" aria-hidden="true"></div>
+      <p class="heard">As heard on Sunny 88.7 FM</p>
+      <h1>Send us your prayer request</h1>
+      <p class="lede">Tell us what you're trusting God for. We pray over listeners' requests live on air every morning.</p>
+    </section>
+
+    <div class="wrap">
+      <div class="card">
+        <form id="prayer-form" novalidate>
+          <div class="form-error" role="alert"></div>
+
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="given-name" maxlength="80" placeholder="e.g. Akosua">
+          </div>
+          <div class="field">
+            <label class="check"><input type="checkbox" id="anonymous" name="anonymous"> Keep my name private on air</label>
+          </div>
+
+          <div class="field">
+            <label for="location">Where are you listening from? <span class="opt">(optional)</span></label>
+            <input id="location" name="location" type="text" autocomplete="address-level2" maxlength="80" placeholder="e.g. Madina, Accra">
+          </div>
+
+          <fieldset class="field">
+            <legend class="legend">What should we pray about?</legend>
+            <div class="chips">
+              <label><input type="radio" name="topic" value="Health"><span>Health</span></label>
+              <label><input type="radio" name="topic" value="Family and marriage"><span>Family and marriage</span></label>
+              <label><input type="radio" name="topic" value="Work and finances"><span>Work and finances</span></label>
+              <label><input type="radio" name="topic" value="Children"><span>Children</span></label>
+              <label><input type="radio" name="topic" value="Salvation"><span>Salvation</span></label>
+              <label><input type="radio" name="topic" value="Thanksgiving"><span>Thanksgiving</span></label>
+              <label><input type="radio" name="topic" value="Other"><span>Something else</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="message">Your prayer request</label>
+            <textarea id="message" name="message" maxlength="600" placeholder="Share as much or as little as you like."></textarea>
+            <p class="hint"><span data-count-for="message">0</span> of 600 characters</p>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone number <span class="opt">(optional)</span></label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="024 123 4567">
+            <p class="hint">Only if you'd like us to call you back. We never read numbers on air.</p>
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label for="website">Leave this empty</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button class="btn" type="submit">Send prayer request</button>
+        </form>
+
+        <div class="success" role="status" tabindex="-1">
+          <div class="tick" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <h2>Your prayer request is with us</h2>
+          <p>Listen to the morning show on 88.7 FM or at sunnygh.com. You're not carrying this alone.</p>
+          <div class="btn-stack">
+            <a class="btn btn-wa" data-share href="#" target="_blank" rel="noopener">Invite someone on WhatsApp</a>
+            <button class="btn btn-plain" type="button" data-again>Send another request</button>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="next-title">What happens next</h2>
+      <ol class="steps">
+        <li><span>Your request goes straight to the Sunny studio.</span></li>
+        <li><span>Our presenters pray over listeners' requests live on the morning show.</span></li>
+        <li><span>Tune in on 88.7 FM or at sunnygh.com and pray along with us.</span></li>
+      </ol>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap"><a href="/">Sunny 88.7 FM</a>. Also send a <a href="/shoutout/">shout-out</a> or enter today's <a href="/win/">code word contest</a>.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="/assets/sunny-config.js"></script>
+  <script src="/assets/sunny-forms.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById('prayer-form');
+      var anon = document.getElementById('anonymous');
+      var nameInput = document.getElementById('name');
+
+      function syncAnon() {
+        nameInput.disabled = anon.checked;
+        nameInput.placeholder = anon.checked ? 'We\u2019ll read it as \u201cA listener\u201d' : 'e.g. Akosua';
+      }
+      anon.addEventListener('change', syncAnon);
+
+      SunnyForm.init(form, {
+        kind: 'prayer',
+        onReset: syncAnon,
+        build: function (fd) {
+          var isAnon = fd.get('anonymous') === 'on';
+          var name = isAnon ? 'A listener' : SunnyForm.clean(fd.get('name'), 80);
+          if (!name) return { error: 'Enter your name, or tick \u201cKeep my name private on air\u201d.' };
+
+          var message = String(fd.get('message') || '').trim().slice(0, 600);
+          if (message.length < 5) return { error: 'Write your prayer request before sending.' };
+
+          var phone = null;
+          var rawPhone = SunnyForm.clean(fd.get('phone'), 20);
+          if (rawPhone) {
+            phone = SunnyForm.phone(rawPhone);
+            if (!phone) return { error: 'Enter a Ghana phone number like 024 123 4567, or leave it blank.' };
+          }
+
+          return {
+            row: {
+              name: name,
+              phone: phone,
+              location: SunnyForm.clean(fd.get('location'), 80) || null,
+              message: message,
+              details: { topic: fd.get('topic') || 'Other', anonymous: isAnon }
+            }
+          };
+        },
+        shareText: function () {
+          return 'I just sent a prayer request to Sunny 88.7 FM. They pray over listeners\u2019 requests live every morning. Send yours: https://sunnygh.com/pray';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

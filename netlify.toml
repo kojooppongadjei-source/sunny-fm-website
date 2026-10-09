@@ -63,6 +63,26 @@
   to = "/admin/"
   status = 301
 
+[[redirects]]
+  from = "/pray"
+  to = "/pray/"
+  status = 301
+
+[[redirects]]
+  from = "/shoutout"
+  to = "/shoutout/"
+  status = 301
+
+[[redirects]]
+  from = "/win"
+  to = "/win/"
+  status = 301
+
+[[redirects]]
+  from = "/studio"
+  to = "/studio/"
+  status = 301
+
 # Custom 404 fallback
 [[redirects]]
   from = "/*"

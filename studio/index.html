@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Sunny Studio</title>
+  <meta name="theme-color" content="#FFB800">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/sunny-forms.css">
+  <style>
+    .studio { max-width: 920px; margin: 0 auto; padding: 0 20px 60px; }
+    .studio-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 0; }
+    .who { font-size: 14px; color: var(--muted); display: flex; gap: 12px; align-items: center; }
+    .linkish { background: none; border: 0; padding: 0; font: 600 14px var(--body); color: var(--sky); cursor: pointer; }
+
+    .login { max-width: 420px; margin: 8vh auto 0; }
+    .login h1 { font-size: 44px; max-width: none; }
+
+    .tabs { display: flex; gap: 6px; border-bottom: 1.5px solid var(--line); margin: 6px 0 22px; overflow-x: auto; }
+    .tab {
+      flex: none; padding: 12px 16px; margin-bottom: -1.5px;
+      font: 700 16px var(--body); color: var(--muted);
+      background: none; border: 0; border-bottom: 3px solid transparent; cursor: pointer;
+    }
+    .tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--sun); }
+    .tab:focus-visible { outline: 3px solid var(--sun); outline-offset: -3px; }
+    .count {
+      display: inline-block; min-width: 24px; margin-left: 6px; padding: 1px 7px;
+      font-size: 13px; text-align: center; color: var(--ink);
+      background: var(--sun-soft); border-radius: 999px;
+    }
+
+    .bar { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; color: var(--muted); font-size: 14px; }
+
+    .item {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+      padding: 20px 20px 16px; margin-bottom: 14px;
+    }
+    .item-head { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-bottom: 10px; font-size: 14px; color: var(--muted); }
+    .tag { padding: 3px 10px; border-radius: 999px; background: var(--sun-soft); color: var(--ink); font-weight: 700; }
+    .tag.late { background: var(--err-soft); color: var(--err); }
+    .item-title { margin: 0 0 6px; font: 800 24px/1.2 var(--display); }
+    .item-text { margin: 0 0 12px; font-size: 22px; line-height: 1.45; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .item-from { margin: 0 0 14px; font-weight: 600; }
+    .item-from span { font-weight: 400; color: var(--muted); }
+    .item-actions { display: flex; gap: 10px; }
+    .item-actions .btn { width: auto; min-height: 46px; font-size: 16px; }
+
+    .empty { padding: 40px 20px; text-align: center; color: var(--muted); border: 1.5px dashed var(--line); border-radius: 14px; }
+    .empty strong { display: block; font: 800 22px var(--display); color: var(--ink); margin-bottom: 4px; }
+
+    .contest-grid { display: grid; gap: 16px; }
+    @media (min-width: 720px) { .contest-grid { grid-template-columns: 1fr 1fr; } }
+    .stat { font: 800 44px/1 var(--display); }
+    .stat-label { color: var(--muted); font-size: 15px; margin-top: 4px; }
+    .winner-card { background: var(--sun-soft); border-color: var(--sun); }
+    .winner-name { font: 800 34px/1.1 var(--display); margin: 4px 0 8px; }
+    .winner-phone { font-size: 24px; font-weight: 700; color: var(--ink); text-decoration: none; }
+    .list-plain { list-style: none; margin: 0; padding: 0; }
+    .list-plain li { padding: 10px 0; border-top: 1px solid var(--line); }
+    .list-plain li:first-child { border-top: 0; }
+  </style>
+</head>
+<body>
+  <!-- Sign in -->
+  <section class="login wrap" id="login" hidden>
+    <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span>Sunny 88.7 FM</a>
+    <h1 style="margin-top:28px">Sunny Studio</h1>
+    <p class="lede" style="margin-bottom:24px">Prayer requests, shout-outs and contest entries from listeners.</p>
+    <div class="card">
+      <form id="login-form" novalidate>
+        <div class="form-error" role="alert"></div>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="username" required></div>
+        <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required></div>
+        <button class="btn" type="submit">Sign in</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Dashboard -->
+  <div class="studio" id="app" hidden>
+    <header class="studio-top">
+      <a class="brand" href="/studio/"><span class="brand-dot" aria-hidden="true"></span>Sunny Studio</a>
+      <div class="who"><span id="who"></span><button class="linkish" id="signout" type="button">Sign out</button></div>
+    </header>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" data-tab="prayer">Prayer requests <span class="count" data-count="prayer">0</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="shoutout">Shout-outs <span class="count" data-count="shoutout">0</span></button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="contest">Contest</button>
+    </nav>
+
+    <section data-panel="prayer">
+      <div class="bar"><span>Waiting to be prayed over, oldest first</span><span data-updated></span></div>
+      <div data-list="prayer"></div>
+    </section>
+
+    <section data-panel="shoutout" hidden>
+      <div class="bar"><span>Due today or earlier, oldest first</span><span data-updated></span></div>
+      <div data-list="shoutout"></div>
+    </section>
+
+    <section data-panel="contest" hidden>
+      <div class="card" style="margin-bottom:16px">
+        <form id="code-form" novalidate>
+          <div class="field" style="margin-bottom:14px">
+            <label for="today-code">Today's code word</label>
+            <input id="today-code" type="text" autocomplete="off" spellcheck="false" style="text-transform:uppercase;font-weight:700;letter-spacing:.06em" placeholder="Type the code you announced">
+          </div>
+          <button class="btn" type="submit">Check today's entries</button>
+        </form>
+      </div>
+
+      <div class="contest-grid" id="contest-results" hidden>
+        <div class="card">
+          <div class="stat" id="stat-correct">0</div>
+          <div class="stat-label">correct entries out of <strong id="stat-total">0</strong> today</div>
+          <div class="btn-stack"><button class="btn" id="pick" type="button">Pick a random winner</button></div>
+        </div>
+        <div class="card winner-card" id="winner" hidden>
+          <div class="stat-label">Selected winner</div>
+          <div class="winner-name" id="w-name"></div>
+          <a class="winner-phone" id="w-phone" href="#"></a>
+          <p style="margin:8px 0 0" id="w-meta"></p>
+          <div class="btn-stack">
+            <button class="btn" id="confirm" type="button">Confirm as today's winner</button>
+            <button class="btn btn-plain" id="repick" type="button">They didn't answer, pick again</button>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="next-title" style="margin-top:28px">Today's winners</h2>
+      <div class="card"><ul class="list-plain" id="winners"><li style="color:var(--muted)">No winner confirmed yet today.</li></ul></div>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="/assets/sunny-config.js"></script>
+  <script>
+  (function () {
+    'use strict';
+    var C = window.SUNNY_CONFIG || {};
+    var sb = window.supabase.createClient(C.url, C.anonKey);
+    var T = 'listener_submissions';
+    var $ = function (s, r) { return (r || document).querySelector(s); };
+    var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+    function today() { return new Date().toISOString().slice(0, 10); } // Ghana is UTC
+    function startOfToday() { return today() + 'T00:00:00Z'; }
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    }
+    function timeOf(iso) {
+      var d = new Date(iso);
+      var sameDay = iso.slice(0, 10) === today();
+      return d.toLocaleString('en-GB', sameDay
+        ? { hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'Africa/Accra' }
+        : { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'Africa/Accra' });
+    }
+    function showError(form, msg) { var b = $('.form-error', form); b.textContent = msg; b.classList.add('show'); }
+
+    /* ---------- Auth ---------- */
+    async function boot() {
+      var res = await sb.auth.getSession();
+      var session = res.data && res.data.session;
+      if (session && await isStaff(session.user.id)) showApp(session.user);
+      else showLogin();
+    }
+    async function isStaff(uid) {
+      var r = await sb.from('studio_staff').select('user_id').eq('user_id', uid).maybeSingle();
+      return !r.error && !!r.data;
+    }
+    function showLogin() { $('#app').hidden = true; $('#login').hidden = false; $('#email').focus(); }
+    function showApp(user) {
+      $('#login').hidden = true; $('#app').hidden = false;
+      $('#who').textContent = user.email;
+      refreshQueues();
+    }
+
+    $('#login-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var form = e.target, btn = $('button', form);
+      $('.form-error', form).classList.remove('show');
+      btn.disabled = true; btn.textContent = 'Signing in…';
+      var r = await sb.auth.signInWithPassword({ email: $('#email').value.trim(), password: $('#password').value });
+      btn.disabled = false; btn.textContent = 'Sign in';
+      if (r.error) return showError(form, 'That email and password don\u2019t match. Check them and try again.');
+      if (!(await isStaff(r.data.user.id))) {
+        await sb.auth.signOut();
+        return showError(form, 'This account isn\u2019t set up for the studio. Ask the admin to add you.');
+      }
+      showApp(r.data.user);
+    });
+    $('#signout').addEventListener('click', async function () { await sb.auth.signOut(); showLogin(); });
+
+    /* ---------- Tabs ---------- */
+    $$('.tab').forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        $$('.tab').forEach(function (t) { t.setAttribute('aria-selected', String(t === tab)); });
+        $$('[data-panel]').forEach(function (p) { p.hidden = p.getAttribute('data-panel') !== tab.getAttribute('data-tab'); });
+        if (tab.getAttribute('data-tab') === 'contest') loadWinners();
+      });
+    });
+
+    /* ---------- Prayer + shout-out queues ---------- */
+    var OCCASION_LINE = {
+      'Birthday': 'Happy birthday', 'Anniversary': 'Happy anniversary', 'Thanksgiving': 'Thanksgiving for',
+      'Graduation': 'Congratulations', 'New baby': 'Congratulations on the new baby', 'Just because': 'A shout-out for'
+    };
+
+    function renderItem(kind, r) {
+      var d = r.details || {};
+      var from = esc(r.name) + (r.location ? ' <span>from ' + esc(r.location) + '</span>' : '');
+      var head, title = '';
+      if (kind === 'prayer') {
+        head = '<span class="tag">' + esc(d.topic || 'Prayer') + '</span><span>' + timeOf(r.created_at) + '</span>' +
+               (r.phone ? '<span>Call back: <a href="tel:' + esc(r.phone) + '">' + esc(r.phone) + '</a></span>' : '');
+      } else {
+        var late = d.for_date && d.for_date < today();
+        head = '<span class="tag' + (late ? ' late' : '') + '">' + (late ? 'Was due ' + esc(d.for_date) : 'Today') + '</span>' +
+               '<span>' + esc(d.show || 'Any time') + '</span><span>Sent ' + timeOf(r.created_at) + '</span>';
+        title = '<h3 class="item-title">' + esc(OCCASION_LINE[d.occasion] || 'A shout-out for') + ', ' + esc(d.recipient) + '</h3>';
+      }
+      return '<article class="item" data-id="' + r.id + '">' +
+        '<div class="item-head">' + head + '</div>' + title +
+        '<p class="item-text">' + esc(r.message) + '</p>' +
+        '<p class="item-from">From ' + from + '</p>' +
+        '<div class="item-actions">' +
+          '<button class="btn" data-act="read" type="button">' + (kind === 'prayer' ? 'Prayed over' : 'Read on air') + '</button>' +
+          '<button class="btn btn-plain" data-act="skipped" type="button">Skip</button>' +
+        '</div></article>';
+    }
+
+    async function loadQueue(kind) {
+      var q = sb.from(T).select('id,created_at,name,phone,location,message,details')
+        .eq('kind', kind).eq('status', 'new').order('created_at', { ascending: true }).limit(300);
+      if (kind === 'shoutout') q = q.lte('details->>for_date', today());
+      var r = await q;
+      var box = $('[data-list="' + kind + '"]');
+      if (r.error) { box.innerHTML = '<div class="empty"><strong>Couldn\u2019t load</strong>Check the connection. Retrying in 30 seconds.</div>'; return; }
+      var rows = r.data || [];
+      if (kind === 'shoutout') rows.sort(function (a, b) {
+        return (a.details.for_date || '').localeCompare(b.details.for_date || '') || a.created_at.localeCompare(b.created_at);
+      });
+      $('[data-count="' + kind + '"]').textContent = rows.length;
+      box.innerHTML = rows.length
+        ? rows.map(function (row) { return renderItem(kind, row); }).join('')
+        : '<div class="empty"><strong>All caught up</strong>New ' + (kind === 'prayer' ? 'prayer requests' : 'shout-outs') + ' show up here automatically.</div>';
+      $$('[data-updated]', box.parentNode).forEach(function (el) {
+        el.textContent = 'Updated ' + new Date().toLocaleTimeString('en-GB', { hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'Africa/Accra' });
+      });
+    }
+
+    function refreshQueues() { loadQueue('prayer'); loadQueue('shoutout'); }
+    setInterval(function () { if (!$('#app').hidden && document.visibilityState === 'visible') refreshQueues(); }, 30000);
+    document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible' && !$('#app').hidden) refreshQueues(); });
+
+    document.addEventListener('click', async function (e) {
+      var btn = e.target.closest('[data-act]');
+      if (!btn) return;
+      var item = btn.closest('.item'), list = item.parentNode, kind = list.getAttribute('data-list');
+      $$('button', item).forEach(function (b) { b.disabled = true; });
+      var r = await sb.from(T).update({ status: btn.getAttribute('data-act'), read_at: new Date().toISOString() }).eq('id', item.getAttribute('data-id'));
+      if (r.error) { $$('button', item).forEach(function (b) { b.disabled = false; }); alert('Couldn\u2019t save that. Try again.'); return; }
+      item.remove();
+      var c = $('[data-count="' + kind + '"]'); c.textContent = Math.max(0, Number(c.textContent) - 1);
+      if (!list.children.length) loadQueue(kind);
+    });
+
+    /* ---------- Contest ---------- */
+    var correct = [], picked = null;
+
+    async function fetchAll(build) {
+      var out = [];
+      for (var from = 0; ; from += 1000) {
+        var r = await build().range(from, from + 999);
+        if (r.error) throw r.error;
+        out = out.concat(r.data);
+        if (r.data.length < 1000) break;
+      }
+      return out;
+    }
+
+    $('#code-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var code = $('#today-code').value.toUpperCase().replace(/\s+/g, ' ').trim();
+      if (!code) return $('#today-code').focus();
+      var btn = $('button', e.target); btn.disabled = true; btn.textContent = 'Checking…';
+      try {
+        var total = await sb.from(T).select('id', { count: 'exact', head: true })
+          .eq('kind', 'contest').gte('created_at', startOfToday());
+        correct = await fetchAll(function () {
+          return sb.from(T).select('id,created_at,name,phone,location,status')
+            .eq('kind', 'contest').gte('created_at', startOfToday()).eq('details->>code', code).order('id');
+        });
+        $('#stat-total').textContent = total.count || 0;
+        $('#stat-correct').textContent = correct.length;
+        $('#pick').disabled = !correct.some(function (r) { return r.status !== 'winner'; });
+        $('#contest-results').hidden = false;
+        $('#winner').hidden = true;
+      } catch (err) {
+        console.error(err); alert('Couldn\u2019t load entries. Check the connection and try again.');
+      } finally { btn.disabled = false; btn.textContent = 'Check today\u2019s entries'; }
+    });
+
+    function pick() {
+      var pool = correct.filter(function (r) { return r.status !== 'winner'; });
+      if (picked && pool.length > 1) pool = pool.filter(function (r) { return r.id !== picked.id; });
+      if (!pool.length) { alert('No more correct entries to pick from.'); return; }
+      var buf = new Uint32Array(1); crypto.getRandomValues(buf);
+      picked = pool[buf[0] % pool.length];
+      $('#w-name').textContent = picked.name;
+      $('#w-phone').textContent = picked.phone;
+      $('#w-phone').href = 'tel:' + picked.phone;
+      $('#w-meta').textContent = picked.location + ', entered at ' + timeOf(picked.created_at);
+      $('#winner').hidden = false;
+      $('#confirm').disabled = false;
+    }
+    $('#pick').addEventListener('click', function () { picked = null; pick(); });
+    $('#repick').addEventListener('click', pick);
+
+    $('#confirm').addEventListener('click', async function () {
+      if (!picked) return;
+      this.disabled = true;
+      var r = await sb.from(T).update({ status: 'winner', read_at: new Date().toISOString() }).eq('id', picked.id);
+      if (r.error) { this.disabled = false; alert('Couldn\u2019t save the winner. Try again.'); return; }
+      picked.status = 'winner';
+      $('#winner').hidden = true;
+      picked = null;
+      loadWinners();
+    });
+
+    async function loadWinners() {
+      var r = await sb.from(T).select('name,phone,location,read_at')
+        .eq('kind', 'contest').eq('status', 'winner').gte('created_at', startOfToday()).order('read_at');
+      var ul = $('#winners');
+      if (r.error || !r.data.length) { ul.innerHTML = '<li style="color:var(--muted)">No winner confirmed yet today.</li>'; return; }
+      ul.innerHTML = r.data.map(function (w) {
+        return '<li><strong>' + esc(w.name) + '</strong> from ' + esc(w.location) + ', <a href="tel:' + esc(w.phone) + '">' + esc(w.phone) + '</a></li>';
+      }).join('');
+    }
+
+    boot();
+  })();
+  </script>
+</body>
+</html>

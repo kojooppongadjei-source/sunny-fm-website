@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily code word contest | Sunny 88.7 FM</title>
+  <meta name="description" content="Listen to Sunny 88.7 FM for today's code word, enter it here, and you could win. A new code every day.">
+  <link rel="canonical" href="https://sunnygh.com/win/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sunnygh.com/win/">
+  <meta property="og:title" content="Sunny 88.7 FM daily code word contest">
+  <meta property="og:description" content="Hear the code word on air, enter it here, and you could win.">
+  <meta name="theme-color" content="#FFB800">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/sunny-forms.css">
+  <style>
+    .code-field {
+      margin: 0 0 24px; padding: 18px;
+      background: var(--sun-soft); border-radius: 14px;
+    }
+    .code-field label { font: 800 20px/1.2 var(--display); margin-bottom: 10px; }
+    #code {
+      min-height: 64px; text-align: center;
+      font: 800 30px/1 var(--display); letter-spacing: .08em; text-transform: uppercase;
+      border-color: var(--sun);
+    }
+    #code::placeholder { letter-spacing: .02em; font-size: 20px; text-transform: none; }
+    .rules { margin: 0; padding-left: 20px; color: var(--muted); font-size: 15px; }
+    .rules li { margin: 4px 0; }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8W4N24JZK"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W8W4N24JZK');</script>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/"><span class="brand-dot" aria-hidden="true"></span>Sunny 88.7 FM</a>
+    <a class="home-link" href="/">sunnygh.com</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="sun" aria-hidden="true"></div>
+      <p class="heard">As heard on Sunny 88.7 FM</p>
+      <h1>Heard the code word? Enter it here</h1>
+      <p class="lede">We announce a new code word on air every day. Enter it correctly and you could be today's winner.</p>
+    </section>
+
+    <div class="wrap">
+      <div class="card">
+        <form id="contest-form" novalidate>
+          <div class="form-error" role="alert"></div>
+
+          <div class="field code-field">
+            <label for="code">Today's code word</label>
+            <input id="code" name="code" type="text" maxlength="30" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Type what you heard">
+          </div>
+
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" autocomplete="name" maxlength="80" placeholder="e.g. Ama Mensah">
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="024 123 4567">
+              <p class="hint">We call this number if you win.</p>
+            </div>
+            <div class="field">
+              <label for="location">Location</label>
+              <input id="location" name="location" type="text" autocomplete="address-level2" maxlength="80" placeholder="e.g. Kasoa">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="check"><input type="checkbox" name="agree"> I agree to be called on this number and have my first name and town announced on air if I win.</label>
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label for="website">Leave this empty</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button class="btn" type="submit">Enter today's contest</button>
+        </form>
+
+        <div class="success" role="status" tabindex="-1">
+          <div class="tick" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <h2>You're in today's draw</h2>
+          <p>If your code word is right, you're in the running. Keep listening to Sunny 88.7 FM for the winner, and come back tomorrow for a new code.</p>
+          <div class="btn-stack">
+            <a class="btn btn-wa" data-share href="#" target="_blank" rel="noopener">Tell a friend on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="next-title">How to play</h2>
+      <ol class="steps">
+        <li><span>Listen to Sunny 88.7 FM on radio or at sunnygh.com for today's code word.</span></li>
+        <li><span>Enter it here with your name and phone number before midnight.</span></li>
+        <li><span>We pick a winner from the correct entries and call them. Winners are announced on air.</span></li>
+      </ol>
+      <ul class="rules">
+        <li>One entry per phone number per day, so listen carefully before you enter.</li>
+        <li>A new code word and a new draw every day.</li>
+        <li>Sunny 88.7 FM staff and their families can't win.</li>
+      </ul>
+      <div style="height:56px"></div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap"><a href="/">Sunny 88.7 FM</a>. Also send a <a href="/pray/">prayer request</a> or a <a href="/shoutout/">shout-out</a>.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="/assets/sunny-config.js"></script>
+  <script src="/assets/sunny-forms.js"></script>
+  <script>
+    (function () {
+      SunnyForm.init(document.getElementById('contest-form'), {
+        kind: 'contest',
+        duplicateMessage: 'This phone number has already entered today. Come back tomorrow for a new code word.',
+        build: function (fd) {
+          var code = String(fd.get('code') || '').toUpperCase().replace(/\s+/g, ' ').trim().slice(0, 30);
+          if (!code) return { error: 'Enter the code word you heard on Sunny 88.7 FM.' };
+
+          var name = SunnyForm.clean(fd.get('name'), 80);
+          if (name.length < 2) return { error: 'Enter your full name.' };
+
+          var phone = SunnyForm.phone(fd.get('phone'));
+          if (!phone) return { error: 'Enter a Ghana phone number like 024 123 4567 so we can call you if you win.' };
+
+          var location = SunnyForm.clean(fd.get('location'), 80);
+          if (!location) return { error: 'Tell us where you\u2019re listening from.' };
+
+          if (fd.get('agree') !== 'on') return { error: 'Tick the box to agree to be called if you win.' };
+
+          return { row: { name: name, phone: phone, location: location, message: null, details: { code: code } } };
+        },
+        shareText: function () {
+          return 'I just entered the Sunny 88.7 FM daily code word contest! Listen for the code on 88.7 FM and enter at https://sunnygh.com/win';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
