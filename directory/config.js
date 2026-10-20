@@ -1,4 +1,4 @@
-/* Sunny Business Directory — shared config.
+/* CCC&B (Christian Connect Church & Business) — shared config.
    Fill in the two Supabase values from: Supabase dashboard → Project Settings → API. */
 window.SUNNY_DIR = {
   SUPABASE_URL: 'https://YOUR-PROJECT-REF.supabase.co',
@@ -6,12 +6,12 @@ window.SUNNY_DIR = {
   PAGE_SIZE: 20,
   LOGO_BUCKET: 'directory-logos',
   CATEGORIES: [
+    'Churches & Ministries',
     'Agriculture, Fishing & Mining',
     'Automobile & Motorcycle',
     'Bars & Restaurants',
     'Building, Construction & Engineering',
     'Business Services',
-    'Churches & Ministries',
     'Computers & Internet',
     'Education, Employment & Research',
     'Entertainment',

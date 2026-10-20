@@ -88,6 +88,16 @@
   to = "/directory/"
   status = 301
 
+[[redirects]]
+  from = "/cccb"
+  to = "/directory/"
+  status = 301
+
+[[redirects]]
+  from = "/cccb/*"
+  to = "/directory/"
+  status = 301
+
 # Custom 404 fallback
 [[redirects]]
   from = "/*"

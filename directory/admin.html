@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Directory admin | Sunny 88.7 FM</title>
+<title>CCC&amp;B admin | Sunny 88.7 FM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/directory/directory.css">
@@ -28,7 +28,7 @@
 <body>
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="/directory/"><span class="dot" aria-hidden="true"></span><span>Sunny 88.7 FM<small>Directory admin</small></span></a>
+    <a class="brand" href="/directory/"><span class="dot" aria-hidden="true"></span><span>CCC&amp;B<small>Listings admin</small></span></a>
     <button class="btn btn-ghost" id="logout" hidden>Log out</button>
   </div>
 </header>
@@ -114,7 +114,7 @@ async function load() {
 
 function card(b) {
   const logo = b.logo_url ? `<div class="logo"><img src="${esc(b.logo_url)}" alt=""></div>` : `<div class="logo" style="background:${S.tint(b.name)}">${esc(S.initials(b.name))}</div>`;
-  const kv = [['Category', b.category], ['Location', [b.address, b.town, b.region].filter(Boolean).join(', ')], ['Phone', b.phone], ['WhatsApp', b.whatsapp], ['Email', b.email], ['Website', b.website], ['Hours', b.hours]]
+  const kv = [['Category', b.category], ['Location', [b.address, b.town, b.region].filter(Boolean).join(', ')], ['Phone', b.phone], ['WhatsApp', b.whatsapp], ['Email', b.email], ['Website', b.website], ['Hours', b.hours], ['Church', b.church]]
     .filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('');
   const btns = [];
   if (b.status !== 'approved') btns.push(`<button class="btn btn-ok btn-sm" data-act="approve" data-id="${b.id}">Approve</button>`);
@@ -156,7 +156,7 @@ $('list').addEventListener('click', async e => {
 
 /* edit */
 const EDIT = [['name', 'Business name'], ['category', 'Category', C.CATEGORIES], ['region', 'Region', C.REGIONS], ['town', 'Town or area'], ['address', 'Address or landmark'],
-  ['description', 'Description', 'textarea'], ['hours', 'Opening hours'], ['phone', 'Phone'], ['whatsapp', 'WhatsApp'], ['email', 'Email'], ['website', 'Website']];
+  ['description', 'Description', 'textarea'], ['hours', 'Opening hours'], ['church', 'Church they fellowship with'], ['phone', 'Phone'], ['whatsapp', 'WhatsApp'], ['email', 'Email'], ['website', 'Website']];
 let editing = null;
 function openEdit(b) {
   editing = b;

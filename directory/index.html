@@ -6,8 +6,8 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W8W4N24JZK');</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ghana Business Directory | Sunny 88.7 FM</title>
-<meta name="description" content="Find businesses across Ghana by name, category and region. Call, WhatsApp or email them directly. List your business free on Sunny 88.7 FM’s directory.">
+<title>Christian Connect Church &amp; Business (CCC&amp;B) | Sunny 88.7 FM</title>
+<meta name="description" content="CCC&amp;B is Sunny 88.7 FM’s directory of churches and Christian businesses across Ghana. Search by name, category or region and call, WhatsApp or email them directly. List yours free.">
 <link rel="canonical" href="https://sunnygh.com/directory/">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,15 +16,15 @@
 <body>
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="/"><span class="dot" aria-hidden="true"></span><span>Sunny 88.7 FM<small>Business Directory</small></span></a>
-    <a class="btn btn-sun" href="/directory/add.html">+ <span class="btn-label-long">List your business</span></a>
+    <a class="brand" href="/"><span class="dot" aria-hidden="true"></span><span>CCC&amp;B<small>Christian Connect Church &amp; Business</small></span></a>
+    <a class="btn btn-sun" href="/directory/add.html">+ <span class="btn-label-long">Add a listing</span></a>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap">
-    <h1>Find a business in Ghana</h1>
-    <p class="lead">Search by name or region, browse by letter, then call, WhatsApp or email them straight from here.</p>
+    <h1>Find churches and Christian businesses across Ghana</h1>
+    <p class="lead">Christian Connect Church &amp; Business brings the body of Christ together for work and worship. Search by name or region, browse by letter, then call, WhatsApp or email straight from here.</p>
     <form class="searchbar" id="searchForm" role="search">
       <input class="input" id="q" type="search" placeholder="Company name" aria-label="Company name" autocomplete="off">
       <select class="input" id="region" aria-label="Region"><option value="">All regions</option></select>
@@ -40,8 +40,8 @@
     <ul class="cats" id="cats" aria-labelledby="catLabel"></ul>
     <select class="input cat-select" id="catSelect" aria-label="Category"><option value="">All categories</option></select>
     <div class="cta-box">
-      <p><strong>Own a business?</strong><br>Add it to the directory free. Listeners across Ghana will be able to find and call you.</p>
-      <a class="btn btn-sun btn-sm" href="/directory/add.html">List your business</a>
+      <p><strong>Lead a church or run a business?</strong><br>Add it to CCC&amp;B free. Sunny listeners across Ghana will be able to find and call you.</p>
+      <a class="btn btn-sun btn-sm" href="/directory/add.html">Add a listing</a>
     </div>
   </aside>
 
@@ -68,7 +68,7 @@
 (() => {
 const C = window.SUNNY_DIR, S = window.SD, esc = S.esc;
 const sb = supabase.createClient(C.SUPABASE_URL, C.SUPABASE_ANON_KEY);
-const COLS = 'id,slug,name,category,region,town,address,phone,whatsapp,email,website,description,hours,logo_url,featured';
+const COLS = 'id,slug,name,category,region,town,address,phone,whatsapp,email,website,description,hours,church,logo_url,featured';
 const $ = id => document.getElementById(id);
 const state = { q: '', region: '', cat: '', letter: '', page: 1 };
 
@@ -85,7 +85,7 @@ const ICON = {
 /* ---------- build controls ---------- */
 const letters = ['#', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
 $('az').innerHTML = `<button type="button" data-l="" aria-label="All letters" style="font-size:15px;min-width:46px">All</button>` +
-  letters.map(l => `<button type="button" data-l="${l}" aria-label="Businesses starting with ${l === '#' ? 'a number' : l}">${l}</button>`).join('');
+  letters.map(l => `<button type="button" data-l="${l}" aria-label="Listings starting with ${l === '#' ? 'a number' : l}">${l}</button>`).join('');
 C.REGIONS.forEach(r => $('region').insertAdjacentHTML('beforeend', `<option>${esc(r)}</option>`));
 $('cats').innerHTML = `<li><button type="button" data-c="">All categories</button></li>` +
   C.CATEGORIES.map(c => `<li><button type="button" data-c="${esc(c)}">${esc(c)}</button></li>`).join('');
@@ -148,10 +148,10 @@ async function load() {
 }
 
 function renderHead(count) {
-  let t = state.cat || 'All businesses';
+  let t = state.cat || 'All listings';
   if (state.letter) t += state.letter === '#' ? ' starting with a number' : ` starting with ${state.letter}`;
   $('title').textContent = t;
-  $('count').textContent = count === 1 ? '1 business' : `${count.toLocaleString()} businesses`;
+  $('count').textContent = count === 1 ? '1 listing' : `${count.toLocaleString()} listings`;
   const chips = [];
   if (state.q) chips.push(['q', `“${state.q}”`]);
   if (state.region) chips.push(['region', state.region]);
@@ -164,9 +164,9 @@ function renderHead(count) {
 function renderEmpty() {
   const filtered = state.q || state.region || state.cat || state.letter;
   $('list').innerHTML = `<div class="empty">
-    <h3>${filtered ? 'No businesses match these filters yet' : 'The directory is just getting started'}</h3>
-    <p>${filtered ? 'Try another letter, region or category, or add your own business.' : 'Be one of the first businesses listed on Sunny 88.7 FM.'}</p>
-    <a class="btn btn-sun" href="/directory/add.html">List your business free</a></div>`;
+    <h3>${filtered ? 'Nothing matches these filters yet' : 'CCC&amp;B is just getting started'}</h3>
+    <p>${filtered ? 'Try another letter, region or category, or add your own church or business.' : 'Be one of the first churches or businesses listed.'}</p>
+    <a class="btn btn-sun" href="/directory/add.html">Add a listing free</a></div>`;
 }
 
 function logoHTML(b, size) {
@@ -179,7 +179,7 @@ function actionsHTML(b) {
   const a = [];
   if (b.phone) a.push(`<a class="btn btn-primary btn-sm" href="tel:${esc(b.phone.replace(/\s/g, ''))}">${ICON.call}Call</a>`);
   const wa = S.waNumber(b.whatsapp);
-  if (wa) a.push(`<a class="btn btn-wa btn-sm" target="_blank" rel="noopener" href="https://wa.me/${wa}?text=${encodeURIComponent('Hello, I found ' + b.name + ' on the Sunny 88.7 FM business directory.')}">${ICON.wa}WhatsApp</a>`);
+  if (wa) a.push(`<a class="btn btn-wa btn-sm" target="_blank" rel="noopener" href="https://wa.me/${wa}?text=${encodeURIComponent('Hello, I found ' + b.name + ' on CCC&B (Christian Connect Church & Business) on sunnygh.com.')}">${ICON.wa}WhatsApp</a>`);
   if (b.email) a.push(`<a class="btn btn-ghost btn-sm" href="mailto:${esc(b.email)}">${ICON.mail}Email</a>`);
   a.push(`<button type="button" class="btn btn-ghost btn-sm" data-share="${esc(b.slug)}">${ICON.share}Share</button>`);
   return a.join('');
@@ -213,7 +213,8 @@ async function openDetail(slug, push = true) {
     b.whatsapp && ['WhatsApp', esc(b.whatsapp)],
     b.email && ['Email', `<a href="mailto:${esc(b.email)}">${esc(b.email)}</a>`],
     site && ['Website', `<a href="${esc(site)}" target="_blank" rel="noopener nofollow">${esc(site.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''))}</a>`],
-    b.hours && ['Opening hours', esc(b.hours).replace(/\n/g, '<br>')]
+    b.hours && ['Opening hours', esc(b.hours).replace(/\n/g, '<br>')],
+    b.church && ['Fellowships at', esc(b.church)]
   ].filter(Boolean);
   const sh = $('sheet');
   sh.innerHTML = `<div class="sheet-head">${logoHTML(b, 72)}<div><h2 id="sheetTitle">${esc(b.name)}</h2>
@@ -225,12 +226,12 @@ async function openDetail(slug, push = true) {
       <div class="actions">${actionsHTML(b)}</div>
     </div>`;
   if (!sh.open) sh.showModal();
-  document.title = `${b.name} | Sunny Business Directory`;
+  document.title = `${b.name} | CCC&B, Christian Connect Church & Business`;
   if (push) { const p = new URLSearchParams(location.search); p.set('b', slug); history.pushState({ b: slug }, '', '?' + p); }
 }
 function closeDetail(push = true) {
   const sh = $('sheet'); if (sh.open) sh.close();
-  document.title = 'Ghana Business Directory | Sunny 88.7 FM';
+  document.title = 'Christian Connect Church & Business (CCC&B) | Sunny 88.7 FM';
   if (push && new URLSearchParams(location.search).has('b')) writeURL(true);
 }
 $('sheet').addEventListener('click', e => { if (e.target === e.currentTarget || e.target.closest('[data-close]')) closeDetail(); });
@@ -240,7 +241,7 @@ $('sheet').addEventListener('cancel', e => { e.preventDefault(); closeDetail(); 
 async function share(slug) {
   const b = window._rows?.[slug] || { name: 'this business' };
   const url = `${location.origin}/directory/?b=${encodeURIComponent(slug)}`;
-  if (navigator.share) { try { await navigator.share({ title: b.name, text: `${b.name} on the Sunny 88.7 FM business directory`, url }); } catch {} return; }
+  if (navigator.share) { try { await navigator.share({ title: b.name, text: `${b.name} on CCC&B, Christian Connect Church & Business`, url }); } catch {} return; }
   try { await navigator.clipboard.writeText(url); toast('Link copied'); } catch { prompt('Copy this link:', url); }
 }
 function toast(msg) {

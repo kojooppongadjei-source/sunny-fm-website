@@ -6,8 +6,8 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W8W4N24JZK');</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>List your business free | Sunny 88.7 FM Business Directory</title>
-<meta name="description" content="Add your business to the Sunny 88.7 FM business directory for free. Listeners across Ghana can find you and call, WhatsApp or email you directly.">
+<title>Add your church or business free | CCC&amp;B, Christian Connect Church &amp; Business</title>
+<meta name="description" content="List your church or Christian business free on CCC&amp;B, Sunny 88.7 FM’s Christian Connect Church &amp; Business directory. People across Ghana can find you and call, WhatsApp or email you directly.">
 <link rel="canonical" href="https://sunnygh.com/directory/add.html">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,23 +28,23 @@
 <body>
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="/directory/"><span class="dot" aria-hidden="true"></span><span>Sunny 88.7 FM<small>Business Directory</small></span></a>
-    <a class="btn btn-ghost" href="/directory/">Back to directory</a>
+    <a class="brand" href="/directory/"><span class="dot" aria-hidden="true"></span><span>CCC&amp;B<small>Christian Connect Church &amp; Business</small></span></a>
+    <a class="btn btn-ghost" href="/directory/">Back to CCC&amp;B</a>
   </div>
 </header>
 
 <div class="wrap page">
-  <h1>List your business free</h1>
-  <p class="lead">Fill in your details below. Our team checks every listing before it goes live, so customers only see real businesses.</p>
+  <h1>Add your church or business free</h1>
+  <p class="lead">Fill in your details below. Our team checks every listing before it goes live, so people only see real churches and businesses.</p>
 
   <form class="form-card" id="f" novalidate>
     <div class="formerr" id="formErr" role="alert" hidden></div>
 
     <fieldset>
-      <legend>Your business</legend>
+      <legend>Your church or business</legend>
       <div class="stack">
         <div class="field">
-          <label for="name">Business name <span class="req">*</span></label>
+          <label for="name">Church or business name <span class="req">*</span></label>
           <input class="input" id="name" name="name" required maxlength="120" autocomplete="organization">
         </div>
         <div class="grid2">
@@ -68,13 +68,17 @@
           </div>
         </div>
         <div class="field">
-          <label for="description">What does your business do? <span class="req">*</span></label>
-          <textarea class="input" id="description" name="description" rows="5" required minlength="30" maxlength="1200" placeholder="Tell customers what you offer, who you serve and what makes you different."></textarea>
+          <label for="description">Tell people about it <span class="req">*</span></label>
+          <textarea class="input" id="description" name="description" rows="5" required minlength="30" maxlength="1200" placeholder="For a business: what you offer and who you serve. For a church: your vision, service times and ministries."></textarea>
           <div class="counter" id="descCount">0 / 1200</div>
         </div>
         <div class="field">
-          <label for="hours">Opening hours <span class="hint">(optional)</span></label>
-          <input class="input" id="hours" name="hours" maxlength="160" placeholder="e.g. Mon–Sat 8am–6pm">
+          <label for="church">Church you fellowship with <span class="hint">(optional, for businesses)</span></label>
+          <input class="input" id="church" name="church" maxlength="120" placeholder="e.g. ICGC Christ Temple, Abossey Okai">
+        </div>
+        <div class="field">
+          <label for="hours">Opening hours or service times <span class="hint">(optional)</span></label>
+          <input class="input" id="hours" name="hours" maxlength="160" placeholder="e.g. Mon–Sat 8am–6pm, or Sundays 7am &amp; 9:30am">
         </div>
         <div class="field">
           <label for="logo">Logo <span class="hint">(optional, JPG, PNG or WebP)</span></label>
@@ -101,7 +105,7 @@
         </div>
         <div class="grid2">
           <div class="field">
-            <label for="email">Business email <span class="hint">(optional)</span></label>
+            <label for="email">Email <span class="hint">(optional)</span></label>
             <input class="input" id="email" name="email" type="email" maxlength="120" autocomplete="email">
           </div>
           <div class="field">
@@ -131,7 +135,7 @@
 
     <label style="display:flex;gap:10px;align-items:flex-start;font-weight:400;margin-bottom:22px">
       <input type="checkbox" id="agree" required style="margin-top:4px;width:18px;height:18px">
-      <span>I confirm this business is real and I’m allowed to list it.</span>
+      <span>I confirm this church or business is real and I’m allowed to list it.</span>
     </label>
 
     <button class="btn btn-sun" id="submitBtn" type="submit" style="padding:14px 26px;font-size:16px">Submit listing</button>
@@ -139,8 +143,8 @@
 
   <div class="form-card done" id="done" hidden>
     <h2>Listing submitted</h2>
-    <p style="color:var(--muted);max-width:48ch;margin:0 auto 22px">Thank you. Our team will review it, and once it’s approved it will appear in the directory. We may call you to confirm a detail.</p>
-    <a class="btn btn-primary" href="/directory/">Browse the directory</a>
+    <p style="color:var(--muted);max-width:48ch;margin:0 auto 22px">Thank you. Our team will review it, and once it’s approved it will appear on CCC&amp;B. We may call you to confirm a detail.</p>
+    <a class="btn btn-primary" href="/directory/">Browse CCC&amp;B</a>
   </div>
 </div>
 
@@ -215,7 +219,7 @@ $('f').addEventListener('submit', async e => {
     }
     const row = {
       slug, name: v('name'), category: v('category'), region: v('region'), town: v('town'),
-      address: v('address') || null, description: v('description'), hours: v('hours') || null,
+      address: v('address') || null, description: v('description'), hours: v('hours') || null, church: v('church') || null,
       phone: v('phone'), whatsapp: v('whatsapp') || null, email: v('email') || null,
       website: v('website') ? S.safeUrl(v('website')) : null, logo_url,
       contact_name: v('contact_name'), contact_phone: v('contact_phone')
