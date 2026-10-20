@@ -1365,6 +1365,8 @@ const STATIC_PAGES = [
   { loc: 'https://sunnygh.com/pray/', changefreq: 'monthly', priority: '0.6' },
   { loc: 'https://sunnygh.com/shoutout/', changefreq: 'monthly', priority: '0.6' },
   { loc: 'https://sunnygh.com/win/', changefreq: 'daily', priority: '0.6' },
+  { loc: 'https://sunnygh.com/directory/', changefreq: 'daily', priority: '0.7' },
+  { loc: 'https://sunnygh.com/directory/add.html', changefreq: 'monthly', priority: '0.5' },
   { loc: 'https://sunnygh.com/advertise/', changefreq: 'monthly', priority: '0.5' },
   { loc: 'https://sunnygh.com/self-service-advert/', changefreq: 'monthly', priority: '0.5' },
   { loc: 'https://sunnygh.com/privacy-policy/', changefreq: 'yearly', priority: '0.3' },

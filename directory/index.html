@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8W4N24JZK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W8W4N24JZK');</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ghana Business Directory | Sunny 88.7 FM</title>
+<meta name="description" content="Find businesses across Ghana by name, category and region. Call, WhatsApp or email them directly. List your business free on Sunny 88.7 FM’s directory.">
+<link rel="canonical" href="https://sunnygh.com/directory/">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/directory/directory.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="dot" aria-hidden="true"></span><span>Sunny 88.7 FM<small>Business Directory</small></span></a>
+    <a class="btn btn-sun" href="/directory/add.html">+ <span class="btn-label-long">List your business</span></a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Find a business in Ghana</h1>
+    <p class="lead">Search by name or region, browse by letter, then call, WhatsApp or email them straight from here.</p>
+    <form class="searchbar" id="searchForm" role="search">
+      <input class="input" id="q" type="search" placeholder="Company name" aria-label="Company name" autocomplete="off">
+      <select class="input" id="region" aria-label="Region"><option value="">All regions</option></select>
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+    <nav class="az" id="az" aria-label="Browse by first letter"></nav>
+  </div>
+</section>
+
+<div class="wrap main">
+  <aside class="side">
+    <h2 id="catLabel">Categories</h2>
+    <ul class="cats" id="cats" aria-labelledby="catLabel"></ul>
+    <select class="input cat-select" id="catSelect" aria-label="Category"><option value="">All categories</option></select>
+    <div class="cta-box">
+      <p><strong>Own a business?</strong><br>Add it to the directory free. Listeners across Ghana will be able to find and call you.</p>
+      <a class="btn btn-sun btn-sm" href="/directory/add.html">List your business</a>
+    </div>
+  </aside>
+
+  <main>
+    <div class="results-head">
+      <h2 id="title">All businesses</h2>
+      <span class="count" id="count" aria-live="polite"></span>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="list" id="list"></div>
+    <div class="pager" id="pager" hidden>
+      <button class="btn btn-ghost" id="prev">Previous</button>
+      <span class="count" id="pageInfo"></span>
+      <button class="btn btn-ghost" id="next">Next</button>
+    </div>
+  </main>
+</div>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sheetTitle"></dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="/directory/config.js"></script>
+<script>
+(() => {
+const C = window.SUNNY_DIR, S = window.SD, esc = S.esc;
+const sb = supabase.createClient(C.SUPABASE_URL, C.SUPABASE_ANON_KEY);
+const COLS = 'id,slug,name,category,region,town,address,phone,whatsapp,email,website,description,hours,logo_url,featured';
+const $ = id => document.getElementById(id);
+const state = { q: '', region: '', cat: '', letter: '', page: 1 };
+
+const ICON = {
+  pin: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>',
+  tag: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.4 11.6 12.4 2.6A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7c0 .5.2 1 .6 1.4l9 9a2 2 0 0 0 2.8 0l7-7a2 2 0 0 0 0-2.8ZM6.5 8A1.5 1.5 0 1 1 6.5 5a1.5 1.5 0 0 1 0 3Z"/></svg>',
+  call: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1Z"/></svg>',
+  wa: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6 0l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.5Z"/></svg>',
+  mail: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>',
+  share: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.4 1.2l-6.7-3.4a3 3 0 0 0 0-1.6l6.7-3.4A3 3 0 1 0 15 7l-6.7 3.4a3 3 0 1 0 0 3.2L15 17a3 3 0 1 0 3-1Z"/></svg>',
+  web: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.9 6h-3a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8ZM12 4c.8 1.2 1.5 2.5 1.9 4h-3.8c.4-1.5 1.1-2.8 1.9-4ZM4.3 14a8.2 8.2 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4H4.3Zm.8 2h3a15.7 15.7 0 0 0 1.4 3.6A8 8 0 0 1 5.1 16Zm3-8h-3a8 8 0 0 1 4.4-3.6C8.9 5.5 8.4 6.7 8.1 8ZM12 20c-.8-1.2-1.5-2.5-1.9-4h3.8c-.4 1.5-1.1 2.8-1.9 4Zm2.3-6H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4Zm.2 5.6c.6-1.1 1.1-2.3 1.4-3.6h3a8 8 0 0 1-4.4 3.6Zm1.8-5.6a16.5 16.5 0 0 0 0-4h3.4a8.2 8.2 0 0 1 0 4h-3.4Z"/></svg>'
+};
+
+/* ---------- build controls ---------- */
+const letters = ['#', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+$('az').innerHTML = `<button type="button" data-l="" aria-label="All letters" style="font-size:15px;min-width:46px">All</button>` +
+  letters.map(l => `<button type="button" data-l="${l}" aria-label="Businesses starting with ${l === '#' ? 'a number' : l}">${l}</button>`).join('');
+C.REGIONS.forEach(r => $('region').insertAdjacentHTML('beforeend', `<option>${esc(r)}</option>`));
+$('cats').innerHTML = `<li><button type="button" data-c="">All categories</button></li>` +
+  C.CATEGORIES.map(c => `<li><button type="button" data-c="${esc(c)}">${esc(c)}</button></li>`).join('');
+C.CATEGORIES.forEach(c => $('catSelect').insertAdjacentHTML('beforeend', `<option>${esc(c)}</option>`));
+
+/* ---------- URL state ---------- */
+function readURL() {
+  const p = new URLSearchParams(location.search);
+  state.q = p.get('q') || ''; state.region = p.get('region') || ''; state.cat = p.get('cat') || '';
+  state.letter = p.get('letter') || ''; state.page = Math.max(1, parseInt(p.get('page')) || 1);
+  return p.get('b');
+}
+function writeURL(push = true) {
+  const p = new URLSearchParams();
+  for (const k of ['q', 'region', 'cat', 'letter']) if (state[k]) p.set(k, state[k]);
+  if (state.page > 1) p.set('page', state.page);
+  const url = location.pathname + (p.toString() ? '?' + p : '');
+  push ? history.pushState(null, '', url) : history.replaceState(null, '', url);
+}
+function syncControls() {
+  $('q').value = state.q; $('region').value = state.region; $('catSelect').value = state.cat;
+  document.querySelectorAll('#az button').forEach(b => b.setAttribute('aria-pressed', b.dataset.l === state.letter));
+  document.querySelectorAll('#cats button').forEach(b => b.setAttribute('aria-pressed', b.dataset.c === state.cat));
+}
+
+/* ---------- data ---------- */
+let reqId = 0;
+async function load() {
+  const my = ++reqId;
+  syncControls();
+  $('list').innerHTML = '<div class="skel"></div><div class="skel"></div><div class="skel"></div>';
+  $('pager').hidden = true;
+
+  let q = sb.from('businesses').select(COLS, { count: 'exact' }).eq('status', 'approved');
+  if (state.letter === '#') q = q.filter('name', 'imatch', '^[^a-z]');
+  else if (state.letter) q = q.ilike('name', state.letter + '%');
+  if (state.cat) q = q.eq('category', state.cat);
+  if (state.region) q = q.eq('region', state.region);
+  const term = state.q.replace(/[%_,()\\]/g, ' ').trim();
+  if (term) q = q.ilike('name', `%${term}%`);
+  const from = (state.page - 1) * C.PAGE_SIZE;
+  q = q.order('featured', { ascending: false }).order('name').range(from, from + C.PAGE_SIZE - 1);
+
+  const { data, count, error } = await q;
+  if (my !== reqId) return;
+  renderHead(count || 0);
+  if (error) {
+    $('list').innerHTML = `<div class="empty"><h3>The directory didn’t load</h3><p>Check your connection and try again.</p><button class="btn btn-ghost" onclick="location.reload()">Try again</button></div>`;
+    console.error(error); return;
+  }
+  if (!data.length) return renderEmpty();
+  $('list').innerHTML = data.map(rowHTML).join('');
+  window._rows = Object.fromEntries(data.map(b => [b.slug, b]));
+  const pages = Math.ceil(count / C.PAGE_SIZE);
+  if (pages > 1) {
+    $('pager').hidden = false;
+    $('pageInfo').textContent = `Page ${state.page} of ${pages}`;
+    $('prev').disabled = state.page <= 1; $('next').disabled = state.page >= pages;
+  }
+}
+
+function renderHead(count) {
+  let t = state.cat || 'All businesses';
+  if (state.letter) t += state.letter === '#' ? ' starting with a number' : ` starting with ${state.letter}`;
+  $('title').textContent = t;
+  $('count').textContent = count === 1 ? '1 business' : `${count.toLocaleString()} businesses`;
+  const chips = [];
+  if (state.q) chips.push(['q', `“${state.q}”`]);
+  if (state.region) chips.push(['region', state.region]);
+  if (state.cat) chips.push(['cat', state.cat]);
+  if (state.letter) chips.push(['letter', `Letter ${state.letter}`]);
+  $('chips').innerHTML = chips.map(([k, v]) => `<button class="chip" data-clear="${k}" aria-label="Remove filter ${esc(v)}">${esc(v)} <span aria-hidden="true">×</span></button>`).join('') +
+    (chips.length > 1 ? `<button class="chip" data-clear="all">Clear all</button>` : '');
+}
+
+function renderEmpty() {
+  const filtered = state.q || state.region || state.cat || state.letter;
+  $('list').innerHTML = `<div class="empty">
+    <h3>${filtered ? 'No businesses match these filters yet' : 'The directory is just getting started'}</h3>
+    <p>${filtered ? 'Try another letter, region or category, or add your own business.' : 'Be one of the first businesses listed on Sunny 88.7 FM.'}</p>
+    <a class="btn btn-sun" href="/directory/add.html">List your business free</a></div>`;
+}
+
+function logoHTML(b, size) {
+  return b.logo_url
+    ? `<div class="logo"${size ? ` style="width:${size}px;height:${size}px"` : ''}><img src="${esc(b.logo_url)}" alt="${esc(b.name)} logo" loading="lazy" width="84" height="84"></div>`
+    : `<div class="logo" aria-hidden="true" style="background:${S.tint(b.name)}${size ? `;width:${size}px;height:${size}px` : ''}">${esc(S.initials(b.name))}</div>`;
+}
+function place(b) { return [b.address || b.town, b.region].filter(Boolean).join(', '); }
+function actionsHTML(b) {
+  const a = [];
+  if (b.phone) a.push(`<a class="btn btn-primary btn-sm" href="tel:${esc(b.phone.replace(/\s/g, ''))}">${ICON.call}Call</a>`);
+  const wa = S.waNumber(b.whatsapp);
+  if (wa) a.push(`<a class="btn btn-wa btn-sm" target="_blank" rel="noopener" href="https://wa.me/${wa}?text=${encodeURIComponent('Hello, I found ' + b.name + ' on the Sunny 88.7 FM business directory.')}">${ICON.wa}WhatsApp</a>`);
+  if (b.email) a.push(`<a class="btn btn-ghost btn-sm" href="mailto:${esc(b.email)}">${ICON.mail}Email</a>`);
+  a.push(`<button type="button" class="btn btn-ghost btn-sm" data-share="${esc(b.slug)}">${ICON.share}Share</button>`);
+  return a.join('');
+}
+function rowHTML(b) {
+  return `<article class="row${b.featured ? ' featured' : ''}">
+    ${logoHTML(b)}
+    <div>
+      <h3><button type="button" data-open="${esc(b.slug)}">${esc(b.name)}</button>${b.featured ? '<span class="tag-feat">Featured</span>' : ''}</h3>
+      <div class="meta"><span>${ICON.tag}${esc(b.category)}</span><span>${ICON.pin}${esc(place(b))}</span></div>
+      ${b.description ? `<p class="desc">${esc(b.description)}</p>` : ''}
+      <div class="actions">${actionsHTML(b)}</div>
+    </div>
+    <div class="more"><button type="button" class="btn btn-ghost" data-open="${esc(b.slug)}">View details</button></div>
+  </article>`;
+}
+
+/* ---------- detail sheet ---------- */
+async function openDetail(slug, push = true) {
+  let b = window._rows?.[slug];
+  if (!b) {
+    const { data } = await sb.from('businesses').select(COLS).eq('status', 'approved').eq('slug', slug).maybeSingle();
+    if (!data) return toast('That listing isn’t available.');
+    b = data;
+  }
+  const site = S.safeUrl(b.website);
+  const rows = [
+    ['Category', esc(b.category)],
+    ['Location', esc(place(b))],
+    b.phone && ['Phone', `<a href="tel:${esc(b.phone.replace(/\s/g, ''))}">${esc(b.phone)}</a>`],
+    b.whatsapp && ['WhatsApp', esc(b.whatsapp)],
+    b.email && ['Email', `<a href="mailto:${esc(b.email)}">${esc(b.email)}</a>`],
+    site && ['Website', `<a href="${esc(site)}" target="_blank" rel="noopener nofollow">${esc(site.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''))}</a>`],
+    b.hours && ['Opening hours', esc(b.hours).replace(/\n/g, '<br>')]
+  ].filter(Boolean);
+  const sh = $('sheet');
+  sh.innerHTML = `<div class="sheet-head">${logoHTML(b, 72)}<div><h2 id="sheetTitle">${esc(b.name)}</h2>
+      <div class="meta" style="margin:0"><span>${ICON.pin}${esc(place(b))}</span></div></div>
+      <button class="x" type="button" data-close aria-label="Close">×</button></div>
+    <div class="sheet-body">
+      ${b.description ? `<p style="margin:0;white-space:pre-line">${esc(b.description)}</p>` : ''}
+      <dl>${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>
+      <div class="actions">${actionsHTML(b)}</div>
+    </div>`;
+  if (!sh.open) sh.showModal();
+  document.title = `${b.name} | Sunny Business Directory`;
+  if (push) { const p = new URLSearchParams(location.search); p.set('b', slug); history.pushState({ b: slug }, '', '?' + p); }
+}
+function closeDetail(push = true) {
+  const sh = $('sheet'); if (sh.open) sh.close();
+  document.title = 'Ghana Business Directory | Sunny 88.7 FM';
+  if (push && new URLSearchParams(location.search).has('b')) writeURL(true);
+}
+$('sheet').addEventListener('click', e => { if (e.target === e.currentTarget || e.target.closest('[data-close]')) closeDetail(); });
+$('sheet').addEventListener('cancel', e => { e.preventDefault(); closeDetail(); });
+
+/* ---------- share ---------- */
+async function share(slug) {
+  const b = window._rows?.[slug] || { name: 'this business' };
+  const url = `${location.origin}/directory/?b=${encodeURIComponent(slug)}`;
+  if (navigator.share) { try { await navigator.share({ title: b.name, text: `${b.name} on the Sunny 88.7 FM business directory`, url }); } catch {} return; }
+  try { await navigator.clipboard.writeText(url); toast('Link copied'); } catch { prompt('Copy this link:', url); }
+}
+function toast(msg) {
+  const t = document.createElement('div'); t.className = 'toast'; t.role = 'status'; t.textContent = msg;
+  document.body.appendChild(t); setTimeout(() => t.remove(), 2200);
+}
+
+/* ---------- events ---------- */
+function go(changes) { Object.assign(state, changes); if (!('page' in changes)) state.page = 1; writeURL(); load(); window.scrollTo({ top: document.querySelector('.main').offsetTop - 10, behavior: 'smooth' }); }
+$('searchForm').addEventListener('submit', e => { e.preventDefault(); go({ q: $('q').value.trim(), region: $('region').value }); });
+$('region').addEventListener('change', () => go({ region: $('region').value }));
+$('az').addEventListener('click', e => { const b = e.target.closest('button'); if (b) go({ letter: b.dataset.l }); });
+$('cats').addEventListener('click', e => { const b = e.target.closest('button'); if (b) go({ cat: b.dataset.c }); });
+$('catSelect').addEventListener('change', () => go({ cat: $('catSelect').value }));
+$('chips').addEventListener('click', e => {
+  const b = e.target.closest('[data-clear]'); if (!b) return;
+  b.dataset.clear === 'all' ? go({ q: '', region: '', cat: '', letter: '' }) : go({ [b.dataset.clear]: '' });
+});
+$('prev').addEventListener('click', () => go({ page: state.page - 1 }));
+$('next').addEventListener('click', () => go({ page: state.page + 1 }));
+document.addEventListener('click', e => {
+  const o = e.target.closest('[data-open]'); if (o) return openDetail(o.dataset.open);
+  const s = e.target.closest('[data-share]'); if (s) share(s.dataset.share);
+});
+window.addEventListener('popstate', () => { const b = readURL(); load(); b ? openDetail(b, false) : closeDetail(false); });
+
+const initial = readURL(); load(); if (initial) openDetail(initial, false);
+})();
+</script>
+</body>
+</html>

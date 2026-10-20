@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W8W4N24JZK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W8W4N24JZK');</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>List your business free | Sunny 88.7 FM Business Directory</title>
+<meta name="description" content="Add your business to the Sunny 88.7 FM business directory for free. Listeners across Ghana can find you and call, WhatsApp or email you directly.">
+<link rel="canonical" href="https://sunnygh.com/directory/add.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/directory/directory.css">
+<style>
+  .page{max-width:820px;padding:36px 20px 72px}
+  .page h1{font:700 clamp(28px,4.5vw,40px)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 8px}
+  .page .lead{color:var(--muted);margin:0 0 26px;max-width:60ch}
+  .stack{display:flex;flex-direction:column;gap:16px}
+  .logo-pick{display:flex;align-items:center;gap:16px}
+  .logo-pick .logo{flex:none}
+  .counter{font-size:13px;color:var(--muted);text-align:right}
+  .done{text-align:center;padding:48px 24px}
+  .done h2{font:700 28px var(--display);margin:0 0 8px}
+  .formerr{background:#FDECEA;color:#8A1F17;border-radius:var(--r-s);padding:12px 14px;margin-bottom:18px}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/directory/"><span class="dot" aria-hidden="true"></span><span>Sunny 88.7 FM<small>Business Directory</small></span></a>
+    <a class="btn btn-ghost" href="/directory/">Back to directory</a>
+  </div>
+</header>
+
+<div class="wrap page">
+  <h1>List your business free</h1>
+  <p class="lead">Fill in your details below. Our team checks every listing before it goes live, so customers only see real businesses.</p>
+
+  <form class="form-card" id="f" novalidate>
+    <div class="formerr" id="formErr" role="alert" hidden></div>
+
+    <fieldset>
+      <legend>Your business</legend>
+      <div class="stack">
+        <div class="field">
+          <label for="name">Business name <span class="req">*</span></label>
+          <input class="input" id="name" name="name" required maxlength="120" autocomplete="organization">
+        </div>
+        <div class="grid2">
+          <div class="field">
+            <label for="category">Category <span class="req">*</span></label>
+            <select class="input" id="category" name="category" required><option value="">Choose a category</option></select>
+          </div>
+          <div class="field">
+            <label for="region">Region <span class="req">*</span></label>
+            <select class="input" id="region" name="region" required><option value="">Choose a region</option></select>
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="field">
+            <label for="town">Town or area <span class="req">*</span></label>
+            <input class="input" id="town" name="town" required maxlength="80" placeholder="e.g. Madina">
+          </div>
+          <div class="field">
+            <label for="address">Address or landmark <span class="hint">(optional)</span></label>
+            <input class="input" id="address" name="address" maxlength="160" placeholder="e.g. Opposite Madina Total station">
+          </div>
+        </div>
+        <div class="field">
+          <label for="description">What does your business do? <span class="req">*</span></label>
+          <textarea class="input" id="description" name="description" rows="5" required minlength="30" maxlength="1200" placeholder="Tell customers what you offer, who you serve and what makes you different."></textarea>
+          <div class="counter" id="descCount">0 / 1200</div>
+        </div>
+        <div class="field">
+          <label for="hours">Opening hours <span class="hint">(optional)</span></label>
+          <input class="input" id="hours" name="hours" maxlength="160" placeholder="e.g. Mon–Sat 8am–6pm">
+        </div>
+        <div class="field">
+          <label for="logo">Logo <span class="hint">(optional, JPG, PNG or WebP)</span></label>
+          <div class="logo-pick">
+            <div class="logo" id="logoPreview" aria-hidden="true">?</div>
+            <input id="logo" name="logo" type="file" accept="image/png,image/jpeg,image/webp">
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>How customers reach you</legend>
+      <div class="stack">
+        <div class="grid2">
+          <div class="field">
+            <label for="phone">Phone number <span class="req">*</span></label>
+            <input class="input" id="phone" name="phone" type="tel" required maxlength="20" placeholder="024 000 0000" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="whatsapp">WhatsApp number <span class="hint">(optional)</span></label>
+            <input class="input" id="whatsapp" name="whatsapp" type="tel" maxlength="20" placeholder="Leave blank if none">
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="field">
+            <label for="email">Business email <span class="hint">(optional)</span></label>
+            <input class="input" id="email" name="email" type="email" maxlength="120" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="website">Website or Facebook page <span class="hint">(optional)</span></label>
+            <input class="input" id="website" name="website" maxlength="200" placeholder="e.g. yourbusiness.com">
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Who we should contact</legend>
+      <p class="hint" style="margin:-6px 0 14px;font-size:14px">Only our team sees this. We use it if we need to confirm your listing.</p>
+      <div class="grid2">
+        <div class="field">
+          <label for="contact_name">Your name <span class="req">*</span></label>
+          <input class="input" id="contact_name" name="contact_name" required maxlength="80" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="contact_phone">Your phone number <span class="req">*</span></label>
+          <input class="input" id="contact_phone" name="contact_phone" type="tel" required maxlength="20" autocomplete="tel">
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="hp" aria-hidden="true"><label>Leave this empty <input id="company_url_hp" tabindex="-1" autocomplete="off"></label></div>
+
+    <label style="display:flex;gap:10px;align-items:flex-start;font-weight:400;margin-bottom:22px">
+      <input type="checkbox" id="agree" required style="margin-top:4px;width:18px;height:18px">
+      <span>I confirm this business is real and I’m allowed to list it.</span>
+    </label>
+
+    <button class="btn btn-sun" id="submitBtn" type="submit" style="padding:14px 26px;font-size:16px">Submit listing</button>
+  </form>
+
+  <div class="form-card done" id="done" hidden>
+    <h2>Listing submitted</h2>
+    <p style="color:var(--muted);max-width:48ch;margin:0 auto 22px">Thank you. Our team will review it, and once it’s approved it will appear in the directory. We may call you to confirm a detail.</p>
+    <a class="btn btn-primary" href="/directory/">Browse the directory</a>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="/directory/config.js"></script>
+<script>
+(() => {
+const C = window.SUNNY_DIR, S = window.SD;
+const sb = supabase.createClient(C.SUPABASE_URL, C.SUPABASE_ANON_KEY);
+const $ = id => document.getElementById(id);
+const openedAt = Date.now();
+let logoBlob = null;
+
+C.CATEGORIES.forEach(c => $('category').insertAdjacentHTML('beforeend', `<option>${S.esc(c)}</option>`));
+C.REGIONS.forEach(r => $('region').insertAdjacentHTML('beforeend', `<option>${S.esc(r)}</option>`));
+$('description').addEventListener('input', e => $('descCount').textContent = `${e.target.value.length} / 1200`);
+$('name').addEventListener('input', e => {
+  if (!logoBlob) { $('logoPreview').textContent = S.initials(e.target.value || '?'); $('logoPreview').style.background = S.tint(e.target.value); }
+});
+
+/* Resize logo in the browser to max 400px WebP so uploads stay small */
+$('logo').addEventListener('change', async e => {
+  const file = e.target.files[0]; logoBlob = null;
+  if (!file) return;
+  if (!/^image\/(png|jpeg|webp)$/.test(file.type)) { showErr('Logo must be a JPG, PNG or WebP image.'); e.target.value = ''; return; }
+  if (file.size > 8 * 1024 * 1024) { showErr('That logo file is over 8 MB. Choose a smaller image.'); e.target.value = ''; return; }
+  try {
+    const bmp = await createImageBitmap(file);
+    const scale = Math.min(1, 400 / Math.max(bmp.width, bmp.height));
+    const cv = document.createElement('canvas');
+    cv.width = Math.round(bmp.width * scale); cv.height = Math.round(bmp.height * scale);
+    cv.getContext('2d').drawImage(bmp, 0, 0, cv.width, cv.height);
+    logoBlob = await new Promise(r => cv.toBlob(r, 'image/webp', 0.86));
+    if (!logoBlob || logoBlob.type !== 'image/webp') logoBlob = await new Promise(r => cv.toBlob(r, 'image/png'));
+    $('logoPreview').innerHTML = `<img src="${URL.createObjectURL(logoBlob)}" alt="">`;
+    $('formErr').hidden = true;
+  } catch { showErr('That image couldn’t be read. Try a different file.'); }
+});
+
+function showErr(msg) { $('formErr').textContent = msg; $('formErr').hidden = false; $('formErr').scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+function digits(v) { return String(v || '').replace(/\D/g, ''); }
+function validPhone(v) { const d = digits(v); return d.length >= 9 && d.length <= 15; }
+
+$('f').addEventListener('submit', async e => {
+  e.preventDefault();
+  $('formErr').hidden = true;
+  const v = id => $(id).value.trim();
+
+  // spam guards: honeypot + too-fast submit → pretend success
+  if (v('company_url_hp') || Date.now() - openedAt < 5000) { $('f').hidden = true; $('done').hidden = false; return; }
+
+  const missing = ['name', 'category', 'region', 'town', 'description', 'phone', 'contact_name', 'contact_phone'].filter(id => !v(id));
+  if (missing.length) { showErr('Fill in all the fields marked with *.'); $(missing[0]).focus(); return; }
+  if (v('description').length < 30) { showErr('Add a little more about what your business does (at least 30 characters).'); $('description').focus(); return; }
+  if (!validPhone(v('phone'))) { showErr('Enter a valid business phone number, e.g. 024 000 0000.'); $('phone').focus(); return; }
+  if (v('whatsapp') && !validPhone(v('whatsapp'))) { showErr('Enter a valid WhatsApp number, or leave it blank.'); $('whatsapp').focus(); return; }
+  if (!validPhone(v('contact_phone'))) { showErr('Enter a valid phone number for yourself.'); $('contact_phone').focus(); return; }
+  if (v('email') && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email'))) { showErr('Check the email address. It should look like name@example.com.'); $('email').focus(); return; }
+  if (v('website') && !S.safeUrl(v('website'))) { showErr('Check the website address.'); $('website').focus(); return; }
+  if (!$('agree').checked) { showErr('Tick the box to confirm the business is real.'); $('agree').focus(); return; }
+
+  const btn = $('submitBtn'); btn.disabled = true; btn.textContent = 'Submitting…';
+  try {
+    const slug = `${S.slugify(v('name')) || 'business'}-${Math.random().toString(36).slice(2, 6)}`;
+    let logo_url = null;
+    if (logoBlob) {
+      const ext = logoBlob.type === 'image/webp' ? 'webp' : 'png';
+      const path = `pending/${slug}.${ext}`;
+      const up = await sb.storage.from(C.LOGO_BUCKET).upload(path, logoBlob, { contentType: logoBlob.type, upsert: false });
+      if (up.error) throw up.error;
+      logo_url = sb.storage.from(C.LOGO_BUCKET).getPublicUrl(path).data.publicUrl;
+    }
+    const row = {
+      slug, name: v('name'), category: v('category'), region: v('region'), town: v('town'),
+      address: v('address') || null, description: v('description'), hours: v('hours') || null,
+      phone: v('phone'), whatsapp: v('whatsapp') || null, email: v('email') || null,
+      website: v('website') ? S.safeUrl(v('website')) : null, logo_url,
+      contact_name: v('contact_name'), contact_phone: v('contact_phone')
+    };
+    const { error } = await sb.from('businesses').insert(row);
+    if (error) throw error;
+    $('f').hidden = true; $('done').hidden = false; window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch (err) {
+    console.error(err);
+    showErr('Your listing didn’t go through. Check your connection and press Submit listing again.');
+    btn.disabled = false; btn.textContent = 'Submit listing';
+  }
+});
+})();
+</script>
+</body>
+</html>
