@@ -1,8 +1,8 @@
 /* CCC&B (Christian Connect Church & Business) — shared config.
    Fill in the two Supabase values from: Supabase dashboard → Project Settings → API. */
 window.SUNNY_DIR = {
-  SUPABASE_URL: 'https://YOUR-PROJECT-REF.supabase.co',
-  SUPABASE_ANON_KEY: 'YOUR-ANON-PUBLIC-KEY',
+  SUPABASE_URL: 'https://rtfaoqxxdrdeulpvrder.supabase.co',
+  SUPABASE_ANON_KEY: 'sb_publishable_VgKANGgHBIqNZNR5Igx_oA_6VLTiLxH',
   PAGE_SIZE: 20,
   LOGO_BUCKET: 'directory-logos',
   CATEGORIES: [
