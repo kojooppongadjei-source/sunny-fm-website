@@ -773,7 +773,7 @@ ${stationCardsHtml}
 
     <div class="post-body">
       <h2>How to listen to Christian radio online in Ghana</h2>
-      <p>Most Christian and gospel stations in Ghana, including Sunny FM, stream live online for free — no sign-up required. Just visit the station's website and tap play, or tune to the FM frequency if you're within broadcast range in Ghana.</p>
+      <p>Most Christian and gospel stations in Ghana, including Sunny FM, stream live online for free — no sign-up required. Just visit the station's website and tap play, or tune to the FM frequency if you're within broadcast range in Ghana. Prefer TV? See our guide to <a href="/christian-tv-stations-ghana/">Christian TV stations in Ghana</a>.</p>
 
       <h2>Frequently asked questions</h2>
       <p><strong>What is the best Christian radio station in Ghana?</strong><br>Sunny 88.7 FM is one of Ghana's leading Christian stations, broadcasting worship music, preaching and devotions live from Accra since 2002 — <a href="/listen-live/">listen live here</a>.</p>
@@ -875,6 +875,91 @@ function buildTop10HubPage(allPostsByCollection) {
   console.log('Built Top 10 hub page (/top-10/)');
 }
 buildResourcePages();
+
+function buildChristianTvPage() {
+  const stations = [
+    { name: 'Sunny TV', location: 'Accra, Greater Accra', featured: true, url: '/watch-tv/', cta: 'Watch Sunny TV live →',
+      desc: 'A Christian television station broadcasting gospel music, worship, church services and preaching from Accra, 24 hours a day. Sister station of Sunny 88.7 FM — watch free online on any phone, tablet or computer.' },
+    { name: 'Pent TV', location: 'Accra, Greater Accra',
+      desc: 'The television network of The Church of Pentecost, broadcasting sermons, Bible teaching and family-friendly programming.' },
+    { name: 'AGTV (Assemblies of God TV)', location: 'Ghana',
+      desc: 'The television station of the Assemblies of God, Ghana, airing gospel, leadership and church programming.' },
+    { name: 'Genesis TV', location: 'Ghana',
+      desc: 'Founded by Elvis Agyemang of Grace Mountain Ministry, broadcasting crusades, testimonies and ministry programmes.' },
+    { name: 'Hope Channel Ghana', location: 'Ghana',
+      desc: 'Operated by the Seventh-day Adventist Church, with spiritual, health and educational programming.' },
+    { name: 'Lumen Christi TV', location: 'Ghana',
+      desc: 'A Catholic television channel in Ghana covering Mass, church events and spiritual programmes.' },
+    { name: 'Dominion TV', location: 'Ghana',
+      desc: 'A Christian television channel broadcasting gospel and ministry programmes.' },
+    { name: 'Praise TV', location: 'Ghana',
+      desc: 'A gospel-centred channel featuring Christian movies, music videos and inspirational programming.' },
+    { name: 'MBN TV', location: 'Accra, Greater Accra',
+      desc: 'A Christian broadcasting station and studio based in Accra.' },
+  ];
+
+  const cards = stations.map(s => `
+        <div style="border:1px solid var(--border);border-radius:14px;padding:20px;${s.featured ? 'background:#fff9ec;border-color:var(--gold);' : ''}">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+            <h3 style="margin:0;font-size:19px;">${escapeHtml(s.name)}</h3>
+            ${s.featured ? '<span class="tag" style="margin:0;">Featured</span>' : ''}
+          </div>
+          <div style="font-size:13px;color:var(--muted);margin-bottom:10px;">${escapeHtml(s.location)}</div>
+          <p style="font-size:14.5px;color:#444;margin-bottom:${s.url ? '12px' : '0'};">${escapeHtml(s.desc)}</p>
+          ${s.url ? `<a href="${s.url}" style="font-size:14px;font-weight:700;color:var(--gold-dark);text-decoration:none;">${escapeHtml(s.cta)}</a>` : ''}
+        </div>`).join('\n');
+
+  const faqs = [
+    ['What are the Christian TV stations in Ghana?', 'Christian TV stations in Ghana include Sunny TV, Pent TV, AGTV, Genesis TV, Hope Channel Ghana, Lumen Christi TV, Dominion TV, Praise TV and MBN TV.'],
+    ['Can I watch Ghanaian Christian TV online for free?', 'Yes. Sunny TV streams live and free at sunnygh.com/watch-tv, and many other Ghanaian Christian channels stream online too, so you can watch from anywhere in the world.'],
+    ['Is there a Christian TV station in Accra?', 'Yes. Sunny TV is a Christian television station based in Accra, broadcasting gospel music, worship, church services and preaching 24/7.'],
+    ['Is there a Catholic TV station in Ghana?', 'Yes. Lumen Christi TV is a Catholic television channel in Ghana.'],
+  ];
+
+  const body = `
+    <div class="eyebrow">Guide</div>
+    <h1 class="post-title">Christian TV Stations in Ghana</h1>
+    <div class="post-meta">Updated ${formatDate(new Date().toISOString())}</div>
+    <div class="post-body">
+      <p>Looking for Christian or gospel television in Ghana? Here's a guide to faith-based TV stations broadcasting in Ghana today, starting with Sunny TV — a Christian television station in Accra streaming gospel music, worship and preaching live, 24/7.</p>
+    </div>
+
+    <div style="display:grid;gap:16px;margin:28px 0 32px;">
+${cards}
+    </div>
+
+    <div class="post-body">
+      <h2>How to watch Christian TV online in Ghana</h2>
+      <p>Many Ghanaian Christian channels, including Sunny TV, stream live online for free. Open the station's website on your phone, tablet, laptop or smart TV browser and press play — no decoder or sign-up needed. Prefer radio? See our guide to <a href="/christian-radio-stations-ghana/">Christian radio stations in Ghana</a>.</p>
+
+      <h2>Frequently asked questions</h2>
+${faqs.map(([q,a]) => `      <p><strong>${escapeHtml(q)}</strong><br>${escapeHtml(a)}</p>`).join('\n')}
+    </div>
+  `;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'ItemList', name: 'Christian TV stations in Ghana',
+        itemListElement: stations.map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: s.name, ...(s.url ? { url: 'https://sunnygh.com' + s.url } : {}) })) },
+      { '@type': 'FAQPage',
+        mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+    ],
+  };
+
+  const html = pageShell({
+    title: 'Christian TV Stations in Ghana',
+    description: 'A guide to Christian TV stations in Ghana — Sunny TV, Pent TV, AGTV, Genesis TV, Hope Channel, Lumen Christi TV and more. Watch gospel television online or on TV.',
+    bodyHtml: body,
+    url: '/christian-tv-stations-ghana/',
+    jsonLd,
+  });
+  const outDir = path.join(ROOT, 'christian-tv-stations-ghana');
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(path.join(outDir, 'index.html'), html);
+  console.log('Built resource page: christian-tv-stations-ghana');
+}
+buildChristianTvPage();
 
 function buildSelfServiceAdvertPage() {
   const body = `
@@ -1353,6 +1438,7 @@ const STATIC_PAGES = [
   { loc: 'https://sunnygh.com/listen-live/', changefreq: 'daily', priority: '0.9' },
   { loc: 'https://sunnygh.com/christian-radio-stations-ghana/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/watch-tv/', changefreq: 'daily', priority: '0.9' },
+  { loc: 'https://sunnygh.com/christian-tv-stations-ghana/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/news/', changefreq: 'daily', priority: '0.8' },
   { loc: 'https://sunnygh.com/events/', changefreq: 'weekly', priority: '0.8' },
   { loc: 'https://sunnygh.com/lifestyle/', changefreq: 'weekly', priority: '0.7' },

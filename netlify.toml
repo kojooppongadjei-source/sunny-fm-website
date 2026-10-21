@@ -12,6 +12,22 @@
   [headers.values]
     Cache-Control = "public, max-age=604800, must-revalidate"
 
+# Short link: sunnygh.com/tv -> Watch Sunny TV
+[[redirects]]
+  from = "/tv"
+  to = "/watch-tv/"
+  status = 301
+
+[[redirects]]
+  from = "/tv/"
+  to = "/watch-tv/"
+  status = 301
+
+[[redirects]]
+  from = "/christian-tv-stations-ghana"
+  to = "/christian-tv-stations-ghana/"
+  status = 301
+
 # Ensure trailing-slash folders resolve to their index.html
 [[redirects]]
   from = "/listen-live"

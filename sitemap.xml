@@ -26,6 +26,12 @@
   </url>
 
   <url>
+    <loc>https://sunnygh.com/christian-tv-stations-ghana/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://sunnygh.com/news/</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
@@ -80,6 +86,36 @@
   </url>
 
   <url>
+    <loc>https://sunnygh.com/pray/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/shoutout/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/win/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/directory/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/directory/add.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://sunnygh.com/advertise/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -101,6 +137,55 @@
     <loc>https://sunnygh.com/terms/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/news/breast-cancer-early-detection-ghana-canada-medical-center-sunny-fm/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/news/team-eternity-faith-teamwork-the-promise-sunny-fm-im-drive/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/news/gospel-ultimate-catalyst-human-transformation-andrew-palau-love-ghana-kumasi/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/news/dont-let-fear-stop-you-dr-otuteye-breast-cancer-screening-im-drive/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/news/zipporah-danquah-customer-excellence-is-ministry/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/news/emma-clara-goode-turn-angry-customers-into-loyal-ones/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/news/love-or-over-investment-singles-unscripted-rev-annan/</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <url>
@@ -692,15 +777,15 @@
   </url>
 
   <url>
-    <loc>https://sunnygh.com/events/sunny-singles-adventure-volta-edition/</loc>
-    <lastmod>2026-06-29</lastmod>
+    <loc>https://sunnygh.com/events/christmas-in-dubai-2026/</loc>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://sunnygh.com/events/couples-retreat-2026-—-a-time-to-reconnect-refresh-and-rediscover/</loc>
-    <lastmod>2026-06-17</lastmod>
+    <loc>https://sunnygh.com/events/sunny-singles-adventure-volta-edition/</loc>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
