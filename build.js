@@ -879,7 +879,7 @@ buildResourcePages();
 function buildChristianTvPage() {
   const stations = [
     { name: 'Sunny TV', location: 'Accra, Greater Accra', featured: true, url: '/watch-tv/', cta: 'Watch Sunny TV live →',
-      desc: 'A Christian television station broadcasting gospel music, worship, church services and preaching from Accra, 24 hours a day. Sister station of Sunny 88.7 FM — watch free online on any phone, tablet or computer.' },
+      desc: 'A Christian television station broadcasting gospel music, worship, church services and preaching from Accra, 24 hours a day. Sister station of Sunny 88.7 FM — watch free on the Sunny TV app for Fire TV, Google TV, Android TV, LG Smart TV, iPhone and Android, or online.' },
     { name: 'Pent TV', location: 'Accra, Greater Accra',
       desc: 'The television network of The Church of Pentecost, broadcasting sermons, Bible teaching and family-friendly programming.' },
     { name: 'AGTV (Assemblies of God TV)', location: 'Ghana',
@@ -960,6 +960,80 @@ ${faqs.map(([q,a]) => `      <p><strong>${escapeHtml(q)}</strong><br>${escapeHtm
   console.log('Built resource page: christian-tv-stations-ghana');
 }
 buildChristianTvPage();
+
+function buildHowToWatchSunnyTvPage() {
+  const L = {
+    fire: 'https://www.amazon.com/dp/B0G11194JY',
+    play: 'https://play.google.com/store/apps/details?id=com.sunnytv.sunnytv',
+    lg: 'https://gb.lgappstv.com/main/integrated/search?searchText=Sunny%20TV',
+    ios: 'https://apps.apple.com/app/sunny-tv-gh/id6752662936',
+  };
+  const sections = [
+    { id: 'fire-tv', h: 'How to watch Sunny TV on Amazon Fire TV / Firestick', steps: [
+      'On your Fire TV home screen, go to <strong>Find</strong> and select <strong>Search</strong>.',
+      'Type <strong>Sunny TV</strong> and select the Sunny TV app.',
+      'Select <strong>Get</strong> or <strong>Download</strong>, then <strong>Open</strong>.',
+      `Or open the <a href="${L.fire}" target="_blank" rel="noopener">Sunny TV page on Amazon</a> on your phone or computer and send it to your Fire TV.`,
+    ]},
+    { id: 'google-tv', h: 'How to watch Sunny TV on Google TV and Android TV', steps: [
+      'On your TV, open the <strong>Apps</strong> tab (Google TV) or the <strong>Google Play Store</strong> (Android TV).',
+      'Search for <strong>Sunny TV</strong> and select <strong>Install</strong>.',
+      `Or open <a href="${L.play}" target="_blank" rel="noopener">Sunny TV on Google Play</a> on your phone and choose your TV under “Install on more devices”.`,
+    ]},
+    { id: 'lg', h: 'How to watch Sunny TV on LG Smart TV', steps: [
+      'Press the <strong>Home</strong> button on your LG remote and open the <strong>LG Content Store</strong> (Apps).',
+      'Search for <strong>Sunny TV</strong> and select <strong>Install</strong>.',
+      `Open the app from your home screen. You can also <a href="${L.lg}" target="_blank" rel="noopener">find Sunny TV in the LG app store online</a>.`,
+    ]},
+    { id: 'iphone', h: 'How to watch Sunny TV on iPhone and iPad', steps: [
+      `Open the <a href="${L.ios}" target="_blank" rel="noopener">Sunny TV GH app on the App Store</a>, or search “Sunny TV GH” in the App Store.`,
+      'Tap <strong>Get</strong>, then open the app and press play.',
+    ]},
+    { id: 'android', h: 'How to watch Sunny TV on Android phones and tablets', steps: [
+      `Open <a href="${L.play}" target="_blank" rel="noopener">Sunny TV on Google Play</a>, or search “Sunny TV” in the Play Store.`,
+      'Tap <strong>Install</strong>, then open the app and press play.',
+    ]},
+    { id: 'web', h: 'How to watch Sunny TV online', steps: [
+      'Go to <a href="/watch-tv/">sunnygh.com/watch-tv</a> on any computer, phone, tablet or smart TV browser.',
+      'Press play. No app, sign-up or payment needed.',
+    ]},
+  ];
+  const faqs = [
+    ['Is the Sunny TV app free?', 'Yes. The Sunny TV app is free to download and watch on every platform.'],
+    ['Which devices can I watch Sunny TV on?', 'Amazon Fire TV and Firestick, Google TV, Android TV, LG Smart TV, iPhone, iPad, Android phones and tablets, and any web browser at sunnygh.com/watch-tv.'],
+    ['Can I watch Sunny TV outside Ghana?', 'Yes. Sunny TV streams worldwide, so viewers in the diaspora can watch on the app or online.'],
+  ];
+  const body = `
+    <div class="eyebrow">Guide</div>
+    <h1 class="post-title">How to Watch Sunny TV on Smart TV, Firestick and Phone</h1>
+    <div class="post-meta">Updated ${formatDate(new Date().toISOString())}</div>
+    <div class="post-body">
+      <p>Sunny TV, the Christian TV station from Accra, Ghana, is free to watch on the Sunny TV app for Amazon Fire TV, Google TV, Android TV, LG Smart TV, iPhone, iPad and Android — or live online. Jump to your device:</p>
+      <ul>${sections.map(x => `<li><a href="#${x.id}">${x.h.replace('How to watch Sunny TV on ', '').replace('How to watch Sunny TV ', '')}</a></li>`).join('')}</ul>
+${sections.map(x => `      <h2 id="${x.id}">${x.h}</h2>\n      <ol>${x.steps.map(t => `<li>${t}</li>`).join('')}</ol>`).join('\n')}
+      <h2>Frequently asked questions</h2>
+${faqs.map(([q, a]) => `      <p><strong>${escapeHtml(q)}</strong><br>${escapeHtml(a)}</p>`).join('\n')}
+      <p><a href="/watch-tv/">Watch Sunny TV live now →</a></p>
+    </div>
+  `;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+  };
+  const html = pageShell({
+    title: 'How to Watch Sunny TV on Fire TV, Google TV, LG, iPhone & Android',
+    description: 'Watch Sunny TV, the Christian TV station from Ghana, free on Amazon Fire TV/Firestick, Google TV, Android TV, LG Smart TV, iPhone, iPad, Android or online. Step-by-step guide.',
+    bodyHtml: body,
+    url: '/how-to-watch-sunny-tv/',
+    jsonLd,
+  });
+  const outDir = path.join(ROOT, 'how-to-watch-sunny-tv');
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(path.join(outDir, 'index.html'), html);
+  console.log('Built resource page: how-to-watch-sunny-tv');
+}
+buildHowToWatchSunnyTvPage();
 
 function buildSelfServiceAdvertPage() {
   const body = `
@@ -1439,6 +1513,7 @@ const STATIC_PAGES = [
   { loc: 'https://sunnygh.com/christian-radio-stations-ghana/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/watch-tv/', changefreq: 'daily', priority: '0.9' },
   { loc: 'https://sunnygh.com/christian-tv-stations-ghana/', changefreq: 'weekly', priority: '0.7' },
+  { loc: 'https://sunnygh.com/how-to-watch-sunny-tv/', changefreq: 'monthly', priority: '0.7' },
   { loc: 'https://sunnygh.com/news/', changefreq: 'daily', priority: '0.8' },
   { loc: 'https://sunnygh.com/events/', changefreq: 'weekly', priority: '0.8' },
   { loc: 'https://sunnygh.com/lifestyle/', changefreq: 'weekly', priority: '0.7' },

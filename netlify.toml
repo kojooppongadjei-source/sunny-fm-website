@@ -28,6 +28,16 @@
   to = "/christian-tv-stations-ghana/"
   status = 301
 
+[[redirects]]
+  from = "/how-to-watch-sunny-tv"
+  to = "/how-to-watch-sunny-tv/"
+  status = 301
+
+[[redirects]]
+  from = "/apps"
+  to = "/how-to-watch-sunny-tv/"
+  status = 301
+
 # Ensure trailing-slash folders resolve to their index.html
 [[redirects]]
   from = "/listen-live"
