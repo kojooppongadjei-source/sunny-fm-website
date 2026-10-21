@@ -6,12 +6,12 @@ image: /assets/uploads/bernice-offei-gospel-musician.jpg
 image_position: center 20%
 summary: The family of beloved gospel musician Bernice Offei has announced her
   funeral arrangements, with a remembrance night, funeral service and
-  thanksgiving service at LIC, Legon, from November 11 to 15, 2026.
+  thanksgiving service at the Legon Interdenominational Church (LIC) from November 11 to 15, 2026.
 tags:
   - Ministry
   - Gospel Music
 ---
-The family of beloved gospel musician **Bernice Offei** has announced the arrangements for her funeral. All services will be held at **LIC, Legon**, in November 2026.
+The family of beloved gospel musician **Bernice Offei** has announced the arrangements for her funeral. All services will be held at the **Legon Interdenominational Church (LIC)** in November 2026.
 
 ## Remembrance night: Wednesday, November 11
 
