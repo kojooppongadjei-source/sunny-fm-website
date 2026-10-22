@@ -1516,6 +1516,7 @@ const STATIC_PAGES = [
   { loc: 'https://sunnygh.com/how-to-watch-sunny-tv/', changefreq: 'monthly', priority: '0.7' },
   { loc: 'https://sunnygh.com/news/', changefreq: 'daily', priority: '0.8' },
   { loc: 'https://sunnygh.com/events/', changefreq: 'weekly', priority: '0.8' },
+  { loc: 'https://sunnygh.com/fair/', changefreq: 'daily', priority: '0.8' },
   { loc: 'https://sunnygh.com/lifestyle/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/preaching-teaching/', changefreq: 'weekly', priority: '0.7' },
   { loc: 'https://sunnygh.com/gospel-countdown/', changefreq: 'weekly', priority: '0.7' },

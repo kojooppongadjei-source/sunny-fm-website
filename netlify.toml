@@ -124,6 +124,22 @@
   to = "/directory/"
   status = 301
 
+# Breakfast Fair 2026 vendor booking
+[[redirects]]
+  from = "/fair"
+  to = "/fair/"
+  status = 301
+
+[[redirects]]
+  from = "/breakfastfair"
+  to = "/fair/"
+  status = 301
+
+[[redirects]]
+  from = "/fair/admin"
+  to = "/fair/admin/"
+  status = 301
+
 # Custom 404 fallback
 [[redirects]]
   from = "/*"

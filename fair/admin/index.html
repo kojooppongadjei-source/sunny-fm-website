@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Fair bookings — admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFDF8;--band:#F6EFDC;--g:#0F4A2C;--gold:#9A7418;--red:#B42318;--ink:#1D2A22;--muted:#5B6A60;--line:#E6DCC2}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.5 Figtree,system-ui,sans-serif}
+.wrap{max-width:1300px;margin:0 auto;padding:22px}
+h1{font-size:24px;margin:0 0 4px;color:var(--g)}
+.muted{color:var(--muted)}
+button,.b{font:600 14px Figtree,sans-serif;border:0;border-radius:8px;padding:9px 14px;cursor:pointer;background:var(--g);color:#fff}
+button.ghost{background:#fff;color:var(--g);box-shadow:inset 0 0 0 1.5px var(--g)}
+button.red{background:var(--red)}
+input,select{font:inherit;padding:8px 10px;border:1.5px solid var(--line);border-radius:8px;background:#fff}
+.login{max-width:360px;margin:12vh auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px}
+.login input{width:100%;margin:12px 0}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:20px 0}
+.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}
+.stat b{display:block;font-size:26px}
+.tabs{display:flex;gap:6px;margin:10px 0 16px;flex-wrap:wrap}
+.tabs button{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.tabs button[aria-pressed=true]{background:var(--g);color:#fff;box-shadow:none}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.tablewrap{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:900px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--band);font-size:13px}
+.pill{display:inline-block;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:700}
+.pending{background:#FFF1CC;color:#7A5A00}.paid{background:#E4F0E7;color:var(--g)}
+.part-paid{background:#E6EEFF;color:#1F3F8A}.cancelled{background:#F8E1DE;color:var(--red)}
+.full{color:var(--red);font-weight:700}
+td input.cap{width:64px}
+.small{font-size:13px}
+@media(max-width:700px){.stats{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="login" id="login">
+  <h1>Fair bookings</h1>
+  <p class="muted">Enter the admin key.</p>
+  <input type="password" id="key" placeholder="Admin key" autocomplete="current-password">
+  <button id="go" style="width:100%">Open dashboard</button>
+  <p id="lerr" style="color:var(--red)"></p>
+</div>
+
+<div class="wrap" id="app" hidden>
+  <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center">
+    <div><h1>Breakfast Fair 2026 — vendor bookings</h1><span class="muted">Payments go to Sunny Charities</span></div>
+    <div class="tools">
+      <button class="ghost" id="toggleOpen"></button>
+      <button class="ghost" id="csv">Download CSV</button>
+      <button class="ghost" id="refresh">Refresh</button>
+    </div>
+  </div>
+  <div class="stats" id="stats"></div>
+  <div class="tabs"><button data-t="bookings" aria-pressed="true">Bookings</button><button data-t="caps" aria-pressed="false">Category places</button></div>
+
+  <div id="tab-bookings">
+    <div class="tools">
+      <input id="q" placeholder="Search business, phone, ref">
+      <select id="fs"><option value="">All statuses</option><option>pending</option><option>part-paid</option><option>paid</option><option>cancelled</option></select>
+      <select id="fc"><option value="">All categories</option></select>
+    </div>
+    <div class="tablewrap"><table><thead><tr><th>Ref / date</th><th>Business</th><th>Contact</th><th>Category</th><th>Pack</th><th>Paid</th><th>Status</th><th></th></tr></thead><tbody id="rows"></tbody></table></div>
+  </div>
+
+  <div id="tab-caps" hidden>
+    <p class="muted">Set how many places each category takes. When booked places reach this number, the category shows “Fully booked” on the website. Cancelled bookings free their place.</p>
+    <div class="tools"><button id="saveCaps">Save places</button><span id="capMsg" class="muted"></span></div>
+    <div class="tablewrap"><table><thead><tr><th>Section</th><th>Category</th><th>2025</th><th>Booked</th><th>Places</th></tr></thead><tbody id="caprows"></tbody></table></div>
+  </div>
+</div>
+
+<script>
+const API="/api/fair";let KEY=sessionStorage.getItem("fairKey")||"";let D=null;
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const cedi=n=>"GH₵"+Number(n||0).toLocaleString("en-GH");
+
+async function api(method,body){
+  const r=await fetch(API+(method==="GET"?"?action=list":""),{method,headers:{"content-type":"application/json","x-admin-key":KEY},body:body?JSON.stringify(body):undefined});
+  const j=await r.json();if(!r.ok)throw new Error(j.error||"Request failed");return j;
+}
+async function load(){
+  try{D=await api("GET");$("login").hidden=true;$("app").hidden=false;render();}
+  catch(e){$("lerr").textContent=e.message;$("login").hidden=false;$("app").hidden=true;}
+}
+$("go").onclick=()=>{KEY=$("key").value.trim();sessionStorage.setItem("fairKey",KEY);load();};
+$("key").onkeydown=e=>{if(e.key==="Enter")$("go").click();};
+$("refresh").onclick=load;
+
+const catName=id=>(D.categories.find(c=>c.id===id)||{}).name||id;
+const paidOf=b=>(b.payments||[]).reduce((n,p)=>n+p.amount,0);
+
+function render(){
+  const act=D.bookings.filter(b=>b.status!=="cancelled");
+  const paid=act.filter(b=>b.status==="paid");
+  const collected=D.bookings.reduce((n,b)=>n+paidOf(b),0);
+  const fullCats=D.categories.filter(c=>c.taken>=c.cap).length;
+  $("stats").innerHTML=[
+    ["Active bookings",act.length],["Paid in full",paid.length],
+    ["Value booked",cedi(act.reduce((n,b)=>n+b.amount,0))],["Collected online",cedi(collected)],
+    ["Categories full",`${fullCats} / ${D.categories.length}`]].map(([l,v])=>`<div class="stat"><span class="muted small">${l}</span><b>${v}</b></div>`).join("");
+  $("toggleOpen").textContent=D.open?"Close registration":"Reopen registration";
+  if($("fc").options.length<2)$("fc").innerHTML+=D.categories.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join("");
+  renderRows();renderCaps();
+}
+function renderRows(){
+  const q=$("q").value.toLowerCase(),fs=$("fs").value,fc=$("fc").value;
+  const list=D.bookings.filter(b=>(!fs||b.status===fs)&&(!fc||b.category===fc)&&(!q||[b.business,b.contact,b.phone,b.ref,b.email].join(" ").toLowerCase().includes(q)))
+    .sort((a,b)=>b.createdAt.localeCompare(a.createdAt));
+  $("rows").innerHTML=list.length?list.map(b=>`<tr>
+    <td><b>${esc(b.ref)}</b><div class="small muted">${new Date(b.createdAt).toLocaleString("en-GB")}</div></td>
+    <td><b>${esc(b.business)}</b>${b.returning?' <span class="small muted">(2025 vendor)</span>':""}<div class="small muted">${esc(b.products)}</div>${b.note?`<div class="small"><i>Note: ${esc(b.note)}</i></div>`:""}</td>
+    <td>${esc(b.contact)}<div class="small"><a href="tel:${esc(b.phone)}">${esc(b.phone)}</a>${b.whatsapp?` · WA ${esc(b.whatsapp)}`:""}</div><div class="small muted">${esc(b.email)}</div></td>
+    <td>${esc(catName(b.category))}</td>
+    <td>${esc(D.packs[b.pack]?.name)}<div class="small muted">${cedi(b.amount)}</div></td>
+    <td>${cedi(paidOf(b))}${(b.payments||[]).map(p=>`<div class="small muted">${esc(p.channel||"")} ${esc(p.reference)}</div>`).join("")}</td>
+    <td><span class="pill ${b.status}">${b.status}</span></td>
+    <td><select data-ref="${esc(b.ref)}" class="st"><option value="">Change…</option><option value="paid">Mark paid</option><option value="part-paid">Part-paid</option><option value="pending">Pending</option><option value="cancelled">Cancel (frees place)</option></select></td>
+  </tr>`).join(""):`<tr><td colspan="8" class="muted" style="padding:30px;text-align:center">No bookings match.</td></tr>`;
+  document.querySelectorAll(".st").forEach(s=>s.onchange=async()=>{
+    if(!s.value)return;
+    if(s.value==="cancelled"&&!confirm("Cancel this booking and free its place?")){s.value="";return;}
+    const note=prompt("Optional note (e.g. paid MoMo to Sunny Charities, ref …)","");
+    try{await api("POST",{action:"setStatus",ref:s.dataset.ref,status:s.value,note:note??undefined});load();}catch(e){alert(e.message);s.value="";}
+  });
+}
+["q","fs","fc"].forEach(id=>$(id).addEventListener("input",renderRows));
+
+function renderCaps(){
+  $("caprows").innerHTML=D.categories.map(c=>`<tr><td class="small muted">${esc(c.section)}</td><td>${esc(c.name)}</td>
+    <td class="small">${c.status==="Returning"?"Returning":"New"}</td>
+    <td class="${c.taken>=c.cap?"full":""}">${c.taken}${c.taken>=c.cap?" · full":""}</td>
+    <td><input class="cap" type="number" min="0" max="99" data-id="${c.id}" value="${c.cap}"></td></tr>`).join("");
+}
+$("saveCaps").onclick=async()=>{
+  const caps={};document.querySelectorAll("input.cap").forEach(i=>caps[i.dataset.id]=i.value);
+  try{await api("POST",{action:"settings",caps});$("capMsg").textContent="Saved. The website now shows the new places.";load();}catch(e){alert(e.message);}
+};
+$("toggleOpen").onclick=async()=>{
+  if(!confirm(D.open?"Stop new vendor registrations on the website?":"Reopen vendor registrations?"))return;
+  await api("POST",{action:"settings",open:!D.open});load();
+};
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".tabs button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  $("tab-bookings").hidden=b.dataset.t!=="bookings";$("tab-caps").hidden=b.dataset.t!=="caps";
+});
+$("csv").onclick=()=>{
+  const head=["Ref","Date","Business","Contact","Phone","WhatsApp","Email","Category","Pack","Amount","Paid","Status","2025 vendor","Products","Note"];
+  const rows=D.bookings.map(b=>[b.ref,b.createdAt,b.business,b.contact,b.phone,b.whatsapp,b.email,catName(b.category),D.packs[b.pack]?.name,b.amount,paidOf(b),b.status,b.returning?"Yes":"",b.products,b.note||""]);
+  const csv=[head,...rows].map(r=>r.map(v=>`"${String(v??"").replace(/"/g,'""')}"`).join(",")).join("\n");
+  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob(["\ufeff"+csv],{type:"text/csv"}));a.download="breakfast-fair-2026-vendors.csv";a.click();
+};
+if(KEY)load();
+</script>
+</body>
+</html>
