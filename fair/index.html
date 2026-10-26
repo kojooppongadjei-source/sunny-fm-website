@@ -384,6 +384,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
     data.returning = f.returning.checked;
     if(!data.pack) return err.textContent = "Choose a vendor pack.";
     if(!data.category) return err.textContent = "Choose a category.";
+    const pk = state.packs[data.pack], cat = state.categories.find(c => c.id === data.category);
+    if(pk && pk.section && cat && cat.section !== pk.section) return err.textContent = "The Food Court pack is for Food & Drink vendors only. Choose a Food & Drink category or another pack.";
     if(!data.business.trim() || !data.contact.trim()) return err.textContent = "Enter your business name and contact person.";
     if(data.phone.replace(/\D/g,"").length < 9) return err.textContent = "Enter a valid phone number.";
     const btn = $("submit"); btn.disabled = true; btn.textContent = "Booking…";

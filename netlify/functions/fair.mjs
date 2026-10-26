@@ -14,7 +14,7 @@ export const config = { path: "/api/fair" };
 const PAYEE = "Sunny Charities";
 
 const PACKS = {
-  foodcourt:{ name: "Food Court", price: 800, items: ["A space in the food court"] },
+  foodcourt:{ name: "Food Court", price: 800, items: ["A space in the food court", "For Food & Drink vendors only"], section: "Food & Drink" },
   bronze:   { name: "Bronze",   price: 1200, items: ["A table", "Two chairs"] },
   silver:   { name: "Silver",   price: 2500, items: ["Booth space", "2 branding pull-ups", "1 voice note (SSD)", "2 weeks of adverts on Sunny 88.7 FM & Sunny TV*"] },
   gold:     { name: "Gold",     price: 3500, items: ["Booth space", "2 branding pull-ups", "2 voice notes (IM Drive & SSD)", "3 weeks of adverts on Sunny 88.7 FM & Sunny TV*"] },
@@ -214,6 +214,8 @@ export default async (req) => {
     if (b.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(b.email)) return json({ error: "Check the email address." }, 400);
     if (!CAT_BY_ID[b.category]) return json({ error: "Choose a category." }, 400);
     if (!PACKS[b.pack]) return json({ error: "Choose a vendor pack." }, 400);
+    if (PACKS[b.pack].section && CAT_BY_ID[b.category].section !== PACKS[b.pack].section)
+      return json({ error: "The Food Court pack is for Food & Drink vendors only. Choose a Food & Drink category or another pack." }, 400);
 
     const result = await mutate(s, (list) => {
       const dup = list.find((x) => active(x) && x.phone === b.phone && x.category === b.category);

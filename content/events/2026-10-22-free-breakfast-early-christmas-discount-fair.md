@@ -23,7 +23,7 @@ Places in each category are limited, and categories close once they are fully bo
 
 ### Vendor packs
 
-* **Food Court — GH₵800:** a space in the food court
+* **Food Court — GH₵800:** a space in the food court (Food & Drink vendors only)
 * **Bronze — GH₵1,200:** a table and two chairs
 * **Silver — GH₵2,500:** booth space, 2 branding pull-ups, 1 voice note (SSD), 2 weeks of adverts on Sunny 88.7 FM & Sunny TV*
 * **Gold — GH₵3,500:** booth space, 2 branding pull-ups, 2 voice notes (IM Drive & SSD), 3 weeks of adverts on Sunny 88.7 FM & Sunny TV*
