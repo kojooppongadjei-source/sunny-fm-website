@@ -50,7 +50,7 @@ td input.cap{width:64px}
 
 <div class="wrap" id="app" hidden>
   <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center">
-    <div><h1>Breakfast Fair 2026 — vendor bookings</h1><span class="muted">Payments go to Sunny Charities</span></div>
+    <div><h1>Breakfast Fair 2026 — vendor bookings</h1><span class="muted">Payments go to Sky Broadcasting Ltd (Sunny 88.7 FM)</span></div>
     <div class="tools">
       <button class="ghost" id="toggleOpen"></button>
       <button class="ghost" id="csv">Download CSV</button>
@@ -127,7 +127,7 @@ function renderRows(){
   document.querySelectorAll(".st").forEach(s=>s.onchange=async()=>{
     if(!s.value)return;
     if(s.value==="cancelled"&&!confirm("Cancel this booking and free its place?")){s.value="";return;}
-    const note=prompt("Optional note (e.g. paid MoMo to Sunny Charities, ref …)","");
+    const note=prompt("Optional note (e.g. RPay payment, ref …)","");
     try{await api("POST",{action:"setStatus",ref:s.dataset.ref,status:s.value,note:note??undefined});load();}catch(e){alert(e.message);s.value="";}
   });
 }

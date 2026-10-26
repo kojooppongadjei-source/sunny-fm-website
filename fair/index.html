@@ -231,7 +231,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
   <div class="wrap formwrap">
     <div class="formside">
       <h2>Book your stand</h2>
-      <p>Your place is held as soon as you register. Pay with <strong>RPay</strong> by dialling <strong>*887*11#</strong>.</p>
+      <p>Your place is held as soon as you register. Pay with <strong>RPay</strong> by dialling <strong>*887*11#</strong>. Payments go to <strong>Sky Broadcasting Ltd (Sunny 88.7 FM)</strong>.</p>
       <ol class="steps">
         <li>Choose your pack and category.</li>
         <li>Fill in your business details.</li>
@@ -275,7 +275,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
         <p id="doneText"></p>
         <p>Booking reference <span class="ref" id="doneRef"></span></p>
         <div id="payBox"></div>
-        <p class="hint" style="margin-top:18px">Keep your booking reference. Once your payment comes through, our team will confirm your stand.</p>
+        <p class="hint" style="margin-top:18px">Keep your booking reference. Payments go to Sky Broadcasting Ltd (Sunny 88.7 FM). Once your payment comes through, our team will confirm your stand.</p>
       </div>
     </div>
   </div>
@@ -417,6 +417,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
     $("doneText").textContent = `${b.business} has a ${b.pack} place in ${b.category}. Amount due: ${cedi(b.amount)}.`;
     $("payBox").innerHTML = `<div class="rpay">
         <h4>Pay ${cedi(b.amount)} with RPay</h4>
+        <p style="margin:0 0 8px">Payment goes to <strong>Sky Broadcasting Ltd (Sunny 88.7 FM)</strong>.</p>
         <ol>
           <li>Dial <a href="tel:*887*11%23"><strong>*887*11#</strong></a></li>
           <li>Enter terminal code <strong>29040</strong></li>

@@ -11,7 +11,7 @@ import { getStore } from "@netlify/blobs";
 
 export const config = { path: "/api/fair" };
 
-const PAYEE = "Sunny Charities";
+const PAYEE = "Sky Broadcasting Ltd (Sunny 88.7 FM)";
 
 const PACKS = {
   foodcourt:{ name: "Food Court", price: 800, items: ["A space in the food court", "For Food & Drink vendors only"], section: "Food & Drink" },
