@@ -24,9 +24,9 @@ Places in each category are limited, and categories close once they are fully bo
 ### Vendor packs
 
 * **Bronze — GH₵800:** a table and two chairs
-* **Silver — GH₵2,500:** booth space, 2 branding pull-ups, 1 voice note (SSD), 2 weeks of adverts on Sunny 88.7 FM*
-* **Gold — GH₵3,500:** booth space, 2 branding pull-ups, 2 voice notes (IM Drive & SSD), 3 weeks of adverts on Sunny 88.7 FM*
-* **Platinum — GH₵5,000:** booth space, 2 branding pull-ups, 3 voice notes (IM Drive, PSF & SSD), 1 month of adverts on Sunny 88.7 FM*
+* **Silver — GH₵2,500:** booth space, 2 branding pull-ups, 1 voice note (SSD), 2 weeks of adverts on Sunny 88.7 FM & Sunny TV*
+* **Gold — GH₵3,500:** booth space, 2 branding pull-ups, 2 voice notes (IM Drive & SSD), 3 weeks of adverts on Sunny 88.7 FM & Sunny TV*
+* **Platinum — GH₵5,000:** booth space, 2 branding pull-ups, 3 voice notes (IM Drive, PSF & SSD), 1 month of adverts on Sunny 88.7 FM & Sunny TV*
 
 *Terms and conditions apply.
 
