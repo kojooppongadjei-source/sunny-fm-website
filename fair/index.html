@@ -73,7 +73,7 @@ h2{font-family:var(--display);font-weight:800;color:var(--evergreen);font-size:c
 .intro{color:var(--muted);max-width:40em;margin:0 0 36px}
 
 /* packs */
-.packs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.packs{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .pack{position:relative;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px 22px 22px;display:flex;flex-direction:column}
 .pack h3{margin:0;font:700 18px var(--body)}
 .pack .price{font-family:var(--display);font-weight:800;font-size:40px;line-height:1;margin:14px 0 18px;color:var(--ink)}
@@ -81,6 +81,7 @@ h2{font-family:var(--display);font-weight:800;color:var(--evergreen);font-size:c
 .pack ul{list-style:none;padding:0;margin:0 0 22px;flex:1}
 .pack li{padding:8px 0;border-top:1px solid var(--line);font-size:15px}
 .pack .btn{width:100%;padding:12px}
+.pack.foodcourt{border-top:5px solid #D9822B}
 .pack.bronze{border-top:5px solid #A86B3C}
 .pack.silver{border-top:5px solid #9AA3A8}
 .pack.gold{border-top:5px solid var(--gold-soft)}
@@ -130,7 +131,7 @@ input[type=text],input[type=tel],input[type=email],select,textarea{width:100%;fo
 input:focus,select:focus,textarea:focus{border-color:var(--evergreen);outline:none;background:var(--white)}
 textarea{min-height:90px;resize:vertical}
 .hint{font-size:13px;color:var(--muted);margin-top:5px}
-.packpick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.packpick{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
 .packpick label{margin:0;border:1.5px solid var(--line);border-radius:10px;padding:10px;text-align:center;cursor:pointer;font-weight:600;background:var(--paper)}
 .packpick label small{display:block;font-weight:500;color:var(--muted);font-size:13px}
 .packpick input{position:absolute;opacity:0;pointer-events:none}
@@ -304,7 +305,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
   }
 
   function renderPacks(){
-    const order = ["bronze","silver","gold","platinum"];
+    const order = ["foodcourt","bronze","silver","gold","platinum"];
     $("packList").innerHTML = order.map(k => {
       const p = state.packs[k];
       return `<div class="pack ${k}"><h3>${p.name}</h3>
