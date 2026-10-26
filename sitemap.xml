@@ -50,6 +50,12 @@
   </url>
 
   <url>
+    <loc>https://sunnygh.com/fair/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://sunnygh.com/lifestyle/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -143,6 +149,13 @@
     <loc>https://sunnygh.com/terms/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/news/bernice-offei-funeral-arrangements-lic-legon/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <url>
@@ -778,6 +791,13 @@
   <url>
     <loc>https://sunnygh.com/preaching-teaching/winners-chapel-international/</loc>
     <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sunnygh.com/events/free-breakfast-early-christmas-discount-fair/</loc>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

@@ -31,4 +31,4 @@ Places in each category are limited, and categories close once they are fully bo
 
 *Terms and conditions apply.
 
-Payments go to Sunny Charities. To sign up by phone, call or WhatsApp **0545 22 33 24**.
+**Pay with RPay:** dial **\*887\*11#**, enter terminal code **29040**, enter your business name as the reference, wait for the prompt, then approve. To sign up by phone, call or WhatsApp **0545 22 33 24**.

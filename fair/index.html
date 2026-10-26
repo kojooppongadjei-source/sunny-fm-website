@@ -147,6 +147,12 @@ textarea{min-height:90px;resize:vertical}
 .done h3{font-family:var(--display);font-size:32px;color:var(--evergreen);margin:0 0 10px;line-height:1.1}
 .ref{font:700 22px var(--body);background:var(--band);display:inline-block;padding:6px 14px;border-radius:8px;letter-spacing:.04em}
 .paid{color:var(--evergreen);font-weight:700}
+.rpay{margin-top:18px;padding:18px;border-radius:12px;background:#FFF8D6;border:1px solid #F2D45C}
+.rpay h4{margin:0 0 8px;font-size:17px}
+.rpay ol{margin:0 0 14px;padding-left:20px}
+.rpay li{margin:6px 0}
+.rpay a{color:inherit}
+.rpay img{width:100%;max-width:420px;border-radius:10px;display:block}
 .closed{background:var(--band);border-radius:12px;padding:22px;font-weight:600}
 
 footer{border-top:1px solid var(--line);padding:30px 0 50px;color:var(--muted);font-size:14px}
@@ -225,11 +231,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
   <div class="wrap formwrap">
     <div class="formside">
       <h2>Book your stand</h2>
-      <p>Your place is held as soon as you register. Payments go to <strong>Sunny Charities</strong>.</p>
+      <p>Your place is held as soon as you register. Pay with <strong>RPay</strong> by dialling <strong>*887*11#</strong>.</p>
       <ol class="steps">
         <li>Choose your pack and category.</li>
         <li>Fill in your business details.</li>
-        <li>Pay online with MoMo or card, or our team will call you to arrange payment.</li>
+        <li>Pay with RPay: dial *887*11#, enter terminal code 29040, use your business name as the reference, then approve the prompt.</li>
       </ol>
       <p>Questions? Call or WhatsApp <a href="https://wa.me/233545223324">0545 22 33 24</a>.</p>
     </div>
@@ -269,7 +275,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
         <p id="doneText"></p>
         <p>Booking reference <span class="ref" id="doneRef"></span></p>
         <div id="payBox"></div>
-        <p class="hint" style="margin-top:18px">Keep your reference. Our team will call you to confirm your stand. Payments go to Sunny Charities.</p>
+        <p class="hint" style="margin-top:18px">Keep your booking reference. Once your payment comes through, our team will confirm your stand.</p>
       </div>
     </div>
   </div>
@@ -409,55 +415,21 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
     $("done").style.display = "block";
     $("doneRef").textContent = b.ref;
     $("doneText").textContent = `${b.business} has a ${b.pack} place in ${b.category}. Amount due: ${cedi(b.amount)}.`;
-    if(state.paystackKey){
-      $("payBox").innerHTML = `<button class="btn btn-primary" id="payBtn" type="button">Pay ${cedi(b.amount)} to Sunny Charities</button>
-        <p class="hint">MoMo or card, secured by Paystack. You can also pay later — our team will call you.</p>`;
-      $("payBtn").addEventListener("click", pay);
-    } else {
-      $("payBox").innerHTML = `<p>Our team will call you on ${esc(b.phone)} to arrange payment to Sunny Charities.</p>`;
-    }
+    $("payBox").innerHTML = `<div class="rpay">
+        <h4>Pay ${cedi(b.amount)} with RPay</h4>
+        <ol>
+          <li>Dial <a href="tel:*887*11%23"><strong>*887*11#</strong></a></li>
+          <li>Enter terminal code <strong>29040</strong></li>
+          <li>Enter your business name as the reference: <strong>${esc(b.business)}</strong></li>
+          <li>Wait for the prompt</li>
+          <li>Approve the payment of <strong>${cedi(b.amount)}</strong></li>
+        </ol>
+        <img src="/fair/rpay.jpg" alt="Pay with RPay: dial *887*11#, enter terminal code 29040, enter your business name as the reference, wait for the prompt, then approve" loading="lazy">
+      </div>`;
     $("done").focus();
   }
 
-  function loadPaystack(){
-    return new Promise((ok, fail) => {
-      if(window.PaystackPop) return ok();
-      const s = document.createElement("script"); s.src = "https://js.paystack.co/v1/inline.js";
-      s.onload = ok; s.onerror = fail; document.head.appendChild(s);
-    });
-  }
-  async function pay(){
-    const b = lastBooking, btn = $("payBtn");
-    btn.disabled = true; btn.textContent = "Opening payment…";
-    try{ await loadPaystack(); }catch(e){ btn.disabled=false; btn.textContent="Try payment again"; return; }
-    const digits = b.phone.replace(/\D/g,"");
-    const handler = PaystackPop.setup({
-      key: state.paystackKey,
-      email: b.email || `vendor${digits}@sunnygh.com`,
-      amount: Math.round(b.amount * 100),
-      currency: "GHS",
-      ref: `${b.ref}-${Date.now()}`,
-      metadata: { booking_ref: b.ref, custom_fields:[
-        {display_name:"Booking", variable_name:"booking_ref", value:b.ref},
-        {display_name:"Business", variable_name:"business", value:b.business},
-        {display_name:"Purpose", variable_name:"purpose", value:"Sunny Breakfast Fair 2026 vendor pack"}]},
-      callback: resp => { verify(resp.reference); },
-      onClose: () => { btn.disabled = false; btn.textContent = `Pay ${cedi(b.amount)} to Sunny Charities`; }
-    });
-    handler.openIframe();
-  }
-  async function verify(reference){
-    $("payBox").innerHTML = `<p>Confirming your payment…</p>`;
-    try{
-      const r = await fetch(API, {method:"POST", headers:{"content-type":"application/json"}, body: JSON.stringify({action:"verify", ref:lastBooking.ref, reference})});
-      const res = await r.json();
-      if(!r.ok) throw new Error(res.error);
-      $("payBox").innerHTML = `<p class="paid">Payment received by Sunny Charities. Your stand is confirmed.</p>`;
-      if(window.gtag) gtag("event","fair_vendor_paid",{value:lastBooking.amount, currency:"GHS"});
-    }catch(x){
-      $("payBox").innerHTML = `<p>We couldn’t confirm the payment automatically (${esc(x.message||"network error")}). Don’t pay again — send your reference <b>${esc(lastBooking.ref)}</b> to 0545 22 33 24 on WhatsApp and we’ll confirm it.</p>`;
-    }
-  }
+
 
   load();
   setInterval(() => { if(document.visibilityState==="visible" && $("form").style.display!=="none") load(); }, 60000);
