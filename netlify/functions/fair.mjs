@@ -14,7 +14,7 @@ export const config = { path: "/api/fair" };
 const PAYEE = "Sunny Charities";
 
 const PACKS = {
-  bronze:   { name: "Bronze",   price: 1200, items: ["A table", "Two chairs"] },
+  bronze:   { name: "Bronze",   price: 800,  items: ["A table", "Two chairs"] },
   silver:   { name: "Silver",   price: 2500, items: ["Booth space", "2 branding pull-ups", "1 voice note (SSD)"] },
   gold:     { name: "Gold",     price: 3500, items: ["Booth space", "2 branding pull-ups", "2 voice notes (IM Drive & SSD)"] },
   platinum: { name: "Platinum", price: 5000, items: ["Booth space", "2 branding pull-ups", "3 voice notes (IM Drive, PSF & SSD)"] },

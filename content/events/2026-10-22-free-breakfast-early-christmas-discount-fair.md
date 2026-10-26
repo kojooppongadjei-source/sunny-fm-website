@@ -23,7 +23,7 @@ Places in each category are limited, and categories close once they are fully bo
 
 ### Vendor packs
 
-* **Bronze — GH₵1,200:** a table and two chairs
+* **Bronze — GH₵800:** a table and two chairs
 * **Silver — GH₵2,500:** booth space, 2 branding pull-ups, 1 voice note (SSD)
 * **Gold — GH₵3,500:** booth space, 2 branding pull-ups, 2 voice notes (IM Drive & SSD)
 * **Platinum — GH₵5,000:** booth space, 2 branding pull-ups, 3 voice notes (IM Drive, PSF & SSD)
