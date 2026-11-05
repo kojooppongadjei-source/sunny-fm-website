@@ -140,6 +140,17 @@
   to = "/fair/admin/"
   status = 301
 
+# Name corrected to "Dr. Naa": old address redirects to the new one
+[[redirects]]
+  from = "/news/dr-na-five-simple-habits-live-longer-healthier"
+  to = "/news/dr-naa-five-simple-habits-live-longer-healthier/"
+  status = 301
+
+[[redirects]]
+  from = "/news/dr-na-five-simple-habits-live-longer-healthier/"
+  to = "/news/dr-naa-five-simple-habits-live-longer-healthier/"
+  status = 301
+
 # Custom 404 fallback
 [[redirects]]
   from = "/*"
