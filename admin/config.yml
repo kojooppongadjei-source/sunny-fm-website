@@ -10,6 +10,12 @@ display_url: https://sunnygh.com
 
 publish_mode: editorial_workflow
 
+# New articles: plain ASCII web addresses with hyphens only (no en dashes or accents)
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
 collections:
 
   # ───────────────────────────────
