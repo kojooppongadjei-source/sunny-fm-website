@@ -12,6 +12,16 @@
   [headers.values]
     Cache-Control = "public, max-age=604800, must-revalidate"
 
+# Junk spam addresses (?n=123...) — the site never uses these.
+# Serve a real 404 so Google drops them. force = true is required for query matching.
+# (Not a 301: Netlify carries the query string through, which would loop.)
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+  force = true
+  query = { n = ":n" }
+
 # Short links: sunnygh.com/watch -> Watch Sunny TV
 [[redirects]]
   from = "/watch"
