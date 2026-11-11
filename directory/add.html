@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Add your church or business free | CCC&amp;B, Christian Connect Church &amp; Business</title>
-<meta name="description" content="List your church or Christian business free on CCC&amp;B, Sunny 88.7 FM’s Christian Connect Church &amp; Business directory. People across Ghana can find you and call, WhatsApp or email you directly.">
+<meta name="description" content="List your church or Christian business free on CCC&amp;B, the Christian Connect Church &amp; Business directory from Sunny 88.7 FM and Spirit 88.3 FM. People across Ghana can find you and call, WhatsApp or email you directly.">
 <link rel="canonical" href="https://sunnygh.com/directory/add.html">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -160,6 +160,7 @@ let logoBlob = null;
 
 C.CATEGORIES.forEach(c => $('category').insertAdjacentHTML('beforeend', `<option>${S.esc(c)}</option>`));
 C.REGIONS.forEach(r => $('region').insertAdjacentHTML('beforeend', `<option>${S.esc(r)}</option>`));
+{ const pre = new URLSearchParams(location.search).get('region'); if (pre && C.REGIONS.includes(pre)) $('region').value = pre; }
 $('description').addEventListener('input', e => $('descCount').textContent = `${e.target.value.length} / 1200`);
 $('name').addEventListener('input', e => {
   if (!logoBlob) { $('logoPreview').textContent = S.initials(e.target.value || '?'); $('logoPreview').style.background = S.tint(e.target.value); }

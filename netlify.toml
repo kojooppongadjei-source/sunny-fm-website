@@ -3,7 +3,13 @@
 
 [build]
   publish = "."
-  command = "npm install && node build.js"
+  command = "npm install && node scripts/fetch-sister-news.js && node build.js"
+
+# Sister station: spiritgh.com reads our latest headlines from this file in the browser
+[[headers]]
+  for = "/content/news/index.json"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
 
 # Cache static assets (logo, banner, uploaded photos) in the browser for 7 days
 # to cut down repeat downloads across pages and reduce bandwidth usage
@@ -21,6 +27,12 @@
   status = 404
   force = true
   query = { n = ":n" }
+
+# Short link for on-air: sunnygh.com/ccb -> CCC&B directory
+[[redirects]]
+  from = "/ccb"
+  to = "/directory/"
+  status = 301
 
 # Short links: sunnygh.com/watch -> Watch Sunny TV
 [[redirects]]

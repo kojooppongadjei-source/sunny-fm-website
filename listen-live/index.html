@@ -297,6 +297,31 @@ function toggleSiteMobileMenu(){
     </div>
   </div>
 
+  <!-- SISTER STATION PLAYER: Spirit 88.3 FM (Starcom Group) -->
+  <style>
+  .sis-play{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:#EEF4FB;border:1px solid #D6E3F2;border-radius:16px;padding:16px 18px;margin:20px 0;font-family:'Segoe UI',Arial,sans-serif;}
+  .sis-play-logo{height:44px;width:auto;background:#fff;border-radius:10px;padding:5px 10px;border:1px solid #D6E3F2;}
+  .sis-play-text{flex:1;min-width:170px;line-height:1.35;}
+  .sis-play-text strong{display:block;font-size:15.5px;color:#12161C;}
+  .sis-play-text span{font-size:13px;color:#4A5868;}
+  .sis-play-btn{display:inline-flex;align-items:center;gap:8px;background:#1D5FA5;color:#fff;border:0;border-radius:999px;padding:11px 18px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;}
+  .sis-play-btn:hover,.sis-play-btn:focus-visible{background:#123F73;}
+  .sis-play-btn:focus-visible{outline:3px solid #9CC0E8;outline-offset:2px;}
+  .sis-play-btn svg{width:14px;height:14px;fill:currentColor;}
+  .sis-play-site{font-size:13px;font-weight:600;color:#1D5FA5;text-decoration:none;}
+  .sis-play-site:hover{text-decoration:underline;}
+  @media(max-width:600px){.sis-play-btn{flex:1;justify-content:center;}}
+  </style>
+  <div class="sis-play" id="sis-play">
+    <img class="sis-play-logo" src="https://spiritgh.com/assets/spirit-fm-logo.png" alt="Spirit 88.3 FM">
+    <div class="sis-play-text">
+      <strong>Also on air: Spirit 88.3 FM, Kumasi</strong>
+      <span id="sis-play-status">Our sister station in the Starcom Group</span>
+    </div>
+    <button type="button" class="sis-play-btn" id="sis-play-btn" aria-label="Play Spirit 88.3 FM live"><svg viewBox="0 0 24 24" aria-hidden="true"><path id="sis-play-icon" d="M8 5v14l11-7z"/></svg><span id="sis-play-label">Listen to Spirit</span></button>
+    <a class="sis-play-site" href="https://spiritgh.com/?utm_source=sunnygh&amp;utm_medium=sister&amp;utm_campaign=starcom">Visit spiritgh.com</a>
+  </div>
+
   <!-- MID-PAGE BANNER AD (between Now Playing and Schedule) -->
   <div class="sfl-banner-ad" id="sfl-banner-ad" onclick="sflAdClick('banner')">
     <img id="sfl-banner-ad-img" src="" alt="Advertisement">
@@ -878,6 +903,7 @@ window.sflToggle=function(){
   }
 };
 window.sflVol=function(v){ if(audio) audio.volume=v/100; };
+window.sflStop=function(){ if(streamPlaying) stopStream(); };
 
 /* ══════════════════════════════════════════════════════════════
    VISUAL ADS — HERO BANNER
@@ -1007,6 +1033,7 @@ window.addEventListener('pagehide',function(){ if(streamPlaying) sflStopHeartbea
     </div>
   </div>
   <div class="site-footer-bottom">© 2026 Sunny 88.7 FM · All Rights Reserved · <a href="/privacy-policy/" style="color:rgba(255,255,255,.5);">Privacy Policy</a> · <a href="/terms/" style="color:rgba(255,255,255,.5);">Terms of Use</a></div>
+
 </footer>
 
 <script>
@@ -1041,6 +1068,35 @@ function snOpenDonate(){
     document.head.appendChild(s);
   }
 }
+</script>
+<script>
+/* Sister station player: Spirit 88.3 FM. Only one station plays at a time. */
+(function(){
+  var URL='https://stream.sunnygh.com/spirit883';
+  var btn=document.getElementById('sis-play-btn'); if(!btn) return;
+  var icon=document.getElementById('sis-play-icon'), label=document.getElementById('sis-play-label'), status=document.getElementById('sis-play-status');
+  var a=null, on=false;
+  function ui(playing,msg){
+    on=playing;
+    icon.setAttribute('d', playing?'M6 19h4V5H6v14zm8-14v14h4V5h-4z':'M8 5v14l11-7z');
+    label.textContent=playing?'Stop Spirit':'Listen to Spirit';
+    btn.setAttribute('aria-label', playing?'Stop Spirit 88.3 FM':'Play Spirit 88.3 FM live');
+    status.textContent=msg||'Our sister station in the Starcom Group';
+  }
+  function stop(){ if(a){ try{a.pause();}catch(e){} a.src=''; a=null; } ui(false); }
+  window.sisStop=stop;
+  btn.addEventListener('click',function(){
+    if(on){ stop(); return; }
+    if(window.sflStop) window.sflStop();
+    a=new Audio(URL+'?t='+Date.now());
+    ui(true,'Connecting to Spirit 88.3 FM…');
+    a.onplaying=function(){ status.textContent='Live now from Kumasi on 88.3 FM'; if(window.gtag) gtag('event','sister_listen',{station:'spirit883',from:'sunnygh'}); };
+    a.onerror=function(){ stop(); status.textContent='Spirit 88.3 FM is not reachable right now. Try again shortly.'; };
+    a.play().catch(function(){ stop(); status.textContent='Tap again to start Spirit 88.3 FM.'; });
+  });
+  var orig=window.sflToggle;
+  if(orig){ window.sflToggle=function(){ if(on) stop(); orig(); }; }
+})();
 </script>
 </body>
 </html>

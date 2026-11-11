@@ -93,6 +93,14 @@ const HEADER = fs.readFileSync(path.join(ROOT, '_includes', 'site-header.html'),
 const FOOTER = fs.readFileSync(path.join(ROOT, '_includes', 'site-footer.html'), 'utf8');
 const FOOTER_PLAYER = fs.readFileSync(path.join(ROOT, '_includes', 'footer-player.html'), 'utf8');
 
+// ── Sister station: Spirit 88.3 FM (Kumasi), Starcom Group ──────────────────
+// Headlines are refreshed before each build by scripts/fetch-sister-news.js.
+const SISTER_UTM = 'utm_source=sunnygh&utm_medium=sister&utm_campaign=starcom';
+let SISTER_NEWS = [];
+try {
+  SISTER_NEWS = JSON.parse(fs.readFileSync(path.join(ROOT, 'content', 'sister', 'spirit-news.json'), 'utf8'));
+} catch (e) { SISTER_NEWS = []; }
+
 const GA_SNIPPET = `<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8W4N24JZK"></script>
 <script>
@@ -411,6 +419,7 @@ function buildCollection(collectionFolder, config) {
       ${preacherBioHtml}
       ${dailyBreadPrayerHtml}
       ${dailyBreadShareHtml}
+      ${config.urlPath === 'news' ? renderSisterSection('article') : ''}
     `;
     
 
@@ -1247,9 +1256,85 @@ function renderEventCardHtml(p) {
   return `<a href="${p.url}" class="event-card">${img}<div class="event-card-body"><div class="event-card-title">${escapeHtml(p.title || '')}</div><div class="event-card-meta">${[date, loc].filter(Boolean).join(' · ')}</div><div class="event-card-btn">Register Now →</div></div></a>`;
 }
 
+function sisterLink(url) {
+  const [base, hash] = url.split('#');
+  return base + (base.includes('?') ? '&' : '?') + SISTER_UTM + (hash ? '#' + hash : '');
+}
+
+function renderSisterSection(variant) {
+  if (!SISTER_NEWS.length) return '';
+  const cards = SISTER_NEWS.slice(0, variant === 'home' ? 6 : 3).map(n => `
+    <a class="sis-card" href="${escapeHtml(sisterLink(n.url))}">
+      ${n.image ? `<img src="${escapeHtml(n.image)}" alt="" loading="lazy">` : ''}
+      <span class="sis-card-body">
+        ${n.tag ? `<span class="sis-tag">${escapeHtml(n.tag)}</span>` : ''}
+        <span class="sis-title">${escapeHtml(n.title)}</span>
+        ${n.date ? `<span class="sis-date">${escapeHtml(n.date)}</span>` : ''}
+      </span>
+    </a>`).join('');
+  return `
+<section class="sis sis-${variant}" aria-labelledby="sis-h-${variant}">
+<style>
+.sis{--sis-blue:#1D5FA5;--sis-blue-dark:#123F73;background:#EEF4FB;border:1px solid #D6E3F2;border-radius:16px;padding:22px;margin:8px 0;font-family:'Segoe UI',Arial,sans-serif;line-height:1.4;}
+.sis-article{margin-top:40px;}
+.sis-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px;}
+.sis-logo{height:42px;width:auto;background:#fff;border-radius:10px;padding:5px 10px;border:1px solid #D6E3F2;}
+.sis-titles{flex:1;min-width:180px;}
+.sis-titles h2{font-size:19px;font-weight:800;color:#12161C;margin:0;line-height:1.25;}
+.sis-titles p{font-size:13px;color:#4A5868;margin:3px 0 0;}
+.sis-listen{display:inline-flex;align-items:center;gap:8px;background:var(--sis-blue);color:#fff!important;text-decoration:none!important;font-size:14px;font-weight:700;padding:10px 16px;border-radius:999px;white-space:nowrap;}
+.sis-listen:hover,.sis-listen:focus-visible{background:var(--sis-blue-dark);}
+.sis-listen svg{width:14px;height:14px;fill:currentColor;}
+.sis-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;}
+.sis-home .sis-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;}
+.sis-home .sis-card{flex:0 0 230px;scroll-snap-align:start;}
+.sis-card{display:flex;flex-direction:column;background:#fff;border:1px solid #D6E3F2;border-radius:12px;overflow:hidden;text-decoration:none!important;color:#12161C!important;transition:box-shadow .2s;}
+.sis-card:hover,.sis-card:focus-visible{box-shadow:0 8px 20px rgba(18,63,115,.12);}
+.sis-card img{width:100%;aspect-ratio:16/10;object-fit:cover;background:#D6E3F2;margin:0!important;border-radius:0!important;}
+.sis-card-body{display:flex;flex-direction:column;gap:5px;padding:12px 14px 14px;flex:1;}
+.sis-tag{font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--sis-blue);}
+.sis-title{font-size:14.5px;font-weight:700;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.sis-date{font-size:12px;color:#5F6B7A;margin-top:auto;padding-top:4px;}
+@media(max-width:600px){.sis{padding:16px;border-radius:12px;}.sis-listen{width:100%;justify-content:center;}}
+</style>
+  <div class="sis-head">
+    <img class="sis-logo" src="https://spiritgh.com/assets/spirit-fm-logo.png" alt="Spirit 88.3 FM">
+    <div class="sis-titles">
+      <h2 id="sis-h-${variant}">From our sister station in Kumasi</h2>
+      <p>Spirit 88.3 FM, part of the Starcom Group</p>
+    </div>
+    <a class="sis-listen" href="${escapeHtml(sisterLink('https://spiritgh.com/#listen'))}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Listen to Spirit 88.3</a>
+  </div>
+  <div class="sis-row">${cards}</div>
+</section>`;
+}
+
+// Adds the Starcom Group / sister station line to the footer of every page.
+function injectStarcomFooterLine() {
+  const line = `<!--STARCOM--><div style="max-width:1100px;margin:24px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;line-height:1.6;text-align:center;color:rgba(255,255,255,.55);">Sunny 88.7 FM is a Starcom Group station. Our sister station is <a href="${sisterLink('https://spiritgh.com/')}" style="color:#C8920A;font-weight:600;text-decoration:none;">Spirit 88.3 FM in Kumasi</a>.</div><!--/STARCOM-->`;
+  const skip = new Set(['node_modules', '.git', 'admin', 'studio', '_includes', 'templates']);
+  let count = 0;
+  (function walk(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (skip.has(entry.name)) continue;
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) { walk(full); continue; }
+      if (!entry.name.endsWith('.html')) continue;
+      let html = fs.readFileSync(full, 'utf8');
+      if (!html.includes('</footer>')) continue;
+      html = html.replace(/<!--STARCOM-->[\s\S]*?<!--\/STARCOM-->/g, '');
+      html = html.replace('</footer>', line + '\n</footer>');
+      fs.writeFileSync(full, html);
+      count++;
+    }
+  })(ROOT);
+  console.log(`Added Starcom Group sister-station line to ${count} footer(s).`);
+}
+
 function injectHomepageCards(collectionsPosts) {
   const indexPath = path.join(ROOT, 'index.html');
   let html = fs.readFileSync(indexPath, 'utf8');
+  html = html.replace(/<!-- SISTER STATION -->[\s\S]*?<!-- END SISTER STATION -->\n?/g, '');
 
   const newsPosts = (collectionsPosts['news'] || []).slice(0, 6);
   const newsHtml = newsPosts.length
@@ -1268,6 +1353,11 @@ function injectHomepageCards(collectionsPosts) {
     /(<div class="scroll-row" id="events-row">)[\s\S]*?(<\/div>\s*<\/div>\s*<\/div>\s*\n\s*<!-- ADVERTISE PROMO BANNER)/,
     (match, open, close) => `${open}${eventsHtml}${close}`
   );
+
+  if (SISTER_NEWS.length) {
+    html = html.replace('<!-- PREACHING & TEACHING -->',
+      `<!-- SISTER STATION -->\n<div class="section">\n  <div class="section-inner">${renderSisterSection('home')}</div>\n</div>\n<!-- END SISTER STATION -->\n\n<!-- PREACHING & TEACHING -->`);
+  }
 
   fs.writeFileSync(indexPath, html);
   console.log(`Injected ${newsPosts.length} news card(s) and ${upcomingEvents.length} event card(s) into homepage.`);
@@ -1555,6 +1645,7 @@ linkHomepagePreachingCards(collectionsPosts);
 injectDailyBreadIntoLifestyle(collectionsPosts);
 injectSelfServiceAdsBox();
 buildTop10HubPage(collectionsPosts);
+injectStarcomFooterLine();
 
 // Generate sitemap.xml: static pages + every individual post
 const sitemapEntries = [...STATIC_PAGES, ...allPostUrls];
