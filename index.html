@@ -740,6 +740,35 @@ function closeShowModal(e) {
   </div>
 </div>
 
+<!-- FOR SALE -->
+<style>
+.fs-band{padding:28px 4%;background:#fff;border-bottom:1px solid var(--rose-dark);}
+.fs-inner{max-width:1200px;margin:0 auto;}
+.fs-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:16px;}
+.fs-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;}
+.fs-card{display:flex;gap:14px;align-items:center;border:1px solid var(--rose-dark);border-radius:10px;padding:10px;text-decoration:none;color:var(--ink);background:#fff;}
+.fs-card:hover{box-shadow:0 8px 24px -14px rgba(0,0,0,.35);}
+.fs-card img{width:110px;height:82px;object-fit:cover;border-radius:6px;flex:none;}
+.fs-card b{display:block;font-size:15px;line-height:1.3;}
+.fs-card .fs-p{font-weight:700;color:var(--gold-dark);font-size:16px;}
+.fs-card small{color:var(--muted);font-size:13px;}
+</style>
+<div class="fs-band">
+  <div class="fs-inner">
+    <div class="fs-head">
+      <div>
+        <div class="cccb-kicker">Sunny Marketplace</div>
+        <h2 class="cccb-title">Cars for sale</h2>
+      </div>
+      <a href="/for-sale/" class="cccb-btn primary">See all for sale</a>
+    </div>
+    <div class="fs-cards">
+      <a class="fs-card" href="/for-sale/nissan-sentra-2017-black/"><img src="/for-sale/nissan-sentra-2017-black/front.jpg" alt="Black 2017 Nissan Sentra SV" loading="lazy"><div><b>2017 Nissan Sentra SV — Black</b><div class="fs-p">GH₵155,000</div><small>124,470 miles · Accra</small></div></a>
+      <a class="fs-card" href="/for-sale/nissan-sentra-2017-grey/"><img src="/for-sale/nissan-sentra-2017-grey/front.jpg" alt="Grey 2017 Nissan Sentra" loading="lazy"><div><b>2017 Nissan Sentra — Grey</b><div class="fs-p">GH₵155,000</div><small>108,877 miles · Accra</small></div></a>
+    </div>
+  </div>
+</div>
+
 <!-- UPCOMING EVENTS -->
 <div class="section" style="background:var(--rose);">
   <div class="section-inner">
