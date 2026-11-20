@@ -143,6 +143,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;color:#1a1a1a;line-height:1.7;}
     <a href="/events/">Events</a>
     <a href="/top-10/">Top 10 Charts</a>
     <a href="/directory/">CCC&amp;B Directory</a>
+    <a href="/for-sale/">For Sale</a>
     <a href="/watch-tv/">Watch Sunny TV</a>
     <a href="/advertise/" class="smm-cta">Advertise With Us</a>
     <a href="#" onclick="toggleSiteMobileMenu();snOpenDonate();return false;" class="smm-cta" style="background:#C0392B;">Please Give <span class="sn-heart">♥</span></a>
@@ -172,20 +173,18 @@ function toggleSiteMobileMenu(){
       <p>Once you submit and pay, our team reviews and places your advert on the homepage within 24 hours. If you have questions, email <a href="mailto:info@sunnygh.com">info@sunnygh.com</a>.</p>
     </div>
 
-    <form id="ssa-form" name="self-service-ad" method="POST" action="/self-service-advert/thank-you/" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" style="margin-top:32px;border:1px solid var(--border);border-radius:14px;padding:24px;">
-      <input type="hidden" name="form-name" value="self-service-ad">
-      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
-      <input type="hidden" name="payment_reference" id="ssa-payment-reference">
-      <input type="hidden" name="amount_paid" id="ssa-amount-paid">
+    <form id="ssa-form" onsubmit="return false" style="margin-top:32px;border:1px solid var(--border);border-radius:14px;padding:24px;">
+      <p style="display:none;"><label>Don't fill this out: <input name="website" tabindex="-1" autocomplete="off"></label></p>
 
       <div style="margin-bottom:16px;">
         <label style="display:block;font-size:13px;font-weight:700;margin-bottom:6px;">Business / advert name</label>
-        <input type="text" name="business_name" required style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;">
+        <input type="text" name="business_name" required maxlength="120" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;">
       </div>
 
       <div style="margin-bottom:16px;">
         <label style="display:block;font-size:13px;font-weight:700;margin-bottom:6px;">Ad image</label>
-        <input type="file" name="image_upload" accept="image/*" required style="width:100%;font-size:14px;">
+        <input type="file" name="image_upload" accept="image/jpeg,image/png,image/webp" required style="width:100%;font-size:14px;">
+        <img id="ssa-preview" alt="" style="display:none;max-width:220px;max-height:220px;margin-top:10px;border-radius:8px;border:1px solid var(--border);">
       </div>
 
       <div style="margin-bottom:16px;">
@@ -195,7 +194,7 @@ function toggleSiteMobileMenu(){
 
       <div style="margin-bottom:16px;">
         <label style="display:block;font-size:13px;font-weight:700;margin-bottom:6px;">Link (website, WhatsApp link, or Instagram — required)</label>
-        <input type="text" name="link" required placeholder="https://wa.me/233..." style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;">
+        <input type="text" name="link" required maxlength="300" placeholder="https://wa.me/233..." style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;">
       </div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
@@ -205,7 +204,7 @@ function toggleSiteMobileMenu(){
         </div>
         <div>
           <label style="display:block;font-size:13px;font-weight:700;margin-bottom:6px;">Your phone / WhatsApp</label>
-          <input type="text" name="advertiser_contact" required style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;">
+          <input type="tel" name="advertiser_contact" required style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-size:14px;">
         </div>
       </div>
 
@@ -226,63 +225,144 @@ function toggleSiteMobileMenu(){
         <span id="ssa-price" style="font-size:22px;font-weight:800;">GH₵140</span>
       </div>
 
+      <p id="ssa-error" role="alert" style="display:none;color:#B42318;font-size:14px;font-weight:600;margin:0 0 12px;"></p>
       <button type="button" id="ssa-submit-btn" onclick="ssaSubmit(event)" style="width:100%;background:var(--gold-dark);color:#fff;border:none;padding:14px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;">Pay GH₵140 &amp; submit advert</button>
-      <p style="font-size:12px;color:var(--muted);margin-top:10px;text-align:center;">You'll be asked to pay securely via Paystack before your advert is submitted for review.</p>
+      <p style="font-size:12px;color:var(--muted);margin-top:10px;text-align:center;">Your advert details are saved first, then you pay securely via Paystack (mobile money or card).</p>
     </form>
 
     <script>
+    var ssaOrder = null; // { ref, amount, email } once saved — reused if the advertiser retries payment
     function ssaCalcPrice(){
       var days = parseInt(document.getElementById('ssa-duration').value, 10);
       var price = days * 20;
       document.getElementById('ssa-price').textContent = 'GH₵' + price;
       document.getElementById('ssa-submit-btn').textContent = 'Pay GH₵' + price + ' & submit advert';
+      ssaOrder = null; // details changed: save a fresh order
       return price;
     }
     ssaCalcPrice();
+    document.getElementById('ssa-form').addEventListener('input', function(e){ if (e.target.name !== 'duration_days') ssaOrder = null; });
 
-    function ssaSubmit(e){
-      e.preventDefault();
-      var form = document.getElementById('ssa-form');
-      var required = ['business_name','email','advertiser_contact','description','link','image_upload'];
-      for (var i = 0; i < required.length; i++){
-        var el = form.elements[required[i]];
-        if (!el || !el.value){
-          alert('Please fill in all fields before continuing.');
-          return;
-        }
-      }
-      var price = ssaCalcPrice();
-      var email = form.elements['email'].value;
+    function ssaError(msg){
+      var el = document.getElementById('ssa-error');
+      el.textContent = msg || ''; el.style.display = msg ? 'block' : 'none';
+    }
+    function ssaBusy(on, label){
       var btn = document.getElementById('ssa-submit-btn');
+      btn.disabled = on; btn.style.opacity = on ? '.7' : '1';
+      if (label) btn.textContent = label;
+    }
 
-      function launch(){
-        var handler = PaystackPop.setup({
-          key: 'pk_live_de0fc9e3b71f670c1d8e9cd4e3be3f125c9ceb8a',
-          email: email,
-          amount: price * 100,
-          currency: 'GHS',
-          ref: 'SUNNYADS' + Math.floor(Math.random() * 1000000000),
-          callback: function(response){
-            form.elements['payment_reference'].value = response.reference;
-            form.elements['amount_paid'].value = price;
-            btn.textContent = 'Submitting…';
-            btn.disabled = true;
-            form.submit();
-          },
-          onClose: function(){}
-        });
-        handler.openIframe();
-      }
+    // Shrink the image in the browser so uploads stay small on mobile data (max 1600px, JPEG).
+    function ssaReadImage(file){
+      return new Promise(function(resolve, reject){
+        if (['image/jpeg','image/png','image/webp'].indexOf(file.type) < 0) return reject(new Error('Use a JPG, PNG or WebP image.'));
+        var fr = new FileReader();
+        fr.onerror = function(){ reject(new Error('Could not read that image.')); };
+        fr.onload = function(){
+          var img = new Image();
+          img.onerror = function(){ reject(new Error('Could not read that image.')); };
+          img.onload = function(){
+            var max = 1600, w = img.naturalWidth, h = img.naturalHeight;
+            if (w <= max && h <= max && file.size < 1200000) return resolve(fr.result);
+            var k = Math.min(1, max / Math.max(w, h));
+            var c = document.createElement('canvas');
+            c.width = Math.round(w * k); c.height = Math.round(h * k);
+            var ctx = c.getContext('2d');
+            ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, c.width, c.height);
+            ctx.drawImage(img, 0, 0, c.width, c.height);
+            resolve(c.toDataURL('image/jpeg', 0.85));
+          };
+          img.src = fr.result;
+        };
+        fr.readAsDataURL(file);
+      });
+    }
+    document.querySelector('#ssa-form [name=image_upload]').addEventListener('change', function(){
+      var f = this.files && this.files[0], pv = document.getElementById('ssa-preview');
+      if (!f) { pv.style.display = 'none'; return; }
+      pv.src = URL.createObjectURL(f); pv.style.display = 'block';
+    });
 
-      if (window.PaystackPop){
-        launch();
-      } else {
+    function ssaPost(payload){
+      return fetch('/api/ads', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(payload) })
+        .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(d){ if (!r.ok && !d.error) d.error = 'Something went wrong. Please try again.'; return d; }); });
+    }
+
+    function ssaLoadPaystack(){
+      return new Promise(function(resolve, reject){
+        if (window.PaystackPop) return resolve();
         var s = document.createElement('script');
         s.src = 'https://js.paystack.co/v1/inline.js';
-        s.onload = launch;
-        s.onerror = function(){ alert('Could not load the payment form. Please check your connection and try again.'); };
+        s.onload = function(){ resolve(); };
+        s.onerror = function(){ reject(new Error('Could not load the payment form. Please check your connection and try again.')); };
         document.head.appendChild(s);
+      });
+    }
+
+    var ssaKey = null;
+    function ssaConfig(){
+      if (ssaKey) return Promise.resolve(ssaKey);
+      return fetch('/api/ads?action=config').then(function(r){ return r.json(); }).then(function(d){ ssaKey = d.paystackKey; return ssaKey; });
+    }
+
+    async function ssaSubmit(e){
+      e.preventDefault();
+      ssaError('');
+      var form = document.getElementById('ssa-form');
+      var f = form.elements;
+      var fields = ['business_name','image_upload','description','link','email','advertiser_contact'];
+      for (var i = 0; i < fields.length; i++){
+        if (!f[fields[i]].value.trim()){ ssaError('Please fill in all fields before continuing.'); f[fields[i]].focus(); return; }
       }
+      if (!f.email.checkValidity()){ ssaError('Check your email address.'); f.email.focus(); return; }
+
+      try {
+        ssaBusy(true, 'Saving your advert…');
+        var key = await ssaConfig();
+        if (!ssaOrder){
+          var image = await ssaReadImage(f.image_upload.files[0]);
+          var d = await ssaPost({
+            action: 'create', website: f.website.value,
+            business_name: f.business_name.value, description: f.description.value, link: f.link.value,
+            email: f.email.value, advertiser_contact: f.advertiser_contact.value,
+            duration_days: f.duration_days.value, image: image
+          });
+          if (d.error) throw new Error(d.error);
+          ssaOrder = d;
+        }
+        await ssaLoadPaystack();
+        ssaBusy(true, 'Waiting for payment…');
+        PaystackPop.setup({
+          key: key,
+          email: ssaOrder.email,
+          amount: ssaOrder.amount * 100,
+          currency: 'GHS',
+          ref: ssaOrder.ref,
+          metadata: { order_ref: ssaOrder.ref, business_name: f.business_name.value, phone: f.advertiser_contact.value },
+          callback: function(){
+            ssaBusy(true, 'Confirming payment…');
+            var ref = ssaOrder.ref;
+            ssaPost({ action: 'verify', ref: ref })
+              .catch(function(){ return {}; })
+              .then(function(){
+                // The order is already saved; our team rechecks any payment that could not be confirmed here.
+                window.location.href = '/self-service-advert/thank-you/?ref=' + encodeURIComponent(ref);
+              });
+          },
+          onClose: function(){
+            ssaBusy(false); ssaCalcPriceLabel();
+            ssaError('Payment was not completed. Your details are saved — press the button to try paying again.');
+          }
+        }).openIframe();
+      } catch (err) {
+        ssaBusy(false); ssaCalcPriceLabel();
+        ssaError(err.message || 'Something went wrong. Please try again.');
+      }
+    }
+    function ssaCalcPriceLabel(){
+      var days = parseInt(document.getElementById('ssa-duration').value, 10);
+      document.getElementById('ssa-submit-btn').textContent = 'Pay GH₵' + (days * 20) + ' & submit advert';
     }
     </script>
   
@@ -313,6 +393,7 @@ function toggleSiteMobileMenu(){
       <a href="/preaching-teaching/">Preaching &amp; Teaching</a>
       <a href="/events/">Events</a>
       <a href="/directory/">CCC&amp;B Directory</a>
+      <a href="/for-sale/">For Sale</a>
     </div>
     <div class="site-footer-col">
       <div class="site-footer-col-title">More</div>
@@ -330,6 +411,7 @@ function toggleSiteMobileMenu(){
     </div>
   </div>
   <div class="site-footer-bottom">© 2026 Sunny 88.7 FM · All Rights Reserved · <a href="/privacy-policy/" style="color:rgba(255,255,255,.5);">Privacy Policy</a> · <a href="/terms/" style="color:rgba(255,255,255,.5);">Terms of Use</a></div>
+<!--STARCOM--><div style="max-width:1100px;margin:24px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;line-height:1.6;text-align:center;color:rgba(255,255,255,.55);">Sunny 88.7 FM is a Starcom Group station. Our sister station is <a href="https://spiritgh.com/?utm_source=sunnygh&utm_medium=sister&utm_campaign=starcom" style="color:#C8920A;font-weight:600;text-decoration:none;">Spirit 88.3 FM in Kumasi</a>.</div><!--/STARCOM-->
 </footer>
 
 <style>

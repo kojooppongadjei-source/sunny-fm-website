@@ -173,6 +173,12 @@
   to = "/fair/admin/"
   status = 301
 
+# Self Service Adverts — order admin
+[[redirects]]
+  from = "/self-service-advert/admin"
+  to = "/self-service-advert/admin/"
+  status = 301
+
 # Name corrected to "Dr. Naa": old address redirects to the new one
 [[redirects]]
   from = "/news/dr-na-five-simple-habits-live-longer-healthier"
