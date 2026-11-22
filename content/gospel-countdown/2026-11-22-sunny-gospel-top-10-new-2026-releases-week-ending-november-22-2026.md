@@ -6,7 +6,8 @@ image: /assets/uploads/sunny-gospel-top-10-cover.jpg
 summary: >
   Vessel Chordrick's "Menye Wo Den Nie (Live)" takes #1 on the first Sunny
   Gospel Top 10, a weekly chart of the hottest new gospel songs released in
-  Ghana in 2026, featuring Joe Mettle, Siisi Baidoo, Philipa Baafi and more.
+  Ghana in 2026, featuring Daughters of Glorious Jesus, Joe Mettle, Siisi
+  Baidoo and more.
 tags:
   - Music
 ---
@@ -17,23 +18,27 @@ Here's the chart for the week ending November 22, 2026.
 | Position | Song | Artist |
 | --- | --- | --- |
 | #1 | Menye Wo Den Nie (Live) | Vessel Chordrick |
-| #2 | Jesus, My Everything | William McDowell & Joe Mettle |
-| #3 | The Hope Medley | Vessel Chordrick |
-| #4 | Ghana Worship Medley | Siisi Baidoo & Perez Musik ft Kweku Teye |
-| #5 | Prayer Praise Africa | Siisi Baidoo |
-| #6 | Hallelujah | Joe Mettle & Phil Thompson |
-| #7 | Faithful | Joe Mettle |
-| #8 | Meye Nhyira Ba | Philipa Baafi |
+| #2 | Yɛdi Adeɛ (Afro) | Daughters of Glorious Jesus ft E'mPraise Inc. |
+| #3 | Jesus, My Everything | William McDowell & Joe Mettle |
+| #4 | This Year | Joe Mettle |
+| #5 | The Hope Medley | Vessel Chordrick |
+| #6 | Ghana Worship Medley | Siisi Baidoo & Perez Musik ft Kweku Teye |
+| #7 | Prayer Praise Africa | Siisi Baidoo |
+| #8 | Hallelujah | Joe Mettle & Phil Thompson |
+| #9 | Victory Song | The Keeper's Music ft Tansy |
+| #10 | Faithful | Joe Mettle |
+
+**Just outside the Top 10:** Meye Nhyira Ba by Philipa Baafi.
 
 ## This week's highlights
 
-**Vessel Chordrick takes our first #1** with "Menye Wo Den Nie (Live)." The live worship song came out in September, and it's now the fastest-growing gospel song in the country, with streams up more than 18% in a single week. His "The Hope Medley" sits at #3, which gives him two songs in the top 3 and makes him the artist to watch this week.
+**Vessel Chordrick takes our first #1** with "Menye Wo Den Nie (Live)." The live worship song came out in September, and it's now the fastest-growing gospel song in the country, with streams up more than 18% in a single week. His "The Hope Medley" is also on the chart at #5.
 
-**Joe Mettle has three songs on the chart:** the transatlantic worship collaboration "Jesus, My Everything" with William McDowell at #2, "Hallelujah" with Phil Thompson at #6, and "Faithful" at #7.
+**Daughters of Glorious Jesus come in at #2** with "Yɛdi Adeɛ (Afro)," featuring E'mPraise Inc. It's an Afro-flavoured celebration of our inheritance in Christ, inspired by Romans 8:17.
 
-**Siisi Baidoo has two songs in the top 5.** "Ghana Worship Medley," with Perez Musik and Kweku Teye, is at #4 and doing well on both streaming and YouTube. "Prayer Praise Africa" follows at #5.
+**Joe Mettle leads the chart with four songs:** "Jesus, My Everything" with William McDowell at #3, the hopeful anthem "This Year" at #4, "Hallelujah" with Phil Thompson at #8, and "Faithful" at #10.
 
-Philipa Baafi's "Meye Nhyira Ba" rounds out the chart at #8.
+**Siisi Baidoo has two songs on the chart.** "Ghana Worship Medley," with Perez Musik and Kweku Teye, is at #6 and "Prayer Praise Africa" follows at #7. The Keeper's Music and Tansy round out the top 10 with "Victory Song" at #9.
 
 ## How the chart works
 
