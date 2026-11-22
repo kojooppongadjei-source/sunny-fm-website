@@ -23,12 +23,12 @@ Here's the chart for the week ending November 22, 2026.
 | #4 | Atɛɛne (Overturned) (Live) | Piesie Esther |
 | #5 | Bue M'ani | Daughters of Glorious Jesus ft Sandra Boakye-Duah |
 | #6 | Yɛdi Adeɛ (Afro) | Daughters of Glorious Jesus ft E'mPraise Inc. |
-| #7 | Jesus, My Everything | William McDowell & Joe Mettle |
-| #8 | This Year | Joe Mettle |
-| #9 | The Hope Medley | Vessel Chordrick |
-| #10 | Calvary Sunsum | Piesie Esther & Kweku Teye |
+| #7 | This Year | Joe Mettle |
+| #8 | The Hope Medley | Vessel Chordrick |
+| #9 | Calvary Sunsum | Piesie Esther & Kweku Teye |
+| #10 | Ghana Worship Medley | Siisi Baidoo & Perez Musik ft Kweku Teye |
 
-**Just outside the Top 10:** Ghana Worship Medley (Siisi Baidoo & Perez Musik ft Kweku Teye), Prayer Praise Africa (Siisi Baidoo), Victory Song (The Keeper's Music ft Tansy) and Hallelujah (Joe Mettle & Phil Thompson).
+**Just outside the Top 10:** Prayer Praise Africa (Siisi Baidoo), Victory Song (The Keeper's Music ft Tansy) and Hallelujah (Joe Mettle & Phil Thompson).
 
 ## This week's highlights
 
@@ -36,11 +36,11 @@ Here's the chart for the week ending November 22, 2026.
 
 **Adom Kiki is close behind at #2** with "Nyame Aboa Me," a powerful song of thanksgiving that has passed a million views on YouTube.
 
-**Vessel Chordrick's "Menye Wo Den Nie (Live)" is at #3.** It's the fastest-growing song on the streaming platforms this week, with streams up more than 18% in seven days. His "The Hope Medley" is also on the chart at #9.
+**Vessel Chordrick's "Menye Wo Den Nie (Live)" is at #3.** It's the fastest-growing song on the streaming platforms this week, with streams up more than 18% in seven days. His "The Hope Medley" is also on the chart at #8.
 
-**Piesie Esther and Daughters of Glorious Jesus each have two songs on the chart.** Piesie Esther's live performance of "Atɛɛne (Overturned)," recorded at her Flora Made by Grace concert, is at #4, and "Calvary Sunsum" with Kweku Teye, one of the most-played gospel songs on Ghanaian radio, comes in at #10. Daughters of Glorious Jesus bring back their 1992 classic "Bue M'ani" in a new recording with Sandra Boakye-Duah at #5, and their Afro-flavoured "Yɛdi Adeɛ," inspired by Romans 8:17, is at #6.
+**Piesie Esther and Daughters of Glorious Jesus each have two songs on the chart.** Piesie Esther's live performance of "Atɛɛne (Overturned)," recorded at her Flora Made by Grace concert, is at #4, and "Calvary Sunsum" with Kweku Teye, one of the most-played gospel songs on Ghanaian radio, comes in at #9. Daughters of Glorious Jesus bring back their 1992 classic "Bue M'ani" in a new recording with Sandra Boakye-Duah at #5, and their Afro-flavoured "Yɛdi Adeɛ," inspired by Romans 8:17, is at #6.
 
-**Joe Mettle has two songs on the chart:** the transatlantic collaboration "Jesus, My Everything" with William McDowell at #7, and the hopeful anthem "This Year" at #8.
+**Joe Mettle's hopeful anthem "This Year" is at #7**, and Siisi Baidoo and Perez Musik round out the top 10 with "Ghana Worship Medley," featuring Kweku Teye, at #10.
 
 ## How the chart works
 
