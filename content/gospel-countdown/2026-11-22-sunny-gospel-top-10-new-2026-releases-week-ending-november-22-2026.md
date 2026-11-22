@@ -2,6 +2,7 @@
 title: "Sunny Gospel Top 10: The Hottest New Gospel Songs in Ghana — Week Ending November 22, 2026"
 seo_title: "Sunny Gospel Top 10 — Hottest New Ghana Gospel Songs of 2026 (Week Ending Nov 22)"
 date: 2026-11-22T17:00:00.000+00:00
+image: /assets/uploads/sunny-gospel-top-10-cover.jpg
 summary: >
   Vessel Chordrick's "Menye Wo Den Nie (Live)" takes #1 on the first Sunny
   Gospel Top 10, a weekly chart of the hottest new gospel songs released in
