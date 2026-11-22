@@ -6,7 +6,7 @@ image: /assets/uploads/sunny-gospel-top-10-cover.jpg
 summary: >
   Vessel Chordrick's "Menye Wo Den Nie (Live)" takes #1 on the first Sunny
   Gospel Top 10, a weekly chart of the hottest new gospel songs released in
-  Ghana in 2026, featuring Joe Mettle, Siisi Baidoo, Tagoe Sisters and more.
+  Ghana in 2026, featuring Joe Mettle, Siisi Baidoo, Jane & Bernice and more.
 tags:
   - Music
 ---
@@ -22,28 +22,26 @@ Here's the chart for the week ending November 22, 2026.
 | #4 | Ghana Worship Medley | Siisi Baidoo & Perez Musik ft Kweku Teye |
 | #5 | Prayer Praise Africa | Siisi Baidoo |
 | #6 | Hallelujah | Joe Mettle & Phil Thompson |
-| #7 | M'anim Rengu Ase Da | Tagoe Sisters |
-| #8 | Obaatanpa | Stella Seal ft MC Abraham & others |
-| #9 | Wo Mmerepa Mu | Jane & Bernice |
-| #10 | Faithful | Joe Mettle |
-
-**Just outside the Top 10:** Meye Nhyira Ba by Philipa Baafi.
+| #7 | Obaatanpa | Stella Seal ft MC Abraham & others |
+| #8 | Wo Mmerepa Mu | Jane & Bernice |
+| #9 | Faithful | Joe Mettle |
+| #10 | Meye Nhyira Ba | Philipa Baafi |
 
 ## This week's highlights
 
 **Vessel Chordrick takes our first #1** with "Menye Wo Den Nie (Live)." The live worship song came out in September, and it's now the fastest-growing gospel song in the country, with streams up more than 18% in a single week. His "The Hope Medley" sits at #3, which gives him two songs in the top 3 and makes him the artist to watch this week.
 
-**Joe Mettle has three songs on the chart:** the transatlantic worship collaboration "Jesus, My Everything" with William McDowell at #2, "Hallelujah" with Phil Thompson at #6, and "Faithful" at #10.
+**Joe Mettle has three songs on the chart:** the transatlantic worship collaboration "Jesus, My Everything" with William McDowell at #2, "Hallelujah" with Phil Thompson at #6, and "Faithful" at #9.
 
 **Siisi Baidoo has two songs in the top 5.** "Ghana Worship Medley," with Perez Musik and Kweku Teye, is at #4 and doing well on both streaming and YouTube. "Prayer Praise Africa" follows at #5.
 
-Rounding out the chart are the Tagoe Sisters' song of thanksgiving "M'anim Rengu Ase Da" at #7, "Obaatanpa" at #8 (a song about God as the faithful, caring Father), and Jane & Bernice's "Wo Mmerepa Mu" at #9, a moving reminder of God's grace in our weakness.
+Rounding out the chart are "Obaatanpa" at #7 (a song about God as the faithful, caring Father), Jane & Bernice's "Wo Mmerepa Mu" at #8, a moving reminder of God's grace in our weakness, and Philipa Baafi's "Meye Nhyira Ba" at #10.
 
 ## How the chart works
 
 The Sunny Gospel Top 10 ranks gospel songs by Ghanaian artists that were **released in 2026**, based on how many new plays they got on streaming platforms and YouTube during the week. Only real growth from week to week counts, not lifetime totals, so new songs have a fair chance against established hits.
 
-We also screen the chart to make sure every song comes from real artists and ministries. We remove AI-generated and automated tracks.
+We also screen the chart to make sure every song comes from real artists and ministries. We remove AI-generated and automated tracks, and older songs that were only re-uploaded to streaming platforms in 2026.
 
 ## Hear it on Sunny 88.7 FM
 
