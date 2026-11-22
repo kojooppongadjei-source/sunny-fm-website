@@ -22,20 +22,19 @@ Here's the chart for the week ending November 22, 2026.
 | #4 | Ghana Worship Medley | Siisi Baidoo & Perez Musik ft Kweku Teye |
 | #5 | Prayer Praise Africa | Siisi Baidoo |
 | #6 | Hallelujah | Joe Mettle & Phil Thompson |
-| #7 | Obaatanpa | Stella Seal ft MC Abraham & others |
-| #8 | Wo Mmerepa Mu | Jane & Bernice |
-| #9 | Faithful | Joe Mettle |
-| #10 | Meye Nhyira Ba | Philipa Baafi |
+| #7 | Wo Mmerepa Mu | Jane & Bernice |
+| #8 | Faithful | Joe Mettle |
+| #9 | Meye Nhyira Ba | Philipa Baafi |
 
 ## This week's highlights
 
 **Vessel Chordrick takes our first #1** with "Menye Wo Den Nie (Live)." The live worship song came out in September, and it's now the fastest-growing gospel song in the country, with streams up more than 18% in a single week. His "The Hope Medley" sits at #3, which gives him two songs in the top 3 and makes him the artist to watch this week.
 
-**Joe Mettle has three songs on the chart:** the transatlantic worship collaboration "Jesus, My Everything" with William McDowell at #2, "Hallelujah" with Phil Thompson at #6, and "Faithful" at #9.
+**Joe Mettle has three songs on the chart:** the transatlantic worship collaboration "Jesus, My Everything" with William McDowell at #2, "Hallelujah" with Phil Thompson at #6, and "Faithful" at #8.
 
 **Siisi Baidoo has two songs in the top 5.** "Ghana Worship Medley," with Perez Musik and Kweku Teye, is at #4 and doing well on both streaming and YouTube. "Prayer Praise Africa" follows at #5.
 
-Rounding out the chart are "Obaatanpa" at #7 (a song about God as the faithful, caring Father), Jane & Bernice's "Wo Mmerepa Mu" at #8, a moving reminder of God's grace in our weakness, and Philipa Baafi's "Meye Nhyira Ba" at #10.
+Rounding out the chart are Jane & Bernice's "Wo Mmerepa Mu" at #7, a moving reminder of God's grace in our weakness, and Philipa Baafi's "Meye Nhyira Ba" at #9.
 
 ## How the chart works
 
