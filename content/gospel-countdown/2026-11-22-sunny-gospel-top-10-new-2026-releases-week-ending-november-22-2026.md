@@ -4,10 +4,10 @@ seo_title: "Sunny Gospel Top 10 — Hottest New Ghana Gospel Songs of 2026 (Week
 date: 2026-11-22T17:00:00.000+00:00
 image: /assets/uploads/sunny-gospel-top-10-cover.jpg
 summary: >
-  Vessel Chordrick's "Menye Wo Den Nie (Live)" takes #1 on the first Sunny
-  Gospel Top 10, a weekly chart of the hottest new gospel songs released in
-  Ghana in 2026, featuring Daughters of Glorious Jesus, Joe Mettle, Siisi
-  Baidoo and more.
+  Diana Hamilton's "Nyame Banbofo (God the Protector)" takes #1 on the first
+  Sunny Gospel Top 10, a weekly chart of the hottest new gospel songs released
+  in Ghana in 2026, featuring Adom Kiki, Piesie Esther, Daughters of Glorious
+  Jesus, Joe Mettle and more.
 tags:
   - Music
 ---
@@ -17,34 +17,36 @@ Here's the chart for the week ending November 22, 2026.
 
 | Position | Song | Artist |
 | --- | --- | --- |
-| #1 | Menye Wo Den Nie (Live) | Vessel Chordrick |
-| #2 | Yɛdi Adeɛ (Afro) | Daughters of Glorious Jesus ft E'mPraise Inc. |
-| #3 | Jesus, My Everything | William McDowell & Joe Mettle |
-| #4 | This Year | Joe Mettle |
-| #5 | The Hope Medley | Vessel Chordrick |
-| #6 | Ghana Worship Medley | Siisi Baidoo & Perez Musik ft Kweku Teye |
-| #7 | Prayer Praise Africa | Siisi Baidoo |
-| #8 | Hallelujah | Joe Mettle & Phil Thompson |
-| #9 | Victory Song | The Keeper's Music ft Tansy |
-| #10 | Faithful | Joe Mettle |
+| #1 | Nyame Banbofo (God the Protector) | Diana Hamilton |
+| #2 | Nyame Aboa Me | Adom Kiki |
+| #3 | Menye Wo Den Nie (Live) | Vessel Chordrick |
+| #4 | Atɛɛne (Overturned) (Live) | Piesie Esther |
+| #5 | Bue M'ani | Daughters of Glorious Jesus ft Sandra Boakye-Duah |
+| #6 | Yɛdi Adeɛ (Afro) | Daughters of Glorious Jesus ft E'mPraise Inc. |
+| #7 | Jesus, My Everything | William McDowell & Joe Mettle |
+| #8 | This Year | Joe Mettle |
+| #9 | The Hope Medley | Vessel Chordrick |
+| #10 | Calvary Sunsum | Piesie Esther & Kweku Teye |
 
-**Just outside the Top 10:** Meye Nhyira Ba by Philipa Baafi.
+**Just outside the Top 10:** Ghana Worship Medley (Siisi Baidoo & Perez Musik ft Kweku Teye), Prayer Praise Africa (Siisi Baidoo), Victory Song (The Keeper's Music ft Tansy) and Hallelujah (Joe Mettle & Phil Thompson).
 
 ## This week's highlights
 
-**Vessel Chordrick takes our first #1** with "Menye Wo Den Nie (Live)." The live worship song came out in September, and it's now the fastest-growing gospel song in the country, with streams up more than 18% in a single week. His "The Hope Medley" is also on the chart at #5.
+**Diana Hamilton takes our first #1** with "Nyame Banbofo (God the Protector)." It was released at the end of July as the lead single from her forthcoming album, and it's a worship anthem declaring God's unfailing protection and faithfulness, sung in Twi and English.
 
-**Daughters of Glorious Jesus come in at #2** with "Yɛdi Adeɛ (Afro)," featuring E'mPraise Inc. It's an Afro-flavoured celebration of our inheritance in Christ, inspired by Romans 8:17.
+**Adom Kiki is close behind at #2** with "Nyame Aboa Me," a powerful song of thanksgiving that has passed a million views on YouTube.
 
-**Joe Mettle leads the chart with four songs:** "Jesus, My Everything" with William McDowell at #3, the hopeful anthem "This Year" at #4, "Hallelujah" with Phil Thompson at #8, and "Faithful" at #10.
+**Vessel Chordrick's "Menye Wo Den Nie (Live)" is at #3.** It's the fastest-growing song on the streaming platforms this week, with streams up more than 18% in seven days. His "The Hope Medley" is also on the chart at #9.
 
-**Siisi Baidoo has two songs on the chart.** "Ghana Worship Medley," with Perez Musik and Kweku Teye, is at #6 and "Prayer Praise Africa" follows at #7. The Keeper's Music and Tansy round out the top 10 with "Victory Song" at #9.
+**Piesie Esther and Daughters of Glorious Jesus each have two songs on the chart.** Piesie Esther's live performance of "Atɛɛne (Overturned)," recorded at her Flora Made by Grace concert, is at #4, and "Calvary Sunsum" with Kweku Teye, one of the most-played gospel songs on Ghanaian radio, comes in at #10. Daughters of Glorious Jesus bring back their 1992 classic "Bue M'ani" in a new recording with Sandra Boakye-Duah at #5, and their Afro-flavoured "Yɛdi Adeɛ," inspired by Romans 8:17, is at #6.
+
+**Joe Mettle has two songs on the chart:** the transatlantic collaboration "Jesus, My Everything" with William McDowell at #7, and the hopeful anthem "This Year" at #8.
 
 ## How the chart works
 
-The Sunny Gospel Top 10 ranks gospel songs by Ghanaian artists that were **released in 2026**, based on how many new plays they got on streaming platforms and YouTube during the week. Only real growth from week to week counts, not lifetime totals, so new songs have a fair chance against established hits.
+The Sunny Gospel Top 10 ranks gospel songs by Ghanaian artists that were **released in 2026**, including new recordings of older songs, based on how many plays they got on streaming platforms and YouTube during the week.
 
-We also screen the chart to make sure every song comes from real artists and ministries. We remove AI-generated and automated tracks, and older songs that were only re-uploaded to streaming platforms in 2026.
+We also screen the chart to make sure every song comes from real artists and ministries. We remove AI-generated and automated tracks, and older recordings that were only re-uploaded to streaming platforms in 2026.
 
 ## Hear it on Sunny 88.7 FM
 
