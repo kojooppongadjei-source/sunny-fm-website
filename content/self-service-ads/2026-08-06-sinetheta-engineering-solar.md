@@ -2,7 +2,7 @@
 business_name: "Sinetheta Engineering Group Ltd."
 image: /assets/uploads/sinetheta-solar-essential.jpg
 description: "Solar packages for homes and offices, from GH₵49,000."
-link: "tel:+233256040791"
+link: "https://www.thesinegroup.com"
 phone_display: "025 604 0791"
 start_date: 2026-08-06
 duration_days: 148
