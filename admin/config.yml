@@ -173,6 +173,14 @@ collections:
       - { label: "Business / Advert Name", name: "business_name", widget: "string" }
       - { label: "Ad Image", name: "image", widget: "image" }
       - { label: "Short Description (shown on the ad card)", name: "description", widget: "string" }
+      - label: "Rotating Designs (optional: one shown per day, in order)"
+        name: "rotation"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Design Image", name: "image", widget: "image" }
+          - { label: "Description for this design", name: "description", widget: "string", required: false }
+      - { label: "Phone Shown on Card (optional)", name: "phone_display", widget: "string", required: false }
       - { label: "Link (website, WhatsApp wa.me link, or Instagram URL)", name: "link", widget: "string" }
       - { label: "Start Date", name: "start_date", widget: "date", format: "YYYY-MM-DD" }
       - { label: "Duration (days paid for)", name: "duration_days", widget: "number", value_type: "int", min: 1, max: 30, default: 7 }

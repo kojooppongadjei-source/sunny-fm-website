@@ -1527,23 +1527,40 @@ function getActiveSelfServiceAds() {
         link: data.link || '#',
         phone_display: data.phone_display || null,
         orientation,
+        // Optional list of designs; the homepage card shows one per day (see renderSelfServiceAdCard).
+        rotation: Array.isArray(data.rotation)
+          ? data.rotation.filter(r => r && r.image).map(r => ({ image: r.image, description: r.description || data.description || '' }))
+          : null,
       });
     }
   }
   return ads;
 }
 
+// Index of today's design for a rotating ad: changes once a day (Accra time = UTC).
+function rotationIndexForToday(count) {
+  return Math.floor(Date.now() / 86400000) % count;
+}
+
 function renderSelfServiceAdCard(ad) {
   const isLandscape = ad.orientation === 'landscape';
+  const rotation = ad.rotation && ad.rotation.length > 1 ? ad.rotation : null;
+  if (rotation) {
+    // Pick today's design at build time; the inline script in the ads box re-picks
+    // in the browser so the design still changes daily between deploys.
+    const today = rotation[rotationIndexForToday(rotation.length)];
+    ad = Object.assign({}, ad, { image: today.image, description: today.description });
+  }
+  const rotAttr = rotation ? ` data-ssa-rotation="${escapeHtml(JSON.stringify(rotation))}"` : '';
   const img = ad.image
-    ? `<img src="${escapeHtml(ad.image)}" alt="${escapeHtml(ad.business_name)}" style="width:100%;height:260px;object-fit:${isLandscape ? 'cover' : 'contain'};object-position:center;background:#f4f4f4;display:block;">`
+    ? `<img src="${escapeHtml(ad.image)}" alt="${escapeHtml(ad.business_name)}"${rotation ? ' class="ssa-rot-img"' : ''} style="width:100%;height:260px;object-fit:${isLandscape ? 'cover' : 'contain'};object-position:center;background:#f4f4f4;display:block;">`
     : `<div style="width:100%;height:260px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:28px;">📢</div>`;
   return `
-    <a href="${escapeHtml(ad.link)}" target="_blank" rel="noopener sponsored" style="display:block;text-decoration:none;color:inherit;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:var(--white);flex:0 0 220px;scroll-snap-align:start;">
+    <a href="${escapeHtml(ad.link)}" target="_blank" rel="noopener sponsored"${rotAttr} style="display:block;text-decoration:none;color:inherit;border-radius:10px;overflow:hidden;border:1px solid var(--border);background:var(--white);flex:0 0 220px;scroll-snap-align:start;">
       ${img}
       <div style="background:var(--navy,#16222E);color:#fff;padding:10px 12px;">
         <div style="font-size:12px;font-weight:700;margin-bottom:2px;">${escapeHtml(ad.business_name)}</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.75);margin-bottom:6px;">${escapeHtml(ad.description)}</div>
+        <div${rotation ? ' class="ssa-rot-desc"' : ''} style="font-size:11px;color:rgba(255,255,255,.75);margin-bottom:6px;">${escapeHtml(ad.description)}</div>
         ${ad.phone_display ? `<div style="font-size:12px;font-weight:700;color:var(--gold,#D9A441);">📞 Call ${escapeHtml(ad.phone_display)}</div>` : ''}
       </div>
     </a>
@@ -1626,6 +1643,10 @@ function injectLandscapeAdBanners(ads) {
   console.log(`Injected ${landscapeAds.length} landscape ad banner(s).`);
 }
 
+// Re-picks today's design for rotating ads in the browser, so the ad changes
+// daily even when the site hasn't been redeployed.
+const ROTATING_AD_SCRIPT = `<script>(function(){try{var d=Math.floor(Date.now()/86400000);document.querySelectorAll('[data-ssa-rotation]').forEach(function(c){var r=JSON.parse(c.getAttribute('data-ssa-rotation'));if(!r.length)return;var t=r[d%r.length],i=c.querySelector('.ssa-rot-img'),e=c.querySelector('.ssa-rot-desc');if(i&&i.getAttribute('src')!==t.image)i.setAttribute('src',t.image);if(e)e.textContent=t.description;});}catch(x){}})();</script>`;
+
 function injectSelfServiceAdsBox() {
   const indexPath = path.join(ROOT, 'index.html');
   const allAds = getActiveSelfServiceAds();
@@ -1655,7 +1676,7 @@ function injectSelfServiceAdsBox() {
             <div class="section-title">Self Service Adverts</div>
             <a href="/self-service-advert/" class="section-see-all">Advertise here →</a>
           </div>
-          <div class="scroll-row">${cardsHtml}</div>
+          <div class="scroll-row">${cardsHtml}${ROTATING_AD_SCRIPT}</div>
         </div>
       </div>
     `;
