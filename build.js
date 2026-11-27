@@ -1418,8 +1418,11 @@ function injectHomepageCards(collectionsPosts) {
   html = html.replace(/<!-- SISTER STATION -->[\s\S]*?<!-- END SISTER STATION -->\n?/g, '');
 
   const newsPosts = (collectionsPosts['news'] || []).slice(0, 6);
-  const newsHtml = newsPosts.length
-    ? newsPosts.map(renderNewsCardHtml).join('')
+  // The latest weekly Gospel Top 10 chart leads the Latest News row
+  const topChart = (collectionsPosts['gospel-countdown'] || [])[0];
+  const chartCard = topChart ? renderNewsCardHtml({ ...topChart, category: 'Gospel Top 10', tags: [] }) : '';
+  const newsHtml = newsPosts.length || chartCard
+    ? chartCard + newsPosts.map(renderNewsCardHtml).join('')
     : `<div style="color:var(--muted);font-size:13px;padding:20px 0;">No news yet.</div>`;
   html = html.replace(
     /(<div class="scroll-row" id="news-row">)[\s\S]*?(<\/div>\s*<\/div>\s*<\/div>\s*\n\s*<!-- PREACHING)/,
@@ -1441,7 +1444,7 @@ function injectHomepageCards(collectionsPosts) {
   }
 
   fs.writeFileSync(indexPath, html);
-  console.log(`Injected ${newsPosts.length} news card(s) and ${upcomingEvents.length} event card(s) into homepage.`);
+  console.log(`Injected ${topChart ? 'Gospel Top 10 + ' : ''}${newsPosts.length} news card(s) and ${upcomingEvents.length} event card(s) into homepage.`);
 }
 
 // ── LINK HOMEPAGE PREACHING & TEACHING CARDS ──
